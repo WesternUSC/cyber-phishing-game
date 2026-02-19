@@ -1,65 +1,107 @@
-import Image from "next/image";
+'use client';
 
-export default function Home() {
+import { useEffect, useMemo, useReducer, useRef, useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { AppShell } from '@/components/app-shell';
+import { ModeCard } from '@/components/mode-card';
+import { InboxList } from '@/components/inbox-list';
+import { EmailViewer } from '@/components/email-viewer';
+import { DecisionPanel } from '@/components/decision-panel';
+import { LevelProgress } from '@/components/level-progress';
+import { FeedbackModal } from '@/components/feedback-modal';
+import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
+import { Button } from '@/components/ui/button';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { emails, levelConfig } from '@/data/emails';
+import { gameReducer, initialGameState } from '@/lib/game';
+
+const STORAGE_KEY = 'phishquest-run';
+
+export default function HomePage() {
+  const [state, dispatch] = useReducer(gameReducer, initialGameState);
+  const [nameInput, setNameInput] = useState('');
+  const [showNameDialog, setShowNameDialog] = useState(true);
+  const [feedback, setFeedback] = useState<{ open: boolean; correct: boolean; explanation: string; evidence: string[] }>({ open: false, correct: false, explanation: '', evidence: [] });
+  const openedAtRef = useRef<number>(Date.now());
+  const router = useRouter();
+
+  useEffect(() => {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      dispatch({ type: 'HYDRATE', state: parsed });
+      setShowNameDialog(!parsed.started);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (state.started) localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  }, [state]);
+
+  const levelEmails = useMemo(() => emails.filter((e) => e.level === 1), []);
+  const current = levelEmails.find((e) => e.id === state.currentEmailId);
+
+  const start = () => {
+    const runId = crypto.randomUUID();
+    dispatch({ type: 'START', name: nameInput || 'Analyst', firstEmailId: levelEmails[0].id, runId });
+    setShowNameDialog(false);
+    openedAtRef.current = Date.now();
+  };
+
+  const onSelectEmail = (id: string) => {
+    dispatch({ type: 'OPEN_EMAIL', emailId: id });
+    openedAtRef.current = Date.now();
+  };
+
+  const onSubmit = (decision: 'phish' | 'safe', reasons: string[]) => {
+    if (!current) return;
+    const correct = current.truth === decision;
+    const ms = Date.now() - openedAtRef.current;
+    dispatch({ type: 'SUBMIT_DECISION', payload: { emailId: current.id, decision, reasons, correct, ms } });
+    setFeedback({ open: true, correct, explanation: current.explanation, evidence: current.evidence });
+  };
+
+  useEffect(() => {
+    if (state.started && state.reviewed.length === levelEmails.length) {
+      router.push(`/results/${state.runId}`);
+    }
+  }, [state.reviewed.length, state.runId, state.started, levelEmails.length, router]);
+
+  const content = (
+    <>
+      <ModeCard />
+      <LevelProgress reviewed={state.reviewed.length} total={levelEmails.length} />
+      <div className="hidden gap-4 lg:grid lg:grid-cols-12">
+        <div className="col-span-3"><InboxList emails={levelEmails} selectedId={state.currentEmailId} reviewed={state.reviewed} onSelect={onSelectEmail} /></div>
+        <div className="col-span-6"><EmailViewer email={current} /></div>
+        <div className="col-span-3"><DecisionPanel email={current} requireReason={levelConfig[1].requireReason} onSubmit={onSubmit} /></div>
+      </div>
+      <div className="lg:hidden">
+        <Tabs defaultValue="inbox">
+          <TabsList className="mb-3 w-full"><TabsTrigger value="inbox" className="flex-1">Inbox</TabsTrigger><TabsTrigger value="email" className="flex-1">Email</TabsTrigger><TabsTrigger value="decide" className="flex-1">Decide</TabsTrigger></TabsList>
+          <TabsContent value="inbox"><InboxList emails={levelEmails} selectedId={state.currentEmailId} reviewed={state.reviewed} onSelect={onSelectEmail} /></TabsContent>
+          <TabsContent value="email"><EmailViewer email={current} /></TabsContent>
+          <TabsContent value="decide"><DecisionPanel email={current} requireReason={levelConfig[1].requireReason} onSubmit={onSubmit} /></TabsContent>
+        </Tabs>
+      </div>
+    </>
+  );
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <main className="min-h-screen bg-gradient-to-b from-brand/10 to-transparent p-4">
+      <div className="mx-auto max-w-7xl space-y-4">
+        <AppShell playerName={state.playerName} />
+        {content}
+      </div>
+      <Dialog open={showNameDialog} onOpenChange={setShowNameDialog}>
+        <DialogContent>
+          <DialogTitle>Welcome to PhishQuest</DialogTitle>
+          <p className="mt-2 text-sm text-slate-600">Enter your name to open your inbox.</p>
+          <input value={nameInput} onChange={(e) => setNameInput(e.target.value)} placeholder="Your name" className="mt-3 w-full rounded border p-2" />
+          <Button className="mt-4 w-full" onClick={start}>Start Training</Button>
+        </DialogContent>
+      </Dialog>
+      <FeedbackModal open={feedback.open} onOpenChange={(open) => setFeedback((s) => ({ ...s, open }))} correct={feedback.correct} explanation={feedback.explanation} evidence={feedback.evidence} />
+    </main>
   );
 }
