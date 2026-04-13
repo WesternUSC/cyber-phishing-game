@@ -10,10 +10,10 @@ export function AppShell({ playerName, score, total }: Props) {
   return (
     <header className="flex h-16 items-center gap-4 border-b border-gray-200 bg-white px-4 shadow-sm">
       {/* Logo */}
-      <div className="flex items-center gap-2 text-[#EA4335]">
+      <div className="flex items-center gap-2 text-[#4f2584]">
         <ShieldCheck className="h-7 w-7" />
         <span className="text-xl font-normal text-gray-700">
-          Phish<span className="font-semibold text-[#EA4335]">Quest</span>
+          Phish<span className="font-semibold text-[#4f2584]">Quest</span>
         </span>
       </div>
 
@@ -30,7 +30,7 @@ export function AppShell({ playerName, score, total }: Props) {
             {score}/{total} correct
           </div>
         )}
-        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#EA4335] text-sm font-semibold text-white">
+        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#4f2584] text-sm font-semibold text-white">
           {playerName.charAt(0).toUpperCase() || '?'}
         </div>
       </div>

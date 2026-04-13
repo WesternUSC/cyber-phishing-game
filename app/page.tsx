@@ -103,7 +103,7 @@ export default function HomePage() {
       <div className="flex min-h-screen items-center justify-center bg-[#f6f8fc] p-4">
         <div className="w-full max-w-sm rounded-2xl bg-white p-8 shadow-lg">
           <div className="mb-6 flex flex-col items-center gap-3 text-center">
-            <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#EA4335]">
+            <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#4f2584]">
               <ShieldCheck className="h-8 w-8 text-white" />
             </div>
             <h1 className="text-2xl font-semibold text-gray-900">PhishQuest</h1>
@@ -124,7 +124,7 @@ export default function HomePage() {
           />
           <button
             onClick={start}
-            className="mt-4 w-full rounded-lg bg-[#EA4335] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#c5221f]"
+            className="mt-4 w-full rounded-lg bg-[#4f2584] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#c5221f]"
           >
             Open my inbox
           </button>

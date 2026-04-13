@@ -32,7 +32,7 @@ export function InboxList({ emails, selectedId, reviewed, decisions, onSelect }:
             )}
           >
             {/* Level badge */}
-            <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#1a73e8] text-xs font-bold text-white">
+            <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#4f2584] text-xs font-bold text-white">
               {index + 1}
             </span>
 

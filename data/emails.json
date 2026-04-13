@@ -207,6 +207,34 @@
         "No unusual requests — just scheduling a meeting"
       ],
       "rawHeaders": "Return-Path: <sarah.chen@acme.com>\nReceived: from mail.acme.com\nSPF: PASS\nDKIM: PASS\nX-Spam-Score: 0.0"
+    },
+    {
+      "id": "email-8",
+      "senderName": "LinkedIn Notifications",
+      "senderEmail": "notifications@linkedin.com",
+      "subject": "Joel Daniel wants to connect",
+      "preview": "Joel Daniel would like to add you on LinkedIn.",
+      "date": "Mon, Jan 13",
+      "time": "4:22 PM",
+      "bodyHtml": "<p>Joel Daniel would like to add you on LinkedIn.</p><p>View his profile and connect:</p><p class='email-cta'><a href='#link-0'>Connect with Joel</a></p><p>If you don't want to receive these notifications, you can adjust your settings at any time.</p><p class='email-sig'>LinkedIn<br>1999 Market St, San Francisco, CA 94102<br>www.linkedin.com</p>",
+      "links": [
+        {
+          "label": "Connect with Joel",
+          "displayUrl": "www.linkedin.com/in/joeldnl",
+          "actualUrl": "https://www.linkedin.com/in/joeldnl/",
+          "isSuspicious": false
+        }
+      ],
+      "attachments": [],
+      "badges": [],
+      "truth": "safe",
+      "explanation": "This is a legitimate LinkedIn notification. The sender is from the official LinkedIn domain, and the link leads to a valid LinkedIn profile page.",
+      "evidence": [
+        "Sender 'notifications@linkedin.com' is an official LinkedIn address",
+        "The link displays the official LinkedIn domain and leads to a valid profile page",
+        "The email content is typical of a legitimate social media notification"
+      ],
+      "rawHeaders": "Return-Path: <notifications@linkedin.com>\nReceived: from mail.linkedin.com\nSPF: PASS\nDKIM: PASS\nX-Spam-Score: 0.0"
     }
   ]
 }
