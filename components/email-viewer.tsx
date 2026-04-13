@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { Paperclip, ExternalLink, AlertTriangle, ChevronDown, ChevronUp, Fish, ShieldCheck } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Email } from '@/lib/types';
@@ -18,7 +19,7 @@ export function EmailViewer({ email, isReviewed, onSubmit }: Props) {
   if (!email) {
     return (
       <div className="flex h-full flex-col items-center justify-center gap-3 p-12 text-gray-400">
-        <ShieldCheck className="h-12 w-12 opacity-30" />
+        <Image src="/usc-logo.png" alt="USC Logo" width={64} height={64} className="opacity-30" />
         <p className="text-sm">Select an email from your inbox to inspect it</p>
       </div>
     );
@@ -52,7 +53,7 @@ export function EmailViewer({ email, isReviewed, onSubmit }: Props) {
         {/* Email body */}
         <div
           className="email-body prose prose-sm max-w-none text-gray-800"
-          dangerouslySetInnerHTML={{ __html: email.bodyHtml }}
+          dangerouslySetInnerHTML={{ __html: email.bodyHtml.join('\n') }}
         />
 
         {/* Links section */}

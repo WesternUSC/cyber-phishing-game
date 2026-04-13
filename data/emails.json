@@ -8,7 +8,15 @@
       "preview": "Your account password is about to expire. Verify now to avoid being locked out.",
       "date": "Mon, Jan 13",
       "time": "8:14 AM",
-      "bodyHtml": "<p>Dear Team Member,</p><p>Our security system has detected that your corporate account password is set to <strong>expire in 30 minutes</strong>.</p><p>To maintain uninterrupted access to your email, files, and company applications, you must verify your identity immediately using the link below.</p><p class='email-cta'><a href='#link-0'>Reset Password Now &rarr;</a></p><p><strong>&#9888;&#65039; Failure to complete this within 30 minutes will result in your account being permanently locked. You will need to appear in person with photo ID to regain access.</strong></p><p>If you believe you received this in error, contact IT Support at ext.&nbsp;5555.</p><p class='email-sig'>IT Security Team<br>Corporate Help Desk &mdash; Ticket #IT-20489</p>",
+      "bodyHtml": [
+        "<p>Dear Team Member,</p>",
+        "<p>Our security system has detected that your corporate account password is set to <strong>expire in 30 minutes</strong>.</p>",
+        "<p>To maintain uninterrupted access to your email, files, and company applications, you must verify your identity immediately using the link below.</p>",
+        "<p class='email-cta'><a href='#link-0'>Reset Password Now &rarr;</a></p>",
+        "<p><strong>&#9888;&#65039; Failure to complete this within 30 minutes will result in your account being permanently locked. You will need to appear in person with photo ID to regain access.</strong></p>",
+        "<p>If you believe you received this in error, contact IT Support at ext.&nbsp;5555.</p>",
+        "<p class='email-sig'>IT Security Team<br>Corporate Help Desk &mdash; Ticket #IT-20489</p>"
+      ],
       "links": [
         {
           "label": "Reset Password Now",
@@ -37,7 +45,15 @@
       "preview": "Annual open enrollment for health, dental, and vision closes Friday at 5 PM.",
       "date": "Mon, Jan 13",
       "time": "9:10 AM",
-      "bodyHtml": "<p>Hi everyone,</p><p>Just a reminder that <strong>2025 Open Enrollment closes this Friday, January 17th at 5:00 PM EST</strong>.</p><p>If you haven't yet reviewed your benefits options for the upcoming year, please log in to the HR portal and make your selections before the deadline.</p><p>This year's changes include:</p><ul><li>Updated dental coverage tiers</li><li>New vision plan provider (VSP)</li><li>HSA contribution limit increase to $4,300</li></ul><p>Questions? Reach out to <a href='#link-0'>hr@acme.com</a> or visit the <a href='#link-1'>HR Benefits Portal</a>.</p><p class='email-sig'>The HR Team<br>Acme Corporation<br>hr@acme.com &bull; ext. 2100</p>",
+      "bodyHtml": [
+        "<p>Hi everyone,</p>",
+        "<p>Just a reminder that <strong>2025 Open Enrollment closes this Friday, January 17th at 5:00 PM EST</strong>.</p>",
+        "<p>If you haven't yet reviewed your benefits options for the upcoming year, please log in to the HR portal and make your selections before the deadline.</p>",
+        "<p>This year's changes include:</p>",
+        "<ul><li>Updated dental coverage tiers</li><li>New vision plan provider (VSP)</li><li>HSA contribution limit increase to $4,300</li></ul>",
+        "<p>Questions? Reach out to <a href='#link-0'>hr@acme.com</a> or visit the <a href='#link-1'>HR Benefits Portal</a>.</p>",
+        "<p class='email-sig'>The HR Team<br>Acme Corporation<br>hr@acme.com &bull; ext. 2100</p>"
+      ],
       "links": [
         {
           "label": "hr@acme.com",
@@ -78,7 +94,15 @@
       "preview": "We've noticed unusual activity. Please verify your account to restore full access.",
       "date": "Mon, Jan 13",
       "time": "10:02 AM",
-      "bodyHtml": "<p>Dear PayPal Customer,</p><p>We have noticed <strong>unusual activity</strong> on your PayPal account and have temporarily limited your access as a precautionary measure.</p><p>To restore full access to your account, please confirm your identity by clicking the button below within <strong>24 hours</strong>.</p><p class='email-cta'><a href='#link-0'>Confirm My Identity</a></p><p>If you do not complete verification, your account may be permanently suspended and any pending transactions cancelled.</p><p>For security reasons, we recommend completing this step from your usual device and location.</p><p class='email-sig'>PayPal Security Team<br>PayPal, Inc. &bull; 2211 North First Street &bull; San Jose, CA 95131<br>&copy; 1999&ndash;2025 PayPal, Inc.</p>",
+      "bodyHtml": [
+        "<p>Dear PayPal Customer,</p>",
+        "<p>We have noticed <strong>unusual activity</strong> on your PayPal account and have temporarily limited your access as a precautionary measure.</p>",
+        "<p>To restore full access to your account, please confirm your identity by clicking the button below within <strong>24 hours</strong>.</p>",
+        "<p class='email-cta'><a href='#link-0'>Confirm My Identity</a></p>",
+        "<p>If you do not complete verification, your account may be permanently suspended and any pending transactions cancelled.</p>",
+        "<p>For security reasons, we recommend completing this step from your usual device and location.</p>",
+        "<p class='email-sig'>PayPal Security Team<br>PayPal, Inc. &bull; 2211 North First Street &bull; San Jose, CA 95131<br>&copy; 1999&ndash;2025 PayPal, Inc.</p>"
+      ],
       "links": [
         {
           "label": "Confirm My Identity",
@@ -107,7 +131,15 @@
       "preview": "Need you to process a transfer to a new vendor before EOD. Keep this confidential.",
       "date": "Mon, Jan 13",
       "time": "11:47 AM",
-      "bodyHtml": "<p>Hi,</p><p>I'm currently in back-to-back meetings and can't call. I need you to process an <strong>urgent wire transfer of $47,500</strong> to a new vendor we're onboarding for the Q1 partnership deal.</p><p>This is time-sensitive and needs to clear by end of day. Please handle this immediately and <strong>keep it confidential for now</strong> &mdash; I'll explain the full context at tomorrow's all-hands.</p><p>Bank details:</p><ul><li>Bank: First Meridian Trust</li><li>Account: 8821045593</li><li>Routing: 021000021</li><li>Reference: ACME-Q1-VENDOR</li></ul><p>Once done, please reply to confirm and <strong>do not discuss this with anyone else in the office</strong>. Appreciate your quick action on this.</p><p class='email-sig'>Marcus Webb<br>Chief Executive Officer, Acme Corporation<br>(Sent from mobile)</p>",
+      "bodyHtml": [
+        "<p>Hi,</p>",
+        "<p>I'm currently in back-to-back meetings and can't call. I need you to process an <strong>urgent wire transfer of $47,500</strong> to a new vendor we're onboarding for the Q1 partnership deal.</p>",
+        "<p>This is time-sensitive and needs to clear by end of day. Please handle this immediately and <strong>keep it confidential for now</strong> &mdash; I'll explain the full context at tomorrow's all-hands.</p>",
+        "<p>Bank details:</p>",
+        "<ul><li>Bank: First Meridian Trust</li><li>Account: 8821045593</li><li>Routing: 021000021</li><li>Reference: ACME-Q1-VENDOR</li></ul>",
+        "<p>Once done, please reply to confirm and <strong>do not discuss this with anyone else in the office</strong>. Appreciate your quick action on this.</p>",
+        "<p class='email-sig'>Marcus Webb<br>Chief Executive Officer, Acme Corporation<br>(Sent from mobile)</p>"
+      ],
       "links": [],
       "attachments": [],
       "badges": ["External", "Urgent"],
@@ -130,7 +162,16 @@
       "preview": "1Z999AA10123456784 is on its way and expected by 8 PM.",
       "date": "Mon, Jan 13",
       "time": "7:31 AM",
-      "bodyHtml": "<p>Hi there,</p><p>Good news &mdash; your package is <strong>out for delivery</strong> and should arrive today by <strong>8:00 PM</strong>.</p><p><strong>Tracking Number:</strong> 1Z999AA10123456784</p><p><strong>Estimated Delivery:</strong> Monday, January 13, 2025 by 8:00 PM</p><p><strong>Delivery Address:</strong> 742 Evergreen Terrace</p><p>To track your shipment in real time, visit <a href='#link-0'>ups.com/tracking</a>.</p><p>If you have delivery instructions or need to reschedule, you can manage your delivery preferences using <a href='#link-1'>UPS My Choice</a>.</p><p class='email-sig'>UPS Delivery Notifications<br>This is an automated message. Please do not reply directly to this email.</p>",
+      "bodyHtml": [
+        "<p>Hi there,</p>",
+        "<p>Good news &mdash; your package is <strong>out for delivery</strong> and should arrive today by <strong>8:00 PM</strong>.</p>",
+        "<p><strong>Tracking Number:</strong> 1Z999AA10123456784</p>",
+        "<p><strong>Estimated Delivery:</strong> Monday, January 13, 2025 by 8:00 PM</p>",
+        "<p><strong>Delivery Address:</strong> 742 Evergreen Terrace</p>",
+        "<p>To track your shipment in real time, visit <a href='#link-0'>ups.com/tracking</a>.</p>",
+        "<p>If you have delivery instructions or need to reschedule, you can manage your delivery preferences using <a href='#link-1'>UPS My Choice</a>.</p>",
+        "<p class='email-sig'>UPS Delivery Notifications<br>This is an automated message. Please do not reply directly to this email.</p>"
+      ],
       "links": [
         {
           "label": "ups.com/tracking",
@@ -165,7 +206,15 @@
       "preview": "We've temporarily restricted your account due to unrecognized login attempts.",
       "date": "Mon, Jan 13",
       "time": "2:09 PM",
-      "bodyHtml": "<p>Dear Chase Customer,</p><p>We have detected <strong>3 failed login attempts</strong> from an unrecognized device in <em>Kiev, Ukraine</em> on your account ending in 4821.</p><p>For your protection, we have placed a <strong>temporary hold</strong> on your account. To restore access and prevent unauthorized transactions, you must verify your identity immediately.</p><p class='email-cta'><a href='#link-0'>Verify My Account Now</a></p><p>If you do not complete verification within <strong>12 hours</strong>, your account will be locked and any scheduled payments may be missed.</p><p>Do not share this link with anyone. Our team will never call you and ask for your full account number or password.</p><p class='email-sig'>Chase Security Center<br>JPMorgan Chase Bank, N.A. &bull; Member FDIC<br>Protecting your account 24/7</p>",
+      "bodyHtml": [
+        "<p>Dear Chase Customer,</p>",
+        "<p>We have detected <strong>3 failed login attempts</strong> from an unrecognized device in <em>Kiev, Ukraine</em> on your account ending in 4821.</p>",
+        "<p>For your protection, we have placed a <strong>temporary hold</strong> on your account. To restore access and prevent unauthorized transactions, you must verify your identity immediately.</p>",
+        "<p class='email-cta'><a href='#link-0'>Verify My Account Now</a></p>",
+        "<p>If you do not complete verification within <strong>12 hours</strong>, your account will be locked and any scheduled payments may be missed.</p>",
+        "<p>Do not share this link with anyone. Our team will never call you and ask for your full account number or password.</p>",
+        "<p class='email-sig'>Chase Security Center<br>JPMorgan Chase Bank, N.A. &bull; Member FDIC<br>Protecting your account 24/7</p>"
+      ],
       "links": [
         {
           "label": "Verify My Account Now",
@@ -194,7 +243,15 @@
       "preview": "Want to grab lunch and run through the Q1 roadmap before the all-hands.",
       "date": "Mon, Jan 13",
       "time": "4:22 PM",
-      "bodyHtml": "<p>Hey,</p><p>Hope your Monday is going well! Would you be up for a quick lunch tomorrow around 2pm to run through the Q1 roadmap before Thursday's all-hands?</p><p>I've been putting together some slides on the new feature prioritization and wanted a second set of eyes before it goes to the full team.</p><p>If 2pm doesn't work, I'm also free:</p><ul><li>Tuesday 11 AM</li><li>Wednesday any time after 1 PM</li></ul><p>Either way, let me know &mdash; and I'm thinking sandwiches from that new place on Market St if you're in 😄</p><p class='email-sig'>Sarah Chen<br>Senior Product Manager, Acme Corp<br>sarah.chen@acme.com &bull; Slack: @sarah.chen</p>",
+      "bodyHtml": [
+        "<p>Hey,</p>",
+        "<p>Hope your Monday is going well! Would you be up for a quick lunch tomorrow around 2pm to run through the Q1 roadmap before Thursday's all-hands?</p>",
+        "<p>I've been putting together some slides on the new feature prioritization and wanted a second set of eyes before it goes to the full team.</p>",
+        "<p>If 2pm doesn't work, I'm also free:</p>",
+        "<ul><li>Tuesday 11 AM</li><li>Wednesday any time after 1 PM</li></ul>",
+        "<p>Either way, let me know &mdash; and I'm thinking sandwiches from that new place on Market St if you're in 😄</p>",
+        "<p class='email-sig'>Sarah Chen<br>Senior Product Manager, Acme Corp<br>sarah.chen@acme.com &bull; Slack: @sarah.chen</p>"
+      ],
       "links": [],
       "attachments": [],
       "badges": [],
@@ -216,7 +273,13 @@
       "preview": "Joel Daniel would like to add you on LinkedIn.",
       "date": "Mon, Jan 13",
       "time": "4:22 PM",
-      "bodyHtml": "<p>Joel Daniel would like to add you on LinkedIn.</p><p>View his profile and connect:</p><p class='email-cta'><a href='#link-0'>Connect with Joel</a></p><p>If you don't want to receive these notifications, you can adjust your settings at any time.</p><p class='email-sig'>LinkedIn<br>1999 Market St, San Francisco, CA 94102<br>www.linkedin.com</p>",
+      "bodyHtml": [
+        "<p>Joel Daniel would like to add you on LinkedIn.</p>",
+        "<p>View his profile and connect:</p>",
+        "<p class='email-cta'><a href='#link-0'>Connect with Joel</a></p>",
+        "<p>If you don't want to receive these notifications, you can adjust your settings at any time.</p>",
+        "<p class='email-sig'>LinkedIn<br>1999 Market St, San Francisco, CA 94102<br>www.linkedin.com</p>"
+      ],
       "links": [
         {
           "label": "Connect with Joel",

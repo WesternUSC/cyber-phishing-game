@@ -1,4 +1,5 @@
-import { ShieldCheck, Search } from 'lucide-react';
+import Image from 'next/image';
+import { Search } from 'lucide-react';
 
 interface Props {
   playerName: string;
@@ -10,8 +11,8 @@ export function AppShell({ playerName, score, total }: Props) {
   return (
     <header className="flex h-16 items-center gap-4 border-b border-gray-200 bg-white px-4 shadow-sm">
       {/* Logo */}
-      <div className="flex items-center gap-2 text-[#4f2584]">
-        <ShieldCheck className="h-7 w-7" />
+      <div className="flex items-center gap-2">
+        <Image src="/usc-logo.png" alt="USC Logo" width={36} height={36} />
         <span className="text-xl font-normal text-gray-700">
           Phish<span className="font-semibold text-[#4f2584]">Quest</span>
         </span>

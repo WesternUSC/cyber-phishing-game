@@ -19,7 +19,7 @@ export interface Email {
   preview: string;
   date: string;
   time: string;
-  bodyHtml: string;
+  bodyHtml: string[];
   links: EmailLink[];
   attachments: EmailAttachment[];
   badges: string[];
