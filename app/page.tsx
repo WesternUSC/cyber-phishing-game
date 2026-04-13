@@ -124,7 +124,7 @@ export default function HomePage() {
           />
           <button
             onClick={start}
-            className="mt-4 w-full rounded-lg bg-[#4f2584] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#c5221f]"
+            className="mt-4 w-full rounded-lg bg-[#4f2584] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#3d1d68]"
           >
             Open my inbox
           </button>
