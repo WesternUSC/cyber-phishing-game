@@ -57,7 +57,7 @@ export default function HomePage() {
     const runId = crypto.randomUUID();
     dispatch({
       type: 'START',
-      name: nameInput.trim() || 'Analyst',
+      name: nameInput.trim() || 'User',
       firstEmailId: emails[0].id,
       runId,
     });
