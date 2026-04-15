@@ -1,0 +1,303 @@
+{
+  "emails": [
+    {
+      "id": "email-1",
+      "senderName": "IT Security Team",
+      "senderEmail": "helpdesk@corp-itsupport.net",
+      "subject": "URGENT: Your password expires in 30 minutes",
+      "preview": "Your account password is about to expire. Verify now to avoid being locked out.",
+      "date": "Mon, Jan 13",
+      "time": "8:14 AM",
+      "bodyHtml": [
+        "<p>Dear Team Member,</p>",
+        "<p>Our security system has detected that your corporate account password is set to <strong>expire in 30 minutes</strong>.</p>",
+        "<p>To maintain uninterrupted access to your email, files, and company applications, you must verify your identity immediately using the link below.</p>",
+        "<p class='email-cta'><a href='#link-0'>Reset Password Now &rarr;</a></p>",
+        "<p><strong>&#9888;&#65039; Failure to complete this within 30 minutes will result in your account being permanently locked. You will need to appear in person with photo ID to regain access.</strong></p>",
+        "<p>If you believe you received this in error, contact IT Support at ext.&nbsp;5555.</p>",
+        "<p class='email-sig'>IT Security Team<br>Corporate Help Desk &mdash; Ticket #IT-20489</p>"
+      ],
+      "links": [
+        {
+          "label": "Reset Password Now",
+          "displayUrl": "https://login.company.com/reset",
+          "actualUrl": "https://corp-verify.ru/reset?id=9f3a",
+          "isSuspicious": true
+        }
+      ],
+      "attachments": [],
+      "badges": ["Urgent", "External"],
+      "truth": "phish",
+      "explanation": "This is a phishing email. The sender is not from your company's real IT domain, and the reset link secretly points to a Russian (.ru) domain — not your company's login page.",
+      "evidence": [
+        "Sender domain is 'corp-itsupport.net', not your company's domain",
+        "The link displays 'login.company.com' but actually goes to 'corp-verify.ru'",
+        "Extreme urgency and threats ('permanently locked', 'appear in person') are classic pressure tactics",
+        "Legitimate IT teams never send unsolicited password resets via email"
+      ],
+      "rawHeaders": "Return-Path: <helpdesk@corp-itsupport.net>\nReceived: from 182.77.1.4 (unknown)\nSPF: FAIL\nDKIM: none\nX-Spam-Score: 7.8"
+    },
+    {
+      "id": "email-2",
+      "senderName": "HR Team",
+      "senderEmail": "hr@acme.com",
+      "subject": "2025 Benefits Enrollment – Deadline This Friday",
+      "preview": "Annual open enrollment for health, dental, and vision closes Friday at 5 PM.",
+      "date": "Mon, Jan 13",
+      "time": "9:10 AM",
+      "bodyHtml": [
+        "<p>Hi everyone,</p>",
+        "<p>Just a reminder that <strong>2025 Open Enrollment closes this Friday, January 17th at 5:00 PM EST</strong>.</p>",
+        "<p>If you haven't yet reviewed your benefits options for the upcoming year, please log in to the HR portal and make your selections before the deadline.</p>",
+        "<p>This year's changes include:</p>",
+        "<ul><li>Updated dental coverage tiers</li><li>New vision plan provider (VSP)</li><li>HSA contribution limit increase to $4,300</li></ul>",
+        "<p>Questions? Reach out to <a href='#link-0'>hr@acme.com</a> or visit the <a href='#link-1'>HR Benefits Portal</a>.</p>",
+        "<p class='email-sig'>The HR Team<br>Acme Corporation<br>hr@acme.com &bull; ext. 2100</p>"
+      ],
+      "links": [
+        {
+          "label": "hr@acme.com",
+          "displayUrl": "mailto:hr@acme.com",
+          "actualUrl": "mailto:hr@acme.com",
+          "isSuspicious": false
+        },
+        {
+          "label": "HR Benefits Portal",
+          "displayUrl": "https://hr.acme.com/benefits",
+          "actualUrl": "https://hr.acme.com/benefits",
+          "isSuspicious": false
+        }
+      ],
+      "attachments": [
+        {
+          "filename": "2025_Benefits_Guide.pdf",
+          "type": "pdf",
+          "isSuspicious": false
+        }
+      ],
+      "badges": ["Attachment"],
+      "truth": "safe",
+      "explanation": "This is a legitimate HR email. The sender matches your company domain, all links go to expected destinations, and the request is routine and expected during benefits season.",
+      "evidence": [
+        "Sender email 'hr@acme.com' matches the company's real domain",
+        "All links point to 'hr.acme.com' — the real HR portal",
+        "No urgent threats or requests for sensitive personal information",
+        "PDF attachment is a standard benefits guide, consistent with enrollment season"
+      ],
+      "rawHeaders": "Return-Path: <hr@acme.com>\nReceived: from mail.acme.com\nSPF: PASS\nDKIM: PASS\nX-Spam-Score: 0.1"
+    },
+    {
+      "id": "email-3",
+      "senderName": "PayPal Security",
+      "senderEmail": "support@paypal-security-alerts.com",
+      "subject": "Your PayPal account has been temporarily limited",
+      "preview": "We've noticed unusual activity. Please verify your account to restore full access.",
+      "date": "Mon, Jan 13",
+      "time": "10:02 AM",
+      "bodyHtml": [
+        "<p>Dear PayPal Customer,</p>",
+        "<p>We have noticed <strong>unusual activity</strong> on your PayPal account and have temporarily limited your access as a precautionary measure.</p>",
+        "<p>To restore full access to your account, please confirm your identity by clicking the button below within <strong>24 hours</strong>.</p>",
+        "<p class='email-cta'><a href='#link-0'>Confirm My Identity</a></p>",
+        "<p>If you do not complete verification, your account may be permanently suspended and any pending transactions cancelled.</p>",
+        "<p>For security reasons, we recommend completing this step from your usual device and location.</p>",
+        "<p class='email-sig'>PayPal Security Team<br>PayPal, Inc. &bull; 2211 North First Street &bull; San Jose, CA 95131<br>&copy; 1999&ndash;2025 PayPal, Inc.</p>"
+      ],
+      "links": [
+        {
+          "label": "Confirm My Identity",
+          "displayUrl": "https://www.paypal.com/verify/identity",
+          "actualUrl": "https://paypal-confirm.secure-login-verify.com/identity?token=abc",
+          "isSuspicious": true
+        }
+      ],
+      "attachments": [],
+      "badges": ["External"],
+      "truth": "phish",
+      "explanation": "This is a phishing email impersonating PayPal. The sender domain has nothing to do with PayPal, and the 'Confirm Identity' link goes to a third-party site designed to steal your login credentials.",
+      "evidence": [
+        "Sender domain is 'paypal-security-alerts.com' — PayPal's real domain is 'paypal.com'",
+        "The link looks like paypal.com but actually goes to 'secure-login-verify.com'",
+        "Threatening language about permanent suspension is a classic phishing pressure tactic",
+        "Real PayPal communications come from '@paypal.com' addresses only"
+      ],
+      "rawHeaders": "Return-Path: <support@paypal-security-alerts.com>\nReceived: from 91.234.56.78\nSPF: FAIL\nDKIM: FAIL\nX-Spam-Score: 8.2"
+    },
+    {
+      "id": "email-4",
+      "senderName": "Marcus Webb (CEO)",
+      "senderEmail": "m.webb@acme-executives.net",
+      "subject": "Confidential – Urgent wire transfer needed today",
+      "preview": "Need you to process a transfer to a new vendor before EOD. Keep this confidential.",
+      "date": "Mon, Jan 13",
+      "time": "11:47 AM",
+      "bodyHtml": [
+        "<p>Hi,</p>",
+        "<p>I'm currently in back-to-back meetings and can't call. I need you to process an <strong>urgent wire transfer of $47,500</strong> to a new vendor we're onboarding for the Q1 partnership deal.</p>",
+        "<p>This is time-sensitive and needs to clear by end of day. Please handle this immediately and <strong>keep it confidential for now</strong> &mdash; I'll explain the full context at tomorrow's all-hands.</p>",
+        "<p>Bank details:</p>",
+        "<ul><li>Bank: First Meridian Trust</li><li>Account: 8821045593</li><li>Routing: 021000021</li><li>Reference: ACME-Q1-VENDOR</li></ul>",
+        "<p>Once done, please reply to confirm and <strong>do not discuss this with anyone else in the office</strong>. Appreciate your quick action on this.</p>",
+        "<p class='email-sig'>Marcus Webb<br>Chief Executive Officer, Acme Corporation<br>(Sent from mobile)</p>"
+      ],
+      "links": [],
+      "attachments": [],
+      "badges": ["External", "Urgent"],
+      "truth": "phish",
+      "explanation": "This is a Business Email Compromise (BEC) attack — one of the most costly types of fraud. The attacker impersonates your CEO using a lookalike domain to trick you into wiring money.",
+      "evidence": [
+        "Sender domain is 'acme-executives.net' — not 'acme.com'",
+        "Real executives don't email employees directly to request unauthorized wire transfers",
+        "The secrecy demand ('keep this confidential', 'don't discuss with anyone') is a major red flag",
+        "Urgency + a request to bypass normal approval processes is a hallmark of BEC fraud",
+        "Always verify large financial requests via a phone call to the known number"
+      ],
+      "rawHeaders": "Return-Path: <m.webb@acme-executives.net>\nReceived: from 45.33.20.155 (unknown)\nSPF: FAIL\nDKIM: none\nX-Spam-Score: 6.1"
+    },
+    {
+      "id": "email-5",
+      "senderName": "UPS Delivery Notifications",
+      "senderEmail": "pkginfo@ups.com",
+      "subject": "Your package is out for delivery today",
+      "preview": "1Z999AA10123456784 is on its way and expected by 8 PM.",
+      "date": "Mon, Jan 13",
+      "time": "7:31 AM",
+      "bodyHtml": [
+        "<p>Hi there,</p>",
+        "<p>Good news &mdash; your package is <strong>out for delivery</strong> and should arrive today by <strong>8:00 PM</strong>.</p>",
+        "<p><strong>Tracking Number:</strong> 1Z999AA10123456784</p>",
+        "<p><strong>Estimated Delivery:</strong> Monday, January 13, 2025 by 8:00 PM</p>",
+        "<p><strong>Delivery Address:</strong> 742 Evergreen Terrace</p>",
+        "<p>To track your shipment in real time, visit <a href='#link-0'>ups.com/tracking</a>.</p>",
+        "<p>If you have delivery instructions or need to reschedule, you can manage your delivery preferences using <a href='#link-1'>UPS My Choice</a>.</p>",
+        "<p class='email-sig'>UPS Delivery Notifications<br>This is an automated message. Please do not reply directly to this email.</p>"
+      ],
+      "links": [
+        {
+          "label": "ups.com/tracking",
+          "displayUrl": "https://www.ups.com/tracking",
+          "actualUrl": "https://www.ups.com/tracking",
+          "isSuspicious": false
+        },
+        {
+          "label": "UPS My Choice",
+          "displayUrl": "https://www.ups.com/mychoice",
+          "actualUrl": "https://www.ups.com/mychoice",
+          "isSuspicious": false
+        }
+      ],
+      "attachments": [],
+      "badges": [],
+      "truth": "safe",
+      "explanation": "This is a legitimate UPS delivery notification. The sender is from ups.com, the tracking link goes to the real UPS website, and the email doesn't ask you for any sensitive information or credentials.",
+      "evidence": [
+        "Sender address is 'pkginfo@ups.com' — a verified UPS notification domain",
+        "All links go directly to 'ups.com' with no redirects",
+        "No requests for personal information, passwords, or payments",
+        "Content is consistent with an expected delivery notification"
+      ],
+      "rawHeaders": "Return-Path: <pkginfo@ups.com>\nReceived: from ups-mail.ups.com\nSPF: PASS\nDKIM: PASS\nX-Spam-Score: 0.0"
+    },
+    {
+      "id": "email-6",
+      "senderName": "Chase Security Center",
+      "senderEmail": "alert@chase-bank-security.com",
+      "subject": "⚠️ Suspicious activity detected – Verify your account now",
+      "preview": "We've temporarily restricted your account due to unrecognized login attempts.",
+      "date": "Mon, Jan 13",
+      "time": "2:09 PM",
+      "bodyHtml": [
+        "<p>Dear Chase Customer,</p>",
+        "<p>We have detected <strong>3 failed login attempts</strong> from an unrecognized device in <em>Kiev, Ukraine</em> on your account ending in 4821.</p>",
+        "<p>For your protection, we have placed a <strong>temporary hold</strong> on your account. To restore access and prevent unauthorized transactions, you must verify your identity immediately.</p>",
+        "<p class='email-cta'><a href='#link-0'>Verify My Account Now</a></p>",
+        "<p>If you do not complete verification within <strong>12 hours</strong>, your account will be locked and any scheduled payments may be missed.</p>",
+        "<p>Do not share this link with anyone. Our team will never call you and ask for your full account number or password.</p>",
+        "<p class='email-sig'>Chase Security Center<br>JPMorgan Chase Bank, N.A. &bull; Member FDIC<br>Protecting your account 24/7</p>"
+      ],
+      "links": [
+        {
+          "label": "Verify My Account Now",
+          "displayUrl": "https://secure.chase.com/verify",
+          "actualUrl": "https://chase-account-verify.com/login?ref=security",
+          "isSuspicious": true
+        }
+      ],
+      "attachments": [],
+      "badges": ["External", "Urgent"],
+      "truth": "phish",
+      "explanation": "This is a phishing email impersonating Chase Bank. The sender's domain is not chase.com, and the verification link goes to a fake site designed to capture your banking credentials.",
+      "evidence": [
+        "Sender domain is 'chase-bank-security.com' — Chase's real domain is 'chase.com'",
+        "The link displays 'secure.chase.com' but actually goes to 'chase-account-verify.com'",
+        "Adding geographic details ('Kiev, Ukraine') is a scare tactic to trigger panic",
+        "If you ever have concerns, always go directly to chase.com by typing it yourself — never click email links"
+      ],
+      "rawHeaders": "Return-Path: <alert@chase-bank-security.com>\nReceived: from 203.0.113.42 (unknown)\nSPF: FAIL\nDKIM: FAIL\nX-Spam-Score: 9.1"
+    },
+    {
+      "id": "email-7",
+      "senderName": "Sarah Chen",
+      "senderEmail": "sarah.chen@acme.com",
+      "subject": "Quick sync tomorrow at 2pm? 🍕",
+      "preview": "Want to grab lunch and run through the Q1 roadmap before the all-hands.",
+      "date": "Mon, Jan 13",
+      "time": "4:22 PM",
+      "bodyHtml": [
+        "<p>Hey,</p>",
+        "<p>Hope your Monday is going well! Would you be up for a quick lunch tomorrow around 2pm to run through the Q1 roadmap before Thursday's all-hands?</p>",
+        "<p>I've been putting together some slides on the new feature prioritization and wanted a second set of eyes before it goes to the full team.</p>",
+        "<p>If 2pm doesn't work, I'm also free:</p>",
+        "<ul><li>Tuesday 11 AM</li><li>Wednesday any time after 1 PM</li></ul>",
+        "<p>Either way, let me know &mdash; and I'm thinking sandwiches from that new place on Market St if you're in 😄</p>",
+        "<p class='email-sig'>Sarah Chen<br>Senior Product Manager, Acme Corp<br>sarah.chen@acme.com &bull; Slack: @sarah.chen</p>"
+      ],
+      "links": [],
+      "attachments": [],
+      "badges": [],
+      "truth": "safe",
+      "explanation": "This is a completely normal internal email from a colleague. The sender is from your company domain, there are no suspicious links or attachments, and there are no requests for sensitive information or urgent actions.",
+      "evidence": [
+        "Sender 'sarah.chen@acme.com' is an internal company address",
+        "No links or attachments to inspect — no opportunity to deliver malware",
+        "Casual, conversational tone consistent with a real colleague",
+        "No unusual requests — just scheduling a meeting"
+      ],
+      "rawHeaders": "Return-Path: <sarah.chen@acme.com>\nReceived: from mail.acme.com\nSPF: PASS\nDKIM: PASS\nX-Spam-Score: 0.0"
+    },
+    {
+      "id": "email-8",
+      "senderName": "LinkedIn Notifications",
+      "senderEmail": "notifications@linkedin.com",
+      "subject": "Joel Daniel wants to connect",
+      "preview": "Joel Daniel would like to add you on LinkedIn.",
+      "date": "Mon, Jan 13",
+      "time": "4:22 PM",
+      "bodyHtml": [
+        "<p>Joel Daniel would like to add you on LinkedIn.</p>",
+        "<p>View his profile and connect:</p>",
+        "<p class='email-cta'><a href='#link-0'>Connect with Joel</a></p>",
+        "<p>If you don't want to receive these notifications, you can adjust your settings at any time.</p>",
+        "<p class='email-sig'>LinkedIn<br>1999 Market St, San Francisco, CA 94102<br>www.linkedin.com</p>"
+      ],
+      "links": [
+        {
+          "label": "Connect with Joel",
+          "displayUrl": "www.linkedin.com/in/joeldnl",
+          "actualUrl": "https://www.linkedin.com/in/joeldnl/",
+          "isSuspicious": false
+        }
+      ],
+      "attachments": [],
+      "badges": [],
+      "truth": "safe",
+      "explanation": "This is a legitimate LinkedIn notification. The sender is from the official LinkedIn domain, and the link leads to a valid LinkedIn profile page.",
+      "evidence": [
+        "Sender 'notifications@linkedin.com' is an official LinkedIn address",
+        "The link displays the official LinkedIn domain and leads to a valid profile page",
+        "The email content is typical of a legitimate social media notification"
+      ],
+      "rawHeaders": "Return-Path: <notifications@linkedin.com>\nReceived: from mail.linkedin.com\nSPF: PASS\nDKIM: PASS\nX-Spam-Score: 0.0"
+    }
+  ]
+}

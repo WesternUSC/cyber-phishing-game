@@ -1,21 +1,64 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-:root {
-  --background: 264 50% 99%;
-  --foreground: 258 32% 18%;
-  --card: 0 0% 100%;
-  --card-foreground: 258 32% 18%;
-  --muted: 260 22% 95%;
-  --muted-foreground: 258 18% 42%;
-  --border: 260 20% 88%;
+/* Email body prose styles */
+.email-body p {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
 }
 
-body {
-  @apply bg-[hsl(var(--background))] text-[hsl(var(--foreground))] antialiased;
+.email-body ul,
+.email-body ol {
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
 }
 
-.mono {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+.email-body ul {
+  list-style-type: disc;
+}
+
+.email-body ol {
+  list-style-type: decimal;
+}
+
+.email-body li {
+  margin-bottom: 0.25rem;
+}
+
+.email-body a {
+  color: #1a73e8;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.email-body strong {
+  font-weight: 600;
+}
+
+.email-body em {
+  font-style: italic;
+}
+
+.email-body .email-cta {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.email-body .email-cta a {
+  display: inline-block;
+  background-color: #0078d4;
+  color: white !important;
+  text-decoration: none;
+  padding: 10px 24px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.email-body .email-sig {
+  margin-top: 1.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #e5e7eb;
+  color: #6b7280;
+  font-size: 0.8125rem;
+  line-height: 1.6;
 }
