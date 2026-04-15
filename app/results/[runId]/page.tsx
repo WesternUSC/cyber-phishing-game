@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { CheckCircle, XCircle, ShieldCheck, Trophy, RotateCcw } from 'lucide-react';
 import { GameState } from '@/lib/types';
 import { Email } from '@/lib/types';
@@ -56,9 +57,9 @@ export default function ResultsPage() {
     <div className="min-h-screen bg-[#f6f8fc] p-4">
       {/* Header */}
       <div className="mb-6 flex items-center gap-3">
-        <ShieldCheck className="h-7 w-7 text-[#EA4335]" />
+        <Image src="/usc-logo.png" alt="USC Logo" width={36} height={36} />
         <span className="text-xl font-normal text-gray-700">
-          Phish<span className="font-semibold text-[#EA4335]">Quest</span>
+          Phish<span className="font-semibold text-[#4f2584]">Quest</span>
         </span>
       </div>
 
@@ -67,7 +68,7 @@ export default function ResultsPage() {
         <div className="mb-6 rounded-2xl bg-white p-8 shadow-sm text-center">
           <div className="mb-4 flex justify-center">
             <div className="flex h-20 w-20 items-center justify-center rounded-full bg-[#e8f0fe]">
-              <Trophy className="h-10 w-10 text-[#1a73e8]" />
+              <Trophy className="h-10 w-10 text-[#4f2584]" />
             </div>
           </div>
           <h1 className="text-3xl font-semibold text-gray-900">
@@ -101,7 +102,7 @@ export default function ResultsPage() {
 
               return (
                 <div key={email.id} className="flex items-start gap-4 px-6 py-4">
-                  <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#1a73e8] text-xs font-bold text-white">
+                  <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#4f2584] text-xs font-bold text-white">
                     {index + 1}
                   </span>
                   <div className="flex-1 min-w-0">
@@ -148,7 +149,7 @@ export default function ResultsPage() {
           <Link
             href="/"
             onClick={handlePlayAgain}
-            className="inline-flex items-center gap-2 rounded-lg bg-[#EA4335] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#c5221f]"
+            className="inline-flex items-center gap-2 rounded-lg bg-[#4f2584] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#3d1d68]"
           >
             <RotateCcw className="h-4 w-4" />
             Play again
