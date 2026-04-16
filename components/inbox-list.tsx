@@ -3,6 +3,7 @@
 import { Paperclip, AlertTriangle, CheckCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Email, Decision } from '@/lib/types';
+import { SenderAvatar } from '@/components/sender-avatar';
 
 interface Props {
   emails: Email[];
@@ -31,10 +32,13 @@ export function InboxList({ emails, selectedId, reviewed, decisions, onSelect }:
               !isSelected && isReviewed && 'bg-[#f6f8fc]',
             )}
           >
-            {/* Level badge */}
-            <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#4f2584] text-xs font-bold text-white">
-              {index + 1}
-            </span>
+            <div className="mt-0.5 shrink-0">
+              <SenderAvatar
+                senderName={email.senderName}
+                senderAvatar={email.senderAvatar}
+                size={36}
+              />
+            </div>
 
             <div className="min-w-0 flex-1">
               <div className="flex items-center justify-between gap-2">

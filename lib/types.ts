@@ -26,6 +26,7 @@ export interface Email {
   truth: 'phish' | 'safe';
   explanation: string;
   evidence: string[];
+  senderAvatar?: string;
   rawHeaders?: string;
 }
 

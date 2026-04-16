@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { Paperclip, ExternalLink, AlertTriangle, ChevronDown, ChevronUp, Fish, ShieldCheck } from 'lucide-react';
+import { SenderAvatar } from '@/components/sender-avatar';
 import { cn } from '@/lib/utils';
 import { Email } from '@/lib/types';
 
@@ -31,9 +32,11 @@ export function EmailViewer({ email, isReviewed, onSubmit }: Props) {
       <div className="border-b border-gray-200 px-6 py-4">
         <h2 className="text-xl font-normal text-gray-900">{email.subject}</h2>
         <div className="mt-3 flex items-start gap-3">
-          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#4f2584] text-sm font-semibold text-white">
-            {email.senderName.charAt(0).toUpperCase()}
-          </div>
+          <SenderAvatar
+            senderName={email.senderName}
+            senderAvatar={email.senderAvatar}
+            size={36}
+          />
           <div className="min-w-0 flex-1">
             <div className="flex items-baseline gap-2">
               <span className="font-medium text-gray-900">{email.senderName}</span>

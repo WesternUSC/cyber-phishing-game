@@ -4,6 +4,7 @@
       "id": "email-1",
       "senderName": "Jaclyn Higgins",
       "senderEmail": "Jaclyn@westernusc.ca",
+      "senderAvatar": "",
       "subject": "Quick Help Needed",
       "preview": "I’m stuck in a meeting and need a temporary login ASAP.",
       "date": "Tue, Feb 4",
@@ -16,7 +17,9 @@
       ],
       "links": [],
       "attachments": [],
-      "badges": ["Urgent"],
+      "badges": [
+        "Urgent"
+      ],
       "truth": "phish",
       "explanation": "This is a phishing attempt. It tries to bypass standard security practices by requesting login credentials directly.",
       "evidence": [
@@ -30,6 +33,7 @@
       "id": "email-2",
       "senderName": "HR Team",
       "senderEmail": "hr@westernusc.ca",
+      "senderAvatar": "",
       "subject": "2025 Benefits Enrollment – Deadline This Friday",
       "preview": "Annual open enrollment for health, dental, and vision closes Friday at 5 PM.",
       "date": "Mon, Jan 13",
@@ -64,7 +68,9 @@
           "isSuspicious": false
         }
       ],
-      "badges": ["Attachment"],
+      "badges": [
+        "Attachment"
+      ],
       "truth": "safe",
       "explanation": "This is a legitimate HR email. The sender matches your company domain, all links go to expected destinations, and the request is routine and expected during benefits season.",
       "evidence": [
@@ -79,6 +85,7 @@
       "id": "email-3",
       "senderName": "Internal Email",
       "senderEmail": "benefits@fulltime-staff-services.com",
+      "senderAvatar": "",
       "subject": "Action Required: Benefits Enrollment Expired",
       "preview": "Your benefits enrollment has expired. Re-verify your SIN now.",
       "date": "Wed, Feb 5",
@@ -100,7 +107,10 @@
         }
       ],
       "attachments": [],
-      "badges": ["External", "Urgent"],
+      "badges": [
+        "External",
+        "Urgent"
+      ],
       "truth": "phish",
       "explanation": "This is a phishing email. It attempts to trick users into entering sensitive information through a disguised link.",
       "evidence": [
@@ -115,6 +125,7 @@
       "id": "email-4",
       "senderName": "Wade Masse",
       "senderEmail": "Wade@westernusc.ca",
+      "senderAvatar": "",
       "subject": "Invoice: Front Desk Renovations",
       "preview": "Please review the attached invoice for the recent renovations.",
       "date": "Thu, Feb 6",
@@ -134,7 +145,9 @@
           "isSuspicious": true
         }
       ],
-      "badges": ["External"],
+      "badges": [
+        "External"
+      ],
       "truth": "phish",
       "explanation": "This is a phishing email. Malicious attachments are commonly disguised as invoices.",
       "evidence": [
@@ -149,6 +162,7 @@
       "id": "email-5",
       "senderName": "UPS Delivery Notifications",
       "senderEmail": "pkginfo@ups.com",
+      "senderAvatar": "",
       "subject": "Your package is out for delivery today",
       "preview": "1Z999AA10123456784 is on its way and expected by 8 PM.",
       "date": "Mon, Jan 13",
@@ -178,7 +192,9 @@
         }
       ],
       "attachments": [],
-      "badges": ["External"],
+      "badges": [
+        "External"
+      ],
       "truth": "safe",
       "explanation": "This is a legitimate UPS delivery notification. The sender is from ups.com, the tracking link goes to the real UPS website, and the email doesn't ask you for any sensitive information or credentials.",
       "evidence": [
@@ -193,6 +209,7 @@
       "id": "email-6",
       "senderName": "Joe Czenke",
       "senderEmail": "it-upgrades@secure-mail.net",
+      "senderAvatar": "",
       "subject": "System Upgrade Notice",
       "preview": "We are migrating internal emails. Action required to keep your password.",
       "date": "Fri, Feb 7",
@@ -214,7 +231,10 @@
         }
       ],
       "attachments": [],
-      "badges": ["External", "Urgent"],
+      "badges": [
+        "External",
+        "Urgent"
+      ],
       "truth": "phish",
       "explanation": "This is a phishing email. It uses urgency and misleading links to trick users into revealing credentials.",
       "evidence": [
@@ -229,6 +249,7 @@
       "id": "email-7",
       "senderName": "Dan Brown",
       "senderEmail": "gazette@campus-media.ca",
+      "senderAvatar": "",
       "subject": "New Staff Photos Are Live",
       "preview": "Log in with your Google account to view the gallery.",
       "date": "Tue, Feb 11",
@@ -249,7 +270,9 @@
         }
       ],
       "attachments": [],
-      "badges": ["External"],
+      "badges": [
+        "External"
+      ],
       "truth": "phish",
       "explanation": "This is a phishing email designed to steal your login credentials through a fake Google login page.",
       "evidence": [
@@ -264,6 +287,7 @@
       "id": "email-8",
       "senderName": "Rochelle Alquiza",
       "senderEmail": "rochelle@westernusc.ca",
+      "senderAvatar": "",
       "subject": "Quick Favor Needed",
       "preview": "Are you at your desk? I need help buying gift cards.",
       "date": "Mon, Feb 10",
@@ -276,7 +300,9 @@
       ],
       "links": [],
       "attachments": [],
-      "badges": ["Urgent"],
+      "badges": [
+        "Urgent"
+      ],
       "truth": "phish",
       "explanation": "This is a phishing attempt using a Business Email Compromise (BEC) tactic to trick you into sending money.",
       "evidence": [
@@ -291,6 +317,7 @@
       "id": "email-9",
       "senderName": "LinkedIn Notifications",
       "senderEmail": "notifications@linkedin.com",
+      "senderAvatar": "",
       "subject": "Joel Daniel wants to connect",
       "preview": "Joel Daniel would like to add you on LinkedIn.",
       "date": "Mon, Jan 13",
@@ -325,6 +352,7 @@
       "id": "email-10",
       "senderName": "Microsoft Outlook",
       "senderEmail": "no-reply@outlook.com",
+      "senderAvatar": "",
       "subject": "Undelivered Messages Notification",
       "preview": "You have 3 undelivered messages. Release them now.",
       "date": "Wed, Feb 12",
@@ -345,7 +373,10 @@
         }
       ],
       "attachments": [],
-      "badges": ["External", "Urgent"],
+      "badges": [
+        "External",
+        "Urgent"
+      ],
       "truth": "phish",
       "explanation": "This is a phishing email exploiting fake system behavior to trick users into clicking malicious links.",
       "evidence": [
@@ -360,6 +391,7 @@
       "id": "email-11",
       "senderName": "Rob Fraser",
       "senderEmail": "rob@westernusc.ca",
+      "senderAvatar": "",
       "subject": "Can you review this?",
       "preview": "Can you take a look at this document?",
       "date": "Thu, Feb 13",
@@ -394,6 +426,7 @@
       "id": "email-12",
       "senderName": "Tammy Dowell",
       "senderEmail": "Tammy@westernusc.ca",
+      "senderAvatar": "",
       "subject": "Updated Staff Contact List",
       "preview": "Please use this updated contact list moving forward.",
       "date": "Fri, Feb 14",
@@ -427,6 +460,7 @@
       "id": "email-13",
       "senderName": "Aidan Callender",
       "senderEmail": "aidan.callender@westernusc.com",
+      "senderAvatar": "",
       "subject": "Quick sync tomorrow at 2pm? 🍕",
       "preview": "Want to grab lunch and run through the Q1 roadmap before the all-hands.",
       "date": "Mon, Jan 13",
