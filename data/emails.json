@@ -28,6 +28,55 @@
     },
     {
       "id": "email-2",
+      "senderName": "HR Team",
+      "senderEmail": "hr@westernusc.ca",
+      "subject": "2025 Benefits Enrollment – Deadline This Friday",
+      "preview": "Annual open enrollment for health, dental, and vision closes Friday at 5 PM.",
+      "date": "Mon, Jan 13",
+      "time": "9:10 AM",
+      "bodyHtml": [
+        "<p>Hi everyone,</p>",
+        "<p>Just a reminder that <strong>Open Enrollment closes this Friday, January 17th at 5:00 PM EST</strong>.</p>",
+        "<p>If you haven't yet reviewed your benefits options for the upcoming year, please log in to the HR portal and make your selections before the deadline.</p>",
+        "<p>This year's changes include:</p>",
+        "<ul><li>Updated dental coverage tiers</li><li>New vision plan provider (VSP)</li><li>HSA contribution limit increase to $4,300</li></ul>",
+        "<p>Questions? Reach out to <a href='#link-0'>hr@westernusc.ca</a> or visit the <a href='#link-1'>HR Benefits Portal</a>.</p>",
+        "<p class='email-sig'>The HR Team<br>Western USC<br>hr@westernusc.ca &bull; ext. 2100</p>"
+      ],
+      "links": [
+        {
+          "label": "hr@westernusc.ca",
+          "displayUrl": "mailto:hr@westernusc.ca",
+          "actualUrl": "mailto:hr@westernusc.ca",
+          "isSuspicious": false
+        },
+        {
+          "label": "HR Benefits Portal",
+          "displayUrl": "https://hr.westernusc.ca/benefits",
+          "actualUrl": "https://hr.westernusc.ca/benefits",
+          "isSuspicious": false
+        }
+      ],
+      "attachments": [
+        {
+          "filename": "2025_Benefits_Guide.pdf",
+          "type": "pdf",
+          "isSuspicious": false
+        }
+      ],
+      "badges": ["Attachment"],
+      "truth": "safe",
+      "explanation": "This is a legitimate HR email. The sender matches your company domain, all links go to expected destinations, and the request is routine and expected during benefits season.",
+      "evidence": [
+        "Sender email 'hr@westernusc.ca' matches the company's real domain",
+        "All links point to 'hr@westernusc.ca' — the real HR portal",
+        "No urgent threats or requests for sensitive personal information",
+        "PDF attachment is a standard benefits guide, consistent with enrollment season"
+      ],
+      "rawHeaders": "Return-Path: <hr@westernusc.ca>\nReceived: from mail.westernusc.ca\nSPF: PASS\nDKIM: PASS\nX-Spam-Score: 0.1"
+    },
+    {
+      "id": "email-3",
       "senderName": "Internal Email",
       "senderEmail": "benefits@fulltime-staff-services.com",
       "subject": "Action Required: Benefits Enrollment Expired",
@@ -63,7 +112,7 @@
       "rawHeaders": "Return-Path: <benefits@fulltime-staff-services.com>\nReceived: from 203.0.113.5\nSPF: FAIL\nDKIM: none\nX-Spam-Score: 8.2"
     },
     {
-      "id": "email-3",
+      "id": "email-4",
       "senderName": "Wade Masse",
       "senderEmail": "Wade@westernusc.ca",
       "subject": "Invoice: Front Desk Renovations",
@@ -97,7 +146,51 @@
       "rawHeaders": "Return-Path: <invoices@vendor-services.com>\nReceived: from 198.51.100.7\nSPF: FAIL\nDKIM: none\nX-Spam-Score: 7.5"
     },
     {
-      "id": "email-4",
+      "id": "email-5",
+      "senderName": "UPS Delivery Notifications",
+      "senderEmail": "pkginfo@ups.com",
+      "subject": "Your package is out for delivery today",
+      "preview": "1Z999AA10123456784 is on its way and expected by 8 PM.",
+      "date": "Mon, Jan 13",
+      "time": "7:31 AM",
+      "bodyHtml": [
+        "<p>Hi there,</p>",
+        "<p>Good news &mdash; your package is <strong>out for delivery</strong> and should arrive today by <strong>8:00 PM</strong>.</p>",
+        "<p><strong>Tracking Number:</strong> 1Z999AA10123456784</p>",
+        "<p><strong>Estimated Delivery:</strong> Monday, January 13, 2025 by 8:00 PM</p>",
+        "<p><strong>Delivery Address:</strong> 742 Evergreen Terrace</p>",
+        "<p>To track your shipment in real time, visit <a href='#link-0'>ups.com/tracking</a>.</p>",
+        "<p>If you have delivery instructions or need to reschedule, you can manage your delivery preferences using <a href='#link-1'>UPS My Choice</a>.</p>",
+        "<p class='email-sig'>UPS Delivery Notifications<br>This is an automated message. Please do not reply directly to this email.</p>"
+      ],
+      "links": [
+        {
+          "label": "ups.com/tracking",
+          "displayUrl": "https://www.ups.com/tracking",
+          "actualUrl": "https://www.ups.com/tracking",
+          "isSuspicious": false
+        },
+        {
+          "label": "UPS My Choice",
+          "displayUrl": "https://www.ups.com/mychoice",
+          "actualUrl": "https://www.ups.com/mychoice",
+          "isSuspicious": false
+        }
+      ],
+      "attachments": [],
+      "badges": ["External"],
+      "truth": "safe",
+      "explanation": "This is a legitimate UPS delivery notification. The sender is from ups.com, the tracking link goes to the real UPS website, and the email doesn't ask you for any sensitive information or credentials.",
+      "evidence": [
+        "Sender address is 'pkginfo@ups.com' — a verified UPS notification domain",
+        "All links go directly to 'ups.com' with no redirects",
+        "No requests for personal information, passwords, or payments",
+        "Content is consistent with an expected delivery notification"
+      ],
+      "rawHeaders": "Return-Path: <pkginfo@ups.com>\nReceived: from ups-mail.ups.com\nSPF: PASS\nDKIM: PASS\nX-Spam-Score: 0.0"
+    },
+    {
+      "id": "email-6",
       "senderName": "Joe Czenke",
       "senderEmail": "it-upgrades@secure-mail.net",
       "subject": "System Upgrade Notice",
@@ -133,34 +226,7 @@
       "rawHeaders": "Return-Path: <it-upgrades@secure-mail.net>\nReceived: from 192.0.2.10\nSPF: FAIL\nDKIM: none\nX-Spam-Score: 8.9"
     },
     {
-      "id": "email-5",
-      "senderName": "Rochelle Alquiza",
-      "senderEmail": "rochelle@westernusc.ca",
-      "subject": "Quick Favor Needed",
-      "preview": "Are you at your desk? I need help buying gift cards.",
-      "date": "Mon, Feb 10",
-      "time": "3:18 PM",
-      "bodyHtml": [
-        "<p>Hey,</p>",
-        "<p>Are you at your desk? I need a quick favor—I’m trying to buy gift cards for the team but my corporate card is blocked.</p>",
-        "<p>Can you buy 5 and send the codes?</p>",
-        "<p>I’ll reimburse you right away.</p>"
-      ],
-      "links": [],
-      "attachments": [],
-      "badges": ["Urgent"],
-      "truth": "phish",
-      "explanation": "This is a phishing attempt using a Business Email Compromise (BEC) tactic to trick you into sending money.",
-      "evidence": [
-        "Requests gift cards, which is a common scam method",
-        "Creates urgency and pressure to act quickly",
-        "Unusual request that bypasses normal purchasing procedures",
-        "Legitimate staff do not ask for gift cards via email"
-      ],
-      "rawHeaders": "Return-Path: <rochelle@westernusc.ca>\nSPF: PASS\nDKIM: PASS\nX-Spam-Score: 3.4"
-    },
-    {
-      "id": "email-6",
+      "id": "email-7",
       "senderName": "Dan Brown",
       "senderEmail": "gazette@campus-media.ca",
       "subject": "New Staff Photos Are Live",
@@ -195,7 +261,68 @@
       "rawHeaders": "Return-Path: <gazette@campus-media.ca>\nReceived: from 203.0.113.11\nSPF: FAIL\nDKIM: none\nX-Spam-Score: 8.0"
     },
     {
-      "id": "email-7",
+      "id": "email-8",
+      "senderName": "Rochelle Alquiza",
+      "senderEmail": "rochelle@westernusc.ca",
+      "subject": "Quick Favor Needed",
+      "preview": "Are you at your desk? I need help buying gift cards.",
+      "date": "Mon, Feb 10",
+      "time": "3:18 PM",
+      "bodyHtml": [
+        "<p>Hey,</p>",
+        "<p>Are you at your desk? I need a quick favor—I’m trying to buy gift cards for the team but my corporate card is blocked.</p>",
+        "<p>Can you buy 5 and send the codes?</p>",
+        "<p>I’ll reimburse you right away.</p>"
+      ],
+      "links": [],
+      "attachments": [],
+      "badges": ["Urgent"],
+      "truth": "phish",
+      "explanation": "This is a phishing attempt using a Business Email Compromise (BEC) tactic to trick you into sending money.",
+      "evidence": [
+        "Requests gift cards, which is a common scam method",
+        "Creates urgency and pressure to act quickly",
+        "Unusual request that bypasses normal purchasing procedures",
+        "Legitimate staff do not ask for gift cards via email"
+      ],
+      "rawHeaders": "Return-Path: <rochelle@westernusc.ca>\nSPF: PASS\nDKIM: PASS\nX-Spam-Score: 3.4"
+    },
+    {
+      "id": "email-9",
+      "senderName": "LinkedIn Notifications",
+      "senderEmail": "notifications@linkedin.com",
+      "subject": "Joel Daniel wants to connect",
+      "preview": "Joel Daniel would like to add you on LinkedIn.",
+      "date": "Mon, Jan 13",
+      "time": "4:22 PM",
+      "bodyHtml": [
+        "<p>Joel Daniel would like to add you on LinkedIn.</p>",
+        "<p>View his profile and connect:</p>",
+        "<p class='email-cta'><a href='#link-0'>Connect with Joel</a></p>",
+        "<p>If you don't want to receive these notifications, you can adjust your settings at any time.</p>",
+        "<p class='email-sig'>LinkedIn<br>1999 Market St, San Francisco, CA 94102<br>www.linkedin.com</p>"
+      ],
+      "links": [
+        {
+          "label": "Connect with Joel",
+          "displayUrl": "www.linkedin.com/in/joeldnl",
+          "actualUrl": "https://www.linkedin.com/in/joeldnl/",
+          "isSuspicious": false
+        }
+      ],
+      "attachments": [],
+      "badges": [],
+      "truth": "safe",
+      "explanation": "This is a legitimate LinkedIn notification. The sender is from the official LinkedIn domain, and the link leads to a valid LinkedIn profile page.",
+      "evidence": [
+        "Sender 'notifications@linkedin.com' is an official LinkedIn address",
+        "The link displays the official LinkedIn domain and leads to a valid profile page",
+        "The email content is typical of a legitimate social media notification"
+      ],
+      "rawHeaders": "Return-Path: <notifications@linkedin.com>\nReceived: from mail.linkedin.com\nSPF: PASS\nDKIM: PASS\nX-Spam-Score: 0.0"
+    },
+    {
+      "id": "email-10",
       "senderName": "Microsoft Outlook",
       "senderEmail": "no-reply@outlook.com",
       "subject": "Undelivered Messages Notification",
@@ -230,7 +357,7 @@
       "rawHeaders": "Return-Path: <no-reply@mail-system.net>\nReceived: from 198.51.100.21\nSPF: FAIL\nDKIM: none\nX-Spam-Score: 8.6"
     },
     {
-      "id": "email-8",
+      "id": "email-11",
       "senderName": "Rob Fraser",
       "senderEmail": "rob@westernusc.ca",
       "subject": "Can you review this?",
@@ -264,7 +391,7 @@
       "rawHeaders": "Return-Path: <rob@westernusc.ca>\nSPF: PASS\nDKIM: PASS\nX-Spam-Score: 5.2"
     },
     {
-      "id": "email-9",
+      "id": "email-12",
       "senderName": "Tammy Dowell",
       "senderEmail": "Tammy@westernusc.ca",
       "subject": "Updated Staff Contact List",
@@ -297,38 +424,34 @@
       "rawHeaders": "Return-Path: <Tammy@westernusc.ca>\nSPF: PASS\nDKIM: PASS\nX-Spam-Score: 6.7"
     },
     {
-      "id": "email-10",
-      "senderName": "LinkedIn Notifications",
-      "senderEmail": "notifications@linkedin.com",
-      "subject": "Joel Daniel wants to connect",
-      "preview": "Joel Daniel would like to add you on LinkedIn.",
+      "id": "email-13",
+      "senderName": "Aidan Callender",
+      "senderEmail": "aidan.callender@westernusc.com",
+      "subject": "Quick sync tomorrow at 2pm? 🍕",
+      "preview": "Want to grab lunch and run through the Q1 roadmap before the all-hands.",
       "date": "Mon, Jan 13",
       "time": "4:22 PM",
       "bodyHtml": [
-        "<p>Joel Daniel would like to add you on LinkedIn.</p>",
-        "<p>View his profile and connect:</p>",
-        "<p class='email-cta'><a href='#link-0'>Connect with Joel</a></p>",
-        "<p>If you don't want to receive these notifications, you can adjust your settings at any time.</p>",
-        "<p class='email-sig'>LinkedIn<br>1999 Market St, San Francisco, CA 94102<br>www.linkedin.com</p>"
+        "<p>Hey,</p>",
+        "<p>Hope your Monday is going well! Would you be up for a quick lunch tomorrow around 2pm to run through the Q1 roadmap before Thursday's all-hands?</p>",
+        "<p>I've been putting together some slides on the new feature prioritization and wanted a second set of eyes before it goes to the full team.</p>",
+        "<p>If 2pm doesn't work, I'm also free:</p>",
+        "<ul><li>Tuesday 11 AM</li><li>Wednesday any time after 1 PM</li></ul>",
+        "<p>Either way, let me know &mdash; and I'm thinking sandwiches from that new place on Market St if you're in 😄</p>",
+        "<p class='email-sig'>Aidan Callender<br>Senior Product Manager, Western USC<br>aidan.callender@westernusc.com &bull; Slack: @aidan.callender</p>"
       ],
-      "links": [
-        {
-          "label": "Connect with Joel",
-          "displayUrl": "www.linkedin.com/in/joeldnl",
-          "actualUrl": "https://www.linkedin.com/in/joeldnl/",
-          "isSuspicious": false
-        }
-      ],
+      "links": [],
       "attachments": [],
       "badges": [],
       "truth": "safe",
-      "explanation": "This is a legitimate LinkedIn notification. The sender is from the official LinkedIn domain, and the link leads to a valid LinkedIn profile page.",
+      "explanation": "This is a completely normal internal email from a colleague. The sender is from your company domain, there are no suspicious links or attachments, and there are no requests for sensitive information or urgent actions.",
       "evidence": [
-        "Sender 'notifications@linkedin.com' is an official LinkedIn address",
-        "The link displays the official LinkedIn domain and leads to a valid profile page",
-        "The email content is typical of a legitimate social media notification"
+        "Sender 'aidan.callender@westernusc.com' is an internal company address",
+        "No links or attachments to inspect — no opportunity to deliver malware",
+        "Casual, conversational tone consistent with a real colleague",
+        "No unusual requests — just scheduling a meeting"
       ],
-      "rawHeaders": "Return-Path: <notifications@linkedin.com>\nReceived: from mail.linkedin.com\nSPF: PASS\nDKIM: PASS\nX-Spam-Score: 0.0"
+      "rawHeaders": "Return-Path: <aidan.callender@westernusc.com>\nReceived: from mail.westernusc.com\nSPF: PASS\nDKIM: PASS\nX-Spam-Score: 0.0"
     }
   ]
 }
