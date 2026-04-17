@@ -199,6 +199,7 @@ export default function HomePage() {
             email={currentEmail}
             isReviewed={currentEmail ? state.reviewed.includes(currentEmail.id) : false}
             onSubmit={handleSubmit}
+            onPhishLinkClicked={() => handleSubmit('safe')}
           />
         </main>
       </div>
