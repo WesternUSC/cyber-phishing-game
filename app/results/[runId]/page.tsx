@@ -1,11 +1,11 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { CheckCircle, XCircle, ShieldCheck, Trophy, RotateCcw } from 'lucide-react';
-import { GameState } from '@/lib/types';
-import { Email } from '@/lib/types';
+import { CheckCircle, XCircle, Trophy, RotateCcw } from 'lucide-react';
+import { GameState, Email } from '@/lib/types';
+import { saveResult } from '@/lib/saveResult';
 import emailData from '@/data/emails.json';
 
 const emails = emailData.emails as Email[];
@@ -13,15 +13,23 @@ const STORAGE_KEY = 'phishquest-run';
 
 export default function ResultsPage() {
   const [gameState, setGameState] = useState<GameState | null>(null);
+  const [saveStatus, setSaveStatus] = useState<'pending' | 'saved' | 'error'>('pending');
+  const savedRef = useRef(false);
 
   useEffect(() => {
     const raw = localStorage.getItem(STORAGE_KEY);
-    if (raw) {
-      try {
-        setGameState(JSON.parse(raw));
-      } catch {
-        // ignore
+    if (!raw) return;
+    try {
+      const state: GameState = JSON.parse(raw);
+      setGameState(state);
+      if (!savedRef.current) {
+        savedRef.current = true;
+        saveResult(state, emails)
+          .then(() => setSaveStatus('saved'))
+          .catch((err) => { console.error(err); setSaveStatus('error'); });
       }
+    } catch {
+      // ignore corrupt state
     }
   }, []);
 
@@ -56,10 +64,15 @@ export default function ResultsPage() {
   return (
     <div className="min-h-screen bg-[#f6f8fc] p-4">
       {/* Header */}
-      <div className="mb-6 flex items-center gap-3">
-        <Image src="/usc-logo.png" alt="USC Logo" width={36} height={36} />
-        <span className="text-xl font-normal text-gray-700">
-          Phish<span className="font-semibold text-[#4f2584]">Quest</span>
+      <div className="mb-6 flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <Image src="/usc-logo.png" alt="USC Logo" width={36} height={36} />
+          <span className="text-xl font-normal text-gray-700">
+            Phish<span className="font-semibold text-[#4f2584]">Quest</span>
+          </span>
+        </div>
+        <span className={`text-xs ${saveStatus === 'saved' ? 'text-green-600' : saveStatus === 'error' ? 'text-red-500' : 'text-gray-400'}`}>
+          {saveStatus === 'saved' ? '✓ Results saved' : saveStatus === 'error' ? '⚠ Could not save' : 'Saving…'}
         </span>
       </div>
 
