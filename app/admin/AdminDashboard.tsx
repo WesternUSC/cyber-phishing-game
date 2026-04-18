@@ -1,8 +1,11 @@
 "use client";
 
 import Image from "next/image";
+import { useState } from "react";
 import { GameResult } from "./types";
 import emailData from "@/data/emails.json";
+
+const PAGE_SIZE = 50;
 
 const ALL_EMAILS = emailData.emails;
 
@@ -90,6 +93,10 @@ export default function AdminDashboard({ results }: { results: GameResult[] }) {
     (a, b) => (b.completedAt?.getTime() ?? 0) - (a.completedAt?.getTime() ?? 0)
   );
   const maxBarCount = Math.max(...stats.scoreDistribution.map(([, c]) => c), 1);
+
+  const [page, setPage] = useState(0);
+  const totalPages = Math.max(1, Math.ceil(sortedResults.length / PAGE_SIZE));
+  const pageResults = sortedResults.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE);
 
   return (
     <div className="min-h-screen bg-[#f6f8fc]">
@@ -237,11 +244,34 @@ export default function AdminDashboard({ results }: { results: GameResult[] }) {
 
         {/* Full results table — one column per email */}
         <div className="rounded-2xl bg-white shadow-sm overflow-hidden">
-          <div className="border-b border-gray-100 px-6 py-4">
-            <h2 className="text-base font-semibold text-gray-900">All results</h2>
-            <p className="text-xs text-gray-500 mt-0.5">
-              {sortedResults.length} submissions — ✓ correct &nbsp; ✗ incorrect &nbsp; — not answered
-            </p>
+          <div className="border-b border-gray-100 px-6 py-4 flex items-center justify-between gap-4">
+            <div>
+              <h2 className="text-base font-semibold text-gray-900">All results</h2>
+              <p className="text-xs text-gray-500 mt-0.5">
+                {sortedResults.length} submissions — ✓ correct &nbsp;✗ incorrect &nbsp;— not answered
+              </p>
+            </div>
+            {totalPages > 1 && (
+              <div className="flex items-center gap-2 shrink-0">
+                <button
+                  onClick={() => setPage((p) => Math.max(0, p - 1))}
+                  disabled={page === 0}
+                  className="rounded-lg border border-gray-300 px-3 py-1.5 text-sm text-gray-600 transition hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed"
+                >
+                  ← Prev
+                </button>
+                <span className="text-sm text-gray-500">
+                  Page {page + 1} of {totalPages}
+                </span>
+                <button
+                  onClick={() => setPage((p) => Math.min(totalPages - 1, p + 1))}
+                  disabled={page === totalPages - 1}
+                  className="rounded-lg border border-gray-300 px-3 py-1.5 text-sm text-gray-600 transition hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed"
+                >
+                  Next →
+                </button>
+              </div>
+            )}
           </div>
           <div className="overflow-x-auto">
             <table className="min-w-full text-sm">
@@ -264,7 +294,7 @@ export default function AdminDashboard({ results }: { results: GameResult[] }) {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
-                {sortedResults.map((r) => {
+                {pageResults.map((r) => {
                   const answerMap = new Map(r.answers.map((a) => [a.emailId, a]));
                   return (
                     <tr key={r.id} className="hover:bg-gray-50">
@@ -305,6 +335,29 @@ export default function AdminDashboard({ results }: { results: GameResult[] }) {
               </tbody>
             </table>
           </div>
+          {totalPages > 1 && (
+            <div className="flex items-center justify-between border-t border-gray-100 px-6 py-3">
+              <span className="text-xs text-gray-500">
+                Showing {page * PAGE_SIZE + 1}–{Math.min((page + 1) * PAGE_SIZE, sortedResults.length)} of {sortedResults.length}
+              </span>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => setPage((p) => Math.max(0, p - 1))}
+                  disabled={page === 0}
+                  className="rounded-lg border border-gray-300 px-3 py-1.5 text-sm text-gray-600 transition hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed"
+                >
+                  ← Prev
+                </button>
+                <button
+                  onClick={() => setPage((p) => Math.min(totalPages - 1, p + 1))}
+                  disabled={page === totalPages - 1}
+                  className="rounded-lg border border-gray-300 px-3 py-1.5 text-sm text-gray-600 transition hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed"
+                >
+                  Next →
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </main>
     </div>
