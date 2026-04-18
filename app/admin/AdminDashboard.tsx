@@ -24,6 +24,14 @@ function pct(n: number, d: number) {
   return `${Math.round((n / d) * 100)}%`;
 }
 
+function formatDuration(ms: number) {
+  if (ms <= 0) return "—";
+  const totalSec = Math.round(ms / 1000);
+  const m = Math.floor(totalSec / 60);
+  const s = totalSec % 60;
+  return m > 0 ? `${m}m ${s}s` : `${s}s`;
+}
+
 // ─── stats computation ───────────────────────────────────────────────────────
 
 function computeStats(results: GameResult[]) {
@@ -280,6 +288,7 @@ export default function AdminDashboard({ results }: { results: GameResult[] }) {
                   <th className="sticky left-0 z-10 bg-gray-50 px-6 py-3 min-w-[140px]">Name</th>
                   <th className="px-4 py-3 text-right">Score</th>
                   <th className="px-4 py-3 text-right">Accuracy</th>
+                  <th className="px-4 py-3 text-right">Time</th>
                   {ALL_EMAILS.map((e, i) => (
                     <th key={e.id} className="px-3 py-3 text-center min-w-[80px]" title={e.subject}>
                       <div className="flex flex-col items-center gap-1">
@@ -309,6 +318,9 @@ export default function AdminDashboard({ results }: { results: GameResult[] }) {
                           {r.accuracyPct != null ? `${r.accuracyPct}%` : "—"}
                         </span>
                       </td>
+                      <td className="px-4 py-3 text-right text-gray-600 whitespace-nowrap">
+                        {formatDuration(r.answers.reduce((sum, a) => sum + (a.timeMs ?? 0), 0))}
+                      </td>
                       {ALL_EMAILS.map((e) => {
                         const a = answerMap.get(e.id);
                         return (
@@ -330,7 +342,7 @@ export default function AdminDashboard({ results }: { results: GameResult[] }) {
                   );
                 })}
                 {sortedResults.length === 0 && (
-                  <tr><td colSpan={ALL_EMAILS.length + 4} className="px-6 py-8 text-center text-sm text-gray-400">No results yet.</td></tr>
+                  <tr><td colSpan={ALL_EMAILS.length + 5} className="px-6 py-8 text-center text-sm text-gray-400">No results yet.</td></tr>
                 )}
               </tbody>
             </table>
