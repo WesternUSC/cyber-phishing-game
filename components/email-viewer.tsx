@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { Paperclip, ExternalLink, AlertTriangle, ChevronDown, ChevronUp, Fish, ShieldCheck } from 'lucide-react';
+import { Paperclip, ExternalLink, ChevronDown, ChevronUp, Fish, ShieldCheck } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Email, EmailLink } from '@/lib/types';
 import { SenderAvatar } from '@/components/sender-avatar';
@@ -13,15 +13,20 @@ interface Props {
   isReviewed: boolean;
   onSubmit: (decision: 'phish' | 'safe') => void;
   onPhishLinkClicked: () => void;
+  isTablet?: boolean;
 }
 
-export function EmailViewer({ email, isReviewed, onSubmit, onPhishLinkClicked }: Props) {
+export function EmailViewer({ email, isReviewed, onSubmit, onPhishLinkClicked, isTablet = false }: Props) {
   const [headersOpen, setHeadersOpen] = useState(false);
   const [compromisedOpen, setCompromisedOpen] = useState(false);
+  // Tablet only: holds the display URL of a safe link the user tapped
+  const [blockedLink, setBlockedLink] = useState<{ label: string; displayUrl: string } | null>(null);
 
   function handleLinkClick(link: EmailLink) {
     if (link.isSuspicious) {
       setCompromisedOpen(true);
+    } else if (isTablet) {
+      setBlockedLink({ label: link.label, displayUrl: link.displayUrl });
     } else {
       window.open(link.actualUrl, '_blank', 'noopener,noreferrer');
     }
@@ -108,24 +113,11 @@ export function EmailViewer({ email, isReviewed, onSubmit, onPhishLinkClicked }:
                   <button
                     key={i}
                     onClick={() => handleLinkClick(link)}
-                    className={cn(
-                      'flex w-full items-center gap-2 rounded-md border px-3 py-2 text-xs text-left transition hover:brightness-95',
-                      link.isSuspicious
-                        ? 'border-red-200 bg-red-50'
-                        : 'border-gray-200 bg-white',
-                    )}
+                    className="flex w-full items-center gap-2 rounded-md border border-gray-200 bg-white px-3 py-2 text-xs text-left transition hover:bg-gray-50"
                   >
-                    <ExternalLink
-                      className={cn(
-                        'h-3.5 w-3.5 shrink-0',
-                        link.isSuspicious ? 'text-red-500' : 'text-gray-400',
-                      )}
-                    />
+                    <ExternalLink className="h-3.5 w-3.5 shrink-0 text-gray-400" />
                     <span className="font-medium text-gray-700">{link.label}</span>
-                    <span className="ml-auto font-mono text-gray-500">{link.displayUrl}</span>
-                    {link.isSuspicious && (
-                      <AlertTriangle className="h-3.5 w-3.5 shrink-0 text-red-500" />
-                    )}
+                    <span className="ml-auto font-mono text-gray-500 break-all">{link.actualUrl}</span>
                   </button>
                 ))}
               </div>
@@ -138,19 +130,11 @@ export function EmailViewer({ email, isReviewed, onSubmit, onPhishLinkClicked }:
               {email.attachments.map((att) => (
                 <div
                   key={att.filename}
-                  className={cn(
-                    'flex items-center gap-2 rounded-lg border px-3 py-2 text-xs',
-                    att.isSuspicious
-                      ? 'border-red-200 bg-red-50 text-red-700'
-                      : 'border-gray-200 bg-white text-gray-600',
-                  )}
+                  className="flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-3 py-2 text-xs text-gray-600"
                 >
                   <Paperclip className="h-3.5 w-3.5" />
                   <span className="font-medium">{att.filename}</span>
                   <span className="uppercase opacity-60">{att.type}</span>
-                  {att.isSuspicious && (
-                    <AlertTriangle className="h-3.5 w-3.5 text-red-500" />
-                  )}
                 </div>
               ))}
             </div>
@@ -208,6 +192,46 @@ export function EmailViewer({ email, isReviewed, onSubmit, onPhishLinkClicked }:
       </div>
 
       <CompromisedModal open={compromisedOpen} onClose={handleCompromisedClose} />
+
+      {/* Tablet: safe-link blocked modal */}
+      {blockedLink && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-6 backdrop-blur-sm">
+          <div className="w-full max-w-sm overflow-hidden rounded-2xl bg-white shadow-2xl">
+            {/* Header */}
+            <div className="flex items-center gap-3 bg-[#e8f5e9] px-6 py-4">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-green-600">
+                <ExternalLink className="h-5 w-5 text-white" />
+              </div>
+              <div>
+                <p className="font-semibold text-green-900">Legitimate Link</p>
+                <p className="text-xs text-green-700">External navigation disabled</p>
+              </div>
+            </div>
+            {/* Body */}
+            <div className="px-6 py-5 space-y-3">
+              <p className="text-sm text-gray-700">
+                <span className="font-medium">&ldquo;{blockedLink.label}&rdquo;</span> is a real,
+                safe link. In a desktop browser it would open:
+              </p>
+              <p className="rounded-lg bg-gray-100 px-3 py-2 font-mono text-xs break-all text-gray-600">
+                {blockedLink.displayUrl}
+              </p>
+              <p className="text-xs text-gray-400">
+                External links are disabled during iPad training sessions to keep you in the app.
+              </p>
+            </div>
+            {/* Footer */}
+            <div className="border-t border-gray-100 px-6 py-4">
+              <button
+                onClick={() => setBlockedLink(null)}
+                className="w-full rounded-lg bg-[#4f2584] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#3d1d68]"
+              >
+                Got it
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
