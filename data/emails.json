@@ -486,6 +486,82 @@
         "No unusual requests — just scheduling a meeting"
       ],
       "rawHeaders": "Return-Path: <aidan.callender@westernusc.com>\nReceived: from mail.westernusc.com\nSPF: PASS\nDKIM: PASS\nX-Spam-Score: 0.0"
+    },
+    {
+      "id": "email-14",
+      "senderName": "Sarah Goldsmith",
+      "senderEmail": "Sarah@westernusc.com",
+      "senderAvatar": "",
+      "subject": "Final poster file for Friday",
+      "preview": "I attached the finl version of the poster for Friday's event",
+      "date": "Wednesday, Jan 19",
+      "time": "10:34 AM",
+      "bodyHtml": [
+        "<p>Hey,</p>",
+        "<p>I attached the final version of the poster for Friday's event.</p>",
+        "<p>Could you take a quick look when you have a chance and confirm that the date, room number, and sponsor logos all look correct?</p>",
+        "<p>No rush — just trying to get the print file finalized before we send it off later today.</p>",
+        "<p>Thanks!</p>",
+        "<p class='email-sig'>Sarah Goldsmith<br>Social Media, Western USC<br>Sarah@westernusc.com &bull; Slack: @Sarah.Goldsmith</p>"
+      ],
+      "links": [],
+      "attachments": [
+        {
+          "filename": "friday-event-poster-final.pdf",
+          "type": "pdf",
+          "isSuspicious": false
+        }
+      ],
+      "badges": [],
+      "truth": "safe",
+      "explanation": "This is a safe internal email. The sender is using the official company domain, the attachment is a normal PDF file for a work-related design review, and the message does not ask for passwords, payment information, or urgent sensitive action.",
+      "evidence": [
+        "Sender 'Sarah@westernusc.com' is an internal company address",
+        "Attachment is a PDF, which is normal for poster or design review",
+        "Request is specific, expected, and work-related",
+        "No suspicious links or requests for sensitive information"
+      ],
+      "rawHeaders": "Return-Path: <Sarah@westernusc.com>\nReceived: from mail.westernusc.com\nSPF: PASS\nDKIM: PASS\nX-Spam-Score: 0.0"
+    },
+    {
+      "id": "email-15",
+      "senderName": "Western USC Payroll",
+      "senderEmail": "payroll@westernusc-payroll.com",
+      "senderAvatar": "",
+      "subject": "Action Required: Payroll Deposit Verification",
+      "preview": "Your next payroll deposit may be delayed unless your banking details are verified.",
+      "date": "Tue, Feb 18",
+      "time": "8:16 AM",
+      "bodyHtml": [
+        "<p>Hello,</p>",
+        "<p>We were unable to verify your direct deposit information for the upcoming payroll cycle.</p>",
+        "<p class='email-cta'><a href='#link-0'>Verify Payroll Details &rarr;</a></p>",
+        "<p>If 2pm doesn't work, I'm also free:</p>",
+        "<p>This verification must be completed by the end of the day.</p>",
+        "<p class='email-sig'>Western USC Payroll Services</p>"
+      ],
+      "links": [
+        {
+          "label": "Verify Payroll Details",
+          "displayUrl": "https://westernusc.ca/payroll/verify",
+          "actualUrl": "https://westernusc-payroll.com/secure-login",
+          "isSuspicious": true
+        }
+      ],
+      "attachments": [],
+      "badges": [
+        "External",
+        "Urgent"
+      ],
+      "truth": "phish",
+      "explanation": "This is a phishing email pretending to be a payroll notice. It creates urgency around payment and sends the user to a lookalike domain to steal sensitive information.",
+      "evidence": [
+        "Sender domain is not the official company domain",
+        "Requests sensitive banking or payroll information",
+        "Creates urgency by claiming payment may be delayed",
+        "Displayed link looks official but redirects to a different domain"
+      ],
+      "rawHeaders": "Return-Path: <payroll@westernusc-payroll.com>\nReceived: from 203.0.113.44\nSPF: FAIL\nDKIM: none\nX-Spam-Score: 8.1"
     }
   ]
 }
