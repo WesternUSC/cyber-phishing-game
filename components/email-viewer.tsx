@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils';
 import { Email, EmailLink } from '@/lib/types';
 import { SenderAvatar } from '@/components/sender-avatar';
 import { CompromisedModal } from '@/components/compromised-modal';
+import { SenderHoverCard } from '@/components/sender-hover-card';
 
 interface Props {
   email: Email | undefined;
@@ -74,17 +75,26 @@ export function EmailViewer({ email, isReviewed, onSubmit, onPhishLinkClicked, i
         <div className="border-b border-gray-200 px-6 py-4">
           <h2 className="text-xl font-normal text-gray-900">{email.subject}</h2>
           <div className="mt-3 flex items-start gap-3">
-            <SenderAvatar
+            <SenderHoverCard senderEmail={email.senderEmail} senderName={email.senderName} senderAvatar={email.senderAvatar} isPfp={true} />
+
+            {/* <SenderAvatar
               senderName={email.senderName}
               senderAvatar={email.senderAvatar}
               size={36}
-            />
+            /> */}
+            
             <div className="min-w-0 flex-1">
               <div className="flex items-baseline gap-2">
-                <span className="font-medium text-gray-900">{email.senderName}</span>
-                <span className="text-xs text-gray-500">
+
+                {/* <span className="font-medium text-gray-900" title={email.senderEmail}>
+                  {email.senderName}
+                </span> */}
+
+                <SenderHoverCard senderEmail={email.senderEmail} senderName={email.senderName} senderAvatar={email.senderAvatar} isPfp={false} />
+
+                {/* <span className="text-xs text-gray-500">
                   &lt;{email.senderEmail}&gt;
-                </span>
+                </span> */}
               </div>
               <div className="text-xs text-gray-500">
                 to me &bull; {email.date} at {email.time}
@@ -103,7 +113,7 @@ export function EmailViewer({ email, isReviewed, onSubmit, onPhishLinkClicked, i
           />
 
           {/* Links panel */}
-          {email.links.length > 0 && (
+          {/* {email.links.length > 0 && (
             <div className="mt-6 rounded-lg border border-gray-200 bg-gray-50 p-4">
               <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-gray-500">
                 Links in this email
@@ -122,7 +132,7 @@ export function EmailViewer({ email, isReviewed, onSubmit, onPhishLinkClicked, i
                 ))}
               </div>
             </div>
-          )}
+          )} */}
 
           {/* Attachments */}
           {email.attachments.length > 0 && (
@@ -140,7 +150,7 @@ export function EmailViewer({ email, isReviewed, onSubmit, onPhishLinkClicked, i
             </div>
           )}
 
-          {/* Raw headers */}
+          {/* Raw headers
           {email.rawHeaders && (
             <div className="mt-4">
               <button
@@ -160,7 +170,7 @@ export function EmailViewer({ email, isReviewed, onSubmit, onPhishLinkClicked, i
                 </pre>
               )}
             </div>
-          )}
+          )} */}
         </div>
 
         {/* Decision bar */}
