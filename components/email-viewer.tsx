@@ -38,7 +38,7 @@ export function EmailViewer({ email, isReviewed, onSubmit, onPhishLinkClicked, i
     const target = (e.target as HTMLElement).closest('a');
     if (!target) return;
 
-    const href = target.getAttribute('href') ?? '';
+    const href = target.getAttribute('data-link-index') ?? '';
     const match = href.match(/^#link-(\d+)$/);
     if (!match) return;
 
