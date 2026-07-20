@@ -24,9 +24,14 @@ export function FeedbackModal({ open, onClose, correct, explanation, evidence }:
       {/* Modal */}
       <div className="relative z-10 w-full max-w-md rounded-2xl bg-white shadow-2xl">
         {/* Header */}
+        
         <div
           className={`flex items-center gap-3 rounded-t-2xl px-6 py-5 ${
-            correct ? 'bg-green-50' : 'bg-red-50'
+            explanation.includes("This email could be a phishing attempt")
+              ? "bg-yellow-50"
+              : correct
+                ? "bg-green-50"
+                : "bg-red-50"
           }`}
         >
           {correct ? (
@@ -35,6 +40,24 @@ export function FeedbackModal({ open, onClose, correct, explanation, evidence }:
             <XCircle className="h-8 w-8 shrink-0 text-red-600" />
           )}
           <div>
+            {
+              explanation.includes("This email could be a phishing attempt") ?
+              <>
+              <h2
+              className={`text-lg font-semibold ${
+                correct ? 'text-green-800' : 'text-red-800'
+              }`}
+            >
+              {correct ? 'Proceed with caution!' : 'Take a closer look'}
+            </h2>
+            <p className={`text-sm ${correct ? 'text-green-700' : 'text-red-700'}`}>
+              {correct
+                ? 'This email contains both legitimate and suspicious elements. Before taking any action, verify the request with the sender through a trusted method.'
+                : 'This email contains both legitimate and suspicious elements. Before taking any action, verify the request with the sender through a trusted method.'}
+            </p>
+            </>
+            :
+            <>
             <h2
               className={`text-lg font-semibold ${
                 correct ? 'text-green-800' : 'text-red-800'
@@ -47,6 +70,9 @@ export function FeedbackModal({ open, onClose, correct, explanation, evidence }:
                 ? 'Nice work — you spotted it correctly.'
                 : 'Review the clues below and keep it in mind next time.'}
             </p>
+            </>
+            }
+            
           </div>
           <button
             onClick={onClose}

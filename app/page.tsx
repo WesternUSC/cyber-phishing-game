@@ -104,7 +104,10 @@ export default function HomePage() {
 
   function handleSubmit(decision: 'phish' | 'safe') {
     if (!currentEmail) return;
-    const correct = currentEmail.truth === decision;
+    var correct = currentEmail.truth === decision;
+    if (currentEmail.explanation.includes("This email could be a phishing attempt")) {
+      correct = true;
+    }
     const ms = Date.now() - openedAtRef.current;
     dispatch({ type: 'SUBMIT_DECISION', payload: { emailId: currentEmail.id, decision, correct, ms } });
     setFeedback({ open: true, correct, explanation: currentEmail.explanation, evidence: currentEmail.evidence });

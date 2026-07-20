@@ -33,7 +33,7 @@ export function SenderHoverCard({ senderEmail, senderName, senderAvatar, isPfp }
       <span style={{cursor: 'text'}}>
         {isPfp ?
             <SenderAvatar
-              senderName={senderEmail}
+              senderName={senderName}
               senderAvatar={senderAvatar}
               size={36}
             />

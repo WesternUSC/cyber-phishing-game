@@ -20,12 +20,13 @@
       "badges": [
         "Urgent"
       ],
-      "truth": "phish",
-      "explanation": "This is a phishing attempt. It tries to bypass standard security practices by requesting login credentials directly.",
+      "truth": "safe",
+      "explanation": "This email could be a phishing attempt, but it could also be a legitimate request sent from a colleague's internal company email address. Regardless of its origin, it asks you to bypass standard security practices by providing login credentials directly. Because email accounts can be compromised or spoofed in some situations, you should verify the request through a trusted communication channel, such as a phone call, in-person conversation, or an established internal messaging platform, before sharing any sensitive information.",
       "evidence": [
-        "Requesting credentials via chat/email violates company security policy",
-        "Creates urgency by mentioning being in a meeting",
-        "Legitimate staff and IT will never ask for passwords directly"
+        "The message requests login credentials directly, which does not follow standard security best practices",
+        "Even if the email appears to come from a colleague's internal company email address, email accounts can be compromised, so the sender's identity should be verified through a trusted communication channel",
+        "The message creates a sense of urgency by mentioning that the sender is in a meeting",
+        "Legitimate staff should not request passwords or login credentials through email or chat"
       ],
       "rawHeaders": "Return-Path: <Jaclyn@westernusc.ca>\nSPF: PASS\nDKIM: PASS\nX-Spam-Score: 2.1"
     },
