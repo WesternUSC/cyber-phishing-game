@@ -81,6 +81,35 @@ export default function HomePage() {
     return () => clearInterval(id);
   }, []);
 
+  // Reset when pressing "R" key
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      // Ignore typing in text boxes
+      const target = event.target as HTMLElement;
+      if (
+        target.tagName === 'INPUT' ||
+        target.tagName === 'TEXTAREA' ||
+        target.isContentEditable
+      ) {
+        return;
+      }
+
+      if (event.key.toLowerCase() === 'r') {
+        localStorage.clear();
+        sessionStorage.clear();
+
+        window.location.reload();
+        console.log('Saved game cleared');
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
   const currentEmail = emails.find((e) => e.id === state.currentEmailId);
   const score = Object.values(state.decisions).filter((d) => d.correct).length;
   const progressPct = emails.length > 0 ? state.reviewed.length / emails.length : 0;
