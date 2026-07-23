@@ -48,6 +48,9 @@ export default function HomePage() {
   const router = useRouter();
   const isTablet = useIsTablet();
 
+  const [isMinimized, setIsMinimized] = useState(false);
+  const [showStart, setShowStart] = useState(false);
+
   // Hydrate from localStorage
   useEffect(() => {
     const raw = localStorage.getItem(STORAGE_KEY);
@@ -379,17 +382,17 @@ export default function HomePage() {
     <div
       className="h-screen w-screen overflow-hidden"
       style={{
-        background:
-          'radial-gradient(ellipse at 15% 65%, #1d4ed8 0%, transparent 52%), ' +
-          'radial-gradient(ellipse at 82% 18%, #7c3aed 0%, transparent 52%), ' +
-          'radial-gradient(ellipse at 58% 88%, #be185d 0%, transparent 48%), ' +
-          'linear-gradient(to bottom right, #0f172a, #1e1b4b)',
+        backgroundImage: "url('/Windows-11-default-wallpaper.jpg')",
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: "center",
+        backgroundSize: "100% 100%"
       }}
     >
       {/* Desktop area — sits above the taskbar */}
       <div className="flex h-[calc(100vh-3rem)] items-center justify-center p-5">
         {/* Floating app window */}
-        <div className="flex h-95/100 w-95/100 flex-col overflow-hidden rounded-lg shadow-[0_20px_60px_rgba(0,0,0,0.65)]">
+        {!isMinimized && (
+        <div className="flex h-95/100 w-4/5 flex-col overflow-hidden rounded-lg shadow-[0_20px_60px_rgba(0,0,0,0.65)]">
 
           {/* Windows 11 title bar */}
           <div className="flex h-9 shrink-0 select-none items-center bg-[#202020] px-4">
@@ -398,7 +401,7 @@ export default function HomePage() {
               <span className="text-xs text-white/55">PhishQuest — Inbox</span>
             </div>
             <div className="ml-auto flex items-center">
-              <button aria-label="Minimize" className="flex h-9 w-11 items-center justify-center text-white/50 transition-colors hover:bg-white/10">
+              <button aria-label="Minimize" onClick={() => setIsMinimized(true)} className="flex h-9 w-11 items-center justify-center text-white/50 transition-colors hover:bg-white/10">
                 <svg width="10" height="1" viewBox="0 0 10 1" fill="currentColor"><rect width="10" height="1" /></svg>
               </button>
               <button aria-label="Maximize" className="flex h-9 w-11 items-center justify-center text-white/50 transition-colors hover:bg-white/10">
@@ -416,13 +419,143 @@ export default function HomePage() {
 
           {innerGame}
         </div>
+        )}
       </div>
+
+      {/* Start Menu */}
+      {/* {showStart && (
+        <div
+          className="fixed inset-0 z-40"
+          onClick={() => setShowStart(false)}
+        >
+          <div
+            className="absolute bottom-12 left-1/2 -translate-x-1/2"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Image
+              src="/win_start.png"
+              alt="Windows Start Menu"
+              width={600}
+              height={700}
+              priority
+            />
+          </div>
+        </div>
+      )} */}
+
+      {showStart && (
+      <div
+        className="fixed inset-0 z-40"
+        onClick={() => setShowStart(false)}
+      >
+        <div
+          className="absolute bottom-14 left-1/2 w-[620px] -translate-x-1/2 overflow-hidden rounded-2xl border border-white/10 bg-[#202020]/90 shadow-2xl backdrop-blur-3xl"
+          onClick={(e) => e.stopPropagation()}
+        >
+          {/* Search */}
+          <div className="p-6 pb-4">
+            <div className="flex items-center rounded-full bg-white/8 px-4 py-3 text-sm text-white/60">
+              🔍
+              <span className="ml-3">Search for apps, settings, and documents</span>
+            </div>
+          </div>
+
+          {/* Pinned */}
+          <div className="px-8">
+            <div className="mb-4 flex items-center justify-between">
+              <h2 className="text-sm font-semibold text-white">Pinned</h2>
+              <button className="rounded bg-white/5 px-3 py-1 text-xs text-white/70 hover:bg-white/10">
+                All apps →
+              </button>
+            </div>
+
+            <div className="grid grid-cols-6 gap-5">
+              {[
+                { icon: "/chrome_icon.webp", label: "Chrome" },
+                { icon: "/photos-icon.png", label: "Photos" },
+                { icon: "/folder.webp", label: "Files" },
+                { icon: "/settings.webp", label: "Settings" },
+                { icon: "/outlook.webp", label: "Outlook" },
+                { icon: "/edge.png", label: "Edge" },
+              ].map((app) => (
+                <button
+                  key={app.label}
+                  className="flex flex-col items-center rounded-xl p-2 hover:bg-white/10"
+                >
+                  <div className="flex h-10 w-10 items-center justify-center">
+                    <Image
+                      src={app.icon}
+                      alt={app.label}
+                      width={38}
+                      height={38}
+                      className="object-contain"
+                    />
+                  </div>
+
+                  <span className="mt-2 h-4 text-center text-xs leading-4 text-white/80">
+                    {app.label}
+                  </span>
+
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Recommended */}
+          <div className="mt-8 px-8">
+            <div className="mb-3 flex items-center justify-between">
+              <h2 className="text-sm font-semibold text-white">Recommended</h2>
+              <button className="text-xs text-white/60">More →</button>
+            </div>
+
+            <div className="space-y-2">
+              <div className="flex items-center gap-3 rounded-xl p-3 hover:bg-white/10">
+                <Image
+                  src="/chrome_icon.webp"
+                  alt=""
+                  width={28}
+                  height={28}
+                />
+                <div>
+                  <p className="text-sm text-white">Chrome</p>
+                  <p className="text-xs text-white/45">
+                    Recently used
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom account bar */}
+          <div className="mt-6 flex items-center justify-between border-t border-white/10 bg-black/20 px-6 py-4">
+            <div className="flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#4f2584] font-semibold text-white">
+                {state.playerName.charAt(0).toUpperCase()}
+              </div>
+
+              <div>
+                <p className="text-sm text-white">
+                  {state.playerName}
+                </p>
+                <p className="text-xs text-white/50">
+                  Local Account
+                </p>
+              </div>
+            </div>
+
+            <button className="rounded-lg p-2 hover:bg-white/10">
+              ⏻
+            </button>
+          </div>
+        </div>
+      </div>
+    )}
 
       {/* Windows 11 taskbar */}
       <div className="flex h-12 items-center justify-between border-t border-white/10 bg-black/50 px-6 backdrop-blur-md">
         <div className="w-24" />
         <div className="flex items-center gap-1">
-          <button aria-label="Start" className="flex h-10 w-10 items-center justify-center rounded transition-colors hover:bg-white/10">
+          <button aria-label="Start" onClick={() => setShowStart((prev) => !prev)} className="flex h-10 w-10 items-center justify-center rounded transition-colors hover:bg-white/10">
             <svg viewBox="0 0 22 22" className="h-5 w-5" fill="white" opacity="0.75">
               <rect x="0" y="0" width="10" height="10" rx="1" />
               <rect x="12" y="0" width="10" height="10" rx="1" />
@@ -430,9 +563,9 @@ export default function HomePage() {
               <rect x="12" y="12" width="10" height="10" rx="1" />
             </svg>
           </button>
-          <button className="flex h-10 items-center gap-2 rounded border-b-2 border-white/70 bg-white/10 px-3 transition-colors hover:bg-white/15">
-            <Image src="/usc-logo.png" alt="" width={16} height={16} className="opacity-90" />
-            <span className="hidden text-xs text-white/70 sm:block">PhishQuest</span>
+          <button onClick={() => setIsMinimized((prev) => !prev)} className="flex h-10 items-center gap-2 rounded border-b-2 border-white/70 bg-white/10 px-3 transition-colors hover:bg-white/15">
+            <Image src="/chrome_icon.webp" alt="" width={24} height={24} className="opacity-90" />
+            {/* <span className="hidden text-xs text-white/70 sm:block">Chrome</span> */}
           </button>
         </div>
         <div className="flex w-24 flex-col items-end">
@@ -440,7 +573,10 @@ export default function HomePage() {
             <>
               <span className="text-xs font-medium leading-none text-white/70">{clockStr}</span>
               <span className="mt-0.5 text-[10px] leading-none text-white/45">
-                {new Date().toLocaleDateString([], { month: 'short', day: 'numeric' })}
+                {(() => {
+                  const date = new Date();
+                  return `${date.getFullYear()}/${String(date.getMonth() + 1).padStart(2, '0')}/${String(date.getDate()).padStart(2, '0')}`;
+                })()}
               </span>
             </>
           )}
