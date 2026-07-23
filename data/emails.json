@@ -3,7 +3,7 @@
     {
       "id": "email-1",
       "senderName": "Jaclyn Higgins",
-      "senderEmail": "Jaclyn@westernusc.ca",
+      "senderEmail": "Jaclyn@westernusc.com",
       "senderAvatar": "Jaclyn.jpg",
       "subject": "Quick Help Needed",
       "preview": "I’m stuck in a meeting and need a temporary login ASAP.",
@@ -11,8 +11,8 @@
       "time": "4:00 PM",
       "bodyHtml": [
         "<p>Hey,</p>",
-        "<p>I’m stuck in a meeting in the Board Room and forgot my password.</p>",
-        "<p>Can you Slack me a temporary login for the rippling portal?</p>",
+        "<p>im stuck in a meeting in the Board Room and forgot my passwrd.</p>",
+        "<p>Can you Slack me a temprary login for the rippling portal?</p>",
         "<p>Thanks.</p>"
       ],
       "links": [],
@@ -20,20 +20,20 @@
       "badges": [
         "Urgent"
       ],
-      "truth": "safe",
-      "explanation": "This email could be a phishing attempt, but it could also be a legitimate request sent from a colleague's internal company email address. Regardless of its origin, it asks you to bypass standard security practices by providing login credentials directly. Because email accounts can be compromised or spoofed in some situations, you should verify the request through a trusted communication channel, such as a phone call, in-person conversation, or an established internal messaging platform, before sharing any sensitive information.",
+      "truth": "phish",
+      "explanation": "This is a phishing attempt. It tries to bypass standard security practices by requesting login credentials directly, and the email is not from the correct @westernusc.ca domain.",
       "evidence": [
-        "The message requests login credentials directly, which does not follow standard security best practices",
-        "Even if the email appears to come from a colleague's internal company email address, email accounts can be compromised, so the sender's identity should be verified through a trusted communication channel",
-        "The message creates a sense of urgency by mentioning that the sender is in a meeting",
-        "Legitimate staff should not request passwords or login credentials through email or chat"
+        "Email is .com instead of .ca and has several typos",
+        "Requesting credentials via chat/email violates company security policy",
+        "Creates urgency by mentioning being in a meeting",
+        "Legitimate staff and IT will never ask for passwords directly"
       ],
       "rawHeaders": "Return-Path: <Jaclyn@westernusc.ca>\nSPF: PASS\nDKIM: PASS\nX-Spam-Score: 2.1"
     },
     {
       "id": "email-2",
-      "senderName": "HR Team",
-      "senderEmail": "hr@westernusc.ca",
+      "senderName": "Human Resources",
+      "senderEmail": "human.resources@westernusc.ca",
       "senderAvatar": "",
       "subject": "2025 Benefits Enrollment – Deadline This Friday",
       "preview": "Annual open enrollment for health, dental, and vision closes Friday at 5 PM.",
@@ -45,7 +45,7 @@
         "<p>If you haven't yet reviewed your benefits options for the upcoming year, please log in to the HR portal and make your selections before the deadline.</p>",
         "<p>This year's changes include:</p>",
         "<ul><li>Updated dental coverage tiers</li><li>New vision plan provider (VSP)</li><li>HSA contribution limit increase to $4,300</li></ul>",
-        "<p>Questions? Reach out to <a href='mailto:hr@westernusc.ca'>hr@westernusc.ca</a> or visit the <a href='https://hr.westernusc.ca/benefits' data-link-index='#link-1'>HR Benefits Portal</a>.</p>",
+        "<p>Questions? Reach out to <a href='mailto:human.resources@westernusc.ca'>human.resources@westernusc.ca</a> or visit the <a href='https://hr.westernusc.ca/benefits' data-link-index='#link-1'>HR Benefits Portal</a>.</p>",
         "<p class='email-sig'>The HR Team<br>Western USC<br>hr@westernusc.ca &bull; ext. 2100</p>"
       ],
       "links": [
@@ -125,7 +125,7 @@
     {
       "id": "email-4",
       "senderName": "Wade Masse",
-      "senderEmail": "Wade@westernusc.ca",
+      "senderEmail": "Wade@westernnusc.ca",
       "senderAvatar": "Wade.png",
       "subject": "Invoice: Front Desk Renovations",
       "preview": "Please review the attached invoice for the recent renovations.",
@@ -150,8 +150,9 @@
         "External"
       ],
       "truth": "phish",
-      "explanation": "This is a phishing email. Malicious attachments are commonly disguised as invoices.",
+      "explanation": "This is a phishing email. Malicious attachments are commonly disguised as invoices, and the domain is not the correct @westernusc.ca domain.",
       "evidence": [
+        "Domain is incorrect (has an extra 'n' in 'westernnusc.ca')",
         "Invoices are typically sent as PDFs, not .zip files",
         "Compressed files can contain malware",
         "Unexpected attachment from an unfamiliar sender",
@@ -217,8 +218,8 @@
       "time": "11:15 AM",
       "bodyHtml": [
         "<p>Dear User,</p>",
-        "<p>We are performing a system upgrade and migrating internal email services.</p>",
-        "<p>To keep your current password, please confirm below:</p>",
+        "<p>Were performing a system upgrade and migrating internal email services.</p>",
+        "<p>To keep your curren password, please confirm below:</p>",
         "<p class='email-cta'><a href='https://secure-mail-reset.net/confirm' data-link-index='#link-0'>Keep Current Password &rarr;</a></p>",
         "<p><strong>Your account will be reset at 5 PM if no action is taken.</strong></p>",
         "<p class='email-sig'>IT Systems Team</p>"
@@ -239,6 +240,7 @@
       "truth": "phish",
       "explanation": "This is a phishing email. It uses urgency and misleading links to trick users into revealing credentials.",
       "evidence": [
+        "Sender domain is not the official company domain, and several typos are present",
         "Creates urgency with a deadline ('reset at 5 PM')",
         "Link directs to a non-company domain",
         "Legitimate IT departments do not ask users to confirm passwords via email links",
@@ -277,6 +279,7 @@
       "truth": "phish",
       "explanation": "This is a phishing email designed to steal your login credentials through a fake Google login page.",
       "evidence": [
+        "Sender domain is not the official company domain",
         "Link leads to a fake login page instead of a real Google domain",
         "Requests Google credentials unnecessarily",
         "Sender domain is not an official Google or company domain",
@@ -287,7 +290,7 @@
     {
       "id": "email-8",
       "senderName": "Rochelle Alquiza",
-      "senderEmail": "rochelle@westernusc.ca",
+      "senderEmail": "rochelle@western.ca",
       "senderAvatar": "Rochelle.png",
       "subject": "Quick Favor Needed",
       "preview": "Are you at your desk? I need help buying gift cards.",
@@ -307,6 +310,7 @@
       "truth": "phish",
       "explanation": "This is a phishing attempt using a Business Email Compromise (BEC) tactic to trick you into sending money.",
       "evidence": [
+        "Sender domain is not the official company domain",
         "Requests gift cards, which is a common scam method",
         "Creates urgency and pressure to act quickly",
         "Unusual request that bypasses normal purchasing procedures",
@@ -391,7 +395,7 @@
     {
       "id": "email-11",
       "senderName": "Rob Fraser",
-      "senderEmail": "rob@westernusc.ca",
+      "senderEmail": "rob@westernusc.org",
       "senderAvatar": "",
       "subject": "Can you review this?",
       "preview": "Can you take a look at this document?",
@@ -416,6 +420,7 @@
       "truth": "phish",
       "explanation": "This is a phishing attempt using a fake Google Docs link to trick users into logging in.",
       "evidence": [
+        "Sender domain is not the official company domain",
         "Unexpected document share from sender",
         "URL mimics Google Docs but uses a malicious domain",
         "Common tactic to steal credentials via fake login",
@@ -426,7 +431,7 @@
     {
       "id": "email-12",
       "senderName": "Tammy Dowell",
-      "senderEmail": "Tammy@westernusc.ca",
+      "senderEmail": "Tammy@western.ca",
       "senderAvatar": "",
       "subject": "Updated Staff Contact List",
       "preview": "Please use this updated contact list moving forward.",
@@ -450,6 +455,7 @@
       "truth": "phish",
       "explanation": "This is a phishing email. The attachment is designed to mimic a login page and steal credentials.",
       "evidence": [
+        "Sender domain is not the official company domain",
         "Attachment is an .html file instead of a typical document format",
         "HTML files can open fake login pages in a browser",
         "Unexpected attachment without prior notice",
