@@ -84,6 +84,12 @@ export default function HomePage() {
     return () => clearInterval(id);
   }, []);
 
+  function resetGame() {
+    localStorage.clear();
+    sessionStorage.clear();
+    window.location.reload();
+  }
+
   // Reset when pressing "R" key
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -98,11 +104,7 @@ export default function HomePage() {
       }
 
       if (event.key.toLowerCase() === 'r') {
-        localStorage.clear();
-        sessionStorage.clear();
-
-        window.location.reload();
-        console.log('Saved game cleared');
+        resetGame();
       }
     };
 
@@ -254,7 +256,7 @@ export default function HomePage() {
 
       <div className="flex flex-1 overflow-hidden">
         {/* Left sidebar — vertical progress */}
-        <aside className="hidden w-40 shrink-0 flex-col gap-5 border-r border-gray-200 bg-white p-4 lg:flex">
+        <aside className="hidden h-full w-40 shrink-0 flex-col border-r border-gray-200 bg-white p-4 lg:flex">
           <div className="rounded-full bg-[#e8f0fe] px-4 py-2 text-sm font-medium text-[#1a73e8]">
             Inbox
             <span className="ml-2 text-xs font-normal">
@@ -297,6 +299,15 @@ export default function HomePage() {
               <span className="text-sm font-normal text-gray-500">/{state.reviewed.length}</span>
             </p>
           </div>
+
+          {/* Reset */}
+          <button
+  onClick={resetGame}
+  className="mt-auto w-full rounded-md bg-red-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-red-700"
+>
+  Reset
+</button>
+
         </aside>
 
         {/* Email list */}

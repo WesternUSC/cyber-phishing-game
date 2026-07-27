@@ -26,11 +26,13 @@ export function InboxList({ emails, selectedId, reviewed, decisions, onSelect }:
             key={email.id}
             onClick={() => onSelect(email.id)}
             className={cn(
-              'flex w-full items-start gap-3 px-4 py-3 text-left transition-colors hover:bg-[#f2f6fc] focus:outline-none',
-              isSelected && 'bg-[#e8f0fe]',
-              !isSelected && !isReviewed && 'bg-white',
-              !isSelected && isReviewed && 'bg-[#f6f8fc]',
-            )}
+  'flex w-full items-start gap-3 px-4 py-3 text-left transition-colors hover:bg-[#f2f6fc] focus:outline-none',
+  isSelected
+    ? 'bg-[#e8f0fe]'
+    : isReviewed
+      ? 'bg-[#dfe9f7]'
+      : 'bg-white'
+)}
           >
             <div className="mt-0.5 shrink-0">
               <SenderAvatar
