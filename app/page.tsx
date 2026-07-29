@@ -48,7 +48,7 @@ export default function HomePage() {
   const router = useRouter();
   const isTablet = useIsTablet();
 
-  const [isMinimized, setIsMinimized] = useState(false);
+  const [isMinimized, setIsMinimized] = useState(true);
   const [showStart, setShowStart] = useState(false);
 
   // Hydrate from localStorage
@@ -434,9 +434,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="flex-1 overflow-hidden">
-            {windowContent}
-          </div>
+          {windowContent}
         </div>
         )}
       </div>
