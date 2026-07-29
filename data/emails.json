@@ -21,7 +21,7 @@
         "Urgent"
       ],
       "truth": "phish",
-      "explanation": "This is a phishing attempt. It tries to bypass standard security practices by requesting login credentials directly, and the email is not from the correct @westernusc.ca domain.",
+      "explanation": "This is an unsafe email. It tries to bypass standard security practices by requesting login credentials directly, and the email is not from the correct @westernusc.ca domain.",
       "evidence": [
         "Email is .com instead of .ca and has several typos",
         "Requesting credentials via chat/email violates company security policy",
@@ -113,7 +113,7 @@
         "Urgent"
       ],
       "truth": "phish",
-      "explanation": "This is a phishing email. It attempts to trick users into entering sensitive information through a disguised link.",
+      "explanation": "This is an unsafe email. It attempts to trick users into entering sensitive information through a disguised link.",
       "evidence": [
         "The link uses a shortened URL (bit.ly), hiding the real destination",
         "Requests sensitive information like SIN",
@@ -150,7 +150,7 @@
         "External"
       ],
       "truth": "phish",
-      "explanation": "This is a phishing email. Malicious attachments are commonly disguised as invoices, and the domain is not the correct @westernusc.ca domain.",
+      "explanation": "This is an unsafe email. Malicious attachments are commonly disguised as invoices, and the domain is not the correct @westernusc.ca domain.",
       "evidence": [
         "Domain is incorrect (has an extra 'n' in 'westernnusc.ca')",
         "Invoices are typically sent as PDFs, not .zip files",
@@ -238,7 +238,7 @@
         "Urgent"
       ],
       "truth": "phish",
-      "explanation": "This is a phishing email. It uses urgency and misleading links to trick users into revealing credentials.",
+      "explanation": "This is an unsafe email.. It uses urgency and misleading links to trick users into revealing credentials.",
       "evidence": [
         "Sender domain is not the official company domain, and several typos are present",
         "Creates urgency with a deadline ('reset at 5 PM')",
@@ -277,7 +277,7 @@
         "External"
       ],
       "truth": "phish",
-      "explanation": "This is a phishing email designed to steal your login credentials through a fake Google login page.",
+      "explanation": "This is an unsafe email designed to steal your login credentials through a fake Google login page.",
       "evidence": [
         "Sender domain is not the official company domain",
         "Link leads to a fake login page instead of a real Google domain",
@@ -308,7 +308,7 @@
         "Urgent"
       ],
       "truth": "phish",
-      "explanation": "This is a phishing attempt using a Business Email Compromise (BEC) tactic to trick you into sending money.",
+      "explanation": "This is an unsafe email using a Business Email Compromise (BEC) tactic to trick you into sending money.",
       "evidence": [
         "Sender domain is not the official company domain",
         "Requests gift cards, which is a common scam method",
@@ -383,7 +383,7 @@
         "Urgent"
       ],
       "truth": "phish",
-      "explanation": "This is a phishing email exploiting fake system behavior to trick users into clicking malicious links.",
+      "explanation": "This is an unsafe email exploiting fake system behavior to trick users into clicking malicious links.",
       "evidence": [
         "Email systems do not require users to 'release' messages like this",
         "Creates urgency with undelivered message claim",
@@ -418,7 +418,7 @@
       "attachments": [],
       "badges": [],
       "truth": "phish",
-      "explanation": "This is a phishing attempt using a fake Google Docs link to trick users into logging in.",
+      "explanation": "This is an unsafe email using a fake Google Docs link to trick users into logging in.",
       "evidence": [
         "Sender domain is not the official company domain",
         "Unexpected document share from sender",
@@ -453,7 +453,7 @@
       ],
       "badges": [],
       "truth": "phish",
-      "explanation": "This is a phishing email. The attachment is designed to mimic a login page and steal credentials.",
+      "explanation": "This is an unsafe email. The attachment is designed to mimic a login page and steal credentials.",
       "evidence": [
         "Sender domain is not the official company domain",
         "Attachment is an .html file instead of a typical document format",
@@ -561,7 +561,7 @@
         "Urgent"
       ],
       "truth": "phish",
-      "explanation": "This is a phishing email pretending to be a payroll notice. It creates urgency around payment and sends the user to a lookalike domain to steal sensitive information.",
+      "explanation": "This is an unsafe email pretending to be a payroll notice. It creates urgency around payment and sends the user to a lookalike domain to steal sensitive information.",
       "evidence": [
         "Sender domain is not the official company domain",
         "Requests sensitive banking or payroll information",
