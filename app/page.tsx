@@ -159,9 +159,8 @@ export default function HomePage() {
   }
 
   // ── Intro screen ────────────────────────────────────────────────────────────
-  if (!introSeen) {
-    return (
-      <div className="flex min-h-screen items-center justify-center bg-[#f6f8fc] p-4">
+  const introContent = (
+      <div className="flex h-full items-center justify-center bg-[#f6f8fc] p-4">
         <div className="w-full max-w-lg rounded-2xl bg-white p-8 shadow-lg">
           <div className="mb-6 flex flex-col items-center gap-3 text-center">
             <Image src="/usc-logo.png" alt="USC Logo" width={80} height={80} />
@@ -201,13 +200,11 @@ export default function HomePage() {
           </button>
         </div>
       </div>
-    );
-  }
+  );
 
   // ── Name entry screen ───────────────────────────────────────────────────────
-  if (!state.started) {
-    return (
-      <div className="flex min-h-screen items-center justify-center bg-[#f6f8fc] p-4">
+  const nameContent = (
+      <div className="flex h-full items-center justify-center bg-[#f6f8fc] p-4">
         <div className="w-full max-w-sm rounded-2xl bg-white p-8 shadow-lg">
           <div className="mb-6 flex flex-col items-center gap-3 text-center">
             <Image src="/usc-logo.png" alt="USC Logo" width={72} height={72} />
@@ -246,7 +243,6 @@ export default function HomePage() {
         </div>
       </div>
     );
-  }
 
   // ── Shared inner game layout ─────────────────────────────────────────────────
   // Used by both the iPad and the desktop (Windows) wrappers below.
@@ -388,6 +384,16 @@ export default function HomePage() {
     );
   }
 
+  let windowContent;
+
+  if (!introSeen) {
+    windowContent = introContent;
+  } else if (!state.started) {
+    windowContent = nameContent;
+  } else {
+    windowContent = innerGame;
+  }
+
   // ── Desktop layout (Windows 11 theme) ────────────────────────────────────────
   return (
     <div
@@ -428,7 +434,9 @@ export default function HomePage() {
             </div>
           </div>
 
-          {innerGame}
+          <div className="flex-1 overflow-hidden">
+            {windowContent}
+          </div>
         </div>
         )}
       </div>
