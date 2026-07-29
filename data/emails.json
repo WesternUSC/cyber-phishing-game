@@ -356,7 +356,7 @@
     {
       "id": "email-10",
       "senderName": "Microsoft Outlook",
-      "senderEmail": "no-reply@outlook.com",
+      "senderEmail": "noreply@outlook.com",
       "senderAvatar": "",
       "subject": "Undelivered Messages Notification",
       "preview": "You have 3 undelivered messages. Release them now.",
