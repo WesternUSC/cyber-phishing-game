@@ -34,6 +34,19 @@ const desktopApps = [
     description: "Microsoft's web browser."
   },
   {
+    id: "chrome",
+    name: "Google Chrome",
+    icon: "/chrome_icon.webp",
+    description: "Browse the web with Google Chrome.",
+    action: "openChrome"
+  },
+  {
+    id: "outlook",
+    name: "Outlook",
+    icon: "/outlook.webp",
+    description: "Read and send email."
+  },
+  {
     id: "settings",
     name: "Settings",
     icon: "/settings.webp",
@@ -473,30 +486,36 @@ export default function HomePage() {
       {/* Desktop area — sits above the taskbar */}
       <div className="flex h-[calc(100vh-3rem)] items-center justify-center p-5">
 
-        <div className="absolute left-6 top-6 grid grid-cols-1 gap-4">
-        {desktopApps.map((app) => (
-          <button
-            key={app.id}
-            onDoubleClick={() =>
-              setOpenApp({
-                name: app.name,
-                description: app.description,
-              })
-            }
-            className="flex w-20 flex-col items-center rounded-lg p-2 text-white hover:bg-white/10"
-          >
-            <Image
-              src={app.icon}
-              alt={app.name}
-              width={48}
-              height={48}
-            />
+        <div className="absolute left-6 top-6 grid auto-rows-max grid-flow-col grid-rows-6 gap-x-6 gap-y-4">
+  {desktopApps.map((app) => (
+    <button
+      key={app.id}
+      onDoubleClick={() => {
+      if (app.action === "openChrome") {
+        setIsMinimized(false);
+        return;
+      }
 
-            <span className="mt-2 text-center text-xs drop-shadow-lg">
-              {app.name}
-            </span>
-          </button>
-        ))}
+      setOpenApp({
+        name: app.name,
+        description: app.description,
+      });
+    }}
+      className="flex w-20 flex-col items-center rounded-lg p-2 text-white hover:bg-white/10"
+    >
+      <Image
+        src={app.icon}
+        alt={app.name}
+        width={48}
+        height={48}
+      />
+
+      <span className="mt-2 text-center text-xs drop-shadow-lg">
+        {app.name}
+      </span>
+    </button>
+  ))}
+
       </div>
 
         {/* Floating app window */}
