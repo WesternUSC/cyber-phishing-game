@@ -14,6 +14,63 @@ import emailData from '@/data/emails.json';
 const emails = emailData.emails as Email[];
 const STORAGE_KEY = 'phishquest-run';
 
+const desktopApps = [
+  {
+    id: "recycle",
+    name: "Recycle Bin",
+    icon: "/recycle-bin.png",
+    description: "Displays deleted files that can be restored or permanently removed."
+  },
+  {
+    id: "explorer",
+    name: "File Explorer",
+    icon: "/folder.webp",
+    description: "Browse and organize files and folders."
+  },
+  {
+    id: "edge",
+    name: "Microsoft Edge",
+    icon: "/edge.png",
+    description: "Microsoft's web browser."
+  },
+  {
+    id: "settings",
+    name: "Settings",
+    icon: "/settings.webp",
+    description: "Configure Windows settings."
+  },
+  {
+    id: "photos",
+    name: "Photos",
+    icon: "/photos-icon.png",
+    description: "View and organize pictures."
+  },
+  {
+    id: "calculator",
+    name: "Calculator",
+    icon: "/calculator.webp",
+    description: "Perform calculations."
+  },
+  {
+    id: "paint",
+    name: "Paint",
+    icon: "/paint.png",
+    description: "Basic drawing and image editing."
+  },
+  {
+    id: "notepad",
+    name: "Notepad",
+    icon: "/notepad.png",
+    description: "Simple text editor."
+  },
+  {
+    id: "store",
+    name: "Microsoft Store",
+    icon: "/store.png",
+    description: "Install apps and games."
+  },
+];
+
 // ── Tablet detection hook ─────────────────────────────────────────────────────
 // Matches any touch-based device >= 768px wide (iPad, Android tablet, etc.)
 // Returns false on SSR and flips to true on the client when applicable.
@@ -50,6 +107,14 @@ export default function HomePage() {
 
   const [isMinimized, setIsMinimized] = useState(true);
   const [showStart, setShowStart] = useState(false);
+
+  const [openApp, setOpenApp] = useState<
+  | {
+      name: string;
+      description: string;
+    }
+  | null
+>(null);
 
   // Hydrate from localStorage
   useEffect(() => {
@@ -397,7 +462,7 @@ export default function HomePage() {
   // ── Desktop layout (Windows 11 theme) ────────────────────────────────────────
   return (
     <div
-      className="h-screen w-screen overflow-hidden"
+      className="relative h-screen w-screen overflow-hidden"
       style={{
         backgroundImage: "url('/Windows-11-default-wallpaper.jpg')",
         backgroundRepeat: 'no-repeat',
@@ -407,6 +472,33 @@ export default function HomePage() {
     >
       {/* Desktop area — sits above the taskbar */}
       <div className="flex h-[calc(100vh-3rem)] items-center justify-center p-5">
+
+        <div className="absolute left-6 top-6 grid grid-cols-1 gap-4">
+        {desktopApps.map((app) => (
+          <button
+            key={app.id}
+            onDoubleClick={() =>
+              setOpenApp({
+                name: app.name,
+                description: app.description,
+              })
+            }
+            className="flex w-20 flex-col items-center rounded-lg p-2 text-white hover:bg-white/10"
+          >
+            <Image
+              src={app.icon}
+              alt={app.name}
+              width={48}
+              height={48}
+            />
+
+            <span className="mt-2 text-center text-xs drop-shadow-lg">
+              {app.name}
+            </span>
+          </button>
+        ))}
+      </div>
+
         {/* Floating app window */}
         {!isMinimized && (
         <div className="flex h-95/100 w-4/5 flex-col overflow-hidden rounded-lg shadow-[0_20px_60px_rgba(0,0,0,0.65)]">
@@ -599,6 +691,52 @@ export default function HomePage() {
           )}
         </div>
       </div>
+
+      {openApp && (
+      <div
+        className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm"
+        onClick={() => setOpenApp(null)}
+      >
+        <div
+          className="w-[420px] overflow-hidden rounded-lg bg-white shadow-2xl"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="flex items-center justify-between bg-[#202020] px-4 py-2 text-white">
+            <span className="text-sm">{openApp.name}</span>
+
+            <button
+              onClick={() => setOpenApp(null)}
+              className="rounded px-2 hover:bg-red-600"
+            >
+              ✕
+            </button>
+          </div>
+
+          <div className="space-y-4 p-6">
+            <h2 className="text-xl font-semibold">
+              {openApp.name}
+            </h2>
+
+            <p className="text-sm text-gray-600">
+              {openApp.description}
+            </p>
+
+            <p className="text-sm text-gray-600">
+              Please continue with Chrome.
+            </p>
+
+            <div className="flex justify-end">
+              <button
+                onClick={() => setOpenApp(null)}
+                className="rounded bg-[#4f2584] px-4 py-2 text-sm text-white hover:bg-[#3d1d68]"
+              >
+                OK
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    )}
 
       <FeedbackModal
         open={feedback.open}
