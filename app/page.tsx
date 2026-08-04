@@ -84,6 +84,16 @@ const desktopApps = [
   },
 ];
 
+const bookmarks = [
+  { name: "Gmail", icon: "/gmail_icon.webp" },
+  { name: "YouTube", icon: "/Youtube_logo.png" },
+  { name: "Drive", icon: "/drive_logo.webp" },
+  { name: "Docs", icon: "/docs_logo.webp" },
+  { name: "Calendar", icon: "/google_calendar.webp" },
+  { name: "GitHub", icon: "/github_logo.webp" },
+];
+
+
 // ── Tablet detection hook ─────────────────────────────────────────────────────
 // Matches any touch-based device >= 768px wide (iPad, Android tablet, etc.)
 // Returns false on SSR and flips to true on the client when applicable.
@@ -522,54 +532,177 @@ export default function HomePage() {
         {!isMinimized && (
         <div className="flex h-95/100 w-4/5 flex-col overflow-hidden rounded-lg shadow-[0_20px_60px_rgba(0,0,0,0.65)]">
 
-          {/* Windows 11 title bar */}
-          <div className="flex h-9 shrink-0 select-none items-center bg-[#202020] px-4">
-            <div className="flex items-center gap-2">
-              <Image src="/usc-logo.png" alt="" width={14} height={14} className="opacity-75" />
-              <span className="text-xs text-white/55">PhishQuest — Inbox</span>
-            </div>
-            <div className="ml-auto flex items-center">
-              <button aria-label="Minimize" onClick={() => setIsMinimized(true)} className="flex h-9 w-11 items-center justify-center text-white/50 transition-colors hover:bg-white/10">
-                <svg width="10" height="1" viewBox="0 0 10 1" fill="currentColor"><rect width="10" height="1" /></svg>
+          {/* Chrome frame */}
+          <div className="select-none bg-[#202124]">
+            {/* Tabs */}
+          <div className="flex h-10 items-end gap-1 px-2 pt-1 bg-[#202124]">
+
+            {/* Active tab */}
+            <div className="flex h-8 w-48 items-center gap-2 rounded-t-xl bg-[#2d2f31] px-4">
+              <Image
+                src="/usc-logo.png"
+                alt=""
+                width={16}
+                height={16}
+              />
+
+              <span className="flex-1 truncate text-[13px] text-white">
+                PhishQuest
+              </span>
+
+              <button className="rounded p-1 text-[10px] text-white/60 hover:bg-white/10">
+                ✕
               </button>
-              <button aria-label="Maximize" className="flex h-9 w-11 items-center justify-center text-white/50 transition-colors hover:bg-white/10">
-                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.2">
+            </div>
+
+            {/* Inactive tabs */}
+
+            <div className="relative flex h-8 w-48 items-center gap-2 rounded-t-lg px-3 text-white/70 hover:bg-white/10">
+              <Image
+                src="/outlook.webp"
+                alt=""
+                width={16}
+                height={16}
+              />
+              <span className="flex-1 truncate text-[12px]">
+                Outlook
+              </span>
+
+              <button className="rounded p-1 text-[10px] text-white/60 hover:bg-white/10">
+                ✕
+              </button>
+
+              <div className="absolute right-0 top-2 bottom-2 w-px bg-white/15" />
+            </div>
+
+            <div className="relative flex h-8 w-44 items-center gap-2 rounded-t-lg px-3 text-white/70 hover:bg-white/10">
+              <Image
+                src="/Youtube_logo.png"
+                alt=""
+                width={16}
+                height={16}
+              />
+              <span className="flex-1 truncate text-[12px]">
+                YouTube
+              </span>
+
+              <button className="rounded p-1 text-[10px] text-white/60 hover:bg-white/10">
+                ✕
+              </button>
+
+              <div className="absolute right-0 top-2 bottom-2 w-px bg-white/15" />
+            </div>
+
+            <div className="flex h-8 w-44 items-center gap-2 rounded-t-lg px-3 text-white/70 hover:bg-white/10">
+              <Image
+                src="/google_calendar.webp"
+                alt=""
+                width={16}
+                height={16}
+              />
+              <span className="flex-1 truncate text-[12px]">
+                Google Calendar
+              </span>
+
+              <button className="rounded p-1 text-[10px] text-white/60 hover:bg-white/10">
+                ✕
+              </button>
+
+              <div className="absolute right-0 top-2 bottom-2 w-px bg-white/15" />
+            </div>
+
+            {/* New tab */}
+            <button className="flex h-8 w-8 items-center justify-center rounded-full text-white/70 hover:bg-white/10">
+              +
+            </button>
+
+            <div className="ml-auto flex">
+              <button className="flex h-10 w-12 items-center justify-center text-white/60 hover:bg-white/10">
+                <svg width="10" height="1" fill="currentColor">
+                  <rect width="10" height="1" />
+                </svg>
+              </button>
+
+              <button className="flex h-10 w-12 items-center justify-center text-white/60 hover:bg-white/10">
+                <svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.2"
+                >
                   <rect x=".6" y=".6" width="8.8" height="8.8" />
                 </svg>
               </button>
-              <button aria-label="Close" className="flex h-9 w-11 items-center justify-center text-white/50 transition-colors hover:bg-red-600 hover:text-white">
-                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4">
-                  <line x1="1" y1="1" x2="9" y2="9" /><line x1="9" y1="1" x2="1" y2="9" />
+
+              <button className="flex h-10 w-12 items-center justify-center text-white/60 hover:bg-red-600 hover:text-white">
+                <svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.4"
+                >
+                  <line x1="1" y1="1" x2="9" y2="9" />
+                  <line x1="9" y1="1" x2="1" y2="9" />
                 </svg>
               </button>
             </div>
           </div>
+
+
+            {/* Toolbar */}
+            <div className="flex h-12 items-center gap-3 border-t border-white/5 bg-[#2d2f31] px-3">
+              {/* Navigation */}
+              <button className="text-lg text-white/70">←</button>
+              <button className="text-lg text-white/40">→</button>
+              <button className="text-lg text-white/70">⟳</button>
+
+              {/* Omnibox */}
+              <div className="flex h-9 flex-1 items-center rounded-full bg-[#202124] px-4">
+                <span className="mr-2 text-sm text-white/60">🔒</span>
+
+                <span className="truncate text-sm text-white/75">
+                  training.usc/phishquest
+                </span>
+              </div>
+
+              {/* Extensions */}
+              <button className="text-white/60">☆</button>
+              <button className="text-white/60">🧩</button>
+
+              {/* Profile */}
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-500 text-sm font-semibold text-white">
+                {state.playerName.charAt(0).toUpperCase()}
+              </div>
+            </div>
+          </div>
+
+          {/* Bookmarks bar */}
+          <div className="flex h-9 items-center gap-1 border-t border-white/5 bg-[#2d2f31] px-3">
+          {bookmarks.map((bookmark) => (
+            <button
+              key={bookmark.name}
+              className="flex items-center gap-2 rounded px-3 py-1 text-[13px] text-white/80 hover:bg-white/10"
+            >
+              <Image
+                src={bookmark.icon}
+                alt=""
+                width={16}
+                height={16}
+              />
+
+              <span>{bookmark.name}</span>
+            </button>
+          ))}
+        </div>
 
           {windowContent}
         </div>
         )}
       </div>
-
-      {/* Start Menu */}
-      {/* {showStart && (
-        <div
-          className="fixed inset-0 z-40"
-          onClick={() => setShowStart(false)}
-        >
-          <div
-            className="absolute bottom-12 left-1/2 -translate-x-1/2"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <Image
-              src="/win_start.png"
-              alt="Windows Start Menu"
-              width={600}
-              height={700}
-              priority
-            />
-          </div>
-        </div>
-      )} */}
 
       {showStart && (
       <div
