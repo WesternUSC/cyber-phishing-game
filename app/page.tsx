@@ -686,8 +686,14 @@ export default function HomePage() {
               <button className="text-white/60">🧩</button>
 
               {/* Profile */}
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-500 text-sm font-semibold text-white">
-                {state.playerName.charAt(0).toUpperCase()}
+              <div className="h-8 w-8 overflow-hidden rounded-full bg-[#ffffff]">
+                <Image
+                  src="/usc-logo.png"
+                  alt="Profile"
+                  width={32}
+                  height={32}
+                  className="h-full w-full object-cover"
+                />
               </div>
             </div>
           </div>
