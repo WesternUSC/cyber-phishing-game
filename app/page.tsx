@@ -530,7 +530,19 @@ export default function HomePage() {
 
         {/* Floating app window */}
         {!isMinimized && (
-        <div className="flex h-95/100 w-4/5 flex-col overflow-hidden rounded-lg shadow-[0_20px_60px_rgba(0,0,0,0.65)]">
+        <div
+            className="
+              flex
+              w-[80vw] max-w-[1600px]
+              h-[calc(100vh-5rem)]
+              max-h-[1000px]
+              flex-col
+              overflow-hidden
+              rounded-lg
+              shadow-[0_20px_60px_rgba(0,0,0,0.65)]
+              z-20
+            "
+          >
 
           {/* Chrome frame */}
           <div className="select-none bg-[#202124]">
@@ -617,7 +629,7 @@ export default function HomePage() {
             </button>
 
             <div className="ml-auto flex">
-              <button className="flex h-10 w-12 items-center justify-center text-white/60 hover:bg-white/10">
+              <button onClick={() => setIsMinimized(true)} className="flex h-10 w-12 items-center justify-center text-white/60 hover:bg-white/10">
                 <svg width="10" height="1" fill="currentColor">
                   <rect width="10" height="1" />
                 </svg>
