@@ -569,6 +569,232 @@
         "Displayed link looks official but redirects to a different domain"
       ],
       "rawHeaders": "Return-Path: <payroll@westernusc-payroll.com>\nReceived: from 203.0.113.44\nSPF: FAIL\nDKIM: none\nX-Spam-Score: 8.1"
+    },
+    {
+      "id": "email-16",
+      "senderName": "Steve Xia",
+      "senderEmail": "swiftreply75@gmail.com",
+      "senderAvatar": "",
+      "subject": "2026: Let's Begin",
+      "preview": "Just a quick note—correspond to this mail with your mobile number, I’ll follow up shortly from my secondary line with a few tasks. Keep up the good work!",
+      "date": "Wed, Mar 5",
+      "time": "9:42 AM",
+      "bodyHtml": [
+        "<p>Just a quick note—correspond to this mail with your mobile number, I’ll follow up shortly from my secondary line with a few tasks. Keep up the good work!</p>"
+      ],
+      "links": [],
+      "attachments": [],
+      "badges": [
+        "External",
+        "Urgent"
+      ],
+      "truth": "phish",
+      "explanation": "This email appears to impersonate a legitimate employee to initiate contact outside normal business channels. It asks the recipient to provide a personal mobile number so the conversation can continue via text, a common tactic used in business impersonation and gift card scams.",
+      "evidence": [
+        "Uses a personal Gmail address instead of the company's official email domain",
+        "Claims to be a known employee, but the sender's email address does not match",
+        "Requests the recipient's personal mobile number",
+        "Mentions 'a few tasks' without providing any business context",
+        "Attempts to move the conversation from email to SMS, making it harder to detect",
+        "Common first step in executive impersonation and gift card fraud"
+      ],
+      "rawHeaders": "Return-Path: <support@western-itservices.com>\nSPF: FAIL\nDKIM: none\nX-Spam-Score: 7.9"
+    },
+    {
+      "id": "email-17",
+      "senderName": "Anna Smith",
+      "senderEmail": "anna.designing@gmail.com",
+      "senderAvatar": "",
+      "subject": "Meeting Request",
+      "preview": "Following up once again.",
+      "date": "Thu, Mar 6",
+      "time": "11:18 AM",
+      "bodyHtml": [
+        "<p>Hi,</p>",
+        "<p>Following up once again. I know you're busy, so I'll make this easy.</p>",
+        "<p>Just take 2 minutes to look at our sample drawings. No call, no commitment, just see the quality of work we deliver.</p>",
+        "<p>If it fits what your team needs, we can talk. If not, no hard feelings.</p>",
+        "<p>Can I send them over today?</p>",
+        "<p>Anna Smith</p>",
+        "<p>Designing Drafting</p>",
+        "<p>Reply Stop for Unsubscribe</p>"
+      ],
+      "links": [
+        {
+          "label": "Review Activity",
+          "displayUrl": "https://account.microsoft.com/security",
+          "actualUrl": "https://microsoft365-security.co/review",
+          "isSuspicious": true
+        }
+      ],
+      "attachments": [],
+      "badges": [
+        "External"
+      ],
+      "truth": "phish",
+      "explanation": "This unsolicited sales email comes from an incomplete or unusual sender address and attempts to engage the recipient without providing verifiable company information. While it does not directly request credentials, the sender's identity cannot be validated, making it a suspicious message that could be part of a broader social engineering attempt.",
+      "evidence": [
+        "No verifiable company domain or contact information",
+        "Unsolicited outreach from an unknown sender",
+        "Requests continued engagement without establishing legitimacy",
+        "Generic messaging that could be sent to many recipients",
+        "Uses a simple reply-based call to action instead of official business contact methods"
+      ],
+      "rawHeaders": "Return-Path: <noreply@microsoft365-security.co>\nSPF: FAIL\nDKIM: none\nX-Spam-Score: 8.5"
+    },
+    {
+      "id": "email-18",
+      "senderName": "FedEx Delivery",
+      "senderEmail": "tracking@fedex-delivery-alert.net",
+      "senderAvatar": "fedex_logo.jpg",
+      "subject": "Delivery Exception - Action Needed",
+      "preview": "Your package could not be delivered due to an address issue.",
+      "date": "Fri, Mar 7",
+      "time": "2:37 PM",
+      "bodyHtml": [
+        "<p>Hello,</p>",
+        "<p>We were unable to complete delivery because your address could not be verified.</p>",
+        "<p>Please confirm your delivery details today.</p>",
+        "<p class='email-cta'><a href='https://fedex-delivery-alert.net/track' data-link-index='#link-0'>Update Address →</a></p>"
+      ],
+      "links": [
+        {
+          "label": "Update Address",
+          "displayUrl": "https://www.fedex.com",
+          "actualUrl": "https://fedex-delivery-alert.net/track",
+          "isSuspicious": true
+        }
+      ],
+      "attachments": [],
+      "badges": [
+        "External"
+      ],
+      "truth": "phish",
+      "explanation": "The message pretends to be a delivery notification and attempts to collect personal information.",
+      "evidence": [
+        "Fake shipping domain",
+        "Unexpected package notification",
+        "Displayed URL differs from actual destination",
+        "Pressure to act quickly"
+      ],
+      "rawHeaders": "Return-Path: <tracking@fedex-delivery-alert.net>\nSPF: FAIL\nDKIM: none\nX-Spam-Score: 8.2"
+    },
+    {
+      "id": "email-19",
+      "senderName": "Amazon eGift Support",
+      "senderEmail": "giftcenter@amazon-rewards-mail.net",
+      "senderAvatar": "Amazon-logo.jpg",
+      "subject": "You've Received a $100 Amazon eGift Card",
+      "preview": "Claim your complimentary gift card before it expires.",
+      "date": "Tue, Apr 15",
+      "time": "10:14 AM",
+      "bodyHtml": [
+        "<p>Hello,</p>",
+        "<p>Congratulations! You have been selected to receive a <strong>$100 Amazon eGift Card</strong>.</p>",
+        "<p>Your gift card is waiting, but it must be claimed within 24 hours.</p>",
+        "<p class='email-cta'><a href='https://amazon-rewards-mail.net/claim' data-link-index='#link-0'>Claim Gift Card →</a></p>",
+        "<p>If you do not claim your reward today, it will be permanently forfeited.</p>"
+      ],
+      "links": [
+        {
+          "label": "Claim Gift Card",
+          "displayUrl": "https://www.amazon.com",
+          "actualUrl": "https://amazon-rewards-mail.net/claim",
+          "isSuspicious": true
+        }
+      ],
+      "attachments": [],
+      "badges": [
+        "External"
+      ],
+      "truth": "phish",
+      "explanation": "The email impersonates Amazon to lure recipients into clicking a fake gift card claim page designed to steal login credentials or payment information.",
+      "evidence": [
+        "Unofficial sender domain",
+        "Unsolicited gift card offer",
+        "Displayed URL differs from actual destination",
+        "Artificial urgency",
+        "Too-good-to-be-true reward",
+        "SPF/DKIM authentication failures"
+      ],
+      "rawHeaders": "Return-Path: <giftcenter@amazon-rewards-mail.net>\nSPF: FAIL\nDKIM: none\nDMARC: FAIL\nX-Spam-Score: 9.1"
+    },
+    {
+      "id": "email-20",
+      "senderName": "DocuSign",
+      "senderEmail": "documents@docusign-review.org",
+      "senderAvatar": "",
+      "subject": "Document Awaiting Your Signature",
+      "preview": "A confidential document has been shared with you.",
+      "date": "Tue, Mar 11",
+      "time": "4:24 PM",
+      "bodyHtml": [
+        "<p>Hello,</p>",
+        "<p>You have received a secure document requiring your signature.</p>",
+        "<p>The document will expire within 24 hours.</p>",
+        "<p class='email-cta'><a href='https://docusign-review.org/open' data-link-index='#link-0'>Open Document →</a></p>"
+      ],
+      "links": [
+        {
+          "label": "Open Document",
+          "displayUrl": "https://www.docusign.com",
+          "actualUrl": "https://docusign-review.org/open",
+          "isSuspicious": true
+        }
+      ],
+      "attachments": [
+        "Document_Notice.html"
+      ],
+      "badges": [
+        "External"
+      ],
+      "truth": "phish",
+      "explanation": "The message impersonates DocuSign to trick users into opening a fake login page.",
+      "evidence": [
+        "Lookalike DocuSign domain",
+        "Unexpected document request",
+        "HTML attachment",
+        "Link mismatch"
+      ],
+      "rawHeaders": "Return-Path: <documents@docusign-review.org>\nSPF: FAIL\nDKIM: none\nX-Spam-Score: 9.1"
+    },
+    {
+      "id": "email-22",
+      "senderName": "Multi-Factor Authentication",
+      "senderEmail": "security@auth-verification.net",
+      "senderAvatar": "",
+      "subject": "Confirm Your MFA Settings",
+      "preview": "Your multi-factor authentication settings need to be verified.",
+      "date": "Wed, Mar 12",
+      "time": "7:51 AM",
+      "bodyHtml": [
+        "<p>Hello,</p>",
+        "<p>Your account requires an updated MFA verification due to a recent security policy change.</p>",
+        "<p>Please complete verification before 5 PM.</p>",
+        "<p class='email-cta'><a href='https://auth-verification.net/mfa' data-link-index='#link-0'>Verify MFA →</a></p>"
+      ],
+      "links": [
+        {
+          "label": "Verify MFA",
+          "displayUrl": "https://login.microsoftonline.com",
+          "actualUrl": "https://auth-verification.net/mfa",
+          "isSuspicious": true
+        }
+      ],
+      "attachments": [],
+      "badges": [
+        "External",
+        "Urgent"
+      ],
+      "truth": "phish",
+      "explanation": "This phishing email imitates an MFA notification to steal login credentials.",
+      "evidence": [
+        "Unofficial authentication domain",
+        "Artificial deadline",
+        "Displayed link differs from actual URL",
+        "Requests account authentication"
+      ],
+      "rawHeaders": "Return-Path: <security@auth-verification.net>\nSPF: FAIL\nDKIM: none\nX-Spam-Score: 8.7"
     }
   ]
 }
