@@ -89,13 +89,13 @@ const slides = [
             alignItems: "center",
             height: "100%",
             width: "100%",
-            backgroundColor: "#102e5a",
+            backgroundColor: "#582c83",
           }}
         >
 
         <div
           style={{
-            color: "#38bdf8",
+            color: "#ffffff",
             fontSize: "1.25rem",
           }}
         >
@@ -118,14 +118,14 @@ const slides = [
             style={{
               width: "80px",
               height: "4px",
-              backgroundColor: "#38bdf8",
+              backgroundColor: "#9b7db5",
               borderRadius: "2px",
             }}
           />
 
           <br></br>
 
-          <p style={{color:"#93c5fd", fontSize: "1.25rem", width: "40%", textAlign: "center"}}>
+          <p style={{color:"#ffffff", fontSize: "1.25rem", width: "40%", textAlign: "center"}}>
             Understanding why higher education student unions are prime targets and how your daily habits protect student data.
           </p>
         </div>
@@ -149,7 +149,7 @@ const slides = [
             <h1
               style={{
                 margin: 0,
-                color: "#102e5a",
+                color: "#582c83",
                 fontSize: "2.75rem",
               }}
             >
@@ -188,7 +188,7 @@ const slides = [
               <h2
                 style={{
                   margin: 0,
-                  color: "#102e5a",
+                  color: "#582c83",
                   fontSize: "1.75rem",
                 }}
               >
@@ -229,7 +229,7 @@ const slides = [
               <h2
                 style={{
                   margin: 0,
-                  color: "#102e5a",
+                  color: "#582c83",
                   fontSize: "1.75rem",
                 }}
               >
@@ -280,7 +280,7 @@ const slides = [
           <h1
             style={{
               margin: 0,
-              color: "#102e5a",
+              color: "#582c83",
               fontSize: "2.75rem",
             }}
           >
@@ -379,7 +379,7 @@ const slides = [
           <h1
             style={{
               margin: 0,
-              color: "#102e5a",
+              color: "#582c83",
               fontSize: "2.75rem",
             }}
           >
@@ -424,7 +424,7 @@ const slides = [
               <h2
                 style={{
                   margin: 0,
-                  color: "#1e3b8a",
+                  color: "#582c83",
                   fontSize: "1.5rem",
                 }}
               >
@@ -461,7 +461,7 @@ const slides = [
               <h2
                 style={{
                   margin: 0,
-                  color: "#1e3b8a",
+                  color: "#582c83",
                   fontSize: "1.5rem",
                 }}
               >
@@ -498,7 +498,7 @@ const slides = [
               <h2
                 style={{
                   margin: 0,
-                  color: "#1e3b8a",
+                  color: "#582c83",
                   fontSize: "1.5rem",
                 }}
               >
@@ -534,13 +534,13 @@ const slides = [
             alignItems: "center",
             height: "100%",
             width: "100%",
-            backgroundColor: "#102e5a",
+            backgroundColor: "#582c83",
           }}
         >
 
         <div
           style={{
-            color: "#38bdf8",
+            color: "#ffffff",
             fontSize: "1.25rem",
           }}
         >
@@ -563,14 +563,14 @@ const slides = [
             style={{
               width: "80px",
               height: "4px",
-              backgroundColor: "#38bdf8",
+              backgroundColor: "#9b7db5",
               borderRadius: "2px",
             }}
           />
 
           <br></br>
 
-          <p style={{color:"#93c5fd", fontSize: "1.25rem", width: "40%", textAlign: "center"}}>
+          <p style={{color:"#ffffff", fontSize: "1.25rem", width: "40%", textAlign: "center"}}>
             Implementing Canadian Centre for Cyber Security baseline recommendations for credentials and access.
           </p>
         </div>
@@ -594,7 +594,7 @@ const slides = [
           <h1
             style={{
               margin: 0,
-              color: "#102e5a",
+              color: "#582c83",
               fontSize: "2.75rem",
             }}
           >
@@ -673,7 +673,7 @@ const slides = [
           <h1
             style={{
               margin: 0,
-              color: "#102e5a",
+              color: "#582c83",
               fontSize: "2.75rem",
             }}
           >
@@ -746,13 +746,13 @@ const slides = [
             alignItems: "center",
             height: "100%",
             width: "100%",
-            backgroundColor: "#102e5a",
+            backgroundColor: "#582c83",
           }}
         >
 
         <div
           style={{
-            color: "#38bdf8",
+            color: "#ffffff",
             fontSize: "1.25rem",
           }}
         >
@@ -775,14 +775,14 @@ const slides = [
             style={{
               width: "80px",
               height: "4px",
-              backgroundColor: "#38bdf8",
+              backgroundColor: "#9b7db5",
               borderRadius: "2px",
             }}
           />
 
           <br></br>
 
-          <p style={{color:"#93c5fd", fontSize: "1.25rem", width: "40%", textAlign: "center"}}>
+          <p style={{color:"#ffffff", fontSize: "1.25rem", width: "40%", textAlign: "center"}}>
             Identifying deception techniques targeted at student union executives, staff, and student volunteers.
           </p>
         </div>
@@ -806,7 +806,7 @@ const slides = [
           <h1
             style={{
               margin: 0,
-              color: "#102e5a",
+              color: "#582c83",
               fontSize: "2.75rem",
             }}
           >
@@ -836,7 +836,7 @@ const slides = [
             <h2
               style={{
                 margin: 0,
-                color: "#1e3b8a",
+                color: "#582c83",
                 fontSize: "1.5rem",
               }}
             >
@@ -885,7 +885,7 @@ const slides = [
           <h1
             style={{
               margin: 0,
-              color: "#102e5a",
+              color: "#582c83",
               fontSize: "2.75rem",
             }}
           >
@@ -930,7 +930,7 @@ const slides = [
               <h2
                 style={{
                   margin: 0,
-                  color: "#1e3b8a",
+                  color: "#582c83",
                   fontSize: "1.5rem",
                 }}
               >
@@ -968,7 +968,7 @@ const slides = [
               <h2
                 style={{
                   margin: 0,
-                  color: "#1e3b8a",
+                  color: "#582c83",
                   fontSize: "1.5rem",
                 }}
               >
@@ -1006,7 +1006,7 @@ const slides = [
               <h2
                 style={{
                   margin: 0,
-                  color: "#1e3b8a",
+                  color: "#582c83",
                   fontSize: "1.5rem",
                 }}
               >
@@ -1043,13 +1043,13 @@ const slides = [
             alignItems: "center",
             height: "100%",
             width: "100%",
-            backgroundColor: "#102e5a",
+            backgroundColor: "#582c83",
           }}
         >
 
         <div
           style={{
-            color: "#38bdf8",
+            color: "#ffffff",
             fontSize: "1.25rem",
           }}
         >
@@ -1072,14 +1072,14 @@ const slides = [
             style={{
               width: "80px",
               height: "4px",
-              backgroundColor: "#38bdf8",
+              backgroundColor: "#9b7db5",
               borderRadius: "2px",
             }}
           />
 
           <br></br>
 
-          <p style={{color:"#93c5fd", fontSize: "1.25rem", width: "40%", textAlign: "center"}}>
+          <p style={{color:"#ffffff", fontSize: "1.25rem", width: "40%", textAlign: "center"}}>
             Legal standards and privacy obligations when collecting and processing student information.
           </p>
         </div>
@@ -1102,7 +1102,7 @@ const slides = [
           <h1
             style={{
               margin: 0,
-              color: "#102e5a",
+              color: "#582c83",
               fontSize: "2.75rem",
             }}
           >
@@ -1132,7 +1132,7 @@ const slides = [
               style={{
                 flex: 1,
                 height: "350px",
-                backgroundColor: "#f0f9ff",
+                backgroundColor: "#582c83",
                 borderRadius: "16px",
                 display: "flex",
                 flexDirection: "column",
@@ -1143,7 +1143,7 @@ const slides = [
             >
               <div
                 style={{
-                  color: "#1584c7",
+                  color: "#ffffff",
                   fontSize: "8rem",
                   fontWeight: "700",
                   lineHeight: 1,
@@ -1155,7 +1155,7 @@ const slides = [
               <div
                 style={{
                   marginTop: "0.75rem",
-                  color: "#1584c7",
+                  color: "#ffffff",
                   fontSize: "1.5rem",
                   fontWeight: "600",
                   textAlign: "center",
@@ -1175,10 +1175,10 @@ const slides = [
               <h2
                 style={{
                   margin: 0,
-                  color: "#1e3b8a",
+                  color: "#582c83",
                   fontSize: "1.75rem",
                   paddingBottom: "0.75rem",
-                  borderBottom: "4px solid #1e3b8a",
+                  borderBottom: "4px solid #9b7db5",
                 }}
               >
                 Strict Confidentiality Required
@@ -1231,7 +1231,7 @@ const slides = [
             <h1
               style={{
                 margin: 0,
-                color: "#102e5a",
+                color: "#582c83",
                 fontSize: "2.75rem",
               }}
             >
@@ -1376,13 +1376,13 @@ const slides = [
             alignItems: "center",
             height: "100%",
             width: "100%",
-            backgroundColor: "#102e5a",
+            backgroundColor: "#582c83",
           }}
         >
 
         <div
           style={{
-            color: "#38bdf8",
+            color: "#ffffff",
             fontSize: "1.25rem",
           }}
         >
@@ -1405,14 +1405,14 @@ const slides = [
             style={{
               width: "80px",
               height: "4px",
-              backgroundColor: "#38bdf8",
+              backgroundColor: "#9b7db5",
               borderRadius: "2px",
             }}
           />
 
           <br></br>
 
-          <p style={{color:"#93c5fd", fontSize: "1.25rem", width: "40%", textAlign: "center"}}>
+          <p style={{color:"#ffffff", fontSize: "1.25rem", width: "40%", textAlign: "center"}}>
             Physical security, workstation hygiene, and public campus Wi-Fi best practices.
           </p>
         </div>
@@ -1436,7 +1436,7 @@ const slides = [
           <h1
             style={{
               margin: 0,
-              color: "#102e5a",
+              color: "#582c83",
               fontSize: "2.75rem",
             }}
           >
@@ -1515,7 +1515,7 @@ const slides = [
           <h1
             style={{
               margin: 0,
-              color: "#102e5a",
+              color: "#582c83",
               fontSize: "2.75rem",
             }}
           >
@@ -1592,7 +1592,7 @@ const slides = [
           <h1
             style={{
               margin: 0,
-              color: "#102e5a",
+              color: "#582c83",
               fontSize: "2.75rem",
             }}
           >
@@ -1693,7 +1693,7 @@ const slides = [
                   height: "24px",
                   borderRadius: "50%",
                   backgroundColor: "#ffffff",
-                  border: "4px solid #2563eb",
+                  border: "4px solid #9b7db5",
                   boxSizing: "border-box",
                 }}
               />
@@ -1759,7 +1759,7 @@ const slides = [
                   height: "24px",
                   borderRadius: "50%",
                   backgroundColor: "#ffffff",
-                  border: "4px solid #2563eb",
+                  border: "4px solid #9b7db5",
                   boxSizing: "border-box",
                 }}
               />
@@ -1823,7 +1823,7 @@ const slides = [
                   height: "24px",
                   borderRadius: "50%",
                   backgroundColor: "#ffffff",
-                  border: "4px solid #2563eb",
+                  border: "4px solid #9b7db5",
                   boxSizing: "border-box",
                 }}
               />
@@ -1887,7 +1887,7 @@ const slides = [
                   height: "24px",
                   borderRadius: "50%",
                   backgroundColor: "#ffffff",
-                  border: "4px solid #2563eb",
+                  border: "4px solid #9b7db5",
                   boxSizing: "border-box",
                 }}
               />
@@ -1948,7 +1948,7 @@ const slides = [
             <h1
               style={{
                 margin: 0,
-                color: "#102e5a",
+                color: "#582c83",
                 fontSize: "2.75rem",
                 lineHeight: 1.15,
               }}
@@ -1985,13 +1985,13 @@ const slides = [
             alignItems: "center",
             height: "100%",
             width: "100%",
-            backgroundColor: "#102e5a",
+            backgroundColor: "#582c83",
           }}
         >
 
         <div
           style={{
-            color: "#38bdf8",
+            color: "#ffffff",
             fontSize: "1.25rem",
           }}
         >
@@ -2014,7 +2014,7 @@ const slides = [
             style={{
               width: "80px",
               height: "4px",
-              backgroundColor: "#38bdf8",
+              backgroundColor: "#9b7db5",
               borderRadius: "2px",
             }}
           />
