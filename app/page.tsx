@@ -816,7 +816,7 @@ export default function HomePage() {
           {activeTab === 'western' && (
             <div className="relative flex flex-1 flex-col overflow-hidden">
               {westernPage === 'home' ? (
-                <div className="flex flex-1 flex-col overflow-y-auto bg-white">
+                <div className="flex flex-1 flex-col overflow-y-auto bg-[#ebeff3]">
 
                   <div className="shrink-0 bg-[#4f2683] px-8 pb-10 pt-5 text-white">
 
