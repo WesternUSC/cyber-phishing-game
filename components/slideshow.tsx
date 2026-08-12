@@ -14,7 +14,7 @@ interface SlideshowProps {
 // title slides that don't require 1 minute wait
 const EXEMPT_SLIDES = new Set([0, 1, 5, 8, 11, 14, 18, 19]);
 
-const WAIT_TIME = 60 * 1000;
+const WAIT_TIME = 10 * 1000;
 
 const Slideshow: React.FC<SlideshowProps> = ({
   slides,
@@ -28,6 +28,10 @@ const Slideshow: React.FC<SlideshowProps> = ({
   const [seenSlides, setSeenSlides] = useState<Set<number>>(() => {
     return new Set([startSlide]);
   });
+
+  const INCIDENT_SLIDE_TITLE = "Incident Response & Reporting";
+
+  const [incidentSteps, setIncidentSteps] = useState(1);
 
   const isExempt = (slideIndex: number) => {
     return EXEMPT_SLIDES.has(slideIndex);
@@ -58,6 +62,14 @@ const Slideshow: React.FC<SlideshowProps> = ({
       return;
     }
 
+    const isIncidentSlide =
+      slides[current].title === INCIDENT_SLIDE_TITLE;
+
+    if (isIncidentSlide && incidentSteps < 4) {
+      setIncidentSteps((previous) => previous + 1);
+      return;
+    }
+
     if (!hasWaitedLongEnough()) {
       window.alert(
         "You must wait at least one minute on this slide before proceeding."
@@ -76,6 +88,20 @@ const Slideshow: React.FC<SlideshowProps> = ({
 
   const goToSlide = (index: number) => {
     if (index === current) {
+      return;
+    }
+
+    const isIncidentSlide =
+      slides[current].title === INCIDENT_SLIDE_TITLE;
+
+    if (
+      isIncidentSlide &&
+      index === current + 1 &&
+      incidentSteps < 4
+    ) {
+      window.alert(
+        "Please reveal all four incident response steps before continuing."
+      );
       return;
     }
 
@@ -152,7 +178,15 @@ const Slideshow: React.FC<SlideshowProps> = ({
       </div>
 
       <div style={styles.slide}>
-        {slides[current].content}
+        {slides[current].title === INCIDENT_SLIDE_TITLE &&
+        React.isValidElement(slides[current].content)
+          ? React.cloneElement(
+              slides[current].content as React.ReactElement<{
+                visibleSteps: number;
+              }>,
+              { visibleSteps: incidentSteps }
+            )
+          : slides[current].content}
       </div>
 
       <div style={styles.footer}>
@@ -196,7 +230,6 @@ const Slideshow: React.FC<SlideshowProps> = ({
 
         <button
           onClick={next}
-          disabled={current === slides.length - 1}
         >
           Next
         </button>
