@@ -95,7 +95,6 @@ const bookmarks = [
   { name: "GitHub", icon: "/github_logo.webp" },
 ];
 
-
 // ── Tablet detection hook ─────────────────────────────────────────────────────
 // Matches any touch-based device >= 768px wide (iPad, Android tablet, etc.)
 // Returns false on SSR and flips to true on the client when applicable.
@@ -133,6 +132,15 @@ export default function HomePage() {
 
   const [isMinimized, setIsMinimized] = useState(true);
   const [showStart, setShowStart] = useState(false);
+
+  const [activeTab, setActiveTab] = useState<'phishquest' | 'outlook' | 'western' | 'calendar'>(
+    'phishquest'
+  );
+
+  const [showWesternPopup, setShowWesternPopup] = useState(false);
+
+  const [westernPage, setWesternPage] = useState<'home' | 'report'>('home');
+  const [westernPopup, setWesternPopup] = useState<string | null>(null);
 
   const [openApp, setOpenApp] = useState<
   | {
@@ -393,11 +401,11 @@ export default function HomePage() {
 
           {/* Reset */}
           <button
-  onClick={resetGame}
-  className="mt-auto w-full rounded-md bg-red-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-red-700"
->
-  Reset
-</button>
+            onClick={resetGame}
+            className="mt-auto w-full rounded-md bg-red-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-red-700"
+          >
+            Reset
+          </button>
 
         </aside>
 
@@ -558,122 +566,170 @@ export default function HomePage() {
           {/* Chrome frame */}
           <div className="select-none bg-[#202124]">
             {/* Tabs */}
-          <div className="flex h-10 items-end gap-1 px-2 pt-1 bg-[#202124]">
+            <div className="flex h-10 items-end gap-1 px-2 pt-1 bg-[#202124]">
 
-            {/* Active tab */}
-            <div className="flex h-8 w-48 items-center gap-2 rounded-t-xl bg-[#2d2f31] px-4">
-              <Image
-                src="/usc-logo.png"
-                alt=""
-                width={16}
-                height={16}
-              />
+              {/* PhishQuest tab */}
+              <button
+                onClick={() => setActiveTab('phishquest')}
+                className={`relative flex h-8 w-48 items-center gap-2 rounded-t-xl px-4 ${
+                  activeTab === 'phishquest'
+                    ? 'bg-[#2d2f31]'
+                    : 'bg-transparent hover:bg-white/10'
+                }`}
+              >
+                <Image
+                  src="/usc-logo.png"
+                  alt=""
+                  width={16}
+                  height={16}
+                  className="shrink-0"
+                />
 
-              <span className="flex-1 truncate text-[13px] text-white">
-                PhishQuest
-              </span>
+                <span className="ml-2 truncate text-[13px] text-white">
+                  PhishQuest
+                </span>
 
-              <button className="rounded p-1 text-[10px] text-white/60 hover:bg-white/10">
-                ✕
-              </button>
-            </div>
+                <span className="ml-auto shrink-0 rounded p-1 text-[10px] text-white/60">
+                  ✕
+                </span>
 
-            {/* Inactive tabs */}
-
-            <div className="relative flex h-8 w-48 items-center gap-2 rounded-t-lg px-3 text-white/70 hover:bg-white/10">
-              <Image
-                src="/outlook.webp"
-                alt=""
-                width={16}
-                height={16}
-              />
-              <span className="flex-1 truncate text-[12px]">
-                Outlook
-              </span>
-
-              <button className="rounded p-1 text-[10px] text-white/60 hover:bg-white/10">
-                ✕
+                {/* Tab divider */}
+                <div className="absolute right-0 top-2 bottom-2 z-10 w-px bg-white/25" />
               </button>
 
-              <div className="absolute right-0 top-2 bottom-2 w-px bg-white/15" />
-            </div>
 
-            <div className="relative flex h-8 w-44 items-center gap-2 rounded-t-lg px-3 text-white/70 hover:bg-white/10">
-              <Image
-                src="/Youtube_logo.png"
-                alt=""
-                width={16}
-                height={16}
-              />
-              <span className="flex-1 truncate text-[12px]">
-                YouTube
-              </span>
+              {/* Outlook tab */}
+              <button
+                onClick={() => setActiveTab('outlook')}
+                className={`relative flex h-8 w-48 items-center rounded-t-lg px-3 ${
+                  activeTab === 'outlook'
+                    ? 'bg-[#2d2f31]'
+                    : 'hover:bg-white/10'
+                }`}
+              >
+                <Image
+                  src="/outlook.webp"
+                  alt=""
+                  width={16}
+                  height={16}
+                  className="shrink-0"
+                />
 
-              <button className="rounded p-1 text-[10px] text-white/60 hover:bg-white/10">
-                ✕
+                {/* Title stays directly beside logo */}
+                <span className="ml-2 min-w-0 truncate text-[12px] text-white/70">
+                  Outlook
+                </span>
+
+                {/* Push X all the way to the right */}
+                <span className="ml-auto shrink-0 rounded p-1 text-[10px] text-white/60">
+                  ✕
+                </span>
+
+                {/* Divider */}
+                <div className="absolute right-0 top-2 bottom-2 z-10 w-px bg-white/15" />
               </button>
 
-              <div className="absolute right-0 top-2 bottom-2 w-px bg-white/15" />
-            </div>
+              {/* Western University support tab */}
+              <button
+                onClick={() => setActiveTab('western')}
+                className={`relative flex h-8 w-44 items-center gap-2 rounded-t-lg px-3 ${
+                  activeTab === 'western'
+                    ? 'bg-[#2d2f31]'
+                    : 'hover:bg-white/10'
+                }`}
+              >
+                <Image
+                  src="/usc-logo.png"
+                  alt=""
+                  width={16}
+                  height={16}
+                  style={{ backgroundColor: "white" }}
+                />
 
-            <div className="flex h-8 w-44 items-center gap-2 rounded-t-lg px-3 text-white/70 hover:bg-white/10">
-              <Image
-                src="/google_calendar.webp"
-                alt=""
-                width={16}
-                height={16}
-              />
-              <span className="flex-1 truncate text-[12px]">
-                Google Calendar
-              </span>
+                <span className="flex-1 truncate text-[12px] text-white/70">
+                  Support: Western University
+                </span>
 
-              <button className="rounded p-1 text-[10px] text-white/60 hover:bg-white/10">
-                ✕
+                <span className="rounded p-1 text-[10px] text-white/60">
+                  ✕
+                </span>
+
+                <div className="absolute right-0 top-2 bottom-2 w-px bg-white/15" />
               </button>
 
-              <div className="absolute right-0 top-2 bottom-2 w-px bg-white/15" />
-            </div>
 
-            {/* New tab */}
-            <button className="flex h-8 w-8 items-center justify-center rounded-full text-white/70 hover:bg-white/10">
-              +
-            </button>
+              {/* Google Calendar tab */}
+              <button
+                onClick={() => setActiveTab('calendar')}
+                className={`relative flex h-8 w-44 items-center gap-2 rounded-t-lg px-3 ${
+                  activeTab === 'calendar'
+                    ? 'bg-[#2d2f31]'
+                    : 'hover:bg-white/10'
+                }`}
+              >
+                <Image
+                  src="/google_calendar.webp"
+                  alt=""
+                  width={16}
+                  height={16}
+                />
 
-            <div className="ml-auto flex">
-              <button onClick={() => setIsMinimized(true)} className="flex h-10 w-12 items-center justify-center text-white/60 hover:bg-white/10">
-                <svg width="10" height="1" fill="currentColor">
-                  <rect width="10" height="1" />
-                </svg>
+                <span className="flex-1 truncate text-[12px] text-white/70">
+                  Google Calendar
+                </span>
+
+                <span className="rounded p-1 text-[10px] text-white/60">
+                  ✕
+                </span>
+
+                <div className="absolute right-0 top-2 bottom-2 w-px bg-white/15" />
               </button>
 
-              <button className="flex h-10 w-12 items-center justify-center text-white/60 hover:bg-white/10">
-                <svg
-                  width="10"
-                  height="10"
-                  viewBox="0 0 10 10"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.2"
+
+              {/* New tab */}
+              <button className="flex h-8 w-8 items-center justify-center rounded-full text-white/70 hover:bg-white/10">
+                +
+              </button>
+
+              {/* Window controls */}
+              <div className="ml-auto flex">
+                <button
+                  onClick={() => setIsMinimized(true)}
+                  className="flex h-10 w-12 items-center justify-center text-white/60 hover:bg-white/10"
                 >
-                  <rect x=".6" y=".6" width="8.8" height="8.8" />
-                </svg>
-              </button>
+                  <svg width="10" height="1" fill="currentColor">
+                    <rect width="10" height="1" />
+                  </svg>
+                </button>
 
-              <button className="flex h-10 w-12 items-center justify-center text-white/60 hover:bg-red-600 hover:text-white">
-                <svg
-                  width="10"
-                  height="10"
-                  viewBox="0 0 10 10"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.4"
-                >
-                  <line x1="1" y1="1" x2="9" y2="9" />
-                  <line x1="9" y1="1" x2="1" y2="9" />
-                </svg>
-              </button>
+                <button className="flex h-10 w-12 items-center justify-center text-white/60 hover:bg-white/10">
+                  <svg
+                    width="10"
+                    height="10"
+                    viewBox="0 0 10 10"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.2"
+                  >
+                    <rect x=".6" y=".6" width="8.8" height="8.8" />
+                  </svg>
+                </button>
+
+                <button className="flex h-10 w-12 items-center justify-center text-white/60 hover:bg-red-600 hover:text-white">
+                  <svg
+                    width="10"
+                    height="10"
+                    viewBox="0 0 10 10"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.4"
+                  >
+                    <line x1="1" y1="1" x2="9" y2="9" />
+                    <line x1="9" y1="1" x2="1" y2="9" />
+                  </svg>
+                </button>
+              </div>
             </div>
-          </div>
 
 
             {/* Toolbar */}
@@ -688,7 +744,13 @@ export default function HomePage() {
                 <span className="mr-2 text-sm text-white/60">🔒</span>
 
                 <span className="truncate text-sm text-white/75">
-                  training.usc/phishquest
+                  {activeTab === 'phishquest' && 'training.usc/phishquest'}
+                  {activeTab === 'outlook' && 'outlook.office.com'}
+                  {activeTab === 'western' &&
+                    (westernPage === 'report'
+                      ? 'westernusc.freshservice.com/support/tickets/new'
+                      : 'westernusc.freshservice.com/support/home')}
+                  {activeTab === 'calendar' && 'calendar.google.com'}
                 </span>
               </div>
 
@@ -728,7 +790,624 @@ export default function HomePage() {
           ))}
         </div>
 
-          {windowContent}
+          {activeTab === 'phishquest' && windowContent}
+
+          {activeTab === 'outlook' && (
+            <div className="flex flex-1 flex-col bg-white">
+              <div className="border-b border-gray-200 bg-[#f8f9fa] px-6 py-4">
+                <h1 className="text-xl font-semibold text-gray-800">
+                  Outlook
+                </h1>
+              </div>
+
+              <div className="flex flex-1 items-center justify-center">
+                <div className="text-center">
+                  <h2 className="text-2xl font-semibold text-gray-800">
+                    Outlook
+                  </h2>
+                  <p className="mt-2 text-gray-500">
+                    Placeholder Outlook website.
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {activeTab === 'western' && (
+            <div className="relative flex flex-1 flex-col overflow-hidden">
+              {westernPage === 'home' ? (
+                <div className="flex flex-1 flex-col overflow-y-auto bg-white">
+
+                  <div className="shrink-0 bg-[#4f2683] px-8 pb-10 pt-5 text-white">
+
+                    <div className="flex items-center justify-between">
+
+                      <div className="flex items-center gap-3">
+                        <button
+                          className="flex h-9 w-9 items-center justify-center rounded-md hover:bg-white/10"
+                          aria-label="Menu"
+                        >
+                          <svg
+                            width="22"
+                            height="22"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                          >
+                            <line x1="4" y1="6" x2="20" y2="6" />
+                            <line x1="4" y1="12" x2="20" y2="12" />
+                            <line x1="4" y1="18" x2="20" y2="18" />
+                          </svg>
+                        </button>
+
+                        <span className="text-lg font-bold">
+                          Western University Students' Council
+                        </span>
+                      </div>
+
+                      <div className="flex items-center gap-4">
+
+                        <button
+                          className="flex h-9 w-9 items-center justify-center rounded-full hover:bg-white/10"
+                          aria-label="Notifications"
+                        >
+                          <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="1.8"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9" />
+                            <path d="M10 21h4" />
+                          </svg>
+                        </button>
+
+                        <div className="h-9 w-9 overflow-hidden rounded-full bg-white">
+                          <Image
+                            src="/usc-logo.png"
+                            alt="Profile"
+                            width={36}
+                            height={36}
+                            className="h-full w-full object-cover"
+                          />
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div className="mx-auto mt-10 flex max-w-3xl flex-col items-center">
+
+                      <h1 className="text-center text-2xl">
+                        Welcome to the Information Systems portal.
+                      </h1>
+
+                      <div className="relative mt-6 w-full">
+
+                        <div className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
+                          <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                          >
+                            <circle cx="11" cy="11" r="7" />
+                            <line x1="16" y1="16" x2="21" y2="21" />
+                          </svg>
+                        </div>
+
+                        <input
+                          type="text"
+                          placeholder="Search for solutions, services, and tickets."
+                          className="h-12 w-full rounded-md border-0 bg-white pl-12 pr-4 text-sm text-gray-800 shadow-sm outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-white/50"
+                        />
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mx-auto w-full max-w-6xl px-8 py-8 text-center">
+
+                    <p className="text-sm text-gray-700">
+                      To immediately reach us please send an email to{' '}
+                      <span className="font-medium">
+                        helpdesk@westernusc.ca
+                      </span>{' '}
+                      or click <strong>Report an issue</strong>.
+                    </p>
+
+                    <p className="mt-3 text-sm text-gray-700">
+                      Otherwise please sign up on the top right corner to access all
+                      service options.
+                    </p>
+
+                    <div className="mt-8 grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+
+                      {[
+                        {
+                          id: 'report',
+                          title: 'Report an issue',
+                          text: 'Having trouble? Contact IT support',
+                          imageUrl:
+                            'https://assets17.freshservice.com/a/assets/images/portal-designer/card-images/incident-882ab892261d8226f52c966bdb4b1a4c.svg',
+                        },
+                        {
+                          id: 'articles',
+                          title: 'Browse help articles',
+                          text: 'Look up how-to guides or read FAQs to fix issues on your own',
+                          imageUrl:
+                            'https://assets17.freshservice.com/a/assets/images/portal-designer/card-images/solutions-a3cd12ce8098d2bf565a131f6ef34d0b.svg',
+                        },
+                        {
+                          id: 'service',
+                          title: 'Request an IT service',
+                          text: 'Browse the list of services offered',
+                          imageUrl:
+                            'https://assets17.freshservice.com/a/assets/images/portal-designer/card-images/service_catalog-d10875536e2ae1b9e76b7129299cbe59.svg',
+                        },
+                        {
+                          id: 'meeting',
+                          title: 'Request a meeting',
+                          text: 'Request an in-person or zoom meeting with Information Systems',
+                          imageUrl: '/freshservice-icons/zoom.png',
+                        },
+                      ].map((card) => (
+                        <button
+                          key={card.title}
+                          onClick={() => {
+                            if (card.id === 'report') {
+                              setWesternPage('report');
+                            } else {
+                              setWesternPopup(
+                                'Please click "Report an issue".'
+                              );
+                            }
+                          }}
+                          className="flex h-28 min-w-0 items-center gap-4 rounded-lg border border-gray-200 bg-white px-5 text-left shadow-sm transition hover:-translate-y-0.5 hover:border-gray-300 hover:shadow-md"
+                        >
+                          <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-md">
+                            <img
+                              src={card.imageUrl}
+                              alt=""
+                              className="h-full w-full object-contain"
+                            />
+                          </div>
+
+                          <div className="min-w-0">
+                            <h3 className="text-sm font-semibold text-gray-900">
+                              {card.title}
+                            </h3>
+
+                            <p className="mt-1 text-xs leading-4 text-gray-500">
+                              {card.text}
+                            </p>
+                          </div>
+                        </button>
+                      ))}
+
+                    </div>
+
+                    <div className="mt-9">
+
+                      <p className="text-sm text-gray-700">
+                        Please sign up using your UWO email to use the following
+                        services.
+                      </p>
+
+                      <button
+                        onClick={() =>
+                          setWesternPopup(
+                            'Please click "Report an issue".'
+                          )
+                        }
+                        className="mt-4 rounded-md border border-gray-300 bg-white px-7 py-2 text-sm font-medium text-black shadow-sm transition hover:bg-gray-50"
+                      >
+                        Sign Up
+                      </button>
+
+                    </div>
+
+                    <p className="mx-auto mt-8 max-w-3xl text-sm text-gray-700">
+                      Square reader, USC storefront and Bounce page requests requires
+                      2 business days notice and approval on Western link.
+                    </p>
+
+                    <div className="mt-7 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+
+                      {[
+                        {
+                          title: 'Square Reader',
+                          text: 'Square credit card reader and a device to process payments at your event.',
+                          imageUrl: '/freshservice-icons/square.jpg',
+                        },
+                        {
+                          title: 'USC Storefront',
+                          text: 'Sell items online, receive donations & event ticketing with no scanning.',
+                          imageUrl: '/freshservice-icons/usc.png',
+                        },
+                        {
+                          title: 'Bounce Page',
+                          text: 'Event ticketing with door scanning, SMS, photo sharing, and notifications.',
+                          imageUrl: '/freshservice-icons/bounce.jpg',
+                        },
+                        {
+                          title: 'Request a Refund',
+                          text: 'Request a club membership or a refund for tickets from the USC Storefront.',
+                          imageUrl: '/freshservice-icons/usc.png',
+                        },
+                      ].map((card) => (
+                        <button
+                          key={card.title}
+                          onClick={() =>
+                            setWesternPopup(
+                              'Please click "Report an issue".'
+                            )
+                          }
+                          className="flex h-36 min-w-0 items-center gap-4 rounded-lg border border-gray-200 bg-white px-5 text-left shadow-sm transition hover:-translate-y-0.5 hover:border-gray-300 hover:shadow-md"
+                        >
+                          <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-md">
+                            <img
+                              src={card.imageUrl}
+                              alt=""
+                              className="h-full w-full object-contain"
+                            />
+                          </div>
+
+                          <div className="min-w-0">
+                            <h3 className="text-sm font-semibold text-gray-900">
+                              {card.title}
+                            </h3>
+
+                            <p className="mt-1 text-xs leading-4 text-gray-500">
+                              {card.text}
+                            </p>
+                          </div>
+                        </button>
+                      ))}
+
+                    </div>
+
+                  </div>
+
+                  <div className="mt-auto h-12 shrink-0 bg-[#4f2683]" />
+
+                </div>
+
+
+              ) : (
+
+                <div className="flex flex-1 flex-col overflow-hidden bg-[#ebeff3]">
+
+                  <div className="flex h-[72px] shrink-0 items-center justify-between border-b border-gray-200 bg-white px-8">
+
+                    <div>
+                      <span className="text-lg font-bold text-gray-900">
+                        Western University Students' Council
+                      </span>
+                    </div>
+
+                    <div className="flex items-center gap-4">
+
+                      <button
+                        className="flex h-9 w-9 items-center justify-center rounded-full text-gray-600 hover:bg-gray-100"
+                        aria-label="Notifications"
+                      >
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="1.8"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9" />
+                          <path d="M10 21h4" />
+                        </svg>
+                      </button>
+
+                      <div className="h-9 w-9 overflow-hidden rounded-full bg-white">
+                        <Image
+                          src="/usc-logo.png"
+                          alt="Profile"
+                          width={36}
+                          height={36}
+                          className="h-full w-full object-cover"
+                        />
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <div className="flex min-h-0 flex-1 overflow-hidden">
+
+                    <div className="flex min-h-0 flex-1 justify-center px-8 py-5">
+
+                      <div className="flex min-h-0 w-full max-w-5xl items-stretch gap-6">
+
+                        <div className="flex min-h-0 min-w-0 flex-1 flex-col rounded-md bg-white shadow-sm">
+
+                          <div className="flex-1 p-6">
+
+                            <div className="mb-4 text-sm text-gray-500">
+
+                              <button
+                                onClick={() => setWesternPage('home')}
+                                className="text-[#172b4d] hover:underline"
+                              >
+                                Home
+                              </button>
+
+                              <span className="mx-2">›</span>
+
+                              <span>Report an Issue</span>
+
+                            </div>
+
+                            <h1 className="text-2xl font-semibold text-gray-900">
+                              Report an Issue
+                            </h1>
+
+                            <div className="mt-4 h-px w-full bg-gray-200" />
+
+                            <div className="mt-5">
+
+                              <label className="text-xs font-bold text-gray-700">
+                                Requester
+                                <span className="ml-1 text-red-500">*</span>
+                              </label>
+
+                              <input
+                                type="text"
+                                className="mt-1.5 h-9 w-full rounded border border-gray-300 bg-white px-3 text-sm outline-none focus:border-[#4f2683] focus:ring-1 focus:ring-[#4f2683]/20"
+                              />
+
+                            </div>
+
+                            <div className="mt-4">
+
+                              <label className="text-xs font-bold text-gray-700">
+                                Issue related to
+                              </label>
+
+                              <select
+                                defaultValue=""
+                                className="mt-1.5 h-9 w-full rounded border border-gray-300 bg-white px-3 text-sm text-gray-700 outline-none focus:border-[#4f2683] focus:ring-1 focus:ring-[#4f2683]/20"
+                              >
+                                <option value="">...</option>
+                                <option value="software">
+                                  Software (ie. Zoom, Sage, Adobe)
+                                </option>
+                                <option value="hardware">
+                                  Hardware (ie. Printer, Scanner, Monitor)
+                                </option>
+                                <option value="it-request">
+                                  I.T Request (Other)
+                                </option>
+                              </select>
+
+                            </div>
+
+                            <div className="mt-4">
+
+                              <label className="text-xs font-bold text-gray-700">
+                                Subject
+                                <span className="ml-1 text-red-500">*</span>
+                              </label>
+
+                              <input
+                                type="text"
+                                className="mt-1.5 h-9 w-full rounded border border-gray-300 bg-white px-3 text-sm outline-none focus:border-[#4f2683] focus:ring-1 focus:ring-[#4f2683]/20"
+                              />
+
+                            </div>
+
+                            <div className="mt-5">
+
+                              <button
+                                onClick={() =>
+                                  setWesternPopup(
+                                    "Cannot attach files in simulation."
+                                  )
+                                }
+                                className="inline-flex items-center gap-2 text-sm"
+                              >
+
+                                <svg
+                                  width="18"
+                                  height="18"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  className="-rotate-12 text-[#4f2683]"
+                                >
+                                  <path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48" />
+                                </svg>
+
+                                <span className="font-medium text-[#4f2683]">
+                                  Attach files
+                                </span>
+
+                              </button>
+
+                              <span className="ml-2 text-xs text-gray-500">
+                                (File size &lt; 40 MB)
+                              </span>
+
+                            </div>
+
+                            <div className="mt-6">
+
+                              <button
+                                onClick={() =>
+                                  setWesternPopup(
+                                    'Cannot associate assets in simulation.'
+                                  )
+                                }
+                                className="flex items-center gap-2"
+                              >
+
+                                <span className="flex h-6 w-6 items-center justify-center rounded-full border-2 border-green-500 text-green-600">
+                                  <svg
+                                    width="13"
+                                    height="13"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="2.5"
+                                    strokeLinecap="round"
+                                  >
+                                    <line
+                                      x1="12"
+                                      y1="5"
+                                      x2="12"
+                                      y2="19"
+                                    />
+                                    <line
+                                      x1="5"
+                                      y1="12"
+                                      x2="19"
+                                      y2="12"
+                                    />
+                                  </svg>
+                                </span>
+
+                                <span className="text-sm font-medium text-[#172b4d]">
+                                  Associate Assets
+                                </span>
+
+                              </button>
+
+                            </div>
+
+                          </div>
+
+                          <div className="flex shrink-0 justify-end gap-3 border-t border-gray-100 px-6 py-4">
+
+                            <button
+                              onClick={() => setWesternPage('home')}
+                              className="rounded-md border border-gray-300 bg-white px-5 py-2 text-sm font-medium text-[#172b4d] hover:bg-gray-50"
+                            >
+                              Cancel
+                            </button>
+
+                            <button
+                              onClick={() =>
+                                setWesternPopup('Form submitted')
+                              }
+                              className="rounded-md bg-[#172b4d] px-5 py-2 text-sm font-medium text-white hover:bg-[#10213c]"
+                            >
+                              Submit
+                            </button>
+
+                          </div>
+
+                        </div>
+
+                        <div className="hidden w-72 shrink-0 bg-[#f5f7f9] p-7 lg:flex lg:flex-col">
+
+                          <div className="flex flex-col items-center text-center">
+
+                            <div className="mt-2 flex h-36 w-36 items-center justify-center">
+                              <Image
+                                src="/freshservice-icons/search.png"
+                                alt="Helpdesk illustration"
+                                width={144}
+                                height={144}
+                                className="h-full w-full object-contain"
+                              />
+                            </div>
+
+                            <h2 className="mt-3 text-base font-bold text-[#172b4d]">
+                              Looking to solve your issue quickly?
+                            </h2>
+
+                            <p className="mt-3 text-sm leading-5 text-gray-600">
+                              Add more details to the subject to see relevant articles
+                              right here!
+                            </p>
+
+                          </div>
+
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="h-12 shrink-0 bg-[#4f2683]" />
+
+                </div>
+              )}
+
+              {westernPopup && (
+                <div
+                  className="fixed inset-0 z-[100] flex items-center justify-center bg-black/40 backdrop-blur-sm"
+                  onClick={() => setWesternPopup(null)}
+                >
+                  <div
+                    className="w-[400px] rounded-lg bg-white p-6 shadow-2xl"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+
+                    <h2 className="text-lg font-semibold text-gray-900">
+                      Information Systems
+                    </h2>
+
+                    <p className="mt-3 text-sm text-gray-600">
+                      {westernPopup}
+                    </p>
+
+                    <div className="mt-6 flex justify-end">
+
+                      <button
+                        onClick={() => setWesternPopup(null)}
+                        className="rounded-md bg-[#4f2683] px-5 py-2 text-sm font-medium text-white hover:bg-[#3d1d68]"
+                      >
+                        OK
+                      </button>
+
+                    </div>
+
+                  </div>
+                </div>
+              )}
+
+            </div>
+          )}
+
+          {activeTab === 'calendar' && (
+            <div className="flex flex-1 flex-col bg-white">
+              <div className="border-b border-gray-200 bg-[#f8f9fa] px-6 py-4">
+                <h1 className="text-xl font-semibold text-gray-800">
+                  Google Calendar
+                </h1>
+              </div>
+
+              <div className="flex flex-1 items-center justify-center">
+                <div className="text-center">
+                  <h2 className="text-2xl font-semibold text-gray-800">
+                    Google Calendar
+                  </h2>
+                  <p className="mt-2 text-gray-500">
+                    Placeholder Google Calendar website.
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
         )}
       </div>
