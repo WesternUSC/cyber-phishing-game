@@ -1627,7 +1627,7 @@ const slides = [
                 right: "2%",
                 top: "50%",
                 height: "4px",
-                backgroundColor: "#b8c4d4",
+                backgroundColor: "#9b7db5",
                 transform: "translateY(-50%)",
                 borderRadius: "2px",
                 zIndex: 0,
@@ -1668,7 +1668,7 @@ const slides = [
                 <h2
                   style={{
                     margin: 0,
-                    color: "#102e5a",
+                    color: "#582c83",
                     fontSize: "1.25rem",
                   }}
                 >
@@ -1734,7 +1734,7 @@ const slides = [
                 <h2
                   style={{
                     margin: 0,
-                    color: "#102e5a",
+                    color: "#582c83",
                     fontSize: "1.25rem",
                   }}
                 >
@@ -1798,7 +1798,7 @@ const slides = [
                 <h2
                   style={{
                     margin: 0,
-                    color: "#102e5a",
+                    color: "#582c83",
                     fontSize: "1.25rem",
                   }}
                 >
@@ -1862,7 +1862,7 @@ const slides = [
                 <h2
                   style={{
                     margin: 0,
-                    color: "#102e5a",
+                    color: "#582c83",
                     fontSize: "1.25rem",
                   }}
                 >
@@ -2204,6 +2204,10 @@ export default function HomePage() {
 
       if (event.key.toLowerCase() === 'r') {
         resetGame();
+      }
+
+      if (event.key.toLowerCase() === 's') {
+        setSlidesSeen(true);
       }
     };
 
