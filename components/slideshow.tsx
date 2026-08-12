@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 interface Slide {
   title?: string;
@@ -14,24 +14,72 @@ interface SlideshowProps {
 // title slides that don't require 1 minute wait
 const EXEMPT_SLIDES = new Set([0, 1, 5, 8, 11, 14, 18, 19]);
 
-const WAIT_TIME = 10 * 1000;
+const WAIT_TIME = 0 * 1000;
+
+const STORAGE_KEY = "slideshow-progress";
+
+const INCIDENT_SLIDE_TITLE = "Incident Response & Reporting";
 
 const Slideshow: React.FC<SlideshowProps> = ({
   slides,
   startSlide = 0,
   onLastSlide,
 }) => {
-  const [current, setCurrent] = useState(startSlide);
+  const [current, setCurrent] = useState(() => {
+    const saved = localStorage.getItem(STORAGE_KEY);
 
-  const [slideStartedAt, setSlideStartedAt] = useState(Date.now());
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      return parsed.current ?? startSlide;
+    }
+
+    return startSlide;
+  });
+
+  const [slideStartedAt, setSlideStartedAt] = useState(() => {
+    const saved = localStorage.getItem(STORAGE_KEY);
+
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      return parsed.slideStartedAt ?? Date.now();
+    }
+
+    return Date.now();
+  });
 
   const [seenSlides, setSeenSlides] = useState<Set<number>>(() => {
+    const saved = localStorage.getItem(STORAGE_KEY);
+
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      return new Set<number>(parsed.seenSlides ?? [startSlide]);
+    }
+
     return new Set([startSlide]);
   });
 
-  const INCIDENT_SLIDE_TITLE = "Incident Response & Reporting";
+  const [incidentSteps, setIncidentSteps] = useState(() => {
+    const saved = localStorage.getItem(STORAGE_KEY);
 
-  const [incidentSteps, setIncidentSteps] = useState(1);
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      return parsed.incidentSteps ?? 1;
+    }
+
+    return 1;
+  });
+
+  useEffect(() => {
+    localStorage.setItem(
+      STORAGE_KEY,
+      JSON.stringify({
+        current,
+        slideStartedAt,
+        seenSlides: Array.from(seenSlides),
+        incidentSteps,
+      })
+    );
+  }, [current, slideStartedAt, seenSlides, incidentSteps]);
 
   const isExempt = (slideIndex: number) => {
     return EXEMPT_SLIDES.has(slideIndex);
@@ -56,17 +104,44 @@ const Slideshow: React.FC<SlideshowProps> = ({
     });
   };
 
+  const previous = () => {
+    if (current > 0) {
+      changeSlide(current - 1);
+    }
+  };
+
   const next = () => {
-    if (current >= slides.length - 1) {
-      onLastSlide?.();
-      return;
+    if (current === slides.length - 2) {
+      const allSlidesSeen = seenSlides.size === slides.length;
+
+      if (!allSlidesSeen) {
+        const nextSlide = current + 1;
+
+        const updatedSeenSlides = new Set(seenSlides);
+        updatedSeenSlides.add(nextSlide);
+
+        setSeenSlides(updatedSeenSlides);
+
+        localStorage.setItem(
+          STORAGE_KEY,
+          JSON.stringify({
+            current: nextSlide,
+            slideStartedAt: Date.now(),
+            seenSlides: Array.from(updatedSeenSlides),
+            incidentSteps,
+          })
+        );
+
+        onLastSlide?.();
+        return;
+      }
     }
 
     const isIncidentSlide =
       slides[current].title === INCIDENT_SLIDE_TITLE;
 
     if (isIncidentSlide && incidentSteps < 4) {
-      setIncidentSteps((previous) => previous + 1);
+      setIncidentSteps((previous: number) => previous + 1);
       return;
     }
 
@@ -80,15 +155,35 @@ const Slideshow: React.FC<SlideshowProps> = ({
     changeSlide(current + 1);
   };
 
-  const previous = () => {
-    if (current > 0) {
-      changeSlide(current - 1);
-    }
-  };
-
   const goToSlide = (index: number) => {
     if (index === current) {
       return;
+    }
+
+    if (current === slides.length - 2) {
+      const allSlidesSeen = seenSlides.size === slides.length;
+
+      if (!allSlidesSeen) {
+        const nextSlide = current + 1;
+
+        const updatedSeenSlides = new Set(seenSlides);
+        updatedSeenSlides.add(nextSlide);
+
+        setSeenSlides(updatedSeenSlides);
+
+        localStorage.setItem(
+          STORAGE_KEY,
+          JSON.stringify({
+            current: nextSlide,
+            slideStartedAt: Date.now(),
+            seenSlides: Array.from(updatedSeenSlides),
+            incidentSteps,
+          })
+        );
+
+        onLastSlide?.();
+        return;
+      }
     }
 
     const isIncidentSlide =
@@ -230,6 +325,7 @@ const Slideshow: React.FC<SlideshowProps> = ({
 
         <button
           onClick={next}
+          disabled={current === slides.length - 1}
         >
           Next
         </button>

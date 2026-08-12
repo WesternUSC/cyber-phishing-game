@@ -12,6 +12,7 @@ import { Email } from '@/lib/types';
 import emailData from '@/data/emails.json';
 import Slideshow from '@/components/slideshow';
 import { slides } from '@/components/slides';
+import ModuleCompletion from '@/components/module-completion';
 
 const emails = emailData.emails as Email[];
 const STORAGE_KEY = 'phishquest-run';
@@ -133,7 +134,7 @@ export default function HomePage() {
   const [isMinimized, setIsMinimized] = useState(true);
   const [showStart, setShowStart] = useState(false);
 
-  const [activeTab, setActiveTab] = useState<'phishquest' | 'outlook' | 'western' | 'calendar'>(
+  const [activeTab, setActiveTab] = useState<'phishquest' | 'outlook' | 'western' | 'calendar' | 'trello' | 'rippling' | 'modules'>(
     'phishquest'
   );
 
@@ -441,7 +442,10 @@ export default function HomePage() {
   );
 
   if (!slidesSeen) {
-    return <Slideshow slides={slides} onLastSlide={() => setSlidesSeen(true)} />;
+    return <Slideshow
+              slides={slides(state.playerName)}
+              onLastSlide={() => setSlidesSeen(true)}
+            />
   }
 
   // ── iPad / tablet layout ─────────────────────────────────────────────────────
@@ -598,7 +602,7 @@ export default function HomePage() {
               </button>
 
 
-              {/* Outlook tab */}
+              {/* Google Drive tab */}
               <button
                 onClick={() => setActiveTab('outlook')}
                 className={`relative flex h-8 w-48 items-center rounded-t-lg px-3 ${
@@ -608,19 +612,17 @@ export default function HomePage() {
                 }`}
               >
                 <Image
-                  src="/outlook.webp"
+                  src="/drive_logo.webp"
                   alt=""
                   width={16}
                   height={16}
                   className="shrink-0"
                 />
 
-                {/* Title stays directly beside logo */}
                 <span className="ml-2 min-w-0 truncate text-[12px] text-white/70">
-                  Outlook
+                  Google Drive
                 </span>
 
-                {/* Push X all the way to the right */}
                 <span className="ml-auto shrink-0 rounded p-1 text-[10px] text-white/60">
                   ✕
                 </span>
@@ -683,6 +685,90 @@ export default function HomePage() {
                 </span>
 
                 <div className="absolute right-0 top-2 bottom-2 w-px bg-white/15" />
+              </button>
+
+              {/* Trello tab */}
+              <button
+                onClick={() => setActiveTab('trello')}
+                className={`relative flex h-8 w-48 items-center rounded-t-lg px-3 ${
+                  activeTab === 'trello'
+                    ? 'bg-[#2d2f31]'
+                    : 'hover:bg-white/10'
+                }`}
+              >
+                <Image
+                  src="/trello-logo-icon.webp"
+                  alt=""
+                  width={16}
+                  height={16}
+                  className="shrink-0"
+                />
+
+                <span className="ml-2 min-w-0 truncate text-[12px] text-white/70">
+                  Trello
+                </span>
+
+                <span className="ml-auto shrink-0 rounded p-1 text-[10px] text-white/60">
+                  ✕
+                </span>
+
+                <div className="absolute right-0 top-2 bottom-2 z-10 w-px bg-white/15" />
+              </button>
+
+              {/* Rippling tab */}
+              <button
+                onClick={() => setActiveTab('rippling')}
+                className={`relative flex h-8 w-48 items-center rounded-t-lg px-3 ${
+                  activeTab === 'rippling'
+                    ? 'bg-[#2d2f31]'
+                    : 'hover:bg-white/10'
+                }`}
+              >
+                <Image
+                  src="/rippling-logo.png"
+                  alt=""
+                  width={16}
+                  height={16}
+                  className="shrink-0"
+                />
+
+                <span className="ml-2 min-w-0 truncate text-[12px] text-white/70">
+                  Rippling
+                </span>
+
+                <span className="ml-auto shrink-0 rounded p-1 text-[10px] text-white/60">
+                  ✕
+                </span>
+
+                <div className="absolute right-0 top-2 bottom-2 z-10 w-px bg-white/15" />
+              </button>
+
+              {/* Modules tab */}
+              <button
+                onClick={() => setActiveTab('modules')}
+                className={`relative flex h-8 w-48 items-center rounded-t-lg px-3 ${
+                  activeTab === 'modules'
+                    ? 'bg-[#2d2f31]'
+                    : 'hover:bg-white/10'
+                }`}
+              >
+                <Image
+                  src="/usc-logo.png"
+                  alt=""
+                  width={16}
+                  height={16}
+                  className="shrink-0 bg-white"
+                />
+
+                <span className="ml-2 min-w-0 truncate text-[12px] text-white/70">
+                  Modules
+                </span>
+
+                <span className="ml-auto shrink-0 rounded p-1 text-[10px] text-white/60">
+                  ✕
+                </span>
+
+                <div className="absolute right-0 top-2 bottom-2 z-10 w-px bg-white/15" />
               </button>
 
 
@@ -793,23 +879,12 @@ export default function HomePage() {
           {activeTab === 'phishquest' && windowContent}
 
           {activeTab === 'outlook' && (
-            <div className="flex flex-1 flex-col bg-white">
-              <div className="border-b border-gray-200 bg-[#f8f9fa] px-6 py-4">
-                <h1 className="text-xl font-semibold text-gray-800">
-                  Outlook
-                </h1>
-              </div>
-
-              <div className="flex flex-1 items-center justify-center">
-                <div className="text-center">
-                  <h2 className="text-2xl font-semibold text-gray-800">
-                    Outlook
-                  </h2>
-                  <p className="mt-2 text-gray-500">
-                    Placeholder Outlook website.
-                  </p>
-                </div>
-              </div>
+            <div className="flex flex-1 min-h-0 bg-white">
+              <iframe
+                src="https://scribehow.com/embed-preview/Google_Drive_HowTo_Guide__fX1wnsttR_WURhS2_AOeCA?as=slides&size=flexible"
+                title="Scribe"
+                className="h-full w-full border-0"
+              />
             </div>
           )}
 
@@ -1377,24 +1452,42 @@ export default function HomePage() {
           )}
 
           {activeTab === 'calendar' && (
-            <div className="flex flex-1 flex-col bg-white">
-              <div className="border-b border-gray-200 bg-[#f8f9fa] px-6 py-4">
-                <h1 className="text-xl font-semibold text-gray-800">
-                  Google Calendar
-                </h1>
-              </div>
-
-              <div className="flex flex-1 items-center justify-center">
-                <div className="text-center">
-                  <h2 className="text-2xl font-semibold text-gray-800">
-                    Google Calendar
-                  </h2>
-                  <p className="mt-2 text-gray-500">
-                    Placeholder Google Calendar website.
-                  </p>
-                </div>
-              </div>
+            <div className="flex flex-1 min-h-0 bg-white">
+              <iframe
+                src="https://scribehow.com/embed-preview/Google_Calendar_HowTo_Guide__yG_Ajbg0QMOMTYAFObpkxw?as=slides&size=flexible"
+                title="Scribe"
+                className="h-full w-full border-0"
+              />
             </div>
+          )}
+
+          {activeTab === 'trello' && (
+            <div className="flex flex-1 min-h-0 bg-white">
+              <iframe
+                src="https://scribehow.com/embed-preview/How_to_Add_a_Comment_to_a_Trello_Card__BIHw7BY4TAGKrd78_nWwGA?as=slides&size=flexible"
+                title="Scribe"
+                className="h-full w-full border-0"
+              />
+            </div>
+          )}
+
+          {activeTab === 'rippling' && (
+            <div className="flex flex-1 min-h-0 bg-white">
+              <iframe
+                src="https://scribehow.com/embed-preview/Submit_a_Time_Off_Request_on_Rippling__BMcuOfhpTtO2r9UbSxketQ?as=slides&size=flexible"
+                title="Scribe"
+                className="h-full w-full border-0"
+              />
+            </div>
+          )}
+
+          {activeTab === 'modules' && (
+            <ModuleCompletion
+              onComplete={() => {
+                setSlidesSeen(false);
+                setActiveTab('phishquest');
+              }}
+            />
           )}
         </div>
         )}

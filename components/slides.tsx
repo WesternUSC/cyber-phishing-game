@@ -1,5 +1,6 @@
 import React from 'react';
 import { IncidentResponseSlide } from './incident-response-slide';
+import { getStoredSignature } from '@/lib/module-signature';
 
 const headerStyle: React.CSSProperties = {
   padding: "14px",
@@ -15,7 +16,7 @@ const cellStyle: React.CSSProperties = {
   color: "#102e5a",
 };
 
-export const slides = [
+export const slides = (playerName: string) => [
   {
     title: "Cybersecurity Guidelines",
     content: (
@@ -1688,6 +1689,242 @@ export const slides = [
           />
         </div>
       </>
+    ),
+  },
+  {
+    title: "Certificate of Completion",
+    content: (
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+          backgroundColor: "#f8fafc",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: "2rem",
+          boxSizing: "border-box",
+        }}
+      >
+        <div
+          style={{
+            position: "relative",
+            width: "90%",
+            height: "85%",
+            maxWidth: "1100px",
+            backgroundColor: "#ffffff",
+            border: "12px solid #582c83",
+            boxSizing: "border-box",
+            padding: "2.5rem 4rem",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "space-between",
+            boxShadow: "0 8px 30px rgba(0,0,0,0.12)",
+          }}
+        >
+          <div
+            style={{
+              position: "absolute",
+              inset: "12px",
+              border: "2px solid #d6c7e2",
+              pointerEvents: "none",
+            }}
+          />
+
+          <div
+            style={{
+              position: "relative",
+              zIndex: 1,
+              textAlign: "center",
+            }}
+          >
+            <div
+              style={{
+                color: "#582c83",
+                fontSize: "1rem",
+                fontWeight: "700",
+                letterSpacing: "0.3em",
+                marginBottom: "1rem",
+              }}
+            >
+              WESTERN USC CYBERSECURITY TRAINING
+            </div>
+
+            <h1
+              style={{
+                margin: 0,
+                color: "#102e5a",
+                fontSize: "3.75rem",
+                fontWeight: "700",
+                letterSpacing: "0.04em",
+              }}
+            >
+              CERTIFICATE
+            </h1>
+
+            <div
+              style={{
+                marginTop: "0.35rem",
+                color: "#582c83",
+                fontSize: "1.5rem",
+                fontWeight: "500",
+                letterSpacing: "0.2em",
+              }}
+            >
+              OF COMPLETION
+            </div>
+          </div>
+
+          <div
+            style={{
+              position: "relative",
+              zIndex: 1,
+              width: "80%",
+              textAlign: "center",
+            }}
+          >
+            <div
+              style={{
+                color: "#64748b",
+                fontSize: "1.05rem",
+                marginBottom: "0.75rem",
+              }}
+            >
+              This certificate is proudly presented to
+            </div>
+
+            <div
+              style={{
+                color: "#4f2683",
+                fontSize: "3rem",
+                fontWeight: "700",
+                padding: "0.5rem 1rem 0.75rem",
+                borderBottom: "2px solid #9b7db5",
+                minHeight: "4rem",
+              }}
+            >
+              {playerName || 'Participant'}
+            </div>
+
+            <p
+              style={{
+                margin: "1.5rem auto 0",
+                maxWidth: "750px",
+                color: "#374151",
+                fontSize: "1.1rem",
+                lineHeight: 1.6,
+              }}
+            >
+              for successfully completing the{" "}
+              <strong>Cybersecurity Guidelines</strong> training program,
+              including modules covering authentication, phishing and social
+              engineering, student data protection, device security, incident
+              response, and cyber awareness.
+            </p>
+          </div>
+
+          <div
+            style={{
+              position: "relative",
+              zIndex: 1,
+              width: "80%",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "flex-end",
+              marginTop: "1rem",
+            }}
+          >
+            <div
+              style={{
+                width: "260px",
+                textAlign: "center",
+              }}
+            >
+              <div
+                style={{
+                  height: "70px",
+                  display: "flex",
+                  alignItems: "flex-end",
+                  justifyContent: "center",
+                }}
+              >
+                <img src={getStoredSignature() ?? ''} alt="Training signature" />
+              </div>
+
+              <div
+                style={{
+                  borderTop: "1px solid #64748b",
+                  paddingTop: "0.5rem",
+                  color: "#374151",
+                  fontSize: "0.9rem",
+                }}
+              >
+                Authorized Signature
+              </div>
+            </div>
+
+            <div
+              style={{
+                width: "260px",
+                textAlign: "center",
+              }}
+            >
+              <div
+                style={{
+                  height: "70px",
+                  display: "flex",
+                  alignItems: "flex-end",
+                  justifyContent: "center",
+                  color: "#102e5a",
+                  fontSize: "1rem",
+                  fontWeight: "600",
+                }}
+              >
+                Cybersecurity Training Program
+              </div>
+
+              <div
+                style={{
+                  borderTop: "1px solid #64748b",
+                  paddingTop: "0.5rem",
+                  color: "#374151",
+                  fontSize: "0.9rem",
+                }}
+              >
+                Training Completion
+              </div>
+            </div>
+          </div>
+
+          <div
+            style={{
+              position: "absolute",
+              right: "2.5rem",
+              top: "2.5rem",
+              width: "70px",
+              height: "70px",
+              borderRadius: "50%",
+              border: "3px solid #9b7db5",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              textAlign: "center",
+              color: "#582c83",
+              fontSize: "0.6rem",
+              fontWeight: "700",
+              letterSpacing: "0.08em",
+              backgroundColor: "#faf7fc",
+            }}
+          >
+            CYBER
+            <br />
+            AWARE
+            <br />
+            2026
+          </div>
+        </div>
+      </div>
     ),
   },
 ];
