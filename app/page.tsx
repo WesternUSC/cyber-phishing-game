@@ -1109,14 +1109,8 @@ export default function HomePage() {
                         </svg>
                       </button>
 
-                      <div className="h-9 w-9 overflow-hidden rounded-full bg-white">
-                        <Image
-                          src="/usc-logo.png"
-                          alt="Profile"
-                          width={36}
-                          height={36}
-                          className="h-full w-full object-cover"
-                        />
+                      <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#eceff1] text-sm font-semibold text-gray-700">
+                        {state.playerName.charAt(0).toUpperCase()}
                       </div>
 
                     </div>
