@@ -27,51 +27,38 @@ const Slideshow: React.FC<SlideshowProps> = ({
   startSlide = 0,
   onLastSlide,
 }) => {
-  const [current, setCurrent] = useState(() => {
-    const saved = localStorage.getItem(STORAGE_KEY);
-
-    if (saved) {
-      const parsed = JSON.parse(saved);
-      return parsed.current ?? startSlide;
-    }
-
-    return startSlide;
-  });
-
-  const [slideStartedAt, setSlideStartedAt] = useState(() => {
-    const saved = localStorage.getItem(STORAGE_KEY);
-
-    if (saved) {
-      const parsed = JSON.parse(saved);
-      return parsed.slideStartedAt ?? Date.now();
-    }
-
-    return Date.now();
-  });
-
-  const [seenSlides, setSeenSlides] = useState<Set<number>>(() => {
-    const saved = localStorage.getItem(STORAGE_KEY);
-
-    if (saved) {
-      const parsed = JSON.parse(saved);
-      return new Set<number>(parsed.seenSlides ?? [startSlide]);
-    }
-
-    return new Set([startSlide]);
-  });
-
-  const [incidentSteps, setIncidentSteps] = useState(() => {
-    const saved = localStorage.getItem(STORAGE_KEY);
-
-    if (saved) {
-      const parsed = JSON.parse(saved);
-      return parsed.incidentSteps ?? 1;
-    }
-
-    return 1;
-  });
+  const [current, setCurrent] = useState(startSlide);
+  const [slideStartedAt, setSlideStartedAt] = useState(Date.now());
+  const [seenSlides, setSeenSlides] = useState<Set<number>>(
+    new Set([startSlide])
+  );
+  const [incidentSteps, setIncidentSteps] = useState(1);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
+    const saved = localStorage.getItem(STORAGE_KEY);
+
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved);
+
+        setCurrent(parsed.current ?? startSlide);
+        setSlideStartedAt(parsed.slideStartedAt ?? Date.now());
+        setSeenSlides(
+          new Set<number>(parsed.seenSlides ?? [startSlide])
+        );
+        setIncidentSteps(parsed.incidentSteps ?? 1);
+      } catch (error) {
+        console.error("Failed to load slideshow progress:", error);
+      }
+    }
+
+    setIsLoaded(true);
+  }, [startSlide]);
+
+  useEffect(() => {
+    if (!isLoaded) return;
+
     localStorage.setItem(
       STORAGE_KEY,
       JSON.stringify({
@@ -81,19 +68,19 @@ const Slideshow: React.FC<SlideshowProps> = ({
         incidentSteps,
       })
     );
-  }, [current, slideStartedAt, seenSlides, incidentSteps]);
+  }, [isLoaded, current, slideStartedAt, seenSlides, incidentSteps]);
 
-  const isExempt = (slideIndex: number) => {
-    return EXEMPT_SLIDES.has(slideIndex);
-  };
+    const isExempt = (slideIndex: number) => {
+      return EXEMPT_SLIDES.has(slideIndex);
+    };
 
-  const hasWaitedLongEnough = () => {
-    if (isExempt(current)) {
-      return true;
-    }
+    const hasWaitedLongEnough = () => {
+      if (isExempt(current)) {
+        return true;
+      }
 
-    return Date.now() - slideStartedAt >= WAIT_TIME;
-  };
+      return Date.now() - slideStartedAt >= WAIT_TIME;
+    };
 
   const changeSlide = (newIndex: number) => {
     setCurrent(newIndex);

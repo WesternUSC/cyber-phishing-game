@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import { IncidentResponseSlide } from './incident-response-slide';
 import { StoredSignature } from './stored-signature';
