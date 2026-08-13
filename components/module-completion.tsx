@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from 'react';
 
 import { getStoredSignature, saveSignature } from '@/lib/module-signature';
 
+const COMPLETED_MODULES_KEY = 'cyber-training-completed-modules';
+
 const MODULES = [
   {
     id: 'email-security',
@@ -43,8 +45,30 @@ type ModuleCompletionProps = {
 
 export default function ModuleCompletion({
   onComplete,
-}: ModuleCompletionProps) {
-  const [completed, setCompleted] = useState<string[]>([]);
+  }: ModuleCompletionProps) {
+    const [completed, setCompleted] = useState<string[]>(() => {
+    if (typeof window === 'undefined') return [];
+
+    try {
+      const stored = localStorage.getItem(COMPLETED_MODULES_KEY);
+
+      if (!stored) return [];
+
+      const parsed = JSON.parse(stored);
+
+      return Array.isArray(parsed) ? parsed : [];
+    } catch {
+      return [];
+    }
+  });
+
+  useEffect(() => {
+    localStorage.setItem(
+      COMPLETED_MODULES_KEY,
+      JSON.stringify(completed),
+    );
+  }, [completed]);
+
   const [signatureExists, setSignatureExists] = useState(false);
   const [isDrawing, setIsDrawing] = useState(false);
   const [hasSignature, setHasSignature] = useState(false);
