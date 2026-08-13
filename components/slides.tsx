@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { IncidentResponseSlide } from './incident-response-slide';
 import { getStoredSignature } from '@/lib/module-signature';
