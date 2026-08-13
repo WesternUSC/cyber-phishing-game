@@ -14,6 +14,7 @@ import { slides } from '@/components/slides';
 import ModuleCompletion from '@/components/module-completion';
 import { Trophy } from 'lucide-react';
 import { saveResult } from '@/lib/saveResult';
+import SlackApp from '@/components/slack-app';
 
 const emails = emailData.emails as Email[];
 const STORAGE_KEY = 'phishquest-run';
@@ -85,6 +86,13 @@ const desktopApps = [
     name: "Microsoft Store",
     icon: "/store.png",
     description: "Install apps and games."
+  },
+  {
+    id: "slack",
+    name: "Slack",
+    icon: "/slack_logo_icon.webp",
+    description: "Team communication and collaboration.",
+    action: "openSlack"
   },
 ];
 
@@ -274,7 +282,9 @@ export default function HomePage() {
   const openedAtRef = useRef<number>(Date.now());
   const isTablet = useIsTablet();
 
-  const [isMinimized, setIsMinimized] = useState(true);
+  const [isChromeClosed, setisChromeClosed] = useState(true);
+  const [isSlackClosed, setisSlackClosed] = useState(true);
+
   const [showStart, setShowStart] = useState(false);
 
   const [activeTab, setActiveTab] = useState<'phishquest' | 'outlook' | 'western' | 'calendar' | 'trello' | 'rippling' | 'modules'>(
@@ -683,7 +693,12 @@ export default function HomePage() {
       key={app.id}
       onDoubleClick={() => {
       if (app.action === "openChrome") {
-        setIsMinimized(false);
+        setisChromeClosed(false);
+        return;
+      }
+
+      if (app.action === "openSlack") {
+        setisSlackClosed(false);
         return;
       }
 
@@ -710,7 +725,7 @@ export default function HomePage() {
       </div>
 
         {/* Floating app window */}
-        {!isMinimized && (
+        {!isChromeClosed && (
         <div
             className="
               flex
@@ -938,7 +953,7 @@ export default function HomePage() {
               {/* Window controls */}
               <div className="ml-auto flex">
                 <button
-                  onClick={() => setIsMinimized(true)}
+                  onClick={() => setisChromeClosed(true)}
                   className="flex h-10 w-12 items-center justify-center text-white/60 hover:bg-white/10"
                 >
                   <svg width="10" height="1" fill="currentColor">
@@ -1649,6 +1664,17 @@ export default function HomePage() {
           )}
         </div>
         )}
+
+        {!isSlackClosed && (
+          <div className="absolute left-[20%] top-[8%] z-30 h-[75vh] w-[50vw]">
+            <SlackApp
+              playerName={state.playerName}
+              onMinimize={() => setisSlackClosed(true)}
+              onClose={() => setisSlackClosed(true)}
+            />
+          </div>
+        )}  
+
       </div>
 
       {showStart && (
@@ -1771,9 +1797,36 @@ export default function HomePage() {
               <rect x="12" y="12" width="10" height="10" rx="1" />
             </svg>
           </button>
-          <button onClick={() => setIsMinimized((prev) => !prev)} className="flex h-10 items-center gap-2 rounded border-b-2 border-white/70 bg-white/10 px-3 transition-colors hover:bg-white/15">
-            <Image src="/chrome_icon.webp" alt="" width={24} height={24} className="opacity-90" />
-            {/* <span className="hidden text-xs text-white/70 sm:block">Chrome</span> */}
+          <button
+            onClick={() => setisChromeClosed((prev) => !prev)}
+            className={`flex h-10 items-center gap-2 rounded px-3 transition-colors ${
+              isChromeClosed
+                ? 'hover:bg-white/10'
+                : 'border-b-2 border-white/70 bg-white/10'
+            }`}
+          >
+            <Image
+              src="/chrome_icon.webp"
+              alt="Chrome"
+              width={24}
+              height={24}
+            />
+          </button>
+
+          <button
+            onClick={() => setisSlackClosed((prev) => !prev)}
+            className={`flex h-10 items-center gap-2 rounded px-3 transition-colors ${
+              isSlackClosed
+                ? 'hover:bg-white/10'
+                : 'border-b-2 border-white/70 bg-white/10'
+            }`}
+          >
+            <Image
+              src="/slack_logo_icon.webp"
+              alt="Slack"
+              width={24}
+              height={24}
+            />
           </button>
         </div>
         <div className="flex w-24 flex-col items-end">
