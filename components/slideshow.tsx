@@ -82,6 +82,53 @@ const Slideshow: React.FC<SlideshowProps> = ({
       return Date.now() - slideStartedAt >= WAIT_TIME;
     };
 
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      // Ignore typing in text boxes
+      const target = event.target as HTMLElement;
+      if (
+        target.tagName === 'INPUT' ||
+        target.tagName === 'TEXTAREA' ||
+        target.isContentEditable
+      ) {
+        return;
+      }
+
+      // Debug: remove in production
+      if (event.key.toLowerCase() === 's') {
+        setCurrent(slides.length - 2);
+        const allSlidesSeen = seenSlides.size === slides.length;
+
+        if (!allSlidesSeen) {
+          const nextSlide = slides.length - 1;
+
+          const allSlidesSeen = new Set(slides.map((_, index) => index));
+
+          setSeenSlides(allSlidesSeen);
+
+          localStorage.setItem(
+            STORAGE_KEY,
+            JSON.stringify({
+              current: nextSlide,
+              slideStartedAt: Date.now(),
+              seenSlides: Array.from(allSlidesSeen),
+              incidentSteps,
+            })
+          );
+
+          onLastSlide?.();
+          return;
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
   const changeSlide = (newIndex: number) => {
     setCurrent(newIndex);
     setSlideStartedAt(Date.now());
