@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { IncidentResponseSlide } from './incident-response-slide';
-import { getStoredSignature } from '@/lib/module-signature';
+import { StoredSignature } from './stored-signature';
 
 const headerStyle: React.CSSProperties = {
   padding: "14px",
@@ -1851,7 +1851,7 @@ export const slides = (playerName: string) => [
                   justifyContent: "center",
                 }}
               >
-                <img src={getStoredSignature() ?? ''} alt="Training signature" />
+                <StoredSignature />
               </div>
 
               <div
