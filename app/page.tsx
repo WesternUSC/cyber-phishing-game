@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useReducer, useRef, useState } from 'react';
-import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { AppShell } from '@/components/app-shell';
 import { InboxList } from '@/components/inbox-list';
@@ -13,6 +12,8 @@ import emailData from '@/data/emails.json';
 import Slideshow from '@/components/slideshow';
 import { slides } from '@/components/slides';
 import ModuleCompletion from '@/components/module-completion';
+import { Trophy } from 'lucide-react';
+import { saveResult } from '@/lib/saveResult';
 
 const emails = emailData.emails as Email[];
 const STORAGE_KEY = 'phishquest-run';
@@ -114,6 +115,149 @@ function useIsTablet() {
   return isTablet;
 }
 
+function ResultsScreen({
+  playerName,
+  score,
+  total,
+}: {
+  playerName: string;
+  score: number;
+  total: number;
+}) {
+  const [saveStatus, setSaveStatus] = useState<
+    'pending' | 'saved' | 'error'
+  >('pending');
+
+  const savedRef = useRef(false);
+
+  const pct = total > 0 ? Math.round((score / total) * 100) : 0;
+
+  const grade =
+    pct === 100
+      ? 'Perfect score!'
+      : pct >= 80
+        ? 'Great job!'
+        : pct >= 60
+          ? 'Getting there!'
+          : 'Keep practicing!';
+
+  const gradeColor =
+    pct === 100
+      ? 'text-green-600'
+      : pct >= 80
+        ? 'text-[#1a73e8]'
+        : pct >= 60
+          ? 'text-yellow-600'
+          : 'text-red-600';
+
+  useEffect(() => {
+    if (savedRef.current) return;
+
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return;
+
+    try {
+      const state = JSON.parse(raw);
+
+      savedRef.current = true;
+
+      saveResult(state, emails)
+        .then(() => setSaveStatus('saved'))
+        .catch((err) => {
+          console.error(err);
+          setSaveStatus('error');
+        });
+    } catch (err) {
+      console.error(err);
+      setSaveStatus('error');
+    }
+  }, []);
+
+  return (
+    <div className="flex flex-1 flex-col overflow-y-auto bg-[#f6f8fc]">
+      {/* PhishQuest header */}
+      <div className="flex shrink-0 items-center justify-between border-b border-gray-200 bg-white px-6 py-4">
+        <div className="flex items-center gap-3">
+          <Image
+            src="/usc-logo.png"
+            alt="USC Logo"
+            width={36}
+            height={36}
+          />
+
+          <span className="text-xl font-normal text-gray-700">
+            Phish
+            <span className="font-semibold text-[#4f2584]">
+              Quest
+            </span>
+          </span>
+        </div>
+
+        <span
+          className={`text-xs ${
+            saveStatus === 'saved'
+              ? 'text-green-600'
+              : saveStatus === 'error'
+                ? 'text-red-500'
+                : 'text-gray-400'
+          }`}
+        >
+          {saveStatus === 'saved'
+            ? '✓ Results saved'
+            : saveStatus === 'error'
+              ? '⚠ Could not save'
+              : 'Saving…'}
+        </span>
+      </div>
+
+      {/* Results */}
+      <div className="flex flex-1 items-start justify-center overflow-y-auto p-6">
+        <div className="w-full max-w-2xl">
+          {/* Score card */}
+          <div className="rounded-2xl bg-white p-8 text-center shadow-sm">
+            <div className="mb-4 flex justify-center">
+              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-[#e8f0fe]">
+                <Trophy className="h-10 w-10 text-[#4f2584]" />
+              </div>
+            </div>
+
+            <h1 className="text-3xl font-semibold text-gray-900">
+              {score}/{total}
+            </h1>
+
+            <p className={`mt-1 text-lg font-medium ${gradeColor}`}>
+              {grade}
+            </p>
+
+            <p className="mt-2 text-sm text-gray-500">
+              {playerName} &bull; {pct}% accuracy
+            </p>
+
+            {/* Progress bar */}
+            <div className="mx-auto mt-5 h-2 w-full max-w-xs overflow-hidden rounded-full bg-gray-200">
+              <div
+                className={`h-full rounded-full transition-all ${
+                  pct >= 80
+                    ? 'bg-green-500'
+                    : pct >= 60
+                      ? 'bg-yellow-500'
+                      : 'bg-red-500'
+                }`}
+                style={{ width: `${pct}%` }}
+              />
+            </div>
+            <br></br>
+            <p className={`mt-1 text-lg font-medium`}>
+              Please continue to the next module.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function HomePage() {
   const [state, dispatch] = useReducer(gameReducer, initialGameState);
   const [nameInput, setNameInput] = useState('');
@@ -128,7 +272,6 @@ export default function HomePage() {
     evidence: string[];
   }>({ open: false, correct: false, explanation: '', evidence: [] });
   const openedAtRef = useRef<number>(Date.now());
-  const router = useRouter();
   const isTablet = useIsTablet();
 
   const [isMinimized, setIsMinimized] = useState(true);
@@ -168,13 +311,6 @@ export default function HomePage() {
     if (state.started) localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
   }, [state]);
 
-  // Navigate to results when all emails reviewed
-  useEffect(() => {
-    if (state.started && state.reviewed.length === emails.length) {
-      router.push(`/results/${state.runId}`);
-    }
-  }, [state.started, state.reviewed.length, state.runId, router]);
-
   // Taskbar clock (client-only to avoid hydration mismatch)
   useEffect(() => {
     const fmt = () =>
@@ -207,9 +343,9 @@ export default function HomePage() {
         resetGame();
       }
 
-      if (event.key.toLowerCase() === 's') {
-        setSlidesSeen(true);
-      }
+      // if (event.key.toLowerCase() === 's') {
+      //   setSlidesSeen(true);
+      // }
     };
 
     window.addEventListener('keydown', handleKeyDown);
@@ -219,9 +355,25 @@ export default function HomePage() {
     };
   }, []);
 
+  /*
   const currentEmail = emails.find((e) => e.id === state.currentEmailId);
   const score = Object.values(state.decisions).filter((d) => d.correct).length;
   const progressPct = emails.length > 0 ? state.reviewed.length / emails.length : 0;
+  */
+  const currentEmail = emails.find((e) => e.id === state.currentEmailId);
+
+  const score = Object.values(state.decisions).filter(
+    (d) => d.correct
+  ).length;
+
+  const progressPct =
+    emails.length > 0
+      ? state.reviewed.length / emails.length
+      : 0;
+
+  const gameComplete =
+    state.started && state.reviewed.length === emails.length;
+
 
   function start() {
     const trimmed = nameInput.trim();
@@ -350,7 +502,13 @@ export default function HomePage() {
 
   // ── Shared inner game layout ─────────────────────────────────────────────────
   // Used by both the iPad and the desktop (Windows) wrappers below.
-  const innerGame = (
+  const innerGame = gameComplete ? (
+    <ResultsScreen
+      playerName={state.playerName}
+      score={score}
+      total={emails.length}
+    />
+  ) : (
     <>
       <AppShell playerName={state.playerName} score={score} total={state.reviewed.length} />
 
@@ -1368,7 +1526,7 @@ export default function HomePage() {
 
                             <button
                               onClick={() =>
-                                setWesternPopup('Form submitted')
+                                setWesternPopup('Form submitted. Please continue to the next module.')
                               }
                               className="rounded-md bg-[#172b4d] px-5 py-2 text-sm font-medium text-white hover:bg-[#10213c]"
                             >

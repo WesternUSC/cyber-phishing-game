@@ -454,11 +454,11 @@ export default function ModuleCompletion({
           </div>
         )}
 
-        {signatureExists && (
+        {/* {signatureExists && (
           <div className="mt-4 rounded-lg border border-green-100 bg-green-50 px-5 py-3 text-sm text-green-700">
             A training signature has previously been saved for this session.
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );
