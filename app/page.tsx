@@ -298,6 +298,8 @@ export default function HomePage() {
 
   const [nameEntered, setNameEntered] = useState(false);
 
+  const [moduleStarted, setModuleStarted] = useState<Record<string, boolean>>({});
+
   const [openApp, setOpenApp] = useState<
   | {
       name: string;
@@ -424,6 +426,73 @@ export default function HomePage() {
       dispatch({ type: 'OPEN_EMAIL', emailId: nextEmail.id });
       openedAtRef.current = Date.now();
     }
+  }
+
+  function ModuleIntro({
+    moduleId,
+    title,
+    description,
+    icon,
+  }: {
+    moduleId: string;
+    title: string;
+    description: string;
+    icon: string;
+  }) {
+    const started = moduleStarted[moduleId];
+
+    if (started) return null;
+
+    return (
+      <div className="flex flex-1 items-center justify-center bg-[#f6f8fc] p-8">
+        <div className="w-full max-w-2xl rounded-2xl bg-white p-10 text-center shadow-lg">
+          <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-2xl bg-[#f7f3fb]">
+            <Image
+              src={icon}
+              alt=""
+              width={48}
+              height={48}
+              className="object-contain"
+            />
+          </div>
+
+          <p className="text-xs font-semibold uppercase tracking-widest text-[#4f2584]">
+            Training Module
+          </p>
+
+          <h1 className="mt-2 text-3xl font-semibold text-gray-900">
+            {title}
+          </h1>
+
+          <p className="mx-auto mt-4 max-w-xl text-sm leading-6 text-gray-600">
+            {description}
+          </p>
+
+          <div className="mt-6 rounded-xl bg-[#f7f3fb] px-5 py-4 text-left">
+            <p className="text-sm font-medium text-[#4f2584]">
+              What you'll do
+            </p>
+
+            <p className="mt-1 text-sm leading-5 text-gray-600">
+              Follow the interactive guide carefully and pay attention to the
+              steps shown. When you're ready, click Continue to begin the module.
+            </p>
+          </div>
+
+          <button
+            onClick={() =>
+              setModuleStarted((prev) => ({
+                ...prev,
+                [moduleId]: true,
+              }))
+            }
+            className="mt-7 rounded-xl bg-[#4f2584] px-8 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[#3d1d68] hover:shadow-md"
+          >
+            Continue
+          </button>
+        </div>
+      </div>
+    );
   }
 
   // ── Intro screen ────────────────────────────────────────────────────────────
@@ -1138,13 +1207,22 @@ export default function HomePage() {
           {activeTab === 'phishquest' && windowContent}
 
           {activeTab === 'outlook' && (
-            <div className="flex flex-1 min-h-0 bg-white">
-              <iframe
-                src="https://scribehow.com/embed-preview/Google_Drive_HowTo_Guide__fX1wnsttR_WURhS2_AOeCA?as=slides&size=flexible"
-                title="Scribe"
-                className="h-full w-full border-0"
+            moduleStarted.outlook ? (
+              <div className="flex flex-1 min-h-0 bg-white">
+                <iframe
+                  src="https://scribehow.com/embed-preview/Google_Drive_HowTo_Guide__fX1wnsttR_WURhS2_AOeCA?as=slides&size=flexible"
+                  title="Google Drive Training Guide"
+                  className="h-full w-full border-0"
+                />
+              </div>
+            ) : (
+              <ModuleIntro
+                moduleId="outlook"
+                title="Google Drive"
+                description="Learn how to use Google Drive to organize, manage, and work with your files. This interactive guide will walk you through the key steps you need to know."
+                icon="/drive_logo.webp"
               />
-            </div>
+            )
           )}
 
           {activeTab === 'western' && (
@@ -1711,33 +1789,60 @@ export default function HomePage() {
           )}
 
           {activeTab === 'calendar' && (
-            <div className="flex flex-1 min-h-0 bg-white">
-              <iframe
-                src="https://scribehow.com/embed-preview/Google_Calendar_HowTo_Guide__yG_Ajbg0QMOMTYAFObpkxw?as=slides&size=flexible"
-                title="Scribe"
-                className="h-full w-full border-0"
+            moduleStarted.calendar ? (
+              <div className="flex flex-1 min-h-0 bg-white">
+                <iframe
+                  src="https://scribehow.com/embed-preview/Google_Calendar_HowTo_Guide__yG_Ajbg0QMOMTYAFObpkxw?as=slides&size=flexible"
+                  title="Google Calendar Training Guide"
+                  className="h-full w-full border-0"
+                />
+              </div>
+            ) : (
+              <ModuleIntro
+                moduleId="calendar"
+                title="Google Calendar"
+                description="Learn how to effectively use Google Calendar to manage your schedule, create events, and stay organized."
+                icon="/google_calendar.webp"
               />
-            </div>
+            )
           )}
 
           {activeTab === 'trello' && (
-            <div className="flex flex-1 min-h-0 bg-white">
-              <iframe
-                src="https://scribehow.com/embed-preview/How_to_Add_a_Comment_to_a_Trello_Card__BIHw7BY4TAGKrd78_nWwGA?as=slides&size=flexible"
-                title="Scribe"
-                className="h-full w-full border-0"
+            moduleStarted.trello ? (
+              <div className="flex flex-1 min-h-0 bg-white">
+                <iframe
+                  src="https://scribehow.com/embed-preview/How_to_Add_a_Comment_to_a_Trello_Card__BIHw7BY4TAGKrd78_nWwGA?as=slides&size=flexible"
+                  title="Trello Training Guide"
+                  className="h-full w-full border-0"
+                />
+              </div>
+            ) : (
+              <ModuleIntro
+                moduleId="trello"
+                title="Trello"
+                description="Learn how to communicate and collaborate effectively in Trello by adding comments to cards and working with your team."
+                icon="/trello-logo-icon.webp"
               />
-            </div>
+            )
           )}
 
           {activeTab === 'rippling' && (
-            <div className="flex flex-1 min-h-0 bg-white">
-              <iframe
-                src="https://scribehow.com/embed-preview/Submit_a_Time_Off_Request_on_Rippling__BMcuOfhpTtO2r9UbSxketQ?as=slides&size=flexible"
-                title="Scribe"
-                className="h-full w-full border-0"
+            moduleStarted.rippling ? (
+              <div className="flex flex-1 min-h-0 bg-white">
+                <iframe
+                  src="https://scribehow.com/embed-preview/Submit_a_Time_Off_Request_on_Rippling__BMcuOfhpTtO2r9UbSxketQ?as=slides&size=flexible"
+                  title="Rippling Training Guide"
+                  className="h-full w-full border-0"
+                />
+              </div>
+            ) : (
+              <ModuleIntro
+                moduleId="rippling"
+                title="Rippling"
+                description="Learn how to submit a time-off request through Rippling. This guide will walk you through the process step by step."
+                icon="/rippling-logo.png"
               />
-            </div>
+            )
           )}
 
           {activeTab === 'modules' && (
