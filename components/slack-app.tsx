@@ -342,7 +342,7 @@ export default function SlackApp({
                 readOnly={!isEricConversation}
                 placeholder={
                   isEricConversation
-                    ? 'Message Eric Svechnikov'
+                    ? 'Message Eric'
                     : 'Message #general'
                 }
                 className={`min-w-0 flex-1 bg-transparent text-sm text-gray-900 outline-none placeholder:text-gray-400 ${

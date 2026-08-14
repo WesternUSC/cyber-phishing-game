@@ -37,6 +37,11 @@ const MODULES = [
     title: 'Rippling',
     description: 'Learn how to submit a time off request on Rippling.',
   },
+  {
+    id: 'slack',
+    title: 'Slack',
+    description: 'Learn how to send a message on Slack.',
+  },
 ];
 
 type ModuleCompletionProps = {

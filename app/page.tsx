@@ -1004,12 +1004,15 @@ export default function HomePage() {
 
                 <span className="truncate text-sm text-white/75">
                   {activeTab === 'phishquest' && 'training.usc/phishquest'}
-                  {activeTab === 'outlook' && 'outlook.office.com'}
+                  {activeTab === 'outlook' && 'drive.google.com/training'}
                   {activeTab === 'western' &&
                     (westernPage === 'report'
                       ? 'westernusc.freshservice.com/support/tickets/new'
                       : 'westernusc.freshservice.com/support/home')}
                   {activeTab === 'calendar' && 'calendar.google.com'}
+                  {activeTab === 'trello' && 'trello.com/training'}
+                  {activeTab === 'rippling' && 'app.rippling.com/training'}
+                  {activeTab === 'modules' && 'training.usc/modules'}
                 </span>
               </div>
 
