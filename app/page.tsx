@@ -2019,6 +2019,39 @@ export default function HomePage() {
               height={24}
             />
           </button>
+
+          <button
+            className={`flex h-10 items-center gap-2 rounded px-3 transition-colors`}
+          >
+            <Image
+              src="/outlook.webp"
+              alt="Outlook"
+              width={24}
+              height={24}
+            />
+          </button>
+
+          <button
+            className={`flex h-10 items-center gap-2 rounded px-3 transition-colors`}
+          >
+            <Image
+              src="/edge.png"
+              alt="Edge"
+              width={24}
+              height={24}
+            />
+          </button>
+
+          <button
+            className={`flex h-10 items-center gap-2 rounded px-3 transition-colors`}
+          >
+            <Image
+              src="/store.png"
+              alt="Store"
+              width={24}
+              height={24}
+            />
+          </button>
         </div>
         <div className="flex w-24 flex-col items-end">
           {clockStr && (
