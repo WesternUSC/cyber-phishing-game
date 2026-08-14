@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { useState } from 'react';
 
 type SlackAppProps = {
   playerName: string;
@@ -8,11 +9,83 @@ type SlackAppProps = {
   onClose: () => void;
 };
 
+type EricMessage = {
+  id: number;
+  sender: 'eric' | 'player';
+  text: string;
+  time: string;
+};
+
 export default function SlackApp({
   playerName,
   onMinimize,
   onClose,
 }: SlackAppProps) {
+  const [currentConversation, setCurrentConversation] =
+    useState<'general' | 'eric'>('general');
+
+  const [message, setMessage] = useState('');
+
+  const [showGeneralPopup, setShowGeneralPopup] = useState(false);
+
+  const [ericMessages, setEricMessages] = useState<EricMessage[]>([
+    {
+      id: 1,
+      sender: 'eric',
+      text: "Hey! How's it going?",
+      time: '07:02 AM',
+    },
+  ]);
+
+  const isEricConversation = currentConversation === 'eric';
+
+  const getCurrentTime = () => {
+    return new Date().toLocaleTimeString([], {
+      hour: 'numeric',
+      minute: '2-digit',
+    });
+  };
+
+  const handleSendMessage = () => {
+    const trimmedMessage = message.trim();
+
+    if (!trimmedMessage || !isEricConversation) return;
+
+    const playerMessage: EricMessage = {
+      id: Date.now(),
+      sender: 'player',
+      text: trimmedMessage,
+      time: getCurrentTime(),
+    };
+
+    setEricMessages((previousMessages) => [
+      ...previousMessages,
+      playerMessage,
+    ]);
+
+    setMessage('');
+
+    setTimeout(() => {
+      const ericReply: EricMessage = {
+        id: Date.now() + 1,
+        sender: 'eric',
+        text: 'Thank you for completing this module. Please continue to the next one.',
+        time: getCurrentTime(),
+      };
+
+      setEricMessages((previousMessages) => [
+        ...previousMessages,
+        ericReply,
+      ]);
+    }, 800);
+  };
+
+  const handleGeneralInputClick = () => {
+    if (!isEricConversation) {
+      setShowGeneralPopup(true);
+    }
+  };
+
   return (
     <div className="flex h-full w-full flex-col overflow-hidden rounded-lg bg-white shadow-[0_20px_60px_rgba(0,0,0,0.65)]">
 
@@ -72,7 +145,18 @@ export default function SlackApp({
                 Channels
               </p>
 
-              <button className="mt-2 w-full rounded px-3 py-2 text-left text-sm hover:bg-white/10">
+              <button
+                onClick={() => {
+                  setCurrentConversation('general');
+                  setShowGeneralPopup(false);
+                  setMessage('');
+                }}
+                className={`mt-2 w-full rounded px-3 py-2 text-left text-sm ${
+                  currentConversation === 'general'
+                    ? 'bg-white/15'
+                    : 'hover:bg-white/10'
+                }`}
+              >
                 # general
               </button>
 
@@ -90,7 +174,18 @@ export default function SlackApp({
                 Direct messages
               </p>
 
-              <button className="mt-2 w-full rounded px-3 py-2 text-left text-sm hover:bg-white/10">
+              <button
+                onClick={() => {
+                  setCurrentConversation('eric');
+                  setShowGeneralPopup(false);
+                  setMessage('');
+                }}
+                className={`mt-2 w-full rounded px-3 py-2 text-left text-sm ${
+                  currentConversation === 'eric'
+                    ? 'bg-white/15'
+                    : 'hover:bg-white/10'
+                }`}
+              >
                 Eric Svechnikov
               </button>
 
@@ -106,49 +201,178 @@ export default function SlackApp({
 
           <div className="border-b border-gray-200 px-6 py-4">
             <h1 className="text-lg font-semibold text-gray-900">
-              # general
+              {isEricConversation ? 'Eric Svechnikov' : '# general'}
             </h1>
 
             <p className="text-xs text-gray-500">
-              General conversation
+              {isEricConversation
+                ? 'Direct message'
+                : 'General conversation'}
             </p>
           </div>
 
           <div className="flex-1 overflow-y-auto p-6">
 
-            <div className="flex gap-3">
-              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded bg-[#611f69] text-sm font-semibold text-white">
-                IT
+            {isEricConversation ? (
+              <div className="space-y-5">
+
+                {ericMessages.map((msg) => (
+                  <div
+                    key={msg.id}
+                    className="flex gap-3"
+                  >
+                    <div
+                      className={`flex h-9 w-9 shrink-0 items-center justify-center rounded text-sm font-semibold text-white ${
+                        msg.sender === 'eric'
+                          ? 'bg-gray-500'
+                          : 'bg-[#611f69]'
+                      }`}
+                    >
+                      {msg.sender === 'eric'
+                        ? 'ES'
+                        : playerName.slice(0, 2).toUpperCase()}
+                    </div>
+
+                    <div>
+                      <div className="flex items-baseline gap-2">
+                        <span className="text-sm font-semibold">
+                          {msg.sender === 'eric'
+                            ? 'Eric Svechnikov'
+                            : playerName}
+                        </span>
+
+                        <span className="text-xs text-gray-400">
+                          {msg.time}
+                        </span>
+                      </div>
+
+                      <p className="mt-1 text-sm text-gray-700">
+                        {msg.text}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+
               </div>
-
-              <div>
-                <div className="flex items-baseline gap-2">
-                  <span className="text-sm font-semibold">
-                    IT Support
-                  </span>
-
-                  <span className="text-xs text-gray-400">
-                    10:32 AM
-                  </span>
+            ) : (
+              <div className="flex gap-3">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded bg-[#611f69] text-sm font-semibold text-white">
+                  IT
                 </div>
 
-                <p className="mt-1 text-sm text-gray-700">
-                  Hi everyone! Please remember to complete your
-                  cybersecurity training this week.
-                </p>
+                <div>
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-sm font-semibold">
+                      IT Support
+                    </span>
+
+                    <span className="text-xs text-gray-400">
+                      06:32 AM
+                    </span>
+                  </div>
+
+                  <p className="mt-1 text-sm text-gray-700">
+                    Hi everyone! Please remember to complete your
+                    cybersecurity training this week.
+                  </p>
+                </div>
               </div>
-            </div>
+            )}
 
           </div>
 
-          <div className="border-t border-gray-200 p-4">
-            <div className="rounded-lg border border-gray-300 px-4 py-3 text-sm text-gray-400">
-              Message #general
+          <div className="relative border-t border-gray-200 p-4">
+
+            {showGeneralPopup && !isEricConversation && (
+              <div className="absolute bottom-20 left-4 z-10 w-72 rounded-lg border border-gray-200 bg-white p-4 shadow-[0_8px_30px_rgba(0,0,0,0.18)]">
+                <div className="flex items-start gap-3">
+
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#611f69] text-sm text-white">
+                    !
+                  </div>
+
+                  <div>
+                    <p className="text-sm font-semibold text-gray-900">
+                      Please click the Eric chat
+                    </p>
+
+                    <p className="mt-1 text-xs text-gray-500">
+                      This conversation is currently unavailable.
+                    </p>
+                  </div>
+
+                </div>
+
+                <button
+                  onClick={() => setShowGeneralPopup(false)}
+                  className="mt-3 w-full rounded-md bg-gray-100 px-3 py-2 text-xs font-medium text-gray-700 hover:bg-gray-200"
+                >
+                  Got it
+                </button>
+              </div>
+            )}
+
+            <div
+              className={`flex items-center gap-2 rounded-lg border px-3 py-2 ${
+                isEricConversation
+                  ? 'border-gray-300 focus-within:border-[#611f69] focus-within:ring-1 focus-within:ring-[#611f69]'
+                  : 'cursor-pointer border-gray-300 hover:border-gray-400'
+              }`}
+              onClick={handleGeneralInputClick}
+            >
+
+              <input
+                type="text"
+                value={message}
+                onChange={(e) => {
+                  if (isEricConversation) {
+                    setMessage(e.target.value);
+                  }
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    handleSendMessage();
+                  }
+                }}
+                onFocus={() => {
+                  if (!isEricConversation) {
+                    setShowGeneralPopup(true);
+                  }
+                }}
+                readOnly={!isEricConversation}
+                placeholder={
+                  isEricConversation
+                    ? 'Message Eric Svechnikov'
+                    : 'Message #general'
+                }
+                className={`min-w-0 flex-1 bg-transparent text-sm text-gray-900 outline-none placeholder:text-gray-400 ${
+                  !isEricConversation
+                    ? 'cursor-pointer'
+                    : ''
+                }`}
+              />
+
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+
+                  if (!isEricConversation) {
+                    setShowGeneralPopup(true);
+                    return;
+                  }
+
+                  handleSendMessage();
+                }}
+                disabled={isEricConversation && !message.trim()}
+                className="rounded-md bg-[#611f69] px-3 py-1.5 text-sm font-medium text-white transition hover:bg-[#4a1752] disabled:cursor-not-allowed disabled:opacity-40"
+              >
+                Send
+              </button>
+
             </div>
           </div>
 
         </main>
-
       </div>
     </div>
   );
