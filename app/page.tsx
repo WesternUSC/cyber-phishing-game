@@ -296,6 +296,8 @@ export default function HomePage() {
   const [westernPage, setWesternPage] = useState<'home' | 'report'>('home');
   const [westernPopup, setWesternPopup] = useState<string | null>(null);
 
+  const [nameEntered, setNameEntered] = useState(false);
+
   const [openApp, setOpenApp] = useState<
   | {
       name: string;
@@ -387,14 +389,14 @@ export default function HomePage() {
 
   function start() {
     const trimmed = nameInput.trim();
+
     if (!trimmed) {
       setNameError(true);
       return;
     }
+
     setNameError(false);
-    const runId = crypto.randomUUID();
-    dispatch({ type: 'START', name: trimmed, firstEmailId: emails[0].id, runId });
-    openedAtRef.current = Date.now();
+    setNameEntered(true);
   }
 
   function handleSelectEmail(id: string) {
@@ -470,42 +472,112 @@ export default function HomePage() {
 
   // ── Name entry screen ───────────────────────────────────────────────────────
   const nameContent = (
-      <div className="flex h-full items-center justify-center bg-[#f6f8fc] p-4">
-        <div className="w-full max-w-sm rounded-2xl bg-white p-8 shadow-lg">
-          <div className="mb-6 flex flex-col items-center gap-3 text-center">
-            <Image src="/usc-logo.png" alt="USC Logo" width={72} height={72} />
-            <h1 className="text-2xl font-semibold text-gray-900">PhishQuest</h1>
-            <p className="text-sm text-gray-600">
-              Enter your name to begin. Your results will be saved at the end.
+      <div className="flex h-screen w-full items-center justify-center overflow-hidden bg-gradient-to-br from-[#f6f8fc] via-white to-[#eee8f7] px-4 py-4 sm:px-6 sm:py-6">
+        <div className="w-full max-w-lg max-h-full">
+
+          <div className="mb-6 text-center">
+            <div className="mx-auto mb-3 flex h-16 w-16 items-center justify-center rounded-2xl bg-white shadow-md ring-1 ring-gray-100">
+              <Image
+                src="/usc-logo.png"
+                alt="USC Logo"
+                width={52}
+                height={52}
+              />
+            </div>
+
+            <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
+              Welcome to PhishQuest
+            </h1>
+
+            <p className="mt-2 text-sm font-semibold uppercase tracking-widest text-[#4f2584]">
+              USC Information Security Training
             </p>
           </div>
 
-          <input
-            type="text"
-            value={nameInput}
-            onChange={(e) => {
-              setNameInput(e.target.value);
-              if (nameError) setNameError(false);
-            }}
-            onKeyDown={(e) => e.key === 'Enter' && start()}
-            placeholder="Enter your name"
-            className={`w-full rounded-lg border px-4 py-2.5 text-sm focus:outline-none focus:ring-2 transition ${
-              nameError
-                ? 'border-red-400 focus:border-red-400 focus:ring-red-400/20'
-                : 'border-gray-300 focus:border-[#1a73e8] focus:ring-[#1a73e8]/20'
-            }`}
-            autoFocus
-          />
-          {nameError && (
-            <p className="mt-1.5 text-xs text-red-500">Please enter your name to continue.</p>
-          )}
+          <div className="rounded-2xl bg-white p-5 shadow-xl ring-1 ring-gray-200 sm:p-7">
+            <div className="space-y-2.5 text-sm leading-5 text-gray-600">
+              <p>
+                Welcome to <strong className="text-gray-900">PhishQuest</strong>, an
+                interactive cybersecurity awareness training program designed to
+                help you recognize phishing attempts and other common online
+                security threats.
+              </p>
 
-          <button
-            onClick={start}
-            className="mt-4 w-full rounded-lg bg-[#4f2584] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#3d1d68]"
-          >
-            Open my inbox
-          </button>
+              <p>
+                During the training, you will be presented with{' '}
+                <strong className="text-gray-900">7 modules</strong> covering
+                different cybersecurity scenarios. Each module will give you the
+                opportunity to practice identifying suspicious messages, websites,
+                requests, and other potential security risks.
+              </p>
+
+              <p>
+                Take your time and pay attention to the details. The goal isn't just
+                to get the right answer, but to learn how to recognize warning signs
+                that could help protect you in the real world.
+              </p>
+
+              <div className="rounded-xl border border-[#4f2584]/15 bg-[#f7f3fb] p-4">
+                <p className="font-medium text-[#4f2584]">
+                  🎓 Complete all 7 modules
+                </p>
+                <p className="mt-1 text-xs leading-5 text-gray-600">
+                  Once you successfully complete the training, you will receive a
+                  certificate that you can download and keep as proof of completion.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-5">
+              <label
+                htmlFor="player-name"
+                className="mb-2 block text-sm font-semibold text-gray-800"
+              >
+                Your name
+              </label>
+
+              <input
+                id="player-name"
+                type="text"
+                value={nameInput}
+                onChange={(e) => {
+                  setNameInput(e.target.value);
+                  if (nameError) setNameError(false);
+                }}
+                onKeyDown={(e) => e.key === 'Enter' && start()}
+                placeholder="Enter your name"
+                className={`w-full rounded-xl border px-4 py-3 text-sm transition focus:outline-none focus:ring-4 ${
+                  nameError
+                    ? 'border-red-400 bg-red-50 focus:border-red-400 focus:ring-red-400/10'
+                    : 'border-gray-300 bg-white focus:border-[#4f2584] focus:ring-[#4f2584]/10'
+                }`}
+                autoFocus
+              />
+
+              {nameError && (
+                <p className="mt-2 flex items-center gap-1.5 text-xs text-red-500">
+                  <span>⚠</span>
+                  Please enter your name to continue.
+                </p>
+              )}
+            </div>
+
+            <button
+              onClick={start}
+              className="mt-3 w-full rounded-xl bg-[#4f2584] px-4 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[#3d1d68] hover:shadow-md active:scale-[0.99]"
+            >
+              Begin Training
+            </button>
+
+            <p className="mt-3 text-center text-xs text-gray-400">
+              Your name will be used to personalize your training experience and
+              certificate.
+            </p>
+          </div>
+
+          <p className="mt-6 text-center text-xs text-gray-400">
+            PhishQuest &bull; USC Information Security Training
+          </p>
         </div>
       </div>
     );
@@ -609,11 +681,30 @@ export default function HomePage() {
     </>
   );
 
+  if (!nameEntered) {
+    return nameContent;
+  }
+
   if (!slidesSeen) {
-    return <Slideshow
-              slides={slides(state.playerName)}
-              onLastSlide={() => setSlidesSeen(true)}
-            />
+    return (
+      <Slideshow
+        slides={slides(nameInput.trim())}
+        onLastSlide={() => {
+          setSlidesSeen(true);
+
+          const runId = crypto.randomUUID();
+
+          dispatch({
+            type: 'START',
+            name: nameInput.trim(),
+            firstEmailId: emails[0].id,
+            runId,
+          });
+
+          openedAtRef.current = Date.now();
+        }}
+      />
+    );
   }
 
   // ── iPad / tablet layout ─────────────────────────────────────────────────────
@@ -663,15 +754,7 @@ export default function HomePage() {
     );
   }
 
-  let windowContent;
-
-  if (!introSeen) {
-    windowContent = introContent;
-  } else if (!state.started) {
-    windowContent = nameContent;
-  } else {
-    windowContent = innerGame;
-  }
+  const windowContent = innerGame;
 
   // ── Desktop layout (Windows 11 theme) ────────────────────────────────────────
   return (
