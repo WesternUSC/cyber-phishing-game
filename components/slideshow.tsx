@@ -16,7 +16,7 @@ interface SlideshowProps {
 // title slides that don't require 1 minute wait
 const EXEMPT_SLIDES = new Set([0, 1, 5, 8, 11, 14, 18, 19]);
 
-const WAIT_TIME = 0 * 1000;
+const WAIT_TIME = 1 * 1000;
 
 const STORAGE_KEY = "slideshow-progress";
 
@@ -70,39 +70,47 @@ const Slideshow: React.FC<SlideshowProps> = ({
     );
   }, [isLoaded, current, slideStartedAt, seenSlides, incidentSteps]);
 
-    const isExempt = (slideIndex: number) => {
-      return EXEMPT_SLIDES.has(slideIndex);
-    };
+  const isExempt = (slideIndex: number) => {
+    return EXEMPT_SLIDES.has(slideIndex);
+  };
 
-    const hasWaitedLongEnough = () => {
-      if (isExempt(current)) {
-        return true;
-      }
+  const hasWaitedLongEnough = () => {
+    if (isExempt(current)) {
+      return true;
+    }
 
-      return Date.now() - slideStartedAt >= WAIT_TIME;
-    };
+    return Date.now() - slideStartedAt >= WAIT_TIME;
+  };
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       // Ignore typing in text boxes
       const target = event.target as HTMLElement;
+
       if (
-        target.tagName === 'INPUT' ||
-        target.tagName === 'TEXTAREA' ||
+        target.tagName === "INPUT" ||
+        target.tagName === "TEXTAREA" ||
         target.isContentEditable
       ) {
         return;
       }
 
+      if (event.key === "ArrowRight" || event.key === " ") {
+        next();
+      }
+
       // Debug: remove in production
-      if (event.key.toLowerCase() === 's') {
+      if (event.key.toLowerCase() === "s") {
         setCurrent(slides.length - 2);
+
         const allSlidesSeen = seenSlides.size === slides.length;
 
         if (!allSlidesSeen) {
           const nextSlide = slides.length - 1;
 
-          const allSlidesSeen = new Set(slides.map((_, index) => index));
+          const allSlidesSeen = new Set(
+            slides.map((_, index) => index)
+          );
 
           setSeenSlides(allSlidesSeen);
 
@@ -122,12 +130,12 @@ const Slideshow: React.FC<SlideshowProps> = ({
       }
     };
 
-    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener("keydown", handleKeyDown);
 
     return () => {
-      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener("keydown", handleKeyDown);
     };
-  }, []);
+  }, [current, seenSlides, incidentSteps]);
 
   const changeSlide = (newIndex: number) => {
     setCurrent(newIndex);
@@ -191,106 +199,10 @@ const Slideshow: React.FC<SlideshowProps> = ({
     changeSlide(current + 1);
   };
 
-  const goToSlide = (index: number) => {
-    if (index === current) {
-      return;
-    }
-
-    if (current === slides.length - 2) {
-      const allSlidesSeen = seenSlides.size === slides.length;
-
-      if (!allSlidesSeen) {
-        const nextSlide = current + 1;
-
-        const updatedSeenSlides = new Set(seenSlides);
-        updatedSeenSlides.add(nextSlide);
-
-        setSeenSlides(updatedSeenSlides);
-
-        localStorage.setItem(
-          STORAGE_KEY,
-          JSON.stringify({
-            current: nextSlide,
-            slideStartedAt: Date.now(),
-            seenSlides: Array.from(updatedSeenSlides),
-            incidentSteps,
-          })
-        );
-
-        onLastSlide?.();
-        return;
-      }
-    }
-
-    const isIncidentSlide =
-      slides[current].title === INCIDENT_SLIDE_TITLE;
-
-    if (
-      isIncidentSlide &&
-      index === current + 1 &&
-      incidentSteps < 4
-    ) {
-      window.alert(
-        "Please reveal all four incident response steps before continuing."
-      );
-      return;
-    }
-
-    const targetIsSeen = seenSlides.has(index);
-
-    if (index < current) {
-      if (targetIsSeen) {
-        changeSlide(index);
-      } else {
-        window.alert("You haven't visited that slide yet.");
-      }
-      return;
-    }
-
-    if (index === current + 1) {
-      if (!hasWaitedLongEnough()) {
-        window.alert(
-          "You must wait at least one minute on this slide before proceeding."
-        );
-        return;
-      }
-
-      changeSlide(index);
-      return;
-    }
-
-    if (targetIsSeen) {
-      changeSlide(index);
-      return;
-    }
-
-    window.alert(
-      "You must visit the previous slides before jumping ahead."
-    );
-  };
-
-  const getNumberButtonStyle = (index: number) => {
-    const isCurrent = index === current;
-    const isSeen = seenSlides.has(index)
-
-    return {
-      ...styles.numberButton,
-      backgroundColor: isCurrent
-        ? "#007bff"
-        : isSeen
-        ? "#28a745"
-        : "#aaa",
-      color: isCurrent || isSeen ? "white" : "#666",
-      cursor:
-        isSeen || index === current || index === current + 1
-          ? "pointer"
-          : "not-allowed",
-      opacity:
-        isSeen || index === current || index === current + 1
-          ? 1
-          : 0.6,
-    };
-  };
+  const progress =
+    slides.length > 1
+      ? (current / (slides.length - 1)) * 100
+      : 100;
 
   if (slides.length === 0) {
     return null;
@@ -299,10 +211,6 @@ const Slideshow: React.FC<SlideshowProps> = ({
   return (
     <div style={styles.container}>
       <div style={styles.header}>
-        <h2>
-          Slide {current + 1} / {slides.length}
-        </h2>
-
         {slides[current].title && (
           <h3>{slides[current].title}</h3>
         )}
@@ -328,35 +236,15 @@ const Slideshow: React.FC<SlideshowProps> = ({
           Previous
         </button>
 
-        <div style={styles.numbers}>
-          {slides.map((_, index) => {
-            const isSeen = seenSlides.has(index);
-
-            const canClick =
-              index === current ||
-              isSeen ||
-              index === current + 1;
-
-            return (
-              <button
-                key={index}
-                onClick={() => {
-                  if (canClick) {
-                    goToSlide(index);
-                  }
-                }}
-                disabled={!canClick}
-                style={getNumberButtonStyle(index)}
-                title={
-                  !canClick
-                    ? "Complete the previous slides before jumping here."
-                    : undefined
-                }
-              >
-                {index + 1}
-              </button>
-            );
-          })}
+        <div style={styles.progressContainer}>
+          <div style={styles.progressTrack}>
+            <div
+              style={{
+                ...styles.progressBar,
+                width: `${progress}%`,
+              }}
+            />
+          </div>
         </div>
 
         <button
@@ -395,21 +283,36 @@ const styles: Record<string, React.CSSProperties> = {
   footer: {
     display: "flex",
     alignItems: "center",
-    justifyContent: "space-between",
-    gap: 10,
+    gap: 15,
+    marginTop: 15,
   },
 
-  numbers: {
+  progressContainer: {
+    flex: 1,
     display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
     gap: 5,
-    flexWrap: "wrap",
   },
 
-  numberButton: {
-    width: 35,
-    height: 35,
-    border: "none",
-    borderRadius: 4,
+  progressTrack: {
+    width: "50%",
+    height: 12,
+    backgroundColor: "#e5e5e5",
+    borderRadius: 999,
+    overflow: "hidden",
+  },
+
+  progressBar: {
+    height: "100%",
+    backgroundColor: "#28a745",
+    borderRadius: 999,
+    transition: "width 0.3s ease",
+  },
+
+  progressText: {
+    fontSize: 12,
+    color: "#666",
   },
 };
 
