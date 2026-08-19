@@ -877,78 +877,76 @@ export const slides = (playerName: string) => [
           </h1>
 
           <div
-  style={{
-    display: "flex",
-    gap: "4rem",
-    alignItems: "center",
-    marginTop: "3rem",
-    width: "100%",
-  }}
->
-  {/* Left side */}
-  <div
-    style={{
-      width: "55%",
-      color: "#374151",
-      fontSize: "1.1rem",
-      lineHeight: 1.7,
-    }}
-  >
-    <p style={{ margin: 0 }}>
-      CCCS Baseline Control BC.5 mandates MFA across all organizational
-      systems. Password-only protection is no longer sufficient.
-    </p>
+            style={{
+              display: "flex",
+              gap: "4rem",
+              alignItems: "center",
+              marginTop: "3rem",
+              width: "100%",
+            }}
+          >
+            <div
+              style={{
+                width: "55%",
+                color: "#374151",
+                fontSize: "1.1rem",
+                lineHeight: 1.7,
+              }}
+            >
+              <p style={{ margin: 0 }}>
+                CCCS Baseline Control BC.5 mandates MFA across all organizational
+                systems. Password-only protection is no longer sufficient.
+              </p>
 
-    <ul
-      style={{
-        marginTop: "2rem",
-        paddingLeft: "1.75rem",
-        listStyleType: "disc",
-      }}
-    >
-      <li style={{ marginBottom: "0.75rem" }}>
-        <strong>Authenticator Apps First: </strong>
-        Use app-based push notifications or TOTP codes (e.g., Microsoft
-        Authenticator).
-      </li>
+              <ul
+                style={{
+                  marginTop: "2rem",
+                  paddingLeft: "1.75rem",
+                  listStyleType: "disc",
+                }}
+              >
+                <li style={{ marginBottom: "0.75rem" }}>
+                  <strong>Authenticator Apps First: </strong>
+                  Use app-based push notifications or TOTP codes (e.g., Microsoft
+                  Authenticator).
+                </li>
 
-      <li style={{ marginBottom: "0.75rem" }}>
-        <strong>Avoid SMS When Possible: </strong>
-        Text messages are vulnerable to SIM swapping and interception attacks.
-      </li>
+                <li style={{ marginBottom: "0.75rem" }}>
+                  <strong>Avoid SMS When Possible: </strong>
+                  Text messages are vulnerable to SIM swapping and interception attacks.
+                </li>
 
-      <li>
-        <strong>Never Share Prompts: </strong>
-        Deny any unexpected MFA prompts that appear when you are not actively
-        logging in.
-      </li>
-    </ul>
-  </div>
+                <li>
+                  <strong>Never Share Prompts: </strong>
+                  Deny any unexpected MFA prompts that appear when you are not actively
+                  logging in.
+                </li>
+              </ul>
+            </div>
 
-  {/* Right side */}
-  <div
-    style={{
-      width: "45%",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-    }}
-  >
-    <video
-      src="mfa.mp4"
-      autoPlay
-      loop
-      muted
-      playsInline
-      style={{
-        width: "100%",
-        maxWidth: "500px",
-        borderRadius: "12px",
-        display: "block",
-      }}
-    />
-  </div>
-</div>
+            <div
+              style={{
+                width: "45%",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <video
+                src="mfa.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                style={{
+                  width: "100%",
+                  maxWidth: "500px",
+                  borderRadius: "12px",
+                  display: "block",
+                }}
+              />
+            </div>
+          </div>
         </div>
       </>
     ),
@@ -979,53 +977,68 @@ export const slides = (playerName: string) => [
 
           <div
             style={{
-              marginTop: "0.75rem",
-              height: "3px",
-              width: "100%",
-              backgroundColor: "#e2e8f0",
-              borderRadius: "2px",
-            }}
-          />
-
-          <div
-            style={{
-              width: "70%",
-              maxWidth: "850px",
+              display: "flex",
+              gap: "4rem",
+              alignItems: "center",
               marginTop: "3rem",
-              color: "#374151",
-              fontSize: "1.1rem",
-              lineHeight: 1.7,
+              width: "100%",
             }}
           >
-            <ul
+            <div
               style={{
-                marginTop: "2rem",
-                paddingLeft: "1.75rem",
-                listStyleType: "disc",
+                width: "55%",
+                color: "#374151",
+                fontSize: "1.1rem",
+                lineHeight: 1.7,
               }}
             >
-              <li style={{ marginBottom: "0.75rem" }}>
-                <strong>Use Passphrases, Not Passwords: </strong> 
-                Combine 4+ random words (e.g., maple-winter-transit-book) for 16+ characters that are
-                easy to remember but hard to crack.
-              </li>
 
-              <li style={{ marginBottom: "0.75rem" }}>
-                <strong>Avoid Campus Cliches: </strong> 
-                Never use university names, sports teams, mascot names, or your student union position in your password.
-              </li>
+              <ul
+                style={{
+                  marginTop: "2rem",
+                  paddingLeft: "1.75rem",
+                  listStyleType: "disc",
+                }}
+              >
+                <li style={{ marginBottom: "0.75rem" }}>
+                  <strong>Use Passphrases, Not Passwords: </strong>
+                  Combine 4+ random words (e.g., maple-winter-transit-book) for 16+ characters that are easy to remember but hard to crack.
+                </li>
 
-              <li style={{ marginBottom: "0.75rem" }}>
-                <strong>Use Password Managers: </strong> 
-                Store credentials in approved enterprise password vaults (e.g., 1Password, Bitwarden)
-                rather than browser auto-fill.
-              </li>
+                <li style={{ marginBottom: "0.75rem" }}>
+                  <strong>Avoid Campus Cliches: </strong>
+                  Never use university names, sports teams, mascot names, or your student union position in your password.
+                </li>
 
-              <li>
-                <strong>Zero Credential Reuse: </strong> 
-                Keep your personal campus account password completely distinct from your Student Union staff credentials.
-              </li>
-            </ul>
+                <li>
+                  <strong>Use Password Managers: </strong>
+                  Store credentials in approved enterprise password vaults (e.g., 1Password, Bitwarden) rather than browser auto-fill.
+                </li>
+
+                <li>
+                  <strong>Zero Credential Reuse: </strong>
+                  Keep your personal campus account password completely distinct from your Student Union staff credentials.
+                </li>
+              </ul>
+            </div>
+
+            <div
+              style={{
+                width: "45%",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <img src="password-manager.png"
+              style={{
+                  width: "100%",
+                  maxWidth: "500px",
+                  borderRadius: "12px",
+                  display: "block",
+                }}
+              />
+            </div>
           </div>
         </div>
       </>
@@ -1112,54 +1125,70 @@ export const slides = (playerName: string) => [
 
           <div
             style={{
-              marginTop: "0.75rem",
-              height: "3px",
-              width: "100%",
-              backgroundColor: "#e2e8f0",
-              borderRadius: "2px",
-            }}
-          />
-
-          <div
-            style={{
-              width: "70%",
-              maxWidth: "850px",
+              display: "flex",
+              gap: "4rem",
+              alignItems: "center",
               marginTop: "3rem",
-              color: "#374151",
-              fontSize: "1.1rem",
-              lineHeight: 1.7,
+              width: "100%",
             }}
           >
-            <h2
+            <div
               style={{
-                margin: 0,
-                color: "#582c83",
-                fontSize: "1.5rem",
+                width: "55%",
+                color: "#374151",
+                fontSize: "1.1rem",
+                lineHeight: 1.7,
               }}
             >
-              Common Attack Scenarios
-            </h2>
 
-            <p
+              <h2
+                style={{
+                  margin: 0,
+                  color: "#582c83",
+                  fontSize: "1.5rem",
+                }}
+              >
+                Common Attack Scenarios
+              </h2>
+
+              <p
+                style={{
+                  margin: 0,
+                }}
+              >
+                Threat actors often impersonate Union Executives requesting urgent gift card purchases, direct deposit charges,
+                or vendor invoice payments.
+              </p>
+
+              <br></br>
+
+              <p
+                style={{
+                  margin: 0,
+                }}
+              >
+                Watch for spoofed university domain names (e.g., @u-canada-studentunion.ca vs official @studentunion.ca),
+                high urgency, and unexpected attachments.
+              </p>
+            </div>
+
+            <div
               style={{
-                margin: 0,
+                width: "45%",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
               }}
             >
-              Threat actors often impersonate Union Executives requesting urgent gift card purchases, direct deposit charges,
-              or vendor invoice payments.
-            </p>
-
-            <br></br>
-
-            <p
+              <img src="phishing-image-nobg.png"
               style={{
-                margin: 0,
-              }}
-            >
-              Watch for spoofed university domain names (e.g., @u-canada-studentunion.ca vs official @studentunion.ca),
-              high urgency, and unexpected attachments.
-            </p>
-
+                  width: "100%",
+                  maxWidth: "500px",
+                  borderRadius: "12px",
+                  display: "block",
+                }}
+              />
+            </div>
           </div>
         </div>
       </>
