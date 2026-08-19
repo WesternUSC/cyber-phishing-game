@@ -338,6 +338,16 @@ export const slides = (playerName: string) => [
           </h1>
 
           <p style={{color:"#4f2683", fontSize: "1.25rem"}}>Essential security know-how for new USC employees, aligned with Canadian Centre for Cyber Security (CCCS) baseline controls.</p>
+        
+            <div style={{textAlign: "center",
+                fontSize: 12,
+                color: "#888",
+                position: "fixed",
+                marginTop: "30%"}}>
+              Use right arrow key or space bar to advance the slides, or the on-screen
+              "Next" and "Previous" buttons
+            </div>
+
         </div>
       </>
     ),
@@ -867,56 +877,78 @@ export const slides = (playerName: string) => [
           </h1>
 
           <div
-            style={{
-              marginTop: "0.75rem",
-              height: "3px",
-              width: "100%",
-              backgroundColor: "#e2e8f0",
-              borderRadius: "2px",
-            }}
-          />
+  style={{
+    display: "flex",
+    gap: "4rem",
+    alignItems: "center",
+    marginTop: "3rem",
+    width: "100%",
+  }}
+>
+  {/* Left side */}
+  <div
+    style={{
+      width: "55%",
+      color: "#374151",
+      fontSize: "1.1rem",
+      lineHeight: 1.7,
+    }}
+  >
+    <p style={{ margin: 0 }}>
+      CCCS Baseline Control BC.5 mandates MFA across all organizational
+      systems. Password-only protection is no longer sufficient.
+    </p>
 
-          <div
-            style={{
-              width: "70%",
-              maxWidth: "850px",
-              marginTop: "3rem",
-              color: "#374151",
-              fontSize: "1.1rem",
-              lineHeight: 1.7,
-            }}
-          >
-            <p
-              style={{
-                margin: 0,
-              }}
-            >
-              CCCS Baseline Control BC.5 mandates MFA across all organizational systems. Password-only protection is no longer sufficient.
-            </p>
+    <ul
+      style={{
+        marginTop: "2rem",
+        paddingLeft: "1.75rem",
+        listStyleType: "disc",
+      }}
+    >
+      <li style={{ marginBottom: "0.75rem" }}>
+        <strong>Authenticator Apps First: </strong>
+        Use app-based push notifications or TOTP codes (e.g., Microsoft
+        Authenticator).
+      </li>
 
-            <ul
-              style={{
-                marginTop: "2rem",
-                paddingLeft: "1.75rem",
-                listStyleType: "disc",
-              }}
-            >
-              <li style={{ marginBottom: "0.75rem" }}>
-                <strong>Authenticator Apps First: </strong> 
-                Use app-based push notifications or TOTP codes (e.g., Microsoft Authenticator).
-              </li>
+      <li style={{ marginBottom: "0.75rem" }}>
+        <strong>Avoid SMS When Possible: </strong>
+        Text messages are vulnerable to SIM swapping and interception attacks.
+      </li>
 
-              <li style={{ marginBottom: "0.75rem" }}>
-                <strong>Avoid SMS When Possible: </strong> 
-                Text messages are vulnerable to SIM swapping and interception attacks.
-              </li>
+      <li>
+        <strong>Never Share Prompts: </strong>
+        Deny any unexpected MFA prompts that appear when you are not actively
+        logging in.
+      </li>
+    </ul>
+  </div>
 
-              <li>
-                <strong>Never Share Prompts: </strong> 
-                Deny any unexpected MFA prompts that appear when you are not actively logging in.
-              </li>
-            </ul>
-          </div>
+  {/* Right side */}
+  <div
+    style={{
+      width: "45%",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+    }}
+  >
+    <video
+      src="mfa.mp4"
+      autoPlay
+      loop
+      muted
+      playsInline
+      style={{
+        width: "100%",
+        maxWidth: "500px",
+        borderRadius: "12px",
+        display: "block",
+      }}
+    />
+  </div>
+</div>
         </div>
       </>
     ),
