@@ -1182,7 +1182,7 @@ export const slides = (playerName: string) => [
             >
               <img src="phishing-image-nobg.png"
               style={{
-                  width: "100%",
+                  width: "50%",
                   maxWidth: "500px",
                   borderRadius: "12px",
                   display: "block",
