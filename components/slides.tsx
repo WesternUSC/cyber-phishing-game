@@ -1771,54 +1771,66 @@ export const slides = (playerName: string) => [
 
           <div
             style={{
-              marginTop: "0.75rem",
-              height: "3px",
-              width: "100%",
-              backgroundColor: "#e2e8f0",
-              borderRadius: "2px",
-            }}
-          />
-
-          <div
-            style={{
-              width: "70%",
-              maxWidth: "850px",
+              display: "flex",
+              gap: "4rem",
+              alignItems: "center",
               marginTop: "3rem",
-              color: "#374151",
-              fontSize: "1.1rem",
-              lineHeight: 1.7,
+              width: "100%",
             }}
           >
-            <p
+            <div
               style={{
-                margin: 0,
+                width: "55%",
+                color: "#374151",
+                fontSize: "1.1rem",
+                lineHeight: 1.7,
               }}
             >
-              Under CCCS BC.4 (Secure Configuration), all staff hardware must maintain baseline security controls.
-            </p>
+              <p style={{ margin: 0 }}>
+                Under CCCS BC.4 (Secure Configuration), all staff hardware must maintain baseline security controls.
+              </p>
 
-            <ul
+              <ul
+                style={{
+                  marginTop: "2rem",
+                  paddingLeft: "1.75rem",
+                  listStyleType: "disc",
+                }}
+              >
+                <li style={{ marginBottom: "0.75rem" }}>
+                  <strong>Full-Disk Encryption: </strong>
+                  Ensure BitLocker (Windows) or FileVault (Mac) is active on your machine.
+                </li>
+
+                <li style={{ marginBottom: "0.75rem" }}>
+                  <strong>Lock Screen Shortcut: </strong>
+                  Always lock your PC (Win + L or Cmd + Ctrl + Q) when leaving your desk.
+                </li>
+
+                <li>
+                  <strong>Clean Desk Policy: </strong>
+                  Lock physical documents, keys, and access cards in drawers at the end of every shift.
+                </li>
+              </ul>
+            </div>
+
+            <div
               style={{
-                marginTop: "2rem",
-                paddingLeft: "1.75rem",
-                listStyleType: "disc",
+                width: "45%",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
               }}
             >
-              <li style={{ marginBottom: "0.75rem" }}>
-                <strong>Full-Disk Encryption: </strong> 
-                Ensure BitLocker (Windows) or FileVault (Mac) is active on your machine.
-              </li>
-
-              <li style={{ marginBottom: "0.75rem" }}>
-                <strong>Lock Screen Shortcut: </strong> 
-                Always lock your PC (Win + L or Cmd + Ctrl + Q) when leaving your desk.
-              </li>
-
-              <li>
-                <strong>Clean Desk Policy: </strong> 
-                Lock physical documents, keys, and access cards in drawers at the end of every shift.
-              </li>
-            </ul>
+              <img src="Computer-Security-Icon.png"
+              style={{
+                  width: "100%",
+                  maxWidth: "500px",
+                  borderRadius: "12px",
+                  display: "block",
+                }}
+              />
+            </div>
           </div>
         </div>
       </>
@@ -1837,7 +1849,6 @@ export const slides = (playerName: string) => [
             boxSizing: "border-box",
           }}
         >
-
           <h1
             style={{
               margin: 0,
@@ -1860,42 +1871,170 @@ export const slides = (playerName: string) => [
 
           <div
             style={{
-              width: "70%",
-              maxWidth: "850px",
-              marginTop: "3rem",
+              width: "85%",
+              maxWidth: "1000px",
+              margin: "auto",
               color: "#374151",
-              fontSize: "1.1rem",
-              lineHeight: 1.7,
             }}
           >
-            <ul
+            <div
               style={{
-                marginTop: "2rem",
-                paddingLeft: "1.75rem",
-                listStyleType: "disc",
+                display: "grid",
+                gridTemplateColumns: "repeat(2, 1fr)",
+                gap: "1.5rem",
+                justifyContent: "center",
               }}
             >
-              <li style={{ marginBottom: "0.75rem" }}>
-                <strong>Use Secure Networks: </strong> 
-                Connect to encrypted campus networks (e.g., eduroam or Student Union Wi-Fi). Never perform admin duties
-                on open public Wi-Fi without VPN.
-              </li>
 
-              <li style={{ marginBottom: "0.75rem" }}>
-                <strong>Avoid Public USB Chargers: </strong> 
-                Use wall outlets rather than public USB charging stations to prevent "juice jacking" malware installation.
-              </li>
+              <div
+                style={{
+                  padding: "1.5rem",
+                  backgroundColor: "#f8f5fb",
+                  border: "1px solid #e5d9ef",
+                  borderRadius: "14px",
+                  boxShadow: "0 4px 12px rgba(88, 44, 131, 0.08)",
+                  fontSize: "1.05rem",
+                  lineHeight: 1.6,
+                }}
+              >
+                <div
+                  style={{
+                    fontSize: "1.8rem",
+                    marginBottom: "0.75rem",
+                  }}
+                >
+                  🔐
+                </div>
 
-              <li style={{ marginBottom: "0.75rem" }}>
-                <strong>Beware of Shoulder Surfing: </strong> 
-                Use privacy screens when working in busy student hubs, cafeterias, or libraries.
-              </li>
+                <strong
+                  style={{
+                    display: "block",
+                    color: "#582c83",
+                    fontSize: "1.2rem",
+                    marginBottom: "0.5rem",
+                  }}
+                >
+                  Use Secure Networks
+                </strong>
 
-              <li>
-                <strong>Automate Updates: </strong> 
-                Install operating system and web browser security updates promptly when prompted.
-              </li>
-            </ul>
+                <span>
+                  Connect to encrypted campus networks (e.g., eduroam or Student
+                  Union Wi-Fi). Never perform admin duties on open public Wi-Fi
+                  without VPN.
+                </span>
+              </div>
+
+              <div
+                style={{
+                  padding: "1.5rem",
+                  backgroundColor: "#f8f5fb",
+                  border: "1px solid #e5d9ef",
+                  borderRadius: "14px",
+                  boxShadow: "0 4px 12px rgba(88, 44, 131, 0.08)",
+                  fontSize: "1.05rem",
+                  lineHeight: 1.6,
+                }}
+              >
+                <div
+                  style={{
+                    fontSize: "1.8rem",
+                    marginBottom: "0.75rem",
+                  }}
+                >
+                  🔌
+                </div>
+
+                <strong
+                  style={{
+                    display: "block",
+                    color: "#582c83",
+                    fontSize: "1.2rem",
+                    marginBottom: "0.5rem",
+                  }}
+                >
+                  Avoid Public USB Chargers
+                </strong>
+
+                <span>
+                  Use wall outlets rather than public USB charging stations to prevent
+                  "juice jacking" malware installation.
+                </span>
+              </div>
+
+              <div
+                style={{
+                  padding: "1.5rem",
+                  backgroundColor: "#f8f5fb",
+                  border: "1px solid #e5d9ef",
+                  borderRadius: "14px",
+                  boxShadow: "0 4px 12px rgba(88, 44, 131, 0.08)",
+                  fontSize: "1.05rem",
+                  lineHeight: 1.6,
+                }}
+              >
+                <div
+                  style={{
+                    fontSize: "1.8rem",
+                    marginBottom: "0.75rem",
+                  }}
+                >
+                  👀
+                </div>
+
+                <strong
+                  style={{
+                    display: "block",
+                    color: "#582c83",
+                    fontSize: "1.2rem",
+                    marginBottom: "0.5rem",
+                  }}
+                >
+                  Beware of Shoulder Surfing
+                </strong>
+
+                <span>
+                  Use privacy screens when working in busy student hubs, cafeterias,
+                  or libraries.
+                </span>
+              </div>
+
+              <div
+                style={{
+                  padding: "1.5rem",
+                  backgroundColor: "#f8f5fb",
+                  border: "1px solid #e5d9ef",
+                  borderRadius: "14px",
+                  boxShadow: "0 4px 12px rgba(88, 44, 131, 0.08)",
+                  fontSize: "1.05rem",
+                  lineHeight: 1.6,
+                }}
+              >
+                <div
+                  style={{
+                    fontSize: "1.8rem",
+                    marginBottom: "0.75rem",
+                  }}
+                >
+                  🔄
+                </div>
+
+                <strong
+                  style={{
+                    display: "block",
+                    color: "#582c83",
+                    fontSize: "1.2rem",
+                    marginBottom: "0.5rem",
+                  }}
+                >
+                  Automate Updates
+                </strong>
+
+                <span>
+                  Install operating system and web browser security updates promptly
+                  when prompted.
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </>
