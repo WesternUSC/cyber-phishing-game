@@ -34,6 +34,7 @@ const Slideshow: React.FC<SlideshowProps> = ({
   );
   const [incidentSteps, setIncidentSteps] = useState(1);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
     const saved = localStorage.getItem(STORAGE_KEY);
@@ -138,14 +139,20 @@ const Slideshow: React.FC<SlideshowProps> = ({
   }, [current, seenSlides, incidentSteps]);
 
   const changeSlide = (newIndex: number) => {
-    setCurrent(newIndex);
-    setSlideStartedAt(Date.now());
+    setIsTransitioning(true);
 
-    setSeenSlides((previous) => {
-      const updated = new Set(previous);
-      updated.add(newIndex);
-      return updated;
-    });
+    setTimeout(() => {
+      setCurrent(newIndex);
+      setSlideStartedAt(Date.now());
+
+      setSeenSlides((previous) => {
+        const updated = new Set(previous);
+        updated.add(newIndex);
+        return updated;
+      });
+
+      setIsTransitioning(false);
+    }, 300);
   };
 
   const previous = () => {
@@ -216,7 +223,13 @@ const Slideshow: React.FC<SlideshowProps> = ({
         )}
       </div>
 
-      <div style={styles.slide}>
+      <div
+        style={{
+          ...styles.slide,
+          opacity: isTransitioning ? 0 : 1,
+          transition: "opacity 0.3s ease-in-out",
+        }}
+      >
         {slides[current].title === INCIDENT_SLIDE_TITLE &&
         React.isValidElement(slides[current].content)
           ? React.cloneElement(
