@@ -919,7 +919,11 @@ export default function HomePage() {
                   className="shrink-0"
                 />
 
-                <span className="ml-2 truncate text-[13px] text-white">
+                <span
+                  className={`ml-2 truncate text-[13px] ${
+                    activeTab === "phishquest" ? "text-white" : "text-white/70"
+                  }`}
+                >
                   PhishQuest
                 </span>
 
@@ -949,7 +953,11 @@ export default function HomePage() {
                   className="shrink-0"
                 />
 
-                <span className="ml-2 min-w-0 truncate text-[12px] text-white/70">
+                <span
+                  className={`ml-2 truncate text-[13px] ${
+                    activeTab === "outlook" ? "text-white" : "text-white/70"
+                  }`}
+                >
                   Google Drive
                 </span>
 
@@ -978,7 +986,11 @@ export default function HomePage() {
                   style={{ backgroundColor: "white" }}
                 />
 
-                <span className="flex-1 truncate text-[12px] text-white/70">
+                <span
+                  className={`ml-2 truncate text-[13px] ${
+                    activeTab === "western" ? "text-white" : "text-white/70"
+                  }`}
+                >
                   Support: Western University
                 </span>
 
@@ -1006,7 +1018,11 @@ export default function HomePage() {
                   height={16}
                 />
 
-                <span className="flex-1 truncate text-[12px] text-white/70">
+                <span
+                  className={`ml-2 truncate text-[13px] ${
+                    activeTab === "calendar" ? "text-white" : "text-white/70"
+                  }`}
+                >
                   Google Calendar
                 </span>
 
@@ -1034,7 +1050,11 @@ export default function HomePage() {
                   className="shrink-0"
                 />
 
-                <span className="ml-2 min-w-0 truncate text-[12px] text-white/70">
+                <span
+                  className={`ml-2 truncate text-[13px] ${
+                    activeTab === "trello" ? "text-white" : "text-white/70"
+                  }`}
+                >
                   Trello
                 </span>
 
@@ -1062,7 +1082,11 @@ export default function HomePage() {
                   className="shrink-0"
                 />
 
-                <span className="ml-2 min-w-0 truncate text-[12px] text-white/70">
+                <span
+                  className={`ml-2 truncate text-[13px] ${
+                    activeTab === "rippling" ? "text-white" : "text-white/70"
+                  }`}
+                >
                   Rippling
                 </span>
 
@@ -1090,7 +1114,11 @@ export default function HomePage() {
                   className="shrink-0 bg-white"
                 />
 
-                <span className="ml-2 min-w-0 truncate text-[12px] text-white/70">
+                <span
+                  className={`ml-2 truncate text-[13px] ${
+                    activeTab === "phishquest" ? "text-white" : "text-white/70"
+                  }`}
+                >
                   Modules
                 </span>
 
