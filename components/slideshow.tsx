@@ -140,7 +140,7 @@ const Slideshow: React.FC<SlideshowProps> = ({
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [current, seenSlides, incidentSteps]);
+  }, [current, seenSlides, incidentSteps, cloudSteps]);
 
   const changeSlide = (newIndex: number) => {
     setIsTransitioning(true);
