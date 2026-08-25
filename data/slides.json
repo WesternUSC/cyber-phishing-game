@@ -1,0 +1,48 @@
+{
+    "introSlide": {
+        "title": "Cybersecurity Guidelines",
+        "subtitle": "EMPLOYEE SECURITY ONBOARDING",
+        "desc": "Essential security know-how for new USC employees, aligned with Canadian Centre for Cyber Security (CCCS) baseline controls.",
+        "desc2": "Use right arrow key or space bar to advance the slides, or the on-screen 'Next' and 'Previous' buttons"
+    },
+    "module1": {
+        "title": "Module 1: Threats & Employee Role",
+        "subtitle": "MODULE 1",
+        "moduleTitle": "THREATS & EMPLOYEE ROLE",
+        "desc": "Understanding why higher education student unions are prime targets and how your daily habits protect student data."
+    },
+    "whyMattersSlide": {
+        "title": "Why Cyber Security Matters Here",
+        "card1Title": "High-Value Target",
+        "card1Desc": "Student Unions manage high volumes of personal records, health/dental plan sign-ups, event payments, and club financial accounts across sprawling campus networks.",
+        "card2Title": "Human Firewall Concept",
+        "card2Desc": "According to CCCS guidelines, over 85% of organization security breaches originate from social engineering or human error rather than direct system exploits."
+    },
+    "complianceSlide": {
+        "title": "Canadian Compliance Frameworks",
+        "r1c1": "Framework / Standard",
+        "r1c2": "Governance Scope",
+        "r1c3": "Key Requirement for Staff",
+        "r2c1": "CCCS ITSM.10.089",
+        "r2c2": "Federal Baseline Security Controls",
+        "r2c3": "Mandatory security awareness, MFA, and access control.",
+        "r3c1": "PIPEDA",
+        "r3c2": "Federal Commerical Privacy Law",
+        "r3c3": "Express consent & safeguards for health/dental & payment data.",
+        "r4c1": "FIPPA / Provincial Acts",
+        "r4c2": "Public University Privacy Standards",
+        "r4c3": "Strict protection and restricted sharing of student PII.",
+        "r5c1": "Get Cyber Safe",
+        "r5c2": "Government Awareness Initiative",
+        "r5c3": "Adherence to clean desk, safe browsing, and device policies."
+    },
+    "hygieneSlide": {
+        "title": "CCCS Top Cyber Hygiene Rules",
+        "card1Title": "1. Strong Identity",
+        "card1Desc": "Enforce Multi-Factor Authentication (MFA) on all university and staff accounts to stop unauthorized login attempts.",
+        "card2Title": "2. Least Privilege",
+        "card2Desc": "Access only the student information and financial tools required for your specific job duties (CCCS BC.12).",
+        "card3Title": "3. Active Vigilance",
+        "card3Desc": "Recognize phishing tactics and report suspicious emails, links, or unknown physical visitors immediately."
+    }
+}

@@ -16,12 +16,13 @@ interface SlideshowProps {
 // title slides that don't require 1 minute wait
 const EXEMPT_SLIDES = new Set([0, 1, 5, 8, 11, 14, 18, 19]);
 
-const WAIT_TIME = 1 * 1000;
+const WAIT_TIME = 0 * 1000;
 
 const STORAGE_KEY = "slideshow-progress";
 
 const INCIDENT_SLIDE_TITLE = "Incident Response & Reporting";
 const CLOUD_SLIDE_TITLE = "Safe Cloud & File Sharing Rules";
+const SETTINGS_SLIDE_TITLE = "Windows 11 Settings";
 
 const Slideshow: React.FC<SlideshowProps> = ({
   slides,
@@ -35,6 +36,7 @@ const Slideshow: React.FC<SlideshowProps> = ({
   );
   const [incidentSteps, setIncidentSteps] = useState(1);
   const [cloudSteps, setCloudSteps] = useState(1);
+  const [settingsStep, setSettingsStep] = useState(1);
   const [isLoaded, setIsLoaded] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
@@ -52,6 +54,7 @@ const Slideshow: React.FC<SlideshowProps> = ({
         );
         setIncidentSteps(parsed.incidentSteps ?? 1);
         setCloudSteps(parsed.cloudSteps ?? 1);
+        setSettingsStep(parsed.settingsStep ?? 1);
       } catch (error) {
         console.error("Failed to load slideshow progress:", error);
       }
@@ -70,10 +73,11 @@ const Slideshow: React.FC<SlideshowProps> = ({
         slideStartedAt,
         seenSlides: Array.from(seenSlides),
         incidentSteps,
-        cloudSteps
+        cloudSteps,
+        settingsStep
       })
     );
-  }, [isLoaded, current, slideStartedAt, seenSlides, incidentSteps, cloudSteps]);
+  }, [isLoaded, current, slideStartedAt, seenSlides, incidentSteps, cloudSteps, settingsStep]);
 
   const isExempt = (slideIndex: number) => {
     return EXEMPT_SLIDES.has(slideIndex);
@@ -102,6 +106,10 @@ const Slideshow: React.FC<SlideshowProps> = ({
 
       if (event.key === "ArrowRight" || event.key === " ") {
         next();
+      }
+
+      if (event.key === "ArrowLeft") {
+        previous();
       }
 
       // Debug: remove in production
@@ -140,7 +148,7 @@ const Slideshow: React.FC<SlideshowProps> = ({
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [current, seenSlides, incidentSteps, cloudSteps]);
+  }, [current, seenSlides, incidentSteps, cloudSteps, settingsStep]);
 
   const changeSlide = (newIndex: number) => {
     setIsTransitioning(true);
@@ -152,6 +160,10 @@ const Slideshow: React.FC<SlideshowProps> = ({
       if (slides[newIndex]?.title === CLOUD_SLIDE_TITLE) {
         setCloudSteps(1);
       } 
+
+      if (slides[newIndex]?.title === SETTINGS_SLIDE_TITLE) {
+        setSettingsStep(1);
+      }
 
       setSeenSlides((previous) => {
         const updated = new Set(previous);
@@ -212,6 +224,14 @@ const Slideshow: React.FC<SlideshowProps> = ({
       return;
     }
 
+    const isSettingsSlide =
+      slides[current].title === SETTINGS_SLIDE_TITLE;
+
+    if (isSettingsSlide && settingsStep < 4) {
+      setSettingsStep((previous) => previous + 1);
+      return;
+    }
+
     if (!hasWaitedLongEnough()) {
       window.alert(
         "You must wait at least one minute on this slide before proceeding."
@@ -261,6 +281,14 @@ const Slideshow: React.FC<SlideshowProps> = ({
                 cloudSteps: number;
               }>,
               { cloudSteps }
+            )
+          : slides[current].title === SETTINGS_SLIDE_TITLE &&
+            React.isValidElement(slides[current].content)
+          ? React.cloneElement(
+              slides[current].content as React.ReactElement<{
+                settingsStep: number;
+              }>,
+              { settingsStep }
             )
           : slides[current].content}
       </div>

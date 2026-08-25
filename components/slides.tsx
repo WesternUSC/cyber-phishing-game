@@ -3,6 +3,8 @@ import { IncidentResponseSlide } from './incident-response-slide';
 import { StoredSignature } from './stored-signature';
 import { useRef } from 'react';
 import { toPng } from 'html-to-image';
+import WindowsSettingsSlide from './windows-settings';
+import slidesData from '@/data/slides.json'
 
 const headerStyle: React.CSSProperties = {
   padding: "14px",
@@ -521,7 +523,7 @@ const Certificate = ({ playerName }: { playerName: string }) => {
 
 export const slides = (playerName: string) => [
   {
-    title: "Cybersecurity Guidelines",
+    title: slidesData.introSlide.title,
     content: (
       <>
         <div
@@ -547,7 +549,7 @@ export const slides = (playerName: string) => [
             boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
           }}
         >
-          EMPLOYEE SECURITY ONBOARDING
+          {slidesData.introSlide.subtitle}
         </div>
 
           <h1
@@ -559,18 +561,17 @@ export const slides = (playerName: string) => [
               fontWeight: "bold",
             }}
           >
-            CYBERSECURITY GUIDELINES
+            {slidesData.introSlide.title}
           </h1>
 
-          <p style={{color:"#4f2683", fontSize: "1.25rem"}}>Essential security know-how for new USC employees, aligned with Canadian Centre for Cyber Security (CCCS) baseline controls.</p>
+          <p style={{color:"#4f2683", fontSize: "1.25rem"}}>{slidesData.introSlide.desc}</p>
         
             <div style={{textAlign: "center",
                 fontSize: 12,
                 color: "#888",
                 position: "fixed",
                 marginTop: "30%"}}>
-              Use right arrow key or space bar to advance the slides, or the on-screen
-              "Next" and "Previous" buttons
+              {slidesData.introSlide.desc2}
             </div>
 
         </div>
@@ -578,7 +579,7 @@ export const slides = (playerName: string) => [
     ),
   },
   {
-    title: "Module 1: Threats & Employee Role",
+    title: slidesData.module1.title,
     content: (
       <>
         <div
@@ -599,7 +600,7 @@ export const slides = (playerName: string) => [
             fontSize: "1.25rem",
           }}
         >
-          MODULE 1
+          {slidesData.module1.subtitle}
         </div>
 
           <h1
@@ -611,7 +612,7 @@ export const slides = (playerName: string) => [
               fontWeight: "bold",
             }}
           >
-            THREATS & EMPLOYEE ROLE
+            {slidesData.module1.moduleTitle}
           </h1>
 
           <div
@@ -626,14 +627,14 @@ export const slides = (playerName: string) => [
           <br></br>
 
           <p style={{color:"#ffffff", fontSize: "1.25rem", width: "40%", textAlign: "center"}}>
-            Understanding why higher education student unions are prime targets and how your daily habits protect student data.
+            {slidesData.module1.desc}
           </p>
         </div>
       </>
     ),
   },
   {
-    title: "Why Cyber Security Matters Here",
+    title: slidesData.whyMattersSlide.title,
     content: (
       <>
         <div
@@ -653,7 +654,7 @@ export const slides = (playerName: string) => [
                 fontSize: "2.75rem",
               }}
             >
-              WHY CYBER SECURITY MATTERS HERE
+              {slidesData.whyMattersSlide.title.toUpperCase()}
             </h1>
 
             <div
@@ -692,7 +693,7 @@ export const slides = (playerName: string) => [
                   fontSize: "1.75rem",
                 }}
               >
-                High-Value Target
+                {slidesData.whyMattersSlide.card1Title}
               </h2>
 
               <div
@@ -712,8 +713,7 @@ export const slides = (playerName: string) => [
                   color: "#102e5a"
                 }}
               >
-                Student Unions manage high volumes of personal records,
-                health/dental plan sign-ups, event payments, and club financial accounts across sprawling campus networks.
+                {slidesData.whyMattersSlide.card1Desc}
               </p>
             </div>
 
@@ -733,7 +733,7 @@ export const slides = (playerName: string) => [
                   fontSize: "1.75rem",
                 }}
               >
-                Human Firewall Concept
+                {slidesData.whyMattersSlide.card2Title}
               </h2>
 
               <div
@@ -753,8 +753,7 @@ export const slides = (playerName: string) => [
                   color: "#102e5a"
                 }}
               >
-                According to CCCS guidelines, over 85% of organization security breaches originate
-                from social engineering or human error rather than direct system exploits.
+                {slidesData.whyMattersSlide.card2Desc}
               </p>
             </div>
           </div>
@@ -763,7 +762,7 @@ export const slides = (playerName: string) => [
     ),
   },
   {
-    title: "Canadian Compliance Frameworks",
+    title: slidesData.complianceSlide.title,
     content: (
       <>
         <div
@@ -784,7 +783,7 @@ export const slides = (playerName: string) => [
               fontSize: "2.75rem",
             }}
           >
-            CANADIAN COMPLIANCE FRAMEWORKS
+            {slidesData.complianceSlide.title.toUpperCase()}
           </h1>
 
           <div
@@ -825,35 +824,35 @@ export const slides = (playerName: string) => [
                   color: "white",
                 }}
               >
-                <th style={headerStyle}>Framework / Standard</th>
-                <th style={headerStyle}>Governance Scope</th>
-                <th style={headerStyle}>Key Requirement for Union Staff</th>
+                <th style={headerStyle}>{slidesData.complianceSlide.r1c1}</th>
+                <th style={headerStyle}>{slidesData.complianceSlide.r1c2}</th>
+                <th style={headerStyle}>{slidesData.complianceSlide.r1c3}</th>
               </tr>
             </thead>
 
             <tbody>
               <tr>
-                <td style={cellStyle}><strong>CCCS ITSM.10.089</strong></td>
-                <td style={cellStyle}>Federal Baseline Security Controls</td>
-                <td style={cellStyle}>Mandatory security awareness, MFA, and access control.</td>
+                <td style={cellStyle}><strong>{slidesData.complianceSlide.r2c1}</strong></td>
+                <td style={cellStyle}>{slidesData.complianceSlide.r2c2}</td>
+                <td style={cellStyle}>{slidesData.complianceSlide.r2c3}</td>
               </tr>
 
               <tr>
-                <td style={cellStyle}><strong>PIPEDA</strong></td>
-                <td style={cellStyle}>Federal Commerical Privacy Law</td>
-                <td style={cellStyle}>Express consent & safeguards for health/dental & payment data.</td>
+                <td style={cellStyle}><strong>{slidesData.complianceSlide.r3c1}</strong></td>
+                <td style={cellStyle}>{slidesData.complianceSlide.r3c2}</td>
+                <td style={cellStyle}>{slidesData.complianceSlide.r3c3}</td>
               </tr>
 
               <tr>
-                <td style={cellStyle}><strong>FIPPA / Provincial Acts</strong></td>
-                <td style={cellStyle}>Public University Privacy Standards</td>
-                <td style={cellStyle}>Strict protection and restricted sharing of student PII.</td>
+                <td style={cellStyle}><strong>{slidesData.complianceSlide.r4c1}</strong></td>
+                <td style={cellStyle}>{slidesData.complianceSlide.r4c2}</td>
+                <td style={cellStyle}>{slidesData.complianceSlide.r4c3}</td>
               </tr>
 
               <tr>
-                <td style={cellStyle}><strong>Get Cyber Safe</strong></td>
-                <td style={cellStyle}>Government Awareness Initiative</td>
-                <td style={cellStyle}>Adherence to clean desk, safe browsing, and device policies.</td>
+                <td style={cellStyle}><strong>{slidesData.complianceSlide.r5c1}</strong></td>
+                <td style={cellStyle}>{slidesData.complianceSlide.r5c2}</td>
+                <td style={cellStyle}>{slidesData.complianceSlide.r5c3}</td>
               </tr>
             </tbody>
           </table>
@@ -863,7 +862,7 @@ export const slides = (playerName: string) => [
     ),
   },
   {
-    title: "CCCS Top Cyber Hygiene Rules",
+    title: slidesData.hygieneSlide.title,
     content: (
       <>
         <div
@@ -883,7 +882,7 @@ export const slides = (playerName: string) => [
               fontSize: "2.75rem",
             }}
           >
-            CCCS TOP CYBER HYGIENE RULES
+            {slidesData.hygieneSlide.title.toUpperCase()}
           </h1>
 
           <div
@@ -928,7 +927,7 @@ export const slides = (playerName: string) => [
                   fontSize: "1.5rem",
                 }}
               >
-                1. Strong Identity
+                {slidesData.hygieneSlide.card1Title}
               </h2>
 
               <p
@@ -940,7 +939,7 @@ export const slides = (playerName: string) => [
                   lineHeight: 1.6,
                 }}
               >
-                Enforce Multi-Factor Authentication (MFA) on all university and union accounts to stop unauthorized login attempts.
+                {slidesData.hygieneSlide.card1Desc}
               </p>
             </div>
 
@@ -965,7 +964,7 @@ export const slides = (playerName: string) => [
                   fontSize: "1.5rem",
                 }}
               >
-                2. Least Privilege
+                {slidesData.hygieneSlide.card2Title}
               </h2>
 
               <p
@@ -977,7 +976,7 @@ export const slides = (playerName: string) => [
                   lineHeight: 1.6,
                 }}
               >
-                Access only the student information and financial tools required for your specific job duties (CCCS BC.12).
+                {slidesData.hygieneSlide.card2Desc}
               </p>
             </div>
 
@@ -1002,7 +1001,7 @@ export const slides = (playerName: string) => [
                   fontSize: "1.5rem",
                 }}
               >
-                3. Active Vigilance
+                {slidesData.hygieneSlide.card3Title}
               </h2>
 
               <p
@@ -1014,7 +1013,7 @@ export const slides = (playerName: string) => [
                   lineHeight: 1.6,
                 }}
               >
-                Recognize phishing tactics and report suspicious emails, links, or unknown physical visitors immediately.
+                {slidesData.hygieneSlide.card3Desc}
               </p>
             </div>
           </div>
@@ -1232,7 +1231,7 @@ export const slides = (playerName: string) => [
 
                 <li style={{ marginBottom: "0.75rem" }}>
                   <strong>Avoid Campus Cliches: </strong>
-                  Never use university names, sports teams, mascot names, or your student union position in your password.
+                  Never use university names, sports teams, mascot names, or your staff position in your password.
                 </li>
 
                 <li>
@@ -1242,7 +1241,7 @@ export const slides = (playerName: string) => [
 
                 <li>
                   <strong>Zero Credential Reuse: </strong>
-                  Keep your personal campus account password completely distinct from your Student Union staff credentials.
+                  Keep your personal campus account password completely distinct from your staff credentials.
                 </li>
               </ul>
             </div>
@@ -1573,7 +1572,7 @@ export const slides = (playerName: string) => [
                   lineHeight: 1.6,
                 }}
               >
-                Click the "Report Phishing" button in Outlook/Gmail to send suspicious emails to Union IT
+                Click the "Report Phishing" button in Outlook/Gmail to send suspicious emails to IT
                 for immediate review.
               </p>
             </div>
@@ -1827,95 +1826,8 @@ export const slides = (playerName: string) => [
     ),
   },
   {
-    title: "Securing Union Laptops & Devices",
-    content: (
-      <>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            height: "100%",
-            padding: "2rem 3rem",
-            boxSizing: "border-box",
-          }}
-        >
-
-          <h1
-            style={{
-              margin: 0,
-              color: "#582c83",
-              fontSize: "2.75rem",
-            }}
-          >
-            SECURING UNION LAPTOPS & DEVICES
-          </h1>
-
-          <div
-            style={{
-              display: "flex",
-              gap: "4rem",
-              alignItems: "center",
-              marginTop: "3rem",
-              width: "100%",
-            }}
-          >
-            <div
-              style={{
-                width: "55%",
-                color: "#374151",
-                fontSize: "1.1rem",
-                lineHeight: 1.7,
-              }}
-            >
-              <p style={{ margin: 0 }}>
-                Under CCCS BC.4 (Secure Configuration), all staff hardware must maintain baseline security controls.
-              </p>
-
-              <ul
-                style={{
-                  marginTop: "2rem",
-                  paddingLeft: "1.75rem",
-                  listStyleType: "disc",
-                }}
-              >
-                <li style={{ marginBottom: "0.75rem" }}>
-                  <strong>Full-Disk Encryption: </strong>
-                  Ensure BitLocker (Windows) or FileVault (Mac) is active on your machine.
-                </li>
-
-                <li style={{ marginBottom: "0.75rem" }}>
-                  <strong>Lock Screen Shortcut: </strong>
-                  Always lock your PC (Win + L or Cmd + Ctrl + Q) when leaving your desk.
-                </li>
-
-                <li>
-                  <strong>Clean Desk Policy: </strong>
-                  Lock physical documents, keys, and access cards in drawers at the end of every shift.
-                </li>
-              </ul>
-            </div>
-
-            <div
-              style={{
-                width: "45%",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <img src="Computer-Security-Icon.png"
-              style={{
-                  width: "100%",
-                  maxWidth: "500px",
-                  borderRadius: "12px",
-                  display: "block",
-                }}
-              />
-            </div>
-          </div>
-        </div>
-      </>
-    ),
+    title: "Windows 11 Settings",
+    content: <WindowsSettingsSlide settingsStep={1} playerName={playerName} />,
   },
   {
     title: "Campus Wi-Fi & Remote Work Safety",
@@ -2124,82 +2036,6 @@ export const slides = (playerName: string) => [
   {
     title: "Incident Response & Reporting",
     content: <IncidentResponseSlide visibleSteps={1} />,
-  },
-  {
-    title: "Building a Cyber Aware Culture",
-    content: (
-      <>
-        <div
-          style={{
-            position: "relative",
-            width: "100%",
-            height: "100%",
-            overflow: "hidden",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1500534623283-312aade485b7')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        >
-
-          <div
-            style={{
-              position: "absolute",
-              inset: 0,
-              backgroundColor: "rgba(16, 46, 90, 0.35)",
-            }}
-          />
-
-          <div
-            style={{
-              position: "relative",
-              zIndex: 1,
-              width: "65%",
-              maxWidth: "850px",
-              minHeight: "320px",
-              backgroundColor: "#ffffff",
-              borderRadius: "16px",
-              padding: "3rem 4rem",
-              boxSizing: "border-box",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              textAlign: "center",
-              boxShadow: "0 8px 30px rgba(0, 0, 0, 0.2)",
-            }}
-          >
-
-            <h1
-              style={{
-                margin: 0,
-                color: "#582c83",
-                fontSize: "2.75rem",
-                lineHeight: 1.15,
-              }}
-            >
-              BUILDING A CYBER AWARE CULTURE
-            </h1>
-
-            <p
-              style={{
-                margin: "1.5rem 0 0",
-                maxWidth: "650px",
-                color: "#374151",
-                fontSize: "1.1rem",
-                lineHeight: 1.7,
-              }}
-            >
-              Cybersecurity is not just an IT responsibility - it's a core commitment to protecting
-              our student members, their privacy, and our union's reputation.
-            </p>
-          </div>
-        </div>
-      </>
-    ),
   },
   {
     title: "Module 6: Email Simulator",
