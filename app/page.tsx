@@ -300,6 +300,10 @@ export default function HomePage() {
 
   const [moduleStarted, setModuleStarted] = useState<Record<string, boolean>>({});
 
+  const [requester, setRequester] = useState("");
+  const [issueRelatedTo, setIssueRelatedTo] = useState("");
+  const [subject, setSubject] = useState("");
+
   const [openApp, setOpenApp] = useState<
   | {
       name: string;
@@ -486,6 +490,7 @@ export default function HomePage() {
                 [moduleId]: true,
               }))
             }
+            
             className="mt-7 rounded-xl bg-[#4f2584] px-8 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[#3d1d68] hover:shadow-md"
           >
             Continue
@@ -1226,6 +1231,7 @@ export default function HomePage() {
           )}
 
           {activeTab === 'western' && (
+            moduleStarted.western ? (
             <div className="relative flex flex-1 flex-col overflow-hidden">
               {westernPage === 'home' ? (
                 <div className="flex flex-1 flex-col overflow-y-auto bg-[#ebeff3]">
@@ -1568,6 +1574,8 @@ export default function HomePage() {
 
                               <input
                                 type="text"
+                                value={requester}
+                                onChange={(e) => setRequester(e.target.value)}
                                 className="mt-1.5 h-9 w-full rounded border border-gray-300 bg-white px-3 text-sm outline-none focus:border-[#4f2683] focus:ring-1 focus:ring-[#4f2683]/20"
                               />
 
@@ -1580,16 +1588,20 @@ export default function HomePage() {
                               </label>
 
                               <select
-                                defaultValue=""
+                                value={issueRelatedTo}
+                                onChange={(e) => setIssueRelatedTo(e.target.value)}
                                 className="mt-1.5 h-9 w-full rounded border border-gray-300 bg-white px-3 text-sm text-gray-700 outline-none focus:border-[#4f2683] focus:ring-1 focus:ring-[#4f2683]/20"
                               >
                                 <option value="">...</option>
+
                                 <option value="software">
                                   Software (ie. Zoom, Sage, Adobe)
                                 </option>
+
                                 <option value="hardware">
                                   Hardware (ie. Printer, Scanner, Monitor)
                                 </option>
+
                                 <option value="it-request">
                                   I.T Request (Other)
                                 </option>
@@ -1606,6 +1618,8 @@ export default function HomePage() {
 
                               <input
                                 type="text"
+                                value={subject}
+                                onChange={(e) => setSubject(e.target.value)}
                                 className="mt-1.5 h-9 w-full rounded border border-gray-300 bg-white px-3 text-sm outline-none focus:border-[#4f2683] focus:ring-1 focus:ring-[#4f2683]/20"
                               />
 
@@ -1704,9 +1718,22 @@ export default function HomePage() {
                             </button>
 
                             <button
-                              onClick={() =>
-                                setWesternPopup('Form submitted. Please continue to the next module.')
-                              }
+                              onClick={() => {
+                                const allFieldsFilled =
+                                  requester.trim() !== "" &&
+                                  issueRelatedTo !== "" &&
+                                  subject.trim() !== "";
+
+                                if (allFieldsFilled) {
+                                  setWesternPopup(
+                                    "Form submitted successfully. Please continue to the next module."
+                                  );
+                                } else {
+                                  setWesternPopup(
+                                    "Please fill out all required fields before submitting."
+                                  );
+                                }
+                              }}
                               className="rounded-md bg-[#172b4d] px-5 py-2 text-sm font-medium text-white hover:bg-[#10213c]"
                             >
                               Submit
@@ -1786,6 +1813,14 @@ export default function HomePage() {
               )}
 
             </div>
+            ) : (
+              <ModuleIntro
+                moduleId="western"
+                title="Ticketing System"
+                description="Learn how to report an issue using our ticketing system."
+                icon="/usc-logo.png"
+              />
+            )
           )}
 
           {activeTab === 'calendar' && (
