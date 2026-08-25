@@ -18,6 +18,231 @@ const cellStyle: React.CSSProperties = {
   color: "#102e5a",
 };
 
+interface CloudSharingSlideProps {
+  cloudSteps: number;
+}
+
+const CloudSharingSlide: React.FC<CloudSharingSlideProps> = ({
+  cloudSteps,
+}) => {
+  const showApproved = cloudSteps === 1 || cloudSteps === 3;
+  const showImage = cloudSteps === 1 || cloudSteps === 2;
+  const showProhibited = cloudSteps >= 2;
+
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        height: "100%",
+        padding: "2rem 3rem",
+        boxSizing: "border-box",
+      }}
+    >
+      <div>
+        <h1
+          style={{
+            margin: 0,
+            color: "#582c83",
+            fontSize: "2.75rem",
+          }}
+        >
+          SAFE CLOUD & FILE SHARING RULES
+        </h1>
+
+        <div
+          style={{
+            marginTop: "0.75rem",
+            height: "3px",
+            width: "100%",
+            backgroundColor: "#e2e8f0",
+            borderRadius: "2px",
+          }}
+        />
+      </div>
+
+      <div
+        style={{
+          flex: 1,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: "2rem",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        <div
+          style={{
+            width: "35%",
+            height: "50%",
+            backgroundColor: "#f0fdf4",
+            borderRadius: "16px",
+            padding: "1.75rem",
+            boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+
+            opacity: showApproved ? 1 : 0,
+            transform: showApproved
+              ? "translateX(0)"
+              : "translateX(-30px)",
+
+            transition:
+              "opacity 500ms ease, transform 500ms ease",
+
+            pointerEvents: showApproved ? "auto" : "none",
+          }}
+        >
+          <h2
+            style={{
+              margin: 0,
+              color: "#166534",
+              fontSize: "1.75rem",
+            }}
+          >
+            Approved Practices
+          </h2>
+
+          <div
+            style={{
+              margin: "0.75rem 0 1rem",
+              height: "2px",
+              backgroundColor: "#cbd5e1",
+              borderRadius: "2px",
+            }}
+          />
+
+          <ul
+            style={{
+              marginTop: "2rem",
+              paddingLeft: "1.75rem",
+              listStyleType: "disc",
+            }}
+          >
+            <li style={{ marginBottom: "0.75rem" }}>
+              Store student union documents on official tenant OneDrive
+              or SharePoint with restricted permissions.
+            </li>
+
+            <li style={{ marginBottom: "0.75rem" }}>
+              Share the file links with specific named accounts rather
+              than "Anyone with the link."
+            </li>
+
+            <li>
+              Encrypt sensitive financial spreadsheets prior to
+              distribution.
+            </li>
+          </ul>
+        </div>
+
+        <div
+          style={{
+            position: "absolute",
+
+            left: cloudSteps >= 2 ? "10%" : "60%",
+
+            width: "30%",
+            height: "50%",
+
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+
+            opacity: showImage ? 1 : 0,
+
+            transform:
+              cloudSteps === 2
+                ? "scale(1)"
+                : cloudSteps === 3
+                ? "scale(0.95)"
+                : "scale(1)",
+
+            transition:
+              "left 700ms cubic-bezier(0.22, 1, 0.36, 1), " +
+              "opacity 500ms ease, " +
+              "transform 500ms ease",
+
+            pointerEvents: "none",
+          }}
+        >
+          <img
+            src="/google-cloud.webp"
+            alt="Google Cloud"
+            style={{
+              maxWidth: "200%",
+              maxHeight: "200%",
+              objectFit: "contain",
+              display: "block",
+            }}
+          />
+        </div>
+
+        <div
+          style={{
+            width: "35%",
+            height: "50%",
+            backgroundColor: "#fef2f2",
+            borderRadius: "16px",
+            padding: "1.75rem",
+            boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+
+            opacity: showProhibited ? 1 : 0,
+            transform: showProhibited
+              ? "translateX(0)"
+              : "translateX(30px)",
+
+            transition:
+              "opacity 500ms ease 150ms, transform 500ms ease 150ms",
+
+            pointerEvents: showProhibited ? "auto" : "none",
+          }}
+        >
+          <h2
+            style={{
+              margin: 0,
+              color: "#991c1a",
+              fontSize: "1.75rem",
+            }}
+          >
+            Prohibited Practices
+          </h2>
+
+          <div
+            style={{
+              margin: "0.75rem 0 1rem",
+              height: "2px",
+              backgroundColor: "#cbd5e1",
+              borderRadius: "2px",
+            }}
+          />
+
+          <ul
+            style={{
+              marginTop: "2rem",
+              paddingLeft: "1.75rem",
+              listStyleType: "disc",
+            }}
+          >
+            <li style={{ marginBottom: "0.75rem" }}>
+              Transferring student records to personal Gmail, iCloud,
+              or Dropbox accounts.
+            </li>
+
+            <li style={{ marginBottom: "0.75rem" }}>
+              Storing unencrypted PII on unapproved personal USB drives.
+            </li>
+
+            <li>
+              Emailing unencrypted spreadsheets containing student
+              health plan data.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Certificate = ({ playerName }: { playerName: string }) => {
   const certificateRef = useRef<HTMLDivElement>(null);
 
@@ -1543,151 +1768,7 @@ export const slides = (playerName: string) => [
   {
     title: "Safe Cloud & File Sharing Rules",
     content: (
-      <>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            height: "100%",
-            padding: "2rem 3rem",
-            boxSizing: "border-box",
-          }}
-        >
-          <div>
-            <h1
-              style={{
-                margin: 0,
-                color: "#582c83",
-                fontSize: "2.75rem",
-              }}
-            >
-              SAFE CLOUD & FILE SHARING RULES
-            </h1>
-
-            <div
-              style={{
-                marginTop: "0.75rem",
-                height: "3px",
-                width: "100%",
-                backgroundColor: "#e2e8f0",
-                borderRadius: "2px",
-              }}
-            />
-          </div>
-
-          <div
-            style={{
-              flex: 1,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "2rem",
-            }}
-          >
-            <div
-              style={{
-                width: "35%",
-                height: "50%",
-                backgroundColor: "#f0fdf4",
-                borderRadius: "16px",
-                padding: "1.75rem",
-                boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
-              }}
-            >
-              <h2
-                style={{
-                  margin: 0,
-                  color: "#166534",
-                  fontSize: "1.75rem",
-                }}
-              >
-                Approved Practices
-              </h2>
-
-              <div
-                style={{
-                  margin: "0.75rem 0 1rem",
-                  height: "2px",
-                  backgroundColor: "#cbd5e1",
-                  borderRadius: "2px",
-                }}
-              />
-
-              <ul
-              style={{
-                marginTop: "2rem",
-                paddingLeft: "1.75rem",
-                listStyleType: "disc",
-              }}
-            >
-              <li style={{ marginBottom: "0.75rem" }}>
-                Store student union documents on official tenant OneDrive or SharePoint with restricted permissions.
-              </li>
-
-              <li style={{ marginBottom: "0.75rem" }}>
-                Share the file links with specific named accounts rather than "Anyone with the link."
-              </li>
-
-              <li>
-                Encrypt sensitive financial spreadsheets prior to distribution.
-              </li>
-            </ul>
-
-            </div>
-
-            <div
-              style={{
-                width: "35%",
-                height: "50%",
-                backgroundColor: "#fef2f2",
-                borderRadius: "16px",
-                padding: "1.75rem",
-                boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
-              }}
-            >
-              <h2
-                style={{
-                  margin: 0,
-                  color: "#991c1a",
-                  fontSize: "1.75rem",
-                }}
-              >
-                Prohibited Practices
-              </h2>
-
-              <div
-                style={{
-                  margin: "0.75rem 0 1rem",
-                  height: "2px",
-                  backgroundColor: "#cbd5e1",
-                  borderRadius: "2px",
-                }}
-              />
-
-              <ul
-              style={{
-                marginTop: "2rem",
-                paddingLeft: "1.75rem",
-                listStyleType: "disc",
-              }}
-            >
-              <li style={{ marginBottom: "0.75rem" }}>
-                Transferring student records to personal Gmail, iCloud, or Dropbox accounts.
-              </li>
-
-              <li style={{ marginBottom: "0.75rem" }}>
-                Storing unencrypted PII on unapproved personal USB drives.
-              </li>
-
-              <li>
-                Emailing unencrypted spreadsheets containing student health plan data.
-              </li>
-            </ul>
-
-            </div>
-          </div>
-        </div>
-      </>
+      <CloudSharingSlide cloudSteps={1} />
     ),
   },
   {

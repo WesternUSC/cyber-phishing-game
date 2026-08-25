@@ -21,6 +21,7 @@ const WAIT_TIME = 1 * 1000;
 const STORAGE_KEY = "slideshow-progress";
 
 const INCIDENT_SLIDE_TITLE = "Incident Response & Reporting";
+const CLOUD_SLIDE_TITLE = "Safe Cloud & File Sharing Rules";
 
 const Slideshow: React.FC<SlideshowProps> = ({
   slides,
@@ -33,6 +34,7 @@ const Slideshow: React.FC<SlideshowProps> = ({
     new Set([startSlide])
   );
   const [incidentSteps, setIncidentSteps] = useState(1);
+  const [cloudSteps, setCloudSteps] = useState(1);
   const [isLoaded, setIsLoaded] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
@@ -49,6 +51,7 @@ const Slideshow: React.FC<SlideshowProps> = ({
           new Set<number>(parsed.seenSlides ?? [startSlide])
         );
         setIncidentSteps(parsed.incidentSteps ?? 1);
+        setCloudSteps(parsed.cloudSteps ?? 1);
       } catch (error) {
         console.error("Failed to load slideshow progress:", error);
       }
@@ -67,9 +70,10 @@ const Slideshow: React.FC<SlideshowProps> = ({
         slideStartedAt,
         seenSlides: Array.from(seenSlides),
         incidentSteps,
+        cloudSteps
       })
     );
-  }, [isLoaded, current, slideStartedAt, seenSlides, incidentSteps]);
+  }, [isLoaded, current, slideStartedAt, seenSlides, incidentSteps, cloudSteps]);
 
   const isExempt = (slideIndex: number) => {
     return EXEMPT_SLIDES.has(slideIndex);
@@ -145,6 +149,10 @@ const Slideshow: React.FC<SlideshowProps> = ({
       setCurrent(newIndex);
       setSlideStartedAt(Date.now());
 
+      if (slides[newIndex]?.title === CLOUD_SLIDE_TITLE) {
+        setCloudSteps(1);
+      } 
+
       setSeenSlides((previous) => {
         const updated = new Set(previous);
         updated.add(newIndex);
@@ -196,6 +204,14 @@ const Slideshow: React.FC<SlideshowProps> = ({
       return;
     }
 
+    const isCloudSlide =
+      slides[current].title === CLOUD_SLIDE_TITLE;
+
+    if (isCloudSlide && cloudSteps < 3) {
+      setCloudSteps((previous) => previous + 1);
+      return;
+    }
+
     if (!hasWaitedLongEnough()) {
       window.alert(
         "You must wait at least one minute on this slide before proceeding."
@@ -237,6 +253,14 @@ const Slideshow: React.FC<SlideshowProps> = ({
                 visibleSteps: number;
               }>,
               { visibleSteps: incidentSteps }
+            )
+          : slides[current].title === CLOUD_SLIDE_TITLE &&
+            React.isValidElement(slides[current].content)
+          ? React.cloneElement(
+              slides[current].content as React.ReactElement<{
+                cloudSteps: number;
+              }>,
+              { cloudSteps }
             )
           : slides[current].content}
       </div>
