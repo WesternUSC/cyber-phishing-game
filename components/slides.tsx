@@ -49,7 +49,7 @@ const CloudSharingSlide: React.FC<CloudSharingSlideProps> = ({
             fontSize: "2.75rem",
           }}
         >
-          SAFE CLOUD & FILE SHARING RULES
+          {slidesData.cloudSlide.title.toUpperCase()}
         </h1>
 
         <div
@@ -101,7 +101,7 @@ const CloudSharingSlide: React.FC<CloudSharingSlideProps> = ({
               fontSize: "1.75rem",
             }}
           >
-            Approved Practices
+            {slidesData.cloudSlide.card1Title}
           </h2>
 
           <div
@@ -121,18 +121,15 @@ const CloudSharingSlide: React.FC<CloudSharingSlideProps> = ({
             }}
           >
             <li style={{ marginBottom: "0.75rem" }}>
-              Store student union documents on official tenant OneDrive
-              or SharePoint with restricted permissions.
+              {slidesData.cloudSlide.card1L1}
             </li>
 
             <li style={{ marginBottom: "0.75rem" }}>
-              Share the file links with specific named accounts rather
-              than "Anyone with the link."
+              {slidesData.cloudSlide.card1L2}
             </li>
 
             <li>
-              Encrypt sensitive financial spreadsheets prior to
-              distribution.
+              {slidesData.cloudSlide.card1L3}
             </li>
           </ul>
         </div>
@@ -206,7 +203,7 @@ const CloudSharingSlide: React.FC<CloudSharingSlideProps> = ({
               fontSize: "1.75rem",
             }}
           >
-            Prohibited Practices
+            {slidesData.cloudSlide.card2Title}
           </h2>
 
           <div
@@ -226,17 +223,15 @@ const CloudSharingSlide: React.FC<CloudSharingSlideProps> = ({
             }}
           >
             <li style={{ marginBottom: "0.75rem" }}>
-              Transferring student records to personal Gmail, iCloud,
-              or Dropbox accounts.
+              {slidesData.cloudSlide.card2L1}
             </li>
 
             <li style={{ marginBottom: "0.75rem" }}>
-              Storing unencrypted PII on unapproved personal USB drives.
+              {slidesData.cloudSlide.card2L2}
             </li>
 
             <li>
-              Emailing unencrypted spreadsheets containing student
-              health plan data.
+              {slidesData.cloudSlide.card2L3}
             </li>
           </ul>
         </div>
@@ -1022,7 +1017,7 @@ export const slides = (playerName: string) => [
     ),
   },
   {
-    title: "Module 2: Authentication Standards",
+    title: slidesData.module2.title,
     content: (
       <>
         <div
@@ -1043,7 +1038,7 @@ export const slides = (playerName: string) => [
             fontSize: "1.25rem",
           }}
         >
-          MODULE 2
+          {slidesData.module2.subtitle}
         </div>
 
           <h1
@@ -1055,7 +1050,7 @@ export const slides = (playerName: string) => [
               fontWeight: "bold",
             }}
           >
-            AUTHENTICATION STANDARDS
+            {slidesData.module2.moduleTitle}
           </h1>
 
           <div
@@ -1070,14 +1065,14 @@ export const slides = (playerName: string) => [
           <br></br>
 
           <p style={{color:"#ffffff", fontSize: "1.25rem", width: "40%", textAlign: "center"}}>
-            Implementing Canadian Centre for Cyber Security baseline recommendations for credentials and access.
+            {slidesData.module2.desc}
           </p>
         </div>
       </>
     ),
   },
   {
-    title: "Multi-Factor Authentication Standard",
+    title: slidesData.mfaSlide.title,
     content: (
       <>
         <div
@@ -1097,7 +1092,7 @@ export const slides = (playerName: string) => [
               fontSize: "2.75rem",
             }}
           >
-            MULTI-FACTOR AUTHENTICATION STANDARD
+            {slidesData.mfaSlide.title.toUpperCase()}
           </h1>
 
           <div
@@ -1130,20 +1125,18 @@ export const slides = (playerName: string) => [
                 }}
               >
                 <li style={{ marginBottom: "0.75rem" }}>
-                  <strong>Authenticator Apps First: </strong>
-                  Use app-based push notifications or TOTP codes (e.g., Microsoft
-                  Authenticator).
+                  <strong>{slidesData.mfaSlide.l1Title} </strong>
+                  {slidesData.mfaSlide.l1Desc}
                 </li>
 
                 <li style={{ marginBottom: "0.75rem" }}>
-                  <strong>Avoid SMS When Possible: </strong>
-                  Text messages are vulnerable to SIM swapping and interception attacks.
+                  <strong>{slidesData.mfaSlide.l2Title} </strong>
+                  {slidesData.mfaSlide.l2Desc}
                 </li>
 
                 <li>
-                  <strong>Never Share Prompts: </strong>
-                  Deny any unexpected MFA prompts that appear when you are not actively
-                  logging in.
+                  <strong>{slidesData.mfaSlide.l3Title} </strong>
+                  {slidesData.mfaSlide.l3Desc}
                 </li>
               </ul>
             </div>
@@ -1176,7 +1169,7 @@ export const slides = (playerName: string) => [
     ),
   },
   {
-    title: "Strong Passphrase Guidelines",
+    title: slidesData.passphraseSlide.title,
     content: (
       <>
         <div
@@ -1196,7 +1189,7 @@ export const slides = (playerName: string) => [
               fontSize: "2.75rem",
             }}
           >
-            STRONG PASSPHRASE GUIDELINES
+            {slidesData.passphraseSlide.title.toUpperCase()}
           </h1>
 
           <div
@@ -1225,23 +1218,23 @@ export const slides = (playerName: string) => [
                 }}
               >
                 <li style={{ marginBottom: "0.75rem" }}>
-                  <strong>Use Passphrases, Not Passwords: </strong>
-                  Combine 4+ random words (e.g., maple-winter-transit-book) for 16+ characters that are easy to remember but hard to crack.
+                  <strong>{slidesData.passphraseSlide.l1Title} </strong>
+                  {slidesData.passphraseSlide.l1Desc}
                 </li>
 
                 <li style={{ marginBottom: "0.75rem" }}>
-                  <strong>Avoid Campus Cliches: </strong>
-                  Never use university names, sports teams, mascot names, or your staff position in your password.
+                  <strong>{slidesData.passphraseSlide.l2Title} </strong>
+                  {slidesData.passphraseSlide.l2Desc}
                 </li>
 
                 <li>
-                  <strong>Use Password Managers: </strong>
-                  Store credentials in approved enterprise password vaults (e.g., 1Password, Bitwarden) rather than browser auto-fill.
+                  <strong>{slidesData.passphraseSlide.l3Title} </strong>
+                  {slidesData.passphraseSlide.l3Desc}
                 </li>
 
                 <li>
-                  <strong>Zero Credential Reuse: </strong>
-                  Keep your personal campus account password completely distinct from your staff credentials.
+                  <strong>{slidesData.passphraseSlide.l4Title} </strong>
+                  {slidesData.passphraseSlide.l4Desc}
                 </li>
               </ul>
             </div>
@@ -1269,7 +1262,7 @@ export const slides = (playerName: string) => [
     ),
   },
   {
-    title: "Module 3: Phishing & Social Engineering",
+    title: slidesData.module3.title,
     content: (
       <>
         <div
@@ -1290,7 +1283,7 @@ export const slides = (playerName: string) => [
             fontSize: "1.25rem",
           }}
         >
-          MODULE 3
+          {slidesData.module3.subtitle}
         </div>
 
           <h1
@@ -1302,7 +1295,7 @@ export const slides = (playerName: string) => [
               fontWeight: "bold",
             }}
           >
-            PHISHING & SOCIAL ENGINEERING
+            {slidesData.module3.moduleTitle}
           </h1>
 
           <div
@@ -1317,14 +1310,14 @@ export const slides = (playerName: string) => [
           <br></br>
 
           <p style={{color:"#ffffff", fontSize: "1.25rem", width: "40%", textAlign: "center"}}>
-            Identifying deception techniques targeted at student union executives, staff, and student volunteers.
+            {slidesData.module3.desc}
           </p>
         </div>
       </>
     ),
   },
   {
-    title: "Spotting Phishing in Student Union",
+    title: slidesData.phishingSlide.title,
     content: (
       <>
         <div
@@ -1344,7 +1337,7 @@ export const slides = (playerName: string) => [
               fontSize: "2.75rem",
             }}
           >
-            SPOTTING PHISHING IN STUDENT UNION
+            {slidesData.phishingSlide.title}
           </h1>
 
           <div
@@ -1372,7 +1365,7 @@ export const slides = (playerName: string) => [
                   fontSize: "1.5rem",
                 }}
               >
-                Common Attack Scenarios
+                {slidesData.phishingSlide.subtitle}
               </h2>
 
               <p
@@ -1380,8 +1373,7 @@ export const slides = (playerName: string) => [
                   margin: 0,
                 }}
               >
-                Threat actors often impersonate Union Executives requesting urgent gift card purchases, direct deposit charges,
-                or vendor invoice payments.
+                {slidesData.phishingSlide.desc1}
               </p>
 
               <br></br>
@@ -1391,8 +1383,7 @@ export const slides = (playerName: string) => [
                   margin: 0,
                 }}
               >
-                Watch for spoofed university domain names (e.g., @u-canada-studentunion.ca vs official @studentunion.ca),
-                high urgency, and unexpected attachments.
+                {slidesData.phishingSlide.desc2}
               </p>
             </div>
 
@@ -1419,7 +1410,7 @@ export const slides = (playerName: string) => [
     ),
   },
   {
-    title: "3-Step Email Verification Process",
+    title: slidesData.emailSlide.title,
     content: (
       <>
         <div
@@ -1439,7 +1430,7 @@ export const slides = (playerName: string) => [
               fontSize: "2.75rem",
             }}
           >
-            3-STEP EMAIL VERIFICATION PROCESS
+            {slidesData.emailSlide.title.toUpperCase()}
           </h1>
 
           <div
@@ -1484,7 +1475,7 @@ export const slides = (playerName: string) => [
                   fontSize: "1.5rem",
                 }}
               >
-                1. Inspect Details
+                {slidesData.emailSlide.card1Title}
               </h2>
 
               <p
@@ -1496,8 +1487,7 @@ export const slides = (playerName: string) => [
                   lineHeight: 1.6,
                 }}
               >
-                Check sender full email header, hover over external links without clicking, and verify
-                unexpected file attachments.
+                {slidesData.emailSlide.card1Desc}
               </p>
             </div>
 
@@ -1522,7 +1512,7 @@ export const slides = (playerName: string) => [
                   fontSize: "1.5rem",
                 }}
               >
-                2. Out-of-Band Check
+                {slidesData.emailSlide.card2Title}
               </h2>
 
               <p
@@ -1534,8 +1524,7 @@ export const slides = (playerName: string) => [
                   lineHeight: 1.6,
                 }}
               >
-                If an email requests wire transfers or payroll changes, confirm in person or call the
-                official phone number directly.
+                {slidesData.emailSlide.card2Desc}
               </p>
             </div>
 
@@ -1560,7 +1549,7 @@ export const slides = (playerName: string) => [
                   fontSize: "1.5rem",
                 }}
               >
-                3. Report & Flag
+                {slidesData.emailSlide.card3Title}
               </h2>
 
               <p
@@ -1572,8 +1561,7 @@ export const slides = (playerName: string) => [
                   lineHeight: 1.6,
                 }}
               >
-                Click the "Report Phishing" button in Outlook/Gmail to send suspicious emails to IT
-                for immediate review.
+                {slidesData.emailSlide.card3Desc}
               </p>
             </div>
           </div>
@@ -1637,7 +1625,7 @@ export const slides = (playerName: string) => [
     ),
   },
   {
-    title: "Protecting Student PII & Privacy",
+    title: slidesData.privacySlide.title,
     content: (
       <>
         <div
@@ -1656,7 +1644,7 @@ export const slides = (playerName: string) => [
               fontSize: "2.75rem",
             }}
           >
-            PROTECTING STUDENT PII & PRIVACY
+            {slidesData.privacySlide.title.toUpperCase()}
           </h1>
 
           <div
@@ -1699,7 +1687,7 @@ export const slides = (playerName: string) => [
                   lineHeight: 1,
                 }}
               >
-                10
+                {slidesData.privacySlide.cardTitle}
               </div>
 
               <div
@@ -1711,7 +1699,7 @@ export const slides = (playerName: string) => [
                   textAlign: "center",
                 }}
               >
-                PIPEDA Principles
+                {slidesData.privacySlide.cardDesc}
               </div>
             </div>
 
@@ -1731,7 +1719,7 @@ export const slides = (playerName: string) => [
                   borderBottom: "4px solid #9b7db5",
                 }}
               >
-                Strict Confidentiality Required
+                {slidesData.privacySlide.subtitle}
               </h2>
 
               <p
@@ -1743,8 +1731,7 @@ export const slides = (playerName: string) => [
                   lineHeight: 1.6,
                 }}
               >
-                Student Personally Indetifiable Information (PII) - including student numbers, health plan records,
-                financial aid claims, and event rosters - is protected under Canadian privacy laws.
+                {slidesData.privacySlide.desc1}
               </p>
 
               <p
@@ -1755,8 +1742,7 @@ export const slides = (playerName: string) => [
                   lineHeight: 1.6,
                 }}
               >
-                <strong>Rule of Thumb:</strong> Collect only data you strictly need, use it exclusively
-                for approved purposes, and never share PII externally without explicit student consent.
+                <strong>{slidesData.privacySlide.desc2Bold}</strong> {slidesData.privacySlide.desc2}
               </p>
             </div>
           </div>
@@ -1765,13 +1751,13 @@ export const slides = (playerName: string) => [
     ),
   },
   {
-    title: "Safe Cloud & File Sharing Rules",
+    title: slidesData.cloudSlide.title,
     content: (
       <CloudSharingSlide cloudSteps={1} />
     ),
   },
   {
-    title: "Module 5: Device & Campus Safety",
+    title: slidesData.module5.title,
     content: (
       <>
         <div
@@ -1792,7 +1778,7 @@ export const slides = (playerName: string) => [
             fontSize: "1.25rem",
           }}
         >
-          MODULE 5
+          {slidesData.module5.subtitle}
         </div>
 
           <h1
@@ -1804,7 +1790,7 @@ export const slides = (playerName: string) => [
               fontWeight: "bold",
             }}
           >
-            DEVICE & CAMPUS SAFETY
+            {slidesData.module5.moduleTitle}
           </h1>
 
           <div
@@ -1819,7 +1805,7 @@ export const slides = (playerName: string) => [
           <br></br>
 
           <p style={{color:"#ffffff", fontSize: "1.25rem", width: "40%", textAlign: "center"}}>
-            Physical security, workstation hygiene, and public campus Wi-Fi best practices.
+            {slidesData.module5.desc}
           </p>
         </div>
       </>
@@ -1830,7 +1816,7 @@ export const slides = (playerName: string) => [
     content: <WindowsSettingsSlide settingsStep={1} playerName={playerName} />,
   },
   {
-    title: "Campus Wi-Fi & Remote Work Safety",
+    title: slidesData.wifiSlide.title,
     content: (
       <>
         <div
@@ -1849,7 +1835,7 @@ export const slides = (playerName: string) => [
               fontSize: "2.75rem",
             }}
           >
-            CAMPUS WI-FI & REMOTE WORK SAFETY
+            {slidesData.wifiSlide.title.toUpperCase()}
           </h1>
 
           <div
@@ -1907,13 +1893,11 @@ export const slides = (playerName: string) => [
                     marginBottom: "0.5rem",
                   }}
                 >
-                  Use Secure Networks
+                  {slidesData.wifiSlide.card1Title}
                 </strong>
 
                 <span>
-                  Connect to encrypted campus networks (e.g., eduroam or Student
-                  Union Wi-Fi). Never perform admin duties on open public Wi-Fi
-                  without VPN.
+                  {slidesData.wifiSlide.card1Desc}
                 </span>
               </div>
 
@@ -1945,12 +1929,11 @@ export const slides = (playerName: string) => [
                     marginBottom: "0.5rem",
                   }}
                 >
-                  Avoid Public USB Chargers
+                  {slidesData.wifiSlide.card2Title}
                 </strong>
 
                 <span>
-                  Use wall outlets rather than public USB charging stations to prevent
-                  "juice jacking" malware installation.
+                  {slidesData.wifiSlide.card2Desc}
                 </span>
               </div>
 
@@ -1982,12 +1965,11 @@ export const slides = (playerName: string) => [
                     marginBottom: "0.5rem",
                   }}
                 >
-                  Beware of Shoulder Surfing
+                  {slidesData.wifiSlide.card3Title}
                 </strong>
 
                 <span>
-                  Use privacy screens when working in busy student hubs, cafeterias,
-                  or libraries.
+                  {slidesData.wifiSlide.card3Desc}
                 </span>
               </div>
 
@@ -2019,12 +2001,11 @@ export const slides = (playerName: string) => [
                     marginBottom: "0.5rem",
                   }}
                 >
-                  Automate Updates
+                  {slidesData.wifiSlide.card4Title}
                 </strong>
 
                 <span>
-                  Install operating system and web browser security updates promptly
-                  when prompted.
+                  {slidesData.wifiSlide.card4Desc}
                 </span>
               </div>
             </div>
@@ -2034,11 +2015,11 @@ export const slides = (playerName: string) => [
     ),
   },
   {
-    title: "Incident Response & Reporting",
+    title: slidesData.incidentSlide.title,
     content: <IncidentResponseSlide visibleSteps={1} />,
   },
   {
-    title: "Module 6: Email Simulator",
+    title: slidesData.module6.title,
     content: (
       <>
         <div
@@ -2059,7 +2040,7 @@ export const slides = (playerName: string) => [
             fontSize: "1.25rem",
           }}
         >
-          MODULE 6
+          {slidesData.module6.subtitle}
         </div>
 
           <h1
@@ -2071,7 +2052,7 @@ export const slides = (playerName: string) => [
               fontWeight: "bold",
             }}
           >
-            EMAIL SIMULATOR
+            {slidesData.module6.moduleTitle}
           </h1>
 
           <div

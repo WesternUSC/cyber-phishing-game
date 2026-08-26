@@ -44,5 +44,118 @@
         "card2Desc": "Access only the student information and financial tools required for your specific job duties (CCCS BC.12).",
         "card3Title": "3. Active Vigilance",
         "card3Desc": "Recognize phishing tactics and report suspicious emails, links, or unknown physical visitors immediately."
+    },
+    "module2": {
+        "title": "Module 2: Authentication Standards",
+        "subtitle": "MODULE 2",
+        "moduleTitle": "AUTHENTICATION STANDARDS",
+        "desc": "Implementing Canadian Centre for Cyber Security baseline recommendations for credentials and access."
+    },
+    "mfaSlide": {
+        "title": "Multi-Factor Authentication Standard",
+        "desc": "CCCS Baseline Control BC.5 mandates MFA across all organizational systems. Password-only protection is no longer sufficient.",
+        "l1Title": "Authenticator Apps First:",
+        "l1Desc": "Use app-based push notifications or TOTP codes (e.g., Microsoft Authenticator).",
+        "l2Title": "Avoid SMS When Possible:",
+        "l2Desc": "Text messages are vulnerable to SIM swapping and interception attacks.",
+        "l3Title": "Never Share Prompts:",
+        "l3Desc": "Deny any unexpected MFA prompts that appear when you are not actively logging in."
+    },
+    "passphraseSlide": {
+        "title": "Strong Passphrase Guidelines",
+        "l1Title": "Use Passphrases, Not Passwords:",
+        "l1Desc": "Combine 4+ random words (e.g., maple-winter-transit-book) for 16+ characters that are easy to remember but hard to crack.",
+        "l2Title": "Avoid Campus Cliches:",
+        "l2Desc": "Never use university names, sports teams, mascot names, or your staff position in your password.",
+        "l3Title": "Use Password Managers:",
+        "l3Desc": "Store credentials in approved enterprise password vaults (e.g., 1Password, Bitwarden) rather than browser auto-fill.",
+        "l4Title": "Zero Credential Reuse:",
+        "l4Desc": "Keep your personal campus account password completely distinct from your staff credentials."
+    },
+    "module3": {
+        "title": "Module 3: Phishing & Social Engineering",
+        "subtitle": "MODULE 3",
+        "moduleTitle": "PHISHING & SOCIAL ENGINEERING",
+        "desc": "Identifying deception techniques targeted at student union executives, staff, and student volunteers."
+    },
+    "phishingSlide": {
+        "title": "Spotting Phishing in Student Union",
+        "subtitle": "Common Attack Scenarios",
+        "desc1": "Threat actors often impersonate Union Executives requesting urgent gift card purchases, direct deposit charges, or vendor invoice payments.",
+        "desc2": "Watch for spoofed university domain names (e.g., @u-canada-studentunion.ca vs official @studentunion.ca), high urgency, and unexpected attachments."
+    },
+    "emailSlide": {
+        "title": "3-Step Email Verification Process",
+        "card1Title": "1. Inspect Details",
+        "card1Desc": "Check sender full email header, hover over external links without clicking, and verify unexpected file attachments.",
+        "card2Title": "2. Out-of-Band Check",
+        "card2Desc": "If an email requests wire transfers or payroll changes, confirm in person or call the official phone number directly.",
+        "card3Title": "3. Report & Flag",
+        "card3Desc": "Click the 'Report Phishing' button in Outlook/Gmail to send suspicious emails to IT for immediate review."
+    },
+    "module4": {
+        "title": "Module 4: Student Data & PIPEDA Rules",
+        "subtitle": "MODULE 4",
+        "moduleTitle": "STUDENT DATA & PIPEDA RULES",
+        "desc": "Legal standards and privacy obligations when collecting and processing student information."
+    },
+    "privacySlide": {
+        "title": "Protecting Student PII & Privacy",
+        "cardTitle": "10",
+        "cardDesc": "PIPEDA Principles",
+        "subtitle": "Strict Confidentiality Required",
+        "desc1": "Student Personally Indetifiable Information (PII) - including student numbers, health plan records, financial aid claims, and event rosters - is protected under Canadian privacy laws.",
+        "desc2Bold": "Rule of Thumb:",
+        "desc2": "Collect only data you strictly need, use it exclusively for approved purposes, and never share PII externally without explicit student consent."
+    },
+    "cloudSlide": {
+        "title": "Safe Cloud & File Sharing Rules",
+        "card1Title": "Approved Practices",
+        "card1L1": "Store student union documents on official tenant OneDrive or SharePoint with restricted permissions.",
+        "card1L2": "Share the file links with specific named accounts rather than 'Anyone with the link.'",
+        "card1L3": "Encrypt sensitive financial spreadsheets prior to distribution.",
+        "card2Title": "Prohibited Practices",
+        "card2L1": "Transferring student records to personal Gmail, iCloud, or Dropbox accounts.",
+        "card2L2": "Storing unencrypted PII on unapproved personal USB drives.",
+        "card2L3": "Emailing unencrypted spreadsheets containing student health plan data."
+    },
+    "module5": {
+        "title": "Module 5: Device & Campus Safety",
+        "subtitle": "MODULE 5",
+        "moduleTitle": "DEVICE & CAMPUS SAFETY",
+        "desc": "Physical security, workstation hygiene, and public campus Wi-Fi best practices."
+    },
+    "settingsSlide": {
+        "desc1": "Under CCCS BC.4 (Secure Configuration), all staff hardware must maintain baseline security controls.",
+        "card1Desc": "Lock physical documents, keys, and access cards in drawers at the end of every shift.",
+        "card2Desc": "Always lock your PC (Win + L or Cmd + Ctrl + Q) when leaving your desk.",
+        "card3Desc": "Ensure BitLocker (Windows) or FileVault (Mac) is active on your machine."
+    },
+    "wifiSlide": {
+        "title": "Campus Wi-Fi & Remote Work Safety",
+        "card1Title": "Use Secure Networks",
+        "card1Desc": "Connect to encrypted campus networks (e.g., eduroam or Student Union Wi-Fi). Never perform admin duties on open public Wi-Fi without VPN.",
+        "card2Title": "Avoid Public USB Chargers",
+        "card2Desc": "Use wall outlets rather than public USB charging stations to prevent 'juice jacking' malware installation.",
+        "card3Title": "Beware of Shoulder Surfing",
+        "card3Desc": "Use privacy screens when working in busy student hubs, cafeterias, or libraries.",
+        "card4Title": "Automate Updates",
+        "card4Desc": "Install operating system and web browser security updates promptly when prompted."
+    },
+    "incidentSlide": {
+        "title": "Incident Response & Reporting",
+        "card1Title": "1. Isolate",
+        "card1Desc": "Disconnect Wi-Fi or network cables immediately if malware is suspected.",
+        "card2Title" : "2. Report",
+        "card2Desc": "Contact Union IT & Privacy Officer within 15 minutes of discovery.",
+        "card3Title": "3. Preserve",
+        "card3Desc": "Document details, take screenshots, and do not reboot or wipe machine.",
+        "card4Title": "4. Remediate",
+        "card4Desc": "Follow IT guidance and assist PIPEDA breach logging if required."
+    },
+    "module6": {
+        "title": "Module 6: Email Simulator",
+        "subtitle": "MODULE 6",
+        "moduleTitle": "EMAIL SIMULATOR"
     }
 }

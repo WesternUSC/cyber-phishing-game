@@ -1,3 +1,5 @@
+import slidesData from '@/data/slides.json'
+
 interface IncidentResponseSlideProps {
   visibleSteps: number;
 }
@@ -22,7 +24,7 @@ export const IncidentResponseSlide: React.FC<IncidentResponseSlideProps> = ({
           fontSize: "2.75rem",
         }}
       >
-        INCIDENT RESPONSE & REPORTING
+        {slidesData.incidentSlide.title.toUpperCase()}
       </h1>
 
       <div
@@ -98,7 +100,7 @@ export const IncidentResponseSlide: React.FC<IncidentResponseSlideProps> = ({
                   fontSize: "1.25rem",
                 }}
               >
-                1. Isolate
+                {slidesData.incidentSlide.card1Title}
               </h2>
 
               <p
@@ -109,8 +111,7 @@ export const IncidentResponseSlide: React.FC<IncidentResponseSlideProps> = ({
                   lineHeight: 1.5,
                 }}
               >
-                Disconnect Wi-Fi or network cables immediately if malware is
-                suspected.
+                {slidesData.incidentSlide.card1Desc}
               </p>
             </div>
           )}
@@ -164,7 +165,7 @@ export const IncidentResponseSlide: React.FC<IncidentResponseSlideProps> = ({
                   fontSize: "1.25rem",
                 }}
               >
-                2. Report
+                {slidesData.incidentSlide.card2Title}
               </h2>
 
               <p
@@ -175,8 +176,7 @@ export const IncidentResponseSlide: React.FC<IncidentResponseSlideProps> = ({
                   lineHeight: 1.5,
                 }}
               >
-                Contact Union IT & Privacy Officer within 15 minutes of
-                discovery.
+                {slidesData.incidentSlide.card2Desc}
               </p>
             </div>
           )}
@@ -230,7 +230,7 @@ export const IncidentResponseSlide: React.FC<IncidentResponseSlideProps> = ({
                   fontSize: "1.25rem",
                 }}
               >
-                3. Preserve
+                {slidesData.incidentSlide.card3Title}
               </h2>
 
               <p
@@ -241,8 +241,7 @@ export const IncidentResponseSlide: React.FC<IncidentResponseSlideProps> = ({
                   lineHeight: 1.5,
                 }}
               >
-                Document details, take screenshots, and do not reboot or wipe
-                machine.
+                {slidesData.incidentSlide.card3Desc}
               </p>
             </div>
           )}
@@ -296,7 +295,7 @@ export const IncidentResponseSlide: React.FC<IncidentResponseSlideProps> = ({
                   fontSize: "1.25rem",
                 }}
               >
-                4. Remediate
+                {slidesData.incidentSlide.card4Title}
               </h2>
 
               <p
@@ -307,8 +306,7 @@ export const IncidentResponseSlide: React.FC<IncidentResponseSlideProps> = ({
                   lineHeight: 1.5,
                 }}
               >
-                Follow IT guidance and assist PIPEDA breach logging if
-                required.
+                {slidesData.incidentSlide.card4Desc}
               </p>
             </div>
           )}

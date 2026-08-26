@@ -1,4 +1,5 @@
 import React from "react";
+import slidesData from '@/data/slides.json'
 
 interface WindowsSettingsSlideProps {
   settingsStep: number;
@@ -192,7 +193,7 @@ const WindowsSettingsSlide: React.FC<WindowsSettingsSlideProps> = ({
                   marginTop: 5,
                 }}
               >
-                Under CCCS BC.4 (Secure Configuration), all staff hardware must maintain baseline security controls.
+                {slidesData.settingsSlide.desc1}
               </div>
             </div>
 
@@ -209,7 +210,7 @@ const WindowsSettingsSlide: React.FC<WindowsSettingsSlideProps> = ({
           <SettingsInfoCard
             icon="🗄️"
             title="Clean Desk Policy"
-            description="Lock physical documents, keys, and access cards in drawers at the end of every shift."
+            description={slidesData.settingsSlide.card1Desc}
             action=""
           />
 
@@ -217,7 +218,7 @@ const WindowsSettingsSlide: React.FC<WindowsSettingsSlideProps> = ({
             <SettingsInfoCard
               icon="🛡️"
               title="Lock Screen Shortcut"
-              description="Always lock your PC (Win + L or Cmd + Ctrl + Q) when leaving your desk."
+              description={slidesData.settingsSlide.card2Desc}
               action=""
             />
           )}
@@ -226,7 +227,7 @@ const WindowsSettingsSlide: React.FC<WindowsSettingsSlideProps> = ({
             <SettingsInfoCard
               icon="🔐"
               title="Full-Disk Encryption"
-              description="Ensure BitLocker (Windows) or FileVault (Mac) is active on your machine."
+              description={slidesData.settingsSlide.card3Desc}
               action=""
             />
           )}
