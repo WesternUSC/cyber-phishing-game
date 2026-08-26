@@ -15,6 +15,7 @@ import ModuleCompletion from '@/components/module-completion';
 import { Trophy } from 'lucide-react';
 import { saveResult } from '@/lib/saveResult';
 import SlackApp from '@/components/slack-app';
+import Selection from '@/components/selection';
 
 const emails = emailData.emails as Email[];
 const STORAGE_KEY = 'phishquest-run';
@@ -318,6 +319,8 @@ export default function HomePage() {
   const [completedRippling, setCompletedRippling] = useState(false);
   const [completedSlack, setCompletedSlack] = useState(false);
 
+  const [madeSelection, setMadeSelection] = useState(false);
+
   const [openApp, setOpenApp] = useState<
   | {
       name: string;
@@ -402,11 +405,11 @@ export default function HomePage() {
           loginCode: loginCode.trim(),
         }));
 
-        
+        /*
         console.log('===== PARSED USERS =====');
         console.table(parsedUsers);
         console.log('==========================');
-        
+        */
 
         setUsers(parsedUsers);
       })
@@ -830,6 +833,12 @@ export default function HomePage() {
 
   if (!nameEntered) {
     return nameContent;
+  }
+
+  if (!madeSelection) {
+    return (
+    <Selection playerName={nameInput.trim()} setMadeSelection={setMadeSelection}/>
+    );
   }
 
   if (!slidesSeen) {
