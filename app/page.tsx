@@ -105,6 +105,12 @@ const bookmarks = [
   { name: "GitHub", icon: "/github_logo.webp" },
 ];
 
+type User = {
+  name: string;
+  email: string;
+  loginCode: string;
+};
+
 // ── Tablet detection hook ─────────────────────────────────────────────────────
 // Matches any touch-based device >= 768px wide (iPad, Android tablet, etc.)
 // Returns false on SSR and flips to true on the client when applicable.
@@ -272,6 +278,7 @@ export default function HomePage() {
   const [introSeen, setIntroSeen] = useState(false);
   const [slidesSeen, setSlidesSeen] = useState(false);
   const [nameError, setNameError] = useState(false);
+  const [users, setUsers] = useState<User[]>([]);
   const [clockStr, setClockStr] = useState('');
   const [feedback, setFeedback] = useState<{
     open: boolean;
@@ -380,6 +387,34 @@ export default function HomePage() {
     };
   }, []);
 
+  useEffect(() => {
+    fetch('login_info.csv')
+      .then((response) => response.text())
+      .then((csv) => {
+        const rows = csv
+          .trim()
+          .split('\n')
+          .map((row) => row.split(','));
+
+        const parsedUsers = rows.map(([name, email, loginCode]) => ({
+          name: name.trim().replace(/[,"]/g, ''),
+          email: email.trim(),
+          loginCode: loginCode.trim(),
+        }));
+
+        
+        console.log('===== PARSED USERS =====');
+        console.table(parsedUsers);
+        console.log('==========================');
+        
+
+        setUsers(parsedUsers);
+      })
+      .catch((error) => {
+        console.error('Could not load CSV:', error);
+      });
+  }, []);
+
   /*
   const currentEmail = emails.find((e) => e.id === state.currentEmailId);
   const score = Object.values(state.decisions).filter((d) => d.correct).length;
@@ -407,6 +442,17 @@ export default function HomePage() {
       setNameError(true);
       return;
     }
+
+    const player = users.find(
+      (player) => player.loginCode === trimmed
+    );
+
+    if (!player) {
+      setNameError(true);
+      return;
+    }
+
+    setNameInput(player.name);
 
     setNameError(false);
     setNameEntered(true);
@@ -613,9 +659,8 @@ export default function HomePage() {
               </p>
 
               <p>
-                Take your time and pay attention to the details. The goal isn't just
-                to get the right answer, but to learn how to recognize warning signs
-                that could help protect you in the real world.
+                You should have receieved a login code via email. Please enter this
+                code below to access the training.
               </p>
 
               <div className="rounded-xl border border-[#4f2584]/15 bg-[#f7f3fb] p-4">
@@ -634,19 +679,20 @@ export default function HomePage() {
                 htmlFor="player-name"
                 className="mb-2 block text-sm font-semibold text-gray-800"
               >
-                Your name
+                Your login code
               </label>
 
               <input
                 id="player-name"
                 type="text"
+                inputMode="numeric"
                 value={nameInput}
                 onChange={(e) => {
                   setNameInput(e.target.value);
                   if (nameError) setNameError(false);
                 }}
                 onKeyDown={(e) => e.key === 'Enter' && start()}
-                placeholder="Enter your name"
+                placeholder="Enter your login code"
                 className={`w-full rounded-xl border px-4 py-3 text-sm transition focus:outline-none focus:ring-4 ${
                   nameError
                     ? 'border-red-400 bg-red-50 focus:border-red-400 focus:ring-red-400/10'
@@ -658,7 +704,7 @@ export default function HomePage() {
               {nameError && (
                 <p className="mt-2 flex items-center gap-1.5 text-xs text-red-500">
                   <span>⚠</span>
-                  Please enter your name to continue.
+                  Invalid login code.
                 </p>
               )}
             </div>

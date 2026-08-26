@@ -529,23 +529,39 @@ export const slides = (playerName: string) => [
             alignItems: "center",
             height: "100%",
             width: "100%",
+            position: "relative",
           }}
         >
+          <div
+            style={{
+              position: "absolute",
+              top: "10%",
+              left: "50%",
+              transform: "translateX(-50%)",
+              color: "#9b7db5",
+              fontSize: "3.5rem",
+              fontWeight: "bold",
+              textAlign: "center",
+              whiteSpace: "nowrap",
+            }}
+          >
+            Welcome, {playerName}!
+          </div>
 
-        <div
-          style={{
-            backgroundColor: "#e0f7ff",
-            color: "#0097a7",
-            padding: "1rem 1.5rem",
-            borderRadius: "16px",
-            fontSize: "1.25rem",
-            maxWidth: "500px",
-            lineHeight: 1.5,
-            boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
-          }}
-        >
-          {slidesData.introSlide.subtitle}
-        </div>
+          <div
+            style={{
+              backgroundColor: "#e0f7ff",
+              color: "#0097a7",
+              padding: "1rem 1.5rem",
+              borderRadius: "16px",
+              fontSize: "1.25rem",
+              maxWidth: "500px",
+              lineHeight: 1.5,
+              boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
+            }}
+          >
+            {slidesData.introSlide.subtitle}
+          </div>
 
           <h1
             style={{
@@ -559,16 +575,26 @@ export const slides = (playerName: string) => [
             {slidesData.introSlide.title}
           </h1>
 
-          <p style={{color:"#4f2683", fontSize: "1.25rem"}}>{slidesData.introSlide.desc}</p>
-        
-            <div style={{textAlign: "center",
-                fontSize: 12,
-                color: "#888",
-                position: "fixed",
-                marginTop: "30%"}}>
-              {slidesData.introSlide.desc2}
-            </div>
+          <p
+            style={{
+              color: "#4f2683",
+              fontSize: "1.25rem",
+            }}
+          >
+            {slidesData.introSlide.desc}
+          </p>
 
+          <div
+            style={{
+              textAlign: "center",
+              fontSize: 12,
+              color: "#888",
+              position: "fixed",
+              marginTop: "30%",
+            }}
+          >
+            {slidesData.introSlide.desc2}
+          </div>
         </div>
       </>
     ),
