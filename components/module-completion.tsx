@@ -46,10 +46,17 @@ const MODULES = [
 
 type ModuleCompletionProps = {
   onComplete: () => void;
+  completedDrive: boolean;
+  completedCalendar: boolean;
+  completedTrello: boolean;
+  completedRippling: boolean;
+  completedEmails: boolean;
+  completedTicketing: boolean;
+  completedSlack: boolean;
 };
 
 export default function ModuleCompletion({
-  onComplete,
+  onComplete, completedDrive, completedCalendar, completedTrello, completedRippling, completedEmails, completedTicketing, completedSlack
   }: ModuleCompletionProps) {
     const [completed, setCompleted] = useState<string[]>(() => {
     if (typeof window === 'undefined') return [];
@@ -110,6 +117,58 @@ export default function ModuleCompletion({
   }, [allModulesComplete]);
 
   function toggleModule(id: string) {
+
+    switch (id) {
+      case "google-drive":
+        if (!completedDrive) {
+          alert("You have not yet completed this module!");
+          return;
+        }
+        break;
+
+      case "email-security":
+        if (!completedEmails) {
+          alert("You have not yet completed this module!");
+          return;
+        }
+        break;
+
+      case "google-calendar":
+        if (!completedCalendar) {
+          alert("You have not yet completed this module!");
+          return;
+        }
+        break;
+
+      case "trello":
+        if (!completedTrello) {
+          alert("You have not yet completed this module!");
+          return;
+        }
+        break;
+
+      case "rippling":
+        if (!completedRippling) {
+          alert("You have not yet completed this module!");
+          return;
+        }
+        break;
+
+      case "ticketing-system":
+        if (!completedTicketing) {
+          alert("You have not yet completed this module!");
+          return;
+        }
+        break;
+
+      case "slack":
+        if (!completedSlack) {
+          alert("You have not yet completed this module!");
+          return;
+        }
+        break;
+    }
+
     setCompleted((current) =>
       current.includes(id)
         ? current.filter((moduleId) => moduleId !== id)

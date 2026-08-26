@@ -304,6 +304,13 @@ export default function HomePage() {
   const [issueRelatedTo, setIssueRelatedTo] = useState("");
   const [subject, setSubject] = useState("");
 
+  const [completedDrive, setCompletedDrive] = useState(false);
+  const [completedTicketing, setCompletedTicketing] = useState(false);
+  const [completedCalendar, setCompletedCalendar] = useState(false);
+  const [completedTrello, setCompletedTrello] = useState(false);
+  const [completedRippling, setCompletedRippling] = useState(false);
+  const [completedSlack, setCompletedSlack] = useState(false);
+
   const [openApp, setOpenApp] = useState<
   | {
       name: string;
@@ -432,6 +439,31 @@ export default function HomePage() {
     }
   }
 
+  function startModule(moduleId: string) {
+    setModuleStarted((prev) => ({
+      ...prev,
+      [moduleId]: true,
+    }))
+
+    switch (moduleId) {
+      case "outlook":
+        setCompletedDrive(true);
+        break;
+
+      case "calendar":
+        setCompletedCalendar(true);
+        break;
+
+      case "trello":
+        setCompletedTrello(true);
+        break;
+
+      case "rippling":
+        setCompletedRippling(true);
+        break;
+    }
+  }
+
   function ModuleIntro({
     moduleId,
     title,
@@ -484,12 +516,7 @@ export default function HomePage() {
           </div>
 
           <button
-            onClick={() =>
-              setModuleStarted((prev) => ({
-                ...prev,
-                [moduleId]: true,
-              }))
-            }
+            onClick={() => startModule(moduleId)}
             
             className="mt-7 rounded-xl bg-[#4f2584] px-8 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[#3d1d68] hover:shadow-md"
           >
@@ -1116,7 +1143,7 @@ export default function HomePage() {
 
                 <span
                   className={`ml-2 truncate text-[13px] ${
-                    activeTab === "phishquest" ? "text-white" : "text-white/70"
+                    activeTab === "modules" ? "text-white" : "text-white/70"
                   }`}
                 >
                   Modules
@@ -1753,6 +1780,7 @@ export default function HomePage() {
                                   subject.trim() !== "";
 
                                 if (allFieldsFilled) {
+                                  setCompletedTicketing(true);
                                   setWesternPopup(
                                     "Form submitted successfully. Please continue to the next module."
                                   );
@@ -1914,6 +1942,13 @@ export default function HomePage() {
                 setSlidesSeen(false);
                 setActiveTab('phishquest');
               }}
+              completedDrive={completedDrive}
+              completedCalendar={completedCalendar}
+              completedTrello={completedTrello}
+              completedRippling={completedRippling}
+              completedEmails={gameComplete}
+              completedTicketing={completedTicketing}
+              completedSlack={completedSlack}
             />
           )}
         </div>
@@ -1925,6 +1960,7 @@ export default function HomePage() {
               playerName={state.playerName}
               onMinimize={() => setisSlackClosed(true)}
               onClose={() => setisSlackClosed(true)}
+              setCompletedSlack={setCompletedSlack}
             />
           </div>
         )}  

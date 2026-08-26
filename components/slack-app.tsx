@@ -7,6 +7,7 @@ type SlackAppProps = {
   playerName: string;
   onMinimize: () => void;
   onClose: () => void;
+  setCompletedSlack: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 type EricMessage = {
@@ -20,6 +21,7 @@ export default function SlackApp({
   playerName,
   onMinimize,
   onClose,
+  setCompletedSlack,
 }: SlackAppProps) {
   const [currentConversation, setCurrentConversation] =
     useState<'general' | 'eric'>('general');
@@ -66,6 +68,8 @@ export default function SlackApp({
     setMessage('');
 
     setTimeout(() => {
+      setCompletedSlack(true);
+
       const ericReply: EricMessage = {
         id: Date.now() + 1,
         sender: 'eric',
