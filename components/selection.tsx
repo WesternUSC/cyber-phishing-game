@@ -17,22 +17,22 @@ const defaultOptions: TrainingOption[] = [
   {
     id: "1",
     label: "EMPLOYEE SECURITY ONBOARDING",
-    color: "#6366f1",
+    color: "#582c83",
   },
   {
     id: "2",
     label: "PLACEHOLDER 1",
-    color: "#ef4444",
+    color: "#582c83",
   },
   {
     id: "3",
     label: "PLACEHOLDER 2",
-    color: "#10b981",
+    color: "#582c83",
   },
   {
     id: "4",
     label: "PLACEHOLDER 3",
-    color: "#f59e0b",
+    color: "#582c83",
   },
 ];
 
@@ -67,6 +67,12 @@ export default function Selection({
       </div>
 
       <div style={styles.content}>
+        <img
+          src="usc-logo.png"
+          alt="USC logo"
+          style={styles.logo}
+        />
+
         <p style={styles.chooseText}>Please select one</p>
 
         <div style={styles.optionsContainer}>
@@ -160,7 +166,7 @@ const styles: Record<string, React.CSSProperties> = {
     display: "flex",
     flexDirection: "column",
     alignItems: "stretch",
-    marginTop: "clamp(60px, 12vh, 120px)",
+    marginTop: "30px",
   },
 
   chooseText: {
@@ -238,4 +244,13 @@ const styles: Record<string, React.CSSProperties> = {
     marginLeft: "12px",
     fontSize: "1.5rem",
   },
+
+  logo: {
+    width: "80px",
+    height: "auto",
+    objectFit: "contain",
+    alignSelf: "center",
+    marginBottom: "20px",
+  },
+
 };
