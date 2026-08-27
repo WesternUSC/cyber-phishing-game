@@ -9,12 +9,12 @@
         "title": "Module 1: Threats & Employee Role",
         "subtitle": "MODULE 1",
         "moduleTitle": "THREATS & EMPLOYEE ROLE",
-        "desc": "Understanding why higher education student unions are prime targets and how your daily habits protect student data."
+        "desc": "Understanding why higher education workplaces are prime targets and how your daily habits protect student data."
     },
     "whyMattersSlide": {
         "title": "Why Cyber Security Matters Here",
         "card1Title": "High-Value Target",
-        "card1Desc": "Student Unions manage high volumes of personal records, health/dental plan sign-ups, event payments, and club financial accounts across sprawling campus networks.",
+        "card1Desc": "The USC manages high volumes of personal records, health/dental plan sign-ups, event payments, and club financial accounts across sprawling campus networks.",
         "card2Title": "Human Firewall Concept",
         "card2Desc": "According to CCCS guidelines, over 85% of organization security breaches originate from social engineering or human error rather than direct system exploits."
     },
@@ -76,13 +76,13 @@
         "title": "Module 3: Phishing & Social Engineering",
         "subtitle": "MODULE 3",
         "moduleTitle": "PHISHING & SOCIAL ENGINEERING",
-        "desc": "Identifying deception techniques targeted at student union executives, staff, and student volunteers."
+        "desc": "Identifying deception techniques targeted at executives, staff, and student volunteers."
     },
     "phishingSlide": {
         "title": "Spotting Phishing",
         "subtitle": "Common Attack Scenarios",
-        "desc1": "Threat actors often impersonate Union Executives requesting urgent gift card purchases, direct deposit charges, or vendor invoice payments.",
-        "desc2": "Watch for spoofed university domain names (e.g., @u-canada-studentunion.ca vs official @studentunion.ca), high urgency, and unexpected attachments."
+        "desc1": "Threat actors often impersonate Executives requesting urgent gift card purchases, direct deposit charges, or vendor invoice payments.",
+        "desc2": "Watch for spoofed university domain names (e.g., @u-canada-studentcouncil.ca vs official @studentcouncil.ca), high urgency, and unexpected attachments."
     },
     "emailSlide": {
         "title": "3-Step Email Verification Process",
@@ -111,7 +111,7 @@
     "cloudSlide": {
         "title": "Safe Cloud & File Sharing Rules",
         "card1Title": "Approved Practices",
-        "card1L1": "Store student union documents on official tenant OneDrive or SharePoint with restricted permissions.",
+        "card1L1": "Store documents on official tenant OneDrive or SharePoint with restricted permissions.",
         "card1L2": "Share the file links with specific named accounts rather than 'Anyone with the link.'",
         "card1L3": "Encrypt sensitive financial spreadsheets prior to distribution.",
         "card2Title": "Prohibited Practices",
@@ -134,7 +134,7 @@
     "wifiSlide": {
         "title": "Campus Wi-Fi & Remote Work Safety",
         "card1Title": "Use Secure Networks",
-        "card1Desc": "Connect to encrypted campus networks (e.g., eduroam or Student Union Wi-Fi). Never perform admin duties on open public Wi-Fi without VPN.",
+        "card1Desc": "Connect to encrypted campus networks (e.g., eduroam). Never perform admin duties on open public Wi-Fi without VPN.",
         "card2Title": "Avoid Public USB Chargers",
         "card2Desc": "Use wall outlets rather than public USB charging stations to prevent 'juice jacking' malware installation.",
         "card3Title": "Beware of Shoulder Surfing",
@@ -147,7 +147,7 @@
         "card1Title": "1. Isolate",
         "card1Desc": "Disconnect Wi-Fi or network cables immediately if malware is suspected.",
         "card2Title" : "2. Report",
-        "card2Desc": "Contact Union IT & Privacy Officer within 15 minutes of discovery.",
+        "card2Desc": "Contact IT & Privacy Officer within 15 minutes of discovery.",
         "card3Title": "3. Preserve",
         "card3Desc": "Document details, take screenshots, and do not reboot or wipe machine.",
         "card4Title": "4. Remediate",
