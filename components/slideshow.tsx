@@ -11,6 +11,7 @@ interface SlideshowProps {
   slides: Slide[];
   startSlide?: number;
   onLastSlide?: () => void;
+  playerName: string;
 }
 
 // title slides that don't require 1 minute wait
@@ -28,6 +29,7 @@ const Slideshow: React.FC<SlideshowProps> = ({
   slides,
   startSlide = 0,
   onLastSlide,
+  playerName
 }) => {
   const [current, setCurrent] = useState(startSlide);
   const [slideStartedAt, setSlideStartedAt] = useState(Date.now());
@@ -253,10 +255,14 @@ const Slideshow: React.FC<SlideshowProps> = ({
 
   return (
     <div style={styles.container}>
+      {/*}
       <div style={styles.header}>
         {slides[current].title && (
           <h3>{slides[current].title}</h3>
         )}
+      </div>*/}
+      <div style={styles.header}>
+        {playerName}
       </div>
 
       <div

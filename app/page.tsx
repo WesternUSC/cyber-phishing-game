@@ -845,6 +845,7 @@ export default function HomePage() {
     return (
       <Slideshow
         slides={slides(nameInput.trim())}
+        playerName={nameInput.trim()}
         onLastSlide={() => {
           setSlidesSeen(true);
 
