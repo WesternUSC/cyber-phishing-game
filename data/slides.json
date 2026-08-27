@@ -79,7 +79,7 @@
         "desc": "Identifying deception techniques targeted at student union executives, staff, and student volunteers."
     },
     "phishingSlide": {
-        "title": "Spotting Phishing in Student Union",
+        "title": "Spotting Phishing",
         "subtitle": "Common Attack Scenarios",
         "desc1": "Threat actors often impersonate Union Executives requesting urgent gift card purchases, direct deposit charges, or vendor invoice payments.",
         "desc2": "Watch for spoofed university domain names (e.g., @u-canada-studentunion.ca vs official @studentunion.ca), high urgency, and unexpected attachments."
