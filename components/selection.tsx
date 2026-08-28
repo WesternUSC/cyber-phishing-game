@@ -16,7 +16,7 @@ type SelectionProps = {
 const defaultOptions: TrainingOption[] = [
   {
     id: "1",
-    label: "EMPLOYEE SECURITY ONBOARDING",
+    label: "INFORMATION SYSTEMS ONBOARDING",
     color: "#582c83",
   },
   {
