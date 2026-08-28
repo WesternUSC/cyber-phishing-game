@@ -9,8 +9,8 @@ type TrainingOption = {
 type SelectionProps = {
   playerName: string;
   options?: TrainingOption[];
-  onStartTraining?: (selectedOption: TrainingOption) => void;
   setMadeSelection: React.Dispatch<React.SetStateAction<boolean>>;
+  setSelectedSlides: React.Dispatch<React.SetStateAction<'eso' | 'policies' | 'job' | 'culture'>>
 };
 
 const defaultOptions: TrainingOption[] = [
@@ -21,17 +21,17 @@ const defaultOptions: TrainingOption[] = [
   },
   {
     id: "2",
-    label: "PLACEHOLDER 1",
+    label: "POLICIES AND PROCEDURES",
     color: "#582c83",
   },
   {
     id: "3",
-    label: "PLACEHOLDER 2",
+    label: "JOB TRAINING",
     color: "#582c83",
   },
   {
     id: "4",
-    label: "PLACEHOLDER 3",
+    label: "USC CULTURE",
     color: "#582c83",
   },
 ];
@@ -39,8 +39,8 @@ const defaultOptions: TrainingOption[] = [
 export default function Selection({
   playerName,
   options = defaultOptions,
-  onStartTraining,
-  setMadeSelection
+  setMadeSelection,
+  setSelectedSlides
 }: SelectionProps) {
   const [selectedId, setSelectedId] = useState(options[0]?.id ?? "");
 
@@ -49,8 +49,26 @@ export default function Selection({
   );
 
   const handleStart = () => {
-    if (selectedOption) {
-      onStartTraining?.(selectedOption);
+    switch (selectedId) {
+      case "1":
+        setSelectedSlides('eso');
+        break;
+
+      case "2":
+        setSelectedSlides('policies');
+        break;
+
+      case "3":
+        setSelectedSlides('job');
+        break;
+
+      case "4":
+        setSelectedSlides('culture');
+        break;
+
+      default:
+        setSelectedSlides('eso');
+        break;
     }
 
     setMadeSelection(true);

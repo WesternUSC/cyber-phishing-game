@@ -16,6 +16,8 @@ import { Trophy } from 'lucide-react';
 import { saveResult } from '@/lib/saveResult';
 import SlackApp from '@/components/slack-app';
 import Selection from '@/components/selection';
+import { policiesSlides } from '@/components/slides-policies';
+import { jobTrainingSlides } from '@/components/slides-job-training';
 
 const emails = emailData.emails as Email[];
 const STORAGE_KEY = 'phishquest-run';
@@ -320,6 +322,8 @@ export default function HomePage() {
   const [completedSlack, setCompletedSlack] = useState(false);
 
   const [madeSelection, setMadeSelection] = useState(false);
+
+  const [selectedSlides, setSelectedSlides] = useState<'eso' | 'policies' | 'job' | 'culture'>('eso');
 
   const [openApp, setOpenApp] = useState<
   | {
@@ -837,28 +841,53 @@ export default function HomePage() {
 
   if (!madeSelection) {
     return (
-    <Selection playerName={nameInput.trim()} setMadeSelection={setMadeSelection}/>
+    <Selection playerName={nameInput.trim()} setMadeSelection={setMadeSelection} setSelectedSlides={setSelectedSlides} />
     );
   }
+
+  const getSlides = () => {
+    switch (selectedSlides) {
+      case 'eso':
+        return slides(nameInput.trim());
+
+      case 'policies':
+        return policiesSlides(nameInput.trim());
+
+      case 'job':
+        return jobTrainingSlides(nameInput.trim());
+
+      case 'culture':
+        return policiesSlides(nameInput.trim());
+
+      default:
+        return slides(nameInput.trim());
+    }
+  };
+
+  const esoLastSlide = () => {
+    if (selectedSlides === "eso") {
+      setSlidesSeen(true);
+
+      const runId = crypto.randomUUID();
+
+      dispatch({
+        type: 'START',
+        name: nameInput.trim(),
+        firstEmailId: emails[0].id,
+        runId,
+      });
+
+      openedAtRef.current = Date.now();
+    }
+  };
 
   if (!slidesSeen) {
     return (
       <Slideshow
-        slides={slides(nameInput.trim())}
+        slides={getSlides()}
         playerName={nameInput.trim()}
         onLastSlide={() => {
-          setSlidesSeen(true);
-
-          const runId = crypto.randomUUID();
-
-          dispatch({
-            type: 'START',
-            name: nameInput.trim(),
-            firstEmailId: emails[0].id,
-            runId,
-          });
-
-          openedAtRef.current = Date.now();
+          esoLastSlide();
         }}
       />
     );
