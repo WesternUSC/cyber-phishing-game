@@ -390,19 +390,98 @@ export const policiesSlides = (playerName: string) => [
             style={{
               flex: 1,
               display: "flex",
-              alignItems: "center",
+              flexDirection: "column",
               justifyContent: "center",
-              gap: "2rem",
+              gap: "1.5rem",
+              marginTop: "1.5rem",
             }}
           >
-            <p>{slidesData.policiesSlide.desc}</p>
+            <div
+              style={{
+                width: "100%",
+                border: "1px solid #e2e8f0",
+                borderRadius: "8px",
+                overflow: "hidden",
+              }}
+            >
+              {slidesData.policiesSlide.table.map((row, index) => (
+                <div
+                  key={row.label}
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "30% 70%",
+                    borderBottom:
+                      index < slidesData.policiesSlide.table.length - 1
+                        ? "1px solid #e2e8f0"
+                        : "none",
+                  }}
+                >
+                  <div
+                    style={{
+                      backgroundColor: "#f2eef7",
+                      color: "#582c83",
+                      fontWeight: 700,
+                      padding: "0.75rem 1rem",
+                      fontSize: "1rem",
+                    }}
+                  >
+                    {row.label}
+                  </div>
+
+                  <div
+                    style={{
+                      backgroundColor: "#ffffff",
+                      color: "#334155",
+                      padding: "0.75rem 1rem",
+                      fontSize: "1rem",
+                    }}
+                  >
+                    {row.value}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "0.75rem",
+                padding: "1.25rem 1.5rem",
+                backgroundColor: "#faf9fc",
+                borderLeft: "4px solid #582c83",
+                borderRadius: "0 8px 8px 0",
+              }}
+            >
+              <p
+                style={{
+                  margin: 0,
+                  color: "#334155",
+                  fontSize: "1.05rem",
+                  lineHeight: 1.6,
+                }}
+              >
+                {slidesData.policiesSlide.description}
+              </p>
+
+              <p
+                style={{
+                  margin: 0,
+                  color: "#475569",
+                  fontSize: "1.05rem",
+                  lineHeight: 1.6,
+                }}
+              >
+                {slidesData.policiesSlide.scope}
+              </p>
+            </div>
           </div>
         </div>
       </>
     ),
   },
   {
-    title: slidesData.ediSlide.title,
+    title: slidesData.useSlide.title,
     content: (
       <>
         <div
@@ -422,7 +501,7 @@ export const policiesSlides = (playerName: string) => [
                 fontSize: "2.75rem",
               }}
             >
-              {slidesData.ediSlide.title.toUpperCase()}
+              {slidesData.useSlide.title.toUpperCase()}
             </h1>
 
             <div
@@ -439,13 +518,58 @@ export const policiesSlides = (playerName: string) => [
           <div
             style={{
               flex: 1,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "2rem",
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              gap: "0.85rem",
+              alignContent: "center",
+              marginTop: "1.25rem",
             }}
           >
-            <p>{slidesData.ediSlide.desc}</p>
+            {slidesData.useSlide.items.map((item, index) => (
+              <div
+                key={index}
+                style={{
+                  display: "flex",
+                  alignItems: "flex-start",
+                  gap: "0.85rem",
+                  padding: "0.9rem 1rem",
+                  backgroundColor: index % 2 === 0 ? "#faf9fc" : "#ffffff",
+                  border: "1px solid #e2e8f0",
+                  borderRadius: "10px",
+                  boxShadow: "0 2px 6px rgba(88, 44, 131, 0.06)",
+                  boxSizing: "border-box",
+                }}
+              >
+                <div
+                  style={{
+                    flexShrink: 0,
+                    width: "30px",
+                    height: "30px",
+                    borderRadius: "50%",
+                    backgroundColor: "#f2eef7",
+                    color: "#582c83",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontWeight: 700,
+                    fontSize: "0.85rem",
+                  }}
+                >
+                  {String(index + 1).padStart(2, "0")}
+                </div>
+
+                <p
+                  style={{
+                    margin: 0,
+                    color: "#334155",
+                    fontSize: "0.91rem",
+                    lineHeight: 1.45,
+                  }}
+                >
+                  {item}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </>

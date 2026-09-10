@@ -6,12 +6,46 @@
         "desc": ""
     },
     "policiesSlide": {
-        "title": "Policies and Procedures",
-        "desc": "Placeholder text."
+        "title": "Policy Summary",
+        "table": [
+            {
+                "label": "Authority",
+                "value": "Chief Operating Officer"
+            },
+            {
+                "label": "Date Ratified",
+                "value": "February 2, 2024"
+            },
+            {
+                "label": "Next Review Date",
+                "value": "February 2027"
+            },
+            {
+                "label": "Previous Amendments",
+                "value": "August 2020; May 2018"
+            },
+            {
+                "label": "Delegate(s)",
+                "value": "Senior Manager, Information Systems"
+            }
+        ],
+        "description": "The Acceptable Use Policy sets out employees' responsibilities when using USC corporate IT systems (computers, email, network, and software). Corporate systems are provided for business purposes and must be used to protect the USC's public image, security, and data, and to comply with University of Western Ontario network policies since USC systems are hosted on Western's network.",
+        "scope": "The policy covers acceptable personal use, system security, monitoring of activity, data protection, use of personal devices when working remotely, and the consequences of violations, which range from verbal warnings to termination and potential criminal referral."
     },
-    "ediSlide": {
-        "title": "EDI Training",
-        "desc": "Placeholder text."
+    "useSlide": {
+        "title": "Acceptable Use Requirements",
+        "items": [
+            "Corporate systems are for business purposes; use that conflicts with USC's interests or breaches policy is prohibited.",
+            "Because USC is hosted on Western's network, Western's confidentiality and information-governance policies also apply.",
+            "No abusive, discriminatory, harassing, inflammatory, profane, pornographic, or offensive material may be sent through corporate systems, and messages may never be sent anonymously or under a fictitious name.",
+            "Limited personal use is allowed only if it doesn't interfere with work, involve solicitation, support an outside for-profit activity, or risk embarrassing the USC.",
+            "Unauthorized, unlicensed, or pirated software is strictly prohibited; antivirus software must never be disabled, and virus incidents must be reported.",
+            "Login IDs and passwords are personal and must not be shared or written down; employees are responsible for all activity under their own ID and must report any suspected compromise to I.S.",
+            "USC Information Systems management may monitor usage patterns, web history, and email to maintain a safe and productive work environment.",
+            "Employees are legally and ethically responsible for protecting any sensitive, confidential, restricted, or proprietary data entrusted to them.",
+            "Personal devices used to access USC data while working from home must be patched, run up-to-date security software, and be password protected.",
+            "Confirmed violations can result in sanctions up to and including termination, and may be referred to authorities for criminal prosecution."
+        ]
     },
     "cbaSlide": {
         "title": "CBA",
