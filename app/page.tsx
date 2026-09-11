@@ -851,13 +851,13 @@ export default function HomePage() {
         return slides(nameInput.trim());
 
       case 'policies':
-        return policiesSlides(nameInput.trim());
+        return policiesSlides(nameInput.trim(), setSelectedSlides);
 
       case 'job':
         return jobTrainingSlides(nameInput.trim());
 
       case 'culture':
-        return policiesSlides(nameInput.trim());
+        return policiesSlides(nameInput.trim(), setSelectedSlides);
 
       default:
         return slides(nameInput.trim());

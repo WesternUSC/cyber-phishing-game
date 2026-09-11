@@ -1,62 +1,14 @@
 import slidesData from '@/data/policiesSlides.json'
 import MultipleChoiceQuestion from './multiple-choice-question';
 import questionsData from '@/data/questions.json';
+import ModuleTableOfContents from './module-title-slide';
 
-export const policiesSlides = (playerName: string) => [
+type slides = 'eso' | 'policies' | 'job' | 'culture';
+
+export const policiesSlides = (playerName: string, setCurrentSlides: React.Dispatch<React.SetStateAction<slides>>) => [
   {
-    title: slidesData.titleSlide.title,
-    content: (
-      <>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            height: "100%",
-            width: "100%",
-            backgroundColor: "#582c83",
-          }}
-        >
-
-        <div
-          style={{
-            color: "#ffffff",
-            fontSize: "1.25rem",
-          }}
-        >
-          {slidesData.titleSlide.subtitle}
-        </div>
-
-          <h1
-            style={{
-              fontSize: "5rem",
-              color: "#fff",
-              margin: 0,
-              textAlign: "center",
-              fontWeight: "bold",
-            }}
-          >
-            {slidesData.titleSlide.moduleTitle}
-          </h1>
-
-          <div
-            style={{
-              width: "80px",
-              height: "4px",
-              backgroundColor: "#9b7db5",
-              borderRadius: "2px",
-            }}
-          />
-
-          <br></br>
-
-          <p style={{color:"#ffffff", fontSize: "1.25rem", width: "40%", textAlign: "center"}}>
-            {slidesData.titleSlide.desc}
-          </p>
-        </div>
-      </>
-    ),
+    title: "Certificate of Completion",
+    content: <ModuleTableOfContents title={slidesData.titleSlide.title} setCurrentSlides={setCurrentSlides} />,
   },
   {
     title: slidesData.policiesSlide.title,
