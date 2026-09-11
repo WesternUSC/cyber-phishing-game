@@ -49,18 +49,52 @@
         "oneSix": "Person with Disabilities: Someone who has a physical, mental, sensory, or cognitive condition that, when combined with different barriers, might make it harder for them to fully participate and access services in the same way as others."
     },
     "slideTwo": {
-        "title": "2. CORPORATE PUBLIC IMAGE",
-        "twoOne": "Corporate online systems are public places for communications with our partners and stakeholders. All employees are, therefore, expected to maintain and enhance the USC's public image. No abusive, discriminatory, harassing, inflammatory, profane, pornographic, or offensive language or other materials are to be transmitted through the corporate systems.",
-        "twoTwo": "No message can be transmitted without the employee's identity. Transmittal of messages with anonymous or fictitious names is prohibited."
+        "title": "2. SCOPE",
+        "twoOne": "This policy applies to all USC employees, volunteers, and visitors."
     },
     "slideThree": {
-        "title": "3. PERSONAL USE",
-        "threeOne": "Any personal use must not interfere with normal business activities, must not involve solicitation, must not be associated with any for-profit outside business activity, and must not potentially embarrass the company."
+        "title": "3. RESPONSIBILITIES",
+        "threeOne": "The USC is committed to recognizing the dignity and independence of all staff, students, faculty and visitors and seeks to ensure that persons with disabilities have genuine, open and unhindered access to USC goods, services, facilities, accommodation, employment, buildings, structures and premises.",
+        "threeTwo": "The USC will comply with all applicable Federal, Provincial and Municipal legislation with respect to accessibility and will implement the standards specified under the Accessibility for Ontarians with Disabilities Act, 2005 ('AODA, 2005').",
+        "threeThree": "Policies, procedures and practices with respect to accessibility, including those required under the AODA, 2005 and its accompanying standards shall be made available on the USC's web site."
     },
     "slideFour": {
-        "title": "4. MAINTAINING SYSTEM SECURITY",
-        "fourOne": "Employee use of unauthorized, unlicensed, or pirated software is illegal and therefore is strictly prohibited. Unauthorized copying of proprietary software, publications, or files is prohibited, as is use of commercial software that in any way violates the applicable licensing agreement. All software downloaded must be authorized by and registered to the company. Users must not disable antivirus software and should report all virus occurrences.",
-        "fourTwo": "In order to ensure the security of our corporate data, IDs and passwords should not be shared with others or written down in easily accessible areas. Users may not access a computer account that belongs to another employee or department without permission. Personnel must use their own log-on ID and password only, are responsible for all activity on their log-on ID, and must report any known or suspected compromise of their ID to the I.S. Department."
+        "title": "4. PROCEDURES",
+        "fourOne": "Assistive Devices",
+        "fourOneOne": "The USC welcomes persons with disabilities to use assistive devices to obtain, use or benefit from our goods and services.",
+        "fourTwo": "Service Animals",
+        "fourTwoOne": "The USC welcomes persons with disabilities who are accompanied by a service animal onto the parts of our premises that are open to the public and commits to finding alternatives to the use of service animals if the service is provided in a location in which animals are prohibited by law (e.g. health or safety reasons).",
+        "fourThree": "Support Persons",
+        "fourThreeOne": "A person with a disability who is accompanied by a support person will be allowed to have that person accompany them on our premises.",
+        "fourThreeTwo": "In the case where a fee will be charged for the admission of a support person, the fee will be communicated and posted accordingly by the USC through its website, brochure or other public methods."
+    },
+    "slideFourContinued": {
+        "title": "4. PROCEDURES (Continued)",
+        "fourFour": "Temporary Disruptions to Service",
+        "fourFourOne": "The USC will notify customers promptly in the event that the USC has a planned or unexpected disruption to services or facilities for customers with disabilities. This clearly posted notice will include information about the reason for the disruption, its anticipated length of time, and a description of alternative facilities or services, if available. 1. Notice may be posted on location, on the USC's web site, or otherwise as is reasonable in the circumstances.",
+        "fourFourTwo": "For non-USC disruptions, please see information posted by Western University at conspicuous locations on our premises and on the University's accessibility website.",
+        "fourFive": "Training",
+        "fourFiveOne": "The USC will provide training to employees, volunteers and others who deal with the public or other third parties on their behalf.",
+        "fourFiveTwo": "Training will also be provided to every person who participates in developing USC policies, practices and procedures governing the provision of goods or services to members of the public or other third parties.",
+        "fourFiveThree": "Training will occur on an ongoing basis and whenever changes are made to relevant policies, practices and procedures. Training will be provided to each person as soon as practicable after he or she is assigned applicable duties.",
+        "fourFiveFour": {
+            "intro": "Training will include a review of the purposes of the Accessibility for Ontarians with Disabilities Act, 2005, the requirements of the Customer Service standard, and information about the following matters:",
+            "items": [
+                "1. How to interact and communicate with people with various types of disabilities.",
+                "2. How to interact with persons with disabilities who use an assistive device or require the assistance of a service animal or a support person.",
+                "3. How to use equipment or devices available at the USC that may help with the provision of goods or services to a person with a disability.",
+                "4. What to do if a person with a disability is having difficulty accessing the USC's goods and services.",
+                "5. USC policies, practices and procedures relating to the provision of goods and services to persons with disabilities."
+            ]
+        },  
+        "fourFiveFive": "The USC will keep records of the training provided, including dates on which training is provided and the number of individuals to whom it is provided."
+    },
+    "slideFourContinuedTwo": {
+        "title": "4. PROCEDURES (Continued)",
+        "fourSix": "Feedback",
+        "fourSixOne": "The USC welcomes feedback on how it provides goods and services to persons with disabilities. Feedback can be given in person, by telephone, in writing, or electronically via email or other digital formats.",
+        "fourSixTwo": "The USC will make every reasonable and timely effort to: 1. Respond to feedback which are complaints; and, 2. Answer feedback which are questions.",
+        "fourSixThree": "The USC will make this document available to any person who requests it in a mutually agreed upon format."
     },
     "slideFive": {
         "title": "5. MONITORING OF ACTIVITY",

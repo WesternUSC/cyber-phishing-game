@@ -140,6 +140,912 @@ export const policiesSlides = (playerName: string, setCurrentSlides: React.Dispa
     ),
   },
   {
+    title: slidesData.slideOne.title,
+    content: (
+      <>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            height: "100%",
+            padding: "2rem 3rem",
+            boxSizing: "border-box",
+          }}
+        >
+
+          <h1
+            style={{
+              margin: 0,
+              color: "#582c83",
+              fontSize: "2.75rem",
+            }}
+          >
+            {slidesData.slideOne.title.toUpperCase()}
+          </h1>
+
+          <div
+            style={{
+              marginTop: "0.75rem",
+              height: "3px",
+              width: "100%",
+              backgroundColor: "#e2e8f0",
+              borderRadius: "2px",
+            }}
+          />
+
+          <div
+            style={{
+              flex: 1,
+              display: "flex",
+              alignItems: "flex-start",
+              justifyContent: "center",
+              gap: "2rem",
+              padding: "2rem 0",
+            }}
+          >
+
+            <div
+              style={{
+                flex: 1,
+                minHeight: "280px",
+                height: "auto",
+                backgroundColor: "#f1f3f5",
+                borderRadius: "12px",
+                padding: "2rem",
+                boxSizing: "border-box",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+              }}
+            >
+              <h2
+                style={{
+                  margin: 0,
+                  color: "#582c83",
+                  fontSize: "1.5rem",
+                }}
+              >
+                1.1
+              </h2>
+
+              <p
+                style={{
+                  marginTop: "1rem",
+                  marginBottom: 0,
+                  color: "#374151",
+                  fontSize: "1.2rem",
+                  lineHeight: 1.6,
+                }}
+              >
+                {slidesData.slideOne.oneOne}
+              </p>
+            </div>
+
+            <div
+              style={{
+                flex: 1,
+                minHeight: "280px",
+                height: "auto",
+                backgroundColor: "#f1f3f5",
+                borderRadius: "12px",
+                padding: "2rem",
+                boxSizing: "border-box",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+              }}
+            >
+              <h2
+                style={{
+                  margin: 0,
+                  color: "#582c83",
+                  fontSize: "1.5rem",
+                }}
+              >
+                1.2
+              </h2>
+
+              <p
+                style={{
+                  marginTop: "1rem",
+                  marginBottom: 0,
+                  color: "#374151",
+                  fontSize: "1.2rem",
+                  lineHeight: 1.6,
+                }}
+              >
+                {slidesData.slideOne.oneTwo}
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </>
+    ),
+  },
+  {
+    title: slidesData.slideTwo.title,
+    content: (
+      <>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            height: "100%",
+            padding: "2rem 3rem",
+            boxSizing: "border-box",
+          }}
+        >
+
+          <h1
+            style={{
+              margin: 0,
+              color: "#582c83",
+              fontSize: "2.75rem",
+            }}
+          >
+            {slidesData.slideTwo.title.toUpperCase()}
+          </h1>
+
+          <div
+            style={{
+              marginTop: "0.75rem",
+              height: "3px",
+              width: "100%",
+              backgroundColor: "#e2e8f0",
+              borderRadius: "2px",
+            }}
+          />
+
+          <div
+            style={{
+              flex: 1,
+              display: "flex",
+              alignItems: "flex-start",
+              justifyContent: "center",
+              gap: "2rem",
+              padding: "2rem 0",
+            }}
+          >
+
+            <div
+              style={{
+                flex: 1,
+                minHeight: "280px",
+                height: "auto",
+                backgroundColor: "#f1f3f5",
+                borderRadius: "12px",
+                padding: "2rem",
+                boxSizing: "border-box",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+              }}
+            >
+              <h2
+                style={{
+                  margin: 0,
+                  color: "#582c83",
+                  fontSize: "1.5rem",
+                }}
+              >
+                2.1
+              </h2>
+
+              <p
+                style={{
+                  marginTop: "1rem",
+                  marginBottom: 0,
+                  color: "#374151",
+                  fontSize: "1.2rem",
+                  lineHeight: 1.6,
+                }}
+              >
+                {slidesData.slideTwo.twoOne}
+              </p>
+            </div>
+
+            <div
+              style={{
+                flex: 1,
+                minHeight: "280px",
+                height: "auto",
+                backgroundColor: "#f1f3f5",
+                borderRadius: "12px",
+                padding: "2rem",
+                boxSizing: "border-box",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+              }}
+            >
+              <h2
+                style={{
+                  margin: 0,
+                  color: "#582c83",
+                  fontSize: "1.5rem",
+                }}
+              >
+                2.2
+              </h2>
+
+              <p
+                style={{
+                  marginTop: "1rem",
+                  marginBottom: 0,
+                  color: "#374151",
+                  fontSize: "1.2rem",
+                  lineHeight: 1.6,
+                }}
+              >
+                {slidesData.slideTwo.twoTwo}
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </>
+    ),
+  },
+  {
+    title: slidesData.slideThree.title,
+    content: (
+      <>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            height: "100%",
+            padding: "2rem 3rem",
+            boxSizing: "border-box",
+          }}
+        >
+
+          <h1
+            style={{
+              margin: 0,
+              color: "#582c83",
+              fontSize: "2.75rem",
+            }}
+          >
+            {slidesData.slideThree.title.toUpperCase()}
+          </h1>
+
+          <div
+            style={{
+              marginTop: "0.75rem",
+              height: "3px",
+              width: "100%",
+              backgroundColor: "#e2e8f0",
+              borderRadius: "2px",
+            }}
+          />
+
+          <div
+            style={{
+              flex: 1,
+              display: "flex",
+              alignItems: "flex-start",
+              justifyContent: "center",
+              gap: "2rem",
+              padding: "2rem 0",
+            }}
+          >
+
+            <div
+              style={{
+                flex: 1,
+                minHeight: "280px",
+                height: "auto",
+                backgroundColor: "#f1f3f5",
+                borderRadius: "12px",
+                padding: "2rem",
+                boxSizing: "border-box",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+              }}
+            >
+              <h2
+                style={{
+                  margin: 0,
+                  color: "#582c83",
+                  fontSize: "1.5rem",
+                }}
+              >
+                3.1
+              </h2>
+
+              <p
+                style={{
+                  marginTop: "1rem",
+                  marginBottom: 0,
+                  color: "#374151",
+                  fontSize: "1.2rem",
+                  lineHeight: 1.6,
+                }}
+              >
+                {slidesData.slideThree.threeOne}
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </>
+    ),
+  },
+  {
+    title: slidesData.slideFour.title,
+    content: (
+      <>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            height: "100%",
+            padding: "2rem 3rem",
+            boxSizing: "border-box",
+          }}
+        >
+
+          <h1
+            style={{
+              margin: 0,
+              color: "#582c83",
+              fontSize: "2.75rem",
+            }}
+          >
+            {slidesData.slideFour.title.toUpperCase()}
+          </h1>
+
+          <div
+            style={{
+              marginTop: "0.75rem",
+              height: "3px",
+              width: "100%",
+              backgroundColor: "#e2e8f0",
+              borderRadius: "2px",
+            }}
+          />
+
+          <div
+            style={{
+              flex: 1,
+              display: "flex",
+              alignItems: "flex-start",
+              justifyContent: "center",
+              gap: "2rem",
+              padding: "2rem 0",
+            }}
+          >
+
+            <div
+              style={{
+                flex: 1,
+                minHeight: "280px",
+                height: "auto",
+                backgroundColor: "#f1f3f5",
+                borderRadius: "12px",
+                padding: "2rem",
+                boxSizing: "border-box",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+              }}
+            >
+              <h2
+                style={{
+                  margin: 0,
+                  color: "#582c83",
+                  fontSize: "1.5rem",
+                }}
+              >
+                4.1
+              </h2>
+
+              <p
+                style={{
+                  marginTop: "1rem",
+                  marginBottom: 0,
+                  color: "#374151",
+                  fontSize: "1.2rem",
+                  lineHeight: 1.6,
+                }}
+              >
+                {slidesData.slideFour.fourOne}
+              </p>
+            </div>
+
+            <div
+              style={{
+                flex: 1,
+                minHeight: "280px",
+                height: "auto",
+                backgroundColor: "#f1f3f5",
+                borderRadius: "12px",
+                padding: "2rem",
+                boxSizing: "border-box",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+              }}
+            >
+              <h2
+                style={{
+                  margin: 0,
+                  color: "#582c83",
+                  fontSize: "1.5rem",
+                }}
+              >
+                4.2
+              </h2>
+
+              <p
+                style={{
+                  marginTop: "1rem",
+                  marginBottom: 0,
+                  color: "#374151",
+                  fontSize: "1.2rem",
+                  lineHeight: 1.6,
+                }}
+              >
+                {slidesData.slideFour.fourTwo}
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </>
+    ),
+  },
+  {
+    title: slidesData.slideFive.title,
+    content: (
+      <>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            height: "100%",
+            padding: "2rem 3rem",
+            boxSizing: "border-box",
+          }}
+        >
+
+          <h1
+            style={{
+              margin: 0,
+              color: "#582c83",
+              fontSize: "2.75rem",
+            }}
+          >
+            {slidesData.slideFive.title.toUpperCase()}
+          </h1>
+
+          <div
+            style={{
+              marginTop: "0.75rem",
+              height: "3px",
+              width: "100%",
+              backgroundColor: "#e2e8f0",
+              borderRadius: "2px",
+            }}
+          />
+
+          <div
+            style={{
+              flex: 1,
+              display: "flex",
+              alignItems: "flex-start",
+              justifyContent: "center",
+              gap: "2rem",
+              padding: "2rem 0",
+            }}
+          >
+
+            <div
+              style={{
+                flex: 1,
+                minHeight: "280px",
+                height: "auto",
+                backgroundColor: "#f1f3f5",
+                borderRadius: "12px",
+                padding: "2rem",
+                boxSizing: "border-box",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+              }}
+            >
+              <h2
+                style={{
+                  margin: 0,
+                  color: "#582c83",
+                  fontSize: "1.5rem",
+                }}
+              >
+                5.1
+              </h2>
+
+              <p
+                style={{
+                  marginTop: "1rem",
+                  marginBottom: 0,
+                  color: "#374151",
+                  fontSize: "1.2rem",
+                  lineHeight: 1.6,
+                }}
+              >
+                {slidesData.slideFive.fiveOne}
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </>
+    ),
+  },
+  {
+    title: slidesData.slideSix.title,
+    content: (
+      <>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            height: "100%",
+            padding: "2rem 3rem",
+            boxSizing: "border-box",
+          }}
+        >
+
+          <h1
+            style={{
+              margin: 0,
+              color: "#582c83",
+              fontSize: "2.75rem",
+            }}
+          >
+            {slidesData.slideSix.title.toUpperCase()}
+          </h1>
+
+          <div
+            style={{
+              marginTop: "0.75rem",
+              height: "3px",
+              width: "100%",
+              backgroundColor: "#e2e8f0",
+              borderRadius: "2px",
+            }}
+          />
+
+          <div
+            style={{
+              flex: 1,
+              display: "flex",
+              alignItems: "flex-start",
+              justifyContent: "center",
+              gap: "2rem",
+              padding: "2rem 0",
+            }}
+          >
+
+            <div
+              style={{
+                flex: 1,
+                minHeight: "280px",
+                height: "auto",
+                backgroundColor: "#f1f3f5",
+                borderRadius: "12px",
+                padding: "2rem",
+                boxSizing: "border-box",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+              }}
+            >
+              <h2
+                style={{
+                  margin: 0,
+                  color: "#582c83",
+                  fontSize: "1.5rem",
+                }}
+              >
+                6.1
+              </h2>
+
+              <p
+                style={{
+                  marginTop: "1rem",
+                  marginBottom: 0,
+                  color: "#374151",
+                  fontSize: "1.2rem",
+                  lineHeight: 1.6,
+                }}
+              >
+                {slidesData.slideSix.sixOne}
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </>
+    ),
+  },
+  {
+    title: slidesData.slideSeven.title,
+    content: (
+      <>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            height: "100%",
+            padding: "2rem 3rem",
+            boxSizing: "border-box",
+          }}
+        >
+
+          <h1
+            style={{
+              margin: 0,
+              color: "#582c83",
+              fontSize: "2.75rem",
+            }}
+          >
+            {slidesData.slideSeven.title.toUpperCase()}
+          </h1>
+
+          <div
+            style={{
+              marginTop: "0.75rem",
+              height: "3px",
+              width: "100%",
+              backgroundColor: "#e2e8f0",
+              borderRadius: "2px",
+            }}
+          />
+
+          <div
+            style={{
+              flex: 1,
+              display: "flex",
+              alignItems: "flex-start",
+              justifyContent: "center",
+              gap: "2rem",
+              padding: "2rem 0",
+            }}
+          >
+
+            <div
+              style={{
+                flex: 1,
+                minHeight: "280px",
+                height: "auto",
+                backgroundColor: "#f1f3f5",
+                borderRadius: "12px",
+                padding: "2rem",
+                boxSizing: "border-box",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+              }}
+            >
+              <h2
+                style={{
+                  margin: 0,
+                  color: "#582c83",
+                  fontSize: "1.5rem",
+                }}
+              >
+                7.1
+              </h2>
+
+              <p
+                style={{
+                  marginTop: "1rem",
+                  marginBottom: 0,
+                  color: "#374151",
+                  fontSize: "1.2rem",
+                  lineHeight: 1.6,
+                }}
+              >
+                {slidesData.slideSeven.sevenOne}
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </>
+    ),
+  },
+  {
+    title: slidesData.slideEight.title,
+    content: (
+      <>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            height: "100%",
+            padding: "2rem 3rem",
+            boxSizing: "border-box",
+          }}
+        >
+
+          <h1
+            style={{
+              margin: 0,
+              color: "#582c83",
+              fontSize: "2.75rem",
+            }}
+          >
+            {slidesData.slideEight.title.toUpperCase()}
+          </h1>
+
+          <div
+            style={{
+              marginTop: "0.75rem",
+              height: "3px",
+              width: "100%",
+              backgroundColor: "#e2e8f0",
+              borderRadius: "2px",
+            }}
+          />
+
+          <div
+            style={{
+              flex: 1,
+              display: "flex",
+              alignItems: "flex-start",
+              justifyContent: "center",
+              gap: "2rem",
+              padding: "2rem 0",
+            }}
+          >
+
+            <div
+              style={{
+                flex: 1,
+                minHeight: "280px",
+                height: "auto",
+                backgroundColor: "#f1f3f5",
+                borderRadius: "12px",
+                padding: "2rem",
+                boxSizing: "border-box",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+              }}
+            >
+              <h2
+                style={{
+                  margin: 0,
+                  color: "#582c83",
+                  fontSize: "1.5rem",
+                }}
+              >
+                8.1
+              </h2>
+
+              <p
+                style={{
+                  marginTop: "1rem",
+                  marginBottom: 0,
+                  color: "#374151",
+                  fontSize: "1.2rem",
+                  lineHeight: 1.6,
+                }}
+              >
+                {slidesData.slideEight.eightOne}
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </>
+    ),
+  },
+  {
+    title: slidesData.slideNine.title,
+    content: (
+      <>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            height: "100%",
+            padding: "2rem 3rem",
+            boxSizing: "border-box",
+          }}
+        >
+
+          <h1
+            style={{
+              margin: 0,
+              color: "#582c83",
+              fontSize: "2.75rem",
+            }}
+          >
+            {slidesData.slideNine.title.toUpperCase()}
+          </h1>
+
+          <div
+            style={{
+              marginTop: "0.75rem",
+              height: "3px",
+              width: "100%",
+              backgroundColor: "#e2e8f0",
+              borderRadius: "2px",
+            }}
+          />
+
+          <div
+            style={{
+              flex: 1,
+              display: "flex",
+              alignItems: "flex-start",
+              justifyContent: "center",
+              gap: "2rem",
+              padding: "2rem 0",
+            }}
+          >
+
+            <div
+              style={{
+                flex: 1,
+                minHeight: "280px",
+                height: "auto",
+                backgroundColor: "#f1f3f5",
+                borderRadius: "12px",
+                padding: "2rem",
+                boxSizing: "border-box",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+              }}
+            >
+              <h2
+                style={{
+                  margin: 0,
+                  color: "#582c83",
+                  fontSize: "1.5rem",
+                }}
+              >
+                9.1
+              </h2>
+
+              <p
+                style={{
+                  marginTop: "1rem",
+                  marginBottom: 0,
+                  color: "#374151",
+                  fontSize: "1.2rem",
+                  lineHeight: 1.6,
+                }}
+              >
+                {slidesData.slideNine.nineOne}
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </>
+    ),
+  },
+  {
     title: slidesData.useSlide.title,
     content: (
       <>
@@ -229,900 +1135,6 @@ export const policiesSlides = (playerName: string, setCurrentSlides: React.Dispa
                 </p>
               </div>
             ))}
-          </div>
-        </div>
-      </>
-    ),
-  },
-  {
-    title: slidesData.slideOne.title,
-    content: (
-      <>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            height: "100%",
-            padding: "2rem 3rem",
-            boxSizing: "border-box",
-          }}
-        >
-
-          <h1
-            style={{
-              margin: 0,
-              color: "#582c83",
-              fontSize: "2.75rem",
-            }}
-          >
-            {slidesData.slideOne.title.toUpperCase()}
-          </h1>
-
-          <div
-            style={{
-              marginTop: "0.75rem",
-              height: "3px",
-              width: "100%",
-              backgroundColor: "#e2e8f0",
-              borderRadius: "2px",
-            }}
-          />
-
-          <div
-            style={{
-              flex: 1,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "2rem",
-              padding: "2rem 0",
-            }}
-          >
-
-            <div
-              style={{
-                flex: 1,
-                height: "280px",
-                backgroundColor: "#f1f3f5",
-                borderRadius: "12px",
-                padding: "2rem",
-                boxSizing: "border-box",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "flex-start",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-              }}
-            >
-              <h2
-                style={{
-                  margin: 0,
-                  color: "#582c83",
-                  fontSize: "1.5rem",
-                }}
-              >
-                1.1
-              </h2>
-
-              <p
-                style={{
-                  marginTop: "1rem",
-                  marginBottom: 0,
-                  color: "#374151",
-                  fontSize: "1.2rem",
-                  lineHeight: 1.6,
-                }}
-              >
-                {slidesData.slideOne.oneOne}
-              </p>
-            </div>
-
-            <div
-              style={{
-                flex: 1,
-                height: "280px",
-                backgroundColor: "#f1f3f5",
-                borderRadius: "12px",
-                padding: "2rem",
-                boxSizing: "border-box",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "flex-start",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-              }}
-            >
-              <h2
-                style={{
-                  margin: 0,
-                  color: "#582c83",
-                  fontSize: "1.5rem",
-                }}
-              >
-                1.2
-              </h2>
-
-              <p
-                style={{
-                  marginTop: "1rem",
-                  marginBottom: 0,
-                  color: "#374151",
-                  fontSize: "1.2rem",
-                  lineHeight: 1.6,
-                }}
-              >
-                {slidesData.slideOne.oneTwo}
-              </p>
-            </div>
-
-          </div>
-        </div>
-      </>
-    ),
-  },
-  {
-    title: slidesData.slideTwo.title,
-    content: (
-      <>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            height: "100%",
-            padding: "2rem 3rem",
-            boxSizing: "border-box",
-          }}
-        >
-
-          <h1
-            style={{
-              margin: 0,
-              color: "#582c83",
-              fontSize: "2.75rem",
-            }}
-          >
-            {slidesData.slideTwo.title.toUpperCase()}
-          </h1>
-
-          <div
-            style={{
-              marginTop: "0.75rem",
-              height: "3px",
-              width: "100%",
-              backgroundColor: "#e2e8f0",
-              borderRadius: "2px",
-            }}
-          />
-
-          <div
-            style={{
-              flex: 1,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "2rem",
-              padding: "2rem 0",
-            }}
-          >
-
-            <div
-              style={{
-                flex: 1,
-                height: "280px",
-                backgroundColor: "#f1f3f5",
-                borderRadius: "12px",
-                padding: "2rem",
-                boxSizing: "border-box",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "flex-start",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-              }}
-            >
-              <h2
-                style={{
-                  margin: 0,
-                  color: "#582c83",
-                  fontSize: "1.5rem",
-                }}
-              >
-                2.1
-              </h2>
-
-              <p
-                style={{
-                  marginTop: "1rem",
-                  marginBottom: 0,
-                  color: "#374151",
-                  fontSize: "1.2rem",
-                  lineHeight: 1.6,
-                }}
-              >
-                {slidesData.slideTwo.twoOne}
-              </p>
-            </div>
-
-            <div
-              style={{
-                flex: 1,
-                height: "280px",
-                backgroundColor: "#f1f3f5",
-                borderRadius: "12px",
-                padding: "2rem",
-                boxSizing: "border-box",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "flex-start",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-              }}
-            >
-              <h2
-                style={{
-                  margin: 0,
-                  color: "#582c83",
-                  fontSize: "1.5rem",
-                }}
-              >
-                2.2
-              </h2>
-
-              <p
-                style={{
-                  marginTop: "1rem",
-                  marginBottom: 0,
-                  color: "#374151",
-                  fontSize: "1.2rem",
-                  lineHeight: 1.6,
-                }}
-              >
-                {slidesData.slideTwo.twoTwo}
-              </p>
-            </div>
-
-          </div>
-        </div>
-      </>
-    ),
-  },
-  {
-    title: slidesData.slideThree.title,
-    content: (
-      <>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            height: "100%",
-            padding: "2rem 3rem",
-            boxSizing: "border-box",
-          }}
-        >
-
-          <h1
-            style={{
-              margin: 0,
-              color: "#582c83",
-              fontSize: "2.75rem",
-            }}
-          >
-            {slidesData.slideThree.title.toUpperCase()}
-          </h1>
-
-          <div
-            style={{
-              marginTop: "0.75rem",
-              height: "3px",
-              width: "100%",
-              backgroundColor: "#e2e8f0",
-              borderRadius: "2px",
-            }}
-          />
-
-          <div
-            style={{
-              flex: 1,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "2rem",
-              padding: "2rem 0",
-            }}
-          >
-
-            <div
-              style={{
-                flex: 1,
-                height: "280px",
-                backgroundColor: "#f1f3f5",
-                borderRadius: "12px",
-                padding: "2rem",
-                boxSizing: "border-box",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "flex-start",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-              }}
-            >
-              <h2
-                style={{
-                  margin: 0,
-                  color: "#582c83",
-                  fontSize: "1.5rem",
-                }}
-              >
-                3.1
-              </h2>
-
-              <p
-                style={{
-                  marginTop: "1rem",
-                  marginBottom: 0,
-                  color: "#374151",
-                  fontSize: "1.2rem",
-                  lineHeight: 1.6,
-                }}
-              >
-                {slidesData.slideThree.threeOne}
-              </p>
-            </div>
-
-          </div>
-        </div>
-      </>
-    ),
-  },
-  {
-    title: slidesData.slideFour.title,
-    content: (
-      <>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            height: "100%",
-            padding: "2rem 3rem",
-            boxSizing: "border-box",
-          }}
-        >
-
-          <h1
-            style={{
-              margin: 0,
-              color: "#582c83",
-              fontSize: "2.75rem",
-            }}
-          >
-            {slidesData.slideFour.title.toUpperCase()}
-          </h1>
-
-          <div
-            style={{
-              marginTop: "0.75rem",
-              height: "3px",
-              width: "100%",
-              backgroundColor: "#e2e8f0",
-              borderRadius: "2px",
-            }}
-          />
-
-          <div
-            style={{
-              flex: 1,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "2rem",
-              padding: "2rem 0",
-            }}
-          >
-
-            <div
-              style={{
-                flex: 1,
-                height: "280px",
-                backgroundColor: "#f1f3f5",
-                borderRadius: "12px",
-                padding: "2rem",
-                boxSizing: "border-box",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "flex-start",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-              }}
-            >
-              <h2
-                style={{
-                  margin: 0,
-                  color: "#582c83",
-                  fontSize: "1.5rem",
-                }}
-              >
-                4.1
-              </h2>
-
-              <p
-                style={{
-                  marginTop: "1rem",
-                  marginBottom: 0,
-                  color: "#374151",
-                  fontSize: "1.2rem",
-                  lineHeight: 1.6,
-                }}
-              >
-                {slidesData.slideFour.fourOne}
-              </p>
-            </div>
-
-            <div
-              style={{
-                flex: 1,
-                height: "280px",
-                backgroundColor: "#f1f3f5",
-                borderRadius: "12px",
-                padding: "2rem",
-                boxSizing: "border-box",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "flex-start",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-              }}
-            >
-              <h2
-                style={{
-                  margin: 0,
-                  color: "#582c83",
-                  fontSize: "1.5rem",
-                }}
-              >
-                4.2
-              </h2>
-
-              <p
-                style={{
-                  marginTop: "1rem",
-                  marginBottom: 0,
-                  color: "#374151",
-                  fontSize: "1.2rem",
-                  lineHeight: 1.6,
-                }}
-              >
-                {slidesData.slideFour.fourTwo}
-              </p>
-            </div>
-
-          </div>
-        </div>
-      </>
-    ),
-  },
-  {
-    title: slidesData.slideFive.title,
-    content: (
-      <>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            height: "100%",
-            padding: "2rem 3rem",
-            boxSizing: "border-box",
-          }}
-        >
-
-          <h1
-            style={{
-              margin: 0,
-              color: "#582c83",
-              fontSize: "2.75rem",
-            }}
-          >
-            {slidesData.slideFive.title.toUpperCase()}
-          </h1>
-
-          <div
-            style={{
-              marginTop: "0.75rem",
-              height: "3px",
-              width: "100%",
-              backgroundColor: "#e2e8f0",
-              borderRadius: "2px",
-            }}
-          />
-
-          <div
-            style={{
-              flex: 1,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "2rem",
-              padding: "2rem 0",
-            }}
-          >
-
-            <div
-              style={{
-                flex: 1,
-                height: "280px",
-                backgroundColor: "#f1f3f5",
-                borderRadius: "12px",
-                padding: "2rem",
-                boxSizing: "border-box",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "flex-start",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-              }}
-            >
-              <h2
-                style={{
-                  margin: 0,
-                  color: "#582c83",
-                  fontSize: "1.5rem",
-                }}
-              >
-                5.1
-              </h2>
-
-              <p
-                style={{
-                  marginTop: "1rem",
-                  marginBottom: 0,
-                  color: "#374151",
-                  fontSize: "1.2rem",
-                  lineHeight: 1.6,
-                }}
-              >
-                {slidesData.slideFive.fiveOne}
-              </p>
-            </div>
-
-          </div>
-        </div>
-      </>
-    ),
-  },
-  {
-    title: slidesData.slideSix.title,
-    content: (
-      <>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            height: "100%",
-            padding: "2rem 3rem",
-            boxSizing: "border-box",
-          }}
-        >
-
-          <h1
-            style={{
-              margin: 0,
-              color: "#582c83",
-              fontSize: "2.75rem",
-            }}
-          >
-            {slidesData.slideSix.title.toUpperCase()}
-          </h1>
-
-          <div
-            style={{
-              marginTop: "0.75rem",
-              height: "3px",
-              width: "100%",
-              backgroundColor: "#e2e8f0",
-              borderRadius: "2px",
-            }}
-          />
-
-          <div
-            style={{
-              flex: 1,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "2rem",
-              padding: "2rem 0",
-            }}
-          >
-
-            <div
-              style={{
-                flex: 1,
-                height: "280px",
-                backgroundColor: "#f1f3f5",
-                borderRadius: "12px",
-                padding: "2rem",
-                boxSizing: "border-box",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "flex-start",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-              }}
-            >
-              <h2
-                style={{
-                  margin: 0,
-                  color: "#582c83",
-                  fontSize: "1.5rem",
-                }}
-              >
-                6.1
-              </h2>
-
-              <p
-                style={{
-                  marginTop: "1rem",
-                  marginBottom: 0,
-                  color: "#374151",
-                  fontSize: "1.2rem",
-                  lineHeight: 1.6,
-                }}
-              >
-                {slidesData.slideSix.sixOne}
-              </p>
-            </div>
-
-          </div>
-        </div>
-      </>
-    ),
-  },
-  {
-    title: slidesData.slideSeven.title,
-    content: (
-      <>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            height: "100%",
-            padding: "2rem 3rem",
-            boxSizing: "border-box",
-          }}
-        >
-
-          <h1
-            style={{
-              margin: 0,
-              color: "#582c83",
-              fontSize: "2.75rem",
-            }}
-          >
-            {slidesData.slideSeven.title.toUpperCase()}
-          </h1>
-
-          <div
-            style={{
-              marginTop: "0.75rem",
-              height: "3px",
-              width: "100%",
-              backgroundColor: "#e2e8f0",
-              borderRadius: "2px",
-            }}
-          />
-
-          <div
-            style={{
-              flex: 1,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "2rem",
-              padding: "2rem 0",
-            }}
-          >
-
-            <div
-              style={{
-                flex: 1,
-                height: "280px",
-                backgroundColor: "#f1f3f5",
-                borderRadius: "12px",
-                padding: "2rem",
-                boxSizing: "border-box",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "flex-start",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-              }}
-            >
-              <h2
-                style={{
-                  margin: 0,
-                  color: "#582c83",
-                  fontSize: "1.5rem",
-                }}
-              >
-                7.1
-              </h2>
-
-              <p
-                style={{
-                  marginTop: "1rem",
-                  marginBottom: 0,
-                  color: "#374151",
-                  fontSize: "1.2rem",
-                  lineHeight: 1.6,
-                }}
-              >
-                {slidesData.slideSeven.sevenOne}
-              </p>
-            </div>
-
-          </div>
-        </div>
-      </>
-    ),
-  },
-  {
-    title: slidesData.slideEight.title,
-    content: (
-      <>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            height: "100%",
-            padding: "2rem 3rem",
-            boxSizing: "border-box",
-          }}
-        >
-
-          <h1
-            style={{
-              margin: 0,
-              color: "#582c83",
-              fontSize: "2.75rem",
-            }}
-          >
-            {slidesData.slideEight.title.toUpperCase()}
-          </h1>
-
-          <div
-            style={{
-              marginTop: "0.75rem",
-              height: "3px",
-              width: "100%",
-              backgroundColor: "#e2e8f0",
-              borderRadius: "2px",
-            }}
-          />
-
-          <div
-            style={{
-              flex: 1,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "2rem",
-              padding: "2rem 0",
-            }}
-          >
-
-            <div
-              style={{
-                flex: 1,
-                height: "280px",
-                backgroundColor: "#f1f3f5",
-                borderRadius: "12px",
-                padding: "2rem",
-                boxSizing: "border-box",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "flex-start",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-              }}
-            >
-              <h2
-                style={{
-                  margin: 0,
-                  color: "#582c83",
-                  fontSize: "1.5rem",
-                }}
-              >
-                8.1
-              </h2>
-
-              <p
-                style={{
-                  marginTop: "1rem",
-                  marginBottom: 0,
-                  color: "#374151",
-                  fontSize: "1.2rem",
-                  lineHeight: 1.6,
-                }}
-              >
-                {slidesData.slideEight.eightOne}
-              </p>
-            </div>
-
-          </div>
-        </div>
-      </>
-    ),
-  },
-  {
-    title: slidesData.slideNine.title,
-    content: (
-      <>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            height: "100%",
-            padding: "2rem 3rem",
-            boxSizing: "border-box",
-          }}
-        >
-
-          <h1
-            style={{
-              margin: 0,
-              color: "#582c83",
-              fontSize: "2.75rem",
-            }}
-          >
-            {slidesData.slideNine.title.toUpperCase()}
-          </h1>
-
-          <div
-            style={{
-              marginTop: "0.75rem",
-              height: "3px",
-              width: "100%",
-              backgroundColor: "#e2e8f0",
-              borderRadius: "2px",
-            }}
-          />
-
-          <div
-            style={{
-              flex: 1,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "2rem",
-              padding: "2rem 0",
-            }}
-          >
-
-            <div
-              style={{
-                flex: 1,
-                height: "280px",
-                backgroundColor: "#f1f3f5",
-                borderRadius: "12px",
-                padding: "2rem",
-                boxSizing: "border-box",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "flex-start",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-              }}
-            >
-              <h2
-                style={{
-                  margin: 0,
-                  color: "#582c83",
-                  fontSize: "1.5rem",
-                }}
-              >
-                9.1
-              </h2>
-
-              <p
-                style={{
-                  marginTop: "1rem",
-                  marginBottom: 0,
-                  color: "#374151",
-                  fontSize: "1.2rem",
-                  lineHeight: 1.6,
-                }}
-              >
-                {slidesData.slideNine.nineOne}
-              </p>
-            </div>
-
           </div>
         </div>
       </>
