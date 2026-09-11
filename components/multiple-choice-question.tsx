@@ -11,6 +11,7 @@ interface MultipleChoiceQuestionProps {
   options: QuestionOption[];
   correctAnswer: string;
   explanation: string;
+  category: string;
 }
 
 // reset question progress:
@@ -30,8 +31,8 @@ const score = Number(
 </div>
 */
 
-const SCORE_KEY = "acceptable-use-score";
-const ANSWERS_KEY = "acceptable-use-answers";
+let SCORE_KEY = "";
+let ANSWERS_KEY = "";
 
 const MultipleChoiceQuestion: React.FC<MultipleChoiceQuestionProps> = ({
   questionId,
@@ -39,7 +40,13 @@ const MultipleChoiceQuestion: React.FC<MultipleChoiceQuestionProps> = ({
   options,
   correctAnswer,
   explanation,
+  category,
 }) => {
+  if (category === "acceptableUse") {
+    SCORE_KEY = "acceptable-use-score";
+    ANSWERS_KEY = "acceptable-use-answers";
+  }
+
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [score, setScore] = useState(0);
 
