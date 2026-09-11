@@ -1,0 +1,124 @@
+{
+  "questionsAcceptableUse": [
+    {
+      "id": "q1",
+      "question": "An employee wants to use their USC email and cloud storage to help run a small side business they own, only during their unpaid lunch break. Is this acceptable under the policy?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Yes, as long as it's limited to unpaid break time."
+        },
+        {
+          "label": "B",
+          "text": "No — personal use must not be associated with any for-profit outside business activity, regardless of timing."
+        },
+        {
+          "label": "C",
+          "text": "Yes, if their manager gives verbal approval."
+        },
+        {
+          "label": "D",
+          "text": "Yes, as long as it's under 30 minutes per day."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Section 3.1 states personal use must not be associated with any for-profit outside business activity. The fact that the activity occurs during unpaid break time does not change that restriction."
+    },
+    {
+      "id": "q2",
+      "question": "A colleague is locked out of their own account and asks to use your login just this once to finish an urgent task. What should you do?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Share your credentials since it's a one-time favour for a colleague."
+        },
+        {
+          "label": "B",
+          "text": "Share your credentials, then change your password afterward."
+        },
+        {
+          "label": "C",
+          "text": "Decline — employees must use only their own log-on ID and password, and credentials must not be shared."
+        },
+        {
+          "label": "D",
+          "text": "Share your credentials only if you stay logged in to supervise."
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Section 4.2 requires personnel to use their own log-on ID and password only, and prohibits sharing credentials."
+    },
+    {
+      "id": "q3",
+      "question": "Your work laptop has been running slowly, and you suspect the antivirus software is the cause. What does the policy require?",
+      "options": [
+        {
+          "label": "A",
+          "text": "You may disable it temporarily and re-enable it the same day."
+        },
+        {
+          "label": "B",
+          "text": "You must not disable antivirus software; report the issue instead."
+        },
+        {
+          "label": "C",
+          "text": "You may disable it outside of business hours."
+        },
+        {
+          "label": "D",
+          "text": "You may disable it if you notify a coworker first."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Section 4.1 states users must not disable antivirus software and should report virus occurrences or related issues."
+    },
+    {
+      "id": "q4",
+      "question": "After a frustrating call with a vendor, an employee sends a profanity-laced, angry email about them using the corporate email system. Which part of the policy does this violate?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Section 3, Personal Use."
+        },
+        {
+          "label": "B",
+          "text": "Section 2, Corporate Public Image, which prohibits abusive or profane communications through corporate systems."
+        },
+        {
+          "label": "C",
+          "text": "Section 6, Data Protection."
+        },
+        {
+          "label": "D",
+          "text": "Section 7, Working From Home."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Section 2.1 prohibits abusive, discriminatory, harassing, inflammatory, profane, or offensive communications on corporate systems."
+    },
+    {
+      "id": "q5",
+      "question": "An employee is working from home on their personal laptop and needs to store USC member files locally to complete a project. What must be true of that laptop under the policy?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Nothing additional is required, since it is the employee's own device."
+        },
+        {
+          "label": "B",
+          "text": "It must be patched to the latest secure version, run up-to-date security software, and be password protected."
+        },
+        {
+          "label": "C",
+          "text": "The files must be printed rather than stored digitally."
+        },
+        {
+          "label": "D",
+          "text": "It only needs COO approval to be used this way."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Section 7.1 requires personal devices accessing USC data to be patched, running current security software, and password protected."
+    }
+  ]
+}

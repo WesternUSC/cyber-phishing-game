@@ -47,8 +47,43 @@
             "Confirmed violations can result in sanctions up to and including termination, and may be referred to authorities for criminal prosecution."
         ]
     },
-    "cbaSlide": {
-        "title": "CBA",
-        "desc": "Placeholder text."
+    "overviewSlide": {
+        "title": "1. Overview",
+        "oneOne": "Corporate Information Technology systems are company property provided for general business purposes to increase productivity and employee effectiveness only. Use of corporate services for purposes constituting clear conflict of the USC's interests or in violation of this or related policies is expressly prohibited.",
+        "oneTwo": "As we are hosted on Western's network, University bylaws and policies, such as those concerning confidentiality of information, also apply and must be upheld. These policies can be reviewed at http://security.uwo.ca/information governance/policies/index.html "
+    },
+    "publicImageSlide": {
+        "title": "2. CORPORATE PUBLIC IMAGE",
+        "twoOne": "Corporate online systems are public places for communications with our partners and stakeholders. All employees are, therefore, expected to maintain and enhance the USC's public image. No abusive, discriminatory, harassing, inflammatory, profane, pornographic, or offensive language or other materials are to be transmitted through the corporate systems.",
+        "twoTwo": "No message can be transmitted without the employee's identity. Transmittal of messages with anonymous or fictitious names is prohibited."
+    },
+    "personalUseSlide": {
+        "title": "3. PERSONAL USE",
+        "threeOne": "Any personal use must not interfere with normal business activities, must not involve solicitation, must not be associated with any for-profit outside business activity, and must not potentially embarrass the company."
+    },
+    "securitySlide": {
+        "title": "4. MAINTAINING SYSTEM SECURITY",
+        "fourOne": "Employee use of unauthorized, unlicensed, or pirated software is illegal and therefore is strictly prohibited. Unauthorized copying of proprietary software, publications, or files is prohibited, as is use of commercial software that in any way violates the applicable licensing agreement. All software downloaded must be authorized by and registered to the company. Users must not disable antivirus software and should report all virus occurrences.",
+        "fourTwo": "In order to ensure the security of our corporate data, IDs and passwords should not be shared with others or written down in easily accessible areas. Users may not access a computer account that belongs to another employee or department without permission. Personnel must use their own log-on ID and password only, are responsible for all activity on their log-on ID, and must report any known or suspected compromise of their ID to the I.S. Department."
+    },
+    "monitoringSlide": {
+        "title": "5. MONITORING OF ACTIVITY",
+        "fiveOne": "In order to ensure a productive, safe, and stable work environment USC Information Systems management may routinely intercept usage patterns for online communications, examine web history files, monitor email communications, or otherwise access data stored by or transmitted through the USC's network and computers."
+    },
+    "dataProtectionSlide": {
+        "title": "6. DATA PROTECTION",
+        "sixOne": "In your position at the USC, you may be entrusted with highly sensitive personal, confidential, restricted, or proprietary information. You are legally and ethically responsible for protecting and preserving the confidentiality of this data. All reasonable care must be taken to ensure that data in your custody is protected from unauthorized disclosure."
+    },
+    "remoteWorkSlide": {
+        "title": "7. WORKING FROM HOME",
+        "sevenOne": "Whenever personal information is being held outside of the office there is an increased risk that it will be lost or compromised. All reasonable care must be taken to ensure you are the only person able to access the data. This includes but is not limited to ensuring that all personal devices containing or used to access USC documents or resources must be patched to the latest secure version, running up-to-date security software, and be password protected."
+    },
+    "violationsSlide": {
+        "title": "8. VIOLATIONS",
+        "eightOne": "Confirmed incidents of unacceptable use will result in sanctions including verbal warnings, revocation of computing privileges, and termination. Users that violate federal or provincial laws may be referred to the appropriate authorities for criminal prosecution."
+    },
+    "amendmentsSlide": {
+        "title": "9. AMENDMENTS",
+        "nineOne": "The corporation may amend this Acceptable Use Policy from time to time as is necessary. All users will receive prompt notice of any amendments."
     }
 }
