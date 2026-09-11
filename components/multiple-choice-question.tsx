@@ -42,17 +42,13 @@ const MultipleChoiceQuestion: React.FC<MultipleChoiceQuestionProps> = ({
   explanation,
   category,
 }) => {
-  if (category === "acceptableUse") {
-    SCORE_KEY = "acceptable-use-score";
-    ANSWERS_KEY = "acceptable-use-answers";
-  }
   switch (category) {
     case "acceptableUse":
       SCORE_KEY = "acceptable-use-score";
       ANSWERS_KEY = "acceptable-use-answers";
       break;
 
-    case "acceptableUse":
+    case "customerService":
       SCORE_KEY = "cs-score";
       ANSWERS_KEY = "cs-answers";
       break;

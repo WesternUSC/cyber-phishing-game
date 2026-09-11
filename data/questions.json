@@ -125,5 +125,132 @@
       "correctAnswer": "B",
       "explanation": "Section 7.1 requires personal devices accessing USC data to be patched, running current security software, and password protected."
     }
+  ],
+  "questionsCustomerService": [
+    {
+      "category": "customerService",
+      "id": "q1",
+      "question": "A customer with a disability wants to bring their service animal into a USC public-facing space. What is the USC's approach?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Service animals are never permitted indoors."
+        },
+        {
+          "label": "B",
+          "text": "The USC welcomes service animals onto premises open to the public, and commits to finding alternatives where animals are legally prohibited."
+        },
+        {
+          "label": "C",
+          "text": "Only guide dogs are permitted; no other service animals."
+        },
+        {
+          "label": "D",
+          "text": "A written doctor's note is required at every visit."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Section 4.2.1 states the USC welcomes persons with disabilities accompanied by a service animal onto premises open to the public, and commits to finding alternatives if service animals are prohibited by law."
+    },
+    {
+      "category": "customerService",
+      "id": "q2",
+      "question": "The USC needs to temporarily close an accessible entrance for repairs. What must it do?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Wait until the repair is finished before announcing anything."
+        },
+        {
+          "label": "B",
+          "text": "Nothing, as long as repairs are completed quickly."
+        },
+        {
+          "label": "C",
+          "text": "Notify customers promptly with a clearly posted notice including the reason, anticipated length, and available alternatives."
+        },
+        {
+          "label": "D",
+          "text": "Only inform USC staff, not the public."
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Section 4.4.1 requires prompt notification of service disruptions via a clearly posted notice including the reason, anticipated length, and alternatives, if available."
+    },
+    {
+      "category": "customerService",
+      "id": "q3",
+      "question": "A support person accompanies a customer with a disability into a paid event. If a fee applies to the support person, what must the USC do?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Charge the support person double the standard fee."
+        },
+        {
+          "label": "B",
+          "text": "It is never permitted to charge a fee for a support person."
+        },
+        {
+          "label": "C",
+          "text": "Always waive the fee automatically."
+        },
+        {
+          "label": "D",
+          "text": "Communicate and post the fee accordingly through the USC's website, brochure, or other public methods."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Section 4.3.2 states that where a fee applies to a support person's admission, it will be communicated and posted through the USC's website, brochure, or other public methods."
+    },
+    {
+      "category": "customerService",
+      "id": "q4",
+      "question": "When must training on this policy be provided to a new employee who deals with the public?",
+      "options": [
+        {
+          "label": "A",
+          "text": "As soon as practicable after being assigned applicable duties."
+        },
+        {
+          "label": "B",
+          "text": "Within their first year, at any point."
+        },
+        {
+          "label": "C",
+          "text": "Only during annual refresher sessions."
+        },
+        {
+          "label": "D",
+          "text": "Only if the employee requests it."
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Section 4.5.3 states training will be provided to each person as soon as practicable after being assigned applicable duties."
+    },
+    {
+      "category": "customerService",
+      "id": "q5",
+      "question": "A customer wants to provide feedback about their accessibility experience with the USC. How can this be submitted?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Only by mail."
+        },
+        {
+          "label": "B",
+          "text": "In person, by telephone, in writing, or electronically via email or other digital formats."
+        },
+        {
+          "label": "C",
+          "text": "Only through a third-party ombudsperson."
+        },
+        {
+          "label": "D",
+          "text": "Feedback is not accepted from the general public."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Section 4.6.1 states feedback can be given in person, by telephone, in writing, or electronically via email or other digital formats."
+    }
   ]
 }

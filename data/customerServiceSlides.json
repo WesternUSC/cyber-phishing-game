@@ -97,23 +97,11 @@
         "fourSixThree": "The USC will make this document available to any person who requests it in a mutually agreed upon format."
     },
     "slideFive": {
-        "title": "5. MONITORING OF ACTIVITY",
-        "fiveOne": "In order to ensure a productive, safe, and stable work environment USC Information Systems management may routinely intercept usage patterns for online communications, examine web history files, monitor email communications, or otherwise access data stored by or transmitted through the USC's network and computers."
+        "title": "5. COMMUNICATION",
+        "fiveOne": "This policy will be explained as needed to workers through orientation health & safety training or task-specific training."
     },
     "slideSix": {
-        "title": "6. DATA PROTECTION",
-        "sixOne": "In your position at the USC, you may be entrusted with highly sensitive personal, confidential, restricted, or proprietary information. You are legally and ethically responsible for protecting and preserving the confidentiality of this data. All reasonable care must be taken to ensure that data in your custody is protected from unauthorized disclosure."
-    },
-    "slideSeven": {
-        "title": "7. WORKING FROM HOME",
-        "sevenOne": "Whenever personal information is being held outside of the office there is an increased risk that it will be lost or compromised. All reasonable care must be taken to ensure you are the only person able to access the data. This includes but is not limited to ensuring that all personal devices containing or used to access USC documents or resources must be patched to the latest secure version, running up-to-date security software, and be password protected."
-    },
-    "slideEight": {
-        "title": "8. VIOLATIONS",
-        "eightOne": "Confirmed incidents of unacceptable use will result in sanctions including verbal warnings, revocation of computing privileges, and termination. Users that violate federal or provincial laws may be referred to the appropriate authorities for criminal prosecution."
-    },
-    "slideNine": {
-        "title": "9. AMENDMENTS",
-        "nineOne": "The corporation may amend this Acceptable Use Policy from time to time as is necessary. All users will receive prompt notice of any amendments."
+        "title": "6. EVALUATION",
+        "sixOne": "This policy will be evaluated on an annual basis through the Continuous Improvement Plan."
     }
 }

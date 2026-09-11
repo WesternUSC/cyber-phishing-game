@@ -21,12 +21,12 @@ const defaultOptions: TrainingOption[] = [
   },
   {
     id: "2",
-    label: "POLICIES AND PROCEDURES",
+    label: "ACCEPTABLE USE POLICY",
     color: "#582c83",
   },
   {
     id: "3",
-    label: "JOB TRAINING",
+    label: "ACCESSIBILITY FOR CUSTOMER SERVICE POLICY",
     color: "#582c83",
   },
   {

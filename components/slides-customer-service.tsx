@@ -140,101 +140,6 @@ export const customerServiceSlides = (playerName: string, setCurrentSlides: Reac
     ),
   },
   {
-    title: slidesData.useSlide.title,
-    content: (
-      <>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            height: "100%",
-            padding: "2rem 3rem",
-            boxSizing: "border-box",
-          }}
-        >
-          <div>
-            <h1
-              style={{
-                margin: 0,
-                color: "#582c83",
-                fontSize: "2.75rem",
-              }}
-            >
-              {slidesData.useSlide.title.toUpperCase()}
-            </h1>
-
-            <div
-              style={{
-                marginTop: "0.75rem",
-                height: "3px",
-                width: "100%",
-                backgroundColor: "#e2e8f0",
-                borderRadius: "2px",
-              }}
-            />
-          </div>
-
-          <div
-            style={{
-              flex: 1,
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: "0.85rem",
-              alignContent: "center",
-              marginTop: "1.25rem",
-            }}
-          >
-            {slidesData.useSlide.items.map((item, index) => (
-              <div
-                key={index}
-                style={{
-                  display: "flex",
-                  alignItems: "flex-start",
-                  gap: "0.85rem",
-                  padding: "0.9rem 1rem",
-                  backgroundColor: index % 2 === 0 ? "#faf9fc" : "#ffffff",
-                  border: "1px solid #e2e8f0",
-                  borderRadius: "10px",
-                  boxShadow: "0 2px 6px rgba(88, 44, 131, 0.06)",
-                  boxSizing: "border-box",
-                }}
-              >
-                <div
-                  style={{
-                    flexShrink: 0,
-                    width: "30px",
-                    height: "30px",
-                    borderRadius: "50%",
-                    backgroundColor: "#f2eef7",
-                    color: "#582c83",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontWeight: 700,
-                    fontSize: "0.85rem",
-                  }}
-                >
-                  {String(index + 1).padStart(2, "0")}
-                </div>
-
-                <p
-                  style={{
-                    margin: 0,
-                    color: "#334155",
-                    fontSize: "0.91rem",
-                    lineHeight: 1.45,
-                  }}
-                >
-                  {item}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </>
-    ),
-  },
-  {
     title: slidesData.slideOne.title,
     content: (
       <>
@@ -1987,7 +1892,7 @@ export const customerServiceSlides = (playerName: string, setCurrentSlides: Reac
     ),
   },
   {
-    title: slidesData.slideSeven.title,
+    title: slidesData.useSlide.title,
     content: (
       <>
         <div
@@ -1999,252 +1904,83 @@ export const customerServiceSlides = (playerName: string, setCurrentSlides: Reac
             boxSizing: "border-box",
           }}
         >
-
-          <h1
-            style={{
-              margin: 0,
-              color: "#582c83",
-              fontSize: "2.75rem",
-            }}
-          >
-            {slidesData.slideSeven.title.toUpperCase()}
-          </h1>
-
-          <div
-            style={{
-              marginTop: "0.75rem",
-              height: "3px",
-              width: "100%",
-              backgroundColor: "#e2e8f0",
-              borderRadius: "2px",
-            }}
-          />
-
-          <div
-            style={{
-              flex: 1,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "2rem",
-              padding: "2rem 0",
-            }}
-          >
+          <div>
+            <h1
+              style={{
+                margin: 0,
+                color: "#582c83",
+                fontSize: "2.75rem",
+              }}
+            >
+              {slidesData.useSlide.title.toUpperCase()}
+            </h1>
 
             <div
               style={{
-                flex: 1,
-                minHeight: "280px",
-                height: "auto",
-                backgroundColor: "#f1f3f5",
-                borderRadius: "12px",
-                padding: "2rem",
-                boxSizing: "border-box",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "flex-start",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+                marginTop: "0.75rem",
+                height: "3px",
+                width: "100%",
+                backgroundColor: "#e2e8f0",
+                borderRadius: "2px",
               }}
-            >
-              <h2
-                style={{
-                  margin: 0,
-                  color: "#582c83",
-                  fontSize: "1.5rem",
-                }}
-              >
-                7.1
-              </h2>
-
-              <p
-                style={{
-                  marginTop: "1rem",
-                  marginBottom: 0,
-                  color: "#374151",
-                  fontSize: "1.2rem",
-                  lineHeight: 1.6,
-                }}
-              >
-                {slidesData.slideSeven.sevenOne}
-              </p>
-            </div>
-
+            />
           </div>
-        </div>
-      </>
-    ),
-  },
-  {
-    title: slidesData.slideEight.title,
-    content: (
-      <>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            height: "100%",
-            padding: "2rem 3rem",
-            boxSizing: "border-box",
-          }}
-        >
-
-          <h1
-            style={{
-              margin: 0,
-              color: "#582c83",
-              fontSize: "2.75rem",
-            }}
-          >
-            {slidesData.slideEight.title.toUpperCase()}
-          </h1>
-
-          <div
-            style={{
-              marginTop: "0.75rem",
-              height: "3px",
-              width: "100%",
-              backgroundColor: "#e2e8f0",
-              borderRadius: "2px",
-            }}
-          />
 
           <div
             style={{
               flex: 1,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "2rem",
-              padding: "2rem 0",
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              gap: "0.85rem",
+              alignContent: "center",
+              marginTop: "1.25rem",
             }}
           >
-
-            <div
-              style={{
-                flex: 1,
-                minHeight: "280px",
-                height: "auto",
-                backgroundColor: "#f1f3f5",
-                borderRadius: "12px",
-                padding: "2rem",
-                boxSizing: "border-box",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "flex-start",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-              }}
-            >
-              <h2
+            {slidesData.useSlide.items.map((item, index) => (
+              <div
+                key={index}
                 style={{
-                  margin: 0,
-                  color: "#582c83",
-                  fontSize: "1.5rem",
+                  display: "flex",
+                  alignItems: "flex-start",
+                  gap: "0.85rem",
+                  padding: "0.9rem 1rem",
+                  backgroundColor: index % 2 === 0 ? "#faf9fc" : "#ffffff",
+                  border: "1px solid #e2e8f0",
+                  borderRadius: "10px",
+                  boxShadow: "0 2px 6px rgba(88, 44, 131, 0.06)",
+                  boxSizing: "border-box",
                 }}
               >
-                8.1
-              </h2>
+                <div
+                  style={{
+                    flexShrink: 0,
+                    width: "30px",
+                    height: "30px",
+                    borderRadius: "50%",
+                    backgroundColor: "#f2eef7",
+                    color: "#582c83",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontWeight: 700,
+                    fontSize: "0.85rem",
+                  }}
+                >
+                  {String(index + 1).padStart(2, "0")}
+                </div>
 
-              <p
-                style={{
-                  marginTop: "1rem",
-                  marginBottom: 0,
-                  color: "#374151",
-                  fontSize: "1.2rem",
-                  lineHeight: 1.6,
-                }}
-              >
-                {slidesData.slideEight.eightOne}
-              </p>
-            </div>
-
-          </div>
-        </div>
-      </>
-    ),
-  },
-  {
-    title: slidesData.slideNine.title,
-    content: (
-      <>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            height: "100%",
-            padding: "2rem 3rem",
-            boxSizing: "border-box",
-          }}
-        >
-
-          <h1
-            style={{
-              margin: 0,
-              color: "#582c83",
-              fontSize: "2.75rem",
-            }}
-          >
-            {slidesData.slideNine.title.toUpperCase()}
-          </h1>
-
-          <div
-            style={{
-              marginTop: "0.75rem",
-              height: "3px",
-              width: "100%",
-              backgroundColor: "#e2e8f0",
-              borderRadius: "2px",
-            }}
-          />
-
-          <div
-            style={{
-              flex: 1,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "2rem",
-              padding: "2rem 0",
-            }}
-          >
-
-            <div
-              style={{
-                flex: 1,
-                minHeight: "280px",
-                height: "auto",
-                backgroundColor: "#f1f3f5",
-                borderRadius: "12px",
-                padding: "2rem",
-                boxSizing: "border-box",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "flex-start",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-              }}
-            >
-              <h2
-                style={{
-                  margin: 0,
-                  color: "#582c83",
-                  fontSize: "1.5rem",
-                }}
-              >
-                9.1
-              </h2>
-
-              <p
-                style={{
-                  marginTop: "1rem",
-                  marginBottom: 0,
-                  color: "#374151",
-                  fontSize: "1.2rem",
-                  lineHeight: 1.6,
-                }}
-              >
-                {slidesData.slideNine.nineOne}
-              </p>
-            </div>
-
+                <p
+                  style={{
+                    margin: 0,
+                    color: "#334155",
+                    fontSize: "0.91rem",
+                    lineHeight: 1.45,
+                  }}
+                >
+                  {item}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </>
@@ -2254,12 +1990,12 @@ export const customerServiceSlides = (playerName: string, setCurrentSlides: Reac
     title: "Knowledge Check: Q1",
     content: (
       <MultipleChoiceQuestion
-        questionId={questionsData.questionsAcceptableUse[0].id}
-        question={questionsData.questionsAcceptableUse[0].question}
-        options={questionsData.questionsAcceptableUse[0].options}
-        correctAnswer={questionsData.questionsAcceptableUse[0].correctAnswer}
-        explanation={questionsData.questionsAcceptableUse[0].explanation}
-        category={questionsData.questionsAcceptableUse[0].category}
+        questionId={questionsData.questionsCustomerService[0].id}
+        question={questionsData.questionsCustomerService[0].question}
+        options={questionsData.questionsCustomerService[0].options}
+        correctAnswer={questionsData.questionsCustomerService[0].correctAnswer}
+        explanation={questionsData.questionsCustomerService[0].explanation}
+        category={questionsData.questionsCustomerService[0].category}
       />
     ),
   },
@@ -2267,12 +2003,12 @@ export const customerServiceSlides = (playerName: string, setCurrentSlides: Reac
     title: "Knowledge Check: Q2",
     content: (
       <MultipleChoiceQuestion
-        questionId={questionsData.questionsAcceptableUse[1].id}
-        question={questionsData.questionsAcceptableUse[1].question}
-        options={questionsData.questionsAcceptableUse[1].options}
-        correctAnswer={questionsData.questionsAcceptableUse[1].correctAnswer}
-        explanation={questionsData.questionsAcceptableUse[1].explanation}
-        category={questionsData.questionsAcceptableUse[1].category}
+        questionId={questionsData.questionsCustomerService[1].id}
+        question={questionsData.questionsCustomerService[1].question}
+        options={questionsData.questionsCustomerService[1].options}
+        correctAnswer={questionsData.questionsCustomerService[1].correctAnswer}
+        explanation={questionsData.questionsCustomerService[1].explanation}
+        category={questionsData.questionsCustomerService[1].category}
       />
     ),
   },
@@ -2280,12 +2016,12 @@ export const customerServiceSlides = (playerName: string, setCurrentSlides: Reac
     title: "Knowledge Check: Q3",
     content: (
       <MultipleChoiceQuestion
-        questionId={questionsData.questionsAcceptableUse[2].id}
-        question={questionsData.questionsAcceptableUse[2].question}
-        options={questionsData.questionsAcceptableUse[2].options}
-        correctAnswer={questionsData.questionsAcceptableUse[2].correctAnswer}
-        explanation={questionsData.questionsAcceptableUse[2].explanation}
-        category={questionsData.questionsAcceptableUse[2].category}
+        questionId={questionsData.questionsCustomerService[2].id}
+        question={questionsData.questionsCustomerService[2].question}
+        options={questionsData.questionsCustomerService[2].options}
+        correctAnswer={questionsData.questionsCustomerService[2].correctAnswer}
+        explanation={questionsData.questionsCustomerService[2].explanation}
+        category={questionsData.questionsCustomerService[2].category}
       />
     ),
   },
@@ -2293,12 +2029,12 @@ export const customerServiceSlides = (playerName: string, setCurrentSlides: Reac
     title: "Knowledge Check: Q4",
     content: (
       <MultipleChoiceQuestion
-        questionId={questionsData.questionsAcceptableUse[3].id}
-        question={questionsData.questionsAcceptableUse[3].question}
-        options={questionsData.questionsAcceptableUse[3].options}
-        correctAnswer={questionsData.questionsAcceptableUse[3].correctAnswer}
-        explanation={questionsData.questionsAcceptableUse[3].explanation}
-        category={questionsData.questionsAcceptableUse[3].category}
+        questionId={questionsData.questionsCustomerService[3].id}
+        question={questionsData.questionsCustomerService[3].question}
+        options={questionsData.questionsCustomerService[3].options}
+        correctAnswer={questionsData.questionsCustomerService[3].correctAnswer}
+        explanation={questionsData.questionsCustomerService[3].explanation}
+        category={questionsData.questionsCustomerService[3].category}
       />
     ),
   },
@@ -2306,12 +2042,12 @@ export const customerServiceSlides = (playerName: string, setCurrentSlides: Reac
     title: "Knowledge Check: Q5",
     content: (
       <MultipleChoiceQuestion
-        questionId={questionsData.questionsAcceptableUse[4].id}
-        question={questionsData.questionsAcceptableUse[4].question}
-        options={questionsData.questionsAcceptableUse[4].options}
-        correctAnswer={questionsData.questionsAcceptableUse[4].correctAnswer}
-        explanation={questionsData.questionsAcceptableUse[4].explanation}
-        category={questionsData.questionsAcceptableUse[4].category}
+        questionId={questionsData.questionsCustomerService[4].id}
+        question={questionsData.questionsCustomerService[4].question}
+        options={questionsData.questionsCustomerService[4].options}
+        correctAnswer={questionsData.questionsCustomerService[4].correctAnswer}
+        explanation={questionsData.questionsCustomerService[4].explanation}
+        category={questionsData.questionsCustomerService[4].category}
       />
     ),
   },
