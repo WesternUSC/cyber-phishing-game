@@ -1,11 +1,11 @@
-import slidesData from '@/data/policiesSlides.json'
+import slidesData from '@/data/customerServiceSlides.json'
 import MultipleChoiceQuestion from './multiple-choice-question';
 import questionsData from '@/data/questions.json';
 import ModuleTableOfContents from './module-title-slide';
 
 type slides = 'eso' | 'policies' | 'cs' | 'culture';
 
-export const policiesSlides = (playerName: string, setCurrentSlides: React.Dispatch<React.SetStateAction<slides>>) => [
+export const customerServiceSlides = (playerName: string, setCurrentSlides: React.Dispatch<React.SetStateAction<slides>>) => [
   {
     title: "Certificate of Completion",
     content: <ModuleTableOfContents title={slidesData.titleSlide.title} setCurrentSlides={setCurrentSlides} />,
@@ -350,6 +350,154 @@ export const policiesSlides = (playerName: string, setCurrentSlides: React.Dispa
                 }}
               >
                 {slidesData.slideOne.oneTwo}
+              </p>
+            </div>
+
+            <div
+              style={{
+                flex: 1,
+                height: "280px",
+                backgroundColor: "#f1f3f5",
+                borderRadius: "12px",
+                padding: "2rem",
+                boxSizing: "border-box",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+              }}
+            >
+              <h2
+                style={{
+                  margin: 0,
+                  color: "#582c83",
+                  fontSize: "1.5rem",
+                }}
+              >
+                1.3
+              </h2>
+
+              <p
+                style={{
+                  marginTop: "1rem",
+                  marginBottom: 0,
+                  color: "#374151",
+                  fontSize: "1.2rem",
+                  lineHeight: 1.6,
+                }}
+              >
+                {slidesData.slideOne.oneThree}
+              </p>
+            </div>
+
+            <div
+              style={{
+                flex: 1,
+                height: "280px",
+                backgroundColor: "#f1f3f5",
+                borderRadius: "12px",
+                padding: "2rem",
+                boxSizing: "border-box",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+              }}
+            >
+              <h2
+                style={{
+                  margin: 0,
+                  color: "#582c83",
+                  fontSize: "1.5rem",
+                }}
+              >
+                1.4
+              </h2>
+
+              <p
+                style={{
+                  marginTop: "1rem",
+                  marginBottom: 0,
+                  color: "#374151",
+                  fontSize: "1.2rem",
+                  lineHeight: 1.6,
+                }}
+              >
+                {slidesData.slideOne.oneFour}
+              </p>
+            </div>
+
+            <div
+              style={{
+                flex: 1,
+                height: "280px",
+                backgroundColor: "#f1f3f5",
+                borderRadius: "12px",
+                padding: "2rem",
+                boxSizing: "border-box",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+              }}
+            >
+              <h2
+                style={{
+                  margin: 0,
+                  color: "#582c83",
+                  fontSize: "1.5rem",
+                }}
+              >
+                1.5
+              </h2>
+
+              <p
+                style={{
+                  marginTop: "1rem",
+                  marginBottom: 0,
+                  color: "#374151",
+                  fontSize: "1.2rem",
+                  lineHeight: 1.6,
+                }}
+              >
+                {slidesData.slideOne.oneFive}
+              </p>
+            </div>
+
+            <div
+              style={{
+                flex: 1,
+                height: "280px",
+                backgroundColor: "#f1f3f5",
+                borderRadius: "12px",
+                padding: "2rem",
+                boxSizing: "border-box",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+              }}
+            >
+              <h2
+                style={{
+                  margin: 0,
+                  color: "#582c83",
+                  fontSize: "1.5rem",
+                }}
+              >
+                1.6
+              </h2>
+
+              <p
+                style={{
+                  marginTop: "1rem",
+                  marginBottom: 0,
+                  color: "#374151",
+                  fontSize: "1.2rem",
+                  lineHeight: 1.6,
+                }}
+              >
+                {slidesData.slideOne.oneSix}
               </p>
             </div>
 

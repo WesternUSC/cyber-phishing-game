@@ -10,7 +10,7 @@ type SelectionProps = {
   playerName: string;
   options?: TrainingOption[];
   setMadeSelection: React.Dispatch<React.SetStateAction<boolean>>;
-  setSelectedSlides: React.Dispatch<React.SetStateAction<'eso' | 'policies' | 'job' | 'culture'>>
+  setSelectedSlides: React.Dispatch<React.SetStateAction<'eso' | 'policies' | 'cs' | 'culture'>>
 };
 
 const defaultOptions: TrainingOption[] = [
@@ -59,7 +59,7 @@ export default function Selection({
         break;
 
       case "3":
-        setSelectedSlides('job');
+        setSelectedSlides('cs');
         break;
 
       case "4":

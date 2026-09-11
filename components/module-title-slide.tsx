@@ -1,132 +1,139 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-type Slide = "eso" | "policies" | "job" | "culture";
+type Slide = "eso" | "policies" | "cs" | "culture";
+
+interface Module {
+  name: string;
+  score: number;
+  questionCount: number;
+  page: Slide;
+}
 
 interface ModuleTableOfContentsProps {
   title: string;
   setCurrentSlides: React.Dispatch<React.SetStateAction<Slide>>;
 }
 
-const modules = [
+const modules: Omit<Module, "score">[] = [
     {
         name: "Employee Security Onboarding",
-        score: "0",
-        questionCount: "0"
+        questionCount: 0,
+        page: "eso"
     },
     {
         name: "Acceptable Use Policy",
-        score: Number(localStorage.getItem("acceptable-use-score") || "0"),
-        questionCount: "5"
+        questionCount: 5,
+        page: "policies"
     },
     {
         name: "Accessibility for Customer Service Policy",
-        score: Number(localStorage.getItem("acceptable-use-score") || "0"),
-        questionCount: "5"
+        questionCount: 5,
+        page: "cs"
     },
     {
         name: "Accessibility Policy",
-        score: Number(localStorage.getItem("acceptable-use-score") || "0"),
-        questionCount: "5"
+        questionCount: 5,
+        page: "eso"
     },
     {
         name: "Conflict of Interest Policy for USC Paid Employees",
-        score: Number(localStorage.getItem("acceptable-use-score") || "0"),
-        questionCount: "5"
+        questionCount: 5,
+        page: "eso"
     },
     {
         name: "Discrimination Harassment and Violence Prevention Policy",
-        score: Number(localStorage.getItem("acceptable-use-score") || "0"),
-        questionCount: "5"
+        questionCount: 5,
+        page: "eso"
     },
     {
         name: "Discrimination Harassment and Violence Reporting Procedure",
-        score: Number(localStorage.getItem("acceptable-use-score") || "0"),
-        questionCount: "5"
+        questionCount: 5,
+        page: "eso"
     },
     {
         name: "Early and Safe Return to Work Policy",
-        score: Number(localStorage.getItem("acceptable-use-score") || "0"),
-        questionCount: "5"
+        questionCount: 5,
+        page: "eso"
     },
     {
         name: "Emergency Preparedness Policy",
-        score: Number(localStorage.getItem("acceptable-use-score") || "0"),
-        questionCount: "5"
+        questionCount: 5,
+        page: "eso"
     },
     {
         name: "Hazard Reporting Policy",
-        score: Number(localStorage.getItem("acceptable-use-score") || "0"),
-        questionCount: "5"
+        questionCount: 5,
+        page: "eso"
     },
     {
         name: "Health and Safety Responsibilities of Managers & Supervisors Policy",
-        score: Number(localStorage.getItem("acceptable-use-score") || "0"),
-        questionCount: "5"
+        questionCount: 5,
+        page: "eso"
     },
     {
         name: "Health and Safety Responsibilities of Workers (including Supplied Labour) Policy",
-        score: Number(localStorage.getItem("acceptable-use-score") || "0"),
-        questionCount: "5"
+        questionCount: 5,
+        page: "eso"
     },
     {
         name: "Health and Safety Work Refusal Policy",
-        score: Number(localStorage.getItem("acceptable-use-score") || "0"),
-        questionCount: "5"
+        questionCount: 5,
+        page: "eso"
     },
     {
         name: "Housekeeping and Organizing Policy",
-        score: Number(localStorage.getItem("acceptable-use-score") || "0"),
-        questionCount: "5"
+        questionCount: 5,
+        page: "eso"
     },
     {
         name: "Injury/Illness Reporting Policy",
-        score: Number(localStorage.getItem("acceptable-use-score") || "0"),
-        questionCount: "5"
+        questionCount: 5,
+        page: "eso"
     },
     {
         name: "Media Spokesperson Policy",
-        score: Number(localStorage.getItem("acceptable-use-score") || "0"),
-        questionCount: "5"
+        questionCount: 5,
+        page: "eso"
     },
     {
         name: "Right to Disconnect Policy for USC Paid Employees",
-        score: Number(localStorage.getItem("acceptable-use-score") || "0"),
-        questionCount: "5"
+        questionCount: 5,
+        page: "eso"
     },
     {
         name: "Social Media Policy",
-        score: Number(localStorage.getItem("acceptable-use-score") || "0"),
-        questionCount: "5"
+        questionCount: 5,
+        page: "eso"
     },
     {
         name: "Visitor Policy",
-        score: Number(localStorage.getItem("acceptable-use-score") || "0"),
-        questionCount: "5"
+        questionCount: 5,
+        page: "eso"
     },
     {
         name: "Whistleblower Policy",
-        score: Number(localStorage.getItem("acceptable-use-score") || "0"),
-        questionCount: "5"
+        questionCount: 5,
+        page: "eso"
     },
     {
         name: "Workplace Conduct Policy",
-        score: Number(localStorage.getItem("acceptable-use-score") || "0"),
-        questionCount: "5"
+        questionCount: 5,
+        page: "eso"
     },
     {
         name: "Professional Development Procedure",
-        score: Number(localStorage.getItem("acceptable-use-score") || "0"),
-        questionCount: "5"
+        questionCount: 5,
+        page: "eso"
     },
     {
         name: "Short Term Flexibility Procedure",
-        score: Number(localStorage.getItem("acceptable-use-score") || "0"),
-        questionCount: "5"
+        questionCount: 5,
+        page: "eso"
     },
     {
         name: "Financial Approvals and Purchasing Procedure",
-        score: Number(localStorage.getItem("acceptable-use-score") || "0"),
-        questionCount: "5"
+        questionCount: 5,
+        page: "eso"
     },
 ]
 
@@ -134,6 +141,44 @@ export default function ModuleTableOfContents({
   title,
   setCurrentSlides,
 }: ModuleTableOfContentsProps) {
+  const [scores, setScores] = useState<Record<string, number>>({});
+
+  useEffect(() => {
+    const acceptableUseScore = Number(
+      localStorage.getItem("acceptable-use-score") || "0"
+    );
+
+    const csScore = Number(
+      localStorage.getItem("cs-score") || "0"
+    );
+
+    setScores({
+        "Acceptable Use Policy": acceptableUseScore,
+        "Accessibility for Customer Service Policy": csScore,
+        "Accessibility Policy": acceptableUseScore,
+        "Conflict of Interest Policy for USC Paid Employees": acceptableUseScore,
+        "Discrimination Harassment and Violence Prevention Policy": acceptableUseScore,
+        "Discrimination Harassment and Violence Reporting Procedure": acceptableUseScore,
+        "Early and Safe Return to Work Policy": acceptableUseScore,
+        "Emergency Preparedness Policy": acceptableUseScore,
+        "Hazard Reporting Policy": acceptableUseScore,
+        "Health and Safety Responsibilities of Managers & Supervisors Policy": acceptableUseScore,
+        "Health and Safety Responsibilities of Workers (including Supplied Labour) Policy": acceptableUseScore,
+        "Health and Safety Work Refusal Policy": acceptableUseScore,
+        "Housekeeping and Organizing Policy": acceptableUseScore,
+        "Injury/Illness Reporting Policy": acceptableUseScore,
+        "Media Spokesperson Policy": acceptableUseScore,
+        "Right to Disconnect Policy for USC Paid Employees": acceptableUseScore,
+        "Social Media Policy": acceptableUseScore,
+        "Visitor Policy": acceptableUseScore,
+        "Whistleblower Policy": acceptableUseScore,
+        "Workplace Conduct Policy": acceptableUseScore,
+        "Professional Development Procedure": acceptableUseScore,
+        "Short Term Flexibility Procedure": acceptableUseScore,
+        "Financial Approvals and Purchasing Procedure": acceptableUseScore,
+    });
+  }, []);
+
   return (
     <div
       style={{
@@ -187,7 +232,7 @@ export default function ModuleTableOfContents({
         {modules.map((module, index) => (
           <button
             key={index}
-            onClick={() => setCurrentSlides("eso")}
+            onClick={() => setCurrentSlides(module.page)}
             style={{
               display: "flex",
               alignItems: "center",
@@ -258,7 +303,7 @@ export default function ModuleTableOfContents({
                 fontWeight: "600",
               }}
             >
-              {module.score} / {module.questionCount}
+              {scores[module.name] ?? 0} / {module.questionCount}
             </span>
           </button>
         ))}

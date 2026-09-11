@@ -46,6 +46,22 @@ const MultipleChoiceQuestion: React.FC<MultipleChoiceQuestionProps> = ({
     SCORE_KEY = "acceptable-use-score";
     ANSWERS_KEY = "acceptable-use-answers";
   }
+  switch (category) {
+    case "acceptableUse":
+      SCORE_KEY = "acceptable-use-score";
+      ANSWERS_KEY = "acceptable-use-answers";
+      break;
+
+    case "acceptableUse":
+      SCORE_KEY = "cs-score";
+      ANSWERS_KEY = "cs-answers";
+      break;
+
+    default:
+      SCORE_KEY = "acceptable-use-score";
+      ANSWERS_KEY = "acceptable-use-answers";
+      break;
+  }
 
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [score, setScore] = useState(0);

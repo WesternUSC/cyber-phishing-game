@@ -1,8 +1,8 @@
 {
     "titleSlide": {
-        "title": "POLICIES AND PROCEDURES",
+        "title": "Accessibility for Customer Service Policy",
         "subtitle": "",
-        "moduleTitle": "POLICIES AND PROCEDURES",
+        "moduleTitle": "Accessibility for Customer Service Policy",
         "desc": ""
     },
     "policiesSlide": {
@@ -10,47 +10,43 @@
         "table": [
             {
                 "label": "Authority",
-                "value": "Chief Operating Officer"
+                "value": "Board of Directors"
             },
             {
                 "label": "Date Ratified",
-                "value": "February 2, 2024"
+                "value": "December 6, 2024"
             },
             {
                 "label": "Next Review Date",
-                "value": "February 2027"
+                "value": "December 2027"
             },
             {
                 "label": "Previous Amendments",
-                "value": "August 2020; May 2018"
-            },
-            {
-                "label": "Delegate(s)",
-                "value": "Senior Manager, Information Systems"
+                "value": "November 15, 2011"
             }
         ],
-        "description": "The Acceptable Use Policy sets out employees' responsibilities when using USC corporate IT systems (computers, email, network, and software). Corporate systems are provided for business purposes and must be used to protect the USC's public image, security, and data, and to comply with University of Western Ontario network policies since USC systems are hosted on Western's network.",
-        "scope": "The policy covers acceptable personal use, system security, monitoring of activity, data protection, use of personal devices when working remotely, and the consequences of violations, which range from verbal warnings to termination and potential criminal referral."
+        "description": "This policy ensures the USC respects all customers, regardless of their abilities, in compliance with the Accessibility for Ontarians with Disabilities Act (AODA), 2005, and its Customer Service Standard. It applies to all USC employees, volunteers, and visitors, and covers assistive devices, service animals, support persons, temporary service disruptions, staff training, and the feedback process.",
+        "scope": ""
     },
     "useSlide": {
         "title": "Key Takeaways",
         "items": [
-            "Corporate systems are for business purposes; use that conflicts with USC's interests or breaches policy is prohibited.",
-            "Because USC is hosted on Western's network, Western's confidentiality and information-governance policies also apply.",
-            "No abusive, discriminatory, harassing, inflammatory, profane, pornographic, or offensive material may be sent through corporate systems, and messages may never be sent anonymously or under a fictitious name.",
-            "Limited personal use is allowed only if it doesn't interfere with work, involve solicitation, support an outside for-profit activity, or risk embarrassing the USC.",
-            "Unauthorized, unlicensed, or pirated software is strictly prohibited; antivirus software must never be disabled, and virus incidents must be reported.",
-            "Login IDs and passwords are personal and must not be shared or written down; employees are responsible for all activity under their own ID and must report any suspected compromise to I.S.",
-            "USC Information Systems management may monitor usage patterns, web history, and email to maintain a safe and productive work environment.",
-            "Employees are legally and ethically responsible for protecting any sensitive, confidential, restricted, or proprietary data entrusted to them.",
-            "Personal devices used to access USC data while working from home must be patched, run up-to-date security software, and be password protected.",
-            "Confirmed violations can result in sanctions up to and including termination, and may be referred to authorities for criminal prosecution."
+            "Applies to all USC employees, volunteers, and visitors, and addresses accessibility of services, products, and spaces for people with disabilities.",
+            "The USC welcomes the use of assistive devices, and welcomes service animals onto premises open to the public, committing to find alternatives where an animal is legally prohibited, such as for health or safety reasons.",
+            "A person with a disability accompanied by a support person will be allowed to have that person accompany them on USC premises; where a fee applies to the support person's admission, it will be communicated and posted accordingly.",
+            "The USC will notify customers promptly of planned or unexpected disruptions to services or facilities for customers with disabilities, including the reason, anticipated length, and alternatives, if available.",
+            "Training is provided to employees, volunteers, and anyone developing USC policies, practices, or procedures affecting the public, covering interacting with people with disabilities, using assistive devices/equipment, and what to do if a person with a disability is having difficulty accessing goods or services; training records, including dates and numbers trained, are kept.",
+            "The USC welcomes feedback, in person, by telephone, in writing, or electronically, on how it provides accessible goods and services, and will make every reasonable and timely effort to respond to complaints and answer questions; related documents are available in accessible formats upon request."
         ]
     },
     "slideOne": {
-        "title": "1. Overview",
-        "oneOne": "Corporate Information Technology systems are company property provided for general business purposes to increase productivity and employee effectiveness only. Use of corporate services for purposes constituting clear conflict of the USC's interests or in violation of this or related policies is expressly prohibited.",
-        "oneTwo": "As we are hosted on Western's network, University bylaws and policies, such as those concerning confidentiality of information, also apply and must be upheld. These policies can be reviewed at http://security.uwo.ca/information governance/policies/index.html "
+        "title": "1. DEFINITIONS",
+        "oneOne": "Accessibility: Means how easy it is for people, including those with disabilities, to use services, products, and spaces.",
+        "oneTwo": "Assistive Device: Any tool used by people with disabilities to help them in daily activities, such as a wheelchair, hearing aid, or communication device.",
+        "oneThree": "Service Animal: An animal trained to help a person with a disability. They are typically recognizable by a vest, harness, or other identifying markers.",
+        "oneFour": "Support Person: A person who helps someone with a disability in areas like communication, moving around, personal care, or medical needs, or who helps them access services.",
+        "oneFive": "Feedback: Any comments, suggestions, or complaints from customers or visitors about the quality and accessibility of services.",
+        "oneSix": "Person with Disabilities: Someone who has a physical, mental, sensory, or cognitive condition that, when combined with different barriers, might make it harder for them to fully participate and access services in the same way as others."
     },
     "slideTwo": {
         "title": "2. CORPORATE PUBLIC IMAGE",
