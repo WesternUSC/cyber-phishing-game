@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-type Slide = "eso" | "policies" | "cs" | "culture";
+type Slide = "eso" | "policies" | "cs" | "accessibility";
 
 interface Module {
   name: string;

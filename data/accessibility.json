@@ -1,0 +1,193 @@
+{
+    "titleSlide": {
+        "title": "Accessibility Policy",
+        "subtitle": "",
+        "moduleTitle": "Accessibility Policy",
+        "desc": ""
+    },
+    "policiesSlide": {
+        "title": "Policy Summary",
+        "table": [
+            {
+                "label": "Authority",
+                "value": "Chief Operating Officer"
+            },
+            {
+                "label": "Date Ratified",
+                "value": "December 6, 2024"
+            },
+            {
+                "label": "Next Review Date",
+                "value": "December 2027"
+            },
+            {
+                "label": "Previous Amendments",
+                "value": "N/A"
+            },
+            {
+                "label": "Related Document(s)",
+                "value": "USC AODA Multi Year Plan"
+            },
+            {
+                "label": "Delegate(s)",
+                "value": "Senior Manager, People and Development"
+            }
+        ],
+        "description": "This policy reflects the USC's commitment to equal access and participation for people with disabilities and to meeting accessibility requirements under the Accessibility for Ontarians with Disabilities Act (AODA) and Ontario's accessibility laws, alongside its obligations under the Ontario Human Rights Code. It applies to paid USC staff and covers training, assistive devices, communication, service animals, support persons, notice of disruption, feedback, document availability, self-service kiosks, information and communications standards, employment accommodation, and the design of public spaces.",
+        "scope": ""
+    },
+    "useSlide": {
+        "title": "Key Takeaways",
+        "items": [
+            "Applies to all paid USC employees, including those compensated through honoraria; 'disability' covers a broad range of visible and invisible conditions, including visual, hearing, or speech impairments, mobility disabilities, brain injury, epilepsy, intellectual or learning disabilities, mental health challenges, and reliance on a service animal or mobility device.",
+            "The Senior Manager, People and Development administers the policy (the COO steps in if conflicted); AODA obligations do not substitute for or limit obligations under the Ontario Human Rights Code.",
+            "Staff are trained annually, and whenever policies or procedures change, on accessible customer service, other AODA standards, and relevant aspects of the Ontario Human Rights Code, with training tailored to specific roles and records maintained.",
+            "Assistive devices are welcomed; where a device presents a significant, unavoidable health or safety concern, other measures will be used. Service animals are welcomed on public premises, with documentation from a regulated health professional sometimes required if the animal isn't easily identifiable.",
+            "Support persons are permitted to accompany a person with a disability at no fee or fare; the USC may require a support person for health or safety reasons only after consulting the person, considering available evidence, and confirming there is no other reasonable way to protect health or safety, with any required admission fee waived.",
+            "Temporary service disruptions require prompt public notice covering the reason, length, and alternatives; documents related to accessible customer service are available on request in accessible formats or with communication supports, at no additional cost and in a timely manner.",
+            "The USC will meet WCAG 2.0 Level AA website requirements, and follows detailed employment accommodation obligations from recruitment and hiring through individualized workplace emergency response plans and return-to-work processes for disability-related absences.",
+            "Design of public spaces, such as Concrete Beach and service counters, must meet AODA built-environment requirements under the Integrated Accessibility Standards Regulation, including specific service counter clear-knee-space dimensions."
+        ]
+    },
+    "slideOne": {
+        "title": "1. SCOPE",
+        "oneOne": "This policy applies to all paid USC employees ('staff') identified in this policy including those compensated through honoraria (Full-time Staff, Part-time Staff, Coordinators, Associate Vice-Presidents, Interns,, Executive Officers, and Members of the Gazette)."
+    },
+    "slideTwo": {
+        "title": "2. DEFINITIONS",
+        "twoOne": "Disability: The term 'disability' covers a range of visible and invisible conditions that may have been present from birth, caused by an accident, or developed over time. For instance, disabilities include:",
+        "twoOneOne": "Blindness or visual impairment",
+        "twoOneTwo": "Deafness or hearing disabilities",
+        "twoOneThree": "Speech impairment",
+        "twoOneFour": "Physical or mobility disabilities, such as paralysis, amputation, difficulty with balance or coordination",
+        "twoOneFive": "Brain injury",
+        "twoOneSix": "Epilepsy",
+        "twoOneSeven": "Intellectual or learning disabilities",
+        "twoOneEight": "Mental health challenges"
+    },
+    "slideThree": {
+        "title": "3. ADMINISTRATION",
+        "threeOne": "The Senior Manager, People and Development is responsible for administering the provisions of this Policy. In the event the Senior Manager, People and Development is conflicted, the Chief Operating Officer shall be responsible for administering the Policy.",
+        "threeTwo": "All issues pertaining to matters of Accessibility as defined in this policy should be brought forward to the Senior Manager, People and Development.",
+        "threeThree": "The responsibility for application, enforcement, training, and communication of this policy shall lie with the Senior Manager, People and Development."
+    },
+    "slideFour": {
+        "title": "4. GENERAL STATEMENT",
+        "fourOne": "We are committed to meeting our current and ongoing obligations under the Ontario Human Rights Code respecting non-discrimination.",
+        "fourTwo": "We understand that obligations under the Accessibility for Ontarians with Disabilities Act, 2005 (AODA) and its accessibility standards do not substitute or limit its obligations under the Ontario Human Rights Code or obligations to people with disabilities under any other law.",
+        "fourThree": "We are committed to excellence in serving and providing goods, services or facilities to all customers including people with disabilities.",
+        "fourFour": "Our accessible customer service policies are consistent with the principles of independence, dignity, integration and equality of opportunity for people with disabilities."
+    },
+    "slideFive": {
+        "title": "5. EXPECTATIONS AND RESPONSIBILITIES",
+        "fiveOne": "Training",
+        "fiveOneOne": "We are committed to training all staff in accessible customer service, other Ontario accessibility standards, and aspects of the Ontario Human Rights Code that relate to persons with disabilities.",
+        "fiveOneTwo": "Training will be provided to all staff at least once annually and whenever there are updates to the accessibility policies or procedures.",
+        "fiveOneThree": {
+            "intro": "Training of our staff on accessibility relates to their specific roles. Training includes:",
+            "items": [
+                "1. Purpose of the Accessibility for Ontarians with Disabilities Act, 2005 and the requirements of the Customer Service Standards",
+                "2. Our policies related to the Customer Service Standards",
+                "3. How to interact and communicate with people with various types of disabilities",
+                "4. How to interact with people with disabilities who use an assistive device or require the assistance of a service animal or a support person",
+                "5. How to use the equipment or devices available on-site or otherwise that may help with providing goods, services or facilities to people with disabilities.",
+                "6. What to do if a person with a disability is having difficulty in accessing our organization's goods, services or facilities."
+            ]
+        },  
+        "fiveOneFour": "We train every person as soon as practicable after being hired and provide training in respect of any changes to the policies.",
+        "fiveOneFive": "We maintain records of the training provided including the dates on which the training was provided and the number of individuals to whom it was provided."
+    },
+    "slideFiveContinued": {
+        "title": "5. EXPECTATIONS AND RESPONSIBILITIES (Continued)",
+        "fiveTwo": "Assistive Devices",
+        "fiveTwoOne": "People with disabilities may use their personal assistive devices when accessing our goods, services or facilities.",
+        "fiveTwoTwo": "In cases where the assistive device presents a significant and unavoidable health or safety concern or may not be permitted for other reasons, other measures will be used to ensure the person with a disability can access our goods, services or facilities.",
+        "fiveTwoThree": "We ensure that our staff are trained and familiar with various assistive devices we have on site or that we provide that may be used by customers with disabilities while accessing our goods, services or facilities.",
+        "fiveTwoFour": "If applicable, identify how your organization will train staff on the use of assistive devices.",
+        "fiveThree": "Communication",
+        "fiveThreeOne": "We communicate with people with disabilities in ways that take into account their disability. This may include in-person or over-the-phone communication.",
+        "fiveThreeTwo": "We will work with the person with disabilities to determine what method of communication works for them."
+    },
+    "slideFiveContinuedTwo": {
+        "title": "5. EXPECTATIONS AND RESPONSIBILITIES (Continued)",
+        "fiveFour": "Service Animals",
+        "fiveFourOne": "We welcome people with disabilities and their service animals. Service animals are allowed on the parts of our premises that are open to the public and third parties.",
+        "fiveFourTwo": "When we cannot easily identify that an animal is a service animal, our staff may ask for documentation (template, letter, or form) from a regulated health professional that confirms the person needs the service animal for reasons relating to their disability.",
+        "fiveFourThree": "A service animal can be easily identified through visual indicators, such as when it wears a harness or a vest, or when it helps the person perform certain tasks.",
+        "fiveFourFour": {
+            "intro": "A regulated health professional is defined as a member of one of the following colleges:",
+            "items": [
+                "1. College of Audiologists and Speech-Language Pathologists of Ontario",
+                "2. College of Chiropractors of Ontario",
+                "3. College of Nurses of Ontario",
+                "4. College of Occupational Therapists of Ontario",
+                "5. College of Optometrists of Ontario",
+                "6. College of Physicians and Surgeons of Ontario",
+                "7. College of Physiotherapists of Ontario",
+                "8. College of Psychologists of Ontario",
+                "9. College of Registered Psychotherapists and Registered Mental Health Therapists of Ontario"
+            ]
+        },
+        "fiveFourFive": {
+            "intro": "If service animals are prohibited by another law, we will do the following to ensure people with disabilities can access our goods, services or facilities:",
+            "items": [
+                "1. Explain why the animal is excluded",
+                "2. Discuss with the customer another way of providing goods, services or facilities."
+            ]
+        }
+    },
+    "slideFiveContinuedThree": {
+        "title": "5. EXPECTATIONS AND RESPONSIBILITIES (Continued)",
+        "fiveFive": "Support Persons",
+        "fiveFiveOne": "A person with a disability who is accompanied by a support person will be allowed to have that person accompany them on our premises.",
+        "fiveFiveTwo": "Fee/fare will not be charged for support persons.",
+        "fiveFiveThree": "We notify customers of this by posting a notice on our website.",
+        "fiveFiveFour": {
+            "intro": "In certain cases, the USC might require a person with a disability to be accompanied by a support person for the health or safety reasons of:",
+            "items": [
+                "1. The person with a disability",
+                "2. Others on the premises"
+            ]
+        },
+        "fiveFiveFive": {
+            "intro": "Before making a decision, the USC will:",
+            "items": [
+                "1. Consult with the person with a disability to understand their needs",
+                "2. Consider health or safety reasons based on available evidence",
+                "3. Determine if there is no other reasonable way to protect the health or safety of the person or others on the premises"
+            ]
+        },
+        "fiveFiveSix": "If the USC determines that a support person is required, we will waive the admission fee or fare (if applicable) for the support person."
+    },
+    "slideFiveContinuedFour": {
+        "title": "5. EXPECTATIONS AND RESPONSIBILITIES (Continued)",
+        "fiveSix": "Notice of Temporary Disruption",
+        "fiveSixOne": "In the event of a planned or unexpected disruption to services or facilities for customers with disabilities, the USC will notify customers promptly. This clearly posted notice will include information about the reason for the disruption, its anticipated length of time, and a description of alternative facilities or services, if available.",
+        "fiveSixTwo": "The notice will be made publicly available on our website.",
+        "fiveSeven": "Feedback Process",
+        "fiveSevenOne": "The USC welcomes feedback on how we provide accessible customer service. Customer feedback will help us identify barriers and respond to concerns.",
+        "fiveSevenTwo": {
+            "intro": "Feedback may be provided in the following ways:",
+            "items": [
+                "1. On our website",
+                "2. In person or over the phone",
+                "3. Emailing info@westernusc.ca"
+            ]
+        },
+        "fiveSevenThree": "All feedback, including complaints, will be initially reviewed by staff in the Feedback position, who will then direct the feedback to the relevant Senior Manager.",
+        "fiveSevenFour": "Customers can expect to hear back in five business days.",
+        "fiveSevenFive": "The USC ensures that our feedback process is accessible to people with disabilities by providing accessible formats or communication supports, upon request. Accessible formats and supports will be provided in a timely manner and at no additional cost, in accordance with the AODA's Customer Service Standard."
+    },
+    "slideFiveContinuedFive": {
+        "title": "5. EXPECTATIONS AND RESPONSIBILITIES (Continued)",
+        "fiveEight": "Notice of Availability of Documents",
+        "fiveEightOne": "The USC notifies the public that documents related to accessible customer service are available upon request by posting a notice on our website.",
+        "fiveEightTwo": "The USC will provide these documents in an accessible format or with communication support, upon request. We will consult with the person making the request to determine the suitability of the format or communication support. We will provide the accessible format in a timely manner and at no additional cost.",
+        "fiveNine": "Self-Service Kiosks",
+        "fiveNineOne": "We will incorporate accessibility features/consider accessibility for people with disabilities when designing, procuring or acquiring self-service kiosks."
+    },
+    "slideSix": {
+        "title": "6. EVALUATION",
+        "sixOne": "This policy will be evaluated on an annual basis through the Continuous Improvement Plan."
+    }
+}
