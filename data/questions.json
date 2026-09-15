@@ -252,5 +252,207 @@
       "correctAnswer": "B",
       "explanation": "Section 4.6.1 states feedback can be given in person, by telephone, in writing, or electronically via email or other digital formats."
     }
+  ],
+  "questionsAccessibility": [
+    {
+      "category": "accessibility",
+      "id": "q1",
+      "question": "An applicant is selected to participate in an interview process. What must the USC do regarding accommodations?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Accommodations are only discussed after the applicant's first 90 days of employment."
+        },
+        {
+          "label": "B",
+          "text": "Nothing, unless the applicant is ultimately hired."
+        },
+        {
+          "label": "C",
+          "text": "Notify the applicant that accommodations are available upon request, and consult with them to provide or arrange suitable accommodation."
+        },
+        {
+          "label": "D",
+          "text": "Only offer accommodations after a formal complaint is filed."
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Section 5.11.1 states the USC notifies job applicants selected for an assessment or selection process that accommodations are available upon request, and consults with and provides or arranges suitable accommodation."
+    },
+    {
+      "category": "accessibility",
+      "id": "q2",
+      "question": "A customer's service animal isn't easily identifiable by a harness or vest, and staff need to confirm it's required for a disability. What can staff request?",
+      "options": [
+        {
+          "label": "A",
+          "text": "A government-issued identification card for the animal."
+        },
+        {
+          "label": "B",
+          "text": "Proof of veterinary vaccination only."
+        },
+        {
+          "label": "C",
+          "text": "Nothing — staff may never ask for confirmation."
+        },
+        {
+          "label": "D",
+          "text": "Documentation from a regulated health professional confirming the person needs the service animal for reasons relating to their disability."
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Section 5.4.2 states staff may ask for documentation from a regulated health professional when a service animal cannot be easily identified."
+    },
+    {
+      "category": "accessibility",
+      "id": "q3",
+      "question": "The USC is redesigning a service counter in a public space. What minimum clear knee space must it provide from the public-facing side, per this policy?",
+      "options": [
+        {
+          "label": "A",
+          "text": "750 mm wide x 680 mm high x 250 mm deep, with additional toe space beyond."
+        },
+        {
+          "label": "B",
+          "text": "1000 mm wide x 800 mm high x 300 mm deep."
+        },
+        {
+          "label": "C",
+          "text": "No specific dimensions are required."
+        },
+        {
+          "label": "D",
+          "text": "500 mm wide x 500 mm high x 200 mm deep."
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Section 5.12.3.1.a specifies clear knee space of 750 mm wide x 680 mm high x 250 mm deep below the service counter, with additional toe space of 750 mm wide x 230 mm high x 230 mm deep."
+    },
+    {
+      "category": "accessibility",
+      "id": "q4",
+      "question": "An employee with a disability needs individualized workplace emergency information. When will the USC review this information?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Only once, when the employee is first hired."
+        },
+        {
+          "label": "B",
+          "text": "When the employee changes location, when their accommodation needs or plans are reviewed, or when the employer reviews its general emergency response policies."
+        },
+        {
+          "label": "C",
+          "text": "Only if requested in writing on an annual basis."
+        },
+        {
+          "label": "D",
+          "text": "Never — this is handled entirely by the employee."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Section 5.11.7 lists these three triggers for reviewing individualized workplace emergency response information."
+    },
+    {
+      "category": "accessibility",
+      "id": "q5",
+      "question": "A person with a disability requests an accessible format of a USC document. What cost, if any, can be charged?",
+      "options": [
+        {
+          "label": "A",
+          "text": "A cost determined case-by-case with no cap."
+        },
+        {
+          "label": "B",
+          "text": "A standard administrative fee."
+        },
+        {
+          "label": "C",
+          "text": "No additional cost — the format will be provided at no additional cost and in a timely manner."
+        },
+        {
+          "label": "D",
+          "text": "A cost equal to printing and shipping expenses."
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Section 5.8.2 states the USC will provide accessible formats or communication supports at no additional cost and in a timely manner."
+    },
+    {
+      "category": "accessibility",
+      "id": "q6",
+      "question": "If an assistive device presents a significant and unavoidable health or safety concern, what does the USC commit to doing?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Requiring a liability waiver with no further accommodation."
+        },
+        {
+          "label": "B",
+          "text": "Charging an additional insurance fee."
+        },
+        {
+          "label": "C",
+          "text": "Prohibiting the person with a disability from accessing the premises."
+        },
+        {
+          "label": "D",
+          "text": "Using other measures to ensure the person with a disability can still access goods, services, or facilities."
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Section 5.2.2 states that where an assistive device presents a significant and unavoidable health or safety concern, other measures will be used to ensure access."
+    },
+    {
+      "category": "accessibility",
+      "id": "q7",
+      "question": "Before requiring a support person for health or safety reasons, what must the USC do first?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Consult with the person with a disability, consider available evidence, and determine there is no other reasonable way to protect health or safety."
+        },
+        {
+          "label": "B",
+          "text": "Only obtain approval from the Senior Manager, Communications."
+        },
+        {
+          "label": "C",
+          "text": "Post a general public notice, with no individual consultation required."
+        },
+        {
+          "label": "D",
+          "text": "Nothing — it can require a support person unilaterally."
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Section 5.5.5 requires consultation with the person with a disability, consideration of available evidence, and confirmation that no other reasonable option exists before making this decision."
+    },
+    {
+      "category": "accessibility",
+      "id": "q8",
+      "question": "What accessibility standard must USC websites meet under this policy?",
+      "options": [
+        {
+          "label": "A",
+          "text": "WCAG 1.0 Level A."
+        },
+        {
+          "label": "B",
+          "text": "WCAG 2.0 Level AA."
+        },
+        {
+          "label": "C",
+          "text": "WCAG 2.1 Level AAA."
+        },
+        {
+          "label": "D",
+          "text": "No specific standard is required."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Section 5.10.5 states the USC will meet internationally-recognized WCAG 2.0 Level AA website requirements."
+    }
   ]
 }

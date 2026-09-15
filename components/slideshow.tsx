@@ -178,12 +178,20 @@ const Slideshow: React.FC<SlideshowProps> = ({
   };
 
   const previous = () => {
+    if (current === 0 || isTransitioning) {
+      return;
+    }
+
     if (current > 0) {
       changeSlide(current - 1);
     }
   };
 
   const next = () => {
+    if (current === slides.length - 1 || isTransitioning) {
+      return;
+    }
+
     if (current === slides.length - 2) {
       const allSlidesSeen = seenSlides.size === slides.length;
 

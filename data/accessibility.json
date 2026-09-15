@@ -186,8 +186,80 @@
         "fiveNine": "Self-Service Kiosks",
         "fiveNineOne": "We will incorporate accessibility features/consider accessibility for people with disabilities when designing, procuring or acquiring self-service kiosks."
     },
+    "slideFiveContinuedSix": {
+        "title": "5. EXPECTATIONS AND RESPONSIBILITIES (Continued)",
+        "fiveTen": "Information and Communications",
+        "fiveTenOne": "The USC is committed to providing information and communication in accessible formats for people with disabilities. This includes information about the organization and its services, including public safety information. We will ensure that information is provided in a timely manner, at no additional cost, and in formats that meet the individual needs of persons with disabilities. If information cannot be converted to an accessible format, we will provide an explanation as to why and a summary of the information.",
+        "fiveTenTwo": {
+            "intro": "We communicate with people with disabilities in ways that take into account their disability. When asked, we will provide information about our organization and its services, including public safety information, in accessible formats or with communication supports:",
+            "items": [
+                "1. In a timely manner, taking into account the person's accessibility needs due to disability; and",
+                "2. At a cost that is no more than the regular cost charged to other persons."
+            ]
+        },
+        "fiveTenThree": {
+            "intro": "We will consult with the person making the request in determining the suitability of an accessible format or communication support. If the organization determines that information or communications are unconvertible, the organization shall provide the requestor with:",
+            "items": [
+                "1. An explanation as to why the information or communications are unconvertible; and",
+                "2. A summary of the unconvertible information or communications."
+            ]
+        },
+        "fiveTenFour": "We notify the public about the availability of accessible formats and communication supports on our website.",
+        "fiveTenFive": "We will also meet internationally-recognized Web Content Accessibility Guidelines (WCAG) 2.0 Level AA website requirements in accordance with Ontario's accessibility laws"
+    },
+    "slideFiveContinuedSeven": {
+        "title": "5. EXPECTATIONS AND RESPONSIBILITIES (Continued)",
+        "fiveEleven": "Employment",
+        "fiveElevenOne": "We notify employees, job applicants, and the public that accommodations can be made during recruitment and hiring. We notify job applicants when they are individually selected to participate in an assessment or selection process that accommodations are available upon request. We consult with the applicants and provide or arrange for suitable accommodation.",
+        "fiveElevenTwo": "We notify successful applicants of policies for accommodating employees with disabilities when making offers of employment.",
+        "fiveElevenThree": "We notify staff that supports are available for those with disabilities as soon as practicable after they begin their employment. We provide updated information to employees whenever there is a change to existing policies on the provision of job accommodation that take into account an employee's accessibility needs due to a disability.",
+        "fiveTenFour": {
+            "intro": "We will consult with employees when arranging for the provision of suitable accommodation in a manner that takes into account the accessibility needs due to disability. We will consult with the person making the request in determining the suitability of an accessible format or communication supports specifically for:",
+            "items": [
+                "1. Information that is needed in order to perform the employee's job; and",
+                "2. Information that is generally available to employees in the workplace."
+            ]
+        },
+        "fiveElevenFive": "Where needed, we will also provide customized emergency information to help an employee with a disability during an emergency. With the employee's consent, we will provide workplace emergency information to a designated person who is providing assistance to that employee during an emergency."
+    },
+    "slideFiveContinuedEight": {
+        "title": "5. EXPECTATIONS AND RESPONSIBILITIES (Continued)",
+        "fiveEleven": "Employment (Continued)",
+        "fiveElevenSix": "We will provide the information as soon as practicable after we become aware of the need for accommodation due to the employee's disability.",
+        "fiveElevenSeven": {
+            "intro": "We will review the individualized workplace emergency response information:",
+            "items": [
+                "1. When the employee moves to a different location in the organization;",
+                "2. When the employee's overall accommodations needs or plans are reviewed; and",
+                "3. When the employer reviews its general emergency response policies."
+            ]
+        },
+        "fiveElevenEight": "We have a written process to develop individual accommodation plans for employees.",
+        "fiveElevenNine": "We have a written process for employees who have been absent from work due to a disability and require disability-related accommodations in order to return to work.",
+        "fiveElevenTen": "Our performance management, career development and redeployment processes take into account the accessibility needs of all employees."
+    },
+    "slideFiveContinuedNine": {
+        "title": "5. EXPECTATIONS AND RESPONSIBILITIES (Continued)",
+        "fiveTwelve": "Design of Public Spaces",
+        "fiveTwelveOne": {
+            "intro": "We will meet accessibility laws when building or making major changes to public spaces. Our public spaces include:",
+            "items": [
+                "1. Outdoor public event and congregation areas (i.e. Concrete Beach).",
+                "2. Service-related elements like service counters, fixed queueing lines and waiting areas."
+            ]
+        },
+        "fiveTwelveTwo": "We put procedures in place to prevent service disruptions to the accessible parts of our public spaces.",
+        "fiveTwelveThree": {
+            "intro": "The University Students' Council will ensure that any new public spaces, including service counters, that it constructs or redevelops, meet the built requirements as required in the Integrated Accessibility Standards Regulation (ON 191/11).",
+            "items": [
+                "1. We will ensure that these legal provisions are met on sites the USC occupies and sites or properties that it manages, owns, and operates to ensure that contractors performing such construction or redevelopment adhere to these requirements. This includes but is not limited to:",
+                "a. Section 80.41(1,2) requiring Service Counters to have clear knee space to accommodate mobility aids from the public facing side, with minimum dimensions of 750 mm wide x 680 mm high x 250 mm deep below the service counter, with an additional toe space beyond of 750 mm wide x 230 mm high x 230 mm deep"
+            ]
+        }
+    },
     "slideSix": {
-        "title": "6. EVALUATION",
-        "sixOne": "This policy will be evaluated on an annual basis through the Continuous Improvement Plan."
+        "title": "6. COMMUNICATION",
+        "sixOne": "This policy will be explained as needed to workers through orientation or task-specific training, and will be included in new hire paperwork.",
+        "sixTwo": "All Members will be trained on this policy annually."
     }
 }
