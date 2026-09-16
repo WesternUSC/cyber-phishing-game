@@ -1,11 +1,11 @@
-import slidesData from '@/data/policiesSlides.json'
+import slidesData from '@/data/conflict.json'
 import MultipleChoiceQuestion from './multiple-choice-question';
 import questionsData from '@/data/questions.json';
 import ModuleTableOfContents from './module-title-slide';
 
 type slides = 'eso' | 'policies' | 'cs' | 'accessibility' | 'conflict';
 
-export const policiesSlides = (playerName: string, setCurrentSlides: React.Dispatch<React.SetStateAction<slides>>) => [
+export const conflictSlides = (playerName: string, setCurrentSlides: React.Dispatch<React.SetStateAction<slides>>) => [
   {
     title: "Certificate of Completion",
     content: <ModuleTableOfContents title={slidesData.titleSlide.title} setCurrentSlides={setCurrentSlides} />,
@@ -222,44 +222,6 @@ export const policiesSlides = (playerName: string, setCurrentSlides: React.Dispa
               </p>
             </div>
 
-            <div
-              style={{
-                flex: 1,
-                minHeight: "280px",
-                height: "auto",
-                backgroundColor: "#f1f3f5",
-                borderRadius: "12px",
-                padding: "2rem",
-                boxSizing: "border-box",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "flex-start",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-              }}
-            >
-              <h2
-                style={{
-                  margin: 0,
-                  color: "#582c83",
-                  fontSize: "1.5rem",
-                }}
-              >
-                1.2
-              </h2>
-
-              <p
-                style={{
-                  marginTop: "1rem",
-                  marginBottom: 0,
-                  color: "#374151",
-                  fontSize: "1.2rem",
-                  lineHeight: 1.6,
-                }}
-              >
-                {slidesData.slideOne.oneTwo}
-              </p>
-            </div>
-
           </div>
         </div>
       </>
@@ -345,44 +307,6 @@ export const policiesSlides = (playerName: string, setCurrentSlides: React.Dispa
                 }}
               >
                 {slidesData.slideTwo.twoOne}
-              </p>
-            </div>
-
-            <div
-              style={{
-                flex: 1,
-                minHeight: "280px",
-                height: "auto",
-                backgroundColor: "#f1f3f5",
-                borderRadius: "12px",
-                padding: "2rem",
-                boxSizing: "border-box",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "flex-start",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-              }}
-            >
-              <h2
-                style={{
-                  margin: 0,
-                  color: "#582c83",
-                  fontSize: "1.5rem",
-                }}
-              >
-                2.2
-              </h2>
-
-              <p
-                style={{
-                  marginTop: "1rem",
-                  marginBottom: 0,
-                  color: "#374151",
-                  fontSize: "1.2rem",
-                  lineHeight: 1.6,
-                }}
-              >
-                {slidesData.slideTwo.twoTwo}
               </p>
             </div>
 
@@ -474,6 +398,82 @@ export const policiesSlides = (playerName: string, setCurrentSlides: React.Dispa
               </p>
             </div>
 
+            <div
+              style={{
+                flex: 1,
+                minHeight: "280px",
+                height: "auto",
+                backgroundColor: "#f1f3f5",
+                borderRadius: "12px",
+                padding: "2rem",
+                boxSizing: "border-box",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+              }}
+            >
+              <h2
+                style={{
+                  margin: 0,
+                  color: "#582c83",
+                  fontSize: "1.5rem",
+                }}
+              >
+                3.2
+              </h2>
+
+              <p
+                style={{
+                  marginTop: "1rem",
+                  marginBottom: 0,
+                  color: "#374151",
+                  fontSize: "1.2rem",
+                  lineHeight: 1.6,
+                }}
+              >
+                {slidesData.slideThree.threeTwo}
+              </p>
+            </div>
+
+            <div
+              style={{
+                flex: 1,
+                minHeight: "280px",
+                height: "auto",
+                backgroundColor: "#f1f3f5",
+                borderRadius: "12px",
+                padding: "2rem",
+                boxSizing: "border-box",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+              }}
+            >
+              <h2
+                style={{
+                  margin: 0,
+                  color: "#582c83",
+                  fontSize: "1.5rem",
+                }}
+              >
+                3.3
+              </h2>
+
+              <p
+                style={{
+                  marginTop: "1rem",
+                  marginBottom: 0,
+                  color: "#374151",
+                  fontSize: "1.2rem",
+                  lineHeight: 1.6,
+                }}
+              >
+                {slidesData.slideThree.threeThree}
+              </p>
+            </div>
+
           </div>
         </div>
       </>
@@ -559,44 +559,6 @@ export const policiesSlides = (playerName: string, setCurrentSlides: React.Dispa
                 }}
               >
                 {slidesData.slideFour.fourOne}
-              </p>
-            </div>
-
-            <div
-              style={{
-                flex: 1,
-                minHeight: "280px",
-                height: "auto",
-                backgroundColor: "#f1f3f5",
-                borderRadius: "12px",
-                padding: "2rem",
-                boxSizing: "border-box",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "flex-start",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-              }}
-            >
-              <h2
-                style={{
-                  margin: 0,
-                  color: "#582c83",
-                  fontSize: "1.5rem",
-                }}
-              >
-                4.2
-              </h2>
-
-              <p
-                style={{
-                  marginTop: "1rem",
-                  marginBottom: 0,
-                  color: "#374151",
-                  fontSize: "1.2rem",
-                  lineHeight: 1.6,
-                }}
-              >
-                {slidesData.slideFour.fourTwo}
               </p>
             </div>
 
@@ -688,6 +650,246 @@ export const policiesSlides = (playerName: string, setCurrentSlides: React.Dispa
               </p>
             </div>
 
+            <div
+              style={{
+                flex: 1,
+                minHeight: "280px",
+                height: "auto",
+                backgroundColor: "#f1f3f5",
+                borderRadius: "12px",
+                padding: "2rem",
+                boxSizing: "border-box",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+              }}
+            >
+              <h2
+                style={{
+                  margin: 0,
+                  color: "#582c83",
+                  fontSize: "1.5rem",
+                }}
+              >
+                5.2
+              </h2>
+
+              <p
+                style={{
+                  marginTop: "1rem",
+                  marginBottom: 0,
+                  color: "#374151",
+                  fontSize: "1.2rem",
+                  lineHeight: 1.6,
+                }}
+              >
+                {slidesData.slideFive.fiveTwo}
+              </p>
+            </div>
+
+            <div
+              style={{
+                flex: 1,
+                minHeight: "280px",
+                height: "auto",
+                backgroundColor: "#f1f3f5",
+                borderRadius: "12px",
+                padding: "2rem",
+                boxSizing: "border-box",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+              }}
+            >
+              <h2
+                style={{
+                  margin: 0,
+                  color: "#582c83",
+                  fontSize: "1.5rem",
+                }}
+              >
+                5.3
+              </h2>
+
+              <p
+                style={{
+                  marginTop: "1rem",
+                  marginBottom: 0,
+                  color: "#374151",
+                  fontSize: "1.2rem",
+                  lineHeight: 1.6,
+                }}
+              >
+                {slidesData.slideFive.fiveThree}
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </>
+    ),
+  },
+  {
+    title: slidesData.slideFive.title,
+    content: (
+      <>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            height: "100%",
+            padding: "2rem 3rem",
+            boxSizing: "border-box",
+          }}
+        >
+
+          <h1
+            style={{
+              margin: 0,
+              color: "#582c83",
+              fontSize: "2.75rem",
+            }}
+          >
+            {slidesData.slideFive.title.toUpperCase()}
+          </h1>
+
+          <div
+            style={{
+              marginTop: "0.75rem",
+              height: "3px",
+              width: "100%",
+              backgroundColor: "#e2e8f0",
+              borderRadius: "2px",
+            }}
+          />
+
+          <div
+            style={{
+              flex: 1,
+              display: "flex",
+              alignItems: "flex-start",
+              justifyContent: "center",
+              gap: "2rem",
+              padding: "2rem 0",
+            }}
+          >
+
+            <div
+              style={{
+                flex: 1,
+                minHeight: "280px",
+                height: "auto",
+                backgroundColor: "#f1f3f5",
+                borderRadius: "12px",
+                padding: "2rem",
+                boxSizing: "border-box",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+              }}
+            >
+              <h2
+                style={{
+                  margin: 0,
+                  color: "#582c83",
+                  fontSize: "1.5rem",
+                }}
+              >
+                5.4
+              </h2>
+
+              <p
+                style={{
+                  marginTop: "1rem",
+                  marginBottom: 0,
+                  color: "#374151",
+                  fontSize: "1.2rem",
+                  lineHeight: 1.6,
+                }}
+              >
+                {slidesData.slideFive.fiveFour}
+              </p>
+            </div>
+
+            <div
+              style={{
+                flex: 1,
+                minHeight: "280px",
+                height: "auto",
+                backgroundColor: "#f1f3f5",
+                borderRadius: "12px",
+                padding: "2rem",
+                boxSizing: "border-box",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+              }}
+            >
+              <h2
+                style={{
+                  margin: 0,
+                  color: "#582c83",
+                  fontSize: "1.5rem",
+                }}
+              >
+                5.5
+              </h2>
+
+              <p
+                style={{
+                  marginTop: "1rem",
+                  marginBottom: 0,
+                  color: "#374151",
+                  fontSize: "1.2rem",
+                  lineHeight: 1.6,
+                }}
+              >
+                {slidesData.slideFive.fiveFive}
+              </p>
+            </div>
+
+            <div
+              style={{
+                flex: 1,
+                minHeight: "280px",
+                height: "auto",
+                backgroundColor: "#f1f3f5",
+                borderRadius: "12px",
+                padding: "2rem",
+                boxSizing: "border-box",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+              }}
+            >
+              <h2
+                style={{
+                  margin: 0,
+                  color: "#582c83",
+                  fontSize: "1.5rem",
+                }}
+              >
+                5.6
+              </h2>
+
+              <p
+                style={{
+                  marginTop: "1rem",
+                  marginBottom: 0,
+                  color: "#374151",
+                  fontSize: "1.2rem",
+                  lineHeight: 1.6,
+                }}
+              >
+                {slidesData.slideFive.fiveSix}
+              </p>
+            </div>
+
           </div>
         </div>
       </>
@@ -776,6 +978,44 @@ export const policiesSlides = (playerName: string, setCurrentSlides: React.Dispa
               </p>
             </div>
 
+            <div
+              style={{
+                flex: 1,
+                minHeight: "280px",
+                height: "auto",
+                backgroundColor: "#f1f3f5",
+                borderRadius: "12px",
+                padding: "2rem",
+                boxSizing: "border-box",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+              }}
+            >
+              <h2
+                style={{
+                  margin: 0,
+                  color: "#582c83",
+                  fontSize: "1.5rem",
+                }}
+              >
+                6.2
+              </h2>
+
+              <p
+                style={{
+                  marginTop: "1rem",
+                  marginBottom: 0,
+                  color: "#374151",
+                  fontSize: "1.2rem",
+                  lineHeight: 1.6,
+                }}
+              >
+                {slidesData.slideSix.sixTwo}
+              </p>
+            </div>
+
           </div>
         </div>
       </>
@@ -861,182 +1101,6 @@ export const policiesSlides = (playerName: string, setCurrentSlides: React.Dispa
                 }}
               >
                 {slidesData.slideSeven.sevenOne}
-              </p>
-            </div>
-
-          </div>
-        </div>
-      </>
-    ),
-  },
-  {
-    title: slidesData.slideEight.title,
-    content: (
-      <>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            height: "100%",
-            padding: "2rem 3rem",
-            boxSizing: "border-box",
-          }}
-        >
-
-          <h1
-            style={{
-              margin: 0,
-              color: "#582c83",
-              fontSize: "2.75rem",
-            }}
-          >
-            {slidesData.slideEight.title.toUpperCase()}
-          </h1>
-
-          <div
-            style={{
-              marginTop: "0.75rem",
-              height: "3px",
-              width: "100%",
-              backgroundColor: "#e2e8f0",
-              borderRadius: "2px",
-            }}
-          />
-
-          <div
-            style={{
-              flex: 1,
-              display: "flex",
-              alignItems: "flex-start",
-              justifyContent: "center",
-              gap: "2rem",
-              padding: "2rem 0",
-            }}
-          >
-
-            <div
-              style={{
-                flex: 1,
-                minHeight: "280px",
-                height: "auto",
-                backgroundColor: "#f1f3f5",
-                borderRadius: "12px",
-                padding: "2rem",
-                boxSizing: "border-box",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "flex-start",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-              }}
-            >
-              <h2
-                style={{
-                  margin: 0,
-                  color: "#582c83",
-                  fontSize: "1.5rem",
-                }}
-              >
-                8.1
-              </h2>
-
-              <p
-                style={{
-                  marginTop: "1rem",
-                  marginBottom: 0,
-                  color: "#374151",
-                  fontSize: "1.2rem",
-                  lineHeight: 1.6,
-                }}
-              >
-                {slidesData.slideEight.eightOne}
-              </p>
-            </div>
-
-          </div>
-        </div>
-      </>
-    ),
-  },
-  {
-    title: slidesData.slideNine.title,
-    content: (
-      <>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            height: "100%",
-            padding: "2rem 3rem",
-            boxSizing: "border-box",
-          }}
-        >
-
-          <h1
-            style={{
-              margin: 0,
-              color: "#582c83",
-              fontSize: "2.75rem",
-            }}
-          >
-            {slidesData.slideNine.title.toUpperCase()}
-          </h1>
-
-          <div
-            style={{
-              marginTop: "0.75rem",
-              height: "3px",
-              width: "100%",
-              backgroundColor: "#e2e8f0",
-              borderRadius: "2px",
-            }}
-          />
-
-          <div
-            style={{
-              flex: 1,
-              display: "flex",
-              alignItems: "flex-start",
-              justifyContent: "center",
-              gap: "2rem",
-              padding: "2rem 0",
-            }}
-          >
-
-            <div
-              style={{
-                flex: 1,
-                minHeight: "280px",
-                height: "auto",
-                backgroundColor: "#f1f3f5",
-                borderRadius: "12px",
-                padding: "2rem",
-                boxSizing: "border-box",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "flex-start",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-              }}
-            >
-              <h2
-                style={{
-                  margin: 0,
-                  color: "#582c83",
-                  fontSize: "1.5rem",
-                }}
-              >
-                9.1
-              </h2>
-
-              <p
-                style={{
-                  marginTop: "1rem",
-                  marginBottom: 0,
-                  color: "#374151",
-                  fontSize: "1.2rem",
-                  lineHeight: 1.6,
-                }}
-              >
-                {slidesData.slideNine.nineOne}
               </p>
             </div>
 
@@ -1144,12 +1208,12 @@ export const policiesSlides = (playerName: string, setCurrentSlides: React.Dispa
     title: "Knowledge Check: Q1",
     content: (
       <MultipleChoiceQuestion
-        questionId={questionsData.questionsAcceptableUse[0].id}
-        question={questionsData.questionsAcceptableUse[0].question}
-        options={questionsData.questionsAcceptableUse[0].options}
-        correctAnswer={questionsData.questionsAcceptableUse[0].correctAnswer}
-        explanation={questionsData.questionsAcceptableUse[0].explanation}
-        category={questionsData.questionsAcceptableUse[0].category}
+        questionId={questionsData.questionsConflict[0].id}
+        question={questionsData.questionsConflict[0].question}
+        options={questionsData.questionsConflict[0].options}
+        correctAnswer={questionsData.questionsConflict[0].correctAnswer}
+        explanation={questionsData.questionsConflict[0].explanation}
+        category={questionsData.questionsConflict[0].category}
       />
     ),
   },
@@ -1157,12 +1221,12 @@ export const policiesSlides = (playerName: string, setCurrentSlides: React.Dispa
     title: "Knowledge Check: Q2",
     content: (
       <MultipleChoiceQuestion
-        questionId={questionsData.questionsAcceptableUse[1].id}
-        question={questionsData.questionsAcceptableUse[1].question}
-        options={questionsData.questionsAcceptableUse[1].options}
-        correctAnswer={questionsData.questionsAcceptableUse[1].correctAnswer}
-        explanation={questionsData.questionsAcceptableUse[1].explanation}
-        category={questionsData.questionsAcceptableUse[1].category}
+        questionId={questionsData.questionsConflict[1].id}
+        question={questionsData.questionsConflict[1].question}
+        options={questionsData.questionsConflict[1].options}
+        correctAnswer={questionsData.questionsConflict[1].correctAnswer}
+        explanation={questionsData.questionsConflict[1].explanation}
+        category={questionsData.questionsConflict[1].category}
       />
     ),
   },
@@ -1170,12 +1234,12 @@ export const policiesSlides = (playerName: string, setCurrentSlides: React.Dispa
     title: "Knowledge Check: Q3",
     content: (
       <MultipleChoiceQuestion
-        questionId={questionsData.questionsAcceptableUse[2].id}
-        question={questionsData.questionsAcceptableUse[2].question}
-        options={questionsData.questionsAcceptableUse[2].options}
-        correctAnswer={questionsData.questionsAcceptableUse[2].correctAnswer}
-        explanation={questionsData.questionsAcceptableUse[2].explanation}
-        category={questionsData.questionsAcceptableUse[2].category}
+        questionId={questionsData.questionsConflict[2].id}
+        question={questionsData.questionsConflict[2].question}
+        options={questionsData.questionsConflict[2].options}
+        correctAnswer={questionsData.questionsConflict[2].correctAnswer}
+        explanation={questionsData.questionsConflict[2].explanation}
+        category={questionsData.questionsConflict[2].category}
       />
     ),
   },
@@ -1183,26 +1247,13 @@ export const policiesSlides = (playerName: string, setCurrentSlides: React.Dispa
     title: "Knowledge Check: Q4",
     content: (
       <MultipleChoiceQuestion
-        questionId={questionsData.questionsAcceptableUse[3].id}
-        question={questionsData.questionsAcceptableUse[3].question}
-        options={questionsData.questionsAcceptableUse[3].options}
-        correctAnswer={questionsData.questionsAcceptableUse[3].correctAnswer}
-        explanation={questionsData.questionsAcceptableUse[3].explanation}
-        category={questionsData.questionsAcceptableUse[3].category}
+        questionId={questionsData.questionsConflict[3].id}
+        question={questionsData.questionsConflict[3].question}
+        options={questionsData.questionsConflict[3].options}
+        correctAnswer={questionsData.questionsConflict[3].correctAnswer}
+        explanation={questionsData.questionsConflict[3].explanation}
+        category={questionsData.questionsConflict[3].category}
       />
     ),
-  },
-  {
-    title: "Knowledge Check: Q5",
-    content: (
-      <MultipleChoiceQuestion
-        questionId={questionsData.questionsAcceptableUse[4].id}
-        question={questionsData.questionsAcceptableUse[4].question}
-        options={questionsData.questionsAcceptableUse[4].options}
-        correctAnswer={questionsData.questionsAcceptableUse[4].correctAnswer}
-        explanation={questionsData.questionsAcceptableUse[4].explanation}
-        category={questionsData.questionsAcceptableUse[4].category}
-      />
-    ),
-  },
+  }
 ];

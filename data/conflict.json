@@ -1,0 +1,84 @@
+{
+    "titleSlide": {
+        "title": "Conflict of Interest Policy for USC Paid Employees",
+        "subtitle": "",
+        "moduleTitle": "Conflict of Interest Policy for USC Paid Employees",
+        "desc": ""
+    },
+    "policiesSlide": {
+        "title": "Policy Summary",
+        "table": [
+            {
+                "label": "Authority",
+                "value": "Chief Operating Officer"
+            },
+            {
+                "label": "Date Ratified",
+                "value": "April 28, 2025"
+            },
+            {
+                "label": "Next Review Date",
+                "value": "April 2028"
+            },
+            {
+                "label": "Previous Amendments",
+                "value": "February 2, 2024; February 2021"
+            },
+            {
+                "label": "Delegate(s)",
+                "value": "Senior Manager, People and Development"
+            }
+        ],
+        "description": "This policy reflects the USC's commitment to guarding against conflicts of interest among paid employees, including those compensated through honoraria. It defines conflict of interest, assigns administration to the Senior Manager, People and Development (or the COO if conflicted), and sets expectations that personal gain must never conflict with an employee's duty to the USC. It also limits paid employees to holding one USC position at a time, restricts certain paid staff from running for specific elected or appointed positions while employed, and directs that corporate resources never be used for personal or political gain.",
+        "scope": ""
+    },
+    "useSlide": {
+        "title": "Key Takeaways",
+        "items": [
+            "Applies to all paid USC employees, including those compensated through honoraria (full-time staff, Coordinators, AVPs, Interns, Orientation Staff, Elections Governance Board Members, Executive Officers, and Gazette members).",
+            "Conflict of interest means being involved in multiple interests, financial or otherwise, where serving one could work against or benefit from another.",
+            "The Senior Manager, People and Development administers the policy; the COO steps in if that role is conflicted.",
+            "Paid employees may hold only one USC position at a time; unpaid volunteers may hold multiple unpaid volunteer positions.",
+            "Certain paid staff, LST members, and Faculty Sophs may not apply or run for USC Councillor, Director, Purple Care Trust Student Trustee, or Appeals Board Member while holding their paid position.",
+            "Paid employees applying for a hired executive position are not required to take a leave of absence, as this is treated as an internal hiring process.",
+            "Corporate resources must never be used for personal or political gain.",
+            "Consultations regarding USC hired and elected student leadership positions must go through the President and Vice-Presidents."
+        ]
+    },
+    "slideOne": {
+        "title": "1. SCOPE",
+        "oneOne": "This policy applies to all paid USC employees identified in this policy including those compensated through honoraria (Full-time Staff, Coordinators, Associate Vice-Presidents, Interns, Orientation Staff, Elections Governance Board Members, Executive Officers, and Members of the Gazette)."
+    },
+    "slideTwo": {
+        "title": "2. DEFINITIONS",
+        "twoOne": "Conflict of Interest means a situation in which a person or organization is involved in multiple interests, financial or otherwise, and serving one interest could involve working against another or benefiting from another."
+    },
+    "slideThree": {
+        "title": "2. ADMINISTRATION",
+        "threeOne": "The Senior Manager, People and Development is responsible for administering the provisions of this Policy. In the event the Senior Manager, People and Development is conflicted, the Chief Operating Officer shall be responsible for administering the Policy",
+        "threeTwo": "All issues pertaining to matters of Conflict of Interest as defined in this policy should be brought forward to the Senior Manager, People and Development.",
+        "threeThree": "The responsibility for application, enforcement, training, and communication of this policy shall lie with the Senior Manager, People and Development."
+    },
+    "slideFour": {
+        "title": "4. GENERAL STATEMENT",
+        "fourOne": "Employees of the USC are expected to adhere to the highest standards of personal and professional integrity and shall protect the interests of the USC. Personal gain shall not conflict with duty to the USC."
+    },
+    "slideFive": {
+        "title": "5. EXPECTATIONS AND RESPONSIBILITIES",
+        "fiveOne": "Paid employees of the USC including salaried, part-time, full-time, staff paid through honoraria shall hold one position with the USC at a time.",
+        "fiveTwo": "USC Volunteers who are not compensated by the USC may hold multiple unpaid volunteer positions.",
+        "fiveThree": "Paid employees of the USC including salaried, full-time, staff paid through honoraria and Faculty Leadership Soph Team (LST) members and Faculty Sophs may not apply or run for a position as a USC Councillor, USC Director who sits on the USC Board of Directors, USC Purple Care Trust Student Trustee, USC Appeals Board Member while they hold one of these positions.",
+        "fiveFour": "Paid employees who apply for a hired executive position will not be required to take a leave of absence as it will be treated as an internal hiring process.",
+        "fiveFive": "Employees of the USC shall not use corporate resources for the purposes of personal or political gain.",
+        "fiveSix": "Consultations for USC hired and elected student leadership positions shall go through the President and Vice-Presidents."
+    },
+    "slideSix": {
+        "title": "6. COMMUNICATION",
+        "sixOne": "This policy will be explained as needed to workers through orientation or task-specific training, and will be included in new hire paperwork.",
+        "sixTwo": "All Members will be trained on this policy annually."
+    },
+    "slideSeven": {
+        "title": "7. EVALUATION",
+        "sevenOne": "This policy shall be reviewed annually and as needed through the Continuous Improvement Policy for Human Resources Policies."
+    }
+}

@@ -10,7 +10,7 @@ type SelectionProps = {
   playerName: string;
   options?: TrainingOption[];
   setMadeSelection: React.Dispatch<React.SetStateAction<boolean>>;
-  setSelectedSlides: React.Dispatch<React.SetStateAction<'eso' | 'policies' | 'cs' | 'accessibility'>>
+  setSelectedSlides: React.Dispatch<React.SetStateAction<'eso' | 'policies' | 'cs' | 'accessibility' | 'conflict'>>
 };
 
 const defaultOptions: TrainingOption[] = [
@@ -32,6 +32,11 @@ const defaultOptions: TrainingOption[] = [
   {
     id: "4",
     label: "ACCESSIBILITY POLICY",
+    color: "#582c83",
+  },
+  {
+    id: "5",
+    label: "CONFLICT OF INTEREST POLICY FOR USC PAID EMPLOYEES",
     color: "#582c83",
   },
 ];
@@ -64,6 +69,10 @@ export default function Selection({
 
       case "4":
         setSelectedSlides('accessibility');
+        break;
+
+      case "5":
+        setSelectedSlides('conflict');
         break;
 
       default:

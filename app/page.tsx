@@ -20,6 +20,7 @@ import { policiesSlides } from '@/components/slides-policies';
 import { jobTrainingSlides } from '@/components/slides-job-training';
 import { customerServiceSlides } from '@/components/slides-customer-service';
 import { accessibilitySlides } from '@/components/slides-accessibility';
+import { conflictSlides } from '@/components/slides-conflict';
 
 const emails = emailData.emails as Email[];
 const STORAGE_KEY = 'phishquest-run';
@@ -325,7 +326,7 @@ export default function HomePage() {
 
   const [madeSelection, setMadeSelection] = useState(false);
 
-  const [selectedSlides, setSelectedSlides] = useState<'eso' | 'policies' | 'cs' | 'accessibility'>('eso');
+  const [selectedSlides, setSelectedSlides] = useState<'eso' | 'policies' | 'cs' | 'accessibility' | 'conflict'>('eso');
 
   const [openApp, setOpenApp] = useState<
   | {
@@ -860,6 +861,9 @@ export default function HomePage() {
 
       case 'accessibility':
         return accessibilitySlides(nameInput.trim(), setSelectedSlides);
+
+      case 'conflict':
+        return conflictSlides(nameInput.trim(), setSelectedSlides);
 
       default:
         return slides(nameInput.trim());

@@ -454,5 +454,107 @@
       "correctAnswer": "B",
       "explanation": "Section 5.10.5 states the USC will meet internationally-recognized WCAG 2.0 Level AA website requirements."
     }
+  ],
+  "questionsConflict": [
+    {
+      "category": "conflict",
+      "id": "q1",
+      "question": "An employee paid through honoraria wants to take on a second, separate paid USC staff role at the same time. Is this permitted?",
+      "options": [
+        {
+          "label": "A",
+          "text": "No — paid employees, including those paid through honoraria, may hold only one USC position at a time."
+        },
+        {
+          "label": "B",
+          "text": "Yes, with only verbal manager approval."
+        },
+        {
+          "label": "C",
+          "text": "Yes, as long as combined hours stay under 40 per week."
+        },
+        {
+          "label": "D",
+          "text": "Yes, as long as the two roles don't overlap in duties."
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Section 5.1 states paid employees, including those paid through honoraria, shall hold one position with the USC at a time."
+    },
+    {
+      "category": "conflict",
+      "id": "q2",
+      "question": "A paid staff member wants to run for USC Councillor while continuing in their current paid role. What does the policy say?",
+      "options": [
+        {
+          "label": "A",
+          "text": "It's permitted since Councillor is an elected, not paid, position."
+        },
+        {
+          "label": "B",
+          "text": "Paid employees may not apply or run for Councillor while holding their paid position."
+        },
+        {
+          "label": "C",
+          "text": "It's permitted only with Board of Directors approval."
+        },
+        {
+          "label": "D",
+          "text": "It's permitted after six months in the paid role."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Section 5.3 prohibits certain paid staff from applying or running for USC Councillor (and other listed positions) while they hold their paid position."
+    },
+    {
+      "category": "conflict",
+      "id": "q3",
+      "question": "A paid employee applies for a hired executive position with the USC. Must they take an unpaid leave of absence during the process?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Yes, for at least two weeks."
+        },
+        {
+          "label": "B",
+          "text": "Yes, for the duration of the hiring process."
+        },
+        {
+          "label": "C",
+          "text": "No — this is treated as an internal hiring process and no leave is required."
+        },
+        {
+          "label": "D",
+          "text": "Only if they currently hold a Director role."
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Section 5.4 states paid employees applying for a hired executive position will not be required to take a leave of absence, as it is treated as an internal hiring process."
+    },
+    {
+      "category": "conflict",
+      "id": "q4",
+      "question": "A department wants to consult on filling a USC elected student leadership position and isn't sure who to go through. Per the policy, who should this consultation go through?",
+      "options": [
+        {
+          "label": "A",
+          "text": "The Senior Manager, Information Systems."
+        },
+        {
+          "label": "B",
+          "text": "The Human Resources Committee only."
+        },
+        {
+          "label": "C",
+          "text": "The Board of Directors directly."
+        },
+        {
+          "label": "D",
+          "text": "The President and Vice-Presidents."
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Section 5.6 states consultations for USC hired and elected student leadership positions shall go through the President and Vice-Presidents."
+    }
   ]
 }
