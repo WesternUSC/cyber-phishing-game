@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-type Slide = 'eso' | 'policies' | 'cs' | 'accessibility' | 'conflict';
+type Slide = 'eso' | 'policies' | 'cs' | 'accessibility' | 'conflict' | 'disc';
 
 interface Module {
   name: string;
@@ -43,7 +43,7 @@ const modules: Omit<Module, "score">[] = [
     {
         name: "Discrimination Harassment and Violence Prevention Policy",
         questionCount: 5,
-        page: "eso"
+        page: "disc"
     },
     {
         name: "Discrimination Harassment and Violence Reporting Procedure",
@@ -160,12 +160,16 @@ export default function ModuleTableOfContents({
       localStorage.getItem("conflict-score") || "0"
     );
 
+    const discScore = Number(
+      localStorage.getItem("disc-score") || "0"
+    );
+
     setScores({
         "Acceptable Use Policy": acceptableUseScore,
         "Accessibility for Customer Service Policy": csScore,
         "Accessibility Policy": accessibilityScore,
         "Conflict of Interest Policy for USC Paid Employees": conflictScore,
-        "Discrimination Harassment and Violence Prevention Policy": acceptableUseScore,
+        "Discrimination Harassment and Violence Prevention Policy": discScore,
         "Discrimination Harassment and Violence Reporting Procedure": acceptableUseScore,
         "Early and Safe Return to Work Policy": acceptableUseScore,
         "Emergency Preparedness Policy": acceptableUseScore,

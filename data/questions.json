@@ -556,5 +556,182 @@
       "correctAnswer": "D",
       "explanation": "Section 5.6 states consultations for USC hired and elected student leadership positions shall go through the President and Vice-Presidents."
     }
+  ],
+  "questionsDisc": [
+    {
+      "category": "disc",
+      "id": "q1",
+      "question": "An employee overhears a coworker repeatedly making unwelcome comments about another colleague's ethnic origin. What does this policy expect of the employee who overheard it?",
+      "options": [
+        {
+          "label": "A",
+          "text": "To report it to their Manager/Supervisor and not willfully ignore a poisoned environment."
+        },
+        {
+          "label": "B",
+          "text": "To wait and see if the targeted coworker files a complaint first."
+        },
+        {
+          "label": "C",
+          "text": "To handle it informally themselves and not report it further."
+        },
+        {
+          "label": "D",
+          "text": "Nothing, since they weren't the target of the comments."
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Sections 5.2.5 and 5.2.8 require Members not to willfully ignore a poisoned environment and to report incidents of discrimination or harassment to their Manager/Supervisor."
+    },
+    {
+      "category": "disc",
+      "id": "q2",
+      "question": "A Member witnesses an immediate, escalating threat of violence in the workplace right now. What is the correct first step?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Document the incident and raise it at the next staff meeting."
+        },
+        {
+          "label": "B",
+          "text": "Contact Campus Police at 911 (or ext. 83300) immediately, given the immediate danger."
+        },
+        {
+          "label": "C",
+          "text": "Wait until the person involved calms down before reporting."
+        },
+        {
+          "label": "D",
+          "text": "Email the Senior Manager, People and Development and wait for a reply."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Section 5.2.9 directs individuals to contact Campus Police at 911 or ext. 83300 in the event of an emergency or threat of violence."
+    },
+    {
+      "category": "disc",
+      "id": "q3",
+      "question": "Does this policy apply to general student-to-student conduct within Western University?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Only if a USC Member is also directly involved."
+        },
+        {
+          "label": "B",
+          "text": "Yes, in all circumstances."
+        },
+        {
+          "label": "C",
+          "text": "No — it is not intended to apply to general student-to-student or student-to-University contact."
+        },
+        {
+          "label": "D",
+          "text": "Only during Orientation Week."
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Section 1.3 states the Policy is not intended to be applied to general student-to-student or student-to-University contact within Western University."
+    },
+    {
+      "category": "disc",
+      "id": "q4",
+      "question": "An anonymous but credible report suggests harassment may be occurring, though no formal complaint has been filed. What is the USC's obligation?",
+      "options": [
+        {
+          "label": "A",
+          "text": "The matter can only be raised by the alleged victim."
+        },
+        {
+          "label": "B",
+          "text": "The report must be dismissed as unverifiable."
+        },
+        {
+          "label": "C",
+          "text": "No action is required without a formal, signed complaint."
+        },
+        {
+          "label": "D",
+          "text": "The USC shall investigate reports or incidents of harassment, discrimination, or violence even without a formal complaint."
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Section 4.3 states the USC shall investigate reports or incidents of harassment, discrimination, or violence even if no formal complaint has been made."
+    },
+    {
+      "category": "disc",
+      "id": "q5",
+      "question": "Who administers this policy if the Senior Manager, People and Development is personally conflicted, such as being named in a complaint?",
+      "options": [
+        {
+          "label": "A",
+          "text": "The Chief Operating Officer."
+        },
+        {
+          "label": "B",
+          "text": "Any available Board member."
+        },
+        {
+          "label": "C",
+          "text": "The chair of the Human Resources Committee."
+        },
+        {
+          "label": "D",
+          "text": "The complainant's direct supervisor."
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Section 3.1 states the Chief Operating Officer shall be responsible for administering the Policy if the Senior Manager, People and Development is involved in a complaint."
+    },
+    {
+      "category": "disc",
+      "id": "q6",
+      "question": "Which of the following best matches the policy's definition of a 'poisoned environment'?",
+      "options": [
+        {
+          "label": "A",
+          "text": "A single minor disagreement between coworkers."
+        },
+        {
+          "label": "B",
+          "text": "A workplace where harassment or discrimination is so severe or frequent it creates an intimidating or hostile environment affecting work or academic performance."
+        },
+        {
+          "label": "C",
+          "text": "Any workplace experiencing high stress or workload."
+        },
+        {
+          "label": "D",
+          "text": "A workplace with inadequate physical facilities."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Section 2.4 defines a poisoned environment as one where harassment or discrimination is so severe or frequent that it creates an intimidating or hostile environment."
+    },
+    {
+      "category": "disc",
+      "id": "q7",
+      "question": "A Member wants to know whether this policy's definition of harassment covers messages sent by text or instant message rather than in person. Is virtual conduct covered?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Only if the recipient forwards it to a supervisor within 24 hours."
+        },
+        {
+          "label": "B",
+          "text": "No, only in-person conduct is covered."
+        },
+        {
+          "label": "C",
+          "text": "Yes — the definition of harassment specifically includes virtual communication incidents."
+        },
+        {
+          "label": "D",
+          "text": "Only if the message is sent during scheduled work hours."
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Section 2.2 states harassment includes virtual communication incidents."
+    }
   ]
 }

@@ -63,6 +63,11 @@ const MultipleChoiceQuestion: React.FC<MultipleChoiceQuestionProps> = ({
       ANSWERS_KEY = "conflict-answers";
       break;
 
+    case "disc":
+      SCORE_KEY = "disc-score";
+      ANSWERS_KEY = "disc-answers";
+      break;
+
     default:
       SCORE_KEY = "acceptable-use-score";
       ANSWERS_KEY = "acceptable-use-answers";

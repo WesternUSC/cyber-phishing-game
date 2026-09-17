@@ -1,0 +1,125 @@
+{
+    "titleSlide": {
+        "title": "Discrimination Harassment and Violence Prevention Policy",
+        "subtitle": "",
+        "moduleTitle": "Discrimination Harassment and Violence Prevention Policy",
+        "desc": ""
+    },
+    "policiesSlide": {
+        "title": "Policy Summary",
+        "table": [
+            {
+                "label": "Authority",
+                "value": "Chief Operating Officer"
+            },
+            {
+                "label": "Date Ratified",
+                "value": "January 13, 2026"
+            },
+            {
+                "label": "Next Review Date",
+                "value": "December 2026 (annually)"
+            },
+            {
+                "label": "Previous Amendments",
+                "value": "December 6, 2024; February 2, 2024; October 11, 2023; and earlier"
+            },
+            {
+                "label": "Review Committee(s)",
+                "value": "Board of Directors"
+            }
+        ],
+        "description": "This policy reflects the USC's commitment to providing a workplace free of discrimination, harassment, and violence for hired, elected, and volunteer positions, and for those who interact with them, including the public. It defines key terms such as discrimination, harassment, sexual harassment, poisoned environment, workplace violence, and domestic violence, assigns administration to the Senior Manager, People and Development, and sets out the USC's, Members', and Managers'/Supervisors' expectations and responsibilities — including a duty to investigate incidents even when no formal complaint has been made.",
+        "scope": ""
+    },
+    "useSlide": {
+        "title": "Key Takeaways",
+        "items": [
+            "Applies to all USC employees and Members, including hired, elected, and volunteer positions and USC Club Executives/members, and covers harassment from any source, including the public.",
+            "Not intended to apply to general student-to-student or student-to-University contact within Western University.",
+            "Prohibited grounds of discrimination include race, ancestry, place of origin, colour, ethnic origin, citizenship, creed, sex (including gender identity), age, marital/same-sex partnership status, record of offences, sexual orientation, family status, and handicap.",
+            "Harassment includes repeated or serious unwelcome behaviour or comments, including virtual communication incidents, but does not include reasonable performance management or workplace direction.",
+            "Workplace violence includes physical or indirect threats, abusive calls, weapons on property, property sabotage, stalking, restraining order violations, and threatening acts or language; domestic violence in the workplace is also addressed.",
+            "The Senior Manager, People and Development administers the policy; the COO steps in if that role is conflicted, and the President/Board become involved if the COO is the Respondent.",
+            "The USC must investigate reports or incidents of harassment, discrimination, or violence even if no formal complaint has been made, and must undertake a workplace violence risk assessment.",
+            "Members must report incidents to their Manager/Supervisor immediately and complete an Injury/Illness Reporting Form; emergencies go to Campus Police at 911 or ext. 83300.",
+            "Members must not ignore threatening or violent behaviour and must follow up or escalate incidents even when no formal complaint is filed."
+        ]
+    },
+    "slideOne": {
+        "title": "1. SCOPE",
+        "oneOne": "This policy applies to all USC employees and its Members, including hired, elected and volunteer positions including USC Club Executives and its members. It applies to workplace harassment from all sources including the public.",
+        "oneTwo": "The USC requires its employees and Members to act in accordance with this Policy while engaged in meeting duties owed to the USC and/or acting on behalf of or representing the USC.",
+        "oneThree": "This Policy is not intended to be applied to general student-to-student or student-to-University contact within Western University nor within the USC.",
+        "oneFour": "During USC Events or within USC Operations where student to student contact occurs, follow emergency procedures (contact Campus Police) if needed."
+    },
+    "slideTwo": {
+        "title": "2. DEFINITIONS",
+        "twoOne": "Discrimination: Any action that limits or denies goods, services, benefits, or opportunities based on a prohibited ground of discrimination.",
+        "twoOneOne": "Prohibited ground of discrimination includes but is not limited to race, ancestry, place of origin, colour, ethnic origin, citizenship, creed, sex (including gender identity), age, marital status, same-sex partnership status, record of offences, sexual orientation, family status, and handicap.",
+        "twoTwo": "Harassment: Repeated or serious behaviour or comments that are unwelcome.. This includes virtual communication incidents. Harassment does not include reasonable performance management or workplace direction. Harassment also includes behaviour that creates an intimidating, bullying, demeaning, or hostile workplace. Sexual harassment is included.",
+        "twoThree": "Sexual harassment: Unwelcome behaviour or comments related to sex, sexual orientation, gender identity or gender expression, including sexual solicitation or advances when the person can grant or deny benefits or opportunities. This includes virtual communication incidents.",
+        "twoFour": "Poisoned environment: A workplace where harassment or discrimination is so severe or frequent that it creates an intimidating or hostile environment. This can affect work or academic performance and cause emotional stress not experienced by others, resulting in unequal opportunities or treatment.",
+        "twoFive": "Member: Includes a commissioner, coordinator, councillor, volunteer, committee member, employee, officer, Board Member, and USC agent or representative. Individual and Executive members of USC ratified clubs are included and are covered under the USC's Clubs Discrimination, Harassment, and Violence Prevention Procedure.",
+        "twoSix": "Workplace Violence means any behaviour that creates a climate of violence, hostility, or intimidation. This includes, but is not limited to: physical threats, direct or indirect threats, abusive calls, weapons on property, property sabotage, stalking, restraining order violations, and threatening acts or language.",
+        "twoSeven": "Domestic Violence: Deliberate abuse or intimidation in an intimate relationship, causing fear, or harm. It can be a single act or a pattern of behaviour, and children and young people may be affected if exposed."
+    },
+    "slideThree": {
+        "title": "3. ADMINISTRATION",
+        "threeOne": "The Senior Manager, People and Development is responsible for enforcing this Policy. In the event the Senior Manager, People and Development is involved in a complaint, the Chief Operating Officer shall be responsible for administering the Policy.",
+        "threeTwo": "In the event the Chief Operating Officer is the Respondent in a complaint, the Senior Manager, People and Development must notify the President who will consult the Board of Directors."
+    },
+    "slideFour": {
+        "title": "4. GENERAL STATEMENT",
+        "fourOne": "All acts of discrimination, harassment and violence are strictly prohibited. Every USC employee and Member must work in compliance with this Policy and the supporting programs.",
+        "fourTwo": "The Corporation will hold all USC employees, Members and hired, elected and volunteer persons accountable by imposing discipline and other sanctions in accordance with this Policy and any other corporate policy.",
+        "fourThree": "The USC shall investigate reports or incidents of harassment, discrimination, or violence, even if no formal complaint has been made, and take appropriate action."
+    },
+    "slideFive": {
+        "title": "5. EXPECTATIONS AND RESPONSIBILITIES",
+        "fiveOne": "The USC shall:",
+        "fiveOneOne": "Promote and support employment practices and volunteer opportunities free from harassment, discrimination, and violence;",
+        "fiveOneTwo": "Ensure the protection of workers from Domestic Violence in the workplace that would likely cause physical injury to workers in the workplace;",
+        "fiveOneThree": "Undertake a Workplace Violence risk assessment, and take reasonable precautions, in order to protect employees and volunteers from Workplace Violence and establish controls for all risks identified in the risk assessment;",
+        "fiveOneFour": "Enforce this policy's objectives by establishing a complaints reporting procedure, investigating incidents even without a formal complaint, and responding where appropriate with remedial measures, up to and including termination;",
+        "fiveOneFive": "Provide educational opportunities that raise awareness of Western University community on issues associated with diversity and to provide skills-training programs that assist in the handling and prevention of discrimination, harassment, or violence;",
+        "fiveOneSix": "Support equal access to services and quality education for students with physical, sensory, and/or learning disabilities; and,",
+        "fiveOneSeven": "Notify appropriately affected employees of other potentially violent employees or persons associated with the USC."
+    },
+    "slideFiveTwo": {
+        "title": "5. EXPECTATIONS AND RESPONSIBILITIES (Continued)",
+        "fiveTwo": "Employees and Members of the USC shall:",
+        "fiveTwoOne": "Adhere to the provisions of this policy;",
+        "fiveTwoTwo": "Refrain from engaging in discrimination, harassment or workplace violence;",
+        "fiveTwoThree": {
+            "intro": "Encourage, recognize, and support the use of:",
+            "items": [
+                "1. gender-inclusive language; and,",
+                "2. non-discriminatory language where a person(s) identified by a prohibited grounds of discrimination is concerned."
+            ]
+        },
+        "fiveTwoFour": "Ensure that all projects and events that they supervise and have control over remain non-discriminatory and free from any type of harassment;",
+        "fiveTwoFive": "Not contribute to or willfully ignore the presence of a poisoned environment;",
+        "fiveTwoSix": "Not participate in or ignore discrimination or harassment;",
+        "fiveTwoSeven": "Respect the dignity and human rights of others. All Members are responsible for conducting themselves in a way that ensures others are able to function free from harassment and discrimination;",
+        "fiveTwoEight": "Report any incident of workplace discrimination, harassment or violence to their Manager/Supervisor immediately, and complete an Injury/Illness Reporting Form as directed by the procedures of the USC Injury/Illness Reporting Policy;",
+        "fiveTwoNine": "In the event of an emergency, to report a threat of violence or to seek assistance individuals may contact either Campus Police at ext. 911 or ext. 83300. For non-emergencies, employees should report to their immediate Manager/Supervisor; and,",
+        "fiveTwoTen": "Follow up or escalate incidents even when no formal complaint is filed.",
+        "fiveTwoEleven": "Not ignore threatening or violent behaviour. If you witness or experience violence or threats of violence, or feel that a colleague, student or visitor is likely to become violent, report the situation to a Manager/Supervisor, person in authority or Campus Police."
+    },
+    "slideFiveThree": {
+        "title": "5. EXPECTATIONS AND RESPONSIBILITIES (Continued)",
+        "fiveThree": "USC Managers and Supervisors shall:",
+        "fiveThreeOne": "Report any act of discrimination, harassment or workplace violence to the Senior Manager, People and Development as soon as possible; and",
+        "fiveThreeTwo": "Work with the Senior Manager, People and Development to come up with a plan to address the safety of all employees affected."
+    },
+    "slideSix": {
+        "title": "6. COMMUNICATION",
+        "sixOne": "This policy will be explained as needed to workers through orientation health & safety training or task-specific training, and posted in the workplace as required.",
+        "sixTwo": "All Members will be trained on this policy annually."
+    },
+    "slideSeven": {
+        "title": "7. EVALUATION",
+        "sevenOne": "This policy will be evaluated on an annual basis through the Continuous Improvement Plan."
+    }
+}
