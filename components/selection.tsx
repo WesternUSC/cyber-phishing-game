@@ -10,7 +10,7 @@ type SelectionProps = {
   playerName: string;
   options?: TrainingOption[];
   setMadeSelection: React.Dispatch<React.SetStateAction<boolean>>;
-  setSelectedSlides: React.Dispatch<React.SetStateAction<'eso' | 'policies' | 'cs' | 'accessibility' | 'conflict' | 'disc'>>
+  setSelectedSlides: React.Dispatch<React.SetStateAction<'eso' | 'policies' | 'cs' | 'accessibility' | 'conflict' | 'disc' | 'early'>>
 };
 
 const defaultOptions: TrainingOption[] = [
@@ -42,6 +42,12 @@ const defaultOptions: TrainingOption[] = [
   {
     id: "6",
     label: "DISCRIMINATION HARASSMENT AND VIOLENCE PREVENTION POLICY",
+    color: "#582c83",
+  },
+  // seven reserved for now
+  {
+    id: "8",
+    label: "EARLY AND SAFE RETURN TO WORK POLICY",
     color: "#582c83",
   },
 ];
@@ -84,6 +90,10 @@ export default function Selection({
         setSelectedSlides('disc');
         break;
 
+      case "8":
+        setSelectedSlides('early');
+        break;
+
       default:
         setSelectedSlides('eso');
         break;
@@ -94,23 +104,25 @@ export default function Selection({
 
   return (
     <div style={styles.page}>
-      <div style={styles.titleContainer}>
-        <h1 style={styles.title}>
-          Welcome, <span style={styles.name}>{playerName}</span>
-        </h1>
+      <div style={styles.header}>
+        <div style={styles.titleContainer}>
+          <h1 style={styles.title}>
+            Welcome, <span style={styles.name}>{playerName}</span>
+          </h1>
+        </div>
 
-        {/* <p style={styles.subtitle}>Select below</p> */}
+        <div style={styles.contentHeader}>
+          <img
+            src="usc-logo.png"
+            alt="USC logo"
+            style={styles.logo}
+          />
+
+          <p style={styles.chooseText}>Please select one</p>
+        </div>
       </div>
 
-      <div style={styles.content}>
-        <img
-          src="usc-logo.png"
-          alt="USC logo"
-          style={styles.logo}
-        />
-
-        <p style={styles.chooseText}>Please select one</p>
-
+      <div style={styles.optionsScrollArea}>
         <div style={styles.optionsContainer}>
           {options.map((option) => {
             const isSelected = option.id === selectedId;
@@ -137,7 +149,9 @@ export default function Selection({
             );
           })}
         </div>
+      </div>
 
+      <div style={styles.stickyFooter}>
         <button
           type="button"
           onClick={handleStart}
@@ -153,22 +167,33 @@ export default function Selection({
         </button>
       </div>
     </div>
+
   );
 }
 
 const styles: Record<string, React.CSSProperties> = {
   page: {
-    minHeight: "100vh",
+    height: "100vh",
     width: "100%",
     boxSizing: "border-box",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    padding: "60px 24px",
+    overflow: "hidden",
     background:
       "linear-gradient(135deg, #f8fafc 0%, #eef2ff 50%, #f5f3ff 100%)",
     fontFamily:
       "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif",
+  },
+
+  header: {
+    width: "100%",
+    flexShrink: 0,
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    padding: "60px 24px 0",
+    boxSizing: "border-box",
   },
 
   titleContainer: {
@@ -189,20 +214,21 @@ const styles: Record<string, React.CSSProperties> = {
     color: "#9b7db5",
   },
 
-  subtitle: {
-    marginTop: "14px",
-    marginBottom: 0,
-    fontSize: "1.15rem",
-    color: "#6b7280",
-  },
-
-  content: {
+  contentHeader: {
     width: "100%",
     maxWidth: "600px",
     display: "flex",
     flexDirection: "column",
     alignItems: "stretch",
     marginTop: "30px",
+  },
+
+  logo: {
+    width: "80px",
+    height: "auto",
+    objectFit: "contain",
+    alignSelf: "center",
+    marginBottom: "20px",
   },
 
   chooseText: {
@@ -215,10 +241,24 @@ const styles: Record<string, React.CSSProperties> = {
     letterSpacing: "0.1em",
   },
 
+  optionsScrollArea: {
+    width: "100%",
+    maxWidth: "600px",
+    flex: 1,
+    minHeight: 0,
+    overflowY: "auto",
+    overflowX: "hidden",
+    boxSizing: "border-box",
+    padding: "0 24px 120px",
+    scrollbarWidth: "thin",
+  },
+
   optionsContainer: {
     display: "flex",
     flexDirection: "column",
     gap: "14px",
+    width: "100%",
+    paddingTop: "4px",
   },
 
   option: {
@@ -238,6 +278,8 @@ const styles: Record<string, React.CSSProperties> = {
     transition:
       "transform 0.18s ease, box-shadow 0.18s ease, border 0.18s ease",
     boxShadow: "0 8px 20px rgba(0, 0, 0, 0.10)",
+    cursor: "pointer",
+    flexShrink: 0,
   },
 
   optionSelected: {
@@ -262,10 +304,26 @@ const styles: Record<string, React.CSSProperties> = {
     flexShrink: 0,
   },
 
+  stickyFooter: {
+    position: "fixed",
+    left: 0,
+    right: 0,
+    bottom: 0,
+    zIndex: 1000,
+    display: "flex",
+    justifyContent: "center",
+    padding: "24px 24px 28px",
+    boxSizing: "border-box",
+    background:
+      "linear-gradient(to top, rgba(248, 250, 252, 0.98) 65%, rgba(248, 250, 252, 0))",
+    pointerEvents: "none",
+  },
+
   startButton: {
-    marginTop: "42px",
     width: "100%",
+    maxWidth: "600px",
     minHeight: "76px",
+    marginTop: 0,
     border: "none",
     borderRadius: "22px",
     background: "#111827",
@@ -273,20 +331,15 @@ const styles: Record<string, React.CSSProperties> = {
     fontSize: "1.25rem",
     fontWeight: 800,
     boxShadow: "0 12px 30px rgba(17, 24, 39, 0.25)",
-    transition: "transform 0.18s ease, box-shadow 0.18s ease",
+    transition:
+      "transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease",
+    pointerEvents: "auto",
   },
 
   arrow: {
     marginLeft: "12px",
     fontSize: "1.5rem",
   },
-
-  logo: {
-    width: "80px",
-    height: "auto",
-    objectFit: "contain",
-    alignSelf: "center",
-    marginBottom: "20px",
-  },
-
 };
+
+

@@ -1,11 +1,11 @@
-import slidesData from '@/data/accessibility.json'
+import slidesData from '@/data/earlySlides.json'
 import MultipleChoiceQuestion from './multiple-choice-question';
 import questionsData from '@/data/questions.json';
 import ModuleTableOfContents from './module-title-slide';
 
 type slides = 'eso' | 'policies' | 'cs' | 'accessibility' | 'conflict' | 'disc' | 'early';
 
-export const accessibilitySlides = (playerName: string, setCurrentSlides: React.Dispatch<React.SetStateAction<slides>>) => [
+export const earlySlides = (playerName: string, setCurrentSlides: React.Dispatch<React.SetStateAction<slides>>) => [
   {
     title: "Certificate of Completion",
     content: <ModuleTableOfContents title={slidesData.titleSlide.title} setCurrentSlides={setCurrentSlides} />,
@@ -143,7 +143,7 @@ export const accessibilitySlides = (playerName: string, setCurrentSlides: React.
     title: slidesData.slideOne.title,
     content: (
       <>
-       <div
+        <div
           style={{
             display: "flex",
             flexDirection: "column",
@@ -222,6 +222,82 @@ export const accessibilitySlides = (playerName: string, setCurrentSlides: React.
               </p>
             </div>
 
+            <div
+              style={{
+                flex: 1,
+                minHeight: "280px",
+                height: "auto",
+                backgroundColor: "#f1f3f5",
+                borderRadius: "12px",
+                padding: "2rem",
+                boxSizing: "border-box",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+              }}
+            >
+              <h2
+                style={{
+                  margin: 0,
+                  color: "#582c83",
+                  fontSize: "1.5rem",
+                }}
+              >
+                1.2
+              </h2>
+
+              <p
+                style={{
+                  marginTop: "1rem",
+                  marginBottom: 0,
+                  color: "#374151",
+                  fontSize: "1.2rem",
+                  lineHeight: 1.6,
+                }}
+              >
+                {slidesData.slideOne.oneTwo}
+              </p>
+            </div>
+
+            <div
+              style={{
+                flex: 1,
+                minHeight: "280px",
+                height: "auto",
+                backgroundColor: "#f1f3f5",
+                borderRadius: "12px",
+                padding: "2rem",
+                boxSizing: "border-box",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+              }}
+            >
+              <h2
+                style={{
+                  margin: 0,
+                  color: "#582c83",
+                  fontSize: "1.5rem",
+                }}
+              >
+                1.3
+              </h2>
+
+              <p
+                style={{
+                  marginTop: "1rem",
+                  marginBottom: 0,
+                  color: "#374151",
+                  fontSize: "1.2rem",
+                  lineHeight: 1.6,
+                }}
+              >
+                {slidesData.slideOne.oneThree}
+              </p>
+            </div>
+
           </div>
         </div>
       </>
@@ -232,36 +308,71 @@ export const accessibilitySlides = (playerName: string, setCurrentSlides: React.
     content: (
       <>
         <div
+        style={{
+            display: "flex",
+            flexDirection: "column",
+            height: "100%",
+            padding: "2rem 3rem",
+            boxSizing: "border-box",
+        }}
+        >
+        <h1
+            style={{
+            margin: 0,
+            color: "#582c83",
+            fontSize: "2.75rem",
+            }}
+        >
+            {slidesData.slideTwo.title.toUpperCase()}
+        </h1>
+
+        <div
+            style={{
+            marginTop: "0.75rem",
+            height: "3px",
+            width: "100%",
+            backgroundColor: "#e2e8f0",
+            borderRadius: "2px",
+            }}
+        />
+
+        <div
+            style={{
+            flex: 1,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            gap: "1.25rem",
+            padding: "1.5rem 0 0.5rem",
+            }}
+        >
+            <div
             style={{
                 display: "flex",
-                flexDirection: "column",
-                height: "100%",
-                padding: "2rem 3rem",
+                gap: "1.25rem",
+                padding: "1.25rem 1.5rem",
+                backgroundColor: "#f8f7fa",
+                borderLeft: "5px solid #582c83",
+                borderRadius: "0 10px 10px 0",
                 boxSizing: "border-box",
-                backgroundColor: "#ffffff",
             }}
             >
-            <div>
-                <h1
+            <div
                 style={{
-                    margin: 0,
-                    color: "#582c83",
-                    fontSize: "2.75rem",
-                    letterSpacing: "-0.02em",
+                flexShrink: 0,
+                width: "52px",
+                height: "52px",
+                borderRadius: "10px",
+                backgroundColor: "#582c83",
+                color: "#ffffff",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: "1rem",
+                fontWeight: 700,
                 }}
-                >
-                {slidesData.slideTwo.title.toUpperCase()}
-                </h1>
-
-                <div
-                style={{
-                    marginTop: "0.75rem",
-                    height: "3px",
-                    width: "100%",
-                    backgroundColor: "#e2e8f0",
-                    borderRadius: "2px",
-                }}
-                />
+            >
+                2.1
             </div>
 
             <div
@@ -269,118 +380,215 @@ export const accessibilitySlides = (playerName: string, setCurrentSlides: React.
                 flex: 1,
                 display: "flex",
                 flexDirection: "column",
-                justifyContent: "center",
-                padding: "1.5rem 0 0.5rem",
                 }}
             >
-                <div
+                <h2
                 style={{
-                    display: "flex",
-                    gap: "1rem",
-                    paddingBottom: "1.25rem",
-                    borderBottom: "1px solid #e5e7eb",
+                    margin: 0,
+                    color: "#582c83",
+                    fontSize: "1.3rem",
+                    fontWeight: 700,
                 }}
                 >
+                {slidesData.slideTwo.twoOne}
+                </h2>
+
                 <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
                     style={{
                     flexShrink: 0,
-                    width: "48px",
-                    height: "48px",
-                    borderRadius: "10px",
-                    backgroundColor: "#582c83",
-                    color: "#ffffff",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: "0.95rem",
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
                     fontWeight: 700,
+                    paddingTop: "0.15rem",
                     }}
                 >
-                    2.1
-                </div>
+                    2.1.1
+                </span>
 
-                <div style={{ flex: 1 }}>
-                    <h2
+                <p
                     style={{
-                        margin: "0 0 0.5rem",
-                        color: "#582c83",
-                        fontSize: "1.3rem",
-                        fontWeight: 700,
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
                     }}
-                    >
-                    Disability
-                    </h2>
-
-                    <p
-                    style={{
-                        margin: 0,
-                        color: "#374151",
-                        fontSize: "1rem",
-                        lineHeight: 1.5,
-                    }}
-                    >
-                    {slidesData.slideTwo.twoOne.replace("Disability: ", "")}
-                    </p>
-                </div>
+                >
+                    {slidesData.slideTwo.twoOneOne}
+                </p>
                 </div>
 
                 <div
                 style={{
-                    marginTop: "1.25rem",
-                    marginLeft: "64px",
-                    display: "grid",
-                    gridTemplateColumns: "1fr 1fr",
-                    columnGap: "3rem",
-                    rowGap: "0.75rem",
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
                 }}
                 >
-                {[
-                    ["2.1.1", slidesData.slideTwo.twoOneOne],
-                    ["2.1.2", slidesData.slideTwo.twoOneTwo],
-                    ["2.1.3", slidesData.slideTwo.twoOneThree],
-                    ["2.1.4", slidesData.slideTwo.twoOneFour],
-                    ["2.1.5", slidesData.slideTwo.twoOneFive],
-                    ["2.1.6", slidesData.slideTwo.twoOneSix],
-                    ["2.1.7", slidesData.slideTwo.twoOneSeven],
-                    ["2.1.8", slidesData.slideTwo.twoOneEight],
-                ].map(([number, definition]) => (
-                    <div
-                    key={number}
+                <span
                     style={{
-                        display: "flex",
-                        alignItems: "flex-start",
-                        gap: "0.75rem",
-                        padding: "0.6rem 0",
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
                     }}
-                    >
-                    <div
-                        style={{
-                        flexShrink: 0,
-                        color: "#582c83",
-                        fontSize: "0.85rem",
-                        fontWeight: 700,
-                        minWidth: "42px",
-                        paddingTop: "0.1rem",
-                        }}
-                    >
-                        {number}
-                    </div>
+                >
+                    2.1.2
+                </span>
 
-                    <p
-                        style={{
-                        margin: 0,
-                        color: "#374151",
-                        fontSize: "0.95rem",
-                        lineHeight: 1.45,
-                        }}
-                    >
-                        {definition}
-                    </p>
-                    </div>
-                ))}
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideTwo.twoOneTwo}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    2.1.3
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideTwo.twoOneThree}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    2.1.4
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideTwo.twoOneFour}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    2.1.5
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideTwo.twoOneFive}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    2.1.6
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideTwo.twoOneSix}
+                </p>
                 </div>
             </div>
             </div>
+
+        </div>
+        </div>
       </>
     ),
   },
@@ -389,161 +597,2344 @@ export const accessibilitySlides = (playerName: string, setCurrentSlides: React.
     content: (
       <>
         <div
-          style={{
+        style={{
             display: "flex",
             flexDirection: "column",
             height: "100%",
             padding: "2rem 3rem",
             boxSizing: "border-box",
-          }}
+        }}
         >
-
-          <h1
+        <h1
             style={{
-              margin: 0,
-              color: "#582c83",
-              fontSize: "2.75rem",
+            margin: 0,
+            color: "#582c83",
+            fontSize: "2.75rem",
             }}
-          >
+        >
             {slidesData.slideThree.title.toUpperCase()}
-          </h1>
+        </h1>
 
-          <div
+        <div
             style={{
-              marginTop: "0.75rem",
-              height: "3px",
-              width: "100%",
-              backgroundColor: "#e2e8f0",
-              borderRadius: "2px",
+            marginTop: "0.75rem",
+            height: "3px",
+            width: "100%",
+            backgroundColor: "#e2e8f0",
+            borderRadius: "2px",
             }}
-          />
+        />
 
-          <div
+        <div
             style={{
-              flex: 1,
-              display: "flex",
-              alignItems: "flex-start",
-              justifyContent: "center",
-              gap: "2rem",
-              padding: "2rem 0",
+            flex: 1,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            gap: "1.25rem",
+            padding: "1.5rem 0 0.5rem",
             }}
-          >
-
+        >
             <div
-              style={{
-                flex: 1,
-                minHeight: "280px",
-                height: "auto",
-                backgroundColor: "#f1f3f5",
-                borderRadius: "12px",
-                padding: "2rem",
-                boxSizing: "border-box",
+            style={{
                 display: "flex",
-                flexDirection: "column",
-                justifyContent: "flex-start",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-              }}
+                gap: "1.25rem",
+                padding: "1.25rem 1.5rem",
+                backgroundColor: "#f8f7fa",
+                borderLeft: "5px solid #582c83",
+                borderRadius: "0 10px 10px 0",
+                boxSizing: "border-box",
+            }}
             >
-              <h2
+            <div
                 style={{
-                  margin: 0,
-                  color: "#582c83",
-                  fontSize: "1.5rem",
+                flexShrink: 0,
+                width: "52px",
+                height: "52px",
+                borderRadius: "10px",
+                backgroundColor: "#582c83",
+                color: "#ffffff",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: "1rem",
+                fontWeight: 700,
                 }}
-              >
+            >
                 3.1
-              </h2>
+            </div>
 
-              <p
+            <div
                 style={{
-                  marginTop: "1rem",
-                  marginBottom: 0,
-                  color: "#374151",
-                  fontSize: "1.2rem",
-                  lineHeight: 1.6,
+                flex: 1,
+                display: "flex",
+                flexDirection: "column",
                 }}
-              >
+            >
+                <h2
+                style={{
+                    margin: 0,
+                    color: "#582c83",
+                    fontSize: "1.3rem",
+                    fontWeight: 700,
+                }}
+                >
                 {slidesData.slideThree.threeOne}
-              </p>
+                </h2>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.1.1
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThree.threeOneOne}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.1.2
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThree.threeOneTwo}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.1.3
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThree.threeOneThree}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.1.4
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThree.threeOneFour}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.1.5
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThree.threeOneFive}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.1.6
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThree.threeOneSix}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.1.7
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThree.threeOneSeven}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.1.8
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThree.threeOneEight}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.1.9
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThree.threeOneNine}
+                </p>
+                </div>
+            </div>
             </div>
 
+        </div>
+        </div>
+      </>
+    ),
+  },
+  {
+    title: slidesData.slideThreeTwo.title,
+    content: (
+      <>
+        <div
+        style={{
+            display: "flex",
+            flexDirection: "column",
+            height: "100%",
+            padding: "2rem 3rem",
+            boxSizing: "border-box",
+        }}
+        >
+        <h1
+            style={{
+            margin: 0,
+            color: "#582c83",
+            fontSize: "2.75rem",
+            }}
+        >
+            {slidesData.slideThreeTwo.title.toUpperCase()}
+        </h1>
+
+        <div
+            style={{
+            marginTop: "0.75rem",
+            height: "3px",
+            width: "100%",
+            backgroundColor: "#e2e8f0",
+            borderRadius: "2px",
+            }}
+        />
+
+        <div
+            style={{
+            flex: 1,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            gap: "1.25rem",
+            padding: "1.5rem 0 0.5rem",
+            }}
+        >
             <div
-              style={{
-                flex: 1,
-                minHeight: "280px",
-                height: "auto",
-                backgroundColor: "#f1f3f5",
-                borderRadius: "12px",
-                padding: "2rem",
-                boxSizing: "border-box",
+            style={{
                 display: "flex",
-                flexDirection: "column",
-                justifyContent: "flex-start",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-              }}
+                gap: "1.25rem",
+                padding: "1.25rem 1.5rem",
+                backgroundColor: "#f8f7fa",
+                borderLeft: "5px solid #582c83",
+                borderRadius: "0 10px 10px 0",
+                boxSizing: "border-box",
+            }}
             >
-              <h2
+            <div
                 style={{
-                  margin: 0,
-                  color: "#582c83",
-                  fontSize: "1.5rem",
+                flexShrink: 0,
+                width: "52px",
+                height: "52px",
+                borderRadius: "10px",
+                backgroundColor: "#582c83",
+                color: "#ffffff",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: "1rem",
+                fontWeight: 700,
                 }}
-              >
+            >
                 3.2
-              </h2>
-
-              <p
-                style={{
-                  marginTop: "1rem",
-                  marginBottom: 0,
-                  color: "#374151",
-                  fontSize: "1.2rem",
-                  lineHeight: 1.6,
-                }}
-              >
-                {slidesData.slideThree.threeTwo}
-              </p>
             </div>
 
             <div
-              style={{
+                style={{
                 flex: 1,
-                minHeight: "280px",
-                height: "auto",
-                backgroundColor: "#f1f3f5",
-                borderRadius: "12px",
-                padding: "2rem",
-                boxSizing: "border-box",
                 display: "flex",
                 flexDirection: "column",
-                justifyContent: "flex-start",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-              }}
+                }}
             >
-              <h2
+                <h2
                 style={{
-                  margin: 0,
-                  color: "#582c83",
-                  fontSize: "1.5rem",
+                    margin: 0,
+                    color: "#582c83",
+                    fontSize: "1.3rem",
+                    fontWeight: 700,
                 }}
-              >
-                3.3
-              </h2>
+                >
+                {slidesData.slideThreeTwo.threeTwo}
+                </h2>
 
-              <p
+                <div
                 style={{
-                  marginTop: "1rem",
-                  marginBottom: 0,
-                  color: "#374151",
-                  fontSize: "1.2rem",
-                  lineHeight: 1.6,
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
                 }}
-              >
-                {slidesData.slideThree.threeThree}
-              </p>
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.2.1
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThreeTwo.threeTwoOne}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.2.2
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThreeTwo.threeTwoTwo}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.2.3
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThreeTwo.threeTwoThree}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.2.4
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThreeTwo.threeTwoFour}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.2.5
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThreeTwo.threeTwoFive}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.2.6
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThreeTwo.threeTwoSix}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.2.7
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThreeTwo.threeTwoSeven}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.2.8
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThreeTwo.threeTwoEight}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.2.9
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThreeTwo.threeTwoNine}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.2.10
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThreeTwo.threeTwoTen}
+                </p>
+                </div>
+            </div>
             </div>
 
-          </div>
+        </div>
+        </div>
+      </>
+    ),
+  },
+  {
+    title: slidesData.slideThreeThree.title,
+    content: (
+      <>
+        <div
+        style={{
+            display: "flex",
+            flexDirection: "column",
+            height: "100%",
+            padding: "2rem 3rem",
+            boxSizing: "border-box",
+        }}
+        >
+        <h1
+            style={{
+            margin: 0,
+            color: "#582c83",
+            fontSize: "2.75rem",
+            }}
+        >
+            {slidesData.slideThreeThree.title.toUpperCase()}
+        </h1>
+
+        <div
+            style={{
+            marginTop: "0.75rem",
+            height: "3px",
+            width: "100%",
+            backgroundColor: "#e2e8f0",
+            borderRadius: "2px",
+            }}
+        />
+
+        <div
+            style={{
+            flex: 1,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            gap: "1.25rem",
+            padding: "1.5rem 0 0.5rem",
+            }}
+        >
+            <div
+            style={{
+                display: "flex",
+                gap: "1.25rem",
+                padding: "1.25rem 1.5rem",
+                backgroundColor: "#f8f7fa",
+                borderLeft: "5px solid #582c83",
+                borderRadius: "0 10px 10px 0",
+                boxSizing: "border-box",
+            }}
+            >
+            <div
+                style={{
+                flexShrink: 0,
+                width: "52px",
+                height: "52px",
+                borderRadius: "10px",
+                backgroundColor: "#582c83",
+                color: "#ffffff",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: "1rem",
+                fontWeight: 700,
+                }}
+            >
+                3.3
+            </div>
+
+            <div
+                style={{
+                flex: 1,
+                display: "flex",
+                flexDirection: "column",
+                }}
+            >
+                <h2
+                style={{
+                    margin: 0,
+                    color: "#582c83",
+                    fontSize: "1.3rem",
+                    fontWeight: 700,
+                }}
+                >
+                {slidesData.slideThreeTwo.threeTwo}
+                </h2>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.3.1
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThreeThree.threeThreeOne}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.3.2
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThreeThree.threeThreeTwo}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.3.3
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThreeThree.threeThreeThree}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.3.4
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThreeThree.threeThreeFour}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.3.5
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThreeThree.threeThreeFive}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.3.6
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThreeThree.threeThreeSix}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.3.7
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThreeThree.threeThreeSeven}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.3.8
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThreeThree.threeThreeEight}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.3.9
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThreeThree.threeThreeNine}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.3.10
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThreeThree.threeThreeTen}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.3.11
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThreeThree.threeThreeEleven}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.3.12
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThreeThree.threeThreeTwelve}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.3.13
+                </span>
+
+                <div
+                    style={{
+                    flex: 1,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    <p
+                    style={{
+                        margin: 0,
+                        marginBottom: "0.75rem",
+                    }}
+                    >
+                    {slidesData.slideThreeThree.threeThreeThirteen.intro}
+                    </p>
+
+                    <ol
+                    style={{
+                        margin: 0,
+                        paddingLeft: "1.5rem",
+                    }}
+                    >
+                    {slidesData.slideThreeThree.threeThreeThirteen.items.map(
+                        (item, index) => (
+                        <li
+                            key={index}
+                            style={{
+                            paddingLeft: "0.35rem",
+                            marginBottom:
+                                index ===
+                                slidesData.slideThreeThree.threeThreeThirteen.items.length - 1
+                                ? 0
+                                : "0.4rem",
+                            }}
+                        >
+                            {item}
+                        </li>
+                        )
+                    )}
+                    </ol>
+                </div>
+                </div>
+            </div>
+            </div>
+
+        </div>
+        </div>
+      </>
+    ),
+  },
+  {
+    title: slidesData.slideThreeFour.title,
+    content: (
+      <>
+        <div
+        style={{
+            display: "flex",
+            flexDirection: "column",
+            height: "100%",
+            padding: "2rem 3rem",
+            boxSizing: "border-box",
+        }}
+        >
+        <h1
+            style={{
+            margin: 0,
+            color: "#582c83",
+            fontSize: "2.75rem",
+            }}
+        >
+            {slidesData.slideThreeFour.title.toUpperCase()}
+        </h1>
+
+        <div
+            style={{
+            marginTop: "0.75rem",
+            height: "3px",
+            width: "100%",
+            backgroundColor: "#e2e8f0",
+            borderRadius: "2px",
+            }}
+        />
+
+        <div
+            style={{
+            flex: 1,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            gap: "1.25rem",
+            padding: "1.5rem 0 0.5rem",
+            }}
+        >
+            <div
+            style={{
+                display: "flex",
+                gap: "1.25rem",
+                padding: "1.25rem 1.5rem",
+                backgroundColor: "#f8f7fa",
+                borderLeft: "5px solid #582c83",
+                borderRadius: "0 10px 10px 0",
+                boxSizing: "border-box",
+            }}
+            >
+            <div
+                style={{
+                flexShrink: 0,
+                width: "52px",
+                height: "52px",
+                borderRadius: "10px",
+                backgroundColor: "#582c83",
+                color: "#ffffff",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: "1rem",
+                fontWeight: 700,
+                }}
+            >
+                3.4
+            </div>
+
+            <div
+                style={{
+                flex: 1,
+                display: "flex",
+                flexDirection: "column",
+                }}
+            >
+                <h2
+                style={{
+                    margin: 0,
+                    color: "#582c83",
+                    fontSize: "1.3rem",
+                    fontWeight: 700,
+                }}
+                >
+                {slidesData.slideThreeFour.threeFour}
+                </h2>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.4.1
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThreeFour.threeFourOne}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.4.2
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThreeFour.threeFourTwo}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.4.3
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThreeFour.threeFourThree}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.4.4
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThreeFour.threeFourFour}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.4.5
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThreeFour.threeFourFive}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.4.6
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThreeFour.threeFourSix}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.4.7
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThreeFour.threeFourSeven}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.4.8
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThreeFour.threeFourEight}
+                </p>
+                </div>
+
+            </div>
+            </div>
+
+        </div>
+        </div>
+      </>
+    ),
+  },
+  {
+    title: slidesData.slideThreeFive.title,
+    content: (
+      <>
+        <div
+        style={{
+            display: "flex",
+            flexDirection: "column",
+            height: "100%",
+            padding: "2rem 3rem",
+            boxSizing: "border-box",
+        }}
+        >
+        <h1
+            style={{
+            margin: 0,
+            color: "#582c83",
+            fontSize: "2.75rem",
+            }}
+        >
+            {slidesData.slideThreeFive.title.toUpperCase()}
+        </h1>
+
+        <div
+            style={{
+            marginTop: "0.75rem",
+            height: "3px",
+            width: "100%",
+            backgroundColor: "#e2e8f0",
+            borderRadius: "2px",
+            }}
+        />
+
+        <div
+            style={{
+            flex: 1,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            gap: "1.25rem",
+            padding: "1.5rem 0 0.5rem",
+            }}
+        >
+            <div
+            style={{
+                display: "flex",
+                gap: "1.25rem",
+                padding: "1.25rem 1.5rem",
+                backgroundColor: "#f8f7fa",
+                borderLeft: "5px solid #582c83",
+                borderRadius: "0 10px 10px 0",
+                boxSizing: "border-box",
+            }}
+            >
+            <div
+                style={{
+                flexShrink: 0,
+                width: "52px",
+                height: "52px",
+                borderRadius: "10px",
+                backgroundColor: "#582c83",
+                color: "#ffffff",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: "1rem",
+                fontWeight: 700,
+                }}
+            >
+                3.5
+            </div>
+
+            <div
+                style={{
+                flex: 1,
+                display: "flex",
+                flexDirection: "column",
+                }}
+            >
+                <h2
+                style={{
+                    margin: 0,
+                    color: "#582c83",
+                    fontSize: "1.3rem",
+                    fontWeight: 700,
+                }}
+                >
+                {slidesData.slideThreeFive.threeFive}
+                </h2>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.5.1
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThreeFive.threeFiveOne}
+                </p>
+                </div>
+            </div>
+            </div>
+
+            <div
+            style={{
+                display: "flex",
+                gap: "1.25rem",
+                padding: "1.25rem 1.5rem",
+                backgroundColor: "#f8f7fa",
+                borderLeft: "5px solid #582c83",
+                borderRadius: "0 10px 10px 0",
+                boxSizing: "border-box",
+            }}
+            >
+            <div
+                style={{
+                flexShrink: 0,
+                width: "52px",
+                height: "52px",
+                borderRadius: "10px",
+                backgroundColor: "#582c83",
+                color: "#ffffff",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: "1rem",
+                fontWeight: 700,
+                }}
+            >
+                3.6
+            </div>
+
+            <div
+                style={{
+                flex: 1,
+                display: "flex",
+                flexDirection: "column",
+                }}
+            >
+                <h2
+                style={{
+                    margin: 0,
+                    color: "#582c83",
+                    fontSize: "1.3rem",
+                    fontWeight: 700,
+                }}
+                >
+                {slidesData.slideThreeFive.threeSix}
+                </h2>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.6.1
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThreeFive.threeSixOne}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.6.2
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThreeFive.threeSixTwo}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.6.3
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThreeFive.threeSixThree}
+                </p>
+                </div>
+
+            </div>
+            </div>
+
+        </div>
+        </div>
+      </>
+    ),
+  },
+  {
+    title: slidesData.slideThreeSix.title,
+    content: (
+      <>
+        <div
+        style={{
+            display: "flex",
+            flexDirection: "column",
+            height: "100%",
+            padding: "2rem 3rem",
+            boxSizing: "border-box",
+        }}
+        >
+        <h1
+            style={{
+            margin: 0,
+            color: "#582c83",
+            fontSize: "2.75rem",
+            }}
+        >
+            {slidesData.slideThreeSix.title.toUpperCase()}
+        </h1>
+
+        <div
+            style={{
+            marginTop: "0.75rem",
+            height: "3px",
+            width: "100%",
+            backgroundColor: "#e2e8f0",
+            borderRadius: "2px",
+            }}
+        />
+
+        <div
+            style={{
+            flex: 1,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            gap: "1.25rem",
+            padding: "1.5rem 0 0.5rem",
+            }}
+        >
+            <div
+            style={{
+                display: "flex",
+                gap: "1.25rem",
+                padding: "1.25rem 1.5rem",
+                backgroundColor: "#f8f7fa",
+                borderLeft: "5px solid #582c83",
+                borderRadius: "0 10px 10px 0",
+                boxSizing: "border-box",
+            }}
+            >
+            <div
+                style={{
+                flexShrink: 0,
+                width: "52px",
+                height: "52px",
+                borderRadius: "10px",
+                backgroundColor: "#582c83",
+                color: "#ffffff",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: "1rem",
+                fontWeight: 700,
+                }}
+            >
+                3.7
+            </div>
+
+            <div
+                style={{
+                flex: 1,
+                display: "flex",
+                flexDirection: "column",
+                }}
+            >
+                <h2
+                style={{
+                    margin: 0,
+                    color: "#582c83",
+                    fontSize: "1.3rem",
+                    fontWeight: 700,
+                }}
+                >
+                {slidesData.slideThreeSix.threeSeven}
+                </h2>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.7.1
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThreeSix.threeSevenOne}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.7.2
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThreeSix.threeSevenTwo}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.7.3
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThreeSix.threeSevenThree}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.7.4
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThreeSix.threeSevenFour}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.7.5
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThreeSix.threeSevenFive}
+                </p>
+                </div>
+            </div>
+            </div>
+
+            <div
+            style={{
+                display: "flex",
+                gap: "1.25rem",
+                padding: "1.25rem 1.5rem",
+                backgroundColor: "#f8f7fa",
+                borderLeft: "5px solid #582c83",
+                borderRadius: "0 10px 10px 0",
+                boxSizing: "border-box",
+            }}
+            >
+            <div
+                style={{
+                flexShrink: 0,
+                width: "52px",
+                height: "52px",
+                borderRadius: "10px",
+                backgroundColor: "#582c83",
+                color: "#ffffff",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: "1rem",
+                fontWeight: 700,
+                }}
+            >
+                3.8
+            </div>
+
+            <div
+                style={{
+                flex: 1,
+                display: "flex",
+                flexDirection: "column",
+                }}
+            >
+                <h2
+                style={{
+                    margin: 0,
+                    color: "#582c83",
+                    fontSize: "1.3rem",
+                    fontWeight: 700,
+                }}
+                >
+                {slidesData.slideThreeSix.threeEight}
+                </h2>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.8.1
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThreeSix.threeEightOne}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    3.8.2
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideThreeSix.threeEightTwo}
+                </p>
+                </div>
+
+            </div>
+            </div>
+
+        </div>
         </div>
       </>
     ),
@@ -553,199 +2944,447 @@ export const accessibilitySlides = (playerName: string, setCurrentSlides: React.
     content: (
       <>
         <div
-          style={{
+        style={{
             display: "flex",
             flexDirection: "column",
             height: "100%",
             padding: "2rem 3rem",
             boxSizing: "border-box",
-          }}
+        }}
         >
-
-          <h1
+        <h1
             style={{
-              margin: 0,
-              color: "#582c83",
-              fontSize: "2.75rem",
+            margin: 0,
+            color: "#582c83",
+            fontSize: "2.75rem",
             }}
-          >
+        >
             {slidesData.slideFour.title.toUpperCase()}
-          </h1>
+        </h1>
 
-          <div
+        <div
             style={{
-              marginTop: "0.75rem",
-              height: "3px",
-              width: "100%",
-              backgroundColor: "#e2e8f0",
-              borderRadius: "2px",
+            marginTop: "0.75rem",
+            height: "3px",
+            width: "100%",
+            backgroundColor: "#e2e8f0",
+            borderRadius: "2px",
             }}
-          />
+        />
 
-          <div
+        <div
             style={{
-              flex: 1,
-              display: "flex",
-              alignItems: "flex-start",
-              justifyContent: "center",
-              gap: "2rem",
-              padding: "2rem 0",
+            flex: 1,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            gap: "1.25rem",
+            padding: "1.5rem 0 0.5rem",
             }}
-          >
-
+        >
             <div
-              style={{
-                flex: 1,
-                minHeight: "280px",
-                height: "auto",
-                backgroundColor: "#f1f3f5",
-                borderRadius: "12px",
-                padding: "2rem",
-                boxSizing: "border-box",
+            style={{
                 display: "flex",
-                flexDirection: "column",
-                justifyContent: "flex-start",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-              }}
+                gap: "1.25rem",
+                padding: "1.25rem 1.5rem",
+                backgroundColor: "#f8f7fa",
+                borderLeft: "5px solid #582c83",
+                borderRadius: "0 10px 10px 0",
+                boxSizing: "border-box",
+            }}
             >
-              <h2
+            <div
                 style={{
-                  margin: 0,
-                  color: "#582c83",
-                  fontSize: "1.5rem",
+                flexShrink: 0,
+                width: "52px",
+                height: "52px",
+                borderRadius: "10px",
+                backgroundColor: "#582c83",
+                color: "#ffffff",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: "1rem",
+                fontWeight: 700,
                 }}
-              >
+            >
                 4.1
-              </h2>
+            </div>
 
-              <p
+            <div
                 style={{
-                  marginTop: "1rem",
-                  marginBottom: 0,
-                  color: "#374151",
-                  fontSize: "1.2rem",
-                  lineHeight: 1.6,
+                flex: 1,
+                display: "flex",
+                flexDirection: "column",
                 }}
-              >
+            >
+                <h2
+                style={{
+                    margin: 0,
+                    color: "#582c83",
+                    fontSize: "1.3rem",
+                    fontWeight: 700,
+                }}
+                >
                 {slidesData.slideFour.fourOne}
-              </p>
+                </h2>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    4.1.1
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideFour.fourOneOne}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    4.1.2
+                </span>
+
+                <div
+                    style={{
+                    flex: 1,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    <p
+                    style={{
+                        margin: 0,
+                        marginBottom: "0.75rem",
+                    }}
+                    >
+                    {slidesData.slideFour.fourOneTwo.intro}
+                    </p>
+
+                    <ol
+                    style={{
+                        margin: 0,
+                        paddingLeft: "1.5rem",
+                    }}
+                    >
+                    {slidesData.slideFour.fourOneTwo.items.map(
+                        (item, index) => (
+                        <li
+                            key={index}
+                            style={{
+                            paddingLeft: "0.35rem",
+                            marginBottom:
+                                index ===
+                                slidesData.slideFour.fourOneTwo.items.length - 1
+                                ? 0
+                                : "0.4rem",
+                            }}
+                        >
+                            {item}
+                        </li>
+                        )
+                    )}
+                    </ol>
+                </div>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    4.1.3
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideFour.fourOneThree}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    4.1.4
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideFour.fourOneFour}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    4.1.5
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideFour.fourOneFive}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    4.1.6
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideFour.fourOneSix}
+                </p>
+                </div>
+
+                 <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    4.1.7
+                </span>
+
+                <div
+                    style={{
+                    flex: 1,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    <p
+                    style={{
+                        margin: 0,
+                        marginBottom: "0.75rem",
+                    }}
+                    >
+                    {slidesData.slideFour.fourOneSeven.intro}
+                    </p>
+
+                    <ol
+                    style={{
+                        margin: 0,
+                        paddingLeft: "1.5rem",
+                    }}
+                    >
+                    {slidesData.slideFour.fourOneSeven.items.map(
+                        (item, index) => (
+                        <li
+                            key={index}
+                            style={{
+                            paddingLeft: "0.35rem",
+                            marginBottom:
+                                index ===
+                                slidesData.slideFour.fourOneSeven.items.length - 1
+                                ? 0
+                                : "0.4rem",
+                            }}
+                        >
+                            {item}
+                        </li>
+                        )
+                    )}
+                    </ol>
+                </div>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    4.1.8
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideFour.fourOneEight}
+                </p>
+                </div>
+
+                <div
+                style={{
+                    marginTop: "0.65rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                }}
+                >
+                <span
+                    style={{
+                    flexShrink: 0,
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    paddingTop: "0.15rem",
+                    }}
+                >
+                    4.1.9
+                </span>
+
+                <p
+                    style={{
+                    margin: 0,
+                    color: "#374151",
+                    fontSize: "1.05rem",
+                    lineHeight: 1.5,
+                    }}
+                >
+                    {slidesData.slideFour.fourOneNine}
+                </p>
+                </div>
+
+            </div>
             </div>
 
-            <div
-              style={{
-                flex: 1,
-                minHeight: "280px",
-                height: "auto",
-                backgroundColor: "#f1f3f5",
-                borderRadius: "12px",
-                padding: "2rem",
-                boxSizing: "border-box",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "flex-start",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-              }}
-            >
-              <h2
-                style={{
-                  margin: 0,
-                  color: "#582c83",
-                  fontSize: "1.5rem",
-                }}
-              >
-                4.2
-              </h2>
-
-              <p
-                style={{
-                  marginTop: "1rem",
-                  marginBottom: 0,
-                  color: "#374151",
-                  fontSize: "1.2rem",
-                  lineHeight: 1.6,
-                }}
-              >
-                {slidesData.slideFour.fourTwo}
-              </p>
-            </div>
-
-            <div
-              style={{
-                flex: 1,
-                minHeight: "280px",
-                height: "auto",
-                backgroundColor: "#f1f3f5",
-                borderRadius: "12px",
-                padding: "2rem",
-                boxSizing: "border-box",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "flex-start",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-              }}
-            >
-              <h2
-                style={{
-                  margin: 0,
-                  color: "#582c83",
-                  fontSize: "1.5rem",
-                }}
-              >
-                4.3
-              </h2>
-
-              <p
-                style={{
-                  marginTop: "1rem",
-                  marginBottom: 0,
-                  color: "#374151",
-                  fontSize: "1.2rem",
-                  lineHeight: 1.6,
-                }}
-              >
-                {slidesData.slideFour.fourThree}
-              </p>
-            </div>
-
-            <div
-              style={{
-                flex: 1,
-                minHeight: "280px",
-                height: "auto",
-                backgroundColor: "#f1f3f5",
-                borderRadius: "12px",
-                padding: "2rem",
-                boxSizing: "border-box",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "flex-start",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-              }}
-            >
-              <h2
-                style={{
-                  margin: 0,
-                  color: "#582c83",
-                  fontSize: "1.5rem",
-                }}
-              >
-                4.4
-              </h2>
-
-              <p
-                style={{
-                  marginTop: "1rem",
-                  marginBottom: 0,
-                  color: "#374151",
-                  fontSize: "1.2rem",
-                  lineHeight: 1.6,
-                }}
-              >
-                {slidesData.slideFour.fourFour}
-              </p>
-            </div>
-
-          </div>
+        </div>
         </div>
       </>
     ),
@@ -860,16 +3499,48 @@ export const accessibilitySlides = (playerName: string, setCurrentSlides: React.
                     5.1.1
                 </span>
 
-                <p
+                <div
                     style={{
-                    margin: 0,
+                    flex: 1,
                     color: "#374151",
                     fontSize: "1.05rem",
                     lineHeight: 1.5,
                     }}
                 >
-                    {slidesData.slideFive.fiveOneOne}
-                </p>
+                    <p
+                    style={{
+                        margin: 0,
+                        marginBottom: "0.75rem",
+                    }}
+                    >
+                    {slidesData.slideFive.fiveOneOne.intro}
+                    </p>
+
+                    <ol
+                    style={{
+                        margin: 0,
+                        paddingLeft: "1.5rem",
+                    }}
+                    >
+                    {slidesData.slideFive.fiveOneOne.items.map(
+                        (item, index) => (
+                        <li
+                            key={index}
+                            style={{
+                            paddingLeft: "0.35rem",
+                            marginBottom:
+                                index ===
+                                slidesData.slideFive.fiveOneOne.items.length - 1
+                                ? 0
+                                : "0.4rem",
+                            }}
+                        >
+                            {item}
+                        </li>
+                        )
+                    )}
+                    </ol>
+                </div>
                 </div>
 
                 <div
@@ -924,70 +3595,6 @@ export const accessibilitySlides = (playerName: string, setCurrentSlides: React.
                     5.1.3
                 </span>
 
-                <div
-                    style={{
-                    flex: 1,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    <p
-                    style={{
-                        margin: 0,
-                        marginBottom: "0.75rem",
-                    }}
-                    >
-                    {slidesData.slideFive.fiveOneThree.intro}
-                    </p>
-
-                    <ol
-                    style={{
-                        margin: 0,
-                        paddingLeft: "1.5rem",
-                    }}
-                    >
-                    {slidesData.slideFive.fiveOneThree.items.map(
-                        (item, index) => (
-                        <li
-                            key={index}
-                            style={{
-                            paddingLeft: "0.35rem",
-                            marginBottom:
-                                index ===
-                                slidesData.slideFive.fiveOneThree.items.length - 1
-                                ? 0
-                                : "0.4rem",
-                            }}
-                        >
-                            {item}
-                        </li>
-                        )
-                    )}
-                    </ol>
-                </div>
-                </div>
-
-                <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.1.4
-                </span>
-
                 <p
                     style={{
                     margin: 0,
@@ -996,41 +3603,10 @@ export const accessibilitySlides = (playerName: string, setCurrentSlides: React.
                     lineHeight: 1.5,
                     }}
                 >
-                    {slidesData.slideFive.fiveOneFour}
+                    {slidesData.slideFive.fiveOneThree}
                 </p>
                 </div>
 
-                <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.1.5
-                </span>
-
-                <p
-                    style={{
-                    margin: 0,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    {slidesData.slideFive.fiveOneFive}
-                </p>
-                </div>
             </div>
             </div>
 
@@ -1040,7 +3616,7 @@ export const accessibilitySlides = (playerName: string, setCurrentSlides: React.
     ),
   },
   {
-    title: slidesData.slideFiveContinued.title,
+    title: slidesData.slideFiveTwo.title,
     content: (
       <>
         <div
@@ -1059,7 +3635,7 @@ export const accessibilitySlides = (playerName: string, setCurrentSlides: React.
             fontSize: "2.75rem",
             }}
         >
-            {slidesData.slideFive.title.toUpperCase()}
+            {slidesData.slideFiveTwo.title.toUpperCase()}
         </h1>
 
         <div
@@ -1126,7 +3702,7 @@ export const accessibilitySlides = (playerName: string, setCurrentSlides: React.
                     fontWeight: 700,
                 }}
                 >
-                {slidesData.slideFiveContinued.fiveTwo}
+                {slidesData.slideFiveTwo.fiveTwo}
                 </h2>
 
                 <div
@@ -1149,16 +3725,48 @@ export const accessibilitySlides = (playerName: string, setCurrentSlides: React.
                     5.2.1
                 </span>
 
-                <p
+                <div
                     style={{
-                    margin: 0,
+                    flex: 1,
                     color: "#374151",
                     fontSize: "1.05rem",
                     lineHeight: 1.5,
                     }}
                 >
-                    {slidesData.slideFiveContinued.fiveTwoOne}
-                </p>
+                    <p
+                    style={{
+                        margin: 0,
+                        marginBottom: "0.75rem",
+                    }}
+                    >
+                    {slidesData.slideFiveTwo.fiveTwoOne.intro}
+                    </p>
+
+                    <ol
+                    style={{
+                        margin: 0,
+                        paddingLeft: "1.5rem",
+                    }}
+                    >
+                    {slidesData.slideFiveTwo.fiveTwoOne.items.map(
+                        (item, index) => (
+                        <li
+                            key={index}
+                            style={{
+                            paddingLeft: "0.35rem",
+                            marginBottom:
+                                index ===
+                                slidesData.slideFiveTwo.fiveTwoOne.items.length - 1
+                                ? 0
+                                : "0.4rem",
+                            }}
+                        >
+                            {item}
+                        </li>
+                        )
+                    )}
+                    </ol>
+                </div>
                 </div>
 
                 <div
@@ -1189,2663 +3797,8 @@ export const accessibilitySlides = (playerName: string, setCurrentSlides: React.
                     lineHeight: 1.5,
                     }}
                 >
-                    {slidesData.slideFiveContinued.fiveTwoTwo}
+                    {slidesData.slideFiveTwo.fiveTwoTwo}
                 </p>
-                </div>
-
-                <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.2.3
-                </span>
-
-                <p
-                    style={{
-                    margin: 0,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    {slidesData.slideFiveContinued.fiveTwoThree}
-                </p>
-                </div>
-
-                <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.2.4
-                </span>
-
-                <p
-                    style={{
-                    margin: 0,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    {slidesData.slideFiveContinued.fiveTwoFour}
-                </p>
-                </div>
-            </div>
-            </div>
-
-            <div
-            style={{
-                display: "flex",
-                gap: "1.25rem",
-                padding: "1.25rem 1.5rem",
-                backgroundColor: "#f8f7fa",
-                borderLeft: "5px solid #582c83",
-                borderRadius: "0 10px 10px 0",
-                boxSizing: "border-box",
-            }}
-            >
-            <div
-                style={{
-                flexShrink: 0,
-                width: "52px",
-                height: "52px",
-                borderRadius: "10px",
-                backgroundColor: "#582c83",
-                color: "#ffffff",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: "1rem",
-                fontWeight: 700,
-                }}
-            >
-                5.3
-            </div>
-
-            <div
-                style={{
-                flex: 1,
-                display: "flex",
-                flexDirection: "column",
-                }}
-            >
-                <h2
-                style={{
-                    margin: 0,
-                    color: "#582c83",
-                    fontSize: "1.3rem",
-                    fontWeight: 700,
-                }}
-                >
-                {slidesData.slideFiveContinued.fiveThree}
-                </h2>
-
-                <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.3.1
-                </span>
-
-                <p
-                    style={{
-                    margin: 0,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    {slidesData.slideFiveContinued.fiveThreeOne}
-                </p>
-                </div>
-
-                <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.3.2
-                </span>
-
-                <p
-                    style={{
-                    margin: 0,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    {slidesData.slideFiveContinued.fiveThreeTwo}
-                </p>
-                </div>
-
-            </div>
-            </div>
-
-        </div>
-        </div>
-      </>
-    ),
-  },
-  {
-    title: slidesData.slideFiveContinuedTwo.title,
-    content: (
-      <>
-        <div
-        style={{
-            display: "flex",
-            flexDirection: "column",
-            height: "100%",
-            padding: "2rem 3rem",
-            boxSizing: "border-box",
-        }}
-        >
-        <h1
-            style={{
-            margin: 0,
-            color: "#582c83",
-            fontSize: "2.75rem",
-            }}
-        >
-            {slidesData.slideFiveContinuedTwo.title.toUpperCase()}
-        </h1>
-
-        <div
-            style={{
-            marginTop: "0.75rem",
-            height: "3px",
-            width: "100%",
-            backgroundColor: "#e2e8f0",
-            borderRadius: "2px",
-            }}
-        />
-
-        <div
-            style={{
-            flex: 1,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            gap: "1.25rem",
-            padding: "1.5rem 0 0.5rem",
-            }}
-        >
-            <div
-            style={{
-                display: "flex",
-                gap: "1.25rem",
-                padding: "1.25rem 1.5rem",
-                backgroundColor: "#f8f7fa",
-                borderLeft: "5px solid #582c83",
-                borderRadius: "0 10px 10px 0",
-                boxSizing: "border-box",
-            }}
-            >
-            <div
-                style={{
-                flexShrink: 0,
-                width: "52px",
-                height: "52px",
-                borderRadius: "10px",
-                backgroundColor: "#582c83",
-                color: "#ffffff",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: "1rem",
-                fontWeight: 700,
-                }}
-            >
-                5.4
-            </div>
-
-            <div
-                style={{
-                flex: 1,
-                display: "flex",
-                flexDirection: "column",
-                }}
-            >
-                <h2
-                style={{
-                    margin: 0,
-                    color: "#582c83",
-                    fontSize: "1.3rem",
-                    fontWeight: 700,
-                }}
-                >
-                {slidesData.slideFiveContinuedTwo.fiveFour}
-                </h2>
-
-                <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.4.1
-                </span>
-
-                <p
-                    style={{
-                    margin: 0,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    {slidesData.slideFiveContinuedTwo.fiveFourOne}
-                </p>
-                </div>
-
-                <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.4.2
-                </span>
-
-                <p
-                    style={{
-                    margin: 0,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    {slidesData.slideFiveContinuedTwo.fiveFourTwo}
-                </p>
-                </div>
-
-                <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.4.3
-                </span>
-
-                <p
-                    style={{
-                    margin: 0,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    {slidesData.slideFiveContinuedTwo.fiveFourThree}
-                </p>
-                </div>
-
-                <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.4.4
-                </span>
-
-                <div
-                    style={{
-                    flex: 1,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    <p
-                    style={{
-                        margin: 0,
-                        marginBottom: "0.75rem",
-                    }}
-                    >
-                    {slidesData.slideFiveContinuedTwo.fiveFourFour.intro}
-                    </p>
-
-                    <ol
-                    style={{
-                        margin: 0,
-                        paddingLeft: "1.5rem",
-                    }}
-                    >
-                    {slidesData.slideFiveContinuedTwo.fiveFourFour.items.map(
-                        (item, index) => (
-                        <li
-                            key={index}
-                            style={{
-                            paddingLeft: "0.35rem",
-                            marginBottom:
-                                index ===
-                                slidesData.slideFiveContinuedTwo.fiveFourFour.items.length - 1
-                                ? 0
-                                : "0.4rem",
-                            }}
-                        >
-                            {item}
-                        </li>
-                        )
-                    )}
-                    </ol>
-                </div>
-                </div>
-
-                 <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.4.5
-                </span>
-
-                <div
-                    style={{
-                    flex: 1,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    <p
-                    style={{
-                        margin: 0,
-                        marginBottom: "0.75rem",
-                    }}
-                    >
-                    {slidesData.slideFiveContinuedTwo.fiveFourFive.intro}
-                    </p>
-
-                    <ol
-                    style={{
-                        margin: 0,
-                        paddingLeft: "1.5rem",
-                    }}
-                    >
-                    {slidesData.slideFiveContinuedTwo.fiveFourFive.items.map(
-                        (item, index) => (
-                        <li
-                            key={index}
-                            style={{
-                            paddingLeft: "0.35rem",
-                            marginBottom:
-                                index ===
-                                slidesData.slideFiveContinuedTwo.fiveFourFive.items.length - 1
-                                ? 0
-                                : "0.4rem",
-                            }}
-                        >
-                            {item}
-                        </li>
-                        )
-                    )}
-                    </ol>
-                </div>
-                </div>
-            </div>
-            </div>
-
-        </div>
-        </div>
-      </>
-    ),
-  },
-  {
-    title: slidesData.slideFiveContinuedThree.title,
-    content: (
-      <>
-        <div
-        style={{
-            display: "flex",
-            flexDirection: "column",
-            height: "100%",
-            padding: "2rem 3rem",
-            boxSizing: "border-box",
-        }}
-        >
-        <h1
-            style={{
-            margin: 0,
-            color: "#582c83",
-            fontSize: "2.75rem",
-            }}
-        >
-            {slidesData.slideFiveContinuedThree.title.toUpperCase()}
-        </h1>
-
-        <div
-            style={{
-            marginTop: "0.75rem",
-            height: "3px",
-            width: "100%",
-            backgroundColor: "#e2e8f0",
-            borderRadius: "2px",
-            }}
-        />
-
-        <div
-            style={{
-            flex: 1,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            gap: "1.25rem",
-            padding: "1.5rem 0 0.5rem",
-            }}
-        >
-            <div
-            style={{
-                display: "flex",
-                gap: "1.25rem",
-                padding: "1.25rem 1.5rem",
-                backgroundColor: "#f8f7fa",
-                borderLeft: "5px solid #582c83",
-                borderRadius: "0 10px 10px 0",
-                boxSizing: "border-box",
-            }}
-            >
-            <div
-                style={{
-                flexShrink: 0,
-                width: "52px",
-                height: "52px",
-                borderRadius: "10px",
-                backgroundColor: "#582c83",
-                color: "#ffffff",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: "1rem",
-                fontWeight: 700,
-                }}
-            >
-                5.5
-            </div>
-
-            <div
-                style={{
-                flex: 1,
-                display: "flex",
-                flexDirection: "column",
-                }}
-            >
-                <h2
-                style={{
-                    margin: 0,
-                    color: "#582c83",
-                    fontSize: "1.3rem",
-                    fontWeight: 700,
-                }}
-                >
-                {slidesData.slideFiveContinuedThree.fiveFive}
-                </h2>
-
-                <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.5.1
-                </span>
-
-                <p
-                    style={{
-                    margin: 0,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    {slidesData.slideFiveContinuedThree.fiveFiveOne}
-                </p>
-                </div>
-
-                <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.5.2
-                </span>
-
-                <p
-                    style={{
-                    margin: 0,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    {slidesData.slideFiveContinuedThree.fiveFiveTwo}
-                </p>
-                </div>
-
-                <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.5.3
-                </span>
-
-                <p
-                    style={{
-                    margin: 0,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    {slidesData.slideFiveContinuedThree.fiveFiveThree}
-                </p>
-                </div>
-
-                <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.5.4
-                </span>
-
-                <div
-                    style={{
-                    flex: 1,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    <p
-                    style={{
-                        margin: 0,
-                        marginBottom: "0.75rem",
-                    }}
-                    >
-                    {slidesData.slideFiveContinuedThree.fiveFiveFour.intro}
-                    </p>
-
-                    <ol
-                    style={{
-                        margin: 0,
-                        paddingLeft: "1.5rem",
-                    }}
-                    >
-                    {slidesData.slideFiveContinuedThree.fiveFiveFour.items.map(
-                        (item, index) => (
-                        <li
-                            key={index}
-                            style={{
-                            paddingLeft: "0.35rem",
-                            marginBottom:
-                                index ===
-                                slidesData.slideFiveContinuedThree.fiveFiveFour.items.length - 1
-                                ? 0
-                                : "0.4rem",
-                            }}
-                        >
-                            {item}
-                        </li>
-                        )
-                    )}
-                    </ol>
-                </div>
-                </div>
-
-                 <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.5.5
-                </span>
-
-                <div
-                    style={{
-                    flex: 1,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    <p
-                    style={{
-                        margin: 0,
-                        marginBottom: "0.75rem",
-                    }}
-                    >
-                    {slidesData.slideFiveContinuedThree.fiveFiveFive.intro}
-                    </p>
-
-                    <ol
-                    style={{
-                        margin: 0,
-                        paddingLeft: "1.5rem",
-                    }}
-                    >
-                    {slidesData.slideFiveContinuedThree.fiveFiveFive.items.map(
-                        (item, index) => (
-                        <li
-                            key={index}
-                            style={{
-                            paddingLeft: "0.35rem",
-                            marginBottom:
-                                index ===
-                                slidesData.slideFiveContinuedThree.fiveFiveFive.items.length - 1
-                                ? 0
-                                : "0.4rem",
-                            }}
-                        >
-                            {item}
-                        </li>
-                        )
-                    )}
-                    </ol>
-                </div>
-                </div>
-
-                <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.5.6
-                </span>
-
-                <p
-                    style={{
-                    margin: 0,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    {slidesData.slideFiveContinuedThree.fiveFiveSix}
-                </p>
-                </div>
-            </div>
-            </div>
-
-        </div>
-        </div>
-      </>
-    ),
-  },
-  {
-    title: slidesData.slideFiveContinuedFour.title,
-    content: (
-      <>
-        <div
-        style={{
-            display: "flex",
-            flexDirection: "column",
-            height: "100%",
-            padding: "2rem 3rem",
-            boxSizing: "border-box",
-        }}
-        >
-        <h1
-            style={{
-            margin: 0,
-            color: "#582c83",
-            fontSize: "2.75rem",
-            }}
-        >
-            {slidesData.slideFiveContinuedFour.title.toUpperCase()}
-        </h1>
-
-        <div
-            style={{
-            marginTop: "0.75rem",
-            height: "3px",
-            width: "100%",
-            backgroundColor: "#e2e8f0",
-            borderRadius: "2px",
-            }}
-        />
-
-        <div
-            style={{
-            flex: 1,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            gap: "1.25rem",
-            padding: "1.5rem 0 0.5rem",
-            }}
-        >
-            <div
-            style={{
-                display: "flex",
-                gap: "1.25rem",
-                padding: "1.25rem 1.5rem",
-                backgroundColor: "#f8f7fa",
-                borderLeft: "5px solid #582c83",
-                borderRadius: "0 10px 10px 0",
-                boxSizing: "border-box",
-            }}
-            >
-            <div
-                style={{
-                flexShrink: 0,
-                width: "52px",
-                height: "52px",
-                borderRadius: "10px",
-                backgroundColor: "#582c83",
-                color: "#ffffff",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: "1rem",
-                fontWeight: 700,
-                }}
-            >
-                5.6
-            </div>
-
-            <div
-                style={{
-                flex: 1,
-                display: "flex",
-                flexDirection: "column",
-                }}
-            >
-                <h2
-                style={{
-                    margin: 0,
-                    color: "#582c83",
-                    fontSize: "1.3rem",
-                    fontWeight: 700,
-                }}
-                >
-                {slidesData.slideFiveContinuedFour.fiveSix}
-                </h2>
-
-                <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.6.1
-                </span>
-
-                <p
-                    style={{
-                    margin: 0,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    {slidesData.slideFiveContinuedFour.fiveSixOne}
-                </p>
-                </div>
-
-                <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.6.2
-                </span>
-
-                <p
-                    style={{
-                    margin: 0,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    {slidesData.slideFiveContinuedFour.fiveSixTwo}
-                </p>
-                </div>
-            </div>
-            </div>
-
-            <div
-            style={{
-                display: "flex",
-                gap: "1.25rem",
-                padding: "1.25rem 1.5rem",
-                backgroundColor: "#f8f7fa",
-                borderLeft: "5px solid #582c83",
-                borderRadius: "0 10px 10px 0",
-                boxSizing: "border-box",
-            }}
-            >
-            <div
-                style={{
-                flexShrink: 0,
-                width: "52px",
-                height: "52px",
-                borderRadius: "10px",
-                backgroundColor: "#582c83",
-                color: "#ffffff",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: "1rem",
-                fontWeight: 700,
-                }}
-            >
-                5.7
-            </div>
-
-            <div
-                style={{
-                flex: 1,
-                display: "flex",
-                flexDirection: "column",
-                }}
-            >
-                <h2
-                style={{
-                    margin: 0,
-                    color: "#582c83",
-                    fontSize: "1.3rem",
-                    fontWeight: 700,
-                }}
-                >
-                {slidesData.slideFiveContinuedFour.fiveSeven}
-                </h2>
-
-                <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.7.1
-                </span>
-
-                <p
-                    style={{
-                    margin: 0,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    {slidesData.slideFiveContinuedFour.fiveSevenOne}
-                </p>
-                </div>
-
-                <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.7.2
-                </span>
-
-                <div
-                    style={{
-                    flex: 1,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    <p
-                    style={{
-                        margin: 0,
-                        marginBottom: "0.75rem",
-                    }}
-                    >
-                    {slidesData.slideFiveContinuedFour.fiveSevenTwo.intro}
-                    </p>
-
-                    <ol
-                    style={{
-                        margin: 0,
-                        paddingLeft: "1.5rem",
-                    }}
-                    >
-                    {slidesData.slideFiveContinuedFour.fiveSevenTwo.items.map(
-                        (item, index) => (
-                        <li
-                            key={index}
-                            style={{
-                            paddingLeft: "0.35rem",
-                            marginBottom:
-                                index ===
-                                slidesData.slideFiveContinuedFour.fiveSevenTwo.items.length - 1
-                                ? 0
-                                : "0.4rem",
-                            }}
-                        >
-                            {item}
-                        </li>
-                        )
-                    )}
-                    </ol>
-                </div>
-                </div>
-
-                <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.7.3
-                </span>
-
-                <p
-                    style={{
-                    margin: 0,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    {slidesData.slideFiveContinuedFour.fiveSevenThree}
-                </p>
-                </div>
-
-                <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.7.4
-                </span>
-
-                <p
-                    style={{
-                    margin: 0,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    {slidesData.slideFiveContinuedFour.fiveSevenFour}
-                </p>
-                </div>
-
-                <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.7.5
-                </span>
-
-                <p
-                    style={{
-                    margin: 0,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    {slidesData.slideFiveContinuedFour.fiveSevenFive}
-                </p>
-                </div>
-
-            </div>
-            </div>
-
-        </div>
-        </div>
-      </>
-    ),
-  },
-  {
-    title: slidesData.slideFiveContinuedFive.title,
-    content: (
-      <>
-        <div
-        style={{
-            display: "flex",
-            flexDirection: "column",
-            height: "100%",
-            padding: "2rem 3rem",
-            boxSizing: "border-box",
-        }}
-        >
-        <h1
-            style={{
-            margin: 0,
-            color: "#582c83",
-            fontSize: "2.75rem",
-            }}
-        >
-            {slidesData.slideFiveContinuedFive.title.toUpperCase()}
-        </h1>
-
-        <div
-            style={{
-            marginTop: "0.75rem",
-            height: "3px",
-            width: "100%",
-            backgroundColor: "#e2e8f0",
-            borderRadius: "2px",
-            }}
-        />
-
-        <div
-            style={{
-            flex: 1,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            gap: "1.25rem",
-            padding: "1.5rem 0 0.5rem",
-            }}
-        >
-            <div
-            style={{
-                display: "flex",
-                gap: "1.25rem",
-                padding: "1.25rem 1.5rem",
-                backgroundColor: "#f8f7fa",
-                borderLeft: "5px solid #582c83",
-                borderRadius: "0 10px 10px 0",
-                boxSizing: "border-box",
-            }}
-            >
-            <div
-                style={{
-                flexShrink: 0,
-                width: "52px",
-                height: "52px",
-                borderRadius: "10px",
-                backgroundColor: "#582c83",
-                color: "#ffffff",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: "1rem",
-                fontWeight: 700,
-                }}
-            >
-                5.8
-            </div>
-
-            <div
-                style={{
-                flex: 1,
-                display: "flex",
-                flexDirection: "column",
-                }}
-            >
-                <h2
-                style={{
-                    margin: 0,
-                    color: "#582c83",
-                    fontSize: "1.3rem",
-                    fontWeight: 700,
-                }}
-                >
-                {slidesData.slideFiveContinuedFive.fiveEight}
-                </h2>
-
-                <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.8.1
-                </span>
-
-                <p
-                    style={{
-                    margin: 0,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    {slidesData.slideFiveContinuedFive.fiveEightOne}
-                </p>
-                </div>
-
-                <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.8.2
-                </span>
-
-                <p
-                    style={{
-                    margin: 0,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    {slidesData.slideFiveContinuedFive.fiveEightTwo}
-                </p>
-                </div>
-
-            </div>
-            </div>
-
-            <div
-            style={{
-                display: "flex",
-                gap: "1.25rem",
-                padding: "1.25rem 1.5rem",
-                backgroundColor: "#f8f7fa",
-                borderLeft: "5px solid #582c83",
-                borderRadius: "0 10px 10px 0",
-                boxSizing: "border-box",
-            }}
-            >
-            <div
-                style={{
-                flexShrink: 0,
-                width: "52px",
-                height: "52px",
-                borderRadius: "10px",
-                backgroundColor: "#582c83",
-                color: "#ffffff",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: "1rem",
-                fontWeight: 700,
-                }}
-            >
-                5.9
-            </div>
-
-            <div
-                style={{
-                flex: 1,
-                display: "flex",
-                flexDirection: "column",
-                }}
-            >
-                <h2
-                style={{
-                    margin: 0,
-                    color: "#582c83",
-                    fontSize: "1.3rem",
-                    fontWeight: 700,
-                }}
-                >
-                {slidesData.slideFiveContinuedFive.fiveNine}
-                </h2>
-
-                <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.9.1
-                </span>
-
-                <p
-                    style={{
-                    margin: 0,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    {slidesData.slideFiveContinuedFive.fiveNineOne}
-                </p>
-                </div>
-
-            </div>
-            </div>
-
-        </div>
-        </div>
-      </>
-    ),
-  },
-  {
-    title: slidesData.slideFiveContinuedSix.title,
-    content: (
-      <>
-        <div
-        style={{
-            display: "flex",
-            flexDirection: "column",
-            height: "100%",
-            padding: "2rem 3rem",
-            boxSizing: "border-box",
-        }}
-        >
-        <h1
-            style={{
-            margin: 0,
-            color: "#582c83",
-            fontSize: "2.75rem",
-            }}
-        >
-            {slidesData.slideFiveContinuedSix.title.toUpperCase()}
-        </h1>
-
-        <div
-            style={{
-            marginTop: "0.75rem",
-            height: "3px",
-            width: "100%",
-            backgroundColor: "#e2e8f0",
-            borderRadius: "2px",
-            }}
-        />
-
-        <div
-            style={{
-            flex: 1,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            gap: "1.25rem",
-            padding: "1.5rem 0 0.5rem",
-            }}
-        >
-            <div
-            style={{
-                display: "flex",
-                gap: "1.25rem",
-                padding: "1.25rem 1.5rem",
-                backgroundColor: "#f8f7fa",
-                borderLeft: "5px solid #582c83",
-                borderRadius: "0 10px 10px 0",
-                boxSizing: "border-box",
-            }}
-            >
-            <div
-                style={{
-                flexShrink: 0,
-                width: "52px",
-                height: "52px",
-                borderRadius: "10px",
-                backgroundColor: "#582c83",
-                color: "#ffffff",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: "1rem",
-                fontWeight: 700,
-                }}
-            >
-                5.10
-            </div>
-
-            <div
-                style={{
-                flex: 1,
-                display: "flex",
-                flexDirection: "column",
-                }}
-            >
-                <h2
-                style={{
-                    margin: 0,
-                    color: "#582c83",
-                    fontSize: "1.3rem",
-                    fontWeight: 700,
-                }}
-                >
-                {slidesData.slideFiveContinuedSix.fiveTen}
-                </h2>
-
-                <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.10.1
-                </span>
-
-                <p
-                    style={{
-                    margin: 0,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    {slidesData.slideFiveContinuedSix.fiveTenOne}
-                </p>
-                </div>
-
-                <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.10.2
-                </span>
-
-                <div
-                    style={{
-                    flex: 1,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    <p
-                    style={{
-                        margin: 0,
-                        marginBottom: "0.75rem",
-                    }}
-                    >
-                    {slidesData.slideFiveContinuedSix.fiveTenTwo.intro}
-                    </p>
-
-                    <ol
-                    style={{
-                        margin: 0,
-                        paddingLeft: "1.5rem",
-                    }}
-                    >
-                    {slidesData.slideFiveContinuedSix.fiveTenTwo.items.map(
-                        (item, index) => (
-                        <li
-                            key={index}
-                            style={{
-                            paddingLeft: "0.35rem",
-                            marginBottom:
-                                index ===
-                                slidesData.slideFiveContinuedSix.fiveTenTwo.items.length - 1
-                                ? 0
-                                : "0.4rem",
-                            }}
-                        >
-                            {item}
-                        </li>
-                        )
-                    )}
-                    </ol>
-                </div>
-                </div>
-
-                 <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.10.3
-                </span>
-
-                <div
-                    style={{
-                    flex: 1,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    <p
-                    style={{
-                        margin: 0,
-                        marginBottom: "0.75rem",
-                    }}
-                    >
-                    {slidesData.slideFiveContinuedSix.fiveTenThree.intro}
-                    </p>
-
-                    <ol
-                    style={{
-                        margin: 0,
-                        paddingLeft: "1.5rem",
-                    }}
-                    >
-                    {slidesData.slideFiveContinuedSix.fiveTenThree.items.map(
-                        (item, index) => (
-                        <li
-                            key={index}
-                            style={{
-                            paddingLeft: "0.35rem",
-                            marginBottom:
-                                index ===
-                                slidesData.slideFiveContinuedSix.fiveTenThree.items.length - 1
-                                ? 0
-                                : "0.4rem",
-                            }}
-                        >
-                            {item}
-                        </li>
-                        )
-                    )}
-                    </ol>
-                </div>
-                </div>
-
-                <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.10.4
-                </span>
-
-                <p
-                    style={{
-                    margin: 0,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    {slidesData.slideFiveContinuedSix.fiveTenFour}
-                </p>
-                </div>
-
-                <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.10.5
-                </span>
-
-                <p
-                    style={{
-                    margin: 0,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    {slidesData.slideFiveContinuedSix.fiveTenFive}
-                </p>
-                </div>
-            </div>
-            </div>
-
-        </div>
-        </div>
-      </>
-    ),
-  },
-  {
-    title: slidesData.slideFiveContinuedSeven.title,
-    content: (
-      <>
-        <div
-        style={{
-            display: "flex",
-            flexDirection: "column",
-            height: "100%",
-            padding: "2rem 3rem",
-            boxSizing: "border-box",
-        }}
-        >
-        <h1
-            style={{
-            margin: 0,
-            color: "#582c83",
-            fontSize: "2.75rem",
-            }}
-        >
-            {slidesData.slideFiveContinuedSeven.title.toUpperCase()}
-        </h1>
-
-        <div
-            style={{
-            marginTop: "0.75rem",
-            height: "3px",
-            width: "100%",
-            backgroundColor: "#e2e8f0",
-            borderRadius: "2px",
-            }}
-        />
-
-        <div
-            style={{
-            flex: 1,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            gap: "1.25rem",
-            padding: "1.5rem 0 0.5rem",
-            }}
-        >
-            <div
-            style={{
-                display: "flex",
-                gap: "1.25rem",
-                padding: "1.25rem 1.5rem",
-                backgroundColor: "#f8f7fa",
-                borderLeft: "5px solid #582c83",
-                borderRadius: "0 10px 10px 0",
-                boxSizing: "border-box",
-            }}
-            >
-            <div
-                style={{
-                flexShrink: 0,
-                width: "52px",
-                height: "52px",
-                borderRadius: "10px",
-                backgroundColor: "#582c83",
-                color: "#ffffff",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: "1rem",
-                fontWeight: 700,
-                }}
-            >
-                5.11
-            </div>
-
-            <div
-                style={{
-                flex: 1,
-                display: "flex",
-                flexDirection: "column",
-                }}
-            >
-                <h2
-                style={{
-                    margin: 0,
-                    color: "#582c83",
-                    fontSize: "1.3rem",
-                    fontWeight: 700,
-                }}
-                >
-                {slidesData.slideFiveContinuedSeven.fiveEleven}
-                </h2>
-
-                <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.11.1
-                </span>
-
-                <p
-                    style={{
-                    margin: 0,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    {slidesData.slideFiveContinuedSeven.fiveElevenOne}
-                </p>
-                </div>
-
-                <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.11.2
-                </span>
-
-                <p
-                    style={{
-                    margin: 0,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    {slidesData.slideFiveContinuedSeven.fiveElevenTwo}
-                </p>
-                </div>
-
-                <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.11.3
-                </span>
-
-                <p
-                    style={{
-                    margin: 0,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    {slidesData.slideFiveContinuedSeven.fiveElevenThree}
-                </p>
-                </div>
-
-                <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.11.4
-                </span>
-
-                <div
-                    style={{
-                    flex: 1,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    <p
-                    style={{
-                        margin: 0,
-                        marginBottom: "0.75rem",
-                    }}
-                    >
-                    {slidesData.slideFiveContinuedSeven.fiveTenFour.intro}
-                    </p>
-
-                    <ol
-                    style={{
-                        margin: 0,
-                        paddingLeft: "1.5rem",
-                    }}
-                    >
-                    {slidesData.slideFiveContinuedSeven.fiveTenFour.items.map(
-                        (item, index) => (
-                        <li
-                            key={index}
-                            style={{
-                            paddingLeft: "0.35rem",
-                            marginBottom:
-                                index ===
-                                slidesData.slideFiveContinuedSeven.fiveTenFour.items.length - 1
-                                ? 0
-                                : "0.4rem",
-                            }}
-                        >
-                            {item}
-                        </li>
-                        )
-                    )}
-                    </ol>
-                </div>
-                </div>
-
-                <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.11.5
-                </span>
-
-                <p
-                    style={{
-                    margin: 0,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    {slidesData.slideFiveContinuedSeven.fiveElevenFive}
-                </p>
-                </div>
-            </div>
-            </div>
-
-        </div>
-        </div>
-      </>
-    ),
-  },
-  {
-    title: slidesData.slideFiveContinuedEight.title,
-    content: (
-      <>
-        <div
-        style={{
-            display: "flex",
-            flexDirection: "column",
-            height: "100%",
-            padding: "2rem 3rem",
-            boxSizing: "border-box",
-        }}
-        >
-        <h1
-            style={{
-            margin: 0,
-            color: "#582c83",
-            fontSize: "2.75rem",
-            }}
-        >
-            {slidesData.slideFiveContinuedEight.title.toUpperCase()}
-        </h1>
-
-        <div
-            style={{
-            marginTop: "0.75rem",
-            height: "3px",
-            width: "100%",
-            backgroundColor: "#e2e8f0",
-            borderRadius: "2px",
-            }}
-        />
-
-        <div
-            style={{
-            flex: 1,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            gap: "1.25rem",
-            padding: "1.5rem 0 0.5rem",
-            }}
-        >
-            <div
-            style={{
-                display: "flex",
-                gap: "1.25rem",
-                padding: "1.25rem 1.5rem",
-                backgroundColor: "#f8f7fa",
-                borderLeft: "5px solid #582c83",
-                borderRadius: "0 10px 10px 0",
-                boxSizing: "border-box",
-            }}
-            >
-            <div
-                style={{
-                flexShrink: 0,
-                width: "52px",
-                height: "52px",
-                borderRadius: "10px",
-                backgroundColor: "#582c83",
-                color: "#ffffff",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: "1rem",
-                fontWeight: 700,
-                }}
-            >
-                5.11
-            </div>
-
-            <div
-                style={{
-                flex: 1,
-                display: "flex",
-                flexDirection: "column",
-                }}
-            >
-                <h2
-                style={{
-                    margin: 0,
-                    color: "#582c83",
-                    fontSize: "1.3rem",
-                    fontWeight: 700,
-                }}
-                >
-                {slidesData.slideFiveContinuedEight.fiveEleven}
-                </h2>
-
-                <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.11.6
-                </span>
-
-                <p
-                    style={{
-                    margin: 0,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    {slidesData.slideFiveContinuedEight.fiveElevenSix}
-                </p>
-                </div>
-
-                <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.11.7
-                </span>
-
-                <div
-                    style={{
-                    flex: 1,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    <p
-                    style={{
-                        margin: 0,
-                        marginBottom: "0.75rem",
-                    }}
-                    >
-                    {slidesData.slideFiveContinuedEight.fiveElevenSeven.intro}
-                    </p>
-
-                    <ol
-                    style={{
-                        margin: 0,
-                        paddingLeft: "1.5rem",
-                    }}
-                    >
-                    {slidesData.slideFiveContinuedEight.fiveElevenSeven.items.map(
-                        (item, index) => (
-                        <li
-                            key={index}
-                            style={{
-                            paddingLeft: "0.35rem",
-                            marginBottom:
-                                index ===
-                                slidesData.slideFiveContinuedEight.fiveElevenSeven.items.length - 1
-                                ? 0
-                                : "0.4rem",
-                            }}
-                        >
-                            {item}
-                        </li>
-                        )
-                    )}
-                    </ol>
-                </div>
-                </div>
-
-                <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.11.8
-                </span>
-
-                <p
-                    style={{
-                    margin: 0,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    {slidesData.slideFiveContinuedEight.fiveElevenEight}
-                </p>
-                </div>
-
-                <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.11.9
-                </span>
-
-                <p
-                    style={{
-                    margin: 0,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    {slidesData.slideFiveContinuedEight.fiveElevenNine}
-                </p>
-                </div>
-
-                <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.11.10
-                </span>
-
-                <p
-                    style={{
-                    margin: 0,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    {slidesData.slideFiveContinuedEight.fiveElevenTen}
-                </p>
-                </div>
-            </div>
-            </div>
-
-        </div>
-        </div>
-      </>
-    ),
-  },
-  {
-    title: slidesData.slideFiveContinuedNine.title,
-    content: (
-      <>
-        <div
-        style={{
-            display: "flex",
-            flexDirection: "column",
-            height: "100%",
-            padding: "2rem 3rem",
-            boxSizing: "border-box",
-        }}
-        >
-        <h1
-            style={{
-            margin: 0,
-            color: "#582c83",
-            fontSize: "2.75rem",
-            }}
-        >
-            {slidesData.slideFiveContinuedNine.title.toUpperCase()}
-        </h1>
-
-        <div
-            style={{
-            marginTop: "0.75rem",
-            height: "3px",
-            width: "100%",
-            backgroundColor: "#e2e8f0",
-            borderRadius: "2px",
-            }}
-        />
-
-        <div
-            style={{
-            flex: 1,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            gap: "1.25rem",
-            padding: "1.5rem 0 0.5rem",
-            }}
-        >
-            <div
-            style={{
-                display: "flex",
-                gap: "1.25rem",
-                padding: "1.25rem 1.5rem",
-                backgroundColor: "#f8f7fa",
-                borderLeft: "5px solid #582c83",
-                borderRadius: "0 10px 10px 0",
-                boxSizing: "border-box",
-            }}
-            >
-            <div
-                style={{
-                flexShrink: 0,
-                width: "52px",
-                height: "52px",
-                borderRadius: "10px",
-                backgroundColor: "#582c83",
-                color: "#ffffff",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: "1rem",
-                fontWeight: 700,
-                }}
-            >
-                5.12
-            </div>
-
-            <div
-                style={{
-                flex: 1,
-                display: "flex",
-                flexDirection: "column",
-                }}
-            >
-                <h2
-                style={{
-                    margin: 0,
-                    color: "#582c83",
-                    fontSize: "1.3rem",
-                    fontWeight: 700,
-                }}
-                >
-                {slidesData.slideFiveContinuedNine.fiveTwelve}
-                </h2>
-
-                <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.12.1
-                </span>
-
-                <div
-                    style={{
-                    flex: 1,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    <p
-                    style={{
-                        margin: 0,
-                        marginBottom: "0.75rem",
-                    }}
-                    >
-                    {slidesData.slideFiveContinuedNine.fiveTwelveOne.intro}
-                    </p>
-
-                    <ol
-                    style={{
-                        margin: 0,
-                        paddingLeft: "1.5rem",
-                    }}
-                    >
-                    {slidesData.slideFiveContinuedNine.fiveTwelveOne.items.map(
-                        (item, index) => (
-                        <li
-                            key={index}
-                            style={{
-                            paddingLeft: "0.35rem",
-                            marginBottom:
-                                index ===
-                                slidesData.slideFiveContinuedNine.fiveTwelveOne.items.length - 1
-                                ? 0
-                                : "0.4rem",
-                            }}
-                        >
-                            {item}
-                        </li>
-                        )
-                    )}
-                    </ol>
-                </div>
-                </div>
-
-                <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.12.2
-                </span>
-
-                <p
-                    style={{
-                    margin: 0,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    {slidesData.slideFiveContinuedNine.fiveTwelveTwo}
-                </p>
-                </div>
-
-                <div
-                style={{
-                    marginTop: "0.65rem",
-                    display: "flex",
-                    gap: "0.75rem",
-                    alignItems: "flex-start",
-                }}
-                >
-                <span
-                    style={{
-                    flexShrink: 0,
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    paddingTop: "0.15rem",
-                    }}
-                >
-                    5.12.3
-                </span>
-
-                <div
-                    style={{
-                    flex: 1,
-                    color: "#374151",
-                    fontSize: "1.05rem",
-                    lineHeight: 1.5,
-                    }}
-                >
-                    <p
-                    style={{
-                        margin: 0,
-                        marginBottom: "0.75rem",
-                    }}
-                    >
-                    {slidesData.slideFiveContinuedNine.fiveTwelveThree.intro}
-                    </p>
-
-                    <ol
-                    style={{
-                        margin: 0,
-                        paddingLeft: "1.5rem",
-                    }}
-                    >
-                    {slidesData.slideFiveContinuedNine.fiveTwelveThree.items.map(
-                        (item, index) => (
-                        <li
-                            key={index}
-                            style={{
-                            paddingLeft: "0.35rem",
-                            marginBottom:
-                                index ===
-                                slidesData.slideFiveContinuedNine.fiveTwelveThree.items.length - 1
-                                ? 0
-                                : "0.4rem",
-                            }}
-                        >
-                            {item}
-                        </li>
-                        )
-                    )}
-                    </ol>
-                </div>
                 </div>
 
             </div>
@@ -3983,6 +3936,270 @@ export const accessibilitySlides = (playerName: string, setCurrentSlides: React.
     ),
   },
   {
+    title: slidesData.slideSeven.title,
+    content: (
+      <>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            height: "100%",
+            padding: "2rem 3rem",
+            boxSizing: "border-box",
+          }}
+        >
+
+          <h1
+            style={{
+              margin: 0,
+              color: "#582c83",
+              fontSize: "2.75rem",
+            }}
+          >
+            {slidesData.slideSeven.title.toUpperCase()}
+          </h1>
+
+          <div
+            style={{
+              marginTop: "0.75rem",
+              height: "3px",
+              width: "100%",
+              backgroundColor: "#e2e8f0",
+              borderRadius: "2px",
+            }}
+          />
+
+          <div
+            style={{
+              flex: 1,
+              display: "flex",
+              alignItems: "flex-start",
+              justifyContent: "center",
+              gap: "2rem",
+              padding: "2rem 0",
+            }}
+          >
+
+            <div
+              style={{
+                flex: 1,
+                minHeight: "280px",
+                height: "auto",
+                backgroundColor: "#f1f3f5",
+                borderRadius: "12px",
+                padding: "2rem",
+                boxSizing: "border-box",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+              }}
+            >
+              <h2
+                style={{
+                  margin: 0,
+                  color: "#582c83",
+                  fontSize: "1.5rem",
+                }}
+              >
+                7.1
+              </h2>
+
+              <p
+                style={{
+                  marginTop: "1rem",
+                  marginBottom: 0,
+                  color: "#374151",
+                  fontSize: "1.2rem",
+                  lineHeight: 1.6,
+                }}
+              >
+                {slidesData.slideSeven.sevenOne}
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </>
+    ),
+  },
+  {
+    title: slidesData.slideEight.title,
+    content: (
+      <>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            height: "100%",
+            padding: "2rem 3rem",
+            boxSizing: "border-box",
+          }}
+        >
+
+          <h1
+            style={{
+              margin: 0,
+              color: "#582c83",
+              fontSize: "2.75rem",
+            }}
+          >
+            {slidesData.slideEight.title.toUpperCase()}
+          </h1>
+
+          <div
+            style={{
+              marginTop: "0.75rem",
+              height: "3px",
+              width: "100%",
+              backgroundColor: "#e2e8f0",
+              borderRadius: "2px",
+            }}
+          />
+
+          <div
+            style={{
+              flex: 1,
+              display: "flex",
+              alignItems: "flex-start",
+              justifyContent: "center",
+              gap: "2rem",
+              padding: "2rem 0",
+            }}
+          >
+
+            <div
+              style={{
+                flex: 1,
+                minHeight: "280px",
+                height: "auto",
+                backgroundColor: "#f1f3f5",
+                borderRadius: "12px",
+                padding: "2rem",
+                boxSizing: "border-box",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+              }}
+            >
+              <h2
+                style={{
+                  margin: 0,
+                  color: "#582c83",
+                  fontSize: "1.5rem",
+                }}
+              >
+                8.1
+              </h2>
+
+              <p
+                style={{
+                  marginTop: "1rem",
+                  marginBottom: 0,
+                  color: "#374151",
+                  fontSize: "1.2rem",
+                  lineHeight: 1.6,
+                }}
+              >
+                {slidesData.slideEight.eightOne}
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </>
+    ),
+  },
+  {
+    title: slidesData.slideNine.title,
+    content: (
+      <>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            height: "100%",
+            padding: "2rem 3rem",
+            boxSizing: "border-box",
+          }}
+        >
+
+          <h1
+            style={{
+              margin: 0,
+              color: "#582c83",
+              fontSize: "2.75rem",
+            }}
+          >
+            {slidesData.slideNine.title.toUpperCase()}
+          </h1>
+
+          <div
+            style={{
+              marginTop: "0.75rem",
+              height: "3px",
+              width: "100%",
+              backgroundColor: "#e2e8f0",
+              borderRadius: "2px",
+            }}
+          />
+
+          <div
+            style={{
+              flex: 1,
+              display: "flex",
+              alignItems: "flex-start",
+              justifyContent: "center",
+              gap: "2rem",
+              padding: "2rem 0",
+            }}
+          >
+
+            <div
+              style={{
+                flex: 1,
+                minHeight: "280px",
+                height: "auto",
+                backgroundColor: "#f1f3f5",
+                borderRadius: "12px",
+                padding: "2rem",
+                boxSizing: "border-box",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+              }}
+            >
+              <h2
+                style={{
+                  margin: 0,
+                  color: "#582c83",
+                  fontSize: "1.5rem",
+                }}
+              >
+                9.1
+              </h2>
+
+              <p
+                style={{
+                  marginTop: "1rem",
+                  marginBottom: 0,
+                  color: "#374151",
+                  fontSize: "1.2rem",
+                  lineHeight: 1.6,
+                }}
+              >
+                {slidesData.slideNine.nineOne}
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </>
+    ),
+  },
+  {
     title: slidesData.useSlide.title,
     content: (
       <>
@@ -4081,12 +4298,12 @@ export const accessibilitySlides = (playerName: string, setCurrentSlides: React.
     title: "Knowledge Check: Q1",
     content: (
       <MultipleChoiceQuestion
-        questionId={questionsData.questionsAccessibility[0].id}
-        question={questionsData.questionsAccessibility[0].question}
-        options={questionsData.questionsAccessibility[0].options}
-        correctAnswer={questionsData.questionsAccessibility[0].correctAnswer}
-        explanation={questionsData.questionsAccessibility[0].explanation}
-        category={questionsData.questionsAccessibility[0].category}
+        questionId={questionsData.questionsEarly[0].id}
+        question={questionsData.questionsEarly[0].question}
+        options={questionsData.questionsEarly[0].options}
+        correctAnswer={questionsData.questionsEarly[0].correctAnswer}
+        explanation={questionsData.questionsEarly[0].explanation}
+        category={questionsData.questionsEarly[0].category}
       />
     ),
   },
@@ -4094,12 +4311,12 @@ export const accessibilitySlides = (playerName: string, setCurrentSlides: React.
     title: "Knowledge Check: Q2",
     content: (
       <MultipleChoiceQuestion
-        questionId={questionsData.questionsAccessibility[1].id}
-        question={questionsData.questionsAccessibility[1].question}
-        options={questionsData.questionsAccessibility[1].options}
-        correctAnswer={questionsData.questionsAccessibility[1].correctAnswer}
-        explanation={questionsData.questionsAccessibility[1].explanation}
-        category={questionsData.questionsAccessibility[1].category}
+        questionId={questionsData.questionsEarly[1].id}
+        question={questionsData.questionsEarly[1].question}
+        options={questionsData.questionsEarly[1].options}
+        correctAnswer={questionsData.questionsEarly[1].correctAnswer}
+        explanation={questionsData.questionsEarly[1].explanation}
+        category={questionsData.questionsEarly[1].category}
       />
     ),
   },
@@ -4107,12 +4324,12 @@ export const accessibilitySlides = (playerName: string, setCurrentSlides: React.
     title: "Knowledge Check: Q3",
     content: (
       <MultipleChoiceQuestion
-        questionId={questionsData.questionsAccessibility[2].id}
-        question={questionsData.questionsAccessibility[2].question}
-        options={questionsData.questionsAccessibility[2].options}
-        correctAnswer={questionsData.questionsAccessibility[2].correctAnswer}
-        explanation={questionsData.questionsAccessibility[2].explanation}
-        category={questionsData.questionsAccessibility[2].category}
+        questionId={questionsData.questionsEarly[2].id}
+        question={questionsData.questionsEarly[2].question}
+        options={questionsData.questionsEarly[2].options}
+        correctAnswer={questionsData.questionsEarly[2].correctAnswer}
+        explanation={questionsData.questionsEarly[2].explanation}
+        category={questionsData.questionsEarly[2].category}
       />
     ),
   },
@@ -4120,12 +4337,12 @@ export const accessibilitySlides = (playerName: string, setCurrentSlides: React.
     title: "Knowledge Check: Q4",
     content: (
       <MultipleChoiceQuestion
-        questionId={questionsData.questionsAccessibility[3].id}
-        question={questionsData.questionsAccessibility[3].question}
-        options={questionsData.questionsAccessibility[3].options}
-        correctAnswer={questionsData.questionsAccessibility[3].correctAnswer}
-        explanation={questionsData.questionsAccessibility[3].explanation}
-        category={questionsData.questionsAccessibility[3].category}
+        questionId={questionsData.questionsEarly[3].id}
+        question={questionsData.questionsEarly[3].question}
+        options={questionsData.questionsEarly[3].options}
+        correctAnswer={questionsData.questionsEarly[3].correctAnswer}
+        explanation={questionsData.questionsEarly[3].explanation}
+        category={questionsData.questionsEarly[3].category}
       />
     ),
   },
@@ -4133,12 +4350,12 @@ export const accessibilitySlides = (playerName: string, setCurrentSlides: React.
     title: "Knowledge Check: Q5",
     content: (
       <MultipleChoiceQuestion
-        questionId={questionsData.questionsAccessibility[4].id}
-        question={questionsData.questionsAccessibility[4].question}
-        options={questionsData.questionsAccessibility[4].options}
-        correctAnswer={questionsData.questionsAccessibility[4].correctAnswer}
-        explanation={questionsData.questionsAccessibility[4].explanation}
-        category={questionsData.questionsAccessibility[4].category}
+        questionId={questionsData.questionsEarly[4].id}
+        question={questionsData.questionsEarly[4].question}
+        options={questionsData.questionsEarly[4].options}
+        correctAnswer={questionsData.questionsEarly[4].correctAnswer}
+        explanation={questionsData.questionsEarly[4].explanation}
+        category={questionsData.questionsEarly[4].category}
       />
     ),
   },
@@ -4146,12 +4363,12 @@ export const accessibilitySlides = (playerName: string, setCurrentSlides: React.
     title: "Knowledge Check: Q6",
     content: (
       <MultipleChoiceQuestion
-        questionId={questionsData.questionsAccessibility[5].id}
-        question={questionsData.questionsAccessibility[5].question}
-        options={questionsData.questionsAccessibility[5].options}
-        correctAnswer={questionsData.questionsAccessibility[5].correctAnswer}
-        explanation={questionsData.questionsAccessibility[5].explanation}
-        category={questionsData.questionsAccessibility[5].category}
+        questionId={questionsData.questionsEarly[5].id}
+        question={questionsData.questionsEarly[5].question}
+        options={questionsData.questionsEarly[5].options}
+        correctAnswer={questionsData.questionsEarly[5].correctAnswer}
+        explanation={questionsData.questionsEarly[5].explanation}
+        category={questionsData.questionsEarly[5].category}
       />
     ),
   },
@@ -4159,25 +4376,12 @@ export const accessibilitySlides = (playerName: string, setCurrentSlides: React.
     title: "Knowledge Check: Q7",
     content: (
       <MultipleChoiceQuestion
-        questionId={questionsData.questionsAccessibility[6].id}
-        question={questionsData.questionsAccessibility[6].question}
-        options={questionsData.questionsAccessibility[6].options}
-        correctAnswer={questionsData.questionsAccessibility[6].correctAnswer}
-        explanation={questionsData.questionsAccessibility[6].explanation}
-        category={questionsData.questionsAccessibility[6].category}
-      />
-    ),
-  },
-  {
-    title: "Knowledge Check: Q8",
-    content: (
-      <MultipleChoiceQuestion
-        questionId={questionsData.questionsAccessibility[7].id}
-        question={questionsData.questionsAccessibility[7].question}
-        options={questionsData.questionsAccessibility[7].options}
-        correctAnswer={questionsData.questionsAccessibility[7].correctAnswer}
-        explanation={questionsData.questionsAccessibility[7].explanation}
-        category={questionsData.questionsAccessibility[7].category}
+        questionId={questionsData.questionsEarly[6].id}
+        question={questionsData.questionsEarly[6].question}
+        options={questionsData.questionsEarly[6].options}
+        correctAnswer={questionsData.questionsEarly[6].correctAnswer}
+        explanation={questionsData.questionsEarly[6].explanation}
+        category={questionsData.questionsEarly[6].category}
       />
     ),
   },

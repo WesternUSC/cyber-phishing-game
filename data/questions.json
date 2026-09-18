@@ -733,5 +733,182 @@
       "correctAnswer": "C",
       "explanation": "Section 2.2 states harassment includes virtual communication incidents."
     }
+  ],
+  "questionsEarly": [
+    {
+      "category": "early",
+      "id": "q1",
+      "question": "An employee's absence due to a work-related injury is expected to last only three days. Who is responsible for maintaining communication with them during this time?",
+      "options": [
+        {
+          "label": "A",
+          "text": "The Senior Manager, People and Development, on a weekly basis."
+        },
+        {
+          "label": "B",
+          "text": "The employee's supervisor."
+        },
+        {
+          "label": "C",
+          "text": "The WSIB case manager directly."
+        },
+        {
+          "label": "D",
+          "text": "The Joint Health and Safety Committee."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Section 4.1.9 states that where an absence is expected to be short-term (not exceeding five days), communication is maintained through the employee's supervisor."
+    },
+    {
+      "category": "early",
+      "id": "q2",
+      "question": "An employee's absence is now expected to exceed five days. Who takes over handling communications on behalf of the USC?",
+      "options": [
+        {
+          "label": "A",
+          "text": "The employee's supervisor continues to handle it alone."
+        },
+        {
+          "label": "B",
+          "text": "The Senior Manager, People and Development."
+        },
+        {
+          "label": "C",
+          "text": "The Union."
+        },
+        {
+          "label": "D",
+          "text": "WSIB directly."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Section 4.1.9 states that if an absence exceeds or is expected to exceed five days, the Senior Manager, People and Development shall handle communications on behalf of the USC."
+    },
+    {
+      "category": "early",
+      "id": "q3",
+      "question": "An investigation determines that an employee's injury claim was fraudulent. What is the consequence under this policy?",
+      "options": [
+        {
+          "label": "A",
+          "text": "A verbal warning only, regardless of severity."
+        },
+        {
+          "label": "B",
+          "text": "Progressive discipline up to and including termination, and immediate reporting to WSIB."
+        },
+        {
+          "label": "C",
+          "text": "No formal consequence unless it happens more than once."
+        },
+        {
+          "label": "D",
+          "text": "The employee is simply removed from the return to work program with no further action."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Section 1.3 states a claim deemed fraudulent will result in progressive discipline up to and including termination, and will be reported to WSIB immediately."
+    },
+    {
+      "category": "early",
+      "id": "q4",
+      "question": "An employer wants to offer an employee 'suitable work' as part of a return to work plan. Which of the following is NOT one of the required characteristics of suitable work under this policy?",
+      "options": [
+        {
+          "label": "A",
+          "text": "It is available and can be started quickly."
+        },
+        {
+          "label": "B",
+          "text": "It requires entirely new skills unrelated to the employee's existing abilities."
+        },
+        {
+          "label": "C",
+          "text": "It is safe and within the employee's physical capabilities."
+        },
+        {
+          "label": "D",
+          "text": "It restores pre-injury/illness earnings as much as reasonably possible."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Section 5.1.1 defines suitable work as available and quick to start, safe and within physical capabilities, using skills the employee has or can attain, and restoring earnings — not requiring entirely unrelated new skills."
+    },
+    {
+      "category": "early",
+      "id": "q5",
+      "question": "An employee sustains a work-related injury and is later declared fit to return to work in some capacity. At the latest, until what point must the USC continue making every effort to find suitable work?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Six months after the injury occurred."
+        },
+        {
+          "label": "B",
+          "text": "The earlier of 12 months after being declared fit to return, or 24 months after the date of the injury/illness."
+        },
+        {
+          "label": "C",
+          "text": "Indefinitely, with no time limit."
+        },
+        {
+          "label": "D",
+          "text": "Only until the end of the calendar year in which the injury occurred."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Section 5.2.1 states the USC will make every effort to find suitable work up until the earlier of 12 months after being declared fit to return, or 24 months after the injury/illness date (among other listed end points)."
+    },
+    {
+      "category": "early",
+      "id": "q6",
+      "question": "An employee disagrees with how the USC has handled their return to work plan and wants to raise a dispute. What is the first step under this policy?",
+      "options": [
+        {
+          "label": "A",
+          "text": "File a complaint directly with WSIB."
+        },
+        {
+          "label": "B",
+          "text": "Direct the dispute initially to the Chief Operating Officer."
+        },
+        {
+          "label": "C",
+          "text": "Resign and reapply for the position."
+        },
+        {
+          "label": "D",
+          "text": "Contact the Joint Health and Safety Committee directly."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Section 6.1 states disputes regarding the fulfillment of this policy may initially be directed to the Chief Operating Officer."
+    },
+    {
+      "category": "early",
+      "id": "q7",
+      "question": "A worker on modified duties is asked by the employer to attend an independent medical assessment. What is expected of the employee?",
+      "options": [
+        {
+          "label": "A",
+          "text": "They may decline, since the request came from the employer rather than their own treating doctor."
+        },
+        {
+          "label": "B",
+          "text": "They must comply with the recommendations of treating healthcare professionals and attend independent assessments as requested."
+        },
+        {
+          "label": "C",
+          "text": "Only unionized employees are required to attend such assessments."
+        },
+        {
+          "label": "D",
+          "text": "They may attend only if compensated separately for their time."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Section 3.2.6 requires employees to comply with recommendations of treating healthcare professionals and attend independent assessments as requested."
+    }
   ]
 }
