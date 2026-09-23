@@ -8,11 +8,44 @@ type TrainingOption = {
 
 type SelectionProps = {
   playerName: string;
+  title: string;
+  supervisor: string;
+  scribe1: string;
+  scribe2: string;
+  scribe3: string;
+  scribe4: string;
+  scribe5: string;
+  scribe6: string;
+  scribe7: string;
   options?: TrainingOption[];
   setMadeSelection: React.Dispatch<React.SetStateAction<boolean>>;
-  setSelectedSlides: React.Dispatch<React.SetStateAction<'eso' | 'policies' | 'cs' | 'accessibility' | 'conflict' | 'disc' | 'early'>>
+  setSelectedSlides: React.Dispatch<React.SetStateAction<'eso' | 'policies' | 'cs' | 'accessibility' | 'conflict' | 'disc' | 'early' | 'job'>>
 };
 
+const defaultOptions: TrainingOption[] = [
+  {
+    id: "1",
+    label: "INFORMATION SYSTEMS ONBOARDING",
+    color: "#582c83",
+  },
+  {
+    id: "2",
+    label: "POLICIES AND PROCEDURES",
+    color: "#582c83",
+  },
+  {
+    id: "3",
+    label: "JOB TRAINING",
+    color: "#582c83",
+  },
+  {
+    id: "4",
+    label: "USC CULTURE",
+    color: "#582c83",
+  },
+];
+
+/*
 const defaultOptions: TrainingOption[] = [
   {
     id: "1",
@@ -51,9 +84,18 @@ const defaultOptions: TrainingOption[] = [
     color: "#582c83",
   },
 ];
-
+*/
 export default function Selection({
   playerName,
+  title,
+  supervisor,
+  scribe1,
+  scribe2,
+  scribe3,
+  scribe4,
+  scribe5,
+  scribe6,
+  scribe7,
   options = defaultOptions,
   setMadeSelection,
   setSelectedSlides
@@ -65,6 +107,28 @@ export default function Selection({
   );
 
   const handleStart = () => {
+    switch (selectedId) {
+      case "1":
+        setSelectedSlides('eso');
+        break;
+
+      case "2":
+        setSelectedSlides('policies');
+        break;
+
+      case "3":
+        setSelectedSlides('job');
+        break;
+
+      case "4":
+        setSelectedSlides('accessibility');
+        break;
+
+      default:
+        setSelectedSlides('eso');
+        break;
+    }
+    /*
     switch (selectedId) {
       case "1":
         setSelectedSlides('eso');
@@ -98,7 +162,7 @@ export default function Selection({
         setSelectedSlides('eso');
         break;
     }
-
+    */
     setMadeSelection(true);
   };
 
@@ -117,8 +181,10 @@ export default function Selection({
             alt="USC logo"
             style={styles.logo}
           />
+          
 
-          <p style={styles.chooseText}>Please select one</p>
+          <p style={styles.chooseText}>{title}</p>
+          <p style={styles.chooseText}>Supervisor: {supervisor}</p>
         </div>
       </div>
 

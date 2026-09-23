@@ -23,6 +23,7 @@ import { accessibilitySlides } from '@/components/slides-accessibility';
 import { conflictSlides } from '@/components/slides-conflict';
 import { discSlides } from '@/components/slidesDisc';
 import { earlySlides } from '@/components/slides-early';
+import { scribesSlides } from '@/components/scribes-slides';
 
 const emails = emailData.emails as Email[];
 const STORAGE_KEY = 'phishquest-run';
@@ -115,8 +116,17 @@ const bookmarks = [
 
 type User = {
   name: string;
+  title: string;
+  supervisor: string;
   email: string;
   loginCode: string;
+  scribe1: string;
+  scribe2: string;
+  scribe3: string;
+  scribe4: string;
+  scribe5: string;
+  scribe6: string;
+  scribe7: string;
 };
 
 // ── Tablet detection hook ─────────────────────────────────────────────────────
@@ -283,6 +293,16 @@ function ResultsScreen({
 export default function HomePage() {
   const [state, dispatch] = useReducer(gameReducer, initialGameState);
   const [nameInput, setNameInput] = useState('');
+  const [title, setTitle] = useState('');
+  const [supervisor, setSupervisor] = useState('');
+  const [scribe1, setscribe1] = useState('');
+  const [scribe2, setscribe2] = useState('');
+  const [scribe3, setscribe3] = useState('');
+  const [scribe4, setscribe4] = useState('');
+  const [scribe5, setscribe5] = useState('');
+  const [scribe6, setscribe6] = useState('');
+  const [scribe7, setscribe7] = useState('');
+
   const [introSeen, setIntroSeen] = useState(false);
   const [slidesSeen, setSlidesSeen] = useState(false);
   const [nameError, setNameError] = useState(false);
@@ -328,7 +348,7 @@ export default function HomePage() {
 
   const [madeSelection, setMadeSelection] = useState(false);
 
-  const [selectedSlides, setSelectedSlides] = useState<'eso' | 'policies' | 'cs' | 'accessibility' | 'conflict' | 'disc' | 'early'>('eso');
+  const [selectedSlides, setSelectedSlides] = useState<'eso' | 'policies' | 'cs' | 'accessibility' | 'conflict' | 'disc' | 'early' | 'job'>('eso');
 
   const [openApp, setOpenApp] = useState<
   | {
@@ -399,6 +419,7 @@ export default function HomePage() {
     };
   }, []);
 
+  // read csv file
   useEffect(() => {
     fetch('login_info.csv')
       .then((response) => response.text())
@@ -408,17 +429,26 @@ export default function HomePage() {
           .split('\n')
           .map((row) => row.split(','));
 
-        const parsedUsers = rows.map(([name, email, loginCode]) => ({
+        const parsedUsers = rows.map(([name, email, loginCode, title, supervisor, scribe1, scribe2, scribe3, scribe4, scribe5, scribe6, scribe7]) => ({
           name: name.trim().replace(/[,"]/g, ''),
           email: email.trim(),
           loginCode: loginCode.trim(),
+          title: title.trim(),
+          supervisor: supervisor.trim(),
+          scribe1: scribe1.trim(),
+          scribe2: scribe2.trim(),
+          scribe3: scribe3.trim(),
+          scribe4: scribe4.trim(),
+          scribe5: scribe5.trim(),
+          scribe6: scribe6.trim(),
+          scribe7: scribe7.trim()
         }));
 
-        /*
-        console.log('===== PARSED USERS =====');
+        
+        console.log('---------PARSED USERS---------');
         console.table(parsedUsers);
-        console.log('==========================');
-        */
+        console.log('-------------------------');
+        
 
         setUsers(parsedUsers);
       })
@@ -465,6 +495,10 @@ export default function HomePage() {
     }
 
     setNameInput(player.name);
+    setTitle(player.title);
+    setSupervisor(player.supervisor);
+    setscribe1(player.scribe1);
+    setscribe2(player.scribe2);
 
     setNameError(false);
     setNameEntered(true);
@@ -846,7 +880,18 @@ export default function HomePage() {
 
   if (!madeSelection) {
     return (
-    <Selection playerName={nameInput.trim()} setMadeSelection={setMadeSelection} setSelectedSlides={setSelectedSlides} />
+    <Selection playerName={nameInput.trim()} 
+    title={title.trim()} 
+    supervisor={supervisor.trim()} 
+    scribe1={scribe1.trim()} 
+    scribe2={scribe2.trim()} 
+    scribe3={scribe3.trim()} 
+    scribe4={scribe4.trim()} 
+    scribe5={scribe5.trim()} 
+    scribe6={scribe6.trim()} 
+    scribe7={scribe7.trim()} 
+    setMadeSelection={setMadeSelection} 
+    setSelectedSlides={setSelectedSlides} />
     );
   }
 
@@ -872,6 +917,9 @@ export default function HomePage() {
 
       case 'early':
         return earlySlides(nameInput.trim(), setSelectedSlides);
+
+      case 'job':
+        return scribesSlides(nameInput.trim(), scribe1.trim(), scribe2.trim(), setSelectedSlides);
 
       default:
         return slides(nameInput.trim());

@@ -3,7 +3,7 @@ import MultipleChoiceQuestion from './multiple-choice-question';
 import questionsData from '@/data/questions.json';
 import ModuleTableOfContents from './module-title-slide';
 
-type slides = 'eso' | 'policies' | 'cs' | 'accessibility' | 'conflict' | 'disc' | 'early';
+type slides = 'eso' | 'policies' | 'cs' | 'accessibility' | 'conflict' | 'disc' | 'early' | 'job';
 
 export const earlySlides = (playerName: string, setCurrentSlides: React.Dispatch<React.SetStateAction<slides>>) => [
   {
