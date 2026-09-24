@@ -499,6 +499,11 @@ export default function HomePage() {
     setSupervisor(player.supervisor);
     setscribe1(player.scribe1);
     setscribe2(player.scribe2);
+    setscribe3(player.scribe3);
+    setscribe4(player.scribe4);
+    setscribe5(player.scribe5);
+    setscribe6(player.scribe6);
+    setscribe7(player.scribe7);
 
     setNameError(false);
     setNameEntered(true);
@@ -919,7 +924,7 @@ export default function HomePage() {
         return earlySlides(nameInput.trim(), setSelectedSlides);
 
       case 'job':
-        return scribesSlides(nameInput.trim(), scribe1.trim(), scribe2.trim(), setSelectedSlides);
+        return scribesSlides(nameInput.trim(), scribe1.trim(), scribe2.trim(), scribe3.trim(), scribe4.trim(), scribe5.trim(), scribe6.trim(), scribe7.trim(), setSelectedSlides);
 
       default:
         return slides(nameInput.trim());
