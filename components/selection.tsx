@@ -59,11 +59,6 @@ const defaultOptions: TrainingOption[] = [
 
 const defaultOptionsPolicies: TrainingOption[] = [
   {
-    id: "1",
-    label: "INFORMATION SYSTEMS ONBOARDING",
-    color: "#582c83",
-  },
-  {
     id: "2",
     label: "ACCEPTABLE USE POLICY",
     color: "#582c83",
@@ -218,9 +213,7 @@ export default function Selection({
           />
 
           <p style={styles.chooseText}>{title}</p>
-          <p style={styles.chooseText}>
-            Supervisor: {supervisor}
-          </p>
+
         </div>
       </div>
 

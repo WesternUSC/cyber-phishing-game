@@ -1838,10 +1838,6 @@ export const slides = (playerName: string) => [
     ),
   },
   {
-    title: "Windows 11 Settings",
-    content: <WindowsSettingsSlide settingsStep={1} playerName={playerName} />,
-  },
-  {
     title: slidesData.wifiSlide.title,
     content: (
       <>
