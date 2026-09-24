@@ -18,8 +18,20 @@ type SelectionProps = {
   scribe6: string;
   scribe7: string;
   options?: TrainingOption[];
+  policiesOptions?: TrainingOption[];
   setMadeSelection: React.Dispatch<React.SetStateAction<boolean>>;
-  setSelectedSlides: React.Dispatch<React.SetStateAction<'eso' | 'policies' | 'cs' | 'accessibility' | 'conflict' | 'disc' | 'early' | 'job'>>
+  setSelectedSlides: React.Dispatch<
+    React.SetStateAction<
+      | "eso"
+      | "policies"
+      | "cs"
+      | "accessibility"
+      | "conflict"
+      | "disc"
+      | "early"
+      | "job"
+    >
+  >;
 };
 
 const defaultOptions: TrainingOption[] = [
@@ -45,8 +57,7 @@ const defaultOptions: TrainingOption[] = [
   },
 ];
 
-/*
-const defaultOptions: TrainingOption[] = [
+const defaultOptionsPolicies: TrainingOption[] = [
   {
     id: "1",
     label: "INFORMATION SYSTEMS ONBOARDING",
@@ -84,7 +95,7 @@ const defaultOptions: TrainingOption[] = [
     color: "#582c83",
   },
 ];
-*/
+
 export default function Selection({
   playerName,
   title,
@@ -97,74 +108,98 @@ export default function Selection({
   scribe6,
   scribe7,
   options = defaultOptions,
+  policiesOptions = defaultOptionsPolicies,
   setMadeSelection,
-  setSelectedSlides
+  setSelectedSlides,
 }: SelectionProps) {
   const [selectedId, setSelectedId] = useState(options[0]?.id ?? "");
+  const [selectedPolicyId, setSelectedPolicyId] = useState(
+    policiesOptions[0]?.id ?? ""
+  );
+
+  const [policiesPage, setPoliciesPage] = useState(false);
 
   const selectedOption = options.find(
     (option) => option.id === selectedId
   );
 
+  const selectedPolicyOption = policiesOptions.find(
+    (option) => option.id === selectedPolicyId
+  );
+
   const handleStart = () => {
-    switch (selectedId) {
-      case "1":
-        setSelectedSlides('eso');
-        break;
+    if (!policiesPage) {
+      switch (selectedId) {
+        case "1":
+          setSelectedSlides("eso");
+          setMadeSelection(true);
+          break;
 
-      case "2":
-        setSelectedSlides('policies');
-        break;
+        case "2":
+          setPoliciesPage(true);
+          break;
 
-      case "3":
-        setSelectedSlides('job');
-        break;
+        case "3":
+          setSelectedSlides("job");
+          setMadeSelection(true);
+          break;
 
-      case "4":
-        setSelectedSlides('accessibility');
-        break;
+        case "4":
+          setSelectedSlides("accessibility");
+          setMadeSelection(true);
+          break;
 
-      default:
-        setSelectedSlides('eso');
-        break;
+        default:
+          setSelectedSlides("eso");
+          setMadeSelection(true);
+          break;
+      }
+    } else {
+      switch (selectedPolicyId) {
+        case "1":
+          setSelectedSlides("eso");
+          break;
+
+        case "2":
+          setSelectedSlides("policies");
+          break;
+
+        case "3":
+          setSelectedSlides("cs");
+          break;
+
+        case "4":
+          setSelectedSlides("accessibility");
+          break;
+
+        case "5":
+          setSelectedSlides("conflict");
+          break;
+
+        case "6":
+          setSelectedSlides("disc");
+          break;
+
+        case "8":
+          setSelectedSlides("early");
+          break;
+
+        default:
+          setSelectedSlides("eso");
+          break;
+      }
+
+      setMadeSelection(true);
     }
-    /*
-    switch (selectedId) {
-      case "1":
-        setSelectedSlides('eso');
-        break;
-
-      case "2":
-        setSelectedSlides('policies');
-        break;
-
-      case "3":
-        setSelectedSlides('cs');
-        break;
-
-      case "4":
-        setSelectedSlides('accessibility');
-        break;
-
-      case "5":
-        setSelectedSlides('conflict');
-        break;
-
-      case "6":
-        setSelectedSlides('disc');
-        break;
-
-      case "8":
-        setSelectedSlides('early');
-        break;
-
-      default:
-        setSelectedSlides('eso');
-        break;
-    }
-    */
-    setMadeSelection(true);
   };
+
+  const handleBack = () => {
+    setPoliciesPage(false);
+  };
+
+  const isContinueDisabled = policiesPage
+    ? !selectedPolicyOption
+    : !selectedOption;
 
   return (
     <div style={styles.page}>
@@ -181,23 +216,30 @@ export default function Selection({
             alt="USC logo"
             style={styles.logo}
           />
-          
 
           <p style={styles.chooseText}>{title}</p>
-          <p style={styles.chooseText}>Supervisor: {supervisor}</p>
+          <p style={styles.chooseText}>
+            Supervisor: {supervisor}
+          </p>
         </div>
       </div>
 
       <div style={styles.optionsScrollArea}>
         <div style={styles.optionsContainer}>
-          {options.map((option) => {
-            const isSelected = option.id === selectedId;
+          {(policiesPage ? policiesOptions : options).map((option) => {
+            const isSelected = policiesPage
+              ? option.id === selectedPolicyId
+              : option.id === selectedId;
 
             return (
               <button
                 key={option.id}
                 type="button"
-                onClick={() => setSelectedId(option.id)}
+                onClick={() =>
+                  policiesPage
+                    ? setSelectedPolicyId(option.id)
+                    : setSelectedId(option.id)
+                }
                 style={{
                   ...styles.option,
                   backgroundColor: option.color,
@@ -218,22 +260,55 @@ export default function Selection({
       </div>
 
       <div style={styles.stickyFooter}>
-        <button
-          type="button"
-          onClick={handleStart}
-          disabled={!selectedOption}
-          style={{
-            ...styles.startButton,
-            opacity: selectedOption ? 1 : 0.5,
-            cursor: selectedOption ? "pointer" : "not-allowed",
-          }}
-        >
-          Begin
-          <span style={styles.arrow}>→</span>
-        </button>
+        {policiesPage ? (
+          <div style={styles.splitButtonContainer}>
+            <button
+              type="button"
+              onClick={handleBack}
+              style={{
+                ...styles.startButton,
+                ...styles.backButton,
+              }}
+            >
+              <span style={styles.arrowLeft}>←</span>
+              Back
+            </button>
+
+            <button
+              type="button"
+              onClick={handleStart}
+              disabled={isContinueDisabled}
+              style={{
+                ...styles.startButton,
+                opacity: isContinueDisabled ? 0.5 : 1,
+                cursor: isContinueDisabled
+                  ? "not-allowed"
+                  : "pointer",
+              }}
+            >
+              Continue
+              <span style={styles.arrow}>→</span>
+            </button>
+          </div>
+        ) : (
+          <button
+            type="button"
+            onClick={handleStart}
+            disabled={isContinueDisabled}
+            style={{
+              ...styles.startButton,
+              opacity: isContinueDisabled ? 0.5 : 1,
+              cursor: isContinueDisabled
+                ? "not-allowed"
+                : "pointer",
+            }}
+          >
+            Continue
+            <span style={styles.arrow}>→</span>
+          </button>
+        )}
       </div>
     </div>
-
   );
 }
 
@@ -385,8 +460,17 @@ const styles: Record<string, React.CSSProperties> = {
     pointerEvents: "none",
   },
 
-  startButton: {
+  splitButtonContainer: {
     width: "100%",
+    maxWidth: "600px",
+    display: "flex",
+    gap: "12px",
+    boxSizing: "border-box",
+  },
+
+  startButton: {
+    flex: 1,
+    width: "50%",
     maxWidth: "600px",
     minHeight: "76px",
     marginTop: 0,
@@ -402,10 +486,17 @@ const styles: Record<string, React.CSSProperties> = {
     pointerEvents: "auto",
   },
 
+  backButton: {
+    cursor: "pointer",
+  },
+
   arrow: {
     marginLeft: "12px",
     fontSize: "1.5rem",
   },
+
+  arrowLeft: {
+    marginRight: "12px",
+    fontSize: "1.5rem",
+  },
 };
-
-
