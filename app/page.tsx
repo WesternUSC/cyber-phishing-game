@@ -564,6 +564,360 @@ export default function HomePage() {
     }
   }
 
+  const [openModule, setOpenModule] = useState<string | null>(null);
+
+  function ModuleBookmarkRail() {
+    const [isClosing, setIsClosing] = useState(false);
+
+    const moduleCards = [
+      {
+        id: 'outlook',
+        label: 'Drive',
+        title: 'Google Drive',
+        description:
+          'Learn how to use Google Drive to organize, manage, and work with your files. This interactive guide will walk you through the key steps you need to know.',
+        icon: '/drive_logo.webp',
+        completed: completedDrive,
+      },
+      {
+        id: 'western',
+        label: 'Support',
+        title: 'Ticketing System',
+        description:
+          'Learn how to report an issue using our ticketing system.',
+        icon: '/usc-logo.png',
+        completed: completedTicketing,
+      },
+      {
+        id: 'calendar',
+        label: 'Calendar',
+        title: 'Google Calendar',
+        description:
+          'Learn how to effectively use Google Calendar to manage your schedule, create events, and stay organized.',
+        icon: '/google_calendar.webp',
+        completed: completedCalendar,
+      },
+      {
+        id: 'trello',
+        label: 'Trello',
+        title: 'Trello',
+        description:
+          'Learn how to communicate and collaborate effectively in Trello by adding comments to cards and working with your team.',
+        icon: '/trello-logo-icon.webp',
+        completed: completedTrello,
+      },
+      {
+        id: 'rippling',
+        label: 'Rippling',
+        title: 'Rippling',
+        description:
+          'Learn how to submit a time-off request through Rippling. This guide will walk you through the process step by step.',
+        icon: '/rippling-logo.png',
+        completed: completedRippling,
+      },
+    ];
+
+    const activeModule = moduleCards.find(
+      (module) => module.id === openModule
+    );
+    
+    function openCard(moduleId: string) {
+      handleContinue(moduleId);
+      setIsClosing(false);
+      setOpenModule(moduleId);
+    }
+
+    function closeCard() {
+      setIsClosing(true);
+
+      setTimeout(() => {
+        setOpenModule(null);
+        setIsClosing(false);
+      }, 400);
+    }
+
+    function handleContinue(moduleId: string) {
+      //closeCard();
+      setisChromeClosed(false);
+
+      switch (moduleId) {
+        case 'outlook':
+          setActiveTab('outlook');
+          break;
+
+        case 'western':
+          setActiveTab('western');
+          break;
+
+        case 'calendar':
+          setActiveTab('calendar');
+          break;
+
+        case 'trello':
+          setActiveTab('trello');
+          break;
+
+        case 'rippling':
+          setActiveTab('rippling');
+          break;
+      }
+
+      //setOpenModule(moduleId);
+    }
+
+    return (
+      <>
+        <div className="pointer-events-none fixed right-0 top-1/2 z-40 -translate-y-1/2">
+          <div className="pointer-events-auto flex flex-col gap-2">
+            {moduleCards.map((module) => {
+              const isOpen = openModule === module.id;
+
+              return (
+                <button
+                  key={module.id}
+                  onClick={() => openCard(module.id)}
+                  disabled={isOpen}
+                  className={`
+                    flex
+                    h-28
+                    w-12
+                    items-center
+                    justify-center
+                    rounded-l-xl
+                    border
+                    border-r-0
+                    shadow-lg
+                    transition-all
+                    duration-200
+                    hover:w-14
+                    ${
+                      module.completed
+                        ? 'border-green-500 bg-green-500 text-white'
+                        : 'border-gray-200 bg-white text-gray-600 hover:bg-gray-50'
+                    }
+                    ${isOpen ? 'pointer-events-none opacity-0' : ''}
+                  `}
+                  title={
+                    module.completed
+                      ? `${module.title} — Completed`
+                      : module.title
+                  }
+                >
+                  <span
+                    className="whitespace-nowrap text-xs font-semibold tracking-wide"
+                    style={{
+                      writingMode: 'vertical-rl',
+                      transform: 'rotate(180deg)',
+                    }}
+                  >
+                    {module.label}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {activeModule && (
+          <div
+            className="fixed right-0 top-1/2 z-50 flex items-stretch"
+            style={{
+              transform: isClosing
+                ? 'translateX(100%) translateY(-50%)'
+                : 'translateX(0) translateY(-50%)',
+
+              animation: isClosing
+                ? 'none'
+                : 'moduleCardSlideIn 400ms cubic-bezier(0.22, 1, 0.36, 1)',
+
+              transition: isClosing
+                ? 'transform 400ms cubic-bezier(0.22, 1, 0.36, 1)'
+                : 'none',
+            }}
+          >
+            <div
+              className="
+                relative
+                w-[360px]
+                overflow-hidden
+                rounded-l-2xl
+                bg-white
+                shadow-[-12px_15px_40px_rgba(0,0,0,0.30)]
+                ring-1
+                ring-black/10
+              "
+            >
+              <div className="p-7">
+
+                <div className="mb-5 flex justify-center">
+                  <div
+                    className={`
+                      flex
+                      h-16
+                      w-16
+                      items-center
+                      justify-center
+                      rounded-2xl
+                      ${
+                        activeModule.completed
+                          ? 'bg-green-50'
+                          : 'bg-[#f7f3fb]'
+                      }
+                    `}
+                  >
+                    <Image
+                      src={activeModule.icon}
+                      alt=""
+                      width={40}
+                      height={40}
+                      className="object-contain"
+                    />
+                  </div>
+                </div>
+
+                <div className="text-center">
+                  <p
+                    className={`
+                      text-xs
+                      font-semibold
+                      uppercase
+                      tracking-widest
+                      ${
+                        activeModule.completed
+                          ? 'text-green-600'
+                          : 'text-[#4f2584]'
+                      }
+                    `}
+                  >
+                    {activeModule.completed
+                      ? 'Module Completed'
+                      : 'Training Module'}
+                  </p>
+
+                  <h2 className="mt-2 text-2xl font-semibold text-gray-900">
+                    {activeModule.title}
+                  </h2>
+
+                  <p className="mt-3 text-sm leading-6 text-gray-600">
+                    {activeModule.description}
+                  </p>
+                </div>
+
+                <div className="mt-5 rounded-xl bg-[#f7f3fb] px-5 py-4 text-left">
+                  <p className="text-sm font-medium text-[#4f2584]">
+                    What you'll do
+                  </p>
+
+                  <p className="mt-1 text-sm leading-5 text-gray-600">
+                    Follow the interactive guide carefully and pay attention
+                    to the steps shown. When you're ready, click Continue to
+                    begin the module.
+                  </p>
+                </div>
+
+                {activeModule.completed && (
+                  <div className="mt-4 flex items-center gap-2 rounded-lg bg-green-50 px-4 py-3 text-sm font-medium text-green-700">
+                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-green-500 text-xs text-white">
+                      ✓
+                    </span>
+
+                    This module has been completed.
+                  </div>
+                )}
+
+                {/* <button
+                  onClick={() => handleContinue(activeModule.id)}
+                  className={`
+                    mt-6
+                    w-full
+                    rounded-xl
+                    px-6
+                    py-3
+                    text-sm
+                    font-semibold
+                    text-white
+                    shadow-sm
+                    transition
+                    hover:shadow-md
+                    ${
+                      activeModule.completed
+                        ? 'bg-green-600 hover:bg-green-700'
+                        : 'bg-[#4f2584] hover:bg-[#3d1d68]'
+                    }
+                  `}
+                >
+                  {activeModule.completed ? 'Open Module' : 'Continue'}
+                </button>
+
+                <button
+                  onClick={closeCard}
+                  className="
+                    mt-2
+                    w-full
+                    rounded-xl
+                    px-6
+                    py-2.5
+                    text-sm
+                    font-medium
+                    text-gray-500
+                    transition
+                    hover:bg-gray-100
+                  "
+                >
+                  Close
+                </button> */}
+              </div>
+            </div>
+
+            <button
+              // onClick={closeCard}
+              className={`
+                flex
+                h-28
+                w-12
+                shrink-0
+                items-center
+                justify-center
+                self-center
+                rounded-r-xl
+                border
+                border-l-0
+                shadow-lg
+                ${
+                  activeModule.completed
+                    ? 'border-green-500 bg-green-500 text-white'
+                    : 'border-gray-200 bg-white text-gray-600'
+                }
+              `}
+            >
+              <span
+                className="whitespace-nowrap text-xs font-semibold tracking-wide"
+                style={{
+                  writingMode: 'vertical-rl',
+                  transform: 'rotate(180deg)',
+                }}
+              >
+                {activeModule.label}
+              </span>
+            </button>
+          </div>
+        )}
+
+        <style>{`
+          @keyframes moduleCardSlideIn {
+            from {
+              transform: translateX(100%) translateY(-50%);
+            }
+
+            to {
+              transform: translateX(0) translateY(-50%);
+            }
+          }
+        `}</style>
+      </>
+    );
+  }
+
   function ModuleIntro({
     moduleId,
     title,
@@ -1023,6 +1377,7 @@ export default function HomePage() {
         backgroundSize: "100% 100%"
       }}
     >
+      <ModuleBookmarkRail />
       {/* Desktop area — sits above the taskbar */}
       <div className="flex h-[calc(100vh-3rem)] items-center justify-center p-5">
 
@@ -1356,7 +1711,6 @@ export default function HomePage() {
                 </button>
               </div>
             </div>
-
 
             {/* Toolbar */}
             <div className="flex h-12 items-center gap-3 border-t border-white/5 bg-[#2d2f31] px-3">
