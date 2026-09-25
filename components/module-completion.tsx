@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { getStoredSignature, saveSignature } from '@/lib/module-signature';
+import WesternPopup from './western-popup';
 
 const COMPLETED_MODULES_KEY = 'cyber-training-completed-modules';
 
@@ -89,6 +90,8 @@ export default function ModuleCompletion({
 
   const allModulesComplete = completed.length === MODULES.length;
 
+  const [showPopup, setShowPopup] = useState(false);
+
   useEffect(() => {
     const stored = getStoredSignature();
     if (stored) {
@@ -121,49 +124,50 @@ export default function ModuleCompletion({
     switch (id) {
       case "google-drive":
         if (!completedDrive) {
-          alert("You have not yet completed this module!");
+          //alert("You have not yet completed this module!");
+          setShowPopup(true);
           return;
         }
         break;
 
       case "email-security":
         if (!completedEmails) {
-          alert("You have not yet completed this module!");
+          setShowPopup(true);
           return;
         }
         break;
 
       case "google-calendar":
         if (!completedCalendar) {
-          alert("You have not yet completed this module!");
+          setShowPopup(true);
           return;
         }
         break;
 
       case "trello":
         if (!completedTrello) {
-          alert("You have not yet completed this module!");
+          setShowPopup(true);
           return;
         }
         break;
 
       case "rippling":
         if (!completedRippling) {
-          alert("You have not yet completed this module!");
+          setShowPopup(true);
           return;
         }
         break;
 
       case "ticketing-system":
         if (!completedTicketing) {
-          alert("You have not yet completed this module!");
+          setShowPopup(true);
           return;
         }
         break;
 
       case "slack":
         if (!completedSlack) {
-          alert("You have not yet completed this module!");
+          setShowPopup(true);
           return;
         }
         break;
@@ -261,7 +265,15 @@ export default function ModuleCompletion({
   }
 
   return (
+
     <div className="flex min-h-0 flex-1 flex-col overflow-y-auto bg-[#f6f8fc]">
+
+      <WesternPopup
+        show={showPopup}
+        title="Incomplete Module"
+        message="You have not yet completed this module."
+        onClose={() => setShowPopup(false)}
+      />
 
       <div className="shrink-0 border-b border-gray-200 bg-white">
         <div className="mx-auto max-w-5xl px-10 py-8">
