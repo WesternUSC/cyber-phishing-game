@@ -303,6 +303,8 @@ export default function HomePage() {
   const [scribe6, setscribe6] = useState('');
   const [scribe7, setscribe7] = useState('');
 
+  const [loginCode, setLoginCode] = useState('');
+
   const [introSeen, setIntroSeen] = useState(false);
   const [slidesSeen, setSlidesSeen] = useState(false);
   const [nameError, setNameError] = useState(false);
@@ -504,6 +506,7 @@ export default function HomePage() {
     setscribe5(player.scribe5);
     setscribe6(player.scribe6);
     setscribe7(player.scribe7);
+    setLoginCode(player.loginCode);
 
     setNameError(false);
     setNameEntered(true);
@@ -2098,7 +2101,7 @@ export default function HomePage() {
               completedCalendar={completedCalendar}
               completedTrello={completedTrello}
               completedRippling={completedRippling}
-              completedEmails={gameComplete}
+              completedEmails={loginCode === "7777" ? true : gameComplete}
               completedTicketing={completedTicketing}
               completedSlack={completedSlack}
             />
