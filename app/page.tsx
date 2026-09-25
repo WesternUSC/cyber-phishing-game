@@ -620,9 +620,12 @@ export default function HomePage() {
     const activeModule = moduleCards.find(
       (module) => module.id === openModule
     );
-    
+
+    const activeModuleIndex = activeModule
+      ? moduleCards.findIndex((module) => module.id === activeModule.id)
+      : -1;
+
     function openCard(moduleId: string) {
-      handleContinue(moduleId);
       setIsClosing(false);
       setOpenModule(moduleId);
     }
@@ -637,7 +640,6 @@ export default function HomePage() {
     }
 
     function handleContinue(moduleId: string) {
-      //closeCard();
       setisChromeClosed(false);
 
       switch (moduleId) {
@@ -662,12 +664,25 @@ export default function HomePage() {
           break;
       }
 
-      //setOpenModule(moduleId);
+      closeCard();
     }
+
+    const bookmarkHeight = 112;
+    const bookmarkGap = 8;
+
+    const viewportPadding = 16;
+
+    const naturalCardTop =
+      activeModuleIndex >= 0
+        ? `calc(50% + ${
+            (activeModuleIndex - (moduleCards.length - 1) / 2) *
+              (bookmarkHeight + bookmarkGap)
+          }px)`
+        : '50%';
 
     return (
       <>
-        <div className="pointer-events-none fixed right-0 top-1/2 z-40 -translate-y-1/2">
+        <div className="pointer-events-none fixed right-0 top-1/2 z-[60] -translate-y-1/2">
           <div className="pointer-events-auto flex flex-col gap-2">
             {moduleCards.map((module) => {
               const isOpen = openModule === module.id;
@@ -676,7 +691,6 @@ export default function HomePage() {
                 <button
                   key={module.id}
                   onClick={() => openCard(module.id)}
-                  disabled={isOpen}
                   className={`
                     flex
                     h-28
@@ -720,8 +734,14 @@ export default function HomePage() {
 
         {activeModule && (
           <div
-            className="fixed right-0 top-1/2 z-50 flex items-stretch"
+            className="fixed right-0 z-50 flex items-stretch"
             style={{
+              top: `clamp(
+                ${viewportPadding}px,
+                ${naturalCardTop},
+                calc(100vh - ${viewportPadding}px)
+              )`,
+
               transform: isClosing
                 ? 'translateX(100%) translateY(-50%)'
                 : 'translateX(0) translateY(-50%)',
@@ -733,13 +753,17 @@ export default function HomePage() {
               transition: isClosing
                 ? 'transform 400ms cubic-bezier(0.22, 1, 0.36, 1)'
                 : 'none',
+
+              maxHeight: `calc(100vh - ${viewportPadding * 2}px)`,
             }}
           >
             <div
               className="
                 relative
                 w-[360px]
-                overflow-hidden
+                max-h-[calc(100vh-32px)]
+                overflow-y-auto
+                overflow-x-hidden
                 rounded-l-2xl
                 bg-white
                 shadow-[-12px_15px_40px_rgba(0,0,0,0.30)]
@@ -748,7 +772,6 @@ export default function HomePage() {
               "
             >
               <div className="p-7">
-
                 <div className="mb-5 flex justify-center">
                   <div
                     className={`
@@ -825,52 +848,29 @@ export default function HomePage() {
                   </div>
                 )}
 
-                {/* <button
+                <button
                   onClick={() => handleContinue(activeModule.id)}
-                  className={`
-                    mt-6
+                  className="
+                    mt-5
                     w-full
                     rounded-xl
-                    px-6
+                    bg-[#4f2584]
+                    px-5
                     py-3
                     text-sm
                     font-semibold
                     text-white
-                    shadow-sm
                     transition
-                    hover:shadow-md
-                    ${
-                      activeModule.completed
-                        ? 'bg-green-600 hover:bg-green-700'
-                        : 'bg-[#4f2584] hover:bg-[#3d1d68]'
-                    }
-                  `}
-                >
-                  {activeModule.completed ? 'Open Module' : 'Continue'}
-                </button>
-
-                <button
-                  onClick={closeCard}
-                  className="
-                    mt-2
-                    w-full
-                    rounded-xl
-                    px-6
-                    py-2.5
-                    text-sm
-                    font-medium
-                    text-gray-500
-                    transition
-                    hover:bg-gray-100
+                    hover:bg-[#3f1d6a]
                   "
                 >
-                  Close
-                </button> */}
+                  Continue
+                </button>
               </div>
             </div>
 
             <button
-              // onClick={closeCard}
+              onClick={closeCard}
               className={`
                 flex
                 h-28
@@ -889,6 +889,7 @@ export default function HomePage() {
                     : 'border-gray-200 bg-white text-gray-600'
                 }
               `}
+              title="Close module"
             >
               <span
                 className="whitespace-nowrap text-xs font-semibold tracking-wide"
