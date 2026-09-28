@@ -564,12 +564,12 @@ export default function HomePage() {
     }
   }
 
+  // bookmark variables
+
   const [openModule, setOpenModule] = useState<string | null>(null);
+  const [isClosing, setIsClosing] = useState(false);
 
-  function ModuleBookmarkRail() {
-    const [isClosing, setIsClosing] = useState(false);
-
-    const moduleCards = [
+  const moduleCards = [
       {
         id: 'outlook',
         label: 'Drive',
@@ -626,17 +626,15 @@ export default function HomePage() {
       : -1;
 
     function openCard(moduleId: string) {
+      handleContinue(moduleId);
+
       setIsClosing(false);
       setOpenModule(moduleId);
     }
 
     function closeCard() {
       setIsClosing(true);
-
-      setTimeout(() => {
-        setOpenModule(null);
-        setIsClosing(false);
-      }, 400);
+      setOpenModule(null);
     }
 
     function handleContinue(moduleId: string) {
@@ -663,8 +661,6 @@ export default function HomePage() {
           setActiveTab('rippling');
           break;
       }
-
-      closeCard();
     }
 
     const bookmarkHeight = 112;
@@ -679,6 +675,8 @@ export default function HomePage() {
               (bookmarkHeight + bookmarkGap)
           }px)`
         : '50%';
+
+  function ModuleBookmarkRail() {
 
     return (
       <>
@@ -847,25 +845,6 @@ export default function HomePage() {
                     This module has been completed.
                   </div>
                 )}
-
-                <button
-                  onClick={() => handleContinue(activeModule.id)}
-                  className="
-                    mt-5
-                    w-full
-                    rounded-xl
-                    bg-[#4f2584]
-                    px-5
-                    py-3
-                    text-sm
-                    font-semibold
-                    text-white
-                    transition
-                    hover:bg-[#3f1d6a]
-                  "
-                >
-                  Continue
-                </button>
               </div>
             </div>
 
@@ -1476,7 +1455,10 @@ export default function HomePage() {
 
               {/* Google Drive tab */}
               <button
-                onClick={() => setActiveTab('outlook')}
+                onClick={() => {
+                  setActiveTab('outlook');
+                  openCard('outlook');
+                }}
                 className={`relative flex h-8 w-48 items-center rounded-t-lg px-3 ${
                   activeTab === 'outlook'
                     ? 'bg-[#2d2f31]'
@@ -1509,7 +1491,10 @@ export default function HomePage() {
 
               {/* Western University support tab */}
               <button
-                onClick={() => setActiveTab('western')}
+                onClick={() => {
+                  setActiveTab('western');
+                  openCard('western');
+                }}
                 className={`relative flex h-8 w-44 items-center gap-2 rounded-t-lg px-3 ${
                   activeTab === 'western'
                     ? 'bg-[#2d2f31]'
@@ -1542,7 +1527,10 @@ export default function HomePage() {
 
               {/* Google Calendar tab */}
               <button
-                onClick={() => setActiveTab('calendar')}
+                onClick={() => {
+                  setActiveTab('calendar');
+                  openCard('calendar');
+                }}
                 className={`relative flex h-8 w-44 items-center gap-2 rounded-t-lg px-3 ${
                   activeTab === 'calendar'
                     ? 'bg-[#2d2f31]'
@@ -1573,7 +1561,10 @@ export default function HomePage() {
 
               {/* Trello tab */}
               <button
-                onClick={() => setActiveTab('trello')}
+                onClick={() => {
+                  setActiveTab('trello');
+                  openCard('trello');
+                }}
                 className={`relative flex h-8 w-48 items-center rounded-t-lg px-3 ${
                   activeTab === 'trello'
                     ? 'bg-[#2d2f31]'
@@ -1605,7 +1596,10 @@ export default function HomePage() {
 
               {/* Rippling tab */}
               <button
-                onClick={() => setActiveTab('rippling')}
+                onClick={() => {
+                  setActiveTab('rippling');
+                  openCard('rippling');
+                }}
                 className={`relative flex h-8 w-48 items-center rounded-t-lg px-3 ${
                   activeTab === 'rippling'
                     ? 'bg-[#2d2f31]'
