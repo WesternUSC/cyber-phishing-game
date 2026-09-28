@@ -2625,7 +2625,7 @@ export default function HomePage() {
           </button>
 
           <button
-            onClick={() => setisSlackClosed((prev) => !prev)}
+            onClick={() => {setisSlackClosed((prev) => !prev); closeCard()}}
             className={`flex h-10 items-center gap-2 rounded px-3 transition-colors ${
               isSlackClosed
                 ? 'hover:bg-white/10'

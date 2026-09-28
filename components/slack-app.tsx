@@ -161,15 +161,23 @@ export default function SlackApp({
                     : 'hover:bg-white/10'
                 }`}
               >
-                # general
+                # announcements-urgent
               </button>
 
               <button className="w-full rounded px-3 py-2 text-left text-sm hover:bg-white/10">
-                # it-support
+                # crm-coordination
               </button>
 
               <button className="w-full rounded px-3 py-2 text-left text-sm hover:bg-white/10">
-                # announcements
+                # goosin-around
+              </button>
+
+              <button className="w-full rounded px-3 py-2 text-left text-sm hover:bg-white/10">
+                # rim2026
+              </button>
+
+              <button className="w-full rounded px-3 py-2 text-left text-sm hover:bg-white/10">
+                # staff-updates
               </button>
             </div>
 
@@ -194,7 +202,27 @@ export default function SlackApp({
               </button>
 
               <button className="w-full rounded px-3 py-2 text-left text-sm hover:bg-white/10">
-                Test Name 2
+                James McGill
+              </button>
+
+              <button className="w-full rounded px-3 py-2 text-left text-sm hover:bg-white/10">
+                Ryan George
+              </button>
+
+              <button className="w-full rounded px-3 py-2 text-left text-sm hover:bg-white/10">
+                Aubrey Tristesse
+              </button>
+
+              <button className="w-full rounded px-3 py-2 text-left text-sm hover:bg-white/10">
+                Amy Sosa
+              </button>
+
+              <button className="w-full rounded px-3 py-2 text-left text-sm hover:bg-white/10">
+                Doug Judy
+              </button>
+
+              <button className="w-full rounded px-3 py-2 text-left text-sm hover:bg-white/10">
+                Sunny Omori
               </button>
             </div>
 

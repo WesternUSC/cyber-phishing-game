@@ -83,13 +83,61 @@ const defaultOptionsPolicies: TrainingOption[] = [
     label: "DISCRIMINATION HARASSMENT AND VIOLENCE PREVENTION POLICY",
     color: "#582c83",
   },
-  // seven reserved for now
   {
     id: "8",
     label: "EARLY AND SAFE RETURN TO WORK POLICY",
     color: "#582c83",
   },
 ];
+
+/*
+ * ============================================================
+ * PDF DOWNLOADS
+ * ============================================================
+ *
+ * Put your PDF files in your public folder, for example:
+ *
+ * public/pdfs/acceptable-use-policy-1.pdf
+ * public/pdfs/acceptable-use-policy-2.pdf
+ *
+ * Then reference them here as:
+ *
+ * /pdfs/acceptable-use-policy-1.pdf
+ *
+ * Each policy has two PDFs.
+ */
+
+const policyDownloads: Record<string, [string, string]> = {
+  "2": [
+    "/pdfs/Acceptable Use Policy.pdf",
+    "/pdfs/Acceptable_Use_Policy_Summary_and_Quiz.pdf",
+  ],
+
+  "3": [
+    "/pdfs/Accessibility for Customer Service Policy.pdf",
+    "/pdfs/Accessibility_for_Customer_Service_Policy_Summary_and_Quiz.pdf",
+  ],
+
+  "4": [
+    "/pdfs/Accessibility Policy.pdf",
+    "/pdfs/Accessibility_Policy_Summary_and_Quiz.pdf",
+  ],
+
+  "5": [
+    "/pdfs/Conflict of Interest Policy for USC Paid Employees.pdf",
+    "/pdfs/Conflict_of_Interest_Policy_for_USC_Paid_Employees_Summary_and_Quiz.pdf",
+  ],
+
+  "6": [
+    "/pdfs/Discrimination Harassment and Violence Prevention Policy.pdf",
+    "/pdfs/Discrimination_Harassment_and_Violence_Prevention_Policy_Summary_and_Quiz.pdf",
+  ],
+
+  "8": [
+    "/pdfs/Early and Safe Return to Work Policy.pdf",
+    "/pdfs/Early_and_Safe_Return_to_Work_Policy_Summary_and_Quiz.pdf",
+  ],
+};
 
 export default function Selection({
   playerName,
@@ -108,6 +156,7 @@ export default function Selection({
   setSelectedSlides,
 }: SelectionProps) {
   const [selectedId, setSelectedId] = useState(options[0]?.id ?? "");
+
   const [selectedPolicyId, setSelectedPolicyId] = useState(
     policiesOptions[0]?.id ?? ""
   );
@@ -121,6 +170,49 @@ export default function Selection({
   const selectedPolicyOption = policiesOptions.find(
     (option) => option.id === selectedPolicyId
   );
+
+  /*
+   * ============================================================
+   * DOWNLOAD TWO PDFs
+   * ============================================================
+   *
+   * This downloads both PDFs associated with the policy.
+   *
+   * stopPropagation() is important here because the download
+   * button is inside the main policy button. Without it,
+   * clicking download would also select the policy.
+   */
+
+  const handleDownload = async (
+    event: React.MouseEvent<HTMLButtonElement>,
+    policyId: string
+  ) => {
+    event.stopPropagation();
+
+    const files = policyDownloads[policyId];
+
+    if (!files) {
+      console.warn(`No PDFs configured for policy ${policyId}`);
+      return;
+    }
+
+    for (const file of files) {
+      const link = document.createElement("a");
+
+      link.href = file;
+      link.download = file.split("/").pop() || "document.pdf";
+
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      /*
+       * Small delay between downloads helps browsers handle
+       * multiple downloads more reliably.
+       */
+      await new Promise((resolve) => setTimeout(resolve, 300));
+    }
+  };
 
   const handleStart = () => {
     if (!policiesPage) {
@@ -213,7 +305,6 @@ export default function Selection({
           />
 
           <p style={styles.chooseText}>{title}</p>
-
         </div>
       </div>
 
@@ -241,10 +332,55 @@ export default function Selection({
                     : styles.optionUnselected),
                 }}
               >
-                <span>{option.label}</span>
+                <span style={styles.optionLabel}>
+                  {option.label}
+                </span>
 
-                {isSelected && (
+                {/* {isSelected && (
                   <span style={styles.checkmark}>✓</span>
+                )} */}
+
+                {policiesPage && policyDownloads[option.id] && (
+                  <button
+                    type="button"
+                    aria-label={`Download PDFs for ${option.label}`}
+                    title={`Download PDFs for ${option.label}`}
+                    onClick={(event) =>
+                      handleDownload(event, option.id)
+                    }
+                    style={styles.downloadButton}
+                  >
+                    <svg
+                      width="22"
+                      height="22"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M12 3V15"
+                        stroke="white"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                      />
+
+                      <path
+                        d="M7 11L12 16L17 11"
+                        stroke="white"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+
+                      <path
+                        d="M5 20H19"
+                        stroke="white"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                  </button>
                 )}
               </button>
             );
@@ -406,7 +542,6 @@ const styles: Record<string, React.CSSProperties> = {
     fontWeight: 700,
     display: "flex",
     alignItems: "center",
-    justifyContent: "space-between",
     textAlign: "left",
     boxSizing: "border-box",
     transition:
@@ -424,6 +559,28 @@ const styles: Record<string, React.CSSProperties> = {
 
   optionUnselected: {
     transform: "scale(1)",
+  },
+
+  optionLabel: {
+    flex: 1,
+    minWidth: 0,
+  },
+
+  downloadButton: {
+    width: "40px",
+    height: "40px",
+    padding: 0,
+    marginRight: "10px",
+    border: "none",
+    borderRadius: "10px",
+    background: "rgba(255, 255, 255, 0.15)",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    cursor: "pointer",
+    flexShrink: 0,
+    transition:
+      "background 0.18s ease, transform 0.18s ease",
   },
 
   checkmark: {
