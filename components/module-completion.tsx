@@ -54,10 +54,21 @@ type ModuleCompletionProps = {
   completedEmails: boolean;
   completedTicketing: boolean;
   completedSlack: boolean;
+
+  clickedDrive: React.Dispatch<React.SetStateAction<boolean>>;
+  clickedSupport: React.Dispatch<React.SetStateAction<boolean>>;
+  clickedCalendar: React.Dispatch<React.SetStateAction<boolean>>;
+  clickedTrello: React.Dispatch<React.SetStateAction<boolean>>;
+  clickedRippling: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export default function ModuleCompletion({
-  onComplete, completedDrive, completedCalendar, completedTrello, completedRippling, completedEmails, completedTicketing, completedSlack
+  onComplete, completedDrive, completedCalendar, completedTrello, completedRippling, completedEmails, completedTicketing, completedSlack,
+  clickedDrive,
+  clickedSupport,
+  clickedCalendar,
+  clickedTrello,
+  clickedRippling
   }: ModuleCompletionProps) {
     const [completed, setCompleted] = useState<string[]>(() => {
     if (typeof window === 'undefined') return [];
@@ -128,6 +139,7 @@ export default function ModuleCompletion({
           setShowPopup(true);
           return;
         }
+        clickedDrive(true);
         break;
 
       case "email-security":
@@ -142,6 +154,7 @@ export default function ModuleCompletion({
           setShowPopup(true);
           return;
         }
+        clickedCalendar(true);
         break;
 
       case "trello":
@@ -149,6 +162,7 @@ export default function ModuleCompletion({
           setShowPopup(true);
           return;
         }
+        clickedTrello(true);
         break;
 
       case "rippling":
@@ -156,6 +170,7 @@ export default function ModuleCompletion({
           setShowPopup(true);
           return;
         }
+        clickedRippling(true);
         break;
 
       case "ticketing-system":
@@ -163,6 +178,7 @@ export default function ModuleCompletion({
           setShowPopup(true);
           return;
         }
+        clickedSupport(true);
         break;
 
       case "slack":
@@ -432,7 +448,7 @@ export default function ModuleCompletion({
                   </h2>
 
                   <p className="mt-0.5 text-xs text-gray-500">
-                    All six modules have been completed.
+                    All seven modules have been completed.
                   </p>
                 </div>
               </div>
@@ -523,7 +539,7 @@ export default function ModuleCompletion({
               </svg>
 
               <p className="text-sm text-blue-800">
-                Complete all six modules above to unlock the training
+                Complete all seven modules above to unlock the training
                 acknowledgement and signature field.
               </p>
             </div>

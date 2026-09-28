@@ -564,6 +564,12 @@ export default function HomePage() {
     }
   }
 
+  const [clickedDrive, setClickedDrive] = useState(false);
+  const [clickedSupport, setClickedSupport] = useState(false);
+  const [clickedCalendar, setClickedCalendar] = useState(false);
+  const [clickedTrello, setClickedTrello] = useState(false);
+  const [clickedRippling, setClickedRippling] = useState(false);
+
   // bookmark variables
 
   const [openModule, setOpenModule] = useState<string | null>(null);
@@ -577,7 +583,7 @@ export default function HomePage() {
         description:
           'Learn how to use Google Drive to organize, manage, and work with your files. This interactive guide will walk you through the key steps you need to know.',
         icon: '/drive_logo.webp',
-        completed: completedDrive,
+        completed: clickedDrive,
       },
       {
         id: 'western',
@@ -586,7 +592,7 @@ export default function HomePage() {
         description:
           'Learn how to report an issue using our ticketing system.',
         icon: '/usc-logo.png',
-        completed: completedTicketing,
+        completed: clickedSupport,
       },
       {
         id: 'calendar',
@@ -595,7 +601,7 @@ export default function HomePage() {
         description:
           'Learn how to effectively use Google Calendar to manage your schedule, create events, and stay organized.',
         icon: '/google_calendar.webp',
-        completed: completedCalendar,
+        completed: clickedCalendar,
       },
       {
         id: 'trello',
@@ -604,7 +610,7 @@ export default function HomePage() {
         description:
           'Learn how to communicate and collaborate effectively in Trello by adding comments to cards and working with your team.',
         icon: '/trello-logo-icon.webp',
-        completed: completedTrello,
+        completed: clickedTrello,
       },
       {
         id: 'rippling',
@@ -613,7 +619,7 @@ export default function HomePage() {
         description:
           'Learn how to submit a time-off request through Rippling. This guide will walk you through the process step by step.',
         icon: '/rippling-logo.png',
-        completed: completedRippling,
+        completed: clickedRippling,
       },
     ];
 
@@ -1421,7 +1427,10 @@ export default function HomePage() {
 
               {/* PhishQuest tab */}
               <button
-                onClick={() => setActiveTab('phishquest')}
+                onClick={() => {
+                  setActiveTab('phishquest');
+                  closeCard();
+                }}
                 className={`relative flex h-8 w-48 items-center gap-2 rounded-t-xl px-4 ${
                   activeTab === 'phishquest'
                     ? 'bg-[#2d2f31]'
@@ -1631,7 +1640,10 @@ export default function HomePage() {
 
               {/* Modules tab */}
               <button
-                onClick={() => setActiveTab('modules')}
+                onClick={() => {
+                  setActiveTab('modules');
+                  closeCard();
+                }}
                 className={`relative flex h-8 w-48 items-center rounded-t-lg px-3 ${
                   activeTab === 'modules'
                     ? 'bg-[#2d2f31]'
@@ -2453,6 +2465,11 @@ export default function HomePage() {
               completedEmails={loginCode === "7777" ? true : gameComplete}
               completedTicketing={completedTicketing}
               completedSlack={completedSlack}
+              clickedDrive={setClickedDrive}
+              clickedSupport={setClickedSupport}
+              clickedCalendar={setClickedCalendar}
+              clickedTrello={setClickedTrello}
+              clickedRippling={setClickedRippling}
             />
           )}
         </div>
