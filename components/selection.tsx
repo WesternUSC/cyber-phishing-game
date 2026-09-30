@@ -196,7 +196,9 @@ export default function Selection({
           break;
 
         case "2":
-          setPoliciesPage(true);
+          //setPoliciesPage(true);
+          setSelectedSlides("policies");
+          setMadeSelection(true);
           break;
 
         case "3":
