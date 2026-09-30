@@ -1152,6 +1152,9 @@ export const policiesSlides = (playerName: string, setCurrentSlides: React.Dispa
         category={questionsData.questionsAcceptableUse[0].category}
       />
     ),
+    isMultipleChoice: true,
+    quizScoreKey: "acceptable-use-score",
+    quizAnswersKey: "acceptable-use-answers"
   },
   {
     title: "Knowledge Check: Q2",
@@ -1165,6 +1168,9 @@ export const policiesSlides = (playerName: string, setCurrentSlides: React.Dispa
         category={questionsData.questionsAcceptableUse[1].category}
       />
     ),
+    isMultipleChoice: true,
+    quizScoreKey: "acceptable-use-score",
+    quizAnswersKey: "acceptable-use-answers"
   },
   {
     title: "Knowledge Check: Q3",
@@ -1178,6 +1184,9 @@ export const policiesSlides = (playerName: string, setCurrentSlides: React.Dispa
         category={questionsData.questionsAcceptableUse[2].category}
       />
     ),
+    isMultipleChoice: true,
+    quizScoreKey: "acceptable-use-score",
+    quizAnswersKey: "acceptable-use-answers"
   },
   {
     title: "Knowledge Check: Q4",
@@ -1191,6 +1200,9 @@ export const policiesSlides = (playerName: string, setCurrentSlides: React.Dispa
         category={questionsData.questionsAcceptableUse[3].category}
       />
     ),
+    isMultipleChoice: true,
+    quizScoreKey: "acceptable-use-score",
+    quizAnswersKey: "acceptable-use-answers"
   },
   {
     title: "Knowledge Check: Q5",
@@ -1204,5 +1216,8 @@ export const policiesSlides = (playerName: string, setCurrentSlides: React.Dispa
         category={questionsData.questionsAcceptableUse[4].category}
       />
     ),
+    isMultipleChoice: true,
+    quizScoreKey: "acceptable-use-score",
+    quizAnswersKey: "acceptable-use-answers"
   },
 ];

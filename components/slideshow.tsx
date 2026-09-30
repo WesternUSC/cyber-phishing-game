@@ -5,6 +5,11 @@ import React, { useState, useEffect } from "react";
 interface Slide {
   title?: string;
   content: React.ReactNode;
+
+  // Quiz configuration
+  isMultipleChoice?: boolean;
+  quizScoreKey?: string;
+  quizAnswersKey?: string;
 }
 
 interface SlideshowProps {
@@ -33,15 +38,22 @@ const Slideshow: React.FC<SlideshowProps> = ({
 }) => {
   const [current, setCurrent] = useState(startSlide);
   const [slideStartedAt, setSlideStartedAt] = useState(Date.now());
+
   const [seenSlides, setSeenSlides] = useState<Set<number>>(
     new Set([startSlide])
   );
+
   const [incidentSteps, setIncidentSteps] = useState(1);
   const [cloudSteps, setCloudSteps] = useState(1);
   const [settingsStep, setSettingsStep] = useState(1);
+
   const [isLoaded, setIsLoaded] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
+  // Quiz completion modal
+  const [showQuizModal, setShowQuizModal] = useState(false);
+
+  // Load saved progress
   useEffect(() => {
     const saved = localStorage.getItem(STORAGE_KEY);
 
@@ -51,12 +63,15 @@ const Slideshow: React.FC<SlideshowProps> = ({
 
         setCurrent(parsed.current ?? startSlide);
         setSlideStartedAt(parsed.slideStartedAt ?? Date.now());
+
         setSeenSlides(
           new Set<number>(parsed.seenSlides ?? [startSlide])
         );
+
         setIncidentSteps(parsed.incidentSteps ?? 1);
         setCloudSteps(parsed.cloudSteps ?? 1);
         setSettingsStep(parsed.settingsStep ?? 1);
+
       } catch (error) {
         console.error("Failed to load slideshow progress:", error);
       }
@@ -65,6 +80,7 @@ const Slideshow: React.FC<SlideshowProps> = ({
     setIsLoaded(true);
   }, [startSlide]);
 
+  // Save slideshow progress
   useEffect(() => {
     if (!isLoaded) return;
 
@@ -79,7 +95,15 @@ const Slideshow: React.FC<SlideshowProps> = ({
         settingsStep
       })
     );
-  }, [isLoaded, current, slideStartedAt, seenSlides, incidentSteps, cloudSteps, settingsStep]);
+  }, [
+    isLoaded,
+    current,
+    slideStartedAt,
+    seenSlides,
+    incidentSteps,
+    cloudSteps,
+    settingsStep
+  ]);
 
   const isExempt = (slideIndex: number) => {
     return EXEMPT_SLIDES.has(slideIndex);
@@ -93,9 +117,19 @@ const Slideshow: React.FC<SlideshowProps> = ({
     return Date.now() - slideStartedAt >= WAIT_TIME;
   };
 
+  /*
+   * ---------------------------------------------------------
+   * Keyboard navigation
+   * ---------------------------------------------------------
+   */
+
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      // Ignore typing in text boxes
+      // Don't allow keyboard navigation while quiz popup is open
+      if (showQuizModal) {
+        return;
+      }
+
       const target = event.target as HTMLElement;
 
       if (
@@ -136,6 +170,8 @@ const Slideshow: React.FC<SlideshowProps> = ({
               slideStartedAt: Date.now(),
               seenSlides: Array.from(allSlidesSeen),
               incidentSteps,
+              cloudSteps,
+              settingsStep
             })
           );
 
@@ -150,7 +186,20 @@ const Slideshow: React.FC<SlideshowProps> = ({
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [current, seenSlides, incidentSteps, cloudSteps, settingsStep]);
+  }, [
+    current,
+    seenSlides,
+    incidentSteps,
+    cloudSteps,
+    settingsStep,
+    showQuizModal
+  ]);
+
+  /*
+   * ---------------------------------------------------------
+   * Slide navigation
+   * ---------------------------------------------------------
+   */
 
   const changeSlide = (newIndex: number) => {
     setIsTransitioning(true);
@@ -161,7 +210,7 @@ const Slideshow: React.FC<SlideshowProps> = ({
 
       if (slides[newIndex]?.title === CLOUD_SLIDE_TITLE) {
         setCloudSteps(1);
-      } 
+      }
 
       if (slides[newIndex]?.title === SETTINGS_SLIDE_TITLE) {
         setSettingsStep(1);
@@ -178,51 +227,179 @@ const Slideshow: React.FC<SlideshowProps> = ({
   };
 
   const previous = () => {
-    if (current === 0 || isTransitioning) {
+    if (current === 0 || isTransitioning || showQuizModal) {
       return;
     }
 
-    if (current > 0) {
-      changeSlide(current - 1);
-    }
+    changeSlide(current - 1);
   };
 
-  const next = () => {
-    if (current === slides.length - 1 || isTransitioning) {
-      return;
+  /*
+   * ---------------------------------------------------------
+   * Quiz handling
+   * ---------------------------------------------------------
+   */
+
+  const getQuizSlides = () => {
+    return slides
+      .map((slide, index) => ({
+        slide,
+        index
+      }))
+      .filter(({ slide }) => slide.isMultipleChoice);
+  };
+
+  const getQuizResult = () => {
+    const quizSlides = getQuizSlides();
+
+    if (quizSlides.length === 0) {
+      return {
+        isQuiz: false,
+        score: 0,
+        totalQuestions: 0,
+        percentage: 100,
+        firstQuizSlideIndex: -1
+      };
     }
 
-    if (current === slides.length - 2) {
-      const allSlidesSeen = seenSlides.size === slides.length;
+    /*
+     * All quiz slides in the same quiz should use the same
+     * score/answers keys.
+     */
+    const firstQuizSlide = quizSlides[0].slide;
 
-      if (!allSlidesSeen) {
-        const nextSlide = current + 1;
+    const scoreKey = firstQuizSlide.quizScoreKey;
 
-        const updatedSeenSlides = new Set(seenSlides);
-        updatedSeenSlides.add(nextSlide);
+    const answersKey = firstQuizSlide.quizAnswersKey;
 
-        setSeenSlides(updatedSeenSlides);
+    if (!scoreKey || !answersKey) {
+      console.warn(
+        "Multiple-choice slides require quizScoreKey and quizAnswersKey."
+      );
 
-        localStorage.setItem(
-          STORAGE_KEY,
-          JSON.stringify({
-            current: nextSlide,
-            slideStartedAt: Date.now(),
-            seenSlides: Array.from(updatedSeenSlides),
-            incidentSteps,
-          })
-        );
+      return {
+        isQuiz: false,
+        score: 0,
+        totalQuestions: 0,
+        percentage: 100,
+        firstQuizSlideIndex: quizSlides[0].index
+      };
+    }
 
-        onLastSlide?.();
-        return;
+    const score = Number(
+      localStorage.getItem(scoreKey) || "0"
+    );
+
+    const storedAnswers = localStorage.getItem(answersKey);
+
+    let answers: Record<string, string> = {};
+
+    if (storedAnswers) {
+      try {
+        answers = JSON.parse(storedAnswers);
+      } catch {
+        answers = {};
       }
     }
 
+    /*
+     * Number of questions is based on the number of quiz slides.
+     */
+    const totalQuestions = quizSlides.length;
+
+    /*
+     * If you have answered fewer questions than exist,
+     * don't allow completion yet.
+     */
+    const answeredQuestions = Object.keys(answers).length;
+
+    const percentage =
+      totalQuestions > 0
+        ? (score / totalQuestions) * 100
+        : 100;
+
+    return {
+      isQuiz: true,
+      score,
+      totalQuestions,
+      answeredQuestions,
+      percentage,
+      firstQuizSlideIndex: quizSlides[0].index,
+      scoreKey,
+      answersKey
+    };
+  };
+
+  const resetQuiz = () => {
+    const quiz = getQuizResult();
+
+    if (!quiz.isQuiz) {
+      return;
+    }
+
+    if (quiz.scoreKey) {
+      localStorage.removeItem(quiz.scoreKey);
+    }
+
+    if (quiz.answersKey) {
+      localStorage.removeItem(quiz.answersKey);
+    }
+
+    /*
+     * Reset quiz-related state.
+     */
+    setShowQuizModal(false);
+
+    /*
+     * Go to the first multiple-choice question.
+     */
+    setIsTransitioning(true);
+
+    setTimeout(() => {
+      setCurrent(quiz.firstQuizSlideIndex);
+      setSlideStartedAt(Date.now());
+
+      setSeenSlides((previous) => {
+        const updated = new Set(previous);
+
+        /*
+         * Keep previous slide history, but make sure
+         * the first quiz slide is marked as seen.
+         */
+        updated.add(quiz.firstQuizSlideIndex);
+
+        return updated;
+      });
+
+      setIsTransitioning(false);
+    }, 300);
+  };
+
+  /*
+   * ---------------------------------------------------------
+   * Next button
+   * ---------------------------------------------------------
+   */
+
+  const next = () => {
+    console.log("clicked next");
+    if (
+      (
+        current === slides.length - 1 &&
+        !slides[current]?.isMultipleChoice
+      ) ||
+      isTransitioning ||
+      showQuizModal
+    ) {
+      return;
+    }
+
+    // Special interactive slide logic
     const isIncidentSlide =
       slides[current].title === INCIDENT_SLIDE_TITLE;
 
     if (isIncidentSlide && incidentSteps < 4) {
-      setIncidentSteps((previous: number) => previous + 1);
+      setIncidentSteps((previous) => previous + 1);
       return;
     }
 
@@ -242,6 +419,7 @@ const Slideshow: React.FC<SlideshowProps> = ({
       return;
     }
 
+    // Check wait time
     if (!hasWaitedLongEnough()) {
       window.alert(
         "You must wait at least one minute on this slide before proceeding."
@@ -249,8 +427,117 @@ const Slideshow: React.FC<SlideshowProps> = ({
       return;
     }
 
+    /*
+    * -------------------------------------------------------
+    * KNOWLEDGE CHECK
+    * -------------------------------------------------------
+    */
+
+    const currentSlide = slides[current];
+
+    if (currentSlide.isMultipleChoice) {
+      // Find all multiple-choice slides
+      const multipleChoiceSlides = slides
+        .map((slide, index) => ({
+          slide,
+          index
+        }))
+        .filter(({ slide }) => slide.isMultipleChoice);
+
+      // Is this the final multiple-choice question?
+      const lastMultipleChoiceSlide =
+        multipleChoiceSlides[multipleChoiceSlides.length - 1];
+
+      const isLastMultipleChoiceSlide =
+        lastMultipleChoiceSlide?.index === current;
+
+      if (isLastMultipleChoiceSlide) {
+        const scoreKey = currentSlide.quizScoreKey;
+        const answersKey = currentSlide.quizAnswersKey;
+
+        if (scoreKey && answersKey) {
+          const score = Number(
+            localStorage.getItem(scoreKey) || "0"
+          );
+
+          const storedAnswers =
+            localStorage.getItem(answersKey);
+
+          let answers: Record<string, string> = {};
+
+          if (storedAnswers) {
+            try {
+              answers = JSON.parse(storedAnswers);
+            } catch {
+              answers = {};
+            }
+          }
+
+          const totalQuestions = multipleChoiceSlides.length;
+
+          const percentage =
+            totalQuestions > 0
+              ? (score / totalQuestions) * 100
+              : 100;
+
+          console.log("Quiz check:", {
+            score,
+            totalQuestions,
+            percentage,
+            answers
+          });
+
+          // NOT 100% -> show popup
+          if (percentage < 100) {
+            setShowQuizModal(true);
+            return;
+          }
+        }
+      }
+    }
+
+    /*
+    * -------------------------------------------------------
+    * NORMAL SLIDE NAVIGATION
+    * -------------------------------------------------------
+    */
+
+    if (current === slides.length - 2) {
+      const allSlidesSeen = seenSlides.size === slides.length;
+
+      if (!allSlidesSeen) {
+        const nextSlide = current + 1;
+
+        const updatedSeenSlides = new Set(seenSlides);
+        updatedSeenSlides.add(nextSlide);
+
+        setSeenSlides(updatedSeenSlides);
+
+        localStorage.setItem(
+          STORAGE_KEY,
+          JSON.stringify({
+            current: nextSlide,
+            slideStartedAt: Date.now(),
+            seenSlides: Array.from(updatedSeenSlides),
+            incidentSteps,
+            cloudSteps,
+            settingsStep
+          })
+        );
+
+        onLastSlide?.();
+        return;
+      }
+    }
+
     changeSlide(current + 1);
   };
+
+  /*
+   * ---------------------------------------------------------
+   * Progress
+   * ---------------------------------------------------------
+   */
 
   const progress =
     slides.length > 1
@@ -261,14 +548,15 @@ const Slideshow: React.FC<SlideshowProps> = ({
     return null;
   }
 
+  /*
+   * ---------------------------------------------------------
+   * Render
+   * ---------------------------------------------------------
+   */
+
   return (
     <div style={styles.container}>
-      {/*}
-      <div style={styles.header}>
-        {slides[current].title && (
-          <h3>{slides[current].title}</h3>
-        )}
-      </div>*/}
+
       <div style={styles.header}>
         {playerName}
       </div>
@@ -310,7 +598,7 @@ const Slideshow: React.FC<SlideshowProps> = ({
       <div style={styles.footer}>
         <button
           onClick={previous}
-          disabled={current === 0}
+          disabled={current === 0 || showQuizModal}
         >
           Previous
         </button>
@@ -328,11 +616,62 @@ const Slideshow: React.FC<SlideshowProps> = ({
 
         <button
           onClick={next}
-          disabled={current === slides.length - 1}
+          disabled={
+            (
+              current === slides.length - 1 &&
+              !slides[current]?.isMultipleChoice
+            ) ||
+            showQuizModal
+          }
         >
           Next
         </button>
+
       </div>
+
+      {/* =====================================================
+          QUIZ FAILURE MODAL
+          ===================================================== */}
+
+      {showQuizModal && (
+        <div style={styles.modalOverlay}>
+          <div style={styles.modal}>
+
+            {/* Western accent */}
+            <div style={styles.modalTopBar} />
+
+            <div style={styles.modalContent}>
+
+              <div style={styles.warningIcon}>
+                !
+              </div>
+
+              <h2 style={styles.modalTitle}>
+                Knowledge Check Incomplete
+              </h2>
+
+              <p style={styles.modalText}>
+                You must achieve a score of <strong>100%</strong>{" "}
+                on the knowledge check before you can continue.
+              </p>
+
+              <p style={styles.modalSubtext}>
+                Your previous answers will be cleared and you
+                will return to the beginning of the knowledge
+                check.
+              </p>
+
+              <button
+                onClick={resetQuiz}
+                style={styles.retryButton}
+              >
+                Retry Knowledge Check
+              </button>
+
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
@@ -389,9 +728,90 @@ const styles: Record<string, React.CSSProperties> = {
     transition: "width 0.3s ease",
   },
 
-  progressText: {
-    fontSize: 12,
-    color: "#666",
+  /*
+   * ---------------------------------------------------------
+   * Western University themed modal
+   * ---------------------------------------------------------
+   */
+
+  modalOverlay: {
+    position: "fixed",
+    inset: 0,
+    backgroundColor: "rgba(20, 15, 30, 0.65)",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    zIndex: 9999,
+    padding: 20,
+  },
+
+  modal: {
+    width: "100%",
+    maxWidth: 520,
+    backgroundColor: "#ffffff",
+    borderRadius: 14,
+    overflow: "hidden",
+    boxShadow: "0 25px 70px rgba(0, 0, 0, 0.3)",
+  },
+
+  modalTopBar: {
+    height: 8,
+    backgroundColor: "#4F2683",
+  },
+
+  modalContent: {
+    padding: "40px 42px 42px",
+    textAlign: "center",
+  },
+
+  warningIcon: {
+    width: 58,
+    height: 58,
+    margin: "0 auto 20px",
+    borderRadius: "50%",
+    backgroundColor: "#FBBE00",
+    color: "#4F2683",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    fontSize: 30,
+    fontWeight: 800,
+  },
+
+  modalTitle: {
+    margin: "0 0 14px",
+    color: "#4F2683",
+    fontSize: "1.65rem",
+    fontWeight: 700,
+  },
+
+  modalText: {
+    margin: "0 auto 12px",
+    maxWidth: 420,
+    color: "#2d2d2d",
+    fontSize: "1.05rem",
+    lineHeight: 1.6,
+  },
+
+  modalSubtext: {
+    margin: "0 auto 28px",
+    maxWidth: 420,
+    color: "#666666",
+    fontSize: "0.92rem",
+    lineHeight: 1.5,
+  },
+
+  retryButton: {
+    width: "100%",
+    padding: "14px 24px",
+    border: "none",
+    borderRadius: 8,
+    backgroundColor: "#4F2683",
+    color: "#ffffff",
+    fontSize: "1rem",
+    fontWeight: 700,
+    cursor: "pointer",
+    boxShadow: "0 4px 10px rgba(79, 38, 131, 0.25)",
   },
 };
 
