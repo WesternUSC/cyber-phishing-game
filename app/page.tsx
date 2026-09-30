@@ -24,6 +24,8 @@ import { conflictSlides } from '@/components/slides-conflict';
 import { discSlides } from '@/components/slidesDisc';
 import { earlySlides } from '@/components/slides-early';
 import { scribesSlides } from '@/components/scribes-slides';
+import { CornerTab } from '@/components/corner-tab';
+import HelpChat from '@/components/help-chat';
 
 const emails = emailData.emails as Email[];
 const STORAGE_KEY = 'phishquest-run';
@@ -575,6 +577,45 @@ export default function HomePage() {
   const [openModule, setOpenModule] = useState<string | null>(null);
   const [isClosing, setIsClosing] = useState(false);
 
+  function goHome() {
+    // Reset UI state
+    setMadeSelection(false);
+    setSlidesSeen(false);
+    setSelectedSlides('eso');
+
+    // Reset module state
+    setModuleStarted({});
+    setCompletedDrive(false);
+    setCompletedTicketing(false);
+    setCompletedCalendar(false);
+    setCompletedTrello(false);
+    setCompletedRippling(false);
+    setCompletedSlack(false);
+
+    setClickedDrive(false);
+    setClickedSupport(false);
+    setClickedCalendar(false);
+    setClickedTrello(false);
+    setClickedRippling(false);
+
+    // Reset browser/app state
+    setisChromeClosed(true);
+    setisSlackClosed(true);
+    setOpenModule(null);
+    setOpenApp(null);
+    setActiveTab('phishquest');
+    setWesternPage('home');
+    setWesternPopup(null);
+
+    // Reset game persistence
+    //localStorage.removeItem(STORAGE_KEY);
+
+    // Reset reducer
+    dispatch({
+      type: 'RESET',
+      });
+  }
+
   const moduleCards = [
       {
         id: 'outlook',
@@ -1014,6 +1055,11 @@ export default function HomePage() {
   // ── Name entry screen ───────────────────────────────────────────────────────
   const nameContent = (
       <div className="flex h-screen w-full items-center justify-center overflow-hidden bg-gradient-to-br from-[#f6f8fc] via-white to-[#eee8f7] px-4 py-4 sm:px-6 sm:py-6">
+        <HelpChat
+          iconSrc="usc-logo.png"
+          recipientEmail="matthew.morelli@westernusc.ca"
+        />
+        
         <div className="w-full max-w-lg max-h-full">
 
           <div className="mb-6 text-center">
@@ -1363,6 +1409,10 @@ export default function HomePage() {
         backgroundSize: "100% 100%"
       }}
     >
+      <CornerTab
+        label="Home"
+        onHomeClick={goHome}
+      />
       <ModuleBookmarkRail />
       {/* Desktop area — sits above the taskbar */}
       <div className="flex h-[calc(100vh-3rem)] items-center justify-center p-5">

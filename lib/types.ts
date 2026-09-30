@@ -49,4 +49,5 @@ export type GameAction =
   | { type: 'START'; name: string; firstEmailId: string; runId: string }
   | { type: 'HYDRATE'; state: GameState }
   | { type: 'OPEN_EMAIL'; emailId: string }
-  | { type: 'SUBMIT_DECISION'; payload: { emailId: string; decision: 'phish' | 'safe'; correct: boolean; ms: number } };
+  | { type: 'SUBMIT_DECISION'; payload: { emailId: string; decision: 'phish' | 'safe'; correct: boolean; ms: number } }
+  | { type: 'RESET' };

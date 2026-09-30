@@ -1,4 +1,7 @@
+'use client';
+
 import React, { useState } from "react";
+import { CornerTab } from "./corner-tab";
 
 type TrainingOption = {
   id: string;
@@ -90,23 +93,6 @@ const defaultOptionsPolicies: TrainingOption[] = [
   },
 ];
 
-/*
- * ============================================================
- * PDF DOWNLOADS
- * ============================================================
- *
- * Put your PDF files in your public folder, for example:
- *
- * public/pdfs/acceptable-use-policy-1.pdf
- * public/pdfs/acceptable-use-policy-2.pdf
- *
- * Then reference them here as:
- *
- * /pdfs/acceptable-use-policy-1.pdf
- *
- * Each policy has two PDFs.
- */
-
 const policyDownloads: Record<string, [string, string]> = {
   "2": [
     "/pdfs/Acceptable Use Policy.pdf",
@@ -171,18 +157,6 @@ export default function Selection({
     (option) => option.id === selectedPolicyId
   );
 
-  /*
-   * ============================================================
-   * DOWNLOAD TWO PDFs
-   * ============================================================
-   *
-   * This downloads both PDFs associated with the policy.
-   *
-   * stopPropagation() is important here because the download
-   * button is inside the main policy button. Without it,
-   * clicking download would also select the policy.
-   */
-
   const handleDownload = async (
     event: React.MouseEvent<HTMLButtonElement>,
     policyId: string
@@ -206,10 +180,6 @@ export default function Selection({
       link.click();
       document.body.removeChild(link);
 
-      /*
-       * Small delay between downloads helps browsers handle
-       * multiple downloads more reliably.
-       */
       await new Promise((resolve) => setTimeout(resolve, 300));
     }
   };
@@ -290,6 +260,13 @@ export default function Selection({
 
   return (
     <div style={styles.page}>
+      <CornerTab
+        label="Home"
+        onHomeClick={() => {
+          setMadeSelection(false);
+          setPoliciesPage(false);
+        }}
+      />
       <div style={styles.header}>
         <div style={styles.titleContainer}>
           <h1 style={styles.title}>
@@ -316,14 +293,26 @@ export default function Selection({
               : option.id === selectedId;
 
             return (
-              <button
+              <div
                 key={option.id}
-                type="button"
+                role="button"
+                tabIndex={0}
                 onClick={() =>
                   policiesPage
                     ? setSelectedPolicyId(option.id)
                     : setSelectedId(option.id)
                 }
+                onKeyDown={(event) => {
+                  if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+
+                    if (policiesPage) {
+                      setSelectedPolicyId(option.id);
+                    } else {
+                      setSelectedId(option.id);
+                    }
+                  }
+                }}
                 style={{
                   ...styles.option,
                   backgroundColor: option.color,
@@ -336,18 +325,12 @@ export default function Selection({
                   {option.label}
                 </span>
 
-                {/* {isSelected && (
-                  <span style={styles.checkmark}>✓</span>
-                )} */}
-
                 {policiesPage && policyDownloads[option.id] && (
                   <button
                     type="button"
                     aria-label={`Download PDFs for ${option.label}`}
                     title={`Download PDFs for ${option.label}`}
-                    onClick={(event) =>
-                      handleDownload(event, option.id)
-                    }
+                    onClick={(event) => handleDownload(event, option.id)}
                     style={styles.downloadButton}
                   >
                     <svg
@@ -382,7 +365,7 @@ export default function Selection({
                     </svg>
                   </button>
                 )}
-              </button>
+              </div>
             );
           })}
         </div>
