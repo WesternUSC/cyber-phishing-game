@@ -13,6 +13,23 @@ interface MultipleChoiceQuestionProps {
   explanation: string;
   category: string;
 }
+interface DisplayOption extends QuestionOption {
+  displayLabel: string;
+}
+
+const shuffleOptions = (options: QuestionOption[]): DisplayOption[] => {
+  const shuffled = [...options];
+
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+
+  return shuffled.map((option, index) => ({
+    ...option,
+    displayLabel: String.fromCharCode(65 + index),
+  }));
+};
 
 // reset question progress:
 /*
@@ -81,6 +98,13 @@ const MultipleChoiceQuestion: React.FC<MultipleChoiceQuestionProps> = ({
 
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [score, setScore] = useState(0);
+
+  const [displayOptions, setDisplayOptions] = useState<DisplayOption[]>([]);
+
+  useEffect(() => {
+    setDisplayOptions(shuffleOptions(options));
+  }, [questionId, options]);
+
 
   // load only the current answer
   useEffect(() => {
@@ -223,7 +247,7 @@ const MultipleChoiceQuestion: React.FC<MultipleChoiceQuestionProps> = ({
             gap: "1rem",
           }}
         >
-          {options.map((option) => {
+          {displayOptions.map((option) => {
             const isSelected = selectedAnswer === option.label;
             const isCorrectOption = option.label === correctAnswer;
 
@@ -297,7 +321,7 @@ const MultipleChoiceQuestion: React.FC<MultipleChoiceQuestionProps> = ({
                     fontWeight: 700,
                   }}
                 >
-                  {option.label}
+                  {option.displayLabel}
                 </span>
 
                 <span>{option.text}</span>
