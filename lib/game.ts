@@ -10,14 +10,9 @@ export const initialGameState: GameState = {
 };
 
 export function gameReducer(state: GameState, action: GameAction): GameState {
-  // Support legacy or external RESET actions that aren't present in the GameAction union
-  // (avoid TypeScript error when action.type may be 'RESET')
-  if ((action as any).type === 'RESET') {
-    return initialGameState;
-  }
   switch (action.type) {
-    case 'HYDRATE':
-      return action.state;
+    case 'RESET':
+      return initialGameState;
 
     case 'HYDRATE':
       return action.state;

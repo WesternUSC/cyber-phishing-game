@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { CornerTab } from "./corner-tab";
+import HelpChat from "./help-chat";
 
 type TrainingOption = {
   id: string;
@@ -20,6 +21,7 @@ type SelectionProps = {
   scribe5: string;
   scribe6: string;
   scribe7: string;
+  userEmail: string;
   options?: TrainingOption[];
   policiesOptions?: TrainingOption[];
   setMadeSelection: React.Dispatch<React.SetStateAction<boolean>>;
@@ -136,6 +138,7 @@ export default function Selection({
   scribe5,
   scribe6,
   scribe7,
+  userEmail,
   options = defaultOptions,
   policiesOptions = defaultOptionsPolicies,
   setMadeSelection,
@@ -266,6 +269,10 @@ export default function Selection({
           setMadeSelection(false);
           setPoliciesPage(false);
         }}
+      />
+      <HelpChat
+        iconSrc="usc-logo.png"
+        recipientEmail={userEmail}
       />
       <div style={styles.header}>
         <div style={styles.titleContainer}>

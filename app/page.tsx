@@ -297,6 +297,7 @@ export default function HomePage() {
   const [nameInput, setNameInput] = useState('');
   const [title, setTitle] = useState('');
   const [supervisor, setSupervisor] = useState('');
+  const [userEmail, setUserEmail] = useState('');
   const [scribe1, setscribe1] = useState('');
   const [scribe2, setscribe2] = useState('');
   const [scribe3, setscribe3] = useState('');
@@ -509,6 +510,7 @@ export default function HomePage() {
     setscribe6(player.scribe6);
     setscribe7(player.scribe7);
     setLoginCode(player.loginCode);
+    setUserEmail(player.email);
 
     setNameError(false);
     setNameEntered(true);
@@ -1055,10 +1057,6 @@ export default function HomePage() {
   // ── Name entry screen ───────────────────────────────────────────────────────
   const nameContent = (
       <div className="flex h-screen w-full items-center justify-center overflow-hidden bg-gradient-to-br from-[#f6f8fc] via-white to-[#eee8f7] px-4 py-4 sm:px-6 sm:py-6">
-        <HelpChat
-          iconSrc="usc-logo.png"
-          recipientEmail="matthew.morelli@westernusc.ca"
-        />
         
         <div className="w-full max-w-lg max-h-full">
 
@@ -1284,6 +1282,7 @@ export default function HomePage() {
     scribe5={scribe5.trim()} 
     scribe6={scribe6.trim()} 
     scribe7={scribe7.trim()} 
+    userEmail={userEmail}
     setMadeSelection={setMadeSelection} 
     setSelectedSlides={setSelectedSlides} />
     );
@@ -1412,6 +1411,11 @@ export default function HomePage() {
       <CornerTab
         label="Home"
         onHomeClick={goHome}
+      />
+      <HelpChat
+        iconSrc="usc-logo.png"
+        recipientEmail={userEmail}
+        isDesktop={true}
       />
       <ModuleBookmarkRail />
       {/* Desktop area — sits above the taskbar */}

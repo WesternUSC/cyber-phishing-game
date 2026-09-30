@@ -6,6 +6,7 @@ type HelpChatProps = {
   title?: string;
   placeholder?: string;
   apiEndpoint?: string;
+  isDesktop?: boolean;
 };
 
 export default function HelpChat({
@@ -14,6 +15,7 @@ export default function HelpChat({
   title = "How can we help?",
   placeholder = "Type your message...",
   apiEndpoint = "/api/help",
+  isDesktop = false
 }: HelpChatProps) {
   const [open, setOpen] = useState(false);
   const [message, setMessage] = useState("");
@@ -31,37 +33,37 @@ export default function HelpChat({
     setSent(false);
 
     try {
-        const response = await fetch(apiEndpoint, {
+      const response = await fetch(apiEndpoint, {
         method: "POST",
         headers: {
-            "Content-Type": "application/json",
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            message: message.trim(),
-            recipientEmail,
+          message: message.trim(),
+          recipientEmail,
         }),
-        });
+      });
 
-        const result = await response.json();
+      const result = await response.json();
 
-        if (!response.ok) {
+      if (!response.ok) {
         throw new Error(result.error || "Failed to send message");
-        }
+      }
 
-        setMessage("");
-        setSent(true);
+      setMessage("");
+      setSent(true);
     } catch (err) {
-        console.error("Help chat error:", err);
+      console.error("Help chat error:", err);
 
-        setError(
+      setError(
         err instanceof Error
-            ? err.message
-            : "Sorry, your message couldn't be sent."
-        );
+          ? err.message
+          : "Sorry, your message couldn't be sent."
+      );
     } finally {
-        setSending(false);
+      setSending(false);
     }
-    }
+  }
 
   return (
     <div className="help-chat">
@@ -120,7 +122,9 @@ export default function HelpChat({
       {!open && (
         <button
           type="button"
-          className="help-chat__trigger"
+          className={`help-chat__trigger ${
+            isDesktop ? "help-chat__trigger--desktop" : ""
+          }`}
           onClick={() => setOpen(true)}
           aria-label="Open help chat"
         >
@@ -153,12 +157,23 @@ export default function HelpChat({
           width: 56px;
           height: 56px;
           object-fit: contain;
+          transform: scale(0.7);
         }
 
         .help-chat__trigger span {
           font-size: 12px;
           font-weight: 700;
           color: #222;
+        }
+
+        /* Desktop-specific styling */
+        .help-chat__trigger--desktop {
+          transform: translateY(-35px);
+        }
+
+        .help-chat__trigger--desktop span {
+          color: white;
+          font-weight: 700;
         }
 
         .help-chat__box {
