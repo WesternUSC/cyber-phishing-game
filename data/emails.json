@@ -28,7 +28,8 @@
         "Creates urgency by mentioning being in a meeting",
         "Legitimate staff and IT will never ask for passwords directly"
       ],
-      "rawHeaders": "Return-Path: <Jaclyn@westernusc.ca>\nSPF: PASS\nDKIM: PASS\nX-Spam-Score: 2.1"
+      "rawHeaders": "Return-Path: <Jaclyn@westernusc.ca>\nSPF: PASS\nDKIM: PASS\nX-Spam-Score: 2.1",
+      "signature": "Test Name (pronouns)~Job Title | University Student's Council~T: 555-0815 x55555 | E: test@westernusc.ca~westernusc.ca | @westernusc"
     },
     {
       "id": "email-2",
@@ -466,7 +467,7 @@
     {
       "id": "email-13",
       "senderName": "Aidan Callender",
-      "senderEmail": "aidan.callender@westernusc.com",
+      "senderEmail": "aidan.callender@westernusc.ca",
       "senderAvatar": "Aidan.png",
       "subject": "Quick sync tomorrow at 2pm? 🍕",
       "preview": "Want to grab lunch and run through the Q1 roadmap before the all-hands.",

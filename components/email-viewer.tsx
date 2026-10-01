@@ -150,6 +150,30 @@ export function EmailViewer({ email, isReviewed, onSubmit, onPhishLinkClicked, i
             </div>
           )}
 
+          {/* Email signature */}
+          {email.signature && (
+            <div className="mt-6 text-sm leading-5">
+              {email.signature.split('~').map((line, index) => {
+                const trimmedLine = line.trim();
+
+                if (!trimmedLine) return null;
+
+                return (
+                  <div
+                    key={index}
+                    className={cn(
+                      index === 0 && 'font-bold text-[#4f2584]',
+                      index === 1 && 'font-bold text-gray-900',
+                      index >= 2 && 'text-gray-700',
+                    )}
+                  >
+                    {trimmedLine}
+                  </div>
+                );
+              })}
+            </div>
+          )}
+
           {/* Raw headers
           {email.rawHeaders && (
             <div className="mt-4">

@@ -28,6 +28,7 @@ export interface Email {
   evidence: string[];
   senderAvatar?: string;
   rawHeaders?: string;
+  signature?: string;
 }
 
 export interface Decision {
