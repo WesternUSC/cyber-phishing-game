@@ -679,6 +679,10 @@ export default function HomePage() {
 
       setIsClosing(false);
       setOpenModule(moduleId);
+
+      setTimeout(() => {
+        closeCard()
+      }, 5000);
     }
 
     function closeCard() {
@@ -811,7 +815,7 @@ export default function HomePage() {
                 max-h-[calc(100vh-32px)]
                 overflow-y-auto
                 overflow-x-hidden
-                rounded-l-2xl
+                rounded-2xl
                 bg-white
                 shadow-[-12px_15px_40px_rgba(0,0,0,0.30)]
                 ring-1

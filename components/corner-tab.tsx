@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 type CornerTabProps = {
   label?: string;
@@ -11,12 +11,13 @@ export function CornerTab({
   currentPage = "I.S. Onboarding",
   onHomeClick,
 }: CornerTabProps) {
+  const [isOpen, setIsOpen] = useState(false);
+
   const handleHomeClick = () => {
     console.log("Home clicked");
 
     if (onHomeClick) {
       onHomeClick();
-      return;
     }
   };
 
@@ -37,50 +38,94 @@ export function CornerTab({
   };
 
   return (
-    <div className="fixed top-0 left-0 z-50 group">
-      <div
-        className="
+    <div
+      className="fixed top-0 left-0 z-50 w-32"
+      onMouseEnter={() => setIsOpen(true)}
+      onMouseLeave={() => setIsOpen(false)}
+    >
+      <button
+        type="button"
+        onClick={handleHomeClick}
+        className={`
           relative
-          flex flex-col
-          items-stretch
+          z-30
+          flex
+          h-9
+          w-full
+          items-center
+          justify-start
+          px-5
           bg-[#4F2683]
           text-white
+          text-xs
+          font-semibold
+          tracking-wide
+          uppercase
           shadow-lg
-          rounded-br-xl
-          overflow-hidden
           cursor-pointer
+          hover:bg-[#201436]
+          transition-all
+          focus:outline-none
+          focus:ring-2
+          focus:ring-white
+          focus:ring-inset
+          ${isOpen ? "rounded-br-none" : "rounded-br-xl"}
+        `}
+      >
+        Home
+      </button>
 
-          transform
-          -translate-y-[calc(100%-32px)]
-          group-hover:translate-y-0
-
-          transition-transform
+      <div
+        className={`
+          absolute
+          top-9
+          left-0
+          z-20
+          w-full
+          overflow-hidden
+          rounded-br-xl
+          bg-[#4F2683]
+          text-white
+          shadow-xl
+          transition-all
           duration-300
           ease-out
-        "
+          ${
+            isOpen
+              ? "translate-y-0 opacity-100"
+              : "-translate-y-full opacity-0 pointer-events-none"
+          }
+        `}
       >
         <div
           className="
             flex
+            min-h-14
             items-center
-            justify-center
             px-5
-            py-4
-            font-medium
+            py-3
             border-b
             border-white/20
+            bg-[#3F1E69]
+            text-sm
+            font-semibold
           "
         >
-          {currentPage}
+          <span className="truncate">{currentPage}</span>
         </div>
 
         <button
           type="button"
           onClick={handleHomeClick}
           className="
+            flex
+            min-h-12
+            w-full
+            items-center
             px-5
-            py-3
             text-left
+            text-sm
+            font-medium
             hover:bg-[#201436]
             transition-colors
             focus:outline-none
@@ -96,9 +141,14 @@ export function CornerTab({
           type="button"
           onClick={handleInformationSystemsOnboardingClick}
           className="
+            flex
+            min-h-12
+            w-full
+            items-center
             px-5
-            py-3
             text-left
+            text-sm
+            font-medium
             hover:bg-[#201436]
             transition-colors
             focus:outline-none
@@ -114,9 +164,14 @@ export function CornerTab({
           type="button"
           onClick={handlePoliciesAndProceduresClick}
           className="
+            flex
+            min-h-12
+            w-full
+            items-center
             px-5
-            py-3
             text-left
+            text-sm
+            font-medium
             hover:bg-[#201436]
             transition-colors
             focus:outline-none
@@ -132,9 +187,14 @@ export function CornerTab({
           type="button"
           onClick={handleJobTrainingClick}
           className="
+            flex
+            min-h-12
+            w-full
+            items-center
             px-5
-            py-3
             text-left
+            text-sm
+            font-medium
             hover:bg-[#201436]
             transition-colors
             focus:outline-none
@@ -150,9 +210,14 @@ export function CornerTab({
           type="button"
           onClick={handleUSCCultureClick}
           className="
+            flex
+            min-h-12
+            w-full
+            items-center
             px-5
-            py-3
             text-left
+            text-sm
+            font-medium
             hover:bg-[#201436]
             transition-colors
             focus:outline-none
@@ -163,22 +228,6 @@ export function CornerTab({
         >
           USC Culture
         </button>
-
-        <div
-          className="
-            h-8
-            px-4
-            flex
-            items-center
-            justify-center
-            text-xs
-            font-semibold
-            tracking-wide
-            uppercase
-          "
-        >
-          Home
-        </div>
       </div>
     </div>
   );

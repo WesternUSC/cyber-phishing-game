@@ -1,12 +1,12 @@
 'use client';
 
 import React, { useState, useEffect } from "react";
+import { CornerTab } from '@/components/corner-tab';
 
 interface Slide {
   title?: string;
   content: React.ReactNode;
 
-  // Quiz configuration
   isMultipleChoice?: boolean;
   quizScoreKey?: string;
   quizAnswersKey?: string;
@@ -50,10 +50,8 @@ const Slideshow: React.FC<SlideshowProps> = ({
   const [isLoaded, setIsLoaded] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
-  // Quiz completion modal
   const [showQuizModal, setShowQuizModal] = useState(false);
 
-  // Load saved progress
   useEffect(() => {
     const saved = localStorage.getItem(STORAGE_KEY);
 
@@ -80,7 +78,6 @@ const Slideshow: React.FC<SlideshowProps> = ({
     setIsLoaded(true);
   }, [startSlide]);
 
-  // Save slideshow progress
   useEffect(() => {
     if (!isLoaded) return;
 
@@ -116,12 +113,6 @@ const Slideshow: React.FC<SlideshowProps> = ({
 
     return Date.now() - slideStartedAt >= WAIT_TIME;
   };
-
-  /*
-   * ---------------------------------------------------------
-   * Keyboard navigation
-   * ---------------------------------------------------------
-   */
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -195,12 +186,6 @@ const Slideshow: React.FC<SlideshowProps> = ({
     showQuizModal
   ]);
 
-  /*
-   * ---------------------------------------------------------
-   * Slide navigation
-   * ---------------------------------------------------------
-   */
-
   const changeSlide = (newIndex: number) => {
     setIsTransitioning(true);
 
@@ -234,12 +219,6 @@ const Slideshow: React.FC<SlideshowProps> = ({
     changeSlide(current - 1);
   };
 
-  /*
-   * ---------------------------------------------------------
-   * Quiz handling
-   * ---------------------------------------------------------
-   */
-
   const getQuizSlides = () => {
     return slides
       .map((slide, index) => ({
@@ -262,10 +241,6 @@ const Slideshow: React.FC<SlideshowProps> = ({
       };
     }
 
-    /*
-     * All quiz slides in the same quiz should use the same
-     * score/answers keys.
-     */
     const firstQuizSlide = quizSlides[0].slide;
 
     const scoreKey = firstQuizSlide.quizScoreKey;
@@ -302,15 +277,8 @@ const Slideshow: React.FC<SlideshowProps> = ({
       }
     }
 
-    /*
-     * Number of questions is based on the number of quiz slides.
-     */
     const totalQuestions = quizSlides.length;
 
-    /*
-     * If you have answered fewer questions than exist,
-     * don't allow completion yet.
-     */
     const answeredQuestions = Object.keys(answers).length;
 
     const percentage =
@@ -345,14 +313,8 @@ const Slideshow: React.FC<SlideshowProps> = ({
       localStorage.removeItem(quiz.answersKey);
     }
 
-    /*
-     * Reset quiz-related state.
-     */
     setShowQuizModal(false);
 
-    /*
-     * Go to the first multiple-choice question.
-     */
     setIsTransitioning(true);
 
     setTimeout(() => {
@@ -362,10 +324,6 @@ const Slideshow: React.FC<SlideshowProps> = ({
       setSeenSlides((previous) => {
         const updated = new Set(previous);
 
-        /*
-         * Keep previous slide history, but make sure
-         * the first quiz slide is marked as seen.
-         */
         updated.add(quiz.firstQuizSlideIndex);
 
         return updated;
@@ -374,12 +332,6 @@ const Slideshow: React.FC<SlideshowProps> = ({
       setIsTransitioning(false);
     }, 300);
   };
-
-  /*
-   * ---------------------------------------------------------
-   * Next button
-   * ---------------------------------------------------------
-   */
 
   const next = () => {
     console.log("clicked next");
@@ -394,7 +346,6 @@ const Slideshow: React.FC<SlideshowProps> = ({
       return;
     }
 
-    // Special interactive slide logic
     const isIncidentSlide =
       slides[current].title === INCIDENT_SLIDE_TITLE;
 
@@ -419,7 +370,6 @@ const Slideshow: React.FC<SlideshowProps> = ({
       return;
     }
 
-    // Check wait time
     if (!hasWaitedLongEnough()) {
       window.alert(
         "You must wait at least one minute on this slide before proceeding."
@@ -427,16 +377,9 @@ const Slideshow: React.FC<SlideshowProps> = ({
       return;
     }
 
-    /*
-    * -------------------------------------------------------
-    * KNOWLEDGE CHECK
-    * -------------------------------------------------------
-    */
-
     const currentSlide = slides[current];
 
     if (currentSlide.isMultipleChoice) {
-      // Find all multiple-choice slides
       const multipleChoiceSlides = slides
         .map((slide, index) => ({
           slide,
@@ -444,7 +387,6 @@ const Slideshow: React.FC<SlideshowProps> = ({
         }))
         .filter(({ slide }) => slide.isMultipleChoice);
 
-      // Is this the final multiple-choice question?
       const lastMultipleChoiceSlide =
         multipleChoiceSlides[multipleChoiceSlides.length - 1];
 
@@ -487,7 +429,6 @@ const Slideshow: React.FC<SlideshowProps> = ({
             answers
           });
 
-          // NOT 100% -> show popup
           if (percentage < 100) {
             setShowQuizModal(true);
             return;
@@ -495,12 +436,6 @@ const Slideshow: React.FC<SlideshowProps> = ({
         }
       }
     }
-
-    /*
-    * -------------------------------------------------------
-    * NORMAL SLIDE NAVIGATION
-    * -------------------------------------------------------
-    */
 
     if (current === slides.length - 2) {
       const allSlidesSeen = seenSlides.size === slides.length;
@@ -533,12 +468,6 @@ const Slideshow: React.FC<SlideshowProps> = ({
     changeSlide(current + 1);
   };
 
-  /*
-   * ---------------------------------------------------------
-   * Progress
-   * ---------------------------------------------------------
-   */
-
   const progress =
     slides.length > 1
       ? (current / (slides.length - 1)) * 100
@@ -548,18 +477,16 @@ const Slideshow: React.FC<SlideshowProps> = ({
     return null;
   }
 
-  /*
-   * ---------------------------------------------------------
-   * Render
-   * ---------------------------------------------------------
-   */
-
   return (
     <div style={styles.container}>
 
-      <div style={styles.header}>
+      <CornerTab
+        currentPage="Slides"
+      />
+
+      {/* <div style={styles.header}>
         {playerName}
-      </div>
+      </div> */}
 
       <div
         style={{
@@ -629,15 +556,10 @@ const Slideshow: React.FC<SlideshowProps> = ({
 
       </div>
 
-      {/* =====================================================
-          QUIZ FAILURE MODAL
-          ===================================================== */}
-
       {showQuizModal && (
         <div style={styles.modalOverlay}>
           <div style={styles.modal}>
 
-            {/* Western accent */}
             <div style={styles.modalTopBar} />
 
             <div style={styles.modalContent}>
@@ -727,12 +649,6 @@ const styles: Record<string, React.CSSProperties> = {
     borderRadius: 999,
     transition: "width 0.3s ease",
   },
-
-  /*
-   * ---------------------------------------------------------
-   * Western University themed modal
-   * ---------------------------------------------------------
-   */
 
   modalOverlay: {
     position: "fixed",
