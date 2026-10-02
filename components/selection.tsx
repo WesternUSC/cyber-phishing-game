@@ -266,7 +266,7 @@ export default function Selection({
   return (
     <div style={styles.page}>
       <CornerTab
-        label="Home"
+        currentPage="Modules"
         onHomeClick={() => {
           setMadeSelection(false);
           setPoliciesPage(false);

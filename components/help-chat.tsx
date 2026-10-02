@@ -84,42 +84,12 @@ export default function HelpChat({
 
           <div className="help-chat__body">
             <iframe
-              src="https://westernusc.freshservice.com/support/tickets/new"
-              title="Help Chat"
-              className="h-full w-full border-0"
+              className="freshwidget-embedded-form"
+              title="Submit a support ticket"
+              src="https://westernusc.freshservice.com/widgets/feedback_widget/new?&widgetType=embedded&submitThanks=Thank%20you%20for%20submitting%20the%20ticket.&screenshot=no"
+              scrolling="no"
+              frameBorder="0"
             />
-            {/* <p>
-              Send us a message and we'll get back to you by email.
-            </p>
-
-            <form onSubmit={handleSubmit}>
-              <textarea
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                placeholder={placeholder}
-                rows={5}
-                disabled={sending}
-              />
-
-              {sent && (
-                <div className="help-chat__success">
-                  Message sent!
-                </div>
-              )}
-
-              {error && (
-                <div className="help-chat__error">
-                  {error}
-                </div>
-              )}
-
-              <button
-                type="submit"
-                disabled={!message.trim() || sending}
-              >
-                {sending ? "Sending..." : "Send Message"}
-              </button>
-            </form> */}
           </div>
         </div>
       )}
@@ -171,7 +141,6 @@ export default function HelpChat({
           color: #222;
         }
 
-        /* Desktop-specific styling */
         .help-chat__trigger--desktop {
           transform: translateY(-35px);
         }
@@ -182,7 +151,7 @@ export default function HelpChat({
         }
 
         .help-chat__box {
-          width: 340px;
+          width: 400px;
           max-width: calc(100vw - 40px);
           background: white;
           border-radius: 12px;
@@ -207,55 +176,21 @@ export default function HelpChat({
           font-size: 24px;
           cursor: pointer;
           line-height: 1;
+          padding: 0;
         }
 
         .help-chat__body {
-          padding: 16px;
+          padding: 0;
+          height: 500px;
+          overflow: hidden;
+          background: white;
         }
 
-        .help-chat__body p {
-          margin: 0 0 12px;
-          font-size: 14px;
-          color: #555;
-        }
-
-        .help-chat textarea {
+        .freshwidget-embedded-form {
+          display: block;
           width: 100%;
-          box-sizing: border-box;
-          resize: vertical;
-          padding: 10px;
-          border: 1px solid #ccc;
-          border-radius: 6px;
-          font: inherit;
-          margin-bottom: 10px;
-        }
-
-        .help-chat form > button {
-          width: 100%;
-          padding: 11px;
+          height: 500px;
           border: 0;
-          border-radius: 6px;
-          background: #4f2584;
-          color: white;
-          font-weight: 600;
-          cursor: pointer;
-        }
-
-        .help-chat form > button:disabled {
-          opacity: 0.5;
-          cursor: not-allowed;
-        }
-
-        .help-chat__success {
-          color: #16803c;
-          font-size: 13px;
-          margin-bottom: 10px;
-        }
-
-        .help-chat__error {
-          color: #c62828;
-          font-size: 13px;
-          margin-bottom: 10px;
         }
 
         @media (max-width: 480px) {
@@ -267,6 +202,14 @@ export default function HelpChat({
           .help-chat__box {
             width: calc(100vw - 24px);
             max-width: none;
+          }
+
+          .help-chat__body {
+            height: 500px;
+          }
+
+          .freshwidget-embedded-form {
+            height: 500px;
           }
         }
       `}</style>

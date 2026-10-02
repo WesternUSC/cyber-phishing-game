@@ -1413,7 +1413,7 @@ export default function HomePage() {
       }}
     >
       <CornerTab
-        label="Home"
+        currentPage="I.S. Onboarding"
         onHomeClick={goHome}
       />
       <HelpChat
