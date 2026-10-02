@@ -83,7 +83,12 @@ export default function HelpChat({
           </div>
 
           <div className="help-chat__body">
-            <p>
+            <iframe
+              src="https://westernusc.freshservice.com/support/tickets/new"
+              title="Help Chat"
+              className="h-full w-full border-0"
+            />
+            {/* <p>
               Send us a message and we'll get back to you by email.
             </p>
 
@@ -114,7 +119,7 @@ export default function HelpChat({
               >
                 {sending ? "Sending..." : "Send Message"}
               </button>
-            </form>
+            </form> */}
           </div>
         </div>
       )}

@@ -2,18 +2,38 @@ import React from "react";
 
 type CornerTabProps = {
   label?: string;
+  currentPage?: string;
   onHomeClick?: () => void;
 };
 
 export function CornerTab({
   label = "Menu",
+  currentPage = "I.S. Onboarding",
   onHomeClick,
 }: CornerTabProps) {
   const handleHomeClick = () => {
+    console.log("Home clicked");
+
     if (onHomeClick) {
       onHomeClick();
       return;
     }
+  };
+
+  const handleInformationSystemsOnboardingClick = () => {
+    console.log("Information Systems Onboarding clicked");
+  };
+
+  const handlePoliciesAndProceduresClick = () => {
+    console.log("Policies and Procedures clicked");
+  };
+
+  const handleJobTrainingClick = () => {
+    console.log("Job Training clicked");
+  };
+
+  const handleUSCCultureClick = () => {
+    console.log("USC Culture clicked");
   };
 
   return (
@@ -22,7 +42,7 @@ export function CornerTab({
         className="
           relative
           flex flex-col
-          items-center
+          items-stretch
           bg-[#4F2683]
           text-white
           shadow-lg
@@ -39,16 +59,28 @@ export function CornerTab({
           ease-out
         "
       >
-        <button
-          type="button"
-          onClick={handleHomeClick}
+        <div
           className="
             flex
             items-center
             justify-center
-            gap-2
             px-5
             py-4
+            font-medium
+            border-b
+            border-white/20
+          "
+        >
+          {currentPage}
+        </div>
+
+        <button
+          type="button"
+          onClick={handleHomeClick}
+          className="
+            px-5
+            py-3
+            text-left
             hover:bg-[#201436]
             transition-colors
             focus:outline-none
@@ -56,34 +88,80 @@ export function CornerTab({
             focus:ring-white
             focus:ring-inset
           "
-          aria-label="Go home"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            className="w-5 h-5"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M3 10.5 12 3l9 7.5"
-            />
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M5 9.5V21h14V9.5"
-            />
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M9 21v-6h6v6"
-            />
-          </svg>
+          Home
+        </button>
 
-          <span className="font-medium">{label}</span>
+        <button
+          type="button"
+          onClick={handleInformationSystemsOnboardingClick}
+          className="
+            px-5
+            py-3
+            text-left
+            hover:bg-[#201436]
+            transition-colors
+            focus:outline-none
+            focus:ring-2
+            focus:ring-white
+            focus:ring-inset
+          "
+        >
+          I.S. Onboarding
+        </button>
+
+        <button
+          type="button"
+          onClick={handlePoliciesAndProceduresClick}
+          className="
+            px-5
+            py-3
+            text-left
+            hover:bg-[#201436]
+            transition-colors
+            focus:outline-none
+            focus:ring-2
+            focus:ring-white
+            focus:ring-inset
+          "
+        >
+          Policies
+        </button>
+
+        <button
+          type="button"
+          onClick={handleJobTrainingClick}
+          className="
+            px-5
+            py-3
+            text-left
+            hover:bg-[#201436]
+            transition-colors
+            focus:outline-none
+            focus:ring-2
+            focus:ring-white
+            focus:ring-inset
+          "
+        >
+          Job Training
+        </button>
+
+        <button
+          type="button"
+          onClick={handleUSCCultureClick}
+          className="
+            px-5
+            py-3
+            text-left
+            hover:bg-[#201436]
+            transition-colors
+            focus:outline-none
+            focus:ring-2
+            focus:ring-white
+            focus:ring-inset
+          "
+        >
+          USC Culture
         </button>
 
         <div
@@ -99,7 +177,7 @@ export function CornerTab({
             uppercase
           "
         >
-          {label}
+          Home
         </div>
       </div>
     </div>
