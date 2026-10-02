@@ -25,6 +25,8 @@ type SelectionProps = {
   options?: TrainingOption[];
   policiesOptions?: TrainingOption[];
   setMadeSelection: React.Dispatch<React.SetStateAction<boolean>>;
+  seenCertificate: boolean;
+  resetGame?: (shouldReload?: boolean) => void;
   setSelectedSlides: React.Dispatch<
     React.SetStateAction<
       | "eso"
@@ -143,6 +145,8 @@ export default function Selection({
   policiesOptions = defaultOptionsPolicies,
   setMadeSelection,
   setSelectedSlides,
+  seenCertificate,
+  resetGame,
 }: SelectionProps) {
   const [selectedId, setSelectedId] = useState(options[0]?.id ?? "");
 
@@ -151,6 +155,8 @@ export default function Selection({
   );
 
   const [policiesPage, setPoliciesPage] = useState(false);
+
+  const [showCompletedPopup, setShowCompletedPopup] = useState(false);
 
   const selectedOption = options.find(
     (option) => option.id === selectedId
@@ -187,7 +193,27 @@ export default function Selection({
     }
   };
 
+  const handleRestartModule = () => {
+    console.log("Restart Information Systems Onboarding module");
+
+    setSelectedSlides("eso");
+    setMadeSelection(true);
+
+    resetGame?.(false);
+
+    setShowCompletedPopup(false);
+  };
+
+  const handleDownloadCertificate = () => {
+    console.log("Download certificate");
+  };
+
   const handleStart = () => {
+    if (!policiesPage && selectedId === "1" && seenCertificate) {
+      setShowCompletedPopup(true);
+      return;
+    }
+
     if (!policiesPage) {
       switch (selectedId) {
         case "1":
@@ -196,7 +222,6 @@ export default function Selection({
           break;
 
         case "2":
-          //setPoliciesPage(true);
           setSelectedSlides("policies");
           setMadeSelection(true);
           break;
@@ -272,10 +297,12 @@ export default function Selection({
           setPoliciesPage(false);
         }}
       />
+
       <HelpChat
         iconSrc="usc-logo.png"
         recipientEmail={userEmail}
       />
+
       <div style={styles.header}>
         <div style={styles.titleContainer}>
           <h1 style={styles.title}>
@@ -301,6 +328,11 @@ export default function Selection({
               ? option.id === selectedPolicyId
               : option.id === selectedId;
 
+            const isCompleted =
+              !policiesPage &&
+              option.id === "1" &&
+              seenCertificate;
+
             return (
               <div
                 key={option.id}
@@ -324,7 +356,11 @@ export default function Selection({
                 }}
                 style={{
                   ...styles.option,
-                  backgroundColor: option.color,
+
+                  backgroundColor: isCompleted
+                    ? "#2E7D32"
+                    : option.color,
+
                   ...(isSelected
                     ? styles.optionSelected
                     : styles.optionUnselected),
@@ -334,12 +370,24 @@ export default function Selection({
                   {option.label}
                 </span>
 
+                {isCompleted && (
+                  <span
+                    style={styles.completedCheckmark}
+                    aria-label="Module completed"
+                    title="Module completed"
+                  >
+                    ✓
+                  </span>
+                )}
+
                 {policiesPage && policyDownloads[option.id] && (
                   <button
                     type="button"
                     aria-label={`Download PDFs for ${option.label}`}
                     title={`Download PDFs for ${option.label}`}
-                    onClick={(event) => handleDownload(event, option.id)}
+                    onClick={(event) =>
+                      handleDownload(event, option.id)
+                    }
                     style={styles.downloadButton}
                   >
                     <svg
@@ -429,6 +477,77 @@ export default function Selection({
           </button>
         )}
       </div>
+
+      {showCompletedPopup && (
+        <div
+          style={styles.modalOverlay}
+          role="presentation"
+          onClick={() => setShowCompletedPopup(false)}
+        >
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="completed-module-title"
+            style={styles.modal}
+            onClick={(event) => event.stopPropagation()}
+          >
+            <div style={styles.modalAccent} />
+
+            <div style={styles.modalIcon}>
+              ✓
+            </div>
+
+            <h2
+              id="completed-module-title"
+              style={styles.modalTitle}
+            >
+              Module Completed!
+            </h2>
+
+            <p style={styles.modalText}>
+              You have already completed the Information Systems
+              Onboarding module.
+            </p>
+
+            <p style={styles.modalSubtext}>
+              You can restart the module or download your completion
+              certificate.
+            </p>
+
+            <div style={styles.modalButtons}>
+              <button
+                type="button"
+                onClick={handleRestartModule}
+                style={{
+                  ...styles.modalButton,
+                  ...styles.restartButton,
+                }}
+              >
+                Restart Module
+              </button>
+
+              <button
+                type="button"
+                onClick={handleDownloadCertificate}
+                style={{
+                  ...styles.modalButton,
+                  ...styles.certificateButton,
+                }}
+              >
+                Download Certificate
+              </button>
+            </div>
+
+            <button
+              type="button"
+              onClick={() => setShowCompletedPopup(false)}
+              style={styles.closeButton}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -558,6 +677,23 @@ const styles: Record<string, React.CSSProperties> = {
     minWidth: 0,
   },
 
+  completedCheckmark: {
+    width: "34px",
+    height: "34px",
+    borderRadius: "50%",
+    background: "rgba(255, 255, 255, 0.20)",
+    border: "2px solid rgba(255, 255, 255, 0.9)",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    fontSize: "22px",
+    fontWeight: 900,
+    color: "white",
+    flexShrink: 0,
+    marginLeft: "16px",
+    boxSizing: "border-box",
+  },
+
   downloadButton: {
     width: "40px",
     height: "40px",
@@ -640,5 +776,128 @@ const styles: Record<string, React.CSSProperties> = {
   arrowLeft: {
     marginRight: "12px",
     fontSize: "1.5rem",
+  },
+
+  modalOverlay: {
+    position: "fixed",
+    inset: 0,
+    zIndex: 2000,
+    background: "rgba(17, 24, 39, 0.60)",
+    backdropFilter: "blur(5px)",
+    WebkitBackdropFilter: "blur(5px)",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: "24px",
+    boxSizing: "border-box",
+  },
+
+  modal: {
+    position: "relative",
+    width: "100%",
+    maxWidth: "500px",
+    background: "#ffffff",
+    borderRadius: "28px",
+    padding: "42px 36px 32px",
+    boxSizing: "border-box",
+    boxShadow: "0 30px 80px rgba(0, 0, 0, 0.30)",
+    textAlign: "center",
+    overflow: "hidden",
+  },
+
+  modalAccent: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    height: "8px",
+    background:
+      "linear-gradient(90deg, #4f2683 0%, #6f42a1 55%, #c69214 100%)",
+  },
+
+  modalIcon: {
+    width: "72px",
+    height: "72px",
+    margin: "0 auto 20px",
+    borderRadius: "50%",
+    background: "#4f2683",
+    color: "#ffffff",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    fontSize: "42px",
+    fontWeight: 900,
+    boxShadow: "0 10px 24px rgba(79, 38, 131, 0.30)",
+  },
+
+  modalTitle: {
+    margin: "0 0 14px",
+    color: "#4f2683",
+    fontSize: "2rem",
+    lineHeight: 1.15,
+    fontWeight: 800,
+    letterSpacing: "-0.025em",
+  },
+
+  modalText: {
+    margin: "0 auto 10px",
+    maxWidth: "400px",
+    color: "#1f2937",
+    fontSize: "1.05rem",
+    lineHeight: 1.6,
+    fontWeight: 600,
+  },
+
+  modalSubtext: {
+    margin: "0 auto 28px",
+    maxWidth: "400px",
+    color: "#6b7280",
+    fontSize: "0.95rem",
+    lineHeight: 1.5,
+  },
+
+  modalButtons: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "12px",
+    width: "100%",
+  },
+
+  modalButton: {
+    width: "100%",
+    minHeight: "56px",
+    borderRadius: "14px",
+    padding: "14px 20px",
+    fontSize: "1rem",
+    fontWeight: 800,
+    cursor: "pointer",
+    transition:
+      "transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease",
+    boxSizing: "border-box",
+  },
+
+  restartButton: {
+    background: "#4f2683",
+    color: "#ffffff",
+    border: "2px solid #4f2683",
+    boxShadow: "0 8px 18px rgba(79, 38, 131, 0.22)",
+  },
+
+  certificateButton: {
+    background: "#c69214",
+    color: "#ffffff",
+    border: "2px solid #c69214",
+    boxShadow: "0 8px 18px rgba(198, 146, 20, 0.22)",
+  },
+
+  closeButton: {
+    marginTop: "18px",
+    padding: "8px 16px",
+    border: "none",
+    background: "transparent",
+    color: "#6b7280",
+    fontSize: "0.9rem",
+    fontWeight: 700,
+    cursor: "pointer",
   },
 };

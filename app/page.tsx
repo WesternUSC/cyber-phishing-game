@@ -389,10 +389,13 @@ export default function HomePage() {
     return () => clearInterval(id);
   }, []);
 
-  function resetGame() {
+  function resetGame(shouldReload?: boolean) {
     localStorage.clear();
     sessionStorage.clear();
-    window.location.reload();
+
+    if (shouldReload) {
+      window.location.reload();
+    }
   }
 
   // Reset when pressing "R" key
@@ -409,7 +412,7 @@ export default function HomePage() {
       }
 
       if (event.key.toLowerCase() === 'r') {
-        resetGame();
+        resetGame(true);
       }
 
       // if (event.key.toLowerCase() === 's') {
@@ -567,6 +570,8 @@ export default function HomePage() {
         break;
     }
   }
+
+  const [completedIsModule, setCompletedIsModule] = useState(false);
 
   const [clickedDrive, setClickedDrive] = useState(false);
   const [clickedSupport, setClickedSupport] = useState(false);
@@ -1231,7 +1236,7 @@ export default function HomePage() {
 
           {/* Reset */}
           <button
-            onClick={resetGame}
+            onClick={() => resetGame(true)}
             className="mt-auto w-full rounded-md bg-red-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-red-700"
           >
             Reset
@@ -1288,7 +1293,10 @@ export default function HomePage() {
     scribe7={scribe7.trim()} 
     userEmail={userEmail}
     setMadeSelection={setMadeSelection} 
-    setSelectedSlides={setSelectedSlides} />
+    setSelectedSlides={setSelectedSlides}
+    seenCertificate={completedIsModule}
+    resetGame={resetGame}
+     />
     );
   }
 
@@ -1348,6 +1356,8 @@ export default function HomePage() {
         onLastSlide={() => {
           esoLastSlide();
         }}
+        goHome={goHome}
+        setSeenCertificate={setCompletedIsModule}
       />
     );
   }

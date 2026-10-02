@@ -2092,5 +2092,6 @@ export const slides = (playerName: string) => [
   {
     title: "Certificate of Completion",
     content: <Certificate playerName={playerName} />,
+    isCertificate: true,
   },
 ];

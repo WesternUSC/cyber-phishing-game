@@ -10,6 +10,7 @@ interface Slide {
   isMultipleChoice?: boolean;
   quizScoreKey?: string;
   quizAnswersKey?: string;
+  isCertificate?: boolean;
 }
 
 interface SlideshowProps {
@@ -17,6 +18,8 @@ interface SlideshowProps {
   startSlide?: number;
   onLastSlide?: () => void;
   playerName: string;
+  goHome?: () => void;
+  setSeenCertificate: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 // title slides that don't require 1 minute wait
@@ -34,7 +37,9 @@ const Slideshow: React.FC<SlideshowProps> = ({
   slides,
   startSlide = 0,
   onLastSlide,
-  playerName
+  playerName,
+  goHome,
+  setSeenCertificate
 }) => {
   const [current, setCurrent] = useState(startSlide);
   const [slideStartedAt, setSlideStartedAt] = useState(Date.now());
@@ -334,17 +339,16 @@ const Slideshow: React.FC<SlideshowProps> = ({
   };
 
   const next = () => {
-    console.log("clicked next");
-    if (
-      (
-        current === slides.length - 1 &&
-        !slides[current]?.isMultipleChoice
-      ) ||
-      isTransitioning ||
-      showQuizModal
-    ) {
-      return;
-    }
+    // if (
+    //   (
+    //     current === slides.length - 1 &&
+    //     !slides[current]?.isMultipleChoice
+    //   ) ||
+    //   isTransitioning ||
+    //   showQuizModal
+    // ) {
+    //   return;
+    // }
 
     const isIncidentSlide =
       slides[current].title === INCIDENT_SLIDE_TITLE;
@@ -378,6 +382,13 @@ const Slideshow: React.FC<SlideshowProps> = ({
     }
 
     const currentSlide = slides[current];
+
+    if (currentSlide.isCertificate) {
+      //console.log("Is certificate slide");
+      setSeenCertificate(true);
+      goHome?.();
+      return;
+    }
 
     if (currentSlide.isMultipleChoice) {
       const multipleChoiceSlides = slides
@@ -543,13 +554,13 @@ const Slideshow: React.FC<SlideshowProps> = ({
 
         <button
           onClick={next}
-          disabled={
-            (
-              current === slides.length - 1 &&
-              !slides[current]?.isMultipleChoice
-            ) ||
-            showQuizModal
-          }
+          // disabled={
+          //   (
+          //     current === slides.length - 1 &&
+          //     !slides[current]?.isMultipleChoice
+          //   ) ||
+          //   showQuizModal
+          // }
         >
           Next
         </button>
