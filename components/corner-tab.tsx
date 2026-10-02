@@ -109,92 +109,6 @@ export function CornerTab({
             }
           `}
         >
-          <div
-            className="
-              flex
-              min-h-14
-              items-center
-              px-5
-              py-3
-              border-b
-              border-white/20
-              bg-[#3F1E69]
-              text-sm
-              font-semibold
-            "
-          >
-            <span className="whitespace-normal break-words">Current: {currentPage}</span>
-          </div>
-
-          <button
-            type="button"
-            onClick={handleInformationSystemsOnboardingClick}
-            className="
-              flex
-              min-h-12
-              w-full
-              items-center
-              px-5
-              text-left
-              text-sm
-              font-medium
-              hover:bg-[#201436]
-              transition-colors
-              focus:outline-none
-              focus:ring-2
-              focus:ring-white
-              focus:ring-inset
-            "
-          >
-            I.S. Onboarding
-          </button>
-
-          <button
-            type="button"
-            onClick={handlePoliciesAndProceduresClick}
-            className="
-              flex
-              min-h-12
-              w-full
-              items-center
-              px-5
-              text-left
-              text-sm
-              font-medium
-              hover:bg-[#201436]
-              transition-colors
-              focus:outline-none
-              focus:ring-2
-              focus:ring-white
-              focus:ring-inset
-            "
-          >
-            Policies
-          </button>
-
-          <button
-            type="button"
-            onClick={handleJobTrainingClick}
-            className="
-              flex
-              min-h-12
-              w-full
-              items-center
-              px-5
-              text-left
-              text-sm
-              font-medium
-              hover:bg-[#201436]
-              transition-colors
-              focus:outline-none
-              focus:ring-2
-              focus:ring-white
-              focus:ring-inset
-            "
-          >
-            Job Training
-          </button>
-
           <button
             type="button"
             onClick={handleUSCCultureClick}
@@ -215,7 +129,7 @@ export function CornerTab({
               focus:ring-inset
             "
           >
-            USC Culture
+            Back
           </button>
 
           <button
