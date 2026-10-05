@@ -153,6 +153,7 @@ export function EmailViewer({ email, isReviewed, onSubmit, onPhishLinkClicked, i
           {/* Email signature */}
           {email.signature && (
             <div className="mt-6 text-sm leading-5">
+              {/* Existing signature */}
               {email.signature.split('~').map((line, index) => {
                 const trimmedLine = line.trim();
 
@@ -171,6 +172,87 @@ export function EmailViewer({ email, isReviewed, onSubmit, onPhishLinkClicked, i
                   </div>
                 );
               })}
+
+              <div className="mt-5">
+                <div className="flex items-center gap-4">
+                  <Image
+                    src="/usc-logo.png"
+                    alt="Western University Students' Council"
+                    width={90}
+                    height={90}
+                    className="h-[90px] w-[90px] object-contain shrink-0"
+                  />
+
+                  <div className="flex flex-col justify-center text-sm leading-5">
+                    <p
+                      className="italic text-[#4f2584]"
+                    >
+                      To enhance the educational experience and quality of life for all
+                      undergraduates at Western University.
+                    </p>
+                    <a
+                      href="https://westernusc.ca"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 underline hover:text-blue-800"
+                    >
+                      https://westernusc.ca
+                    </a>
+
+                    <div className="mt-1">
+                      <span className="text-gray-700">Follow us: </span>
+                      <a
+                        href="#"
+                        className="text-[#4f2584] hover:underline"
+                        onClick={(e) => e.preventDefault()}
+                      >
+                        Instagram
+                      </a>
+                      <span className="text-gray-500"> | </span>
+                      <a
+                        href="#"
+                        className="text-[#4f2584] hover:underline"
+                        onClick={(e) => e.preventDefault()}
+                      >
+                        Facebook
+                      </a>
+                      <span className="text-gray-500"> | </span>
+                      <a
+                        href="#"
+                        className="text-[#4f2584] hover:underline"
+                        onClick={(e) => e.preventDefault()}
+                      >
+                        Twitter
+                      </a>
+                      <span className="text-gray-500"> | </span>
+                      <a
+                        href="#"
+                        className="text-[#4f2584] hover:underline"
+                        onClick={(e) => e.preventDefault()}
+                      >
+                        LinkedIn
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Land acknowledgement */}
+                <p className="mt-5 italic text-gray-700">
+                  The USC would like to acknowledge that Western University, and our
+                  offices, are located on the traditional territories of the Anishinaabek,
+                  Haudenosaunee, Lūnaapéewak and Chonnonton Nations, on lands connected
+                  with the London Township and Sombra Treaties of 1796 and the Dish with
+                  One Spoon Covenant Wampum. This land continues to be home to diverse
+                  Indigenous Peoples (First Nations, Métis and Inuit) whom we recognize as
+                  contemporary stewards of the land and vital contributors of our society.
+                </p>
+
+                {/* Working hours notice */}
+                <p className="mt-5 font-bold text-[#4f2584]">
+                  My working hours may not be your working hours. Please do not feel
+                  obligated to reply outside of your normal work schedule. ⏰
+                </p>
+              </div>
             </div>
           )}
 

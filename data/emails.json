@@ -29,7 +29,7 @@
         "Legitimate staff and IT will never ask for passwords directly"
       ],
       "rawHeaders": "Return-Path: <Jaclyn@westernusc.ca>\nSPF: PASS\nDKIM: PASS\nX-Spam-Score: 2.1",
-      "signature": "Test Name (pronouns)~Job Title | University Student's Council~T: 555-0815 x55555 | E: test@westernusc.ca~westernusc.ca | @westernusc"
+      "signature": "Jaclyn Higgins~Manager, Leadership Support | University Students' Council at Western University~Office: (519) 661-2111~Email: Jaclyn@westernusc.com"
     },
     {
       "id": "email-2",
@@ -159,7 +159,8 @@
         "Unexpected attachment from an unfamiliar sender",
         "Encourages opening the file without verification"
       ],
-      "rawHeaders": "Return-Path: <invoices@vendor-services.com>\nReceived: from 198.51.100.7\nSPF: FAIL\nDKIM: none\nX-Spam-Score: 7.5"
+      "rawHeaders": "Return-Path: <invoices@vendor-services.com>\nReceived: from 198.51.100.7\nSPF: FAIL\nDKIM: none\nX-Spam-Score: 7.5",
+      "signature": "Wade Masse~Manager, Leadership Support | University Students' Council at Western University~Office: (519) 661-2111~Email: Wade@westernnusc.ca"
     },
     {
       "id": "email-5",
