@@ -210,10 +210,6 @@ export default function Selection({
 
   const handleDownloadCertificate = () => {
     setShowCertificate(true);
-    // window.open(
-    //   `/download-certificate?playerName=${encodeURIComponent(playerName)}`,
-    //   "_blank"
-    // );
   };
 
   const handleStart = () => {
@@ -295,13 +291,6 @@ export default function Selection({
   const isContinueDisabled = policiesPage
     ? !selectedPolicyOption
     : !selectedOption;
-
-
-  const path = window.location.pathname;
-
-  if (path === "/download-certificate") {
-    return <Certificate playerName="" />;
-  }
 
   if (showCertificate) {
     return (
