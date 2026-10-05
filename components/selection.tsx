@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import { CornerTab } from "./corner-tab";
 import HelpChat from "./help-chat";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Certificate } from "./slides";
 
 type TrainingOption = {
   id: string;
@@ -204,8 +206,14 @@ export default function Selection({
     setShowCompletedPopup(false);
   };
 
+  const [showCertificate, setShowCertificate] = useState(false);
+
   const handleDownloadCertificate = () => {
-    console.log("Download certificate");
+    setShowCertificate(true);
+    // window.open(
+    //   `/download-certificate?playerName=${encodeURIComponent(playerName)}`,
+    //   "_blank"
+    // );
   };
 
   const handleStart = () => {
@@ -287,6 +295,54 @@ export default function Selection({
   const isContinueDisabled = policiesPage
     ? !selectedPolicyOption
     : !selectedOption;
+
+
+  const path = window.location.pathname;
+
+  if (path === "/download-certificate") {
+    return <Certificate playerName="" />;
+  }
+
+  if (showCertificate) {
+    return (
+      <div
+        style={{
+          minHeight: "100vh",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <Certificate playerName={playerName} />
+
+        <button
+          onClick={() => setShowCertificate(false)}
+          style={{
+            marginTop: "2.5rem",
+            marginBottom: "2rem",
+            padding: "0.75rem 2.5rem",
+            backgroundColor: "#4f2683",
+            color: "#ffffff",
+            border: "none",
+            borderRadius: "6px",
+            fontSize: "1rem",
+            fontWeight: "600",
+            cursor: "pointer",
+            boxShadow: "0 2px 6px rgba(0, 0, 0, 0.15)",
+            transition: "background-color 0.2s ease, transform 0.1s ease",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = "#3d1d65";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = "#4f2683";
+          }}
+        >
+          Back
+        </button>
+      </div>
+    );
+  }
 
   return (
     <div style={styles.page}>

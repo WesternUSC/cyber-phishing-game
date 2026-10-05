@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { IncidentResponseSlide } from './incident-response-slide';
 import { StoredSignature } from './stored-signature';
 import { useRef } from 'react';
 import { toPng } from 'html-to-image';
 import WindowsSettingsSlide from './windows-settings';
 import slidesData from '@/data/slides.json'
+import { CornerTab } from './corner-tab';
 
 const headerStyle: React.CSSProperties = {
   padding: "14px",
@@ -240,7 +241,10 @@ const CloudSharingSlide: React.FC<CloudSharingSlideProps> = ({
   );
 };
 
-const Certificate = ({ playerName }: { playerName: string }) => {
+export const Certificate = ({ playerName }: { playerName: string }) => {
+  const params = new URLSearchParams(window.location.search);
+  const playerName1 = params.get("playerName") || "Participant";
+
   const certificateRef = useRef<HTMLDivElement>(null);
 
   const downloadCertificate = async () => {
@@ -276,6 +280,11 @@ const Certificate = ({ playerName }: { playerName: string }) => {
         gap: "1rem",
       }}
     >
+      
+      <CornerTab
+        currentPage="I.S. Onboarding"
+      />
+
       <div
         ref={certificateRef}
         style={{

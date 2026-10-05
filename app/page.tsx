@@ -10,7 +10,7 @@ import { gameReducer, initialGameState } from '@/lib/game';
 import { Email } from '@/lib/types';
 import emailData from '@/data/emails.json';
 import Slideshow from '@/components/slideshow';
-import { slides } from '@/components/slides';
+import { Certificate, slides } from '@/components/slides';
 import ModuleCompletion from '@/components/module-completion';
 import { Trophy } from 'lucide-react';
 import { saveResult } from '@/lib/saveResult';
@@ -29,6 +29,8 @@ import HelpChat from '@/components/help-chat';
 
 const emails = emailData.emails as Email[];
 const STORAGE_KEY = 'phishquest-run';
+
+let path = window.location.pathname;
 
 const desktopApps = [
   {
@@ -137,6 +139,7 @@ type User = {
 function useIsTablet() {
   const [isTablet, setIsTablet] = useState(false);
   useEffect(() => {
+    path = window.location.pathname;
     // min-width: 700px  → excludes phones in portrait (≤ ~430px wide)
     // min-height: 500px → excludes phones in landscape (≤ ~430px tall)
     //                     iPad Mini landscape with browser chrome ≈ 640–660px, safely above 500px
@@ -1410,6 +1413,10 @@ export default function HomePage() {
   }
 
   const windowContent = innerGame;
+
+  if (path === "/download-certificate") {
+    return <Certificate playerName={state.playerName.charAt(0).toUpperCase()} />;
+  }
 
   // ── Desktop layout (Windows 11 theme) ────────────────────────────────────────
   return (
