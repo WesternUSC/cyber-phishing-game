@@ -244,8 +244,6 @@ const CloudSharingSlide: React.FC<CloudSharingSlideProps> = ({
 };
 
 export const Certificate = ({ playerName }: { playerName: string }) => {
-  const params = new URLSearchParams(window.location.search);
-  const playerName1 = params.get("playerName") || "Participant";
 
   const certificateRef = useRef<HTMLDivElement>(null);
 
