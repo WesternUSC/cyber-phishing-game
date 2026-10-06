@@ -5,10 +5,10 @@ import ModuleTableOfContents from './module-title-slide';
 
 type slides = 'eso' | 'policies' | 'cs' | 'accessibility' | 'conflict' | 'disc' | 'early' | 'job';
 
-export const earlySlides = (playerName: string, setCurrentSlides: React.Dispatch<React.SetStateAction<slides>>) => [
+export const earlySlides = (playerName: string) => [
   {
     title: "Certificate of Completion",
-    content: <ModuleTableOfContents title={slidesData.titleSlide.title} setCurrentSlides={setCurrentSlides} />,
+    content: <ModuleTableOfContents title={slidesData.titleSlide.title} currentSlideDeck="early" />,
   },
   {
     title: slidesData.policiesSlide.title,
