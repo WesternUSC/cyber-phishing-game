@@ -3,12 +3,10 @@ import MultipleChoiceQuestion from './multiple-choice-question';
 import questionsData from '@/data/questions.json';
 import ModuleTableOfContents from './module-title-slide';
 
-type slides = 'eso' | 'policies' | 'cs' | 'accessibility' | 'conflict' | 'disc' | 'early' | 'job';
-
-export const customerServiceSlides = (playerName: string, setCurrentSlides: React.Dispatch<React.SetStateAction<slides>>) => [
+export const customerServiceSlides = (playerName: string) => [
   {
     title: "Certificate of Completion",
-    content: <ModuleTableOfContents title={slidesData.titleSlide.title} setCurrentSlides={setCurrentSlides} />,
+    content: <ModuleTableOfContents title={slidesData.titleSlide.title} currentSlideDeck="cs" />,
   },
   {
     title: slidesData.policiesSlide.title,

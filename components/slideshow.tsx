@@ -18,8 +18,6 @@ interface SlideshowProps {
   startSlide?: number;
   onLastSlide?: () => void;
   playerName: string;
-  goHome?: () => void;
-  setSeenCertificate: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 // title slides that don't require 1 minute wait
@@ -38,8 +36,6 @@ const Slideshow: React.FC<SlideshowProps> = ({
   startSlide = 0,
   onLastSlide,
   playerName,
-  goHome,
-  setSeenCertificate
 }) => {
   const [current, setCurrent] = useState(startSlide);
   const [slideStartedAt, setSlideStartedAt] = useState(Date.now());
@@ -385,8 +381,6 @@ const Slideshow: React.FC<SlideshowProps> = ({
 
     if (currentSlide.isCertificate) {
       //console.log("Is certificate slide");
-      setSeenCertificate(true);
-      goHome?.();
       return;
     }
 
@@ -491,9 +485,7 @@ const Slideshow: React.FC<SlideshowProps> = ({
   return (
     <div style={styles.container}>
 
-      <CornerTab
-        currentPage="Slides"
-      />
+      <CornerTab />
 
       {/* <div style={styles.header}>
         {playerName}

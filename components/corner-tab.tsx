@@ -1,38 +1,17 @@
+'use client';
+
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 
-type CornerTabProps = {
-  label?: string;
-  currentPage?: string;
-  onHomeClick?: () => void;
-};
-
-export function CornerTab({
-  label = "Menu",
-  currentPage = "Home",
-  onHomeClick,
-}: CornerTabProps) {
+export function CornerTab() {
   const [isOpen, setIsOpen] = useState(false);
   const [isHelpOpen, setIsHelpOpen] = useState(false);
 
   const handleHomeClick = () => {
-    console.log("Home clicked");
-
-    if (onHomeClick) {
-      onHomeClick();
-    }
+    router.push("/home");
   };
 
-  const handleInformationSystemsOnboardingClick = () => {
-    console.log("Information Systems Onboarding clicked");
-  };
-
-  const handlePoliciesAndProceduresClick = () => {
-    console.log("Policies and Procedures clicked");
-  };
-
-  const handleJobTrainingClick = () => {
-    console.log("Job Training clicked");
-  };
+  const router = useRouter();
 
   const handleUSCCultureClick = () => {
     console.log("USC Culture clicked");

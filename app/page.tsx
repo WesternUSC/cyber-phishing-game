@@ -26,6 +26,8 @@ import { earlySlides } from '@/components/slides-early';
 import { scribesSlides } from '@/components/scribes-slides';
 import { CornerTab } from '@/components/corner-tab';
 import HelpChat from '@/components/help-chat';
+import { useRouter } from "next/navigation";
+import { useApp } from "@/components/app-context";
 
 const emails = emailData.emails as Email[];
 const STORAGE_KEY = 'phishquest-run';
@@ -293,6 +295,7 @@ function ResultsScreen({
 }
 
 export default function HomePage() {
+  const { userData } = useApp();
   const [state, dispatch] = useReducer(gameReducer, initialGameState);
   const [nameInput, setNameInput] = useState('');
   const [title, setTitle] = useState('');
@@ -307,6 +310,8 @@ export default function HomePage() {
   const [scribe7, setscribe7] = useState('');
 
   const [loginCode, setLoginCode] = useState('');
+
+  const router = useRouter();
 
   const [introSeen, setIntroSeen] = useState(false);
   const [slidesSeen, setSlidesSeen] = useState(false);
@@ -502,7 +507,7 @@ export default function HomePage() {
       return;
     }
 
-    setNameInput(player.name);
+    //setNameInput(player.name);
     setTitle(player.title);
     setSupervisor(player.supervisor);
     setscribe1(player.scribe1);
@@ -516,7 +521,21 @@ export default function HomePage() {
     setUserEmail(player.email);
 
     setNameError(false);
-    setNameEntered(true);
+    //setNameEntered(true);
+
+    userData.name = player.name;
+    userData.title = player.title;
+    userData.scribe1 = player.scribe1;
+    userData.scribe2 = player.scribe2;
+    userData.scribe3 = player.scribe3;
+    userData.scribe4 = player.scribe4;
+    userData.scribe5 = player.scribe5;
+    userData.scribe6 = player.scribe6;
+    userData.scribe7 = player.scribe7;
+    userData.supervisor = player.supervisor;
+    userData.email = player.email;
+
+    router.push('/home');
   }
 
   function handleSelectEmail(id: string) {
@@ -1275,61 +1294,40 @@ export default function HomePage() {
     </>
   );
 
-  if (!nameEntered) {
+  if (userData.name === '') {
     return nameContent;
   }
 
-  if (!madeSelection) {
-    return (
-    <Selection playerName={nameInput.trim()} 
-    title={title.trim()} 
-    supervisor={supervisor.trim()} 
-    scribe1={scribe1.trim()} 
-    scribe2={scribe2.trim()} 
-    scribe3={scribe3.trim()} 
-    scribe4={scribe4.trim()} 
-    scribe5={scribe5.trim()} 
-    scribe6={scribe6.trim()} 
-    scribe7={scribe7.trim()} 
-    userEmail={userEmail}
-    setMadeSelection={setMadeSelection} 
-    setSelectedSlides={setSelectedSlides}
-    seenCertificate={completedIsModule}
-    resetGame={resetGame}
-     />
-    );
-  }
+  // const getSlides = () => {
+  //   switch (selectedSlides) {
+  //     case 'eso':
+  //       return slides(nameInput.trim());
 
-  const getSlides = () => {
-    switch (selectedSlides) {
-      case 'eso':
-        return slides(nameInput.trim());
+  //     case 'policies':
+  //       return policiesSlides(nameInput.trim(), setSelectedSlides);
 
-      case 'policies':
-        return policiesSlides(nameInput.trim(), setSelectedSlides);
+  //     case 'cs':
+  //       return customerServiceSlides(nameInput.trim(), setSelectedSlides);
 
-      case 'cs':
-        return customerServiceSlides(nameInput.trim(), setSelectedSlides);
+  //     case 'accessibility':
+  //       return accessibilitySlides(nameInput.trim(), setSelectedSlides);
 
-      case 'accessibility':
-        return accessibilitySlides(nameInput.trim(), setSelectedSlides);
+  //     case 'conflict':
+  //       return conflictSlides(nameInput.trim(), setSelectedSlides);
 
-      case 'conflict':
-        return conflictSlides(nameInput.trim(), setSelectedSlides);
+  //     case 'disc':
+  //       return discSlides(nameInput.trim(), setSelectedSlides);
 
-      case 'disc':
-        return discSlides(nameInput.trim(), setSelectedSlides);
+  //     case 'early':
+  //       return earlySlides(nameInput.trim(), setSelectedSlides);
 
-      case 'early':
-        return earlySlides(nameInput.trim(), setSelectedSlides);
+  //     case 'job':
+  //       return scribesSlides(nameInput.trim(), scribe1.trim(), scribe2.trim(), scribe3.trim(), scribe4.trim(), scribe5.trim(), scribe6.trim(), scribe7.trim(), setSelectedSlides);
 
-      case 'job':
-        return scribesSlides(nameInput.trim(), scribe1.trim(), scribe2.trim(), scribe3.trim(), scribe4.trim(), scribe5.trim(), scribe6.trim(), scribe7.trim(), setSelectedSlides);
-
-      default:
-        return slides(nameInput.trim());
-    }
-  };
+  //     default:
+  //       return slides(nameInput.trim());
+  //   }
+  // };
 
   const esoLastSlide = () => {
     if (selectedSlides === "eso") {
@@ -1347,20 +1345,6 @@ export default function HomePage() {
       openedAtRef.current = Date.now();
     }
   };
-
-  if (!slidesSeen) {
-    return (
-      <Slideshow
-        slides={getSlides()}
-        playerName={nameInput.trim()}
-        onLastSlide={() => {
-          esoLastSlide();
-        }}
-        goHome={goHome}
-        setSeenCertificate={setCompletedIsModule}
-      />
-    );
-  }
 
   // ── iPad / tablet layout ─────────────────────────────────────────────────────
   // Clean, no Windows chrome. Locked to landscape via an overlay prompt.
@@ -1422,10 +1406,7 @@ export default function HomePage() {
         backgroundSize: "100% 100%"
       }}
     >
-      <CornerTab
-        currentPage="I.S. Onboarding"
-        onHomeClick={goHome}
-      />
+      <CornerTab />
       <HelpChat
         iconSrc="usc-logo.png"
         recipientEmail={userEmail}
@@ -2523,8 +2504,10 @@ export default function HomePage() {
           {activeTab === 'modules' && (
             <ModuleCompletion
               onComplete={() => {
-                setSlidesSeen(false);
+                //setSlidesSeen(false);
                 setActiveTab('phishquest');
+                userData.completedIsoModule = true;
+                router.push("/certificate");
               }}
               completedDrive={completedDrive}
               completedCalendar={completedCalendar}

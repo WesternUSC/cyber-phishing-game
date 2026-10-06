@@ -5,6 +5,8 @@ import { CornerTab } from "./corner-tab";
 import HelpChat from "./help-chat";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Certificate } from "./slides";
+import { useRouter } from "next/navigation";
+import { useApp } from "@/components/app-context";
 
 type TrainingOption = {
   id: string;
@@ -150,6 +152,9 @@ export default function Selection({
   seenCertificate,
   resetGame,
 }: SelectionProps) {
+  const router = useRouter();
+  const { userData } = useApp();
+
   const [selectedId, setSelectedId] = useState(options[0]?.id ?? "");
 
   const [selectedPolicyId, setSelectedPolicyId] = useState(
@@ -196,24 +201,20 @@ export default function Selection({
   };
 
   const handleRestartModule = () => {
-    console.log("Restart Information Systems Onboarding module");
-
-    setSelectedSlides("eso");
-    setMadeSelection(true);
-
-    resetGame?.(false);
-
-    setShowCompletedPopup(false);
+    localStorage.clear();
+    sessionStorage.clear();
+    router.push("/desktop-simulator");
+    //resetGame?.(false);
   };
 
   const [showCertificate, setShowCertificate] = useState(false);
 
   const handleDownloadCertificate = () => {
-    setShowCertificate(true);
+    router.push("/certificate");
   };
 
   const handleStart = () => {
-    if (!policiesPage && selectedId === "1" && seenCertificate) {
+    if (!policiesPage && userData.completedIsoModule && selectedId === "1") {
       setShowCompletedPopup(true);
       return;
     }
@@ -221,13 +222,15 @@ export default function Selection({
     if (!policiesPage) {
       switch (selectedId) {
         case "1":
-          setSelectedSlides("eso");
-          setMadeSelection(true);
+          //setSelectedSlides("eso");
+          //setMadeSelection(true);
+
+          router.push("/iso-slides");
+
           break;
 
         case "2":
-          setSelectedSlides("policies");
-          setMadeSelection(true);
+          router.push("/policies");
           break;
 
         case "3":
@@ -247,12 +250,9 @@ export default function Selection({
       }
     } else {
       switch (selectedPolicyId) {
-        case "1":
-          setSelectedSlides("eso");
-          break;
-
         case "2":
-          setSelectedSlides("policies");
+          //setSelectedSlides("policies");
+          router.push("/policies");
           break;
 
         case "3":
@@ -335,13 +335,7 @@ export default function Selection({
 
   return (
     <div style={styles.page}>
-      <CornerTab
-        currentPage="Modules"
-        onHomeClick={() => {
-          setMadeSelection(false);
-          setPoliciesPage(false);
-        }}
-      />
+      <CornerTab />
 
       <HelpChat
         iconSrc="usc-logo.png"
@@ -373,10 +367,15 @@ export default function Selection({
               ? option.id === selectedPolicyId
               : option.id === selectedId;
 
+            // const isCompleted =
+            //   !policiesPage &&
+            //   option.id === "1" &&
+            //   seenCertificate;
+
             const isCompleted =
               !policiesPage &&
               option.id === "1" &&
-              seenCertificate;
+              userData.completedIsoModule;
 
             return (
               <div

@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useEffect } from 'react';
 import { IncidentResponseSlide } from './incident-response-slide';
 import { StoredSignature } from './stored-signature';
@@ -270,20 +272,17 @@ export const Certificate = ({ playerName }: { playerName: string }) => {
       style={{
         width: "100%",
         height: "100%",
-        backgroundColor: "#f8fafc",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        padding: "2rem",
+        padding: "6rem",
         boxSizing: "border-box",
         gap: "1rem",
       }}
     >
       
-      <CornerTab
-        currentPage="I.S. Onboarding"
-      />
+      <CornerTab />
 
       <div
         ref={certificateRef}

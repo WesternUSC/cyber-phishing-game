@@ -1,4 +1,7 @@
+'use client';
+
 import React, { useEffect, useState } from "react";
+import { useApp } from "@/components/app-context";
 
 type Slide =
   | "eso"
@@ -19,7 +22,7 @@ interface Module {
 
 interface ModuleTableOfContentsProps {
   title: string;
-  setCurrentSlides: React.Dispatch<React.SetStateAction<Slide>>;
+  currentSlideDeck: string;
 }
 
 const policyDownloads: Record<string, [string, string]> = {
@@ -174,8 +177,9 @@ const modules: Omit<Module, "score">[] = [
 
 export default function ModuleTableOfContents({
   title,
-  setCurrentSlides,
+  currentSlideDeck,
 }: ModuleTableOfContentsProps) {
+  const { userData } = useApp();
   const [scores, setScores] = useState<Record<string, number>>({});
 
   useEffect(() => {
@@ -255,6 +259,11 @@ export default function ModuleTableOfContents({
     }
   };
 
+  function onSlideSelect(modulePage: string) {
+    localStorage.setItem("currentSlideDeck", modulePage);
+    location.reload();
+  }
+
   return (
     <div
       style={{
@@ -323,7 +332,7 @@ export default function ModuleTableOfContents({
             <button
               key={index}
               type="button"
-              onClick={() => setCurrentSlides(module.page)}
+              onClick={() => onSlideSelect(module.page)}
               style={{
                 display: "flex",
                 alignItems: "center",
