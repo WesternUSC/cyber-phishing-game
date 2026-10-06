@@ -93,6 +93,15 @@ export default function ModuleCompletion({
     );
   }, [completed]);
 
+  // for testing. delete in production
+  completedDrive = true;
+  completedCalendar = true;
+  completedTrello = true;
+  completedRippling = true;
+  completedEmails = true;
+  completedTicketing = true;
+  completedSlack = true;
+
   const [signatureExists, setSignatureExists] = useState(false);
   const [isDrawing, setIsDrawing] = useState(false);
   const [hasSignature, setHasSignature] = useState(false);
@@ -131,11 +140,10 @@ export default function ModuleCompletion({
   }, [allModulesComplete]);
 
   function toggleModule(id: string) {
-
+    
     switch (id) {
       case "google-drive":
         if (!completedDrive) {
-          //alert("You have not yet completed this module!");
           setShowPopup(true);
           return;
         }
