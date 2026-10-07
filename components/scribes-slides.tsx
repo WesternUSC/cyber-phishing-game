@@ -1,15 +1,5 @@
 'use client';
 
-type slides =
-  | 'eso'
-  | 'policies'
-  | 'cs'
-  | 'accessibility'
-  | 'conflict'
-  | 'disc'
-  | 'early'
-  | 'job';
-
 export const scribesSlides = (
   playerName: string,
   scribe1: string,
@@ -18,8 +8,7 @@ export const scribesSlides = (
   scribe4: string,
   scribe5: string,
   scribe6: string,
-  scribe7: string,
-  setCurrentSlides: React.Dispatch<React.SetStateAction<slides>>
+  scribe7: string
 ) => {
   const scribes = [
     scribe1,

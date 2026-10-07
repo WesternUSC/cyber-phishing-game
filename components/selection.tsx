@@ -234,8 +234,7 @@ export default function Selection({
           break;
 
         case "3":
-          setSelectedSlides("job");
-          setMadeSelection(true);
+          router.push("/job-training");
           break;
 
         case "4":
