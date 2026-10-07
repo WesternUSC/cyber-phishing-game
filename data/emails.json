@@ -29,7 +29,7 @@
         "Legitimate staff and IT will never ask for passwords directly"
       ],
       "rawHeaders": "Return-Path: <Jaclyn@westernusc.ca>\nSPF: PASS\nDKIM: PASS\nX-Spam-Score: 2.1",
-      "signature": "Jaclyn Higgins~Manager, Leadership Support | University Students' Council at Western University~Office: (519) 661-2111~Email: Jaclyn@westernusc.com"
+      "signature": "Jaclyn Higgins~Manager, Leadership Support | University Students' Council at Western University~University Community Centre | Room 340C~Office: EXT. 87540~Email: Jaclyn@westernusc.com"
     },
     {
       "id": "email-2",
@@ -160,7 +160,7 @@
         "Encourages opening the file without verification"
       ],
       "rawHeaders": "Return-Path: <invoices@vendor-services.com>\nReceived: from 198.51.100.7\nSPF: FAIL\nDKIM: none\nX-Spam-Score: 7.5",
-      "signature": "Wade Masse~Manager, Leadership Support | University Students' Council at Western University~Office: (519) 661-2111~Email: Wade@westernnusc.ca"
+      "signature": "Wade Masse~Manager, Leadership Support | University Students' Council at Western University~University Community Centre | Room 340~Office: (555) 000-1111~Email: Wade@westernnusc.ca"
     },
     {
       "id": "email-5",
@@ -248,7 +248,8 @@
         "Legitimate IT departments do not ask users to confirm passwords via email links",
         "Generic greeting ('Dear User') instead of personalized message"
       ],
-      "rawHeaders": "Return-Path: <it-upgrades@secure-mail.net>\nReceived: from 192.0.2.10\nSPF: FAIL\nDKIM: none\nX-Spam-Score: 8.9"
+      "rawHeaders": "Return-Path: <it-upgrades@secure-mail.net>\nReceived: from 192.0.2.10\nSPF: FAIL\nDKIM: none\nX-Spam-Score: 8.9",
+      "signature": "Joe Czenke~IT Support Technician | University Students' Council at Western University~University Community Centre | Room 304~Office: EXT. 80899~Email: joe.czenke@westernnusc.ca"
     },
     {
       "id": "email-7",
@@ -318,7 +319,8 @@
         "Unusual request that bypasses normal purchasing procedures",
         "Legitimate staff do not ask for gift cards via email"
       ],
-      "rawHeaders": "Return-Path: <rochelle@westernusc.ca>\nSPF: PASS\nDKIM: PASS\nX-Spam-Score: 3.4"
+      "rawHeaders": "Return-Path: <rochelle@westernusc.ca>\nSPF: PASS\nDKIM: PASS\nX-Spam-Score: 3.4",
+      "signature": "Rochelle Alquiza~Digital Media Strategist | University Students' Council at Western University~University Community Centre | Room 265~Office: EXT. 85778~Email: rochelle@westernnusc.ca"
     },
     {
       "id": "email-9",
@@ -428,7 +430,8 @@
         "Common tactic to steal credentials via fake login",
         "No context or explanation for the document"
       ],
-      "rawHeaders": "Return-Path: <rob@westernusc.ca>\nSPF: PASS\nDKIM: PASS\nX-Spam-Score: 5.2"
+      "rawHeaders": "Return-Path: <rob@westernusc.ca>\nSPF: PASS\nDKIM: PASS\nX-Spam-Score: 5.2",
+      "signature": "Rob Fraser~Photography and Videography Coordinator | University Students' Council at Western University~University Community Centre | Room 265~Office: EXT. 86119~Email: rob.fraser@westernnusc.ca"
     },
     {
       "id": "email-12",
@@ -494,7 +497,8 @@
         "Casual, conversational tone consistent with a real colleague",
         "No unusual requests — just scheduling a meeting"
       ],
-      "rawHeaders": "Return-Path: <aidan.callender@westernusc.com>\nReceived: from mail.westernusc.com\nSPF: PASS\nDKIM: PASS\nX-Spam-Score: 0.0"
+      "rawHeaders": "Return-Path: <aidan.callender@westernusc.com>\nReceived: from mail.westernusc.com\nSPF: PASS\nDKIM: PASS\nX-Spam-Score: 0.0",
+      "signature": "Aidan Callender~University Students' Council at Western University~University Community Centre | Room 265~Office: EXT. 85779~Email: aidan.callender@westernnusc.ca"
     },
     {
       "id": "email-14",
@@ -530,7 +534,8 @@
         "Request is specific, expected, and work-related",
         "No suspicious links or requests for sensitive information"
       ],
-      "rawHeaders": "Return-Path: <Sarah@westernusc.com>\nReceived: from mail.westernusc.com\nSPF: PASS\nDKIM: PASS\nX-Spam-Score: 0.0"
+      "rawHeaders": "Return-Path: <Sarah@westernusc.com>\nReceived: from mail.westernusc.com\nSPF: PASS\nDKIM: PASS\nX-Spam-Score: 0.0",
+      "signature": "Sarah Goldsmith~Graphics Design Intern | University Students' Council at Western University~University Community Centre | Room 265~Email: sarah@westernnusc.ca"
     },
     {
       "id": "email-15",
@@ -600,7 +605,8 @@
         "Attempts to move the conversation from email to SMS, making it harder to detect",
         "Common first step in executive impersonation and gift card fraud"
       ],
-      "rawHeaders": "Return-Path: <support@western-itservices.com>\nSPF: FAIL\nDKIM: none\nX-Spam-Score: 7.9"
+      "rawHeaders": "Return-Path: <support@western-itservices.com>\nSPF: FAIL\nDKIM: none\nX-Spam-Score: 7.9",
+      "signature": "Steve Xia~President | University Students' Council at Western University~University Community Centre | Room 340J~Office: EXT. 82607~Email: president@westernnusc.ca"
     },
     {
       "id": "email-17",

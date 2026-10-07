@@ -274,7 +274,7 @@ export default function ModuleTableOfContents({
         backgroundColor: "#582c83",
         color: "#ffffff",
         boxSizing: "border-box",
-        padding: "3rem 4rem",
+        padding: "2rem clamp(1rem, 3vw, 4rem)",
       }}
     >
       <div
@@ -307,7 +307,7 @@ export default function ModuleTableOfContents({
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "1fr 1fr",
+          gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
           gridAutoRows: "1fr",
           gap: "0.6rem 1rem",
           flex: 1,
@@ -362,9 +362,10 @@ export default function ModuleTableOfContents({
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  gap: "0.75rem",
+                  gap: "0.5rem",
                   minWidth: 0,
-                  flex: 1,
+                  flex: "1 1 auto",
+                  overflow: "hidden"
                 }}
               >
                 <span
@@ -400,9 +401,9 @@ export default function ModuleTableOfContents({
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "flex-end",
-                  gap: "0.75rem",
+                  gap: "0.4rem",
                   flexShrink: 0,
-                  marginLeft: "1rem",
+                  marginLeft: "0.5rem",
                 }}
               >
                 <span
@@ -427,8 +428,8 @@ export default function ModuleTableOfContents({
                       }
                     }}
                     style={{
-                      width: "40px",
-                      height: "40px",
+                      width: "32px",
+                      height: "32px",
                       padding: 0,
                       border: "none",
                       borderRadius: "10px",
@@ -453,8 +454,8 @@ export default function ModuleTableOfContents({
                     }}
                   >
                     <svg
-                      width="22"
-                      height="22"
+                      width="18"
+                      height="18"
                       viewBox="0 0 24 24"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
