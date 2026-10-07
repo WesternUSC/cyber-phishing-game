@@ -125,18 +125,17 @@ export default function HelpChat({
           display: flex;
           flex-direction: column;
           align-items: center;
-          gap: 4px;
         }
 
         .help-chat__trigger img {
-          width: 56px;
-          height: 56px;
+          width: 70px;
+          height: 70px;
           object-fit: contain;
           transform: scale(0.7);
         }
 
         .help-chat__trigger span {
-          font-size: 12px;
+          font-size: 14px;
           font-weight: 700;
           color: #222;
         }

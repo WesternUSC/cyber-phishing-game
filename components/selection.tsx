@@ -337,7 +337,7 @@ export default function Selection({
       <CornerTab />
 
       <HelpChat
-        iconSrc="usc-logo.png"
+        iconSrc="usc-logo-help-icon.png"
         recipientEmail={userEmail}
       />
 

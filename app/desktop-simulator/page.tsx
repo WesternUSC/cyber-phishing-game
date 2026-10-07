@@ -470,17 +470,17 @@ export default function DesktopSimulator() {
     function openCard(moduleId: string) {
       handleContinue(moduleId);
 
-      setIsClosing(false);
-      setOpenModule(moduleId);
+    //   setIsClosing(false);
+    //   setOpenModule(moduleId);
 
-      setTimeout(() => {
-        closeCard()
-      }, 5000);
+    //   setTimeout(() => {
+    //     closeCard()
+    //   }, 5000);
     }
 
     function closeCard() {
-      setIsClosing(true);
-      setOpenModule(null);
+    //   setIsClosing(true);
+    //   setOpenModule(null);
     }
 
     function handleContinue(moduleId: string) {
@@ -525,7 +525,7 @@ export default function DesktopSimulator() {
     function ModuleBookmarkRail() {
         return (
         <>
-            <div className="pointer-events-none fixed right-0 top-1/2 z-[60] -translate-y-1/2">
+            <div className="pointer-events-none fixed right-0 top-[40%] z-[60] -translate-y-1/2">
             <div className="pointer-events-auto flex flex-col gap-2">
                 {moduleCards.map((module) => {
                 const isOpen = openModule === module.id;
@@ -920,7 +920,7 @@ export default function DesktopSimulator() {
         >
             <CornerTab />
             <HelpChat
-            iconSrc="usc-logo.png"
+            iconSrc="usc-logo-help-icon.png"
             recipientEmail={userEmail}
             isDesktop={true}
             />
@@ -984,7 +984,7 @@ export default function DesktopSimulator() {
                 {/* Chrome frame */}
                 <div className="select-none bg-[#202124]">
                 {/* Tabs */}
-                <div className="flex h-10 items-end gap-1 px-2 pt-1 bg-[#202124]">
+                <div className="flex h-10 items-end gap-1 px-2 pt-1 bg-[#202124] overflow-hidden">
 
                     {/* PhishQuest tab */}
                     <button
@@ -992,7 +992,7 @@ export default function DesktopSimulator() {
                         setActiveTab('phishquest');
                         closeCard();
                     }}
-                    className={`relative flex h-8 w-48 items-center gap-2 rounded-t-xl px-4 ${
+                    className={`relative flex h-8 flex-1 min-w-0 items-center gap-2 rounded-t-xl px-4 ${
                         activeTab === 'phishquest'
                         ? 'bg-[#2d2f31]'
                         : 'bg-transparent hover:bg-white/10'
@@ -1029,7 +1029,7 @@ export default function DesktopSimulator() {
                         setActiveTab('outlook');
                         openCard('outlook');
                     }}
-                    className={`relative flex h-8 w-48 items-center rounded-t-lg px-3 ${
+                    className={`relative flex h-8 flex-1 min-w-0 items-center rounded-t-lg px-3 ${
                         activeTab === 'outlook'
                         ? 'bg-[#2d2f31]'
                         : 'hover:bg-white/10'
@@ -1065,7 +1065,7 @@ export default function DesktopSimulator() {
                         setActiveTab('western');
                         openCard('western');
                     }}
-                    className={`relative flex h-8 w-44 items-center gap-2 rounded-t-lg px-3 ${
+                    className={`relative flex h-8 flex-1 min-w-0 items-center gap-2 rounded-t-lg px-3 ${
                         activeTab === 'western'
                         ? 'bg-[#2d2f31]'
                         : 'hover:bg-white/10'
@@ -1101,7 +1101,7 @@ export default function DesktopSimulator() {
                         setActiveTab('calendar');
                         openCard('calendar');
                     }}
-                    className={`relative flex h-8 w-44 items-center gap-2 rounded-t-lg px-3 ${
+                    className={`relative flex h-8 flex-1 min-w-0 items-center gap-2 rounded-t-lg px-3 ${
                         activeTab === 'calendar'
                         ? 'bg-[#2d2f31]'
                         : 'hover:bg-white/10'
@@ -1135,7 +1135,7 @@ export default function DesktopSimulator() {
                         setActiveTab('trello');
                         openCard('trello');
                     }}
-                    className={`relative flex h-8 w-48 items-center rounded-t-lg px-3 ${
+                    className={`relative flex h-8 flex-1 min-w-0 items-center rounded-t-lg px-3 ${
                         activeTab === 'trello'
                         ? 'bg-[#2d2f31]'
                         : 'hover:bg-white/10'
@@ -1170,7 +1170,7 @@ export default function DesktopSimulator() {
                         setActiveTab('rippling');
                         openCard('rippling');
                     }}
-                    className={`relative flex h-8 w-48 items-center rounded-t-lg px-3 ${
+                    className={`relative flex h-8 flex-1 min-w-0 items-center rounded-t-lg px-3 ${
                         activeTab === 'rippling'
                         ? 'bg-[#2d2f31]'
                         : 'hover:bg-white/10'
@@ -1205,7 +1205,7 @@ export default function DesktopSimulator() {
                         setActiveTab('modules');
                         closeCard();
                     }}
-                    className={`relative flex h-8 w-48 items-center rounded-t-lg px-3 ${
+                    className={`relative flex h-8 flex-1 min-w-0 items-center rounded-t-lg px-3 ${
                         activeTab === 'modules'
                         ? 'bg-[#2d2f31]'
                         : 'hover:bg-white/10'
