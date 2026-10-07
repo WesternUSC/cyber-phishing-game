@@ -245,7 +245,7 @@ function ResultsScreen({
 }
 
 export default function DesktopSimulator() {
-    const { userData } = useApp();
+    const { userData, setUserData } = useApp();
     const [state, dispatch] = useReducer(gameReducer, initialGameState);
     const [userEmail, setUserEmail] = useState('');
 
@@ -2018,7 +2018,10 @@ export default function DesktopSimulator() {
                     onComplete={() => {
                     //setSlidesSeen(false);
                     setActiveTab('phishquest');
-                    userData.completedIsoModule = true;
+                    setUserData(prev => ({
+                        ...prev,
+                        completedIsoModule: true,
+                    }));
                     router.push("/certificate");
                     }}
                     completedDrive={completedDrive}

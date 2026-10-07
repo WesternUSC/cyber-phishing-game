@@ -329,9 +329,9 @@ export default function ModuleTableOfContents({
           const hasDownloads = true;
 
           return (
-            <button
+            <div
               key={index}
-              type="button"
+              role="button"
               onClick={() => onSlideSelect(module.page)}
               style={{
                 display: "flex",
@@ -485,7 +485,7 @@ export default function ModuleTableOfContents({
                   </button>
                 )}
               </span>
-            </button>
+            </div>
           );
         })}
       </div>

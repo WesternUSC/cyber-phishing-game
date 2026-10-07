@@ -2,19 +2,7 @@
 
 import { useEffect, useReducer, useRef, useState } from 'react';
 import Image from 'next/image';
-import { AppShell } from '@/components/app-shell';
-import { InboxList } from '@/components/inbox-list';
-import { EmailViewer } from '@/components/email-viewer';
-import { FeedbackModal } from '@/components/feedback-modal';
 import { gameReducer, initialGameState } from '@/lib/game';
-import { Email } from '@/lib/types';
-import emailData from '@/data/emails.json';
-import ModuleCompletion from '@/components/module-completion';
-import { Trophy } from 'lucide-react';
-import { saveResult } from '@/lib/saveResult';
-import SlackApp from '@/components/slack-app';
-import { CornerTab } from '@/components/corner-tab';
-import HelpChat from '@/components/help-chat';
 import { useRouter } from "next/navigation";
 import { useApp } from "@/components/app-context";
 
