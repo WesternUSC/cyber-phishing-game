@@ -22,7 +22,7 @@ type User = {
 };
 
 export default function HomePage() {
-  const { userData } = useApp();
+  const { userData, setUserData } = useApp();
   const [state, dispatch] = useReducer(gameReducer, initialGameState);
   const [nameInput, setNameInput] = useState('');
   const [title, setTitle] = useState('');
@@ -197,17 +197,20 @@ export default function HomePage() {
     setNameError(false);
     //setNameEntered(true);
 
-    userData.name = player.name;
-    userData.title = player.title;
-    userData.scribe1 = player.scribe1;
-    userData.scribe2 = player.scribe2;
-    userData.scribe3 = player.scribe3;
-    userData.scribe4 = player.scribe4;
-    userData.scribe5 = player.scribe5;
-    userData.scribe6 = player.scribe6;
-    userData.scribe7 = player.scribe7;
-    userData.supervisor = player.supervisor;
-    userData.email = player.email;
+    setUserData((prev) => ({
+      ...prev,
+      name: player.name,
+      title: player.title,
+      scribe1: player.scribe1,
+      scribe2: player.scribe2,
+      scribe3: player.scribe3,
+      scribe4: player.scribe4,
+      scribe5: player.scribe5,
+      scribe6: player.scribe6,
+      scribe7: player.scribe7,
+      supervisor: player.supervisor,
+      email: player.email,
+    }));
 
     router.push('/home');
   }

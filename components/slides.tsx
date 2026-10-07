@@ -1,11 +1,9 @@
 'use client';
 
-import React, { useEffect } from 'react';
 import { IncidentResponseSlide } from './incident-response-slide';
 import { StoredSignature } from './stored-signature';
 import { useRef } from 'react';
 import { toPng } from 'html-to-image';
-import WindowsSettingsSlide from './windows-settings';
 import slidesData from '@/data/slides.json'
 import { CornerTab } from './corner-tab';
 

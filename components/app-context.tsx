@@ -43,7 +43,7 @@ export function AppProvider({
     scribe6: "",
     scribe7: "",
     completedIsoModule: false,
-    currentSlideDeck: ""
+    currentSlideDeck: "policies"
   });
 
   return (

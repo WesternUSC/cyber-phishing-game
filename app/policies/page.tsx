@@ -22,6 +22,12 @@ export default function PoliciesPage() {
                 currentSlideDeck: savedString
             }));
         }
+        else {
+            setUserData(prev => ({
+                ...prev,
+                currentSlideDeck: "policies"
+            }));
+        }
     }, [setUserData]);
 
     const getSlides = () => {

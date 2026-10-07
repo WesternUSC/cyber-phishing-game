@@ -14,7 +14,7 @@ export function CornerTab() {
   const router = useRouter();
 
   const handleUSCCultureClick = () => {
-    console.log("USC Culture clicked");
+    router.back();
   };
 
   const handleHelpClick = () => {
@@ -30,7 +30,7 @@ export function CornerTab() {
   return (
     <>
       <div
-        className="fixed top-0 left-0 z-50 w-32"
+        className="fixed top-0 left-0 z-50 w-20"
         onMouseEnter={() => setIsOpen(true)}
         onMouseLeave={() => setIsOpen(false)}
       >

@@ -18,6 +18,7 @@ interface SlideshowProps {
   startSlide?: number;
   onLastSlide?: () => void;
   playerName: string;
+  currentSlideDeck?: string;
 }
 
 // title slides that don't require 1 minute wait
@@ -36,6 +37,7 @@ const Slideshow: React.FC<SlideshowProps> = ({
   startSlide = 0,
   onLastSlide,
   playerName,
+  currentSlideDeck
 }) => {
   const [current, setCurrent] = useState(startSlide);
   const [slideStartedAt, setSlideStartedAt] = useState(Date.now());
@@ -54,6 +56,17 @@ const Slideshow: React.FC<SlideshowProps> = ({
   const [showQuizModal, setShowQuizModal] = useState(false);
 
   useEffect(() => {
+    if (!onLastSlide) {
+      return;
+      // const savedString = localStorage.getItem("currentSlideDeck");
+
+      // if (savedString !== null) {
+      //   if (savedString !== currentSlideDeck) {
+      //     return;
+      //   }
+      // }
+    }
+
     const saved = localStorage.getItem(STORAGE_KEY);
 
     if (saved) {
@@ -498,7 +511,7 @@ const Slideshow: React.FC<SlideshowProps> = ({
           transition: "opacity 0.3s ease-in-out",
         }}
       >
-        {slides[current].title === INCIDENT_SLIDE_TITLE &&
+        {slides[current]?.title === INCIDENT_SLIDE_TITLE &&
         React.isValidElement(slides[current].content)
           ? React.cloneElement(
               slides[current].content as React.ReactElement<{
@@ -506,7 +519,7 @@ const Slideshow: React.FC<SlideshowProps> = ({
               }>,
               { visibleSteps: incidentSteps }
             )
-          : slides[current].title === CLOUD_SLIDE_TITLE &&
+          : slides[current]?.title === CLOUD_SLIDE_TITLE &&
             React.isValidElement(slides[current].content)
           ? React.cloneElement(
               slides[current].content as React.ReactElement<{
@@ -514,7 +527,7 @@ const Slideshow: React.FC<SlideshowProps> = ({
               }>,
               { cloudSteps }
             )
-          : slides[current].title === SETTINGS_SLIDE_TITLE &&
+          : slides[current]?.title === SETTINGS_SLIDE_TITLE &&
             React.isValidElement(slides[current].content)
           ? React.cloneElement(
               slides[current].content as React.ReactElement<{
@@ -522,7 +535,7 @@ const Slideshow: React.FC<SlideshowProps> = ({
               }>,
               { settingsStep }
             )
-          : slides[current].content}
+          : slides[current]?.content}
       </div>
 
       <div style={styles.footer}>
