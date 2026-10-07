@@ -16,6 +16,7 @@ type UserData = {
   scribe7: string;
   completedIsoModule: boolean;
   currentSlideDeck: string;
+  enteredIsoModule: boolean;
 };
 
 type AppContextType = {
@@ -43,7 +44,8 @@ export function AppProvider({
     scribe6: "",
     scribe7: "",
     completedIsoModule: false,
-    currentSlideDeck: "policies"
+    currentSlideDeck: "policies",
+    enteredIsoModule: false
   });
 
   return (

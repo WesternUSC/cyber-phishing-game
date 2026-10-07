@@ -23,7 +23,7 @@ type User = {
 
 export default function HomePage() {
   const { userData, setUserData } = useApp();
-  const [state, dispatch] = useReducer(gameReducer, initialGameState);
+  //const [state, dispatch] = useReducer(gameReducer, initialGameState);
   const [nameInput, setNameInput] = useState('');
   const [title, setTitle] = useState('');
   const [supervisor, setSupervisor] = useState('');
@@ -40,53 +40,8 @@ export default function HomePage() {
 
   const router = useRouter();
 
-  const [introSeen, setIntroSeen] = useState(false);
-  const [slidesSeen, setSlidesSeen] = useState(false);
   const [nameError, setNameError] = useState(false);
   const [users, setUsers] = useState<User[]>([]);
-  const [clockStr, setClockStr] = useState('');
-  const [feedback, setFeedback] = useState<{
-    open: boolean;
-    correct: boolean;
-    explanation: string;
-    evidence: string[];
-  }>({ open: false, correct: false, explanation: '', evidence: [] });
-  const openedAtRef = useRef<number>(Date.now());
-
-  const [isChromeClosed, setisChromeClosed] = useState(true);
-  const [isSlackClosed, setisSlackClosed] = useState(true);
-
-  const [showStart, setShowStart] = useState(false);
-
-  const [activeTab, setActiveTab] = useState<'phishquest' | 'outlook' | 'western' | 'calendar' | 'trello' | 'rippling' | 'modules'>(
-    'phishquest'
-  );
-
-  const [westernPage, setWesternPage] = useState<'home' | 'report'>('home');
-  const [westernPopup, setWesternPopup] = useState<string | null>(null);
-
-  const [moduleStarted, setModuleStarted] = useState<Record<string, boolean>>({});
-
-  const [requester, setRequester] = useState("");
-  const [issueRelatedTo, setIssueRelatedTo] = useState("");
-  const [subject, setSubject] = useState("");
-
-  const [completedDrive, setCompletedDrive] = useState(false);
-  const [completedTicketing, setCompletedTicketing] = useState(false);
-  const [completedCalendar, setCompletedCalendar] = useState(false);
-  const [completedTrello, setCompletedTrello] = useState(false);
-  const [completedRippling, setCompletedRippling] = useState(false);
-  const [completedSlack, setCompletedSlack] = useState(false);
-
-  const [selectedSlides, setSelectedSlides] = useState<'eso' | 'policies' | 'cs' | 'accessibility' | 'conflict' | 'disc' | 'early' | 'job'>('eso');
-
-  const [openApp, setOpenApp] = useState<
-  | {
-      name: string;
-      description: string;
-    }
-  | null
-  >(null);
 
   function resetGame(shouldReload?: boolean) {
     localStorage.clear();
@@ -211,6 +166,25 @@ export default function HomePage() {
       supervisor: player.supervisor,
       email: player.email,
     }));
+
+    const values = {
+      name: player.name,
+      title: player.title,
+      supervisor: player.supervisor,
+      scribe1: player.scribe1,
+      scribe2: player.scribe2,
+      scribe3: player.scribe3,
+      scribe4: player.scribe4,
+      scribe5: player.scribe5,
+      scribe6: player.scribe6,
+      scribe7: player.scribe7,
+      loginCode: player.loginCode,
+      userEmail: player.email,
+    };
+
+    Object.entries(values).forEach(([key, value]) => {
+      localStorage.setItem(key, value ?? "");
+    });
 
     router.push('/home');
   }

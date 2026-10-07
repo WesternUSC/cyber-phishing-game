@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import { CornerTab } from '@/components/corner-tab';
+import { useApp } from "@/components/app-context";
+import { useRouter } from "next/navigation";
 
 interface Slide {
   title?: string;
@@ -39,6 +41,7 @@ const Slideshow: React.FC<SlideshowProps> = ({
   playerName,
   currentSlideDeck
 }) => {
+  const { userData } = useApp();
   const [current, setCurrent] = useState(startSlide);
   const [slideStartedAt, setSlideStartedAt] = useState(Date.now());
 
@@ -55,6 +58,8 @@ const Slideshow: React.FC<SlideshowProps> = ({
 
   const [showQuizModal, setShowQuizModal] = useState(false);
 
+  const router = useRouter();
+
   useEffect(() => {
     if (!onLastSlide) {
       return;
@@ -65,6 +70,20 @@ const Slideshow: React.FC<SlideshowProps> = ({
       //     return;
       //   }
       // }
+    } else {
+        const savedString = localStorage.getItem("enteredIsoModule");
+
+        if (savedString !== null) {
+          if (savedString === "true") {
+            router.push("/desktop-simulator");
+            return;
+          }
+        }
+
+        if (userData.enteredIsoModule) {
+          router.push("/desktop-simulator");
+          return;
+        }
     }
 
     const saved = localStorage.getItem(STORAGE_KEY);

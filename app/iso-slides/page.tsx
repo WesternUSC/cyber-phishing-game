@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { slides } from '@/components/slides';
 
 export default function ISOSlides() {
-    const { userData } = useApp();
+    const { userData, setUserData } = useApp();
     const router = useRouter();
     
     function getSlides() {
@@ -14,6 +14,13 @@ export default function ISOSlides() {
     }
 
     function esoLastSlide() {
+        setUserData(prev => ({
+            ...prev,
+            enteredIsoModule: true
+        }));
+
+        localStorage.setItem("enteredIsoModule", "true");
+
         router.push("/desktop-simulator");
     }
 

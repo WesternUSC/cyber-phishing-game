@@ -2016,12 +2016,15 @@ export default function DesktopSimulator() {
                 {activeTab === 'modules' && (
                 <ModuleCompletion
                     onComplete={() => {
-                    //setSlidesSeen(false);
                     setActiveTab('phishquest');
                     setUserData(prev => ({
                         ...prev,
                         completedIsoModule: true,
+                        enteredIsoModule: false
                     }));
+
+                    localStorage.setItem("enteredIsoModule", "false");
+                    
                     router.push("/certificate");
                     }}
                     completedDrive={completedDrive}
