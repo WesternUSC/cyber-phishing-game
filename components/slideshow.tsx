@@ -13,6 +13,8 @@ interface Slide {
   quizScoreKey?: string;
   quizAnswersKey?: string;
   isCertificate?: boolean;
+
+  isScribe?: boolean
 }
 
 interface SlideshowProps {
@@ -58,6 +60,7 @@ const Slideshow: React.FC<SlideshowProps> = ({
 
   const [showQuizModal, setShowQuizModal] = useState(false);
   const [showCompletedModal, setShowCompletedModal] = useState(false);
+  const [showDoneJobTraining, setShowDoneJobTraining] = useState(false);
 
   const router = useRouter();
 
@@ -336,6 +339,10 @@ const Slideshow: React.FC<SlideshowProps> = ({
     location.reload();
   }
 
+  const goHome = () => {
+    router.push("/home");
+  }
+
   const resetQuiz = () => {
     const quiz = getQuizResult();
 
@@ -421,6 +428,11 @@ const Slideshow: React.FC<SlideshowProps> = ({
       return;
     }
 
+    if (currentSlide.isScribe && slides[slides.length - 1] == slides[current]) {
+      setShowDoneJobTraining(true);
+      return;
+    }
+
     if (currentSlide.isMultipleChoice) {
       const multipleChoiceSlides = slides
         .map((slide, index) => ({
@@ -477,6 +489,7 @@ const Slideshow: React.FC<SlideshowProps> = ({
           }
           else {
             setShowCompletedModal(true);
+            return;
           }
         }
       }
@@ -664,6 +677,42 @@ const Slideshow: React.FC<SlideshowProps> = ({
 
               <button
                 onClick={finishedPolicy}
+                style={styles.retryButton}
+              >
+                Continue
+              </button>
+
+            </div>
+          </div>
+        </div>
+      )}
+
+      {showDoneJobTraining && (
+        <div style={styles.modalOverlay}>
+          <div style={styles.modal}>
+
+            <div style={styles.modalTopBar} />
+
+            <div style={styles.modalContent}>
+
+              <div style={styles.finishedIcon}>
+                ✓
+              </div>
+
+              <h2 style={styles.modalTitle}>
+                Job Training Completed!
+              </h2>
+
+              <p style={styles.modalText}>
+                You have completed all the required job training.
+              </p>
+
+              <p style={styles.modalSubtext}>
+                Click below to continue to the home screen.
+              </p>
+
+              <button
+                onClick={goHome}
                 style={styles.retryButton}
               >
                 Continue

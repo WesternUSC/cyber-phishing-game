@@ -121,6 +121,7 @@ export const scribesSlides = (
         </div>
       </div>
     ),
+    isScribe: true
   }));
 
   return [titleSlide, ...scribeSlides];
