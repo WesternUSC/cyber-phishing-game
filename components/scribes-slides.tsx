@@ -34,14 +34,14 @@ export const scribesSlides = (
           backgroundColor: "#582c83",
         }}
       >
-        <div
+        {/* <div
           style={{
             color: "#ffffff",
             fontSize: "1.25rem",
           }}
         >
           Subtitle
-        </div>
+        </div> */}
 
         <h1
           style={{
@@ -52,7 +52,7 @@ export const scribesSlides = (
             fontWeight: "bold",
           }}
         >
-          Module title
+          Job Training
         </h1>
 
         <div
@@ -74,7 +74,7 @@ export const scribesSlides = (
             textAlign: "center",
           }}
         >
-          Description
+          How-to guides for your position
         </p>
       </div>
     ),
