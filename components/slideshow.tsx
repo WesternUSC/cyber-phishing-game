@@ -57,6 +57,7 @@ const Slideshow: React.FC<SlideshowProps> = ({
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   const [showQuizModal, setShowQuizModal] = useState(false);
+  const [showCompletedModal, setShowCompletedModal] = useState(false);
 
   const router = useRouter();
 
@@ -331,6 +332,10 @@ const Slideshow: React.FC<SlideshowProps> = ({
     };
   };
 
+  const finishedPolicy = () => {
+    location.reload();
+  }
+
   const resetQuiz = () => {
     const quiz = getQuizResult();
 
@@ -379,7 +384,7 @@ const Slideshow: React.FC<SlideshowProps> = ({
     // }
 
     const isIncidentSlide =
-      slides[current].title === INCIDENT_SLIDE_TITLE;
+      slides[current]?.title === INCIDENT_SLIDE_TITLE;
 
     if (isIncidentSlide && incidentSteps < 4) {
       setIncidentSteps((previous) => previous + 1);
@@ -387,7 +392,7 @@ const Slideshow: React.FC<SlideshowProps> = ({
     }
 
     const isCloudSlide =
-      slides[current].title === CLOUD_SLIDE_TITLE;
+      slides[current]?.title === CLOUD_SLIDE_TITLE;
 
     if (isCloudSlide && cloudSteps < 3) {
       setCloudSteps((previous) => previous + 1);
@@ -395,7 +400,7 @@ const Slideshow: React.FC<SlideshowProps> = ({
     }
 
     const isSettingsSlide =
-      slides[current].title === SETTINGS_SLIDE_TITLE;
+      slides[current]?.title === SETTINGS_SLIDE_TITLE;
 
     if (isSettingsSlide && settingsStep < 4) {
       setSettingsStep((previous) => previous + 1);
@@ -469,6 +474,9 @@ const Slideshow: React.FC<SlideshowProps> = ({
           if (percentage < 100) {
             setShowQuizModal(true);
             return;
+          }
+          else {
+            setShowCompletedModal(true);
           }
         }
       }
@@ -629,6 +637,42 @@ const Slideshow: React.FC<SlideshowProps> = ({
           </div>
         </div>
       )}
+
+      {showCompletedModal && (
+        <div style={styles.modalOverlay}>
+          <div style={styles.modal}>
+
+            <div style={styles.modalTopBar} />
+
+            <div style={styles.modalContent}>
+
+              <div style={styles.finishedIcon}>
+                ✓
+              </div>
+
+              <h2 style={styles.modalTitle}>
+                Knowledge Check Complete!
+              </h2>
+
+              <p style={styles.modalText}>
+                You have finished this policy.
+              </p>
+
+              <p style={styles.modalSubtext}>
+                Please continue to the next one.
+              </p>
+
+              <button
+                onClick={finishedPolicy}
+                style={styles.retryButton}
+              >
+                Continue
+              </button>
+
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
@@ -721,6 +765,20 @@ const styles: Record<string, React.CSSProperties> = {
     margin: "0 auto 20px",
     borderRadius: "50%",
     backgroundColor: "#FBBE00",
+    color: "#4F2683",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    fontSize: 30,
+    fontWeight: 800,
+  },
+
+  finishedIcon: {
+    width: 58,
+    height: 58,
+    margin: "0 auto 20px",
+    borderRadius: "50%",
+    backgroundColor: "#17ff64",
     color: "#4F2683",
     display: "flex",
     alignItems: "center",
