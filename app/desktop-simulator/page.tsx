@@ -287,8 +287,6 @@ export default function DesktopSimulator() {
     const [completedRippling, setCompletedRippling] = useState(false);
     const [completedSlack, setCompletedSlack] = useState(false);
 
-    const [selectedSlides, setSelectedSlides] = useState<'eso' | 'policies' | 'cs' | 'accessibility' | 'conflict' | 'disc' | 'early' | 'job'>('eso');
-
     const [openApp, setOpenApp] = useState<
     | {
         name: string;
@@ -380,25 +378,26 @@ export default function DesktopSimulator() {
         }))
 
         switch (moduleId) {
-        case "outlook":
-            setCompletedDrive(true);
-            break;
+            case "outlook":
+                setCompletedDrive(true);
+                break;
 
-        case "calendar":
-            setCompletedCalendar(true);
-            break;
+            case "calendar":
+                setCompletedCalendar(true);
+                break;
 
-        case "trello":
-            setCompletedTrello(true);
-            break;
+            case "trello":
+                setCompletedTrello(true);
+                break;
 
-        case "rippling":
-            setCompletedRippling(true);
-            break;
+            case "rippling":
+                setCompletedRippling(true);
+                break;
+
+            case "slack":
+                break;
         }
     }
-
-    const [completedIsModule, setCompletedIsModule] = useState(false);
 
     const [clickedDrive, setClickedDrive] = useState(false);
     const [clickedSupport, setClickedSupport] = useState(false);
@@ -544,9 +543,6 @@ export default function DesktopSimulator() {
                         border
                         border-r-0
                         shadow-lg
-                        transition-all
-                        duration-200
-                        hover:w-14
                         ${
                         module.completed
                             ? 'border-green-500 bg-green-500 text-white'
@@ -574,171 +570,6 @@ export default function DesktopSimulator() {
                 })}
             </div>
             </div>
-
-            {activeModule && (
-            <div
-                className="fixed right-0 z-50 flex items-stretch"
-                style={{
-                top: `clamp(
-                    ${viewportPadding}px,
-                    ${naturalCardTop},
-                    calc(100vh - ${viewportPadding}px)
-                )`,
-
-                transform: isClosing
-                    ? 'translateX(100%) translateY(-50%)'
-                    : 'translateX(0) translateY(-50%)',
-
-                animation: isClosing
-                    ? 'none'
-                    : 'moduleCardSlideIn 400ms cubic-bezier(0.22, 1, 0.36, 1)',
-
-                transition: isClosing
-                    ? 'transform 400ms cubic-bezier(0.22, 1, 0.36, 1)'
-                    : 'none',
-
-                maxHeight: `calc(100vh - ${viewportPadding * 2}px)`,
-                }}
-            >
-                <div
-                className="
-                    relative
-                    w-[360px]
-                    max-h-[calc(100vh-32px)]
-                    overflow-y-auto
-                    overflow-x-hidden
-                    rounded-2xl
-                    bg-white
-                    shadow-[-12px_15px_40px_rgba(0,0,0,0.30)]
-                    ring-1
-                    ring-black/10
-                "
-                >
-                <div className="p-7">
-                    <div className="mb-5 flex justify-center">
-                    <div
-                        className={`
-                        flex
-                        h-16
-                        w-16
-                        items-center
-                        justify-center
-                        rounded-2xl
-                        ${
-                            activeModule.completed
-                            ? 'bg-green-50'
-                            : 'bg-[#f7f3fb]'
-                        }
-                        `}
-                    >
-                        <Image
-                        src={activeModule.icon}
-                        alt=""
-                        width={40}
-                        height={40}
-                        className="object-contain"
-                        />
-                    </div>
-                    </div>
-
-                    <div className="text-center">
-                    <p
-                        className={`
-                        text-xs
-                        font-semibold
-                        uppercase
-                        tracking-widest
-                        ${
-                            activeModule.completed
-                            ? 'text-green-600'
-                            : 'text-[#4f2584]'
-                        }
-                        `}
-                    >
-                        {activeModule.completed
-                        ? 'Module Completed'
-                        : 'Training Module'}
-                    </p>
-
-                    <h2 className="mt-2 text-2xl font-semibold text-gray-900">
-                        {activeModule.title}
-                    </h2>
-
-                    <p className="mt-3 text-sm leading-6 text-gray-600">
-                        {activeModule.description}
-                    </p>
-                    </div>
-
-                    <div className="mt-5 rounded-xl bg-[#f7f3fb] px-5 py-4 text-left">
-                    <p className="text-sm font-medium text-[#4f2584]">
-                        What you'll do
-                    </p>
-
-                    <p className="mt-1 text-sm leading-5 text-gray-600">
-                        Follow the interactive guide carefully and pay attention
-                        to the steps shown. When you're ready, click Continue to
-                        begin the module.
-                    </p>
-                    </div>
-
-                    {activeModule.completed && (
-                    <div className="mt-4 flex items-center gap-2 rounded-lg bg-green-50 px-4 py-3 text-sm font-medium text-green-700">
-                        <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-green-500 text-xs text-white">
-                        ✓
-                        </span>
-
-                        This module has been completed.
-                    </div>
-                    )}
-                </div>
-                </div>
-
-                <button
-                onClick={closeCard}
-                className={`
-                    flex
-                    h-28
-                    w-12
-                    shrink-0
-                    items-center
-                    justify-center
-                    self-center
-                    rounded-r-xl
-                    border
-                    border-l-0
-                    shadow-lg
-                    ${
-                    activeModule.completed
-                        ? 'border-green-500 bg-green-500 text-white'
-                        : 'border-gray-200 bg-white text-gray-600'
-                    }
-                `}
-                title="Close module"
-                >
-                <span
-                    className="whitespace-nowrap text-xs font-semibold tracking-wide"
-                    style={{
-                    writingMode: 'vertical-rl',
-                    transform: 'rotate(180deg)',
-                    }}
-                >
-                    {activeModule.label}
-                </span>
-                </button>
-            </div>
-            )}
-
-            <style>{`
-            @keyframes moduleCardSlideIn {
-                from {
-                transform: translateX(100%) translateY(-50%);
-                }
-
-                to {
-                transform: translateX(0) translateY(-50%);
-                }
-            }
-            `}</style>
         </>
         );
     }
@@ -1341,7 +1172,18 @@ export default function DesktopSimulator() {
                 ))}
             </div>
 
-                {activeTab === 'phishquest' && windowContent}
+                {activeTab === 'phishquest' && (
+                    moduleStarted.phishquest ? (
+                        windowContent
+                    ) : (
+                        <ModuleIntro
+                        moduleId="phishquest"
+                        title="PhishQuest"
+                        description="Learn how to identify and respond to phishing emails. Review each message carefully, look for suspicious signs, and decide whether the email is safe or a phishing attempt."
+                        icon="/usc-logo.png"
+                        />
+                    )
+                )}
 
                 {activeTab === 'outlook' && (
                 moduleStarted.outlook ? (
@@ -2045,15 +1887,60 @@ export default function DesktopSimulator() {
             )}
 
             {!isSlackClosed && (
-                <div className="absolute left-[20%] top-[8%] z-30 h-[75vh] w-[50vw]">
-                <SlackApp
-                    playerName={userData.name}
-                    onMinimize={() => setisSlackClosed(true)}
-                    onClose={() => setisSlackClosed(true)}
-                    setCompletedSlack={setCompletedSlack}
-                />
+                <div className="absolute left-[20%] top-[8%] z-30 h-[75vh] w-[50vw] overflow-hidden rounded-lg shadow-2xl">
+                    {!moduleStarted.slack ? (
+                    <div className="flex h-full w-full flex-col bg-[#f6f8fc]">
+                        <div className="flex h-12 shrink-0 items-center justify-between bg-[#3f0e40] px-4">
+                        <div className="flex items-center gap-2">
+                            <Image
+                            src="/slack_logo_icon.webp"
+                            alt="Slack"
+                            width={24}
+                            height={24}
+                            className="object-contain"
+                            />
+
+                            <span className="text-sm font-semibold text-white">
+                            Slack
+                            </span>
+                        </div>
+
+                        <div className="flex items-center gap-1">
+                            <button
+                            onClick={() => setisSlackClosed(true)}
+                            className="flex h-8 w-8 items-center justify-center rounded text-white/70 hover:bg-white/10 hover:text-white"
+                            aria-label="Minimize Slack"
+                            >
+                            −
+                            </button>
+
+                            <button
+                            onClick={() => setisSlackClosed(true)}
+                            className="flex h-8 w-8 items-center justify-center rounded text-white/70 hover:bg-red-500 hover:text-white"
+                            aria-label="Close Slack"
+                            >
+                            ×
+                            </button>
+                        </div>
+                        </div>
+
+                        <ModuleIntro
+                        moduleId="slack"
+                        title="Slack"
+                        description="Learn how to communicate and collaborate effectively in Slack. This interactive guide will walk you through the key steps you need to know."
+                        icon="/slack_logo_icon.webp"
+                        />
+                    </div>
+                    ) : (
+                    <SlackApp
+                        playerName={userData.name}
+                        onMinimize={() => setisSlackClosed(true)}
+                        onClose={() => setisSlackClosed(true)}
+                        setCompletedSlack={setCompletedSlack}
+                    />
+                    )}
                 </div>
-            )}  
+                )}
 
             </div>
 

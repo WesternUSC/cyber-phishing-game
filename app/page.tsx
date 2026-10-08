@@ -206,7 +206,7 @@ export default function HomePage() {
             </div>
 
             <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
-              Welcome to PhishQuest
+              USC Onboarding
             </h1>
 
             <p className="mt-2 text-sm font-semibold uppercase tracking-widest text-[#4f2584]">

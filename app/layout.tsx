@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { AppProvider } from '@/components/app-context';
 
 export const metadata: Metadata = {
-  title: 'PhishQuest',
+  title: 'USC Onboarding',
   description: 'Interactive phishing email training game',
 };
 
