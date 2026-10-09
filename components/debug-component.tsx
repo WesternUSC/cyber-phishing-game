@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { useRouter } from "next/navigation";
+import { useEffect } from 'react';
 
 interface DebugTabProps {
   onReset?: () => void;
@@ -10,6 +11,31 @@ interface DebugTabProps {
 export function DebugTab({ onReset }: DebugTabProps) {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      // Ignore typing in text boxes
+      const target = event.target as HTMLElement;
+      if (
+        target.tagName === 'INPUT' ||
+        target.tagName === 'TEXTAREA' ||
+        target.isContentEditable
+      ) {
+        return;
+      }
+
+      if (event.key.toLowerCase() === 'd') {
+        setIsVisible((prev) => !prev);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
 
   const handleReset = () => {
     if (onReset) {
@@ -28,13 +54,16 @@ export function DebugTab({ onReset }: DebugTabProps) {
     setIsOpen(false);
   };
 
+  if (!isVisible) {
+    return;
+  }
+
   return (
     <div
       className="fixed bottom-0 left-0 z-[3000] w-24"
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
     >
-      {/* Main tab */}
       <button
         type="button"
         onClick={() => setIsOpen((prev) => !prev)}
@@ -69,7 +98,6 @@ export function DebugTab({ onReset }: DebugTabProps) {
         Debug
       </button>
 
-      {/* Slide-up panel */}
       <div
         id="debug-tab-panel"
         aria-hidden={!isOpen}
