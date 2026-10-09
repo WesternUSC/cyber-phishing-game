@@ -534,6 +534,38 @@ const Slideshow: React.FC<SlideshowProps> = ({
     return null;
   }
 
+  useEffect(() => {
+    const handleScribeSlideSelect = (event: Event) => {
+      const customEvent = event as CustomEvent<{
+        slideIndex: number;
+      }>;
+
+      const slideIndex = customEvent.detail?.slideIndex;
+
+      if (
+        typeof slideIndex !== "number" ||
+        slideIndex < 1 ||
+        slideIndex >= slides.length
+      ) {
+        return;
+      }
+
+      changeSlide(slideIndex);
+    };
+
+    window.addEventListener(
+      "scribe-slide-select",
+      handleScribeSlideSelect
+    );
+
+    return () => {
+      window.removeEventListener(
+        "scribe-slide-select",
+        handleScribeSlideSelect
+      );
+    };
+  }, [slides]);
+
   return (
     <div style={styles.container}>
 

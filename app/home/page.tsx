@@ -2,7 +2,6 @@
 
 import Selection from "@/components/selection";
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
 import { useApp } from "@/components/app-context";
 
 export default function ModuleHomePage() {
