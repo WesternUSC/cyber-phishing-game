@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import HelpChat from "./help-chat";
 import { Certificate } from "./slides";
 import { useRouter } from "next/navigation";
@@ -151,7 +151,7 @@ export default function Selection({
   resetGame,
 }: SelectionProps) {
   const router = useRouter();
-  const { userData } = useApp();
+  const { userData, setUserData } = useApp();
 
   const [selectedId, setSelectedId] = useState(options[0]?.id ?? "");
 
@@ -170,6 +170,19 @@ export default function Selection({
   const selectedPolicyOption = policiesOptions.find(
     (option) => option.id === selectedPolicyId
   );
+
+  useEffect(() => {
+      const savedString = localStorage.getItem("completedIsoModule");
+
+      if (savedString !== null) {
+          if (savedString === "true") {
+            setUserData(prev => ({
+              ...prev,
+              completedIsoModule: true
+            }));
+          }
+      }
+  }, [setUserData]);
 
   const handleDownload = async (
     event: React.MouseEvent<HTMLButtonElement>,

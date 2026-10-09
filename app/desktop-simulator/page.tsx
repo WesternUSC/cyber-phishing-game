@@ -1864,6 +1864,7 @@ export default function DesktopSimulator() {
                     }));
 
                     localStorage.setItem("enteredIsoModule", "false");
+                    localStorage.setItem("completedIsoModule", "true");
                     
                     router.push("/certificate");
                     }}

@@ -28,7 +28,7 @@ export default function ModuleHomePage() {
                 title: savedTitle,
             }));
         }
-    }, []);
+    }, [setUserData]);
 
     return (
         <Selection playerName={userData.name}
