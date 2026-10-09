@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useEffect } from "react";
-import { CornerTab } from '@/components/corner-tab';
 import { useApp } from "@/components/app-context";
 import { useRouter } from "next/navigation";
 
@@ -537,8 +536,6 @@ const Slideshow: React.FC<SlideshowProps> = ({
 
   return (
     <div style={styles.container}>
-
-      <CornerTab />
 
       {/* <div style={styles.header}>
         {playerName}

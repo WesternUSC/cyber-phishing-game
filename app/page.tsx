@@ -1,8 +1,7 @@
 'use client';
 
-import { useEffect, useReducer, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { gameReducer, initialGameState } from '@/lib/game';
 import { useRouter } from "next/navigation";
 import { useApp } from "@/components/app-context";
 
@@ -65,9 +64,9 @@ export default function HomePage() {
         return;
       }
 
-      if (event.key.toLowerCase() === 'r') {
-        resetGame(true);
-      }
+      // if (event.key.toLowerCase() === 'r') {
+      //   resetGame(true);
+      // }
 
       // if (event.key.toLowerCase() === 's') {
       //   setSlidesSeen(true);

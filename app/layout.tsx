@@ -1,10 +1,12 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { AppProvider } from '@/components/app-context';
+import { DebugTab } from '@/components/debug-component';
+import { CornerTab } from '@/components/corner-tab';
 
 export const metadata: Metadata = {
   title: 'USC Onboarding',
-  description: 'Interactive phishing email training game',
+  description: 'Onboarding for the USC',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -13,6 +15,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <AppProvider>
           {children}
+          <CornerTab />
+          <DebugTab />
         </AppProvider>
       </body>
     </html>

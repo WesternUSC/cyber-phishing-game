@@ -1,9 +1,7 @@
 'use client';
 
 import React, { useState } from "react";
-import { CornerTab } from "./corner-tab";
 import HelpChat from "./help-chat";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Certificate } from "./slides";
 import { useRouter } from "next/navigation";
 import { useApp } from "@/components/app-context";
@@ -334,8 +332,6 @@ export default function Selection({
 
   return (
     <div style={styles.page}>
-      <CornerTab />
-
       <HelpChat
         iconSrc="usc-logo-help-icon.png"
         recipientEmail={userEmail}

@@ -5,7 +5,7 @@ import { StoredSignature } from './stored-signature';
 import { useRef } from 'react';
 import { toPng } from 'html-to-image';
 import slidesData from '@/data/slides.json'
-import { CornerTab } from './corner-tab';
+import { useRouter } from "next/navigation";
 
 const headerStyle: React.CSSProperties = {
   padding: "14px",
@@ -242,6 +242,7 @@ const CloudSharingSlide: React.FC<CloudSharingSlideProps> = ({
 };
 
 export const Certificate = ({ playerName }: { playerName: string }) => {
+  const router = useRouter();
 
   const certificateRef = useRef<HTMLDivElement>(null);
 
@@ -277,8 +278,6 @@ export const Certificate = ({ playerName }: { playerName: string }) => {
         gap: "1rem",
       }}
     >
-      
-      <CornerTab />
 
       <div
         ref={certificateRef}
@@ -515,6 +514,22 @@ export const Certificate = ({ playerName }: { playerName: string }) => {
         }}
       >
         Download Certificate
+      </button>
+
+      <button
+        onClick={() => router.push("/home")}
+        style={{
+          padding: "0.75rem 1.5rem",
+          backgroundColor: "#582c83",
+          color: "#fff",
+          border: "none",
+          borderRadius: "6px",
+          fontSize: "1rem",
+          fontWeight: "600",
+          cursor: "pointer",
+        }}
+      >
+        Home
       </button>
     </div>
   );
