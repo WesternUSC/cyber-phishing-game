@@ -1139,5 +1139,107 @@
       "correctAnswer": "D",
       "explanation": "Section 2.3 defines a serious hazard as a condition, activity, or situation that poses a considerable risk of injury, illness, death, or harm to individuals."
     }
+  ],
+  "questionsHsrm": [
+    {
+      "category": "hsrm",
+      "id": "q1",
+      "question": "A Supervisor is unsure which section of the Occupational Health and Safety Act they are specifically responsible for under this policy. Which section applies to Supervisors?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Section 27."
+        },
+        {
+          "label": "B",
+          "text": "Section 28."
+        },
+        {
+          "label": "C",
+          "text": "Section 25."
+        },
+        {
+          "label": "D",
+          "text": "Section 26."
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Section 2.3 states Supervisors are responsible for section 27 of the OHSA."
+    },
+    {
+      "category": "hsrm",
+      "id": "q2",
+      "question": "How often are Manager and Supervisor health and safety performance evaluations performed, and in what format?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Once a year, quantitative only."
+        },
+        {
+          "label": "B",
+          "text": "Twice a year — a midyear qualitative evaluation and a final quantitative evaluation."
+        },
+        {
+          "label": "C",
+          "text": "Quarterly, qualitative only."
+        },
+        {
+          "label": "D",
+          "text": "Only when requested by Human Resources."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Section 2.4.1 states performance evaluations will be performed twice each year, with a midyear qualitative and a final quantitative evaluation."
+    },
+    {
+      "category": "hsrm",
+      "id": "q3",
+      "question": "Who is responsible for ensuring the Health & Safety Coordinator receives copies of a hazard report for distribution to the JHSC and Worker Health & Safety Representative?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Referral directly to Western Campus Police."
+        },
+        {
+          "label": "B",
+          "text": "Immediate termination with no process."
+        },
+        {
+          "label": "C",
+          "text": "Article 12 of the collective agreement between the USC and CUPE Local 2820."
+        },
+        {
+          "label": "D",
+          "text": "A verbal warning only, with no further escalation possible."
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Section 3.1 states disciplinary procedures will follow the process described in Article 12 of the collective agreement between the USC and CUPE Local 2820."
+    },
+    {
+      "category": "hsrm",
+      "id": "q4",
+      "question": "Which of the following is NOT listed as a core Manager/Supervisor responsibility under this policy?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Commending employee health and safety performance."
+        },
+        {
+          "label": "B",
+          "text": "Conducting incident investigations."
+        },
+        {
+          "label": "C",
+          "text": "Appointing competent supervision."
+        },
+        {
+          "label": "D",
+          "text": "Personally administering all first aid treatment on-site."
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Section 2.1 lists seven specific responsibilities (inspections, information sessions, incident investigations, training, correcting substandard conditions, commending performance, and appointing competent supervision) — personally administering first aid is not among them."
+    }
   ]
 }

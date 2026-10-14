@@ -13,7 +13,8 @@ type Slide =
   | "early"
   | "job"
   | "emergency"
-  | "hazard";
+  | "hazard"
+  | "hsrm";
 
 interface Module {
   name: string;
@@ -78,6 +79,7 @@ const scoreStorageKeys: Record<string, string> = {
   "Early and Safe Return to Work Policy": "early-score",
   "Emergency Preparedness Policy": "emergency-score",
   "Hazard Reporting Policy": "hazard-score",
+  "Health and Safety Responsibilities of Managers & Supervisors Policy": "hsrm-score",
 };
 
 const modules: Omit<Module, "score">[] = [
@@ -129,7 +131,7 @@ const modules: Omit<Module, "score">[] = [
   {
     name: "Health and Safety Responsibilities of Managers & Supervisors Policy",
     questionCount: 5,
-    page: "eso",
+    page: "hsrm",
   },
   {
     name: "Health and Safety Responsibilities of Workers (including Supplied Labour) Policy",
@@ -354,6 +356,7 @@ export default function ModuleTableOfContents({
               "Early and Safe Return to Work Policy": "8",
               "Emergency Preparedness Policy": "9",
               "Hazard Reporting Policy": "10",
+              "Health and Safety Responsibilities of Managers & Supervisors Policy": "11"
             }).find(([name]) => name === module.name)?.[1];
 
             // const hasDownloads =

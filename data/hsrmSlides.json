@@ -1,0 +1,98 @@
+{
+    "titleSlide": {
+        "title": "Health and Safety Responsibilities of Managers & Supervisors Policy",
+        "subtitle": "",
+        "moduleTitle": "Health and Safety Responsibilities of Managers & Supervisors Policy",
+        "desc": ""
+    },
+    "policiesSlide": {
+        "title": "Policy Summary",
+        "table": [
+            {
+                "label": "Authority",
+                "value": "Chief Operating Officer"
+            },
+            {
+                "label": "Date Ratified",
+                "value": "December 6, 2024"
+            },
+            {
+                "label": "Next Review Date",
+                "value": "December 2027"
+            },
+            {
+                "label": "Previous Amendments",
+                "value": "February 3, 2022; February 7, 2020"
+            },
+            {
+                "label": "Related Document(s)",
+                "value": "Appendix: OHSA ss. 25, 26, 27"
+            }
+        ],
+        "description": "This policy outlines the health and safety responsibilities and accountabilities of USC Managers and Supervisors. It sets out the core duties Managers and Supervisors must perform, ties those duties to specific sections of the Occupational Health and Safety Act, describes how performance on these responsibilities is evaluated, and establishes that disciplinary procedures for violations follow the collective agreement between the USC and CUPE Local 2820.",
+        "scope": ""
+    },
+    "useSlide": {
+        "title": "Key Takeaways",
+        "items": [
+            "Applies to all USC Managers & Supervisors.",
+            "Managers and Supervisors must ensure workplace inspections take place, conduct information sessions (safety talks, staff meetings, tailgate meetings), conduct incident investigations, conduct employee training, correct substandard acts or conditions, commend good health and safety performance, and appoint competent supervision.",
+            "Managers are responsible for sections 25 and 26 of the Occupational Health and Safety Act (and all other applicable legislation); Supervisors are responsible for section 27.",
+            "Manager and Supervisor performance evaluations occur twice each year — a midyear qualitative evaluation and a final quantitative evaluation — following USC's performance appraisal methodology for both management and union staff.",
+            "Each of the seven core responsibilities (inspections, information sessions, incident investigations, training, correcting substandard conditions, commending performance, and appointing competent supervision) is specifically measured in the evaluation.",
+            "Disciplinary procedures for violations of this policy follow the process described in Article 12 of the collective agreement between the USC and CUPE Local 2820."
+        ]
+    },
+    "slideOne": {
+        "title": "1. SCOPE",
+        "oneOne": "This policy applies to all USC Managers & Supervisors."
+    },
+    "slideTwo": {
+        "title": "2. RESPONSIBILITIES",
+        "twoOne": "Managers & Supervisors must",
+        "twoOneOne": "Ensure the performance of workplace inspections;",
+        "twoOneTwo": "Conduct information sessions (safety talks, staff meetings, tailgate meetings);",
+        "twoOneThree": "Conduct incident investigations;",
+        "twoOneFour": "Conduct employee training;",
+        "twoOneFive": "Correct substandard acts or conditions;",
+        "twoOneSix": "Commend employee health and safety performance; and,",
+        "twoOneSeven": "Appoint competent supervision."
+    },
+    "slideTwoTwo": {
+        "title": "2. RESPONSIBILITIES (CONTINUED)",
+        "twoTwo": "Managers are responsible for sections 25 & 26 of the OHSA, attached, and all other legislation that applies to the workplace.",
+        "twoThree": "Supervisors are responsible for section 27 of the OHSA, attached.",
+        "twoFour": "Manager and Supervisor performance evaluations will",
+        "twoFourOne": {
+            "intro": "Be performed;",
+            "items": [
+                "1. Twice each year, with a midyear qualitative and a final quantitative evaluation;",
+                "2. Following USC performance appraisal methodology for both management and union staff members."
+            ]
+        },
+        "twoFourTwo": {
+            "intro": "Measure each responsibility assigned in section 2.01 above, namely,",
+            "items": [
+                "1. Workplace inspections;",
+                "2. Conducting information sessions (safety talks, staff meetings, tailgate meetings);",
+                "3. Conducting incident investigations;",
+                "4. Conducting employee training",
+                "5. Correcting substandard acts or conditions;",
+                "6. Commending employee health and safety performance; and,",
+                "7. Appoint competent supervision."
+            ]
+        }
+    },
+    "slideThree": {
+        "title": "3. PROCEDURES",
+        "threeOne": "Disciplinary procedures will follow the process described in article 12 of the collective agreement between the USC and CUPE local 2820."
+    },
+    "slideFour": {
+        "title": "4. COMMUNICATION",
+        "fourOne": "This policy will be explained as needed to workers through orientation health & safety training or task-specific training."
+    },
+    "slideFive": {
+        "title": "5. EVALUATION",
+        "fiveOne": "This policy will be evaluated on an annual basis through the Continuous Improvement Plan."
+    }
+}

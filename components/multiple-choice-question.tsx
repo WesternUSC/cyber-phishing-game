@@ -100,6 +100,11 @@ const MultipleChoiceQuestion: React.FC<MultipleChoiceQuestionProps> = ({
       ANSWERS_KEY = "hazard-answers";
       break;
 
+    case "hsrm":
+      SCORE_KEY = "hsrm-score";
+      ANSWERS_KEY = "hsrm-answers";
+      break;
+
     default:
       SCORE_KEY = "acceptable-use-score";
       ANSWERS_KEY = "acceptable-use-answers";
