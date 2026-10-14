@@ -11,7 +11,8 @@ type Slide =
   | "conflict"
   | "disc"
   | "early"
-  | "job";
+  | "job"
+  | "emergency";
 
 interface Module {
   name: string;
@@ -55,6 +56,11 @@ const policyDownloads: Record<string, [string, string]> = {
     "/pdfs/Early and Safe Return to Work Policy.pdf",
     "/pdfs/Early_and_Safe_Return_to_Work_Policy_Summary_and_Quiz.pdf",
   ],
+
+  "9": [
+    "/pdfs/Emergency Preparedness Policy.pdf",
+    "/pdfs/Emergency_Preparedness_Policy_Summary_and_Quiz.pdf",
+  ],
 };
 
 const scoreStorageKeys: Record<string, string> = {
@@ -64,6 +70,7 @@ const scoreStorageKeys: Record<string, string> = {
   "Conflict of Interest Policy for USC Paid Employees": "conflict-score",
   "Discrimination Harassment and Violence Prevention Policy": "disc-score",
   "Early and Safe Return to Work Policy": "early-score",
+  "Emergency Preparedness Policy": "emergency-score",
 };
 
 const modules: Omit<Module, "score">[] = [
@@ -89,23 +96,23 @@ const modules: Omit<Module, "score">[] = [
   },
   {
     name: "Discrimination Harassment and Violence Prevention Policy",
-    questionCount: 5,
+    questionCount: 7,
     page: "disc",
   },
   {
     name: "Discrimination Harassment and Violence Reporting Procedure",
-    questionCount: 5,
+    questionCount: 7,
     page: "eso",
   },
   {
     name: "Early and Safe Return to Work Policy",
-    questionCount: 5,
+    questionCount: 7,
     page: "early",
   },
   {
     name: "Emergency Preparedness Policy",
     questionCount: 5,
-    page: "eso",
+    page: "emergency",
   },
   {
     name: "Hazard Reporting Policy",
@@ -338,6 +345,7 @@ export default function ModuleTableOfContents({
               "Conflict of Interest Policy for USC Paid Employees": "5",
               "Discrimination Harassment and Violence Prevention Policy": "6",
               "Early and Safe Return to Work Policy": "8",
+              "Emergency Preparedness Policy": "9",
             }).find(([name]) => name === module.name)?.[1];
 
             // const hasDownloads =

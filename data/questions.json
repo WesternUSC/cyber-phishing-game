@@ -910,5 +910,132 @@
       "correctAnswer": "B",
       "explanation": "Section 3.2.6 requires employees to comply with recommendations of treating healthcare professionals and attend independent assessments as requested."
     }
+  ],
+  "questionsEmergency": [
+    {
+      "category": "emergency",
+      "id": "q1",
+      "question": "A fire breaks out in a USC office. What is the correct first action per the procedures referenced in this policy?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use the elevator to leave the building quickly."
+        },
+        {
+          "label": "B",
+          "text": "Wait for a building-wide announcement before moving."
+        },
+        {
+          "label": "C",
+          "text": "Call ext. 83304 before doing anything else."
+        },
+        {
+          "label": "D",
+          "text": "Raise the alarm from a safe area on the way to evacuate, then use stairwells."
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Section 4.1.1 directs raising the alarm from a safe area on the way to evacuate the building and using stairwells to evacuate."
+    },
+    {
+      "category": "emergency",
+      "id": "q2",
+      "question": "An employee needs to report a suspected gas leak. Which number should they call?",
+      "options": [
+        {
+          "label": "A",
+          "text": "911 - Western Campus Police."
+        },
+        {
+          "label": "B",
+          "text": "Ext. 83300."
+        },
+        {
+          "label": "C",
+          "text": "Ext. 83304."
+        },
+        {
+          "label": "D",
+          "text": "Ext. 80371."
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Section 3.1.2.7 lists gas leaks (among other emergencies) as reportable to 911 - Western Campus Police."
+    },
+    {
+      "category": "emergency",
+      "id": "q3",
+      "question": "Who has the authority within the USC to declare an emergency and close regular operations?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Any employee who feels unsafe."
+        },
+        {
+          "label": "B",
+          "text": "The USC Emergency Response Representative."
+        },
+        {
+          "label": "C",
+          "text": "The Health & Safety Coordinator only."
+        },
+        {
+          "label": "D",
+          "text": "Western Campus Police exclusively."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Section 3.2.1 states the USC Emergency Response Representative has authority within the USC to declare an emergency and close regular operations."
+    },
+    {
+      "category": "emergency",
+      "id": "q4",
+      "question": "An employee cannot safely evacuate during a situation of immediate danger. What should they do?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Exit through a window if on a low floor."
+        },
+        {
+          "label": "B",
+          "text": "Attempt to move through the danger to reach the nearest stairwell."
+        },
+        {
+          "label": "C",
+          "text": "Seek shelter where they are, lock doors, avoid windows, and call Campus Police at 911."
+        },
+        {
+          "label": "D",
+          "text": "Wait by the elevator for rescue."
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Section 4.2.3 directs seeking shelter where you are if safe evacuation is not possible, locking doors, avoiding windows, and calling Campus Police at 911."
+    },
+    {
+      "category": "emergency",
+      "id": "q5",
+      "question": "A visitor becomes seriously injured and requires emergency transport to a medical facility. Who is permitted to provide this transport?",
+      "options": [
+        {
+          "label": "A",
+          "text": "The visitor's own emergency contact."
+        },
+        {
+          "label": "B",
+          "text": "Any campus security staff, regardless of medical training."
+        },
+        {
+          "label": "C",
+          "text": "Any nearby employee with a vehicle."
+        },
+        {
+          "label": "D",
+          "text": "Only personnel trained and acting within their competency."
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Section 4.3 states persons requiring emergency transportation to a medical facility must be transferred by trained personnel acting within their competency."
+    }
   ]
 }

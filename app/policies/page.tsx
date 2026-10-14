@@ -17,6 +17,7 @@ import accessibilitySlidesData from '@/data/accessibility.json'
 import conflictSlidesData from '@/data/conflict.json'
 import discSlidesData from '@/data/discSlides.json'
 import earlySlidesData from '@/data/earlySlides.json'
+import emergencySlidesData from '@/data/emergencySlides.json'
 
 export default function PoliciesPage() {
     const { userData, setUserData } = useApp();
@@ -50,16 +51,19 @@ export default function PoliciesPage() {
                 return createPolicySlides(csSlidesData, questionsData.questionsCustomerService, userData.name, "cs");
 
             case 'accessibility':
-                return createPolicySlides(accessibilitySlidesData, questionsData.questionsAccessibility, userData.name, "cs");
+                return createPolicySlides(accessibilitySlidesData, questionsData.questionsAccessibility, userData.name, "accessibility");
 
             case 'conflict':
-                return createPolicySlides(conflictSlidesData, questionsData.questionsConflict, userData.name, "cs");
+                return createPolicySlides(conflictSlidesData, questionsData.questionsConflict, userData.name, "conflict");
 
             case 'disc':
-                return createPolicySlides(discSlidesData, questionsData.questionsDisc, userData.name, "cs");
+                return createPolicySlides(discSlidesData, questionsData.questionsDisc, userData.name, "disc");
 
             case 'early':
-                return createPolicySlides(earlySlidesData, questionsData.questionsDisc, userData.name, "cs");
+                return createPolicySlides(earlySlidesData, questionsData.questionsEarly, userData.name, "early");
+
+            case 'emergency':
+                return createPolicySlides(emergencySlidesData, questionsData.questionsEmergency, userData.name, "emergency");
 
             default:
                 return createPolicySlides(policiesSlidesData, questionsData.questionsAcceptableUse, userData.name, "policies");
