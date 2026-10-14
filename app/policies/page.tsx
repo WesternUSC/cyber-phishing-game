@@ -18,6 +18,7 @@ import conflictSlidesData from '@/data/conflict.json'
 import discSlidesData from '@/data/discSlides.json'
 import earlySlidesData from '@/data/earlySlides.json'
 import emergencySlidesData from '@/data/emergencySlides.json'
+import hazardSlidesData from '@/data/hazardSlides.json'
 
 export default function PoliciesPage() {
     const { userData, setUserData } = useApp();
@@ -45,28 +46,31 @@ export default function PoliciesPage() {
         switch (userData.currentSlideDeck) {
 
             case 'policies':
-                return createPolicySlides(policiesSlidesData, questionsData.questionsAcceptableUse, userData.name, "policies");
+                return createPolicySlides(policiesSlidesData, questionsData.questionsAcceptableUse, userData.name, "policies", "acceptable-use-score");
 
             case 'cs':
-                return createPolicySlides(csSlidesData, questionsData.questionsCustomerService, userData.name, "cs");
+                return createPolicySlides(csSlidesData, questionsData.questionsCustomerService, userData.name, "cs", "cs-score");
 
             case 'accessibility':
-                return createPolicySlides(accessibilitySlidesData, questionsData.questionsAccessibility, userData.name, "accessibility");
+                return createPolicySlides(accessibilitySlidesData, questionsData.questionsAccessibility, userData.name, "accessibility", "accessibility-score");
 
             case 'conflict':
-                return createPolicySlides(conflictSlidesData, questionsData.questionsConflict, userData.name, "conflict");
+                return createPolicySlides(conflictSlidesData, questionsData.questionsConflict, userData.name, "conflict", "conflict-score");
 
             case 'disc':
-                return createPolicySlides(discSlidesData, questionsData.questionsDisc, userData.name, "disc");
+                return createPolicySlides(discSlidesData, questionsData.questionsDisc, userData.name, "disc", "disc-score");
 
             case 'early':
-                return createPolicySlides(earlySlidesData, questionsData.questionsEarly, userData.name, "early");
+                return createPolicySlides(earlySlidesData, questionsData.questionsEarly, userData.name, "early", "early-score");
 
             case 'emergency':
-                return createPolicySlides(emergencySlidesData, questionsData.questionsEmergency, userData.name, "emergency");
+                return createPolicySlides(emergencySlidesData, questionsData.questionsEmergency, userData.name, "emergency", "emergency-score");
+
+            case 'hazard':
+                return createPolicySlides(hazardSlidesData, questionsData.questionsHazard, userData.name, "hazard", "hazard-score");
 
             default:
-                return createPolicySlides(policiesSlidesData, questionsData.questionsAcceptableUse, userData.name, "policies");
+                return createPolicySlides(policiesSlidesData, questionsData.questionsAcceptableUse, userData.name, "policies", "acceptable-use-score");
         }
     };
 

@@ -1037,5 +1037,107 @@
       "correctAnswer": "D",
       "explanation": "Section 4.3 states persons requiring emergency transportation to a medical facility must be transferred by trained personnel acting within their competency."
     }
+  ],
+  "questionsHazard": [
+    {
+      "category": "hazard",
+      "id": "q1",
+      "question": "A worker notices a loose stairwell handrail that poses a real risk of injury but cannot fix it themselves. What should they do?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Report the hazard to their supervisor/manager immediately and verbally, using the Hazard Reporting Form if it is significant."
+        },
+        {
+          "label": "B",
+          "text": "Wait until the next scheduled inspection to mention it."
+        },
+        {
+          "label": "C",
+          "text": "Post a handwritten note near the handrail and move on."
+        },
+        {
+          "label": "D",
+          "text": "Ignore it, since it isn't part of their job."
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Sections 3.1 and 4.1 require workers to report significant hazards to their supervisor/manager immediately and verbally, using the Hazard Reporting Form where appropriate."
+    },
+    {
+      "category": "hazard",
+      "id": "q2",
+      "question": "A worker personally tightens a loose cable that was creating a trip hazard. What is required afterward?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Nothing further, since the hazard was already fixed."
+        },
+        {
+          "label": "B",
+          "text": "Report both the hazard and the remedy made to their supervisor/manager."
+        },
+        {
+          "label": "C",
+          "text": "Only report it if someone was actually injured."
+        },
+        {
+          "label": "D",
+          "text": "File a formal report directly with the Board of Directors."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Section 3.2 states a worker who remedies a significant hazard will report both the hazard and the remedy made to their supervisor/manager."
+    },
+    {
+      "category": "hazard",
+      "id": "q3",
+      "question": "Who is responsible for ensuring the Health & Safety Coordinator receives copies of a hazard report for distribution to the JHSC and Worker Health & Safety Representative?",
+      "options": [
+        {
+          "label": "A",
+          "text": "USC Occupational Health & Safety only."
+        },
+        {
+          "label": "B",
+          "text": "The worker who first identified the hazard."
+        },
+        {
+          "label": "C",
+          "text": "The supervisor/manager of the worker reporting the hazard."
+        },
+        {
+          "label": "D",
+          "text": "The Board of Directors."
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Section 3.4 places responsibility on the supervisor/manager of the reporting worker to ensure the Health & Safety Coordinator receives copies for distribution."
+    },
+    {
+      "category": "hazard",
+      "id": "q4",
+      "question": "An employee cannot safely evacuate during a situation of immediate danger. What should they do?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Any hazard that has been reported more than once."
+        },
+        {
+          "label": "B",
+          "text": "A hazard identified only during an annual inspection."
+        },
+        {
+          "label": "C",
+          "text": "A minor cosmetic issue with no safety impact."
+        },
+        {
+          "label": "D",
+          "text": "A condition, activity, or situation posing a considerable risk of injury, illness, death, or harm."
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Section 2.3 defines a serious hazard as a condition, activity, or situation that poses a considerable risk of injury, illness, death, or harm to individuals."
+    }
   ]
 }

@@ -1,0 +1,86 @@
+{
+    "titleSlide": {
+        "title": "Hazard Reporting Policy",
+        "subtitle": "",
+        "moduleTitle": "Hazard Reporting Policy",
+        "desc": ""
+    },
+    "policiesSlide": {
+        "title": "Policy Summary",
+        "table": [
+            {
+                "label": "Authority",
+                "value": "Board of Directors"
+            },
+            {
+                "label": "Date Ratified",
+                "value": "December 6, 2024"
+            },
+            {
+                "label": "Next Review Date",
+                "value": "December 2027"
+            },
+            {
+                "label": "Previous Amendments",
+                "value": "February 16, 2018; October 30, 2012"
+            }
+        ],
+        "description": "This policy outlines the procedure for reporting hazardous situations that may endanger the health and safety of individuals. It applies to all USC employees, volunteers, and visitors for any hazard that cannot be corrected instantly, requires further investigation, or raises significant concern. It defines key terms (hazard, serious hazard, unsafe acts, unsafe conditions) and sets out the responsibilities of workers, supervisors/managers, and the Health & Safety Coordinator in reporting, rating, and remediating hazards.",
+        "scope": ""
+    },
+    "useSlide": {
+        "title": "Key Takeaways",
+        "items": [
+            "Applies to all USC employees, volunteers, and visitors, for any hazard that cannot be corrected instantly, needs further investigation, or raises significant concern.",
+            "A 'hazard' is a condition or situation with the potential to cause injury, illness, property damage, or disruption of work operations; a 'serious hazard' poses a considerable risk of injury, illness, death, or harm.",
+            "Workers must report any significant hazard they become aware of to their supervisor/manager, and must report both the hazard and any remedy they personally make.",
+            "The supervisor/manager of the worker reporting a hazard must follow up with a timely response or action to maintain safe and healthy working conditions.",
+            "Supervisors/managers must ensure the Health & Safety Coordinator receives copies of the hazard report for distribution to USC Occupational Health & Safety, the Joint Health & Safety Committee (JHSC), and the Worker Health & Safety Representative.",
+            "Reporting a hazard must be done immediately and verbally, and using the Hazard Reporting Form if the hazard is significant or the worker wants it documented in writing.",
+            "The supervisor/manager, with the assistance of the worker, rates the hazard, forms an action plan, implements it, and notifies necessary parties through the Health & Safety Coordinator."
+        ]
+    },
+    "slideOne": {
+        "title": "1. SCOPE",
+        "oneOne": "This policy applies to all USC employees, volunteers, and visitors for any hazard which cannot be corrected instantly, or requires further investigation, or about which you have a significant concern."
+    },
+    "slideTwo": {
+        "title": "2. DEFINITIONS",
+        "twoOne": "Continuous improvement Plan: A document which addresses the health and safety goals to be achieved by USC and outlines the steps to be taken to achieve those goals.",
+        "twoTwo": "Hazard: A condition or situation that has the potential to cause injury or illness, as well as damage to property and disruption of work operations.",
+        "twoThree": "Serious Hazard: A condition, activity, or situation that poses a considerable risk of injury, illness, death or harm to individuals.",
+        "twoFour": "Unsafe acts: Behaviours, which could lead to an accident.",
+        "twoFive": "Unsafe conditions: Circumstances, which could allow an accident to occur."
+    },
+    "slideThree": {
+        "title": "3. EXPECTATIONS AND RESPONSIBILITIES",
+        "threeOne": "Workers shall report the existence of any significant hazard of which he or she becomes aware to their supervisor/manager.",
+        "threeTwo": "A worker who remedies a significant hazard will report both the hazard and the remedy made to their supervisor/manager.",
+        "threeThree": "The supervisor/manager of the worker reporting a hazard must follow up with a timely response or action, to maintain safe & healthy working conditions; and,",
+        "threeFour": {
+            "intro": "Ensure the Health & Safety Coordinator receives copies of the hazard report for distribution to the following parties:",
+            "items": [
+                "1. USC Occupational Health &amp; Safety;",
+                "2. The Joint Health &amp; Safety Committee (JHSC); and",
+                "3. The Worker Health &amp; Safety Representative."
+            ]
+        }
+    },
+    "slideFour": {
+        "title": "4. PROCEDURES",
+        "fourOne": "Reporting a hazard must be done immediately verbally and using the Hazard Reporting Form if a hazard is significant or if the worker feels that it is necessary to have their concern in writing.",
+        "fourTwo": "By the supervisor/manager who will, with the assistance of the worker,",
+        "fourThree": "Rate the hazard;",
+        "fourFour": "Form an action plan in response to the hazard;",
+        "fourFive": "Implement the action plan; and",
+        "fourSix": "Notify the necessary parties through the Health & Safety Coordinator."
+    },
+    "slideFive": {
+        "title": "5. COMMUNICATION",
+        "fiveOne": "This policy will be explained as needed to workers through orientation health & safety training or task-specific training."
+    },
+    "slideSix": {
+        "title": "6. EVALUATION",
+        "sixOne": "This policy will be evaluated on an annual basis through the Continuous Improvement Plan."
+    }
+}

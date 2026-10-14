@@ -838,7 +838,8 @@ export function createPolicySlides(
   data: PolicyData,
   questions: Question[],
   _playerName: string,
-  currentSlideDeck = "cs"
+  currentSlideDeck = "cs",
+  scoreKey: string,
 ): Slide[] {
   const slides: Slide[] = [];
 
@@ -1089,8 +1090,8 @@ export function createPolicySlides(
         </>
       ),
       isMultipleChoice: true,
-      quizScoreKey: "acceptable-use-score",
-      quizAnswersKey: "acceptable-use-answers",
+      quizScoreKey: scoreKey,
+      quizAnswersKey: scoreKey.replace("score", "answers"),
     });
   });
 

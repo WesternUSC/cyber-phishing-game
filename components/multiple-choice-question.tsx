@@ -90,6 +90,16 @@ const MultipleChoiceQuestion: React.FC<MultipleChoiceQuestionProps> = ({
       ANSWERS_KEY = "early-answers";
       break;
 
+    case "emergency":
+      SCORE_KEY = "emergency-score";
+      ANSWERS_KEY = "emergency-answers";
+      break;
+
+    case "hazard":
+      SCORE_KEY = "hazard-score";
+      ANSWERS_KEY = "hazard-answers";
+      break;
+
     default:
       SCORE_KEY = "acceptable-use-score";
       ANSWERS_KEY = "acceptable-use-answers";
