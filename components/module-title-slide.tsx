@@ -68,6 +68,11 @@ const policyDownloads: Record<string, [string, string]> = {
     "/pdfs/Hazard Reporting Policy.pdf",
     "/pdfs/Hazard_Reporting_Policy_Summary_and_Quiz.pdf",
   ],
+
+  "11": [
+    "/pdfs/Health and Safety Responsibilities of Managers and Supervisors Policy.pdf",
+    "/pdfs/Health_and_Safety_Responsibilities_of_Managers_and_Supervisors_Policy_Summary_and_Quiz.pdf",
+  ],
 };
 
 const scoreStorageKeys: Record<string, string> = {
