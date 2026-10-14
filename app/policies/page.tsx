@@ -9,6 +9,14 @@ import { conflictSlides } from '@/components/slides-conflict';
 import { discSlides } from '@/components/slidesDisc';
 import { earlySlides } from '@/components/slides-early';
 import { useEffect } from 'react';
+import { createPolicySlides } from '@/components/policy-slide-deck';
+import questionsData from '@/data/questions.json';
+import csSlidesData from '@/data/customerServiceSlides.json'
+import policiesSlidesData from '@/data/policiesSlides.json'
+import accessibilitySlidesData from '@/data/accessibility.json'
+import conflictSlidesData from '@/data/conflict.json'
+import discSlidesData from '@/data/discSlides.json'
+import earlySlidesData from '@/data/earlySlides.json'
 
 export default function PoliciesPage() {
     const { userData, setUserData } = useApp();
@@ -31,28 +39,30 @@ export default function PoliciesPage() {
     }, [setUserData]);
 
     const getSlides = () => {
+        //return createPolicySlides(csSlidesData, questionsData.questionsCustomerService, userData.name, "cs");
+
         switch (userData.currentSlideDeck) {
 
             case 'policies':
-                return policiesSlides(userData.name);
+                return createPolicySlides(policiesSlidesData, questionsData.questionsAcceptableUse, userData.name, "policies");
 
             case 'cs':
-                return customerServiceSlides(userData.name);
+                return createPolicySlides(csSlidesData, questionsData.questionsCustomerService, userData.name, "cs");
 
             case 'accessibility':
-                return accessibilitySlides(userData.name);
+                return createPolicySlides(accessibilitySlidesData, questionsData.questionsAccessibility, userData.name, "cs");
 
             case 'conflict':
-                return conflictSlides(userData.name);
+                return createPolicySlides(conflictSlidesData, questionsData.questionsConflict, userData.name, "cs");
 
             case 'disc':
-                return discSlides(userData.name);
+                return createPolicySlides(discSlidesData, questionsData.questionsDisc, userData.name, "cs");
 
             case 'early':
-                return earlySlides(userData.name);
+                return createPolicySlides(earlySlidesData, questionsData.questionsDisc, userData.name, "cs");
 
             default:
-                return policiesSlides(userData.name);
+                return createPolicySlides(policiesSlidesData, questionsData.questionsAcceptableUse, userData.name, "policies");
         }
     };
 
