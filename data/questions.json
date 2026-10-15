@@ -1776,5 +1776,157 @@
       "correctAnswer": "A",
       "explanation": "Section 3.3.1 states the President authorizes the Senior Manager, Communications to speak on behalf of the organization when a matter falls outside the President's purview."
     }
+  ],
+  "questionsDisconnect": [
+    {
+      "category": "disconnect",
+      "id": "q1",
+      "question": "An employee feels pressure from their manager to respond to non-urgent emails late at night. What does the policy say they should do?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Simply comply to avoid conflict."
+        },
+        {
+          "label": "B",
+          "text": "Notify their Manager or Supervisor that they feel pressure to respond outside normal hours."
+        },
+        {
+          "label": "C",
+          "text": "Resign from the position."
+        },
+        {
+          "label": "D",
+          "text": "Report it only to the Board of Directors."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Section 5.3.3.6 directs employees to notify their Manager or Supervisor if they feel pressure to respond to issues outside of normal hours of work."
+    },
+    {
+      "category": "disconnect",
+      "id": "q2",
+      "question": "An employee receives a cell phone stipend as part of their role. What does this mean for them under the policy's exceptions?",
+      "options": [
+        {
+          "label": "A",
+          "text": "It only applies during declared emergencies."
+        },
+        {
+          "label": "B",
+          "text": "It has no bearing on their disconnecting expectations."
+        },
+        {
+          "label": "C",
+          "text": "They are required to stay in regular contact as per operational demand."
+        },
+        {
+          "label": "D",
+          "text": "It means they are exempt from all normal hours of work."
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Section 5.2.2.8 lists cell phone stipend recipients as required to stay in regular contact as per operational demand."
+    },
+    {
+      "category": "disconnect",
+      "id": "q3",
+      "question": "Will an employee face any penalty for complying with this Right to Disconnect procedure?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Only during a probationary period."
+        },
+        {
+          "label": "B",
+          "text": "Yes, unless pre-approved by a manager."
+        },
+        {
+          "label": "C",
+          "text": "Yes, if it affects team output."
+        },
+        {
+          "label": "D",
+          "text": "No — employees will not be penalized or face reprisal for complying with the procedure."
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Section 5.1.3 states you will not be penalized or face reprisal for complying with this procedure."
+    },
+    {
+      "category": "disconnect",
+      "id": "q4",
+      "question": "A new employee starts on September 1. By what deadline must People and Development provide them a copy of this procedure?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Within 30 days of their start date."
+        },
+        {
+          "label": "B",
+          "text": "Within 90 days."
+        },
+        {
+          "label": "C",
+          "text": "Within 7 days."
+        },
+        {
+          "label": "D",
+          "text": "Within 14 days."
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Section 5.3.4.2 states People and Development will provide new employees with a copy of this procedure within 30 days of their start date."
+    },
+    {
+      "category": "disconnect",
+      "id": "q5",
+      "question": "A manager takes reasonable corrective action after an employee repeatedly misses deadlines, shortly after the employee had asked questions about this policy. Does this corrective action count as reprisal?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Yes, any corrective action following a policy question is automatically reprisal."
+        },
+        {
+          "label": "B",
+          "text": "No — reasonable direction and corrective action are not considered reprisal."
+        },
+        {
+          "label": "C",
+          "text": "Only if it is documented in writing."
+        },
+        {
+          "label": "D",
+          "text": "Yes, unless approved in advance by the Board."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Section 5.3.2.7 states reasonable direction and corrective actions are not considered reprisal"
+    },
+    {
+      "category": "disconnect",
+      "id": "q6",
+      "question": "Which of the following is explicitly named as a mental health support resource associated with this policy?",
+      "options": [
+        {
+          "label": "A",
+          "text": "A mandatory therapy program."
+        },
+        {
+          "label": "B",
+          "text": "A quarterly wellness stipend."
+        },
+        {
+          "label": "C",
+          "text": "LifeSpeak."
+        },
+        {
+          "label": "D",
+          "text": "An external hotline unrelated to the USC."
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Section 5.5.1.4 names LifeSpeak, LifeWorks, and Wellness Wednesdays as examples of supportive resources."
+    }
   ]
 }

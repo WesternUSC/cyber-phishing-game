@@ -19,7 +19,8 @@ type Slide =
   | "hswrp"
   | "housekeeping"
   | "injury"
-  | "media";
+  | "media"
+  | "disconnect";
 
 interface Module {
   name: string;
@@ -103,6 +104,11 @@ const policyDownloads: Record<string, [string, string]> = {
     "/pdfs/Media Spokesperson Policy.pdf",
     "/pdfs/Media_Spokesperson_Policy_Summary_and_Quiz.pdf",
   ],
+
+  "17": [
+    "/pdfs/Right to Disconnect Policy for USC Paid Employees.pdf",
+    "/pdfs/Right_to_Disconnect_Policy_for_USC_Paid_Employees_Summary_and_Quiz.pdf",
+  ],
 };
 
 const scoreStorageKeys: Record<string, string> = {
@@ -120,6 +126,7 @@ const scoreStorageKeys: Record<string, string> = {
   "Housekeeping and Organizing Policy": "housekeeping-score",
   "Injury/Illness Reporting Policy": "injury-score",
   "Media Spokesperson Policy": "media-score",
+  "Right to Disconnect Policy for USC Paid Employees": "disconnect-score",
 };
 
 const modules: Omit<Module, "score">[] = [
@@ -200,8 +207,8 @@ const modules: Omit<Module, "score">[] = [
   },
   {
     name: "Right to Disconnect Policy for USC Paid Employees",
-    questionCount: 5,
-    page: "eso",
+    questionCount: 6,
+    page: "disconnect",
   },
   {
     name: "Social Media Policy",
@@ -401,7 +408,8 @@ export default function ModuleTableOfContents({
               "Health and Safety Work Refusal Policy": "13",
               "Housekeeping and Organizing Policy": "14",
               "Injury/Illness Reporting Policy": "15",
-              "Media Spokesperson Policy": "16"
+              "Media Spokesperson Policy": "16",
+              "Right to Disconnect Policy for USC Paid Employees": "17"
             }).find(([name]) => name === module.name)?.[1];
 
             // const hasDownloads =

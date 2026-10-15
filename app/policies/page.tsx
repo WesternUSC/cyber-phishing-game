@@ -25,6 +25,7 @@ import hswrpSlidesData from '@/data/hswrpSlides.json'
 import housekeepingSlidesData from '@/data/housekeepingSlides.json'
 import injurySlidesData from '@/data/injurySlides.json'
 import mediaSlidesData from '@/data/mediaSlides.json'
+import disconnectSlidesData from '@/data/disconnectSlides.json'
 
 export default function PoliciesPage() {
     const { userData, setUserData } = useApp();
@@ -92,6 +93,9 @@ export default function PoliciesPage() {
 
             case 'media':
                 return createPolicySlides(mediaSlidesData, questionsData.questionsMedia, userData.name, "media", "media-score");
+
+            case 'disconnect':
+                return createPolicySlides(disconnectSlidesData, questionsData.questionsDisconnect, userData.name, "disconnect", "disconnect-score");
 
             default:
                 return createPolicySlides(policiesSlidesData, questionsData.questionsAcceptableUse, userData.name, "policies", "acceptable-use-score");

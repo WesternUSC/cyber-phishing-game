@@ -1073,7 +1073,7 @@ export function createPolicySlides(
     });
   }
 
-  questions.slice(0, 5).forEach((question, index) => {
+  questions.slice(0, 15).forEach((question, index) => {
     slides.push({
       title: `Knowledge Check: Q${index + 1}`,
       content: (

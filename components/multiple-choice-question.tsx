@@ -130,6 +130,11 @@ const MultipleChoiceQuestion: React.FC<MultipleChoiceQuestionProps> = ({
       ANSWERS_KEY = "media-answers";
       break;
 
+    case "disconnect":
+      SCORE_KEY = "disconnect-score";
+      ANSWERS_KEY = "disconnect-answers";
+      break;
+
     default:
       SCORE_KEY = "acceptable-use-score";
       ANSWERS_KEY = "acceptable-use-answers";

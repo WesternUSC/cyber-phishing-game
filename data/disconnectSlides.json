@@ -1,0 +1,168 @@
+{
+    "titleSlide": {
+        "title": "Right to Disconnect Policy for USC Paid Employees",
+        "subtitle": "",
+        "moduleTitle": "Right to Disconnect Policy for USC Paid Employees",
+        "desc": ""
+    },
+    "policiesSlide": {
+        "title": "Policy Summary",
+        "table": [
+            {
+                "label": "Authority",
+                "value": "Chief Operating Officer"
+            },
+            {
+                "label": "Date Ratified",
+                "value": "October 30, 2025"
+            },
+            {
+                "label": "Next Review Date",
+                "value": "October 2028"
+            },
+            {
+                "label": "Previous Amendments",
+                "value": "October 7, 2022"
+            },
+            {
+                "label": "Related Document(s)",
+                "value": "Senior Manager, People and Development"
+            }
+        ],
+        "description": "This policy supports paid USC employees' ability to disconnect from work outside their normal hours, subject to a defined set of exceptions such as emergencies and operational requirements. It is interpreted according to the Employment Standards Act, the Occupational Health and Safety Act, the Human Rights Code, and the Working for Workers Act, and outlines the roles and responsibilities of Senior Leadership, Managers/Supervisors, Employees, and People and Development, including a link between disconnecting and mental health support.",
+        "scope": ""
+    },
+    "useSlide": {
+        "title": "Key Takeaways",
+        "items": [
+            "Applies to all paid USC employees; 'disconnecting from work' means being free from the performance of work and not engaging in work-related communications.",
+            "The Senior Manager, People and Development administers the policy (the COO steps in if conflicted), and employees will not be penalized or face reprisal for complying with it.",
+            "Exceptions where contact outside normal hours may be needed include emergencies, unforeseen situations, operational requirements, short-notice coverage, positions that inherently require after-hours communication, approved overtime/on-call/standby arrangements, and employees who receive a cell phone stipend and are required to stay in regular contact as per operational demand.",
+            "Senior Leadership must encourage disconnecting, lead by example, and support departmental conversations on the best ways to disconnect from work.",
+            "Managers/Supervisors must enable disconnecting (subject to the exceptions), listen to employee concerns, regularly evaluate workload and expectations, clearly communicate department hours of work, ensure breaks are taken, and avoid penalizing employees who ask about or request compliance with this policy — reasonable direction and corrective action are not considered reprisal.",
+            "Employees should avoid checking communications outside normal hours, raise work-life balance concerns with their Manager or Supervisor, be mindful of others' need to disconnect, take allotted breaks and vacation time, and notify their Manager or Supervisor if they feel pressure to respond outside normal hours.",
+            "People and Development provides new employees a copy of this procedure within 30 days of their start date and provides all employees an amended version within 30 days of any amendment; copies are retained for three years after the procedure ceases to be in effect.",
+            "The policy links disconnecting to mental health support, including promoting work-life balance and access to resources such as LifeSpeak, LifeWorks, and Wellness Wednesdays."
+        ]
+    },
+    "slideOne": {
+        "title": "1. DEFINITIONS",
+        "oneOne": "Continuous improvement Plan: A document which addresses the health and safety goals to be achieved by USC and outlines the steps to be taken to achieve those goals.",
+        "oneTwo": "TDisconnecting from work: To be free from the performance of work and not engaging in work-related communications.",
+        "oneThree": "Normal Hours of Work: Hours of work are set by the USC and may vary by Department, Division and Position Type. Your hours of work are defined by practice, an employment contract or by collective agreement terms.",
+        "oneFour": "USC Employee: Any individual employed by the USC, including full-time staff, coordinators, associate vice-presidents, interns, orientation staff, executive officers, and members of the Gazette, whether compensated through salary or honoraria.",
+        "oneFive": "Work-Related Communication: Any form of communication related to USC work, including emails, telephone calls, video calls, or other messaging methods."
+    },
+    "slideTwo": {
+        "title": "2. SCOPE",
+        "twoOne": "This policy applies to all paid USC employees."
+    },
+    "slideThree": {
+        "title": "3. ADMINISTRATION",
+        "threeOne": "The Senior Manager, People and Development is responsible for administering the provisions of this Policy. In the event the Senior Manager, People and Development is conflicted, the Chief Operating Officer shall be responsible for administering the Policy.",
+        "threeTwo": "All issues pertaining to matters of the Right to Disconnect as defined in this policy should be brought forward to the Senior Manager, People and Development.",
+        "threeThree": "The responsibility for application, enforcement, training, and communication of this policy shall lie with the Senior Manager, People and Development."
+    },
+    "slideFour": {
+        "title": "4. GENERAL STATEMENT",
+        "fourOne": "his procedure supports you in your ability to disconnect from work outside of your normal hours of work, subject to the exceptions noted in section 5.2 below."
+    },
+    "slideFive": {
+        "title": "5. EXPECTATIONS AND RESPONSIBILITIES",
+        "fiveOne": "General",
+        "fiveOneOne": "We respect our employees' needs to disconnect from work outside of normal hours of work.",
+        "fiveOneTwo": "We encourage you to review and follow the information contained within this procedure to ensure you take the time to disconnect from work when it is appropriate to do so.",
+        "fiveOneThree": "You will not be penalized or face reprisal for complying with this procedure.",
+        "fiveOneFour": "The roles and responsibilities of our leaders and employees are outlined below.",
+        "fiveOneFive": {
+            "intro": "This procedure is consistent with and does not change employee rights and entitlements under other ESA rules and regulations, including:",
+            "items": [
+                "1. Hours of Work and Eating Periods",
+                "2. Vacation with PayPublic Holiday rules As an employer, we have an obligation to follow the rules under the ESA unless exemptions or special rules apply."
+            ]
+        },
+        "fiveTwo": "Exceptions",
+        "fiveTwoOne": "Due to the nature of the services we provide, work outside of established normal hours of work may be required from time to time.",
+        "fiveTwoTwo": {
+            "intro": "Occasionally you may need to be contacted outside your normal hours of work due to:",
+            "items": [
+                "1. An emergency",
+                "2. An unforeseen situation",
+                "3. Operational requirements",
+                "4. Helping or filling in on short notice",
+                "5. Other unusual incidents as they arise",
+                "6. If your position requires work or work-related communications outside of your normal hours of work",
+                "7. Overtime, on-call, or standby according to applicable collective agreements or established procedures.",
+                "8. Those who received a cell phone stipend are required to stay in regular contact as per operational demand."
+            ]
+        },
+        "fiveThree": "Roles and Responsibilities",
+        "fiveThreeOne": {
+            "intro": "Senior Leadership Team",
+            "items": [
+                "1. Ensure all employees are encouraged to disconnect from work in accordance with this procedure.",
+                "2. Show support, lead by example, and respect the needs of others to disconnect.",
+                "3. Communicate with your Department/Portfolio to review the best ways to disconnect from work."
+            ]
+        },
+        "fiveThreeTwo": {
+            "intro": "Managers and Supervisors",
+            "items": [
+                "1. Take necessary steps allowing employees to disconnect from work outside of their normal hours of work subject to the exceptions in section 5.2 above.",
+                "2. Be open to communication from your employees related to this procedure, listen to their concerns and try to provide resolutions.",
+                "3. Regularly evaluate expectations, workload, and productivity.",
+                "4. Provide employees with information regarding exceptions where they may be required to work outside of their normal hours of work.",
+                "5. Be aware of and clearly communicate the hours of work for your Department.",
+                "6. Ensure your employees take allotted breaks.",
+                "7. Avoid penalizing or taking actions of reprisal against employees who have questions about this procedure or request compliance with it. Reasonable direction and corrective actions are not considered reprisal."
+            ]
+        },
+        "fiveThreeThree": {
+            "intro": "Employees",
+            "items": [
+                "1. Avoid checking communications outside of normal hours of work.",
+                "2. Communicate with your Manager or Supervisor if you have problems maintaining a work-life balance.",
+                "3. Be mindful of the needs of others to disconnect.",
+                "4. Take allotted breaks and vacation time.",
+                "5. Be aware when you may be required to work as outlined in the Exceptions section 5.2 above.",
+                "6. Notify your Manager or Supervisor if you feel pressure to respond to issues outside of your normal hours of work."
+            ]
+        },
+        "fiveThreeFour": {
+            "intro": "People and Development",
+            "items": [
+                "1. Provide guidance and support in administering this procedure.",
+                "2. Provide new employees with a copy of this procedure within 30 days of their start date.",
+                "3. Review and amend this procedure as per the Board Policy review cycle or as required.",
+                "4. Provide all employees with an amended version of this procedure within 30 days of the amendment.",
+                "5. Retain a copy of this and any revised version of this procedure for three years after it ceases to be in effect."
+            ]
+        },
+        "fiveFour": "Communications, Meetings and Calls",
+        "fiveFourOne": "We do not want you to feel obligated to send or respond to messages when you are not working. Work-related communications should be sent and reviewed during normal hours of work, subject to the exceptions in section 5.2 above.",
+        "fiveFourTwo": "As some employees have different working hours, you may receive work-related communications outside your normal hours of work. Subject to 5.2 above, there is no expectation you will respond until you return to work.",
+        "fiveFourThree": "Meetings and calls, both in-person and virtual, should be booked during normal hours of work, subject to the exceptions in section 5.2 above.",
+        "fiveFourFour": "For additional tips on handling communications, meetings, and calls, refer to Appendix A: Disconnecting from Work Tips and Appendix B: Technical Tips.",
+        "fiveFive": "Mental Health Support",
+        "fiveFiveOne": {
+            "intro": "Recognizing disconnecting from work plays an important role in managing mental health, we will assist and support your mental health by:",
+            "items": [
+                "1. Promoting work-life balance",
+                "2. Recognizing mental health is equally important as physical health in ensuring a safe and healthy workplace",
+                "3. Minimizing work-related sources of stress as much as possible",
+                "4. Providing access to supportive people, resources, and programs (e.g., LifeSpeak, LifeWorks, Wellness Wednesdays)"
+            ]
+        },
+        "fiveSix": "Questions and Concerns",
+        "fiveSixOne": "Talk to your Manager or Supervisor if you have any questions or concerns about this procedure.",
+        "fiveSixTwo": "If your question or concern cannot be resolved, you can bring the issue forward to the Senior Manager, People and Development for further discussion."
+    },
+    "slideSix": {
+        "title": "6. COMMUNICATION",
+        "sixOne": "This policy will be explained as needed to workers through orientation or task-specific training, and will be included in new hire paperwork."
+    },
+    "slideSeven": {
+        "title": "7. EVALUATION",
+        "sixOne": "This policy shall be reviewed as needed through the Continuous Improvement Policy for Human Resources Policies and complies with the ESA, OHSA, Code, and the WWA."
+    }
+}
