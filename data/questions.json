@@ -1928,5 +1928,132 @@
       "correctAnswer": "C",
       "explanation": "Section 5.5.1.4 names LifeSpeak, LifeWorks, and Wellness Wednesdays as examples of supportive resources."
     }
+  ],
+  "questionsSocial": [
+    {
+      "category": "social",
+      "id": "q1",
+      "question": "An employee wants to use AI-generated video content directly on an official USC social media account. Is this permitted?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Yes, if approved by any coworker."
+        },
+        {
+          "label": "B",
+          "text": "Yes, without any restriction."
+        },
+        {
+          "label": "C",
+          "text": "Yes, as long as it looks professional."
+        },
+        {
+          "label": "D",
+          "text": "No — AI-generated graphics, photos, or videos should not be used for official USC social media channels."
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Section 3.7 states AI-generated graphics, photos, or videos should not be used for official USC social media channels."
+    },
+    {
+      "category": "social",
+      "id": "q2",
+      "question": "A volunteer posts a comment about a USC policy on their personal social media account without identifying their USC relationship. What principle does this violate?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Transparency, which requires identifying a USC relationship and prohibits anonymous posting on USC topics."
+        },
+        {
+          "label": "B",
+          "text": "Confidentiality."
+        },
+        {
+          "label": "C",
+          "text": "Non-Discrimination."
+        },
+        {
+          "label": "D",
+          "text": "Branding."
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Section 3.1 (Transparency) requires staff and volunteers to identify their relationship to the USC and states it is unacceptable to assume an anonymous identity on USC-related topics."
+    },
+    {
+      "category": "social",
+      "id": "q3",
+      "question": "Which platforms are specifically named as being contemplated by this policy, while its general principles still extend elsewhere?",
+      "options": [
+        {
+          "label": "A",
+          "text": "LinkedIn, Snapchat, Pinterest, and Reddit."
+        },
+        {
+          "label": "B",
+          "text": "Facebook, Instagram, TikTok, and X."
+        },
+        {
+          "label": "C",
+          "text": "YouTube and Twitch only."
+        },
+        {
+          "label": "D",
+          "text": "WhatsApp and Telegram."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Section 2.3 states the policy specifically contemplates Facebook, Instagram, TikTok, and X, while its general principles extend to other platforms."
+    },
+    {
+      "category": "social",
+      "id": "q4",
+      "question": "Who owns the content, followers, and materials associated with an official USC social media account?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Ownership transfers to the employee upon departure."
+        },
+        {
+          "label": "B",
+          "text": "The employee or volunteer who created the account."
+        },
+        {
+          "label": "C",
+          "text": "The USC — employees and volunteers have no ownership rights over these."
+        },
+        {
+          "label": "D",
+          "text": "Jointly owned by the USC and the account's creator."
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Section 5.1 states USC social media accounts are property of the USC, and employees and volunteers have no ownership rights over content, followers, or other materials."
+    },
+    {
+      "category": "social",
+      "id": "q5",
+      "question": "A staff member wants to create a new official USC-related social media account. What must happen first?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Only the President can create new accounts personally."
+        },
+        {
+          "label": "B",
+          "text": "It requires a resolution of the Board of Directors."
+        },
+        {
+          "label": "C",
+          "text": "They can create it immediately without approval."
+        },
+        {
+          "label": "D",
+          "text": "It must be created in consultation with the USC's Communications Department and ITS team."
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Section 5.3 states new USC-related social media accounts can only be created in consultation with the Communications Department and ITS team."
+    }
   ]
 }

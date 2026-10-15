@@ -1,0 +1,92 @@
+{
+    "titleSlide": {
+        "title": "Social Media Policy",
+        "subtitle": "",
+        "moduleTitle": "Social Media Policy",
+        "desc": ""
+    },
+    "policiesSlide": {
+        "title": "Policy Summary",
+        "table": [
+            {
+                "label": "Authority",
+                "value": "Board of Directors"
+            },
+            {
+                "label": "Date Ratified",
+                "value": "December 10, 2025"
+            },
+            {
+                "label": "Next Review Date",
+                "value": "December 2028"
+            },
+            {
+                "label": "Previous Amendments",
+                "value": "January 16, 2023; November 29, 2019; July 10, 2012; May 23, 2012"
+            }
+        ],
+        "description": "This policy provides guidelines for staff and volunteer conduct in relation to social media communications, augmenting employees' responsibilities under the Acceptable Use Policy. It applies to USC employees and most volunteers (excluding certain elected or independent roles) and sets out core principles — transparency, accuracy, non-discrimination, professionalism, branding, confidentiality, and use of generative AI — along with rules on separating personal and work accounts, account ownership, and consequences for violations.",
+        "scope": ""
+    },
+    "useSlide": {
+        "title": "Key Takeaways",
+        "items": [
+            "Applies to all USC employees (including Executives, interns, part-time and full-time staff, and other salaried student positions) and volunteers (associates, coordinators, and committee members); it does not apply to elected Council members, student Senators, Board of Governors representatives, the Gazette, or CHRW.",
+            "The policy specifically contemplates Facebook, Instagram, TikTok, and X, though its principles extend to other platforms; employees and volunteers must also follow the Acceptable Use Policy when using social media.",
+            "Transparency requires staff and volunteers to identify their USC relationship when posting about USC-related responsibilities and prohibits posting anonymously on USC-related topics.",
+            "Non-Discrimination prohibits transmitting messages with derogatory remarks about a person's race, colour, sex, age, disability, religion, national origin, physical attributes, or sexual preference.",
+            "Confidentiality prohibits transmitting sensitive, confidential, restricted, non-public, or proprietary information — including trade secrets — over social media.",
+            "Under the Use of Generative AI principle, AI-generated graphics, photos, or videos should not be used for official USC social media channels, and any AI-generated text must be verified and never published without human oversight.",
+            "Official USC social media activity should use a dedicated account separate from personal accounts (Executive members are exempt from this specific clause, but not from the rest of the policy); staff and volunteers should not use personal accounts to comment on USC-related topics.",
+            "USC social media accounts are USC property; employees and volunteers have no ownership rights over content, followers, or other materials, and new USC-related accounts require consultation with the Communications Department and ITS team.",
+            "Failure to comply with this policy may result in disciplinary action up to and including termination."
+        ]
+    },
+    "slideOne": {
+        "title": "1. DEFINITIONS",
+        "oneOne": "USC Executive Members means the USC President and any Vice President.",
+        "oneTwo": "USC Social Media Account means any social media profile or page authorized and created by the USC for official use, separate from personal accounts of employees and volunteers."
+    },
+    "slideTwo": {
+        "title": "2. SCOPE",
+        "twoOne": "This Policy applies to all USC employees, including Executives, interns, part-time and full-time employees and other salaried student positions. The policy also applies to USC volunteers, including all associates, coordinators, and committee members. Volunteers do not include elected members of Council, those being voting members as defined by the By-laws, student Senators, and student Board of Governors representatives.",
+        "twoTwo": "This Policy does not apply to the use of social media by the Gazette or CHRW.",
+        "twoThree": "This Policy specifically contemplates the use of Facebook, Instagram, TikTok, and X (formally Twitter), as these are presently the most popular tools of social media. However, the general principles established also extend to other social media platforms.",
+        "twoFour": "Employees and volunteers are also responsible for adhering to the USC Corporate Online Systems Acceptable Use policy when using social media."
+    },
+    "slideThree": {
+        "title": "3. PRINCIPLES",
+        "threeOne": "Transparency: When posting comments or material related to employment or volunteer responsibilities with the USC, staff and volunteers must identify their relationship to the USC. It is unacceptable to assume an anonymous identity when initiating or responding to a topic related to the USC.",
+        "threeTwo": "Accuracy: When publishing information related to the USC, staff and volunteers must ensure that they provide accurate information and clearly identify the source of that information. Further, staff and volunteers shall keep commentary focused on their area of responsibility or expertise.",
+        "threeThree": "Non-Discrimination: Staff and volunteers shall not transmit messages with derogatory remarks about a person's race, colour, sex, age, disability, religion, national origin, physical attributes and sexual preference.",
+        "threeFour": "Professionalism: While using social media as a USC employee or volunteer, staff and volunteers shall ensure that their profile and content is consistent with how one would represent themselves towards colleagues and clients.",
+        "threeFive": "Branding: Where possible, social media accounts should adhere to the branding principles outlined in the USC's DRAFT Brand Guide.",
+        "threeSix": "Confidentiality: No messages disclosing sensitive, confidential, restricted, non-public, or proprietary information involving trade secrets can be transmitted over social media.",
+        "threeSeven": "Use of Generative Artificial Intelligence (GAI): Employees and volunteers will adhere to the DRAFT AI Policy. Al-generated graphics, photos, or videos should not be used for official USC social media channels. Approved GAI platforms can be used to assist in the creation of messaging (captions) on social media channels, however employees must verify all factual information generated by Al tools. Al-generated text should never be published without human oversight."
+    },
+    "slideFour": {
+        "title": "4. SEPARATION OF PERSONAL/WORK ACCOUNTS",
+        "fourOne": "If employees or volunteers use social media accounts in their capacity at the USC, then it is expected that a dedicated account be created that is separate from an employee or volunteer's personal accounts. All official USC social media accounts will be authorized and created as per established procedures.",
+        "fourOneOne": {
+            "intro": "Executive members of the USC as defined by the By-Law are exempt from this clause.",
+            "items": [
+                "1. This does not exempt Executive members of the USC from the rest of this policy."
+            ]
+        },
+        "fourTwo": "Staff members and volunteers should not use their personal social media accounts to comment upon USC related topics."
+    },
+    "slideFive": {
+        "title": "5. OWNERSHIP",
+        "fiveOne": "USC social media accounts are property of the USC. Employees and volunteers have no ownership rights over content posted to social media accounts, account followers, or any other materials.",
+        "fiveTwo": "The USC may transfer accounts to other individuals, or may delete accounts upon the departure of an employee or volunteer as per established procedures.",
+        "fiveThree": "New USC-related social media accounts can only be created in consultation with the USC's Communications Department and ITS team."
+    },
+    "slideSix": {
+        "title": "6. VIOLATIONS",
+        "sixOne": "Failure to comply with this policy may result in disciplinary action up to and including termination."
+    },
+    "slideSeven": {
+        "title": "7. AMENDMENTS",
+        "sixOne": "The corporation may amend this Acceptable Use Policy from time to time as is necessary. All users will receive prompt notice of any amendments."
+    }
+}
