@@ -22,7 +22,8 @@ type Slide =
   | "media"
   | "disconnect"
   | "social"
-  | "visitor";
+  | "visitor"
+  | "whistleblower";
 
 interface Module {
   name: string;
@@ -121,6 +122,11 @@ const policyDownloads: Record<string, [string, string]> = {
     "/pdfs/Visitor Policy.pdf",
     "/pdfs/Visitor_Policy_Summary_and_Quiz.pdf",
   ],
+
+  "20": [
+    "/pdfs/Whistleblower Policy.pdf",
+    "/pdfs/Whistleblower_Policy_Summary_and_Quiz.pdf",
+  ],
 };
 
 const scoreStorageKeys: Record<string, string> = {
@@ -141,6 +147,7 @@ const scoreStorageKeys: Record<string, string> = {
   "Right to Disconnect Policy for USC Paid Employees": "disconnect-score",
   "Social Media Policy": "social-score",
   "Visitor Policy": "visitor-score",
+  "Whistleblower Policy": "whistleblower-score",
 };
 
 const modules: Omit<Module, "score">[] = [
@@ -236,8 +243,8 @@ const modules: Omit<Module, "score">[] = [
   },
   {
     name: "Whistleblower Policy",
-    questionCount: 5,
-    page: "eso",
+    questionCount: 4,
+    page: "whistleblower",
   },
   {
     name: "Workplace Conduct Policy",
@@ -425,7 +432,8 @@ export default function ModuleTableOfContents({
               "Media Spokesperson Policy": "16",
               "Right to Disconnect Policy for USC Paid Employees": "17",
               "Social Media Policy": "18",
-              "Visitor Policy": "19"
+              "Visitor Policy": "19",
+              "Whistleblower Policy": "20",
             }).find(([name]) => name === module.name)?.[1];
 
             // const hasDownloads =

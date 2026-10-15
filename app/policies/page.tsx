@@ -28,6 +28,7 @@ import mediaSlidesData from '@/data/mediaSlides.json'
 import disconnectSlidesData from '@/data/disconnectSlides.json'
 import socialSlidesData from '@/data/socialSlides.json'
 import visitorSlidesData from '@/data/visitorSlides.json'
+import whistleblowerSlidesData from '@/data/whistleblowerSlides.json'
 
 export default function PoliciesPage() {
     const { userData, setUserData } = useApp();
@@ -104,6 +105,9 @@ export default function PoliciesPage() {
 
             case 'visitor':
                 return createPolicySlides(visitorSlidesData, questionsData.questionsVisitor, userData.name, "visitor", "visitor-score");
+
+            case 'whistleblower':
+                return createPolicySlides(whistleblowerSlidesData, questionsData.questionsWhistleblower, userData.name, "whistleblower", "whistleblower-score");
 
             default:
                 return createPolicySlides(policiesSlidesData, questionsData.questionsAcceptableUse, userData.name, "policies", "acceptable-use-score");

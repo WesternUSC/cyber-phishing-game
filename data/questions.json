@@ -2157,5 +2157,107 @@
       "correctAnswer": "D",
       "explanation": "Section 3.1.2 requires visitors to always be escorted by their designated USC host while in USC spaces."
     }
+  ],
+  "questionsWhistleblower": [
+    {
+      "category": "whistleblower",
+      "id": "q1",
+      "question": "An employee wants to report suspected fraud but is worried about being identified. What does the policy say about confidentiality?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Violations or suspected violations may be submitted on a confidential basis, and will be kept confidential to the extent possible."
+        },
+        {
+          "label": "B",
+          "text": "All complainants must be publicly named."
+        },
+        {
+          "label": "C",
+          "text": "Confidentiality is only available to Board members."
+        },
+        {
+          "label": "D",
+          "text": "Reports can never be made confidentially."
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Sections 5.1 and 5.2 state violations may be submitted confidentially and will be kept confidential to the extent possible, consistent with conducting an adequate investigation."
+    },
+    {
+      "category": "whistleblower",
+      "id": "q2",
+      "question": "A manager learns that an employee reported a suspected policy violation in good faith and begins treating them unfairly as a result. What is the consequence for the manager?",
+      "options": [
+        {
+          "label": "A",
+          "text": "No consequence, since managers have full discretion."
+        },
+        {
+          "label": "B",
+          "text": "The manager is subject to discipline up to and including termination."
+        },
+        {
+          "label": "C",
+          "text": "Only a verbal reminder is given, regardless of severity."
+        },
+        {
+          "label": "D",
+          "text": "The original complaint is simply dismissed."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Section 3.2 states an employee who retaliates against someone who has reported a violation in good faith is subject to discipline up to and including termination."
+    },
+    {
+      "category": "whistleblower",
+      "id": "q3",
+      "question": "An employee wants to report a suspected violation involving general USC operations. Who should this typically be reported to?",
+      "options": [
+        {
+          "label": "A",
+          "text": "External legal counsel only."
+        },
+        {
+          "label": "B",
+          "text": "Directly to the Board of Directors in all cases."
+        },
+        {
+          "label": "C",
+          "text": "The Chief Operating Officer."
+        },
+        {
+          "label": "D",
+          "text": "The employee's own direct report only."
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Section 6.1 states suspected violations of approved USC policy, fraud, or other misconduct should be reported to the Chief Operating Officer."
+    },
+    {
+      "category": "whistleblower",
+      "id": "q4",
+      "question": "Someone knowingly files a completely baseless whistleblower complaint out of malice. How is this treated?",
+      "options": [
+        {
+          "label": "A",
+          "text": "As protected activity, regardless of intent."
+        },
+        {
+          "label": "B",
+          "text": "It cannot be addressed under this policy at all."
+        },
+        {
+          "label": "C",
+          "text": "As a normal complaint requiring only a standard investigation."
+        },
+        {
+          "label": "D",
+          "text": "As a serious disciplinary offense."
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Section 4.2 states allegations that prove unsubstantiated and were made maliciously or knowingly false will be viewed as a serious disciplinary offense."
+    }
   ]
 }

@@ -1,0 +1,72 @@
+{
+    "titleSlide": {
+        "title": "Whistleblower Policy",
+        "subtitle": "",
+        "moduleTitle": "Whistleblower Policy",
+        "desc": ""
+    },
+    "policiesSlide": {
+        "title": "Policy Summary",
+        "table": [
+            {
+                "label": "Authority",
+                "value": "Board of Directors"
+            },
+            {
+                "label": "Date Ratified",
+                "value": "April 28, 2025"
+            },
+            {
+                "label": "Next Review Date",
+                "value": "April 2028"
+            },
+            {
+                "label": "Previous Amendments",
+                "value": "N/A"
+            },
+            {
+                "label": "Delegate(s)",
+                "value": "Chief Operating Officer; Senior Manager, People and Development"
+            }
+        ],
+        "description": "This policy requires directors, executives, and employees to observe high standards of personal and professional ethics, and outlines the responsibility of all paid USC employees, board members, and volunteers to report suspected fraud or other misconduct. It covers reporting responsibility, protection against retaliation, the requirement to act in good faith, confidentiality of reports, and how reported violations are handled.",
+        "scope": ""
+    },
+    "useSlide": {
+        "title": "Key Takeaways",
+        "items": [
+            "All board members, officers, employees, and volunteers are responsible for reporting concerns about violations of the USC's approved policies, or suspected violations of law or regulations governing the USC's operations.",
+            "It is contrary to USC values for anyone to retaliate against a board member, officer, employee, or volunteer who, in good faith, reports an ethics violation, suspected fraud, or suspected regulatory violation; an employee who retaliates is subject to discipline up to and including termination.",
+            "Anyone filing a written complaint must be acting in good faith with reasonable grounds for believing the disclosed information indicates a violation; allegations that prove unsubstantiated and were made maliciously or knowingly false will be treated as a serious disciplinary offense.",
+            "Violations or suspected violations may be submitted on a confidential basis, and reports will be kept confidential to the extent possible, consistent with conducting an adequate investigation, which may include disclosure to third-party legal counsel.",
+            "Suspected violations of approved USC policy, fraud, or other misconduct should generally be reported to the Chief Operating Officer; allegations against the COO go to the Senior Manager, People and Development, and allegations against a member of the USC's Executive follow the Executive Officer Accountability and Discipline Policy.",
+            "All reports will be promptly investigated with appropriate corrective action taken if warranted, in accordance with the Whistleblower Procedure."
+        ]
+    },
+    "slideOne": {
+        "title": "1. REPORTING RESPONSIBILITY",
+        "oneOne": "It is the responsibility of all board members, officers, employees and volunteers to report concerns about violations of the USC's approved policies or suspected violations of law or regulations that govern the USC's operations."
+    },
+    "slideTwo": {
+        "title": "2. NO RETALIATION",
+        "twoOne": "It is contrary to the values of the USC for anyone to retaliate against any board member, officer, employee or volunteer who in good faith reports an ethics violation, or a suspected violation of law, such as a complaint of discrimination, or suspected fraud, or suspected violation of any regulation governing the operations of the USC.",
+        "twoTwo": "An employee who retaliates against someone who has reported a violation in good faith is subject to discipline up to and including termination of employment."
+    },
+    "slideThree": {
+        "title": "3. ACTING IN GOOD FAITH",
+        "threeOne": "Anyone filing a written complaint concerning a violation or suspected violation must be acting in good faith and have reasonable grounds for believing the information disclosed indicates a violation.",
+        "threeTwo": "Any allegations that prove not to be substantiated and which prove to have been made maliciously or knowingly to be false will be viewed as a serious disciplinary offense."
+    },
+    "slideFour": {
+        "title": "4. CONFIDENTIALITY",
+        "fourOne": "Violations or suspected violations may be submitted on a confidential basis by the complainant.",
+        "fourTwo": "Reports of violations or suspected violations will be kept confidential to the extent possible, consistent with the need to conduct an adequate investigation. This may include disclosure to third party legal counsel as required to conduct the investigation."
+    },
+    "slideFive": {
+        "title": "5. HANDLING REPORTED VIOLATIONS",
+        "fiveOne": "Suspected violations of approved USC policy, fraud, or other misconduct should be reported to the Chief Operating Officer",
+        "fiveOneOne": "If the report includes an allegation against the Chief Operating Officer, the violation shall be reporting to the Senior Manager, People and Development.",
+        "fiveOneTwo": "If a report includes an allegation against a member of the USC's Executive, the report shall be made in accordance with the Executive Officer Accountability and Discipline Policy.",
+        "fiveTwo": "All reports will be promptly investigated and appropriate corrective action taken if warranted, in accordance with the Whistleblower Procedure."
+    }
+}
