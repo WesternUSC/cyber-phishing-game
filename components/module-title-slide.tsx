@@ -15,7 +15,9 @@ type Slide =
   | "emergency"
   | "hazard"
   | "hsrm"
-  | "hsrw";
+  | "hsrw"
+  | "hswrp"
+  | "housekeeping";
 
 interface Module {
   name: string;
@@ -79,6 +81,16 @@ const policyDownloads: Record<string, [string, string]> = {
     "/pdfs/Health and Safety Responsibilities of Workers (Including Supplied Labour) Policy.pdf",
     "/pdfs/Health_and_Safety_Responsibilities_of_Workers_Including_Supplied_Labour_Policy_Summary_and_Quiz.pdf",
   ],
+
+  "13": [
+    "/pdfs/Health and Safety Work Refusal Policy.pdf",
+    "/pdfs/Health_and_Safety_Work_Refusal_Policy_Summary_and_Quiz.pdf",
+  ],
+
+  "14": [
+    "/pdfs/Housekeeping and Organizing Policy.pdf",
+    "/pdfs/Housekeeping_and_Organizing_Policy_Summary_and_Quiz.pdf",
+  ],
 };
 
 const scoreStorageKeys: Record<string, string> = {
@@ -92,6 +104,8 @@ const scoreStorageKeys: Record<string, string> = {
   "Hazard Reporting Policy": "hazard-score",
   "Health and Safety Responsibilities of Managers & Supervisors Policy": "hsrm-score",
   "Health and Safety Responsibilities of Workers (Including Supplied Labour) Policy": "hsrw-score",
+  "Health and Safety Work Refusal Policy": "hswrp-score",
+  "Housekeeping and Organizing Policy": "housekeeping-score",
 };
 
 const modules: Omit<Module, "score">[] = [
@@ -153,12 +167,12 @@ const modules: Omit<Module, "score">[] = [
   {
     name: "Health and Safety Work Refusal Policy",
     questionCount: 5,
-    page: "eso",
+    page: "hswrp",
   },
   {
     name: "Housekeeping and Organizing Policy",
     questionCount: 5,
-    page: "eso",
+    page: "housekeeping",
   },
   {
     name: "Injury/Illness Reporting Policy",
@@ -369,7 +383,9 @@ export default function ModuleTableOfContents({
               "Emergency Preparedness Policy": "9",
               "Hazard Reporting Policy": "10",
               "Health and Safety Responsibilities of Managers & Supervisors Policy": "11",
-              "Health and Safety Responsibilities of Workers (Including Supplied Labour) Policy": "12"
+              "Health and Safety Responsibilities of Workers (Including Supplied Labour) Policy": "12",
+              "Health and Safety Work Refusal Policy": "13",
+              "Housekeeping and Organizing Policy": "14"
             }).find(([name]) => name === module.name)?.[1];
 
             // const hasDownloads =

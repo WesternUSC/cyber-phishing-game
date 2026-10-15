@@ -21,6 +21,8 @@ import emergencySlidesData from '@/data/emergencySlides.json'
 import hazardSlidesData from '@/data/hazardSlides.json'
 import hsrmSlidesData from '@/data/hsrmSlides.json'
 import hsrwSlidesData from '@/data/hsrwSlides.json'
+import hswrpSlidesData from '@/data/hswrpSlides.json'
+import housekeepingSlidesData from '@/data/housekeepingSlides.json'
 
 export default function PoliciesPage() {
     const { userData, setUserData } = useApp();
@@ -76,6 +78,12 @@ export default function PoliciesPage() {
 
             case 'hsrw':
                 return createPolicySlides(hsrwSlidesData, questionsData.questionsHsrw, userData.name, "hsrw", "hsrw-score");
+
+            case 'hswrp':
+                return createPolicySlides(hswrpSlidesData, questionsData.questionsHswrp, userData.name, "hswrp", "hswrp-score");
+
+            case 'housekeeping':
+                return createPolicySlides(housekeepingSlidesData, questionsData.questionsHousekeeping, userData.name, "housekeeping", "housekeeping-score");
 
             default:
                 return createPolicySlides(policiesSlidesData, questionsData.questionsAcceptableUse, userData.name, "policies", "acceptable-use-score");

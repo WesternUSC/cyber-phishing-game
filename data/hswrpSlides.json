@@ -1,0 +1,119 @@
+{
+    "titleSlide": {
+        "title": "Health and Safety Work Refusal Policy",
+        "subtitle": "",
+        "moduleTitle": "Health and Safety Work Refusal Policy",
+        "desc": ""
+    },
+    "policiesSlide": {
+        "title": "Policy Summary",
+        "table": [
+            {
+                "label": "Authority",
+                "value": "Board of Directors"
+            },
+            {
+                "label": "Date Ratified",
+                "value": "November 21, 2023"
+            },
+            {
+                "label": "Next Review Date",
+                "value": "November 2026"
+            },
+            {
+                "label": "Previous Amendments",
+                "value": "February 26, 2016; November 15, 2011"
+            }
+        ],
+        "description": "This policy establishes procedural guidelines under the Occupational Health & Safety Act for handling a work refusal, reflecting the USC's aim to resolve health and safety concerns before a work refusal occurs. It distinguishes a health and safety complaint from a formal work refusal, sets out the two-stage work refusal process (Supervisor-level investigation, followed by Ministry of Labour involvement if unresolved), and confirms that reprisals against workers who refuse unsafe work are strictly prohibited.",
+        "scope": ""
+    },
+    "useSlide": {
+        "title": "Key Takeaways",
+        "items": [
+            "Applies to all USC employees; it is USC policy to resolve health and safety concerns before a work refusal occurs and to provide a uniform reporting procedure.",
+            "When a worker raises a concern, the Supervisor investigates with the worker present to determine whether it is a complaint or a refusal, and if it's a genuine safety issue, must undertake immediate corrective action.",
+            "Workers in Ontario have the right to refuse work they believe is unsafe due to equipment/machines/devices, the physical condition of the workplace, workplace violence, or anything that contravenes the Act or Regulations and may endanger a worker.",
+            "Stage 1: the worker reports (preferably in writing) the reasons the work is believed unsafe and remains in a safe place near their workstation; the Supervisor investigates with the worker, a certified JHSC worker representative, and the Senior Manager, People and Development, then responds in writing with remediation timelines or reasoning.",
+            "Stage 2: if the worker still has reasonable grounds to believe the work is unsafe, they remain in a safe place and the Ministry of Labour is notified; refused work may only be offered to another worker in the presence of a JHSC worker representative and the Senior Manager, People and Development, and that worker must be told of the original refusal and its reasons.",
+            "A Ministry of Labour Inspector investigates in consultation with the Senior Manager, People and Development, the worker, and the JHSC representative, and issues a written decision as soon as possible.",
+            "Reprisals are strictly prohibited under OHSA Part VI, section 50(1): no dismissal, discipline, suspension, penalty, intimidation, or coercion may be used against a worker for exercising these rights."
+        ]
+    },
+    "slideOne": {
+        "title": "1. SCOPE",
+        "oneOne": "This policy applies to all USC employees."
+    },
+    "slideTwo": {
+        "title": "2. PROCEDURE",
+        "twoOne": "HEALTH & SAFETY COMPLAINT:",
+        "twoOneOne": {
+            "intro": "In the event that a worker raises a health and safety concern or complaint to their Supervisor, the Supervisor shall:",
+            "items": [
+                "1. Investigate in the presence of the worker and establish with the worker whether a health & safety issue exists and if it is a complaint or work refusal.",
+                "2. If determined to be a safety complaint and the task is unsafe the Supervisor shall undertake immediate corrective action."
+            ]
+        },
+        "twoTwo": "HEALTH & SAFETY WORK REFUSAL:",
+        "twoTwoOne": {
+            "intro": "Workers in the province of Ontario have the right to refuse work which they have reason to believe is unsafe. As per the Occupational Health & Safety Act a worker may refuse to work or do particular work where they or another worker may be endangered by,",
+            "items": [
+                "1. Any equipment, machine, device or thing;",
+                "2. The physical condition of the workplace;",
+                "3. Workplace violence; or",
+                "4. Any equipment, machine, device or thing that is to be used, or the physical condition of the workplace, is in contravention of the Act or Regulations and may endanger themselves or another worker."
+            ]
+        },
+        "twoTwoTwo": {
+            "intro": "Should there be a work refusal the following procedures apply:",
+            "items": [
+                "1. Any equipment, machine, device or thing;",
+                "2. The physical condition of the workplace;",
+                "3. Workplace violence; or",
+                "4. Any equipment, machine, device or thing that is to be used, or the physical condition of the workplace, is in contravention of the Act or Regulations and may endanger themselves or another worker."
+            ]
+        },
+        "twoTwoThree": {
+            "intro": "Stage 1:",
+            "items": [
+                "a. The worker has reason to believe the work or task is unsafe.",
+                "b. The report shall be made to the Supervisor, preferably in writing, and should outline the worker's reasons for believing the work to be unsafe.",
+                "c. The worker shall remain in a safe place near their workstation.",
+                "d. The Supervisor shall investigate forthwith in the presence of the worker, a certified worker representative from the JHSC, and the Senior Manager, People and Development.",
+                "e. The Supervisor shall respond to the worker in writing, outlining remediation timelines, if applicable. If there will not be a remediation plan, the written response should include the reasoning behind this decision.",
+                "f. Should the issue be resolved and corrective action taken, if required, the worker shall return to work. If the issue is not resolved, proceed to Stage 2."
+            ]
+        },
+        "twoTwoFour": {
+            "intro": "Stage 2:",
+            "items": [
+                "a. Following the investigation, should the worker have reasonable grounds to believe that the work or task continues to be unsafe, they must remain in a safe place near their workstation and the Ministry of Labour shall be notified.",
+                "b. Refused work may be offered to another worker, provided it is offered in the presence of a worker representative from the JHSC and the Senior Manager, People and Development. This worker shall also be advised of the other worker's refusal and their reasons for the refusal.",
+                "c. The Ministry of Labour Inspector shall investigate in consultation with the Senior Manager, People and Development, the worker, and the worker representative from the JHSC.",
+                "d. The Inspector shall give their decision in writing as soon as possible to all involved parties, and any applicable changes can be made in order to return the worker to their duties."
+            ]
+        }
+    },
+    "slideThree": {
+        "title": "3. REPRISALS BY EMPLOYER PROHIBITED",
+        "threeOne": "Workers who invoke their right to refuse work which they have reason to believe to be unsafe are protected by the Occupational Health and Safety Act.",
+        "threeTwo": "As per Part VI, section 50(1), no employer or person acting on behalf of an employer shall:",
+        "threeTwoOne": {
+            "intro": "As per Part VI, sec. 50(1):",
+            "items": [
+                "1. Dismiss or threaten to dismiss a worker;",
+                "2. Discipline or suspend or threaten to discipline or suspend a worker;",
+                "3. Impose any penalty upon a worker; or",
+                "4. Intimidate or coerce a worker because the worker has acted in compliance with the Act or the regulations or an order made thereunder, has sought the enforcement of the Act or the regulations, or has given evidence in a proceeding in respect of their enforcement."
+            ]
+        }
+    },
+    "slideFour": {
+        "title": "4. COMMUNICATION",
+        "fourOne": "This policy will be explained as needed to workers through orientation health and safety training or task-specific training."
+    },
+    "slideFive": {
+        "title": "5. EVALUATION",
+        "fiveOne": "This policy will be evaluated on an annual basis through the Continuous Improvement Plan."
+    }
+}

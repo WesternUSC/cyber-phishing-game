@@ -1,0 +1,95 @@
+{
+    "titleSlide": {
+        "title": "Housekeeping and Organizing Policy",
+        "subtitle": "",
+        "moduleTitle": "Housekeeping and Organizing Policy",
+        "desc": ""
+    },
+    "policiesSlide": {
+        "title": "Policy Summary",
+        "table": [
+            {
+                "label": "Authority",
+                "value": "Board of Directors"
+            },
+            {
+                "label": "Date Ratified",
+                "value": "February 2, 2024"
+            },
+            {
+                "label": "Next Review Date",
+                "value": "February 2027"
+            },
+            {
+                "label": "Previous Amendments",
+                "value": "February 16, 2018; October 30, 2012"
+            }
+        ],
+        "description": "This policy promotes effective, ongoing housekeeping practices in the USC's physical workspace to support accident and fire prevention. It applies to all USC employees, volunteers, and visitors, and covers dust and dirt removal, employee facilities, floor and other surface conditions, lighting, aisles and stairways, spill control, tools and equipment, waste disposal, and storage practices.",
+        "scope": ""
+    },
+    "useSlide": {
+        "title": "Key Takeaways",
+        "items": [
+            "Applies to all USC employees, volunteers, and visitors; housekeeping means more than cleanliness — it includes trip-hazard-free floors, proper waste removal, workplace layout, aisle marking, and adequate, ongoing maintenance, since periodic 'panic' cleanups are costly and ineffective.",
+            "All employees must keep work areas neat, tidy, and free from trip hazards, ensure garbage/debris are disposed of, remove unused materials, and notify Manager, InfoSource and Building Services if an issue is beyond their control.",
+            "Compressed air must never be used to remove dust, dirt, or chips from equipment or work surfaces; dampening floors before sweeping and manual cleaning of hard-to-reach areas are recommended instead.",
+            "Employee facilities, including student rooms 301, 315, and 318, must be kept adequate, clean, and well maintained; eating areas must be cleaned daily and the fridge is intended for short-term food storage only.",
+            "Aisles and stairways must remain clear of 'overflow' storage and be adequately lit; spills should be prevented where possible and cleaned up immediately, with used absorbents disposed of properly.",
+            "Stored materials must not obstruct aisles, stairs, exits, fire equipment, eyewash stations, showers, or first aid stations, must allow at least one meter of clearance under sprinkler heads, and hazardous materials must be stored in approved containers per fire code and OHSA requirements."
+        ]
+    },
+    "slideOne": {
+        "title": "1. SCOPE",
+        "oneOne": "This policy applies to all USC employees, volunteers and visitors."
+    },
+    "slideTwo": {
+        "title": "2. DEFINITION",
+        "twoOne": "'Housekeeping' is not just cleanliness. It includes keeping work areas neat and orderly; maintaining halls and floors free of slip and trip hazards; and removing waste materials (e.g., paper, cardboard) and other fire hazards from work areas. It also requires paying attention to important details such as the layout of the whole workplace, aisle marking, the adequacy of storage facilities, and maintenance. Effective housekeeping is an ongoing operation. Periodic 'panic' cleanups are costly and ineffective in reducing accidents."
+    },
+    "slideThree": {
+        "title": "3. RESPONSIBILITIES",
+        "threeOne": "All USC Employees must:",
+        "threeOneOne": "Keep their work areas neat, tidy and free from trip hazards;",
+        "threeOneTwo": "Ensure that garbage and debris are disposed of;",
+        "threeOneThree": "Remove any unused materials; and",
+        "threeOneFour": "Notify the Manager, InfoSource and Building Services if a housekeeping issue is beyond their manageable control to ensure prompt clean up or disposal."
+    },
+    "slideFour": {
+        "title": "4. PROCEDURES",
+        "fourOne": "DUST AND DIRT REMOVAL",
+        "fourOneOne": "In some jobs, enclosures and exhaust ventilation systems may fail to collect dust, dirt and chips adequately. Vacuum cleaners are suitable for removing light dust and dirt. Contact the Manager, InfoSource and Building Services to have the Western Facilities Management Division clean and assess your area for any failure in the exhaust ventilation system.",
+        "fourOneTwo": "Dampening (wetting) floors or using sweeping compounds before sweeping reduces the amount of airborne dust. Dust and grime that collect on shelves, piping, conduits, light fixtures, reflectors, windows, cupboards and lockers may require manual cleaning.",
+        "fourOneThree": "Compressed air should not be used for removing dust, dirt or chips from equipment or work surfaces.",
+        "fourTwo": "EMPLOYEE FACILITIES",
+        "fourTwoOne": "Employee facilities need to be adequate, clean and well maintained. Personal belongings shall be stored out of sight. Washroom facilities need to have a good supply of soap, towels and disinfectants and should be cleaned on a regular basis. Contact the Manager, InfoSource and Building Services if a washroom needs cleaning or supplies need to be replenished so that Caretaking Services can be contacted.",
+        "fourTwoTwo": "Student facilities (Rooms 301, 315 and 318) need to be adequate, clean and well maintained. Contact the Manager, Leadership Support if you have any concerns with the state of the student spaces.",
+        "fourTwoThree": "If eating or drinking in your work area, it should be cleaned properly each day. When using the staff lunch room, clean your eating area and any dishes used. Ensure that food is not stored in the fridge for extended periods, as the fridge is intended for short-term food storage.",
+        "fourThree": "SURFACES",
+        "fourThreeOne": "Floors: Poor floor conditions are a leading cause of accidents, so cleaning up spilled oil and other liquids immediately is important. Allowing chips, shavings and dust to accumulate can also cause accidents. Trapping chips, shavings and dust before they reach the floor, or cleaning them up regularly, can prevent their accumulation. Areas that cannot be cleaned continuously, such as entrance ways, should have anti-slip flooring. Keeping floors in good order also means replacing any worn, ripped or damaged flooring that poses a tripping hazard. Contact the Manager, InfoSource and Building Services if you have any concerns with flooring conditions in your work area so that the Western Facilities Management Division can be notified.",
+        "fourFour": "MAINTAIN LIGHT FIXTURES",
+        "fourFourOne": "Dirty lighting fixtures reduce essential light levels. Clean light fixtures can improve lighting efficiency significantly. Contact the Manager, InfoSource and Building Services if there are dirty lighting fixtures, burnt-out light bulbs or missing lighting covers in your work area so that the Physical Plant Department can be contacted.",
+        "fourFive": "AISLES AND STAIRWAYS",
+        "fourFiveOne": "Aisles should be wide enough to accommodate people and vehicles comfortably and safely. Aisle space allows for the movement of people, products and materials. Warning signs and mirrors can improve sight-lines in blind corners. Arranging aisles properly encourages people to use them so that they do not take shortcuts through hazardous areas.",
+        "fourFiveTwo": "Keeping aisles and stairways clear is important. They should not be used for temporary 'overflow' or 'bottleneck' storage. Stairways and aisles also require adequate lighting.",
+        "fourSix": "SPILL CONTROL",
+        "fourSixOne": "The best way to control spills is to stop them before they happen. Regularly cleaning and maintaining machines and equipment is one way. Another is to use drip pans and guards where possible spills might occur. When spills do occur, it is important to clean them up immediately. Absorbent materials are useful for wiping up greasy, oily or other liquid spills. Used absorbents must be disposed of properly and safely.",
+        "fourSeven": "TOOLS AND EQUIPMENT",
+        "fourSevenOne": "Tool housekeeping is very important, whether in the tool room, on the rack or on the bench. Tools require suitable fixtures with marked locations to provide orderly arrangement, both in the tool room and near the workbench. Returning them promptly after use reduces the chance of them being misplaced or lost. Workers should regularly inspect, clean and repair all tools and take any damaged or worn tools out of service.",
+        "fourEight": "WASTE DISPOSAL",
+        "fourEightOne": "The regular collection, grading and sorting of waste contribute to good housekeeping practices. It also makes it possible to separate materials that can be recycled from those going to waste disposal facilities.",
+        "fourEightTwo": "Allowing material to build up on the floor wastes time and energy since additional time is required for cleaning it up. Placing scrap containers near where the waste is produced encourages orderly waste disposal and makes collection easier. All waste receptacles should be clearly labelled (e.g., recyclable glass, plastic, etc.). If your garbage is overflowing, contact the Manager, InfoSource and Building Services so that Caretaking Services can be dispatched to collect the waste.",
+        "fourNine": "STORAGE",
+        "fourNineOne": "Good organization of stored materials is essential for overcoming material storage problems, whether on a temporary or permanent basis. There will also be fewer strain injuries if the amount of handling is reduced, especially if less manual materials handling is required. The location of stockpiles should not interfere with work, but they should still be readily available when required. Stored materials should allow at least one metre (or about three feet) of clear space under sprinkler heads.",
+        "fourNineTwo": "Stacking cartons and drums on a firm foundation and cross-tying them, where necessary, reduces the chance of their movement. Stored materials should not obstruct aisles, stairs, exits, fire equipment, emergency eyewash fountains, emergency showers or first aid stations. All storage areas should be clearly marked.",
+        "fourNineThree": "Flammable, combustible, toxic and other hazardous materials should be stored in approved containers in designated areas that are appropriate for the different hazards they pose. Storage of materials should meet all requirements specified in the fire codes and the regulations of environmental and OHSA legislation."
+    },
+    "slideFive": {
+        "title": "5. COMMUNICATION",
+        "fiveOne": "This policy will be explained as needed to workers through orientation health and safety training or task-specific training."
+    },
+    "slideSix": {
+        "title": "6. EVALUATION",
+        "sixOne": "This policy will be evaluated on an annual basis through the Continuous Improvement Plan."
+    }
+}

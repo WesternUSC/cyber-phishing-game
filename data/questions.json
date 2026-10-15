@@ -1318,5 +1318,259 @@
       "correctAnswer": "C",
       "explanation": "Section 1.1 states this policy applies to all USC workers, and the title itself specifies it includes supplied labour."
     }
+  ],
+  "questionsHswrp": [
+    {
+      "category": "hswrp",
+      "id": "q1",
+      "question": "A worker believes a piece of equipment is unsafe to operate and refuses to use it. What is the correct Stage 1 action?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Attempt to fix the equipment themselves before reporting anything."
+        },
+        {
+          "label": "B",
+          "text": "Wait until their next shift to mention it."
+        },
+        {
+          "label": "C",
+          "text": "Immediately leave for the day without reporting it."
+        },
+        {
+          "label": "D",
+          "text": "Report the concern (preferably in writing) to their Supervisor, remain in a safe place near their workstation, and have the Supervisor investigate with the worker present."
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Section 2.2.2.1 describes Stage 1 as reporting to the Supervisor (preferably in writing), remaining in a safe place, and the Supervisor investigating with the worker present."
+    },
+    {
+      "category": "hswrp",
+      "id": "q2",
+      "question": "After a Stage 1 investigation, a worker still has reasonable grounds to believe the work is unsafe. What happens next?",
+      "options": [
+        {
+          "label": "A",
+          "text": "The worker remains in a safe place and the Ministry of Labour is notified."
+        },
+        {
+          "label": "B",
+          "text": "The worker is permanently reassigned with no further process."
+        },
+        {
+          "label": "C",
+          "text": "The matter is automatically dropped."
+        },
+        {
+          "label": "D",
+          "text": "The worker must return to the task regardless of their concerns."
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Section 2.2.2.2.a describes Stage 2, where the worker remains in a safe place and the Ministry of Labour is notified."
+    },
+    {
+      "category": "hswrp",
+      "id": "q3",
+      "question": "If refused work is offered to another worker during a Stage 2 review, what must happen?",
+      "options": [
+        {
+          "label": "A",
+          "text": "It can be offered without informing the second worker of anything."
+        },
+        {
+          "label": "B",
+          "text": "It must be offered in the presence of a JHSC worker representative and the Senior Manager, People and Development, and the second worker must be told of the original refusal and its reasons."
+        },
+        {
+          "label": "C",
+          "text": "Only a manager needs to be present, with no worker representative required."
+        },
+        {
+          "label": "D",
+          "text": "It can only be offered after the Ministry of Labour issues its decision."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Section 2.2.2.2.b requires refused work to be offered in the presence of a JHSC worker representative and the Senior Manager, People and Development, with the other worker advised of the refusal and reasons."
+    },
+    {
+      "category": "hswrp",
+      "id": "q4",
+      "question": "An employer disciplines a worker specifically because they exercised their right to refuse unsafe work. What does the policy say about this?",
+      "options": [
+        {
+          "label": "A",
+          "text": "This is only prohibited for unionized staff."
+        },
+        {
+          "label": "B",
+          "text": "This is permitted if handled discreetly."
+        },
+        {
+          "label": "C",
+          "text": "This is a prohibited reprisal under the Occupational Health and Safety Act."
+        },
+        {
+          "label": "D",
+          "text": "This is permitted if the refusal is later found to be unfounded."
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Sections 3.1 and 3.2 state that reprisals such as discipline against a worker for invoking their right to refuse unsafe work are prohibited under the Occupational Health and Safety Act."
+    },
+    {
+      "category": "hswrp",
+      "id": "q5",
+      "question": "What grounds does the policy identify as valid reasons a worker may refuse work?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Personal scheduling conflicts."
+        },
+        {
+          "label": "B",
+          "text": "Only unsafe physical workplace conditions."
+        },
+        {
+          "label": "C",
+          "text": "Only workplace violence."
+        },
+        {
+          "label": "D",
+          "text": "Unsafe equipment/machines/devices, physical workplace conditions, workplace violence, or a contravention of the Act/Regulations that may endanger a worker."
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Section 2.2.1 lists these four grounds for a valid work refusal under the Occupational Health & Safety Act."
+    }
+  ],
+  "questionsHousekeeping": [
+    {
+      "category": "housekeeping",
+      "id": "q1",
+      "question": "An employee's shelves and light fixtures have accumulated dust that a vacuum can't fully remove. What does the policy recommend?",
+      "options": [
+        {
+          "label": "A",
+          "text": "These may require manual cleaning."
+        },
+        {
+          "label": "B",
+          "text": "Leave it until the next scheduled deep clean."
+        },
+        {
+          "label": "C",
+          "text": "Contact the Board of Directors directly."
+        },
+        {
+          "label": "D",
+          "text": "Use compressed air to blow it off quickly."
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Section 4.1.2 notes that dust and grime collecting on shelves, fixtures, and similar surfaces may require manual cleaning."
+    },
+    {
+      "category": "housekeeping",
+      "id": "q2",
+      "question": "Which of the following is explicitly prohibited for removing dust, dirt, or chips from equipment or work surfaces?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Dampening floors before sweeping."
+        },
+        {
+          "label": "B",
+          "text": "Compressed air."
+        },
+        {
+          "label": "C",
+          "text": "Manual cleaning."
+        },
+        {
+          "label": "D",
+          "text": "Vacuum cleaners."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Section 4.1.3 states compressed air should not be used for removing dust, dirt, or chips from equipment or work surfaces."
+    },
+    {
+      "category": "housekeeping",
+      "id": "q3",
+      "question": "An employee stores personal food in the shared staff fridge for several weeks. Is this consistent with policy?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Only frozen items may be stored long-term."
+        },
+        {
+          "label": "B",
+          "text": "Yes, as long as it's labeled."
+        },
+        {
+          "label": "C",
+          "text": "No — the fridge is intended for short-term food storage purposes only."
+        },
+        {
+          "label": "D",
+          "text": "Yes, if it's kept in a sealed container."
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Section 2.2.2.2.b requires refused work to be offered in the presence of a JHSC worker representative and the Senior Manager, People and Development, with the other worker advised of the refusal and reasons."
+    },
+    {
+      "category": "housekeeping",
+      "id": "q4",
+      "question": "Materials are being stored directly under a sprinkler head in a storage area. What clearance does the policy require?",
+      "options": [
+        {
+          "label": "A",
+          "text": "At least 5 feet."
+        },
+        {
+          "label": "B",
+          "text": "No clearance is required."
+        },
+        {
+          "label": "C",
+          "text": "At least 6 inches."
+        },
+        {
+          "label": "D",
+          "text": "At least one meter (about three feet) of clear space."
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Section 4.9.1 states stored materials should allow at least one meter (or about three feet) of clear space under sprinkler heads."
+    },
+    {
+      "category": "housekeeping",
+      "id": "q5",
+      "question": "An employee notices dim lighting in their work area due to dirty fixtures and burnt-out bulbs. What should they do?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Contact Manager, InfoSource and Building Services so the Physical Plant Department can be notified."
+        },
+        {
+          "label": "B",
+          "text": "Ignore it, since it's a minor issue."
+        },
+        {
+          "label": "C",
+          "text": "File a Hazard Reporting Form only if someone is injured."
+        },
+        {
+          "label": "D",
+          "text": "Replace the bulbs themselves without reporting it."
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Section 4.4.1 directs employees to contact Manager, InfoSource and Building Services for dirty fixtures, burnt-out bulbs, or missing lighting covers."
+    }
   ]
 }
