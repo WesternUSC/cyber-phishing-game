@@ -140,6 +140,11 @@ const MultipleChoiceQuestion: React.FC<MultipleChoiceQuestionProps> = ({
       ANSWERS_KEY = "social-answers";
       break;
 
+    case "visitor":
+      SCORE_KEY = "visitor-score";
+      ANSWERS_KEY = "visitor-answers";
+      break;
+
     default:
       SCORE_KEY = "acceptable-use-score";
       ANSWERS_KEY = "acceptable-use-answers";

@@ -21,7 +21,8 @@ type Slide =
   | "injury"
   | "media"
   | "disconnect"
-  | "social";
+  | "social"
+  | "visitor";
 
 interface Module {
   name: string;
@@ -115,6 +116,11 @@ const policyDownloads: Record<string, [string, string]> = {
     "/pdfs/Social Media Policy.pdf",
     "/pdfs/Social_Media_Policy_Summary_and_Quiz.pdf",
   ],
+
+  "19": [
+    "/pdfs/Visitor Policy.pdf",
+    "/pdfs/Visitor_Policy_Summary_and_Quiz.pdf",
+  ],
 };
 
 const scoreStorageKeys: Record<string, string> = {
@@ -134,6 +140,7 @@ const scoreStorageKeys: Record<string, string> = {
   "Media Spokesperson Policy": "media-score",
   "Right to Disconnect Policy for USC Paid Employees": "disconnect-score",
   "Social Media Policy": "social-score",
+  "Visitor Policy": "visitor-score",
 };
 
 const modules: Omit<Module, "score">[] = [
@@ -224,8 +231,8 @@ const modules: Omit<Module, "score">[] = [
   },
   {
     name: "Visitor Policy",
-    questionCount: 5,
-    page: "eso",
+    questionCount: 4,
+    page: "visitor",
   },
   {
     name: "Whistleblower Policy",
@@ -417,7 +424,8 @@ export default function ModuleTableOfContents({
               "Injury/Illness Reporting Policy": "15",
               "Media Spokesperson Policy": "16",
               "Right to Disconnect Policy for USC Paid Employees": "17",
-              "Social Media Policy": "18"
+              "Social Media Policy": "18",
+              "Visitor Policy": "19"
             }).find(([name]) => name === module.name)?.[1];
 
             // const hasDownloads =

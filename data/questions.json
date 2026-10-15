@@ -2055,5 +2055,107 @@
       "correctAnswer": "D",
       "explanation": "Section 5.3 states new USC-related social media accounts can only be created in consultation with the Communications Department and ITS team."
     }
+  ],
+  "questionsVisitor": [
+    {
+      "category": "visitor",
+      "id": "q1",
+      "question": "A visitor becomes ill while meeting with their USC host. What must happen?",
+      "options": [
+        {
+          "label": "A",
+          "text": "The visitor and USC host must complete the Illness/Injury Reporting Form and submit it to the USC Health & Safety Coordinator."
+        },
+        {
+          "label": "B",
+          "text": "Only the host needs to make a private, informal note of it."
+        },
+        {
+          "label": "C",
+          "text": "It only needs to be reported if the visitor requests medical attention."
+        },
+        {
+          "label": "D",
+          "text": "The visitor should simply leave without any report being made."
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Section 4.4 requires the visitor and USC host to complete the Illness/Injury Reporting Form and submit it to the USC Health & Safety Coordinator."
+    },
+    {
+      "category": "visitor",
+      "id": "q2",
+      "question": "A visitor repeatedly ignores directions from their USC host and refuses to follow USC procedures. What should the host do?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Continue the meeting and address it another time."
+        },
+        {
+          "label": "B",
+          "text": "Ask the visitor to leave and report the incident to their manager."
+        },
+        {
+          "label": "C",
+          "text": "Call Campus Police immediately, regardless of severity."
+        },
+        {
+          "label": "D",
+          "text": "Simply end the meeting early, with no further action."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Section 4.5 directs the host to ask the visitor to leave and report the incident to their manager if the visitor refuses to follow USC procedures."
+    },
+    {
+      "category": "visitor",
+      "id": "q3",
+      "question": "Once a visitor checks in, who is responsible for contacting the USC host to escort them?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Building Services."
+        },
+        {
+          "label": "B",
+          "text": "The visitor must locate their host on their own."
+        },
+        {
+          "label": "C",
+          "text": "The Executive Assistant or designate."
+        },
+        {
+          "label": "D",
+          "text": "Any nearby employee."
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Section 4.2 states the Executive Assistant or designate will contact the USC Host to escort the visitor to the designated meeting location."
+    },
+    {
+      "category": "visitor",
+      "id": "q4",
+      "question": "Are visitors permitted to move freely around USC office spaces without an escort?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Yes, if they have visited before."
+        },
+        {
+          "label": "B",
+          "text": "Only in common areas."
+        },
+        {
+          "label": "C",
+          "text": "Yes, once they've checked in at reception."
+        },
+        {
+          "label": "D",
+          "text": "No — visitors must always be escorted by their designated USC host while in USC spaces."
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Section 3.1.2 requires visitors to always be escorted by their designated USC host while in USC spaces."
+    }
   ]
 }

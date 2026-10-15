@@ -1,0 +1,80 @@
+{
+    "titleSlide": {
+        "title": "Visitor Policy",
+        "subtitle": "",
+        "moduleTitle": "Visitor Policy",
+        "desc": ""
+    },
+    "policiesSlide": {
+        "title": "Policy Summary",
+        "table": [
+            {
+                "label": "Authority",
+                "value": "Board of Directors"
+            },
+            {
+                "label": "Date Ratified",
+                "value": "February 2, 2024"
+            },
+            {
+                "label": "Next Review Date",
+                "value": "February 2027"
+            },
+            {
+                "label": "Previous Amendments",
+                "value": "January 16, 2015; November 15, 2011"
+            }
+        ],
+        "description": "This policy outlines the responsibilities of visitors — persons with scheduled appointments for a business function — and of USC hosts and employees, when someone temporarily enters the workplace. It covers check-in, escorting, illness or injury reporting, personal protective equipment, emergency assistance needs, and what happens if a visitor doesn't follow USC procedures.",
+        "scope": ""
+    },
+    "useSlide": {
+        "title": "Key Takeaways",
+        "items": [
+            "Applies to all persons with scheduled appointments for a business function, and to all USC employees; a 'visitor' temporarily enters the workplace and may access areas generally off-limits to the public, but is not under contract.",
+            "Visitors must check in at reception upon arrival, always be escorted by their designated USC host while in USC spaces, remain in designated areas, immediately report any illness or injury suffered to their host, wear applicable personal protective equipment, and notify their host if they require special assistance during an emergency evacuation.",
+            "All USC employees must enforce this policy.",
+            "Procedure: a visitor checks in at reception indicating who they are there to meet; the Executive Assistant or designate contacts the USC host to escort them to the meeting location; the host updates their calendar to include external visitor meetings for records management purposes.",
+            "If a visitor reports an illness or injury, the visitor and USC host must complete the Illness/Injury Reporting Form and submit it to the USC Health & Safety Coordinator.",
+            "If a visitor refuses to follow USC procedures as directed by their host, the host must ask the visitor to leave and report the incident to their manager.",
+            "Failure to comply with this policy may result in disciplinary action up to and including termination."
+        ]
+    },
+    "slideOne": {
+        "title": "1. SCOPE",
+        "oneOne": "This policy applies to all persons with scheduled appointments for a business function, and to all USC employees."
+    },
+    "slideTwo": {
+        "title": "2. DEFINITIONS",
+        "twoOne": "'Visitors' are persons temporarily entering the workplace and may be admitted to areas generally off limits to the public. A visitor usually is on business but is not under contract."
+    },
+    "slideThree": {
+        "title": "3. RESPONSIBILITIES",
+        "threeOne": "All visitors must",
+        "threeOneOne": "Check-in upon arrival at our reception desk;",
+        "threeOneTwo": "Always be escorted by their designated USC host while in USC Spaces;",
+        "threeOneThree": "Remain in designated areas;",
+        "threeOneFour": "Immediately report any illness or injury suffered while visiting the USC to their host; and",
+        "threeOneFive": "Wear applicable personal protective equipment.",
+        "threeOneSix": "Notify your USC host if you require special assistance in the event of an emergency evacuation.",
+        "threeTwo": "All USC employees must enforce this policy."
+    },
+    "slideFour": {
+        "title": "4. PROCEDURES",
+        "fourOne": "A visitor begins by checking in at the reception desk indicating who they are here to meet.",
+        "fourTwo": "The Executive Assistant or designate will contact the USC Host to escort the visitor to the designated meeting location.",
+        "fourThree": "The host will be responsible for updating their calendar to include any external visitors that they meet with for the purposes of records management.",
+        "fourFour": "If a visitor reports any illness or injury, then the visitor and USC host will complete the Illness/Injury Reporting Form and submit it to the USC Health & Safety Coordinator.",
+        "fourFive": "If a visitor refuses to follow any USC procedures as directed by their host, then the host will",
+        "fourFiveOne": "Ask the visitor to leave; and",
+        "fourFiveTwo": "Report the incident to their manager."
+    },
+    "slideFive": {
+        "title": "5. COMMUNICATION",
+        "fiveOne": "This policy will be explained as needed to workers through orientation health & safety training or task-specific training."
+    },
+    "slideSix": {
+        "title": "6. EVALUATION",
+        "sixOne": "This policy will be evaluated on an annual basis through the Continuous Improvement Plan."
+    }
+}
