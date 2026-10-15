@@ -14,7 +14,8 @@ type Slide =
   | "job"
   | "emergency"
   | "hazard"
-  | "hsrm";
+  | "hsrm"
+  | "hsrw";
 
 interface Module {
   name: string;
@@ -73,6 +74,11 @@ const policyDownloads: Record<string, [string, string]> = {
     "/pdfs/Health and Safety Responsibilities of Managers and Supervisors Policy.pdf",
     "/pdfs/Health_and_Safety_Responsibilities_of_Managers_and_Supervisors_Policy_Summary_and_Quiz.pdf",
   ],
+
+  "12": [
+    "/pdfs/Health and Safety Responsibilities of Workers (Including Supplied Labour) Policy.pdf",
+    "/pdfs/Health_and_Safety_Responsibilities_of_Workers_Including_Supplied_Labour_Policy_Summary_and_Quiz.pdf",
+  ],
 };
 
 const scoreStorageKeys: Record<string, string> = {
@@ -85,6 +91,7 @@ const scoreStorageKeys: Record<string, string> = {
   "Emergency Preparedness Policy": "emergency-score",
   "Hazard Reporting Policy": "hazard-score",
   "Health and Safety Responsibilities of Managers & Supervisors Policy": "hsrm-score",
+  "Health and Safety Responsibilities of Workers (Including Supplied Labour) Policy": "hsrw-score",
 };
 
 const modules: Omit<Module, "score">[] = [
@@ -139,9 +146,9 @@ const modules: Omit<Module, "score">[] = [
     page: "hsrm",
   },
   {
-    name: "Health and Safety Responsibilities of Workers (including Supplied Labour) Policy",
-    questionCount: 5,
-    page: "eso",
+    name: "Health and Safety Responsibilities of Workers (Including Supplied Labour) Policy",
+    questionCount: 3,
+    page: "hsrw",
   },
   {
     name: "Health and Safety Work Refusal Policy",
@@ -361,7 +368,8 @@ export default function ModuleTableOfContents({
               "Early and Safe Return to Work Policy": "8",
               "Emergency Preparedness Policy": "9",
               "Hazard Reporting Policy": "10",
-              "Health and Safety Responsibilities of Managers & Supervisors Policy": "11"
+              "Health and Safety Responsibilities of Managers & Supervisors Policy": "11",
+              "Health and Safety Responsibilities of Workers (Including Supplied Labour) Policy": "12"
             }).find(([name]) => name === module.name)?.[1];
 
             // const hasDownloads =

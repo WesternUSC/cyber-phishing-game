@@ -1,0 +1,61 @@
+{
+    "titleSlide": {
+        "title": "Health and Safety Responsibilities of Workers (Including Supplied Labour) Policy",
+        "subtitle": "",
+        "moduleTitle": "Health and Safety Responsibilities of Workers (Including Supplied Labour) Policy",
+        "desc": ""
+    },
+    "policiesSlide": {
+        "title": "Policy Summary",
+        "table": [
+            {
+                "label": "Authority",
+                "value": "Board of Directors"
+            },
+            {
+                "label": "Date Ratified",
+                "value": "February 2, 2024"
+            },
+            {
+                "label": "Next Review Date",
+                "value": "February 2027"
+            },
+            {
+                "label": "Previous Amendments",
+                "value": "November 21, 2023; March 10, 2017; November 15, 2011"
+            }
+        ],
+        "description": "This brief policy outlines the health and safety responsibilities and accountabilities of workers, applying to all USC workers, including supplied labour. It ties worker obligations to section 28 of the Occupational Health and Safety Act and establishes that violations are disciplined progressively under the collective agreement between the USC and CUPE Local 2820.",
+        "scope": ""
+    },
+    "useSlide": {
+        "title": "Key Takeaways",
+        "items": [
+            "Applies to all USC workers, including supplied labour.",
+            "Workers must understand the consequences of violating health and safety rules and procedures.",
+            "Workers are responsible for section 28 of the Occupational Health and Safety Act.",
+            "Violations of this policy are disciplined progressively, as per Article 12 of the collective agreement between the USC and CUPE Local 2820."
+        ]
+    },
+    "slideOne": {
+        "title": "1. SCOPE",
+        "oneOne": "This policy applies to all USC workers."
+    },
+    "slideTwo": {
+        "title": "2. RESPONSIBILITIES",
+        "twoOne": "Workers must understand the consequences of health and safety rules and procedures violations.",
+        "twoTwo": "Workers are responsible for section 28 of the OHSA, attached."
+    },
+    "slideThree": {
+        "title": "3. PROCEDURES",
+        "threeOne": "Violations of this policy will be disciplined progressively as per article 12 of the collective agreement between the USC and CUPE local 2820."
+    },
+    "slideFour": {
+        "title": "4. COMMUNICATION",
+        "fourOne": "This policy will be explained as needed to workers through orientation health & safety training or task-specific training."
+    },
+    "slideFive": {
+        "title": "5. EVALUATION",
+        "fiveOne": "This policy will be evaluated on an annual basis through the Continuous Improvement Plan."
+    }
+}

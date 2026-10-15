@@ -1241,5 +1241,82 @@
       "correctAnswer": "D",
       "explanation": "Section 2.1 lists seven specific responsibilities (inspections, information sessions, incident investigations, training, correcting substandard conditions, commending performance, and appointing competent supervision) — personally administering first aid is not among them."
     }
+  ],
+  "questionsHsrw": [
+    {
+      "category": "hsrw",
+      "id": "q1",
+      "question": "Which section of the Occupational Health and Safety Act are workers specifically responsible for under this policy?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Section 28."
+        },
+        {
+          "label": "B",
+          "text": "Section 30."
+        },
+        {
+          "label": "C",
+          "text": "Section 25."
+        },
+        {
+          "label": "D",
+          "text": "Section 27."
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Section 2.2 states workers are responsible for section 28 of the OHSA."
+    },
+    {
+      "category": "hsrw",
+      "id": "q2",
+      "question": "A worker repeatedly violates a known safety rule. How is this addressed under the policy?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Immediate termination with no warning."
+        },
+        {
+          "label": "B",
+          "text": "Progressive discipline, as per Article 12 of the USC/CUPE Local 2820 collective agreement."
+        },
+        {
+          "label": "C",
+          "text": "A fine deducted directly from their pay."
+        },
+        {
+          "label": "D",
+          "text": "Reassignment with no formal process."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Section 3.1 states violations will be disciplined progressively as per Article 12 of the collective agreement between the USC and CUPE Local 2820."
+    },
+    {
+      "category": "hsrw",
+      "id": "q3",
+      "question": "Who is responsible for ensuring the Health & Safety Coordinator receives copies of a hazard report for distribution to the JHSC and Worker Health & Safety Representative?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Only to Managers and Supervisors."
+        },
+        {
+          "label": "B",
+          "text": "Yes, only direct employees."
+        },
+        {
+          "label": "C",
+          "text": "No — it applies to all USC workers, including supplied labour."
+        },
+        {
+          "label": "D",
+          "text": "Only to unionized staff."
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Section 1.1 states this policy applies to all USC workers, and the title itself specifies it includes supplied labour."
+    }
   ]
 }
