@@ -17,7 +17,8 @@ type Slide =
   | "hsrm"
   | "hsrw"
   | "hswrp"
-  | "housekeeping";
+  | "housekeeping"
+  | "injury";
 
 interface Module {
   name: string;
@@ -91,6 +92,11 @@ const policyDownloads: Record<string, [string, string]> = {
     "/pdfs/Housekeeping and Organizing Policy.pdf",
     "/pdfs/Housekeeping_and_Organizing_Policy_Summary_and_Quiz.pdf",
   ],
+
+  "15": [
+    "/pdfs/Injury and Illness Reporting Policy.pdf",
+    "/pdfs/Injury_and_Illness_Reporting_Policy_Summary_and_Quiz.pdf",
+  ],
 };
 
 const scoreStorageKeys: Record<string, string> = {
@@ -106,6 +112,7 @@ const scoreStorageKeys: Record<string, string> = {
   "Health and Safety Responsibilities of Workers (Including Supplied Labour) Policy": "hsrw-score",
   "Health and Safety Work Refusal Policy": "hswrp-score",
   "Housekeeping and Organizing Policy": "housekeeping-score",
+  "Injury/Illness Reporting Policy": "injury-score",
 };
 
 const modules: Omit<Module, "score">[] = [
@@ -176,8 +183,8 @@ const modules: Omit<Module, "score">[] = [
   },
   {
     name: "Injury/Illness Reporting Policy",
-    questionCount: 5,
-    page: "eso",
+    questionCount: 4,
+    page: "injury",
   },
   {
     name: "Media Spokesperson Policy",
@@ -385,7 +392,8 @@ export default function ModuleTableOfContents({
               "Health and Safety Responsibilities of Managers & Supervisors Policy": "11",
               "Health and Safety Responsibilities of Workers (Including Supplied Labour) Policy": "12",
               "Health and Safety Work Refusal Policy": "13",
-              "Housekeeping and Organizing Policy": "14"
+              "Housekeeping and Organizing Policy": "14",
+              "Injury/Illness Reporting Policy": "15"
             }).find(([name]) => name === module.name)?.[1];
 
             // const hasDownloads =

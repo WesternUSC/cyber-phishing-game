@@ -1,0 +1,97 @@
+{
+    "titleSlide": {
+        "title": "Injury/Illness Reporting Policy",
+        "subtitle": "",
+        "moduleTitle": "Injury/Illness Reporting Policy",
+        "desc": ""
+    },
+    "policiesSlide": {
+        "title": "Policy Summary",
+        "table": [
+            {
+                "label": "Authority",
+                "value": "Chief Operating Officer"
+            },
+            {
+                "label": "Date Ratified",
+                "value": "January 29, 2021"
+            },
+            {
+                "label": "Next Review Date",
+                "value": "February 2024"
+            },
+            {
+                "label": "Previous Amendments",
+                "value": "February 16, 2018; October 30, 2012"
+            },
+            {
+                "label": "Related Document(s)",
+                "value": "Appendix: Injury/Illness Reporting Form"
+            }
+        ],
+        "description": "This policy outlines the procedure for reporting injuries and illnesses of any nature or severity — including fatalities, critical injuries, lost-time injuries, health care and first aid cases, property damage, near misses, fires, environmental releases, and occupational illness. It applies to all USC employees, volunteers, and visitors, and assigns responsibilities to workers, managers/supervisors, and first aid providers.",
+        "scope": ""
+    },
+    "useSlide": {
+        "title": "Key Takeaways",
+        "items": [
+            "Applies to all USC employees, volunteers, and visitors, and covers all injuries and illnesses regardless of nature or severity.",
+            "'Injury' is defined as physical harm to an employee; 'illness' is a deviation from the normal, healthy state of the body.",
+            "Workers must report an injury or illness to a supervisor or manager immediately; if the worker is unable to report it themselves, whoever finds them must promptly report the situation to a supervisor.",
+            "Upon notification, Managers/Supervisors must promptly ensure first aid is administered, ensure subsequent medical treatment is given and recorded if necessary, notify additional rescue or response teams as needed, and notify appropriate company personnel promptly.",
+            "The First Aid provider must record the treatment and advice given in the First Aid Log and help ensure the injured or ill worker receives further medical attention as required.",
+            "Reporting must be done immediately, verbally, and using the Injury/Illness Reporting Form, with the supervisor/manager (assisted by the worker) rating the incident, forming an action plan, implementing it, and notifying necessary parties through the Health & Safety Coordinator."
+        ]
+    },
+    "slideOne": {
+        "title": "1. SCOPE",
+        "oneOne": "This policy applies to all USC employees, volunteers, and visitors.",
+        "oneTwo": "This policy applies to all injuries and illnesses, regardless of the nature or severity of the event, including: fatality; critical injury; lost time injury; health care; first aid; property damage; near miss; fire; environmental release; and occupational illness."
+    },
+    "slideTwo": {
+        "title": "2. DEFINITIONS",
+        "twoOne": "'Injury' is physical harm to an employee.",
+        "twoTwo": "'Illness' is a deviation from the normal, healthy state of the body."
+    },
+    "slideThree": {
+        "title": "3. RESPONSIBILITIES",
+        "threeOne": "Workers:",
+        "threeOneOne": "Must report an injury or illness to a supervisor or manager immediately;",
+        "threeOneTwo": "Or, if the nature of the injury or illness makes an employee unable to report, then whomever happens upon the individual must promptly report the situation to a supervisor.",
+        "threeTwo": "Managers / Supervisors",
+        "threeTwoOne": {
+            "intro": "Upon being notified of an injury or illness,",
+            "items": [
+                "1. Promptly ensure that first aid is administered;",
+                "2. Ensure the affected worker is given subsequent medical treatment if necessary; and that such treatment is recorded;",
+                "3. Notify additional rescue / response teams as necessary; and,",
+                "4. Notify appropriate company personnel promptly."
+            ]
+        },
+        "threeThree": "First aid provider",
+        "threeThreeOne": "Record given treatment and advice in the First Aid Log; and,",
+        "threeThreeTwo": "Assist in ensuring that an injured or ill worker receives subsequent medical attention as required."
+    },
+    "slideFour": {
+        "title": "4. PROCEDURES",
+        "fourOne": "Reporting an injury or illness must be done",
+        "fourOneOne": "Immediately verbally and using the Injury/Illness Reporting Form",
+        "fourOneTwo": {
+            "intro": "By the supervisor/manager with the assistance of the worker, who will",
+            "items": [
+                "1. Rate the incident;",
+                "2. Form an action plan;",
+                "3. Implement the action plan; and,",
+                "4. Notify the necessary parties through the Health & Safety Coordinator"
+            ]
+        }
+    },
+    "slideFive": {
+        "title": "5. COMMUNICATION",
+        "fiveOne": "This policy will be explained as needed to workers through orientation health & safety training or task-specific training."
+    },
+    "slideSix": {
+        "title": "6. EVALUATION",
+        "sixOne": "This policy will be evaluated on an annual basis through the Continuous Improvement Plan."
+    }
+}

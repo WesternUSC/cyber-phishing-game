@@ -1572,5 +1572,107 @@
       "correctAnswer": "A",
       "explanation": "Section 4.4.1 directs employees to contact Manager, InfoSource and Building Services for dirty fixtures, burnt-out bulbs, or missing lighting covers."
     }
+  ],
+  "questionsInjury": [
+    {
+      "category": "injury",
+      "id": "q1",
+      "question": "An employee suffers a minor cut requiring only a bandage. Does this need to be reported under the policy?",
+      "options": [
+        {
+          "label": "A",
+          "text": "No, only lost-time injuries need to be reported."
+        },
+        {
+          "label": "B",
+          "text": "Yes — the policy applies to all injuries and illnesses regardless of nature or severity, including first aid cases."
+        },
+        {
+          "label": "C",
+          "text": "Only if it happened during a shift longer than 8 hours."
+        },
+        {
+          "label": "D",
+          "text": "Only if a supervisor happens to see it occur."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Section 1.2 states this policy applies to all injuries and illnesses regardless of nature or severity, including first aid cases."
+    },
+    {
+      "category": "injury",
+      "id": "q2",
+      "question": "A worker becomes unable to report their own injury due to its severity. What is required?",
+      "options": [
+        {
+          "label": "A",
+          "text": "DThe First Aid provider must personally witness the injury occurring."
+        },
+        {
+          "label": "B",
+          "text": "No report is made until the worker recovers enough to report it themselves."
+        },
+        {
+          "label": "C",
+          "text": "Whomever happens upon the individual must promptly report the situation to a supervisor."
+        },
+        {
+          "label": "D",
+          "text": "Only a manager who witnessed the incident directly can initiate the report."
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Section 3.1.2 states that if an employee is unable to report their own injury, whomever happens upon the individual must promptly report the situation to a supervisor."
+    },
+    {
+      "category": "injury",
+      "id": "q3",
+      "question": "After administering first aid, what must the First Aid provider do?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Report only to the Board of Directors."
+        },
+        {
+          "label": "B",
+          "text": "Wait 24 hours before logging anything."
+        },
+        {
+          "label": "C",
+          "text": "Nothing further is required."
+        },
+        {
+          "label": "D",
+          "text": "Record the treatment and advice given in the First Aid Log."
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Section 3.3.1 requires the First Aid provider to record given treatment and advice in the First Aid Log."
+    },
+    {
+      "category": "injury",
+      "id": "q4",
+      "question": "How must an injury or illness initially be reported, per the Procedures section?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Immediately, verbally, and using the Injury/Illness Reporting Form."
+        },
+        {
+          "label": "B",
+          "text": "Only through an anonymous hotline."
+        },
+        {
+          "label": "C",
+          "text": "Only if a manager happens to be on-site at the time."
+        },
+        {
+          "label": "D",
+          "text": "In writing only, within 48 hours."
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Section 4.1.1 states reporting must be done immediately, verbally, and using the Injury/Illness Reporting Form."
+    }
   ]
 }

@@ -120,6 +120,11 @@ const MultipleChoiceQuestion: React.FC<MultipleChoiceQuestionProps> = ({
       ANSWERS_KEY = "housekeeping-answers";
       break;
 
+    case "injury":
+      SCORE_KEY = "injury-score";
+      ANSWERS_KEY = "injury-answers";
+      break;
+
     default:
       SCORE_KEY = "acceptable-use-score";
       ANSWERS_KEY = "acceptable-use-answers";
