@@ -150,6 +150,11 @@ const MultipleChoiceQuestion: React.FC<MultipleChoiceQuestionProps> = ({
       ANSWERS_KEY = "whistleblower-answers";
       break;
 
+    case "workplace":
+      SCORE_KEY = "workplace-score";
+      ANSWERS_KEY = "workplace-answers";
+      break;
+
     default:
       SCORE_KEY = "acceptable-use-score";
       ANSWERS_KEY = "acceptable-use-answers";

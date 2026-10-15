@@ -23,7 +23,8 @@ type Slide =
   | "disconnect"
   | "social"
   | "visitor"
-  | "whistleblower";
+  | "whistleblower"
+  | "workplace";
 
 interface Module {
   name: string;
@@ -127,6 +128,11 @@ const policyDownloads: Record<string, [string, string]> = {
     "/pdfs/Whistleblower Policy.pdf",
     "/pdfs/Whistleblower_Policy_Summary_and_Quiz.pdf",
   ],
+
+  "21": [
+    "/pdfs/Workplace Conduct Policy.pdf",
+    "/pdfs/Workplace_Conduct_Policy_Summary_and_Quiz.pdf",
+  ],
 };
 
 const scoreStorageKeys: Record<string, string> = {
@@ -148,6 +154,7 @@ const scoreStorageKeys: Record<string, string> = {
   "Social Media Policy": "social-score",
   "Visitor Policy": "visitor-score",
   "Whistleblower Policy": "whistleblower-score",
+  "Workplace Conduct Policy": "workplace-score",
 };
 
 const modules: Omit<Module, "score">[] = [
@@ -249,7 +256,7 @@ const modules: Omit<Module, "score">[] = [
   {
     name: "Workplace Conduct Policy",
     questionCount: 5,
-    page: "eso",
+    page: "workplace",
   },
   {
     name: "Professional Development Procedure",
@@ -434,6 +441,7 @@ export default function ModuleTableOfContents({
               "Social Media Policy": "18",
               "Visitor Policy": "19",
               "Whistleblower Policy": "20",
+              "Workplace Conduct Policy": "21",
             }).find(([name]) => name === module.name)?.[1];
 
             // const hasDownloads =

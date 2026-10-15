@@ -2259,5 +2259,132 @@
       "correctAnswer": "D",
       "explanation": "Section 4.2 states allegations that prove unsubstantiated and were made maliciously or knowingly false will be viewed as a serious disciplinary offense."
     }
+  ],
+  "questionsWorkplace": [
+    {
+      "category": "workplace",
+      "id": "q1",
+      "question": "A staff member makes a public comment that could be seen as compromising the USC's political impartiality. Does this policy address this?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Yes — Staff and volunteers must refrain from comments or actions that compromise the USC's political impartiality."
+        },
+        {
+          "label": "B",
+          "text": "It's only restricted for Executive Members."
+        },
+        {
+          "label": "C",
+          "text": "It's only restricted during election periods."
+        },
+        {
+          "label": "D",
+          "text": "No, political commentary isn't addressed by this policy."
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Section 4.1 states Staff and volunteers shall refrain from making comments or performing actions that compromise the political impartiality of the USC."
+    },
+    {
+      "category": "workplace",
+      "id": "q2",
+      "question": "Two staff members are having a heated disagreement about a work process. What tone does the policy require they maintain?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Any tone is acceptable as long as the issue gets resolved."
+        },
+        {
+          "label": "B",
+          "text": "A respectful tone and respectful language, regardless of the subject matter being discussed."
+        },
+        {
+          "label": "C",
+          "text": "Formal written communication only, with no verbal discussion."
+        },
+        {
+          "label": "D",
+          "text": "Silence until a manager is present to intervene."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Section 3.2 requires individuals to maintain a respectful tone and use respectful language in all interpersonal interactions regardless of the subject matter."
+    },
+    {
+      "category": "workplace",
+      "id": "q3",
+      "question": "Who is responsible for establishing and amending further Procedures needed to implement this policy?",
+      "options": [
+        {
+          "label": "A",
+          "text": "External legal counsel."
+        },
+        {
+          "label": "B",
+          "text": "Any individual staff member, at their discretion."
+        },
+        {
+          "label": "C",
+          "text": "The Human Resources Department, subject to ratification by the Board of Directors."
+        },
+        {
+          "label": "D",
+          "text": "The Gazette."
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Sections 5.1 and 5.1.3 state Procedures are established and amended by Human Resources and must be ratified by the Board of Directors before taking effect."
+    },
+    {
+      "category": "workplace",
+      "id": "q4",
+      "question": "Does this policy apply to interactions at a USC-organized event held outside the Main Office space?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Only if a manager is present at the event."
+        },
+        {
+          "label": "B",
+          "text": "Only for events lasting more than one day."
+        },
+        {
+          "label": "C",
+          "text": "No, only conduct inside the Main Office is covered."
+        },
+        {
+          "label": "D",
+          "text": "Yes — it applies to interactions of Staff and USC representatives at USC functions outside the Main Office space."
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Section 1.2 states this policy applies to interactions of Staff and USC representatives at USC functions outside of the USC Main Office space."
+    },
+    {
+      "category": "workplace",
+      "id": "q5",
+      "question": "An employee uses a colleague's belongings without permission in a shared workspace. What does the policy say?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Individuals shall respect the work spaces of others and refrain, wherever possible, from using others' belongings without permission."
+        },
+        {
+          "label": "B",
+          "text": "This is only an issue if the item is damaged."
+        },
+        {
+          "label": "C",
+          "text": "Shared workspaces have no expectations around personal belongings."
+        },
+        {
+          "label": "D",
+          "text": "This is acceptable as long as the items are returned."
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Section 4.4 states individuals shall respect the work spaces of others and refrain, wherever possible, from using others' belongings without permission, explicit or otherwise."
+    }
   ]
 }

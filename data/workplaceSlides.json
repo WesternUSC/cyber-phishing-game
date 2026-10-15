@@ -1,0 +1,83 @@
+{
+    "titleSlide": {
+        "title": "Workplace Conduct Policy",
+        "subtitle": "",
+        "moduleTitle": "Workplace Conduct Policy",
+        "desc": ""
+    },
+    "policiesSlide": {
+        "title": "Policy Summary",
+        "table": [
+            {
+                "label": "Authority",
+                "value": "Board of Directors"
+            },
+            {
+                "label": "Date Ratified",
+                "value": "February 2, 2024"
+            },
+            {
+                "label": "Next Review Date",
+                "value": "February 2027"
+            },
+            {
+                "label": "Previous Amendments",
+                "value": "May 28, 2013"
+            }
+        ],
+        "description": "This policy establishes expectations for professional, respectful conduct among USC Staff and volunteers, both within USC spaces and at USC functions elsewhere, in order to maintain a dynamic workplace free from interpersonal conflict and discrimination. It covers general conduct principles, interpersonal interactions, workplace environment standards, and the procedural authority for related sub-procedures.",
+        "scope": ""
+    },
+    "useSlide": {
+        "title": "Key Takeaways",
+        "items": [
+            "Governs the conduct of USC Staff in relation to other Staff, volunteers, and the workplace environment, including USC functions held outside the USC Main Office space; it applies to volunteers where specified.",
+            "All Staff and volunteers must treat people equally and fairly, respect due process and equal opportunity, act with integrity and guard against conflicts of interest, report fraud, misconduct, and corruption, and comply with applicable USC or UWO codes of conduct.",
+            "All Staff have an obligation to ensure everyone is treated with dignity and respect and is not exposed to harassment or discrimination as prohibited by the Human Rights Code; a respectful tone and language must be maintained regardless of the subject matter being discussed.",
+            "Personal insults, derogatory language, and any conduct, communication, or gestures that would constitute violence or the threat of violence — as defined in the Discrimination, Harassment and Violence Prevention Policy — must be avoided at all times.",
+            "Staff and volunteers must refrain from compromising the USC's political impartiality as a corporation, keep personal work areas and common areas clean and professional, respect others' workspaces and belongings, and use the workplace environment for professional purposes only.",
+            "Further Procedures needed to implement this policy are established and amended by the Human Resources Department, must stay within the scope of this policy, must be ratified by the Board of Directors before taking effect, and can be repealed by a resolution of Council."
+        ]
+    },
+    "slideOne": {
+        "title": "1. SCOPE",
+        "oneOne": "This policy is intended to govern the conduct of USC Staff in relation to other Staff, volunteers, and the workplace environment.",
+        "oneTwo": "This policy applies to the interactions of Staff and USC representatives at USC functions outside of the USC Main Office space.",
+        "oneThree": "This policy shall apply to USC volunteers where specified below."
+    },
+    "slideTwo": {
+        "title": "2. GENERAL",
+        "twoOne": "All Staff and volunteers shall:",
+        "twoOneOne": "Treat all people equally and fairly, according to the circumstances, and respect each individual's personal space and belongings;",
+        "twoOneTwo": "Recognize each individual's right to due process and respect the outcomes of decision-making processes insofar as the process itself is fair;",
+        "twoOneThree": "Recognize each individual's right to equal opportunity;",
+        "twoOneFour": "Act with integrity and guard against conflict of interest or its appearance;",
+        "twoOneFive": "Report fraud, misconduct, and corruption where it occurs; and",
+        "twoOneSix": "Comply with any applicable code of conduct of the USC or UWO outside of this policy"
+    },
+    "slideThree": {
+        "title": "3. INTERPERSONAL INTERACTIONS",
+        "threeOne": "All USC Staff shall have an obligation to ensure that all individuals dealt with are treated with dignity and respect, and are not exposed to harassment or discrimination as prohibited by the Human Rights Code.",
+        "threeTwo": "Individuals shall maintain a respectful tone and use respectful language in all interpersonal interactions regardless of the subject matter being discussed.",
+        "threeThree": "All Staff and volunteers shall endeavour, wherever possible, to avoid the use of language or gestures that may be construed as offensive.",
+        "threeFour": "Individuals shall refrain from the use of personal insults and other derogatory language.",
+        "threeFive": "Any interactions, conduct, communications, or gestures that would constitute violence or the threat of violence as per the USC's Discrimination, Harassment and Violence Prevention Policy shall be avoided at all times."
+    },
+    "slideFour": {
+        "title": "4. WORKPLACE ENVIRONMENT",
+        "fourOne": "All Staff and volunteers shall refrain from making comments or performing actions that compromises the political impartiality of the USC as a corporation.",
+        "fourTwo": "All individuals shall endeavour to keep their personal work area clean and professional-looking.",
+        "fourThree": "All individuals shall respect all common areas and respect the rights of others to use said areas by ensuring that common areas are left in a clean and usable state.",
+        "fourFour": "All individuals shall respect the work spaces of others and refrain, wherever possible, from the use of others' belongings without permission, explicit or otherwise.",
+        "fourFive": "All Staff and volunteers shall endeavour to utilize the workplace environment for professional purposes only.",
+        "fourSix": "All Staff and volunteers shall endeavour to avoid using their personal workspace or a common workspace in a manner that may be disruptive to others."
+    },
+    "slideFive": {
+        "title": "5. PROCEDURAL AUTHORITY",
+        "fiveOne": "Further Procedures necessary for the effective and efficient implementation of this policy shall be established and amended as necessary by the Human Resources Department.",
+        "fiveOneOne": "The scope of such Procedures is limited to the scope of this policy.",
+        "fiveOneTwo": "In the event of any conflict, this Policy supersedes any documents created under it.",
+        "fiveOneThree": "Any new Procedures and amendments to any existing Procedures must be ratified by the Board of Directors before taking effect.",
+        "fiveOneFour": "Any Procedures ratified by the Board of Directors, or any subsections therein, may be repealed by a resolution of Council."
+    }
+}
