@@ -125,6 +125,11 @@ const MultipleChoiceQuestion: React.FC<MultipleChoiceQuestionProps> = ({
       ANSWERS_KEY = "injury-answers";
       break;
 
+    case "media":
+      SCORE_KEY = "media-score";
+      ANSWERS_KEY = "media-answers";
+      break;
+
     default:
       SCORE_KEY = "acceptable-use-score";
       ANSWERS_KEY = "acceptable-use-answers";

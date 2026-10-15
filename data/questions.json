@@ -1674,5 +1674,107 @@
       "correctAnswer": "A",
       "explanation": "Section 4.1.1 states reporting must be done immediately, verbally, and using the Injury/Illness Reporting Form."
     }
+  ],
+  "questionsMedia": [
+    {
+      "category": "media",
+      "id": "q1",
+      "question": "A staff member who is not an authorized spokesperson is contacted directly by an external reporter for a quote. What should they do?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Provide the quote, since they know the subject well."
+        },
+        {
+          "label": "B",
+          "text": "Decline to provide an attributable quote unless authorization has been received from the President or Senior Manager, Communications."
+        },
+        {
+          "label": "C",
+          "text": "Refer the reporter to the Gazette instead."
+        },
+        {
+          "label": "D",
+          "text": "Give a quote but ask to remain anonymous."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Section 3.3.2 states management and staff are not authorized as spokespeople and shall not provide attributable quotes without authorization from the President or Senior Manager, Communications."
+    },
+    {
+      "category": "media",
+      "id": "q2",
+      "question": "A Vice-President wants a Coordinator within their own portfolio to speak to media on their behalf. Is this permitted?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Only for internal media outlets."
+        },
+        {
+          "label": "B",
+          "text": "No, only the President can authorize this."
+        },
+        {
+          "label": "C",
+          "text": "Yes — Vice-Presidents may authorize volunteers within their portfolio, such as Associates and Coordinators, to speak on their behalf."
+        },
+        {
+          "label": "D",
+          "text": "Only with Board of Directors approval."
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Section 3.2.1.1 states Vice-Presidents may authorize volunteers within their portfolio to speak on their behalf."
+    },
+    {
+      "category": "media",
+      "id": "q3",
+      "question": "Which of the following is considered 'Internal Media' under this policy?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Any USC-run social media account."
+        },
+        {
+          "label": "B",
+          "text": "Local London television news."
+        },
+        {
+          "label": "C",
+          "text": "A national newspaper."
+        },
+        {
+          "label": "D",
+          "text": "The Gazette, CHRW, Western News, or the Alumni Gazette."
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Section 2.1 defines Internal Media as the Gazette, CHRW, Western News, and the Alumni Gazette."
+    },
+    {
+      "category": "media",
+      "id": "q4",
+      "question": "A media matter falls outside the President's purview, such as a matter related to Elections. Who may the President authorize to speak on the organization's behalf?",
+      "options": [
+        {
+          "label": "A",
+          "text": "The Senior Manager, Communications."
+        },
+        {
+          "label": "B",
+          "text": "The Board of Directors Chairperson."
+        },
+        {
+          "label": "C",
+          "text": "The Gazette editor."
+        },
+        {
+          "label": "D",
+          "text": "Any available staff member."
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Section 3.3.1 states the President authorizes the Senior Manager, Communications to speak on behalf of the organization when a matter falls outside the President's purview."
+    }
   ]
 }

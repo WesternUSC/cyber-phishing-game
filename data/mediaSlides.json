@@ -1,0 +1,89 @@
+{
+    "titleSlide": {
+        "title": "Media Spokesperson Policy",
+        "subtitle": "",
+        "moduleTitle": "Media Spokesperson Policy",
+        "desc": ""
+    },
+    "policiesSlide": {
+        "title": "Policy Summary",
+        "table": [
+            {
+                "label": "Authority",
+                "value": "Board of Directors"
+            },
+            {
+                "label": "Date Ratified",
+                "value": "December 10, 2025"
+            },
+            {
+                "label": "Next Review Date",
+                "value": "December 2028"
+            },
+            {
+                "label": "Previous Amendments",
+                "value": "February 2, 2024; November 6, 2020; September 1, 2011"
+            },
+            {
+                "label": "Related Document(s)",
+                "value": "Media Spokesperson Procedure"
+            }
+        ],
+        "description": "This policy provides guidelines for staff conduct in relation to media. It applies to part-time and full-time USC employees (including Executives, AVPs, Coordinators, Interns, and the Board of Directors) but does not restrict the conduct of Gazette staff. It defines internal versus external media and sets out who is authorized to speak to media on the USC's behalf — the President, Vice-Presidents within their portfolios, the Senior Manager, Communications, and the Board of Directors Chairperson — while restricting general management and staff from providing attributable quotes without authorization.",
+        "scope": ""
+    },
+    "useSlide": {
+        "title": "Key Takeaways",
+        "items": [
+            "Applies to part-time (including AVPs, Coordinators, and Interns) and full-time USC employees (including Executives and the Board of Directors); it does not restrict the conduct of Gazette staff.",
+            "'Internal Media' means the Gazette, CHRW, Western News, and the Alumni Gazette; 'External Media' means all other media outlets.",
+            "The President is authorized to speak to media on all matters, and as common practice may refer Vice-President portfolio matters to the relevant VP, or certain corporate matters to the Senior Manager, Communications.",
+            "Vice-Presidents are authorized to speak on matters within their portfolio's mandate, and may authorize volunteers within their portfolio, such as Associates and Coordinators, to speak on their behalf.",
+            "The President authorizes the Senior Manager, Communications to speak on behalf of the organization when requested or when a matter falls outside the President's purview (for example, Elections).",
+            "Management and staff are not authorized as spokespeople and must not provide attributable quotes to media unless authorization has been received from the President or the Senior Manager, Communications; they may act as background resources if requested by the President.",
+            "The Board of Directors Chairperson is authorized to speak to media on matters within their mandate as outlined in By-law 1; the Media Spokesperson Procedure does not apply to the Chairperson.",
+            "For tracking purposes, authorized spokespeople must inform the Senior Manager, Communications when they've been contacted by media, to help schedule interviews."
+        ]
+    },
+    "slideOne": {
+        "title": "1. SCOPE",
+        "oneOne": "This Policy applies to all part-time, including Associate Vice-Presidents, Coordinators, and Interns; and full-time USC employees, including Executives, and the Board of Directors.",
+        "oneTwo": "This Policy does not restrict the conduct of Gazette staff members."
+    },
+    "slideTwo": {
+        "title": "2. DEFINITIONS",
+        "twoOne": "'Internal Media' means the Gazette, CHRW, Western News, and the Alumni Gazette.",
+        "twoTwo": "'External Media' means all media outlets other than internal media outlets.",
+        "twoThree": "'Authorized spokesperson' means a person permitted under this policy to provide attributable quotes to media outlets.",
+        "twoFour": "'Background information' means factual information that will not be attributed to an individual."
+    },
+    "slideThree": {
+        "title": "3. AUTHORIZED SPOKESPEOPLE",
+        "threeOne": "President",
+        "threeOneOne": {
+            "intro": "The President is authorized to speak to the media on all matters.",
+            "items": [
+                "1. As common practice, the President may refer comment on matters falling within the portfolios of the Vice-Presidents, and may refer certain corporate matters to the Senior Manager, Communications."
+            ]
+        },
+        "threeTwo": "Vice-Presidents",
+        "threeTwoOne": {
+            "intro": "The Vice-Presidents are authorized to speak to the media on all matters falling within the mandate of their portfolio.",
+            "items": [
+                "1. They may authorize volunteers within their portfolio, such as Associates and Coordinators, to speak on their behalf."
+            ]
+        },
+        "threeThree": "Management and Staff",
+        "threeThreeOne": "The President authorizes the Senior Manager, Communications to speak on behalf of the organization when requested or when the matter falls outside of the President's purview (i.e. Elections)",
+        "threeThreeTwo": "Management and staff are not authorized as spokespeople and shall not provide attributable quotes to the media unless authorization has been received from the President or Senior Manager, Communications.",
+        "threeThreeThree": "Management and staff may act as background resources to media if requested by the President.",
+        "threeFour": "Board of Directors Chairperson",
+        "threeFourOne": "The Board of Directors Chairperson is authorized to speak to the media on all matters falling within their mandate as outlined in By-law 1.",
+        "threeFive": "Media Requests",
+        "threeSix": "For tracking purposes, authorized spokespeople shall inform the Senior Manager, Communications if they have been contacted with media to help schedule interviews."
+    },
+    "slideFour": {
+        "title": "4. MEDIA SPOKESPERSON PROCEDURE",
+        "fourOne": "The Media Spokesperson procedure will not apply to the Board of Directors Chairperson."
+    }
+}
