@@ -530,11 +530,10 @@ export default function HomePage() {
               Welcome to
             </p>
             <h2 className="mt-2 max-w-md text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
-              {userData.name == "" ? "Welcome!" : "Welcome, " + userData.name + "!"}
+              {userData.name == "" ? "USC Onboarding!" : "USC Onboarding, " + userData.name + "!"}
             </h2>
             <p className="mt-4 max-w-sm text-sm leading-7 text-white/70">
-              Build good security habits, sharpen your instincts, and learn
-              how to keep USC information safe.
+              USC Onboarding. Placeholder description of the onboarding.
             </p>
           </div>
         </section>
