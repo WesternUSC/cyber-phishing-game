@@ -224,20 +224,20 @@ export default function Selection({
     router.push("/certificate");
   };
 
-  const handleStart = () => {
-    if (!policiesPage && userData.completedIsoModule && selectedId === "1") {
-      setShowCompletedPopup(true);
-      return;
-    }
-
+  const handleStart = (optionId: string) => {
     if (!policiesPage) {
-      switch (selectedId) {
+      if (
+        userData.completedIsoModule &&
+        optionId === "1"
+      ) {
+        setSelectedId(optionId);
+        setShowCompletedPopup(true);
+        return;
+      }
+
+      switch (optionId) {
         case "1":
-          //setSelectedSlides("eso");
-          //setMadeSelection(true);
-
           router.push("/iso-slides");
-
           break;
 
         case "2":
@@ -259,38 +259,41 @@ export default function Selection({
           break;
       }
     } else {
-      switch (selectedPolicyId) {
+      switch (optionId) {
         case "2":
-          //setSelectedSlides("policies");
           router.push("/policies");
           break;
 
         case "3":
           setSelectedSlides("cs");
+          setMadeSelection(true);
           break;
 
         case "4":
           setSelectedSlides("accessibility");
+          setMadeSelection(true);
           break;
 
         case "5":
           setSelectedSlides("conflict");
+          setMadeSelection(true);
           break;
 
         case "6":
           setSelectedSlides("disc");
+          setMadeSelection(true);
           break;
 
         case "8":
           setSelectedSlides("early");
+          setMadeSelection(true);
           break;
 
         default:
           setSelectedSlides("eso");
+          setMadeSelection(true);
           break;
       }
-
-      setMadeSelection(true);
     }
   };
 
@@ -390,56 +393,55 @@ export default function Selection({
                 key={option.id}
                 role="button"
                 tabIndex={0}
-                onClick={() =>
-                  policiesPage
-                    ? setSelectedPolicyId(option.id)
-                    : setSelectedId(option.id)
-                }
+                aria-label={option.label}
+                onClick={() => handleStart(option.id)}
                 onKeyDown={(event) => {
                   if (event.key === "Enter" || event.key === " ") {
                     event.preventDefault();
-
-                    if (policiesPage) {
-                      setSelectedPolicyId(option.id);
-                    } else {
-                      setSelectedId(option.id);
-                    }
+                    handleStart(option.id);
                   }
                 }}
                 style={{
                   ...styles.option,
-
-                  backgroundColor: isCompleted
-                    ? "#2E7D32"
-                    : option.color,
-
-                  ...(isSelected
-                    ? styles.optionSelected
-                    : styles.optionUnselected),
+                  ...( !policiesPage && option.id === "1" && userData.completedIsoModule
+                    ? styles.optionCompleted
+                    : {}),
+                }}
+                onMouseEnter={(event) => {
+                  event.currentTarget.style.transform = "scale(1.025) translateY(-4px)";
+                  event.currentTarget.style.borderColor = "rgba(255,255,255,0.85)";
+                  event.currentTarget.style.background =
+                    "linear-gradient(135deg, rgba(255,255,255,0.27), rgba(255,255,255,0.12))";
+                  event.currentTarget.style.boxShadow =
+                    "0 16px 36px rgba(20,5,40,0.30), inset 0 1px 0 rgba(255,255,255,0.25)";
+                }}
+                onMouseLeave={(event) => {
+                  event.currentTarget.style.transform = "";
+                  event.currentTarget.style.borderColor = "";
+                  event.currentTarget.style.background = "";
+                  event.currentTarget.style.boxShadow = "";
                 }}
               >
-                <span style={styles.optionLabel}>
-                  {option.label}
-                </span>
+                <span style={styles.optionLabel}>{option.label}</span>
 
-                {isCompleted && (
-                  <span
-                    style={styles.completedCheckmark}
-                    aria-label="Module completed"
-                    title="Module completed"
-                  >
-                    ✓
-                  </span>
-                )}
+                {!policiesPage &&
+                  option.id === "1" &&
+                  userData.completedIsoModule && (
+                    <span
+                      style={styles.completedCheckmark}
+                      aria-label="Module completed"
+                      title="Module completed"
+                    >
+                      ✓
+                    </span>
+                  )}
 
                 {policiesPage && policyDownloads[option.id] && (
                   <button
                     type="button"
                     aria-label={`Download PDFs for ${option.label}`}
                     title={`Download PDFs for ${option.label}`}
-                    onClick={(event) =>
-                      handleDownload(event, option.id)
-                    }
+                    onClick={(event) => handleDownload(event, option.id)}
                     style={styles.downloadButton}
                   >
                     <svg
@@ -450,13 +452,7 @@ export default function Selection({
                       xmlns="http://www.w3.org/2000/svg"
                       aria-hidden="true"
                     >
-                      <path
-                        d="M12 3V15"
-                        stroke="white"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                      />
-
+                      <path d="M12 3V15" stroke="white" strokeWidth="2" strokeLinecap="round" />
                       <path
                         d="M7 11L12 16L17 11"
                         stroke="white"
@@ -464,13 +460,7 @@ export default function Selection({
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       />
-
-                      <path
-                        d="M5 20H19"
-                        stroke="white"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                      />
+                      <path d="M5 20H19" stroke="white" strokeWidth="2" strokeLinecap="round" />
                     </svg>
                   </button>
                 )}
@@ -478,56 +468,6 @@ export default function Selection({
             );
           })}
         </div>
-      </div>
-
-      <div style={styles.stickyFooter}>
-        {policiesPage ? (
-          <div style={styles.splitButtonContainer}>
-            <button
-              type="button"
-              onClick={handleBack}
-              style={{
-                ...styles.startButton,
-                ...styles.backButton,
-              }}
-            >
-              <span style={styles.arrowLeft}>←</span>
-              Back
-            </button>
-
-            <button
-              type="button"
-              onClick={handleStart}
-              disabled={isContinueDisabled}
-              style={{
-                ...styles.startButton,
-                opacity: isContinueDisabled ? 0.5 : 1,
-                cursor: isContinueDisabled
-                  ? "not-allowed"
-                  : "pointer",
-              }}
-            >
-              Continue
-              <span style={styles.arrow}>→</span>
-            </button>
-          </div>
-        ) : (
-          <button
-            type="button"
-            onClick={handleStart}
-            disabled={isContinueDisabled}
-            style={{
-              ...styles.startButton,
-              opacity: isContinueDisabled ? 0.5 : 1,
-              cursor: isContinueDisabled
-                ? "not-allowed"
-                : "pointer",
-            }}
-          >
-            Continue
-            <span style={styles.arrow}>→</span>
-          </button>
-        )}
       </div>
 
       {showCompletedPopup && (
@@ -606,17 +546,20 @@ export default function Selection({
 
 const styles: Record<string, React.CSSProperties> = {
   page: {
-    height: "100vh",
+    minHeight: "100vh",
     width: "100%",
     boxSizing: "border-box",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    overflow: "hidden",
-    background:
-      "linear-gradient(135deg, #f8fafc 0%, #eef2ff 50%, #f5f3ff 100%)",
+    overflowX: "hidden",
+    overflowY: "auto",
+    backgroundColor: "#582c83",
+    backgroundImage:
+      "radial-gradient(ellipse at 10% 10%, rgba(255,255,255,0.13), transparent 40%), radial-gradient(ellipse at 90% 90%, rgba(30,10,50,0.28), transparent 45%)",
     fontFamily:
       "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif",
+    color: "#ffffff",
   },
 
   header: {
@@ -676,54 +619,60 @@ const styles: Record<string, React.CSSProperties> = {
 
   optionsScrollArea: {
     width: "100%",
-    maxWidth: "600px",
+    maxWidth: "800px",
+    margin: "0 auto",
     flex: 1,
     minHeight: 0,
-    overflowY: "auto",
-    overflowX: "hidden",
     boxSizing: "border-box",
-    padding: "0 24px 120px",
-    scrollbarWidth: "thin",
+    padding: "8px 24px 16px",
+    overflowY: "hidden",
+    overflowX: "hidden",
   },
 
   optionsContainer: {
-    display: "flex",
-    flexDirection: "column",
-    gap: "14px",
+    display: "grid",
+    gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+    gap: "16px",
     width: "100%",
-    paddingTop: "4px",
+    maxWidth: "600px",
+    margin: "0 auto",
+    padding: "4px 0",
   },
 
   option: {
+    position: "relative",
     width: "100%",
-    minHeight: "72px",
-    padding: "18px 24px",
-    borderWidth: "3px",
-    borderStyle: "solid",
-    borderColor: "transparent",
+    aspectRatio: "1 / 1",
+    minWidth: 0,
+    padding: "20px",
+    border: "1px solid rgba(255,255,255,0.30)",
     borderRadius: "20px",
-    color: "white",
-    fontSize: "1.15rem",
-    fontWeight: 700,
+    color: "#ffffff",
+    fontSize: "clamp(0.85rem, 1.4vw, 1.05rem)",
+    fontWeight: 750,
+    lineHeight: 1.4,
+    letterSpacing: "0.025em",
     display: "flex",
     alignItems: "center",
-    textAlign: "left",
+    justifyContent: "center",
+    textAlign: "center",
+    overflow: "hidden",
     boxSizing: "border-box",
-    transition:
-      "transform 0.18s ease, box-shadow 0.18s ease, border 0.18s ease",
-    boxShadow: "0 8px 20px rgba(0, 0, 0, 0.10)",
+    background:
+      "linear-gradient(135deg, rgba(255,255,255,0.20), rgba(255,255,255,0.06))",
+    backdropFilter: "blur(24px)",
+    WebkitBackdropFilter: "blur(24px)",
+    boxShadow:
+      "0 10px 30px rgba(20,5,40,0.20), inset 0 1px 0 rgba(255,255,255,0.18)",
     cursor: "pointer",
-    flexShrink: 0,
+    transition:
+      "transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease, background 0.22s ease",
   },
 
-  optionSelected: {
-    transform: "scale(1.025)",
-    borderColor: "white",
-    boxShadow: "0 12px 28px rgba(0, 0, 0, 0.18)",
-  },
-
-  optionUnselected: {
-    transform: "scale(1)",
+  optionCompleted: {
+    background:
+      "linear-gradient(135deg, rgba(46,125,50,0.55), rgba(255,255,255,0.08))",
+    borderColor: "rgba(255,255,255,0.45)",
   },
 
   optionLabel: {
@@ -732,19 +681,20 @@ const styles: Record<string, React.CSSProperties> = {
   },
 
   completedCheckmark: {
-    width: "34px",
-    height: "34px",
+    position: "absolute",
+    top: "14px",
+    right: "14px",
+    width: "32px",
+    height: "32px",
     borderRadius: "50%",
-    background: "rgba(255, 255, 255, 0.20)",
-    border: "2px solid rgba(255, 255, 255, 0.9)",
+    background: "rgba(255,255,255,0.20)",
+    border: "1px solid rgba(255,255,255,0.7)",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    fontSize: "22px",
+    fontSize: "20px",
     fontWeight: 900,
     color: "white",
-    flexShrink: 0,
-    marginLeft: "16px",
     boxSizing: "border-box",
   },
 
