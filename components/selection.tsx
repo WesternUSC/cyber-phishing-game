@@ -161,7 +161,10 @@ export default function Selection({
 
   const [policiesPage, setPoliciesPage] = useState(false);
 
-  const [showCompletedPopup, setShowCompletedPopup] = useState(false);
+  //const [showCompletedPopup, setShowCompletedPopup] = useState(false);
+  const [isIsoCardFlipped, setIsIsoCardFlipped] = useState(false);
+
+  const [open, setOpen] = useState(false);
 
   const selectedOption = options.find(
     (option) => option.id === selectedId
@@ -226,12 +229,9 @@ export default function Selection({
 
   const handleStart = (optionId: string) => {
     if (!policiesPage) {
-      if (
-        userData.completedIsoModule &&
-        optionId === "1"
-      ) {
+      if (userData.completedIsoModule && optionId === "1") {
         setSelectedId(optionId);
-        setShowCompletedPopup(true);
+        setIsIsoCardFlipped(true);
         return;
       }
 
@@ -353,193 +353,916 @@ export default function Selection({
         recipientEmail={userEmail}
       />
 
-      <div style={styles.header}>
-        <div style={styles.titleContainer}>
-          <h1 style={styles.title}>
-            Welcome, <span style={styles.name}>{playerName}</span>
-          </h1>
-        </div>
-
-        <div style={styles.contentHeader}>
-          <img
-            src="usc-logo.png"
-            alt="USC logo"
-            style={styles.logo}
-          />
-
-          <p style={styles.chooseText}>{title}</p>
-        </div>
-      </div>
-
-      <div style={styles.optionsScrollArea}>
-        <div style={styles.optionsContainer}>
-          {(policiesPage ? policiesOptions : options).map((option) => {
-            const isSelected = policiesPage
-              ? option.id === selectedPolicyId
-              : option.id === selectedId;
-
-            // const isCompleted =
-            //   !policiesPage &&
-            //   option.id === "1" &&
-            //   seenCertificate;
-
-            const isCompleted =
-              !policiesPage &&
-              option.id === "1" &&
-              userData.completedIsoModule;
-
-            return (
-              <div
-                key={option.id}
-                role="button"
-                tabIndex={0}
-                aria-label={option.label}
-                onClick={() => handleStart(option.id)}
-                onKeyDown={(event) => {
-                  if (event.key === "Enter" || event.key === " ") {
-                    event.preventDefault();
-                    handleStart(option.id);
-                  }
-                }}
-                style={{
-                  ...styles.option,
-                  ...( !policiesPage && option.id === "1" && userData.completedIsoModule
-                    ? styles.optionCompleted
-                    : {}),
-                }}
-                onMouseEnter={(event) => {
-                  event.currentTarget.style.transform = "scale(1.025) translateY(-4px)";
-                  event.currentTarget.style.borderColor = "rgba(255,255,255,0.85)";
-                  event.currentTarget.style.background =
-                    "linear-gradient(135deg, rgba(255,255,255,0.27), rgba(255,255,255,0.12))";
-                  event.currentTarget.style.boxShadow =
-                    "0 16px 36px rgba(20,5,40,0.30), inset 0 1px 0 rgba(255,255,255,0.25)";
-                }}
-                onMouseLeave={(event) => {
-                  event.currentTarget.style.transform = "";
-                  event.currentTarget.style.borderColor = "";
-                  event.currentTarget.style.background = "";
-                  event.currentTarget.style.boxShadow = "";
-                }}
-              >
-                <span style={styles.optionLabel}>{option.label}</span>
-
-                {!policiesPage &&
-                  option.id === "1" &&
-                  userData.completedIsoModule && (
-                    <span
-                      style={styles.completedCheckmark}
-                      aria-label="Module completed"
-                      title="Module completed"
-                    >
-                      ✓
-                    </span>
-                  )}
-
-                {policiesPage && policyDownloads[option.id] && (
-                  <button
-                    type="button"
-                    aria-label={`Download PDFs for ${option.label}`}
-                    title={`Download PDFs for ${option.label}`}
-                    onClick={(event) => handleDownload(event, option.id)}
-                    style={styles.downloadButton}
-                  >
-                    <svg
-                      width="22"
-                      height="22"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      aria-hidden="true"
-                    >
-                      <path d="M12 3V15" stroke="white" strokeWidth="2" strokeLinecap="round" />
-                      <path
-                        d="M7 11L12 16L17 11"
-                        stroke="white"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path d="M5 20H19" stroke="white" strokeWidth="2" strokeLinecap="round" />
-                    </svg>
-                  </button>
-                )}
-              </div>
-            );
-          })}
-        </div>
-      </div>
-
-      {showCompletedPopup && (
+      {open && (
         <div
-          style={styles.modalOverlay}
-          role="presentation"
-          onClick={() => setShowCompletedPopup(false)}
+          className="help-chat__overlay"
+          onClick={() => setOpen(false)}
         >
           <div
+            className="help-chat__box"
             role="dialog"
             aria-modal="true"
-            aria-labelledby="completed-module-title"
-            style={styles.modal}
+            aria-labelledby="help-chat-title"
             onClick={(event) => event.stopPropagation()}
           >
-            <div style={styles.modalAccent} />
-
-            <div style={styles.modalIcon}>
-              ✓
-            </div>
-
-            <h2
-              id="completed-module-title"
-              style={styles.modalTitle}
-            >
-              Module Completed!
-            </h2>
-
-            <p style={styles.modalText}>
-              You have already completed the Information Systems
-              Onboarding module.
-            </p>
-
-            <p style={styles.modalSubtext}>
-              You can restart the module or download your completion
-              certificate.
-            </p>
-
-            <div style={styles.modalButtons}>
-              <button
-                type="button"
-                onClick={handleRestartModule}
-                style={{
-                  ...styles.modalButton,
-                  ...styles.restartButton,
-                }}
-              >
-                Restart Module
-              </button>
+            <div className="help-chat__header">
+              <span id="help-chat-title">How can we help?</span>
 
               <button
                 type="button"
-                onClick={handleDownloadCertificate}
-                style={{
-                  ...styles.modalButton,
-                  ...styles.certificateButton,
-                }}
+                onClick={() => setOpen(false)}
+                aria-label="Close help chat"
+                className="help-chat__close"
               >
-                Download Certificate
+                ×
               </button>
             </div>
 
-            <button
-              type="button"
-              onClick={() => setShowCompletedPopup(false)}
-              style={styles.closeButton}
-            >
-              Close
-            </button>
+            <div className="help-chat__body">
+              <iframe
+                className="freshwidget-embedded-form"
+                title="Submit a support ticket"
+                src="https://westernusc.freshservice.com/widgets/feedback_widget/new?&widgetType=embedded&submitThanks=Thank%20you%20for%20submitting%20the%20ticket.&screenshot=no"
+                scrolling="no"
+                frameBorder="0"
+              />
+            </div>
           </div>
         </div>
       )}
+
+      <style jsx>{`
+        .help-chat__overlay {
+          position: fixed;
+          inset: 0;
+          z-index: 99999;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 20px;
+          background: rgba(15, 8, 25, 0.5);
+          backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
+          animation: help-overlay-in 0.2s ease-out;
+        }
+
+        .help-chat__box {
+          position: relative;
+          width: 500px;
+          max-width: 100%;
+          max-height: calc(100dvh - 40px);
+          display: flex;
+          flex-direction: column;
+          background: white;
+          border-radius: 16px;
+          overflow: hidden;
+          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+          animation: help-modal-in 0.25s ease-out;
+        }
+
+        .help-chat__header {
+          flex-shrink: 0;
+          background: #4f2584;
+          color: white;
+          padding: 16px 20px;
+          font-weight: 600;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .help-chat__close {
+          border: 0;
+          background: transparent;
+          color: white;
+          font-size: 28px;
+          cursor: pointer;
+          line-height: 1;
+          padding: 0 4px;
+        }
+
+        .help-chat__body {
+          padding: 0;
+          height: min(600px, calc(100dvh - 120px));
+          min-height: 300px;
+          overflow: auto;
+          background: white;
+        }
+
+        .freshwidget-embedded-form {
+          display: block;
+          width: 100%;
+          height: 100%;
+          min-height: 500px;
+          border: 0;
+        }
+
+        @keyframes help-overlay-in {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+
+        @keyframes help-modal-in {
+          from {
+            opacity: 0;
+            transform: translateY(12px) scale(0.98);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
+
+        @media (max-width: 480px) {
+          .help-chat__overlay {
+            padding: 12px;
+          }
+
+          .help-chat__box {
+            width: 100%;
+            max-height: calc(100dvh - 24px);
+            border-radius: 12px;
+          }
+
+          .help-chat__body {
+            height: calc(100dvh - 110px);
+            min-height: 250px;
+          }
+        }
+
+        .iso-flip-face {
+          position: absolute;
+          inset: 0;
+          box-sizing: border-box;
+          width: 100%;
+          height: 100%;
+          padding: 22px;
+
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+
+          color: #582c83;
+
+          background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.88),
+            rgba(255, 255, 255, 0.66)
+          );
+
+          border: 1px solid rgba(255, 255, 255, 0.85);
+          border-radius: 22px;
+          overflow: hidden;
+
+          box-shadow:
+            0 12px 32px rgba(25, 8, 45, 0.14),
+            inset 0 1px 0 rgba(255, 255, 255, 0.95);
+
+          backdrop-filter: blur(24px);
+          -webkit-backdrop-filter: blur(24px);
+
+          backface-visibility: hidden;
+          -webkit-backface-visibility: hidden;
+
+          transition:
+            background 0.3s ease,
+            border-color 0.3s ease,
+            box-shadow 0.3s ease;
+        }
+
+        .dashboard-card.iso-flip-card,
+        .dashboard-card.iso-flip-card:hover,
+        .dashboard-card.iso-flip-card:focus-visible {
+          background: transparent;
+          border-color: transparent;
+          box-shadow: none;
+        }
+
+        .iso-flip-card .iso-flip-face,
+        .iso-flip-card:hover .iso-flip-face,
+        .iso-flip-card:focus-visible .iso-flip-face {
+          background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.88),
+            rgba(255, 255, 255, 0.66)
+          );
+        }
+
+        .dashboard-card.iso-flip-card:hover,
+        .dashboard-card.iso-flip-card:focus-visible {
+          transform: translateY(-4px);
+          outline: none;
+        }
+
+        .iso-flip-card::before {
+          display: none;
+        }
+
+        .iso-flip-inner {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          min-height: 190px;
+          transform-style: preserve-3d;
+          -webkit-transform-style: preserve-3d;
+          transition: transform 0.75s cubic-bezier(0.2, 0.7, 0.2, 1);
+        }
+
+        .iso-flip-front {
+          transform: rotateY(0deg);
+          z-index: 2;
+        }
+
+        .iso-flip-back {
+          transform: rotateY(180deg);
+          z-index: 1;
+          cursor: default;
+        }
+
+        .iso-flip-card.is-flipped .iso-flip-inner {
+          transform: rotateY(180deg);
+        }
+
+        .iso-flip-card.is-flipped .iso-flip-front {
+          pointer-events: none;
+        }
+
+        .iso-flip-card.is-flipped .iso-flip-back {
+          z-index: 3;
+        }
+
+        .iso-flip-card.option-completed .iso-flip-front {
+          border-color: rgba(46, 125, 50, 0.45);
+          background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.94),
+            rgba(229, 245, 231, 0.96)
+          );
+        }
+
+        .iso-flip-title {
+          margin: 0 0 8px;
+          font-size: clamp(1rem, 1.4vw, 1.3rem);
+          line-height: 1.2;
+          font-weight: 850;
+        }
+
+        .iso-flip-message {
+          margin: 0 0 8px;
+          font-size: 0.78rem;
+          line-height: 1.4;
+          font-weight: 600;
+        }
+
+        .iso-flip-subtext {
+          margin: 0 0 12px;
+          font-size: 0.7rem;
+          line-height: 1.35;
+          opacity: 0.8;
+        }
+
+        .iso-flip-actions {
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+          gap: 6px;
+          width: 100%;
+        }
+
+        .iso-flip-button {
+          width: 100%;
+          padding: 8px 10px;
+          border: 0;
+          border-radius: 8px;
+          font: inherit;
+          font-size: 0.72rem;
+          font-weight: 800;
+          cursor: pointer;
+        }
+
+        .iso-flip-button.restart {
+          color: white;
+          background: #4f2683;
+        }
+
+        .iso-flip-button.certificate {
+          color: white;
+          background: #c69214;
+        }
+
+        .iso-flip-close {
+          align-self: center;
+          border: 0;
+          padding: 4px 8px;
+          color: #582c83;
+          background: transparent;
+          font: inherit;
+          font-size: 0.7rem;
+          font-weight: 750;
+          cursor: pointer;
+        }
+
+        .iso-flip-button:focus-visible,
+        .iso-flip-close:focus-visible {
+          outline: 2px solid #582c83;
+          outline-offset: 3px;
+        }
+
+        @media (max-width: 850px) {
+          .iso-flip-face {
+            padding: 16px;
+            border-radius: 20px;
+          }
+
+          .iso-flip-inner {
+            min-height: 180px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .iso-flip-face {
+            padding: 12px;
+            border-radius: 18px;
+          }
+
+          .iso-flip-inner {
+            min-height: 155px;
+          }
+
+          .iso-flip-title {
+            font-size: 1rem;
+          }
+
+          .iso-flip-message,
+          .iso-flip-subtext {
+            font-size: 0.68rem;
+          }
+
+          .iso-flip-actions {
+            gap: 4px;
+          }
+
+          .iso-flip-button {
+            padding: 6px 8px;
+            font-size: 0.68rem;
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .iso-flip-inner,
+          .iso-flip-face {
+            transition-duration: 0.01ms;
+          }
+        }
+      `}</style>
+
+      <header style={styles.header}>
+        <h1 style={styles.title}>
+          Welcome, <span style={styles.name}>{playerName}</span>
+        </h1>
+
+        <p style={styles.chooseText}>
+          {title}
+        </p>
+      </header>
+
+      <main className="dashboard-grid">
+        {(policiesPage ? policiesOptions : options).map((option) => {
+          const isOnboarding = !policiesPage && option.id === "1";
+
+          const isCompleted =
+            isOnboarding && userData.completedIsoModule;
+
+          return (
+            <div
+              key={`${policiesPage ? "policy" : "training"}-${option.id}`}
+              tabIndex={0}
+              aria-label={option.label}
+              aria-expanded={isOnboarding ? isIsoCardFlipped : undefined}
+              className={`dashboard-card training-card ${
+                isOnboarding ? "onboarding-card" : ""
+              } ${
+                !policiesPage && option.id === "2" ? "policies-card" : ""
+              } ${
+                !policiesPage && option.id === "3" ? "job-card" : ""
+              } ${
+                !policiesPage && option.id === "4" ? "culture-card" : ""
+              } ${
+                isCompleted ? "option-completed" : ""
+              } ${
+                isOnboarding
+                  ? `iso-flip-card ${isIsoCardFlipped ? "is-flipped" : ""}`
+                  : ""
+              }`}
+              onClick={() => {
+                if (isOnboarding && isIsoCardFlipped) {
+                  setIsIsoCardFlipped(false);
+                  return;
+                }
+
+                handleStart(option.id);
+              }}
+              onKeyDown={(event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                  event.preventDefault();
+
+                  if (isOnboarding && isIsoCardFlipped) {
+                    setIsIsoCardFlipped(false);
+                    return;
+                  }
+
+                  handleStart(option.id);
+                }
+              }}
+            >
+              {isOnboarding ? (
+                <div className="iso-flip-inner">
+                  <div className="iso-flip-face iso-flip-front">
+                    <span className="option-label">{option.label}</span>
+
+                    {isCompleted && (
+                      <span
+                        className="completed-checkmark"
+                        aria-label="Module completed"
+                        title="Module completed"
+                      >
+                        ✓
+                      </span>
+                    )}
+                  </div>
+
+                  <div
+                    className="iso-flip-face iso-flip-back"
+                    aria-hidden={!isIsoCardFlipped}
+                  >
+
+                    <p className="iso-flip-message">
+                      You have already completed the Information Systems
+                      Onboarding module.
+                    </p>
+
+                    <p className="iso-flip-subtext">
+                      You can restart the module or download your completion
+                      certificate.
+                    </p>
+
+                    <div className="iso-flip-actions">
+                      <button
+                        type="button"
+                        className="iso-flip-button restart"
+                        tabIndex={isIsoCardFlipped ? 0 : -1}
+                        onClick={(event) => {
+                          event.stopPropagation();
+                          handleRestartModule();
+                        }}
+                      >
+                        Restart Module
+                      </button>
+
+                      <button
+                        type="button"
+                        className="iso-flip-button certificate"
+                        tabIndex={isIsoCardFlipped ? 0 : -1}
+                        onClick={(event) => {
+                          event.stopPropagation();
+                          handleDownloadCertificate();
+                        }}
+                      >
+                        Download Certificate
+                      </button>
+
+                      <button
+                        type="button"
+                        className="iso-flip-close"
+                        tabIndex={isIsoCardFlipped ? 0 : -1}
+                        onClick={(event) => {
+                          event.stopPropagation();
+                          setIsIsoCardFlipped(false);
+                        }}
+                      >
+                        Flip Back
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <span className="option-label">{option.label}</span>
+              )}
+            </div>
+          );
+        })}
+
+        {/* IT SUPPORT PORTAL */}
+        <button
+          type="button"
+          className="dashboard-card support-card support-wide-card"
+          onClick={() => {
+            setOpen(true);
+          }}
+        >
+          <span className="card-eyebrow">NEED ASSISTANCE?</span>
+          <span className="card-title">IT Support Portal</span>
+          <span className="card-description">
+            Get technical assistance or submit a support ticket.
+          </span>
+          <span className="card-arrow" aria-hidden="true">↗</span>
+        </button>
+
+        <section
+          className="dashboard-card logo-card"
+          aria-label="University of Southern California logo"
+        >
+          <img
+            src="/usc-logo-help-icon.png"
+            alt="USC logo"
+            className="dashboard-logo"
+          />
+        </section>
+      </main>
+
+      {/* POLICY BACK NAVIGATION */}
+      {policiesPage && (
+        <button
+          type="button"
+          onClick={handleBack}
+          className="dashboard-back-button"
+        >
+          ← Back to training
+        </button>
+      )}
+
+      <style jsx>{`
+        .dashboard-grid {
+          width: min(1100px, calc(100% - 48px));
+          margin: 0 auto;
+
+          display: grid;
+          grid-template-columns: repeat(12, minmax(0, 1fr));
+          grid-template-rows: auto auto;
+          gap: 18px;
+          align-items: stretch;
+        }
+
+        .dashboard-card {
+          position: relative;
+          min-width: 0;
+          height: 190px;
+          min-height: 0;
+          padding: 22px;
+          box-sizing: border-box;
+          overflow: hidden;
+
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+
+          color: #582c83;
+          background:
+            linear-gradient(
+              135deg,
+              rgba(255, 255, 255, 0.88),
+              rgba(255, 255, 255, 0.66)
+            );
+
+          border: 1px solid rgba(255, 255, 255, 0.85);
+          border-radius: 22px;
+
+          box-shadow:
+            0 12px 32px rgba(25, 8, 45, 0.14),
+            inset 0 1px 0 rgba(255, 255, 255, 0.95);
+
+          backdrop-filter: blur(24px);
+          -webkit-backdrop-filter: blur(24px);
+
+          transition:
+            transform 0.25s ease,
+            box-shadow 0.25s ease,
+            border-color 0.25s ease,
+            background 0.25s ease;
+
+          isolation: isolate;
+        }
+
+        .dashboard-card::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          z-index: -1;
+          pointer-events: none;
+
+          background:
+            radial-gradient(
+              ellipse at 15% 5%,
+              rgba(255, 255, 255, 0.95),
+              transparent 52%
+            ),
+            linear-gradient(
+              145deg,
+              rgba(255, 255, 255, 0.22),
+              transparent 65%
+            );
+        }
+
+        .onboarding-card {
+          grid-column: 1 / span 5;
+          grid-row: 1;
+        }
+
+        .policies-card {
+          grid-column: 6 / span 4;
+          grid-row: 1;
+        }
+
+        .logo-card {
+          grid-column: 10 / span 3;
+          grid-row: 1;
+          height: 190px;
+          min-height: 0;
+          padding: 14px;
+          align-self: stretch;
+        }
+
+        .support-wide-card {
+          grid-column: span 6;
+        }
+
+        .job-card {
+          grid-column: span 3;
+        }
+
+        .culture-card {
+          grid-column: span 3;
+        }
+
+        .training-card {
+          appearance: none;
+          -webkit-appearance: none;
+          cursor: pointer;
+          font: inherit;
+          font-size: clamp(0.8rem, 1.05vw, 1rem);
+          font-weight: 800;
+          line-height: 1.5;
+          letter-spacing: 0.025em;
+          background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.88),
+            rgba(255, 255, 255, 0.66)
+          );
+        }
+
+        .dashboard-card:hover,
+        .dashboard-card:focus-visible {
+          transform: translateY(-4px);
+          border-color: rgba(255, 255, 255, 1);
+
+          background:
+            linear-gradient(
+              135deg,
+              rgba(255, 255, 255, 0.98),
+              rgba(255, 255, 255, 0.83)
+            );
+
+          box-shadow:
+            0 18px 42px rgba(25, 8, 45, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 1);
+
+          outline: none;
+        }
+
+        .dashboard-card.iso-flip-card {
+          background: transparent;
+          border-color: transparent;
+          box-shadow: none;
+        }
+
+        .dashboard-card.iso-flip-card:hover,
+        .dashboard-card.iso-flip-card:focus-visible {
+          background: transparent;
+          border-color: transparent;
+          box-shadow: none;
+          transform: translateY(-4px);
+          outline: none;
+        }
+
+        .iso-flip-card .iso-flip-face,
+        .iso-flip-card:hover .iso-flip-face,
+        .iso-flip-card:focus-visible .iso-flip-face {
+          background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.88),
+            rgba(255, 255, 255, 0.66)
+          );
+        }
+
+        .iso-flip-card.option-completed .iso-flip-front {
+          background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.94),
+            rgba(229, 245, 231, 0.96)
+          );
+        }
+
+        .iso-flip-card.option-completed .iso-flip-back {
+          background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.88),
+            rgba(255, 255, 255, 0.66)
+          );
+        }
+
+        .option-label {
+          max-width: 100%;
+          overflow-wrap: anywhere;
+        }
+
+        .option-completed {
+          border-color: rgba(46, 125, 50, 0.45);
+          background:
+            linear-gradient(
+              135deg,
+              rgba(255, 255, 255, 0.94),
+              rgba(229, 245, 231, 0.82)
+            );
+        }
+
+        .iso-flip-card.option-completed,
+        .iso-flip-card.option-completed:hover,
+        .iso-flip-card.option-completed:focus-visible {
+          background: transparent;
+          border-color: transparent;
+          box-shadow: none;
+        }
+
+        .iso-flip-card.option-completed .iso-flip-front {
+          background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.94),
+            rgba(229, 245, 231, 0.96)
+          );
+        }
+
+        .iso-flip-card.option-completed .iso-flip-back {
+          background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.88),
+            rgba(255, 255, 255, 0.66)
+          );
+        }
+
+        .completed-checkmark {
+          position: absolute;
+          top: 12px;
+          right: 12px;
+          width: 28px;
+          height: 28px;
+          border-radius: 50%;
+          background: #e5f5e7;
+          border: 1px solid rgba(46, 125, 50, 0.4);
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          font-size: 18px;
+          font-weight: 900;
+          color: #287438;
+        }
+
+        .support-card {
+          cursor: pointer;
+          text-align: left;
+          align-items: flex-start;
+          justify-content: center;
+          font-family: inherit;
+        }
+
+        .card-eyebrow {
+          font-size: 0.68rem;
+          font-weight: 800;
+          letter-spacing: 0.12em;
+          opacity: 0.65;
+        }
+
+        .card-title {
+          margin-top: 12px;
+          font-size: clamp(1.2rem, 1.7vw, 1.65rem);
+          line-height: 1.2;
+          font-weight: 850;
+        }
+
+        .card-description {
+          margin-top: 10px;
+          font-size: 0.85rem;
+          line-height: 1.55;
+          opacity: 0.72;
+        }
+
+        .card-arrow {
+          position: absolute;
+          right: 20px;
+          bottom: 16px;
+          font-size: 1.35rem;
+          font-weight: 700;
+        }
+
+        .dashboard-logo {
+          width: 100%;
+          height: 100%;
+          max-height: 120px;
+          object-fit: contain;
+        }
+
+        @media (max-width: 850px) {
+          .dashboard-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            width: min(700px, calc(100% - 32px));
+            gap: 16px;
+          }
+
+          .dashboard-card {
+            grid-column: span 1;
+            height: 180px;
+            padding: 20px;
+            border-radius: 20px;
+          }
+
+          .onboarding-card,
+          .support-wide-card {
+            grid-column: span 2;
+          }
+
+          .policies-card,
+          .job-card,
+          .culture-card {
+            grid-column: span 1;
+          }
+
+          .logo-card {
+            grid-column: span 1;
+            grid-row: auto;
+            height: 150px;
+            padding: 14px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .dashboard-grid {
+            grid-template-columns: 1fr;
+            width: calc(100% - 32px);
+            gap: 14px;
+          }
+
+          .dashboard-card {
+            grid-column: span 1;
+            height: 155px;
+            padding: 22px;
+            border-radius: 18px;
+          }
+
+          .logo-card {
+            height: 125px;
+            padding: 12px;
+          }
+
+          .dashboard-logo {
+            max-height: 100px;
+          }
+
+          .training-card {
+            font-size: 0.9rem;
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .dashboard-card,
+          .download-button {
+            transition: none;
+          }
+        }
+
+        .training-card {
+          appearance: none;
+          -webkit-appearance: none;
+          background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.88),
+            rgba(255, 255, 255, 0.66)
+          );
+        }
+
+        .training-card:hover,
+        .training-card:focus-visible {
+          background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.98),
+            rgba(255, 255, 255, 0.83)
+          );
+        }
+      `}</style>
     </div>
   );
 }
@@ -551,15 +1274,17 @@ const styles: Record<string, React.CSSProperties> = {
     boxSizing: "border-box",
     display: "flex",
     flexDirection: "column",
+    justifyContent: "center",
     alignItems: "center",
+    padding: "36px 0",
     overflowX: "hidden",
     overflowY: "auto",
     backgroundColor: "#582c83",
     backgroundImage:
-      "radial-gradient(ellipse at 10% 10%, rgba(255,255,255,0.13), transparent 40%), radial-gradient(ellipse at 90% 90%, rgba(30,10,50,0.28), transparent 45%)",
+      "radial-gradient(ellipse at 10% 10%, rgba(255,255,255,0.16), transparent 40%), radial-gradient(ellipse at 90% 90%, rgba(30,10,50,0.28), transparent 45%)",
     fontFamily:
       "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif",
-    color: "#ffffff",
+    color: "#582c83",
   },
 
   header: {
@@ -568,26 +1293,26 @@ const styles: Record<string, React.CSSProperties> = {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    padding: "60px 24px 0",
+    padding: "12px 24px 28px",
     boxSizing: "border-box",
   },
 
   titleContainer: {
     textAlign: "center",
-    marginTop: "10px",
   },
 
   title: {
     margin: 0,
-    fontSize: "clamp(2.5rem, 6vw, 4.5rem)",
+    fontSize: "clamp(2rem, 5vw, 3.8rem)",
     lineHeight: 1.1,
     fontWeight: 800,
     letterSpacing: "-0.04em",
-    color: "#111827",
+    color: "#ffffff",
+    textAlign: "center",
   },
 
   name: {
-    color: "#9b7db5",
+    color: "#e4d5f5",
   },
 
   contentHeader: {
@@ -596,7 +1321,7 @@ const styles: Record<string, React.CSSProperties> = {
     display: "flex",
     flexDirection: "column",
     alignItems: "stretch",
-    marginTop: "30px",
+    marginTop: "24px",
   },
 
   logo: {
@@ -609,32 +1334,32 @@ const styles: Record<string, React.CSSProperties> = {
 
   chooseText: {
     textAlign: "center",
-    margin: "0 0 20px",
-    fontSize: "1rem",
+    margin: "14px 0 0",
+    fontSize: "0.9rem",
     fontWeight: 700,
-    color: "#4b5563",
+    color: "rgba(255,255,255,0.78)",
     textTransform: "uppercase",
-    letterSpacing: "0.1em",
+    letterSpacing: "0.12em",
   },
 
   optionsScrollArea: {
     width: "100%",
-    maxWidth: "800px",
+    maxWidth: "1100px",
     margin: "0 auto",
     flex: 1,
     minHeight: 0,
     boxSizing: "border-box",
     padding: "8px 24px 16px",
-    overflowY: "hidden",
+    overflowY: "visible",
     overflowX: "hidden",
   },
 
   optionsContainer: {
     display: "grid",
-    gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
-    gap: "16px",
+    gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+    gap: "22px",
     width: "100%",
-    maxWidth: "600px",
+    maxWidth: "1100px",
     margin: "0 auto",
     padding: "4px 0",
   },
