@@ -1,0 +1,149 @@
+{
+    "titleSlide": {
+        "title": "Discrimination Harassment and Violence Reporting Policy",
+        "subtitle": "",
+        "moduleTitle": "Discrimination Harassment and Violence Reporting Policy",
+        "desc": ""
+    },
+    "policiesSlide": {
+        "title": "Policy Summary",
+        "table": [
+            {
+                "label": "Authority",
+                "value": "Chief Operating Officer"
+            },
+            {
+                "label": "Date Ratified",
+                "value": "January 13, 2026"
+            },
+            {
+                "label": "Next Review Date",
+                "value": "December 2026 (annually)"
+            },
+            {
+                "label": "Related Document(s)",
+                "value": "Discrimination Harassment and Violence Prevention Policy"
+            },
+            {
+                "label": "Review Committee(s)",
+                "value": "Board of Directors"
+            }
+        ],
+        "description": "This procedure provides the detailed process supporting the Discrimination, Harassment and Violence Prevention Policy. It sets out how to report a concern, what happens on receipt of a complaint, the rights of complainants and respondents, the five-step formal investigation process, corrective action, confidentiality and no-retaliation provisions, and how complaints made in good faith versus bad faith are handled.",
+        "scope": ""
+    },
+    "useSlide": {
+        "title": "Key Takeaways",
+        "items": [
+            "Victims or witnesses of workplace violence report to the Senior Manager, People and Development, unless there is immediate danger, in which case Campus Police or 911 should be contacted.",
+            "Individuals who feel harassed are encouraged to first tell the alleged harasser the behaviour is unwelcome, where it is safe and reasonable to do so, before escalating further.",
+            "If the Senior Manager, People and Development is the alleged harasser or the victim, the Chief Operating Officer takes over administering the procedure.",
+            "A formal investigation requires a written complaint, generally within 12 months of the last incident, containing specific details: names and positions, a description of what happened, dates/times/locations, and known witnesses.",
+            "Complainants have rights including prompt handling without reprisal, no personnel-file record for good-faith complaints, progress updates, a written summary of findings, and fair treatment; Respondents have parallel rights to be informed of and respond to the allegations.",
+            "The investigation follows five steps: review the Policy, meet with the parties to explain the process, determine the appropriate investigator, conduct the investigation, and issue findings — normally within 90 calendar days, with a summary sent to the complainant within 10 calendar days of the investigation concluding.",
+            "Corrective action for a substantiated complaint can range from a written reprimand to dismissal; Executive Members are disciplined per the Executive Officer Accountability and Discipline Policy and By-Law #1.",
+            "Good-faith complaints that are not substantiated are dismissed with no record placed in the Respondent's file; complaints made in bad faith result in discipline for the complainant.",
+            "Retaliation against anyone who complains or provides evidence in an investigation is treated as a serious disciplinary breach, with penalties equivalent to those for a substantiated violation."
+        ]
+    },
+    "slideOne": {
+        "title": "1. DEFINITIONS",
+        "oneOne": "Complainant: Any individual who deems they have been the target of discrimination or harassment.",
+        "oneTwo": "Corporation: The University Students' Council of the University of Western Ontario.",
+        "oneThree": "Informal Resolution: Efforts to resolve a concern through discussion, mediation, or other cooperative means before a formal investigation.",
+        "oneFour": "Investigator: A person, internal or external to the organization, responsible for gathering evidence and determining findings in accordance with this Procedure.",
+        "oneFive": "Respondent: The person who is alleged to have engaged in the discrimination or harassment.",
+        "oneSix": "Substantiated: A finding that the evidence supports that a violation of this Policy occurred."
+    },
+    "slideTwo": {
+        "title": "2. ADMINISTRATION",
+        "twoOne": "The Senior Manager, People and Development is responsible for administering the provisions of this Procedure. In the event the Senior Manager, People and Development is conflicted, the Chief Operating Officer shall be responsible for administering the Procedure.",
+        "twoTwo": "In the event the Chief Operating Officer is the Respondent in a complaint, the Senior Manager, People and Development shall immediately notify the USC President who shall in consultation with the Board of Directors administer the Procedure."
+    },
+    "slideThree": {
+        "title": "3. REPORTING PROCEDURE",
+        "threeOne": "Any individual who is the victim of violence in the workplace or who witnesses violence shall report such behaviour to the Senior Manager, People and Development if the situation is not one of immediate danger.",
+        "threeOneOne": "If an emergency exists and the situation is one of immediate danger, individuals shall contact either Campus Police or local police officials by dialing 911. Individuals are also encouraged to take whatever emergency steps are available and appropriate to protect themselves from immediate harm, such as leaving the area.",
+        "threeTwo": "Any individual who deems they are being harassed is urged to speak up to the alleged harasser in an effort to advise that the behaviour and/or comments are unwelcome.",
+        "threeTwoOne": "If the behaviour persists, or if the nature of the relationship makes it unreasonable or unsafe for the individual to address the behaviour with the person responsible, the individual is responsible for bringing this matter to the attention of the Senior Manager, People and Development.",
+        "threeThree": "In the event the Senior Manager, People and Development is the alleged harasser, the Chief Operating Officer shall be responsible for receiving the complaint and administering the provisions of this Procedure.",
+        "threeThreeOne": "If the Senior Manager, People and Development is the victim of harassment, the Chief Operating Officer shall be responsible for administering the provisions of this Procedure."
+    },
+    "slideFour": {
+        "title": "4. PROCEDURE UPON RECEIPT OF COMPLAINT",
+        "fourOne": "Upon receipt of a report or complaint, whether written or verbal, the Senior Manager, People and Development will meet with the complainant to discuss the complaint, the provisions of and options available under this Complaints Procedure.",
+        "fourTwo": "Every effort will be made to resolve workplace issues through an informal resolution process. However, if this process is unsuccessful, declined by the parties, or deemed inappropriate, the Senior Manager, People and Development may initiate an administrative or formal investigation to determine whether the allegations are founded or not.",
+        "fourThree": "If the Senior Manager, People and Development becomes aware of credible allegations or observations suggesting possible harassment, discrimination, or violence, even in the absence of a formal complaint, they have the discretion and duty to assess the situation and determine whether an investigation should be initiated.",
+        "fourThreeOne": "It is at the discretion of the Senior Manager, People and Development, or other individual responsible for administering the policy whether or not to initiate an investigation."
+    },
+    "slideFive": {
+        "title": "5. INVESTIGATIONS",
+        "fiveOne": "Initiation of a formal investigation",
+        "fiveOneOne": {
+            "intro": "Before an investigation will be initiated, a Complainant must submit a written complaint to the Senior Manager, People and Development (or Chief Operating Officer if appropriate). The Corporation reserves the right not to pursue a complaint that is filed more than 12 months after the last incident or event of alleged harassment. The complaint should contain specifics including",
+            "items": [
+                "1. Name of Complainant and Position with the Corporation;",
+                "2. Name and Position of the Respondent (alleged harasser) and contact information, if known;",
+                "3. Details of what happened with as much particularity as possible, as well as any supporting or relevant documents;",
+                "4. Dates, times, and locations of the incidents",
+                "5. Where possible, the names of any appropriate witnesses and contact information, if known; and,"
+            ]
+        },
+        "fiveTwo": "Rights of the Complainant",
+        "fiveTwoOne": {
+            "intro": "A Complainant has a right to:",
+            "items": [
+                "1. file a complaint and have it dealt with promptly, without fear of embarrassment or reprisal;",
+                "2. make sure that no record of the complaint is placed on their personnel file, so long as it was made in good faith;",
+                "3. be informed about the progress of their complaint;",
+                "4. be informed in writing of the summary of findings of the investigation, and the type of corrective measures that will result from the complaint; and,",
+                "5. receive fair treatment."
+            ]
+        },
+        "fiveThree": "Rights of the Respondent:",
+        "fiveThreeOne": {
+            "intro": "The Respondent has a right:",
+            "items": [
+                "1. to be informed of the complaint;",
+                "2. to be given a written statement of the official allegations, and to respond to them;",
+                "3. to be informed about the progress of the complaint;",
+                "4. be informed in writing of the type of corrective measures that will result from the complaint; and, and,",
+                "5. to receive fair treatment."
+            ]
+        },
+        "fiveFour": "Cooperation:",
+        "fiveFourOne": {
+            "intro": "During the investigation, all parties are expected to cooperate in the process if and when called upon to do so. All Members are expected to cooperate with any investigations, including making themselves available to be interviewed. Members are expected to be mindful of the sensitivities of investigations and shall keep any information received confidential.",
+            "items": [
+                "1. failure to adhere to this policy may result in disciplinary action being taken against the offending individual."
+            ]
+        },
+        "fiveFive": "Investigations Procedure",
+        "fiveFiveOne": {
+            "intro": "Ultimately, the purpose of an investigation is to determine what happened. In order to accomplish this, the investigation must allow all affected parties to express their view and provide evidence to the investigation. As such, the Corporation has developed this standard investigation process:",
+            "items": [
+                "1. Step One - Review the Discrimination, Harassment and Violence Prevention Policy a. As an initial step, the Senior Manager, People and Development (or other individual in accordance with section 2. of this Procedure) shall review the complaint and the Policy to determine whether the alleged complaint and associated behaviour meets the definition of workplace discrimination or harassment.",
+                "2. Step Two - Meet with the parties to explain the investigation process a. At this stage, the Senior Manager, People and Development (or other individual in accordance with section 2. of this Procedure) will inform the complainant and respondent about the following: i. expected timeline; ii. overall process (interview, review of documentary and other evidence); iii. roles and responsibilities of anyone involved in the investigation; iv. confidentiality of the investigation (who will receive the investigation report); v. possible interim measures that may be taken to limit the potential for discrimination and harassment, if deemed necessary.",
+                "3. Step Three - Determine the Appropriate Investigator a. It shall be the role of the Senior Manager, People and Development (or other individual in accordance with section 2. of this Procedure) to determine the appropriate investigator. An investigation must be fair and impartial. The investigator could be someone from within the organization, including the administrator of this Policy. However, in more complex or sensitive cases, an external investigator may be appropriate."
+            ]
+        },
+        "fiveFiveTwo": {
+            "intro": "",
+            "items": [
+                "4. Step Four - Conduct of Investigation: a. The investigator will meet and speak with the Complainant and obtain any relevant information regarding the complaint. The Complainant may be asked and required to provide documentary evidence including emails, handwritten notes, or other records that would be helpful to the investigation. b. After meeting with the Complainant and providing the Respondent with a copy of the complaint, the investigator will interview and meet with the Respondent. The Respondent may be asked and required to provide documentary evidence including emails, handwritten notes, or other records that would be helpful to the investigation. c. Following that meeting, the investigator will, if they deem appropriate, meet with other witnesses. d. Information about the complaint or incident will be kept confidential and will not be disclosed except to the extent necessary to protect workers, to investigate the complaint or incident, to take corrective action or as otherwise required by law. The Complainant, Respondent and witnesses will be instructed not to discuss the complaint, incident, or investigation with others unless necessary to obtain advice from professional advisors about their rights. e. Investigations will be completed as soon as possible, and within 90 calendar days unless there are extenuating circumstances which warrant a longer investigation. f. At the conclusion of the investigation, the investigator will outline their findings in a written report. The report will normally contain the following elements: i. A description of the allegations; 288 ii. A description of the investigation process followed; iii. A description of the background information and evidence that supports or refutes each allegation; iv. An analysis of the evidence in respect of each allegation; and v. A statement as to whether or not the behaviour described in each allegation constitutes a breach of the Policy. g. The Senior Manager, People and Development or another member of the Corporation will meet separately with both the Complainant and the Respondent, confidentially to explain the investigation's findings. The summary of findings and corrective action will be provided to the Complainant within 10 calendar days of the investigation being concluded."
+            ]
+        }
+    },
+    "slideFiveTwo": {
+        "title": "5. INVESTIGATIONS",
+        "fiveFive": {
+            "intro": "5.5.3",
+            "items": [
+                "5. Step Five - Corrective Action: a. If it is found that the Respondent has contravened this Policy, they may be subject to one or more of the following forms of discipline, depending on the severity of the violation: i. A written reprimand; ii. A suspension with or without pay iii. A transfer iv. A demotion; or v. Dismissal. b. If the respondent is a member of the Executive, any disciplinary action shall be taken in accordance with the Executive Accountabilities and Discipline Policy. Any dismissal of any Executive Member shall occur only in accordance with the provisions of By-Law #1 c. In most cases of harassment, the harasser will also be required to participate in anti-harassment training education. d. Where a founded complaint involves a member of Council as Respondent, the results of the investigation in addition to being provided to the President and council, may also be forwarded to the appropriate department in the member's home faculty. e. All records related to the complaint, incident and/or investigation will be kept for the time period prescribed by applicable legislation. 289 f. If the investigation does not find evidence to support the complaint, there will be no documentation concerning the complaint placed in the Respondent's file. When the investigation reveals a violation of the Policy, the incident and the discipline that is imposed on the Respondent will be recorded in the Respondent's file. g. If a person, in good faith, files a complaint that is not supported by evidence gathered during an investigation, that complaint will be dismissed, and no record of it will be put in the Respondent's file. As long as the complaint was made in good faith, there will be no penalty to the person who complained, and no record in their file. h. In the rare event that the complaint was made in bad faith - in other words, the person making it had absolutely no basis and deliberately and maliciously filed the complaint, the Complainant will be disciplined and a record of the incident will be put in their file. Penalties for someone who complains in bad faith will be the same as for a case of discrimination or harassment (see Corrective Action) and will depend on the seriousness of the situation."
+            ]
+        },
+        "fiveSix": "No Retaliation",
+        "fiveSixOne": "Retaliation is considered a serious disciplinary breach. Anyone who retaliates in any way against a person who has complained of harassment or discrimination or given evidence in an investigation, will be penalized accordingly. The possible penalties are the same as those assessed against those found to have contravened the Discrimination Harassment and Violence Prevention Policy.",
+        "fiveSixTwo": "The USC is committed to providing and maintaining a safe and healthy workplace environment free from discrimination, harassment, and violence as outlined in the Discrimination Harassment and Violence Prevention Policy. There are resources available to you should you require them. Please contact the USC People and Development Department to be connected with our Employee Assistance Program or other resources that will best suit your needs."
+    }
+}

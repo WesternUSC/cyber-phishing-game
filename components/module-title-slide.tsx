@@ -10,6 +10,7 @@ type Slide =
   | "accessibility"
   | "conflict"
   | "disc"
+  | "disc2"
   | "early"
   | "job"
   | "emergency"
@@ -123,6 +124,7 @@ const scoreStorageKeys: Record<string, string> = {
   "Accessibility Policy": "accessibility-score",
   "Conflict of Interest Policy for USC Paid Employees": "conflict-score",
   "Discrimination Harassment and Violence Prevention Policy": "disc-score",
+  "Discrimination Harassment and Violence Reporting Policy": "disc2-score",
   "Early and Safe Return to Work Policy": "early-score",
   "Emergency Preparedness Policy": "emergency-score",
   "Hazard Reporting Policy": "hazard-score",
@@ -147,6 +149,7 @@ const policyIds: Record<string, string> = {
   "Accessibility Policy": "4",
   "Conflict of Interest Policy for USC Paid Employees": "5",
   "Discrimination Harassment and Violence Prevention Policy": "6",
+  "Discrimination Harassment and Violence Reporting Policy": "7",
   "Early and Safe Return to Work Policy": "8",
   "Emergency Preparedness Policy": "9",
   "Hazard Reporting Policy": "10",
@@ -184,8 +187,8 @@ const modules: Omit<Module, "score">[] = [
   },
   {
     name: "Discrimination Harassment and Violence Reporting Procedure",
-    questionCount: 7,
-    page: "disc",
+    questionCount: 8,
+    page: "disc2",
   },
   {
     name: "Early and Safe Return to Work Policy",

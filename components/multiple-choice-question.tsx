@@ -85,6 +85,11 @@ const MultipleChoiceQuestion: React.FC<MultipleChoiceQuestionProps> = ({
       ANSWERS_KEY = "disc-answers";
       break;
 
+    case "disc2":
+      SCORE_KEY = "disc2-score";
+      ANSWERS_KEY = "disc2-answers";
+      break;
+
     case "early":
       SCORE_KEY = "early-score";
       ANSWERS_KEY = "early-answers";

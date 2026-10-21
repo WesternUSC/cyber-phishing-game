@@ -16,6 +16,7 @@ import policiesSlidesData from '@/data/policiesSlides.json'
 import accessibilitySlidesData from '@/data/accessibility.json'
 import conflictSlidesData from '@/data/conflict.json'
 import discSlidesData from '@/data/discSlides.json'
+import disc2SlidesData from '@/data/disc2.json'
 import earlySlidesData from '@/data/earlySlides.json'
 import emergencySlidesData from '@/data/emergencySlides.json'
 import hazardSlidesData from '@/data/hazardSlides.json'
@@ -70,6 +71,9 @@ export default function PoliciesPage() {
 
             case 'disc':
                 return createPolicySlides(discSlidesData, questionsData.questionsDisc, userData.name, "disc", "disc-score");
+
+            case 'disc2':
+                return createPolicySlides(disc2SlidesData, questionsData.questionsDisc2, userData.name, "disc2", "disc2-score");
 
             case 'early':
                 return createPolicySlides(earlySlidesData, questionsData.questionsEarly, userData.name, "early", "early-score");
