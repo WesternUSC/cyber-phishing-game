@@ -1,0 +1,75 @@
+{
+    "titleSlide": {
+        "title": "Professional Development Policy",
+        "subtitle": "",
+        "moduleTitle": "Professional Development Policy",
+        "desc": ""
+    },
+    "policiesSlide": {
+        "title": "Policy Summary",
+        "table": [
+            {
+                "label": "Authority",
+                "value": "Board of Directors"
+            },
+            {
+                "label": "Date Ratified",
+                "value": "July 19, 2026"
+            },
+            {
+                "label": "Next Review Date",
+                "value": "July 2029"
+            },
+            {
+                "label": "Previous Amendments",
+                "value": "None listed"
+            },
+            {
+                "label": "Review Committee(s)",
+                "value": "Human Resources Committee"
+            }
+        ],
+        "description": "This policy affirms the USC's commitment to continuous learning and improvement for all full-time and part-time staff, as well as Executives. It limits the purposes for which professional development will be considered, requires that all opportunities be approved before booking, and recognizes a development program specific to Executives. Details of the approval process are set out in the separate Professional Development Procedure.",
+        "scope": ""
+    },
+    "useSlide": {
+        "title": "Key Takeaways",
+        "items": [
+            "Applies to all full-time and part-time staff, as well as Executives.",
+            "Professional development will be considered for three purposes only: addressing a specific performance concern, fulfilling a job requirement, or learning about new technology or developing skills.",
+            "Staff interested in learning opportunities that don't fit one of those categories should consider using their personal courses benefit.",
+            "All professional development opportunities must be approved before they are booked.",
+            "Meetings, trainings, or conferences that are not pre-approved will not be reimbursed, and may have to be paid back if they were charged to a corporate credit card.",
+            "The USC has a development program specific to Executives, and all Executive professional development must also be pre-approved.",
+            "The Professional Development Procedure contains the details of the approval process for both staff and Executives."
+        ]
+    },
+    "slideOne": {
+        "title": "1. GENERAL",
+        "oneOne": "This policy applies to all full time and part time staff, as well as Executives."
+    },
+    "slideTwo": {
+        "title": "2. PURPOSE OF PROFESSIONAL DEVELOPMENT",
+        "twoOne": {
+            "intro": "Professional development will be considered for the following purposes:",
+            "items": [
+                "1. To address a specific performance concern;",
+                "2. To fulfill a job requirement; or,",
+                "3. To learn more about new technology or for skill development."
+            ]
+        },
+        "twoTwo": "Staff interested in learning opportunities that do not fit in one of the above categories  should consider use of their personal courses benefit."
+    },
+    "slideThree": {
+        "title": "3. APPROVAL PROCESS",
+        "threeOne": "All professional development opportunities must be approved prior to booking.",
+        "threeOneOne": "Meetings, trainings, or conferences not pre-approved will not be reimbursed and  may be required to be paid back if paid for on a corporate credit card.",
+        "threeTwo": "See the Professional Development Procedure for details of the approval process."
+    },
+    "slideFour": {
+        "title": "4. EXECUTIVE DEVELOPMENT PROGRAM",
+        "fourOne": "The USC recognizes the importance of professional development for student leaders and  has created a development program specific to the Executives.",
+        "fourTwo": "All Executive professional development must be preapproved.",
+        "fourThree": "See the Professional Development Procedure for details of the approval process."
+    }
+}

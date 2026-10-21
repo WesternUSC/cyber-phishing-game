@@ -25,7 +25,8 @@ type Slide =
   | "social"
   | "visitor"
   | "whistleblower"
-  | "workplace";
+  | "workplace"
+  | "prof";
 
 interface Module {
   name: string;
@@ -141,6 +142,7 @@ const scoreStorageKeys: Record<string, string> = {
   "Visitor Policy": "visitor-score",
   "Whistleblower Policy": "whistleblower-score",
   "Workplace Conduct Policy": "workplace-score",
+  "Professional Development Policy": "prof-score",
 };
 
 const policyIds: Record<string, string> = {
@@ -165,6 +167,7 @@ const policyIds: Record<string, string> = {
   "Visitor Policy": "19",
   "Whistleblower Policy": "20",
   "Workplace Conduct Policy": "21",
+  "Professional Development Policy": "22",
 };
 
 const modules: Omit<Module, "score">[] = [
@@ -238,8 +241,8 @@ const modules: Omit<Module, "score">[] = [
   { name: "Workplace Conduct Policy", questionCount: 5, page: "workplace" },
   {
     name: "Professional Development Procedure",
-    questionCount: 5,
-    page: "eso",
+    questionCount: 4,
+    page: "prof",
   },
   {
     name: "Short Term Flexibility Procedure",

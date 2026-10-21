@@ -2588,5 +2588,107 @@
       "correctAnswer": "C",
       "explanation": "Section 3.2.1 states that if it is unreasonable or unsafe to address the behaviour directly, the individual is responsible for bringing the matter to the Senior Manager, People and Development."
     }
+  ],
+  "questionsProf": [
+    {
+      "category": "prof",
+      "id": "q1",
+      "question": "A staff member wants to take a course on a hobby that is interesting but unrelated to a performance concern, a job requirement, or new technology/skill development. What does the policy suggest?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Book it and submit for reimbursement afterward."
+        },
+        {
+          "label": "B",
+          "text": "Consider using their personal courses benefit."
+        },
+        {
+          "label": "C",
+          "text": "Ask the Board of Directors to approve it as an exception."
+        },
+        {
+          "label": "D",
+          "text": "Charge it to a corporate credit card and repay it later."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Section 2.2 states that learning opportunities outside the approved purposes should be pursued through the personal courses benefit."
+    },
+    {
+      "category": "prof",
+      "id": "q2",
+      "question": "A coordinator registers for and pays for a conference with a corporate credit card, planning to ask for approval once they return. What is the likely outcome?",
+      "options": [
+        {
+          "label": "A",
+          "text": "The conference is reimbursed automatically since it was work-related."
+        },
+        {
+          "label": "B",
+          "text": "Approval can be granted retroactively with no consequence."
+        },
+        {
+          "label": "C",
+          "text": "Only half of the cost is reimbursed."
+        },
+        {
+          "label": "D",
+          "text": "It will not be reimbursed, and the employee may be required to pay back the amount charged to the credit card."
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Section 3.1 requires approval prior to booking, and section 3.1.1 states unapproved events will not be reimbursed and may have to be paid back if charged to a corporate credit card."
+    },
+    {
+      "category": "prof",
+      "id": "q3",
+      "question": "Which of the following is NOT one of the purposes for which professional development will be considered under this policy?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Addressing a specific performance concern."
+        },
+        {
+          "label": "B",
+          "text": "Fulfilling a job requirement."
+        },
+        {
+          "label": "C",
+          "text": "Pursuing a personal interest unrelated to the employee's role."
+        },
+        {
+          "label": "D",
+          "text": "Learning about new technology or developing skills."
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Section 2.1 lists three purposes: a specific performance concern, a job requirement, and new technology or skill development. Unrelated personal interests fall outside the policy."
+    },
+    {
+      "category": "prof",
+      "id": "q4",
+      "question": "An Executive wants to attend a leadership training session as part of their development. What does the policy require?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Executive professional development must be pre-approved, following the Professional Development Procedure."
+        },
+        {
+          "label": "B",
+          "text": "Executives are exempt from the approval requirement."
+        },
+        {
+          "label": "C",
+          "text": "Approval is only needed if the cost exceeds a set amount."
+        },
+        {
+          "label": "D",
+          "text": "Approval can be requested after attending."
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Sections 4.2 and 4.3 state all Executive professional development must be pre-approved, with approval details in the Professional Development Procedure."
+    }
   ]
 }
