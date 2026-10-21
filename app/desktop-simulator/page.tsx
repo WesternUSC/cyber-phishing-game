@@ -1187,7 +1187,7 @@ export default function DesktopSimulator() {
                 moduleStarted.outlook ? (
                     <div className="flex flex-1 min-h-0 bg-white">
                     <iframe
-                        src="https://scribehow.com/embed-preview/Google_Drive_HowTo_Guide__fX1wnsttR_WURhS2_AOeCA?as=slides&size=flexible"
+                        src="https://scribehow.com/o/HmsJcJ_OR627sULvza-cOw/viewer/Google_Drive_HowTo_Guide__fX1wnsttR_WURhS2_AOeCA"
                         title="Google Drive Training Guide"
                         className="h-full w-full border-0"
                     />
@@ -1819,7 +1819,7 @@ export default function DesktopSimulator() {
                 moduleStarted.trello ? (
                     <div className="flex flex-1 min-h-0 bg-white">
                     <iframe
-                        src="https://scribehow.com/embed-preview/How_to_Add_a_Comment_to_a_Trello_Card__BIHw7BY4TAGKrd78_nWwGA?as=slides&size=flexible"
+                        src="https://scribehow.com/o/HmsJcJ_OR627sULvza-cOw/viewer/How_to_Work_with_Trello__ygN_9L0nSja3vWVDQxphdg"
                         title="Trello Training Guide"
                         className="h-full w-full border-0"
                     />
