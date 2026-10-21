@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { AppProvider } from '@/components/app-context';
 import { DebugTab } from '@/components/debug-component';
 import { CornerTab } from '@/components/corner-tab';
+import AccessibilityWidget from '@/components/accessibility-widget';
 
 export const metadata: Metadata = {
   title: 'USC Onboarding',
@@ -16,6 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <AppProvider>
           {children}
           <CornerTab />
+          {/* <AccessibilityWidget /> */}
           <DebugTab />
         </AppProvider>
       </body>
