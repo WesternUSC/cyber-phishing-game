@@ -562,9 +562,11 @@ export default function Selection({
 
         .iso-flip-inner {
           position: relative;
+          display: block;
           width: 100%;
           height: 100%;
           min-height: 190px;
+          box-sizing: border-box;
           transform-style: preserve-3d;
           -webkit-transform-style: preserve-3d;
           transition: transform 0.75s cubic-bezier(0.2, 0.7, 0.2, 1);
@@ -970,6 +972,11 @@ export default function Selection({
         .onboarding-card {
           grid-column: 1 / span 5;
           grid-row: 1;
+          width: 100%;
+          min-width: 0;
+          justify-self: stretch;
+          align-self: stretch;
+          padding: 0;
         }
 
         .policies-card {
@@ -1262,6 +1269,12 @@ export default function Selection({
             rgba(255, 255, 255, 0.83)
           );
         }
+
+        .onboarding-card .iso-flip-inner,
+          .onboarding-card .iso-flip-face {
+            width: 100%;
+            box-sizing: border-box;
+          }
       `}</style>
     </div>
   );
