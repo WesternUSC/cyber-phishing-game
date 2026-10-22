@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useApp } from '@/components/app-context';
 import WesternPopup from '@/components/western-popup';
+import AskUSCModal from '@/components/ask-usc-modal';
 
 type User = {
   name: string;
@@ -76,6 +77,9 @@ export default function HomePage() {
   const [open, setOpen] = useState(false);
 
   const [loginCardFlipped, setLoginCardFlipped] = useState(false);
+
+  const [askOpen, setAskOpen] = useState(false);
+  const [question, setQuestion] = useState("");
 
   useEffect(() => {
     let cancelled = false;
@@ -299,6 +303,11 @@ export default function HomePage() {
       onClose={() => setShowPopup(false)}
     />
 
+    <AskUSCModal
+      isOpen={askOpen}
+      onClose={() => setAskOpen(false)}
+      questionText={question}
+    />
     
     {open && (
       <div
@@ -510,7 +519,7 @@ export default function HomePage() {
       }
     `}</style>
 
-    <div className="mx-auto grid w-full max-w-[1500px] grid-cols-1 items-start gap-5 sm:grid-cols-2 lg:grid-cols-12 lg:gap-6">
+    <div className="mx-auto grid w-full max-w-[1500px] grid-cols-1 items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-12 lg:gap-6">
 
         {/* TOP LEFT: USC LOGO */}
         <section className="relative min-w-0 h-full overflow-hidden rounded-3xl border border-white/80 bg-white/75 p-4 text-[#582c83] shadow-xl backdrop-blur-2xl transition-all duration-300 ease-out hover:-translate-y-1 hover:border-white hover:bg-white/[0.86] hover:shadow-2xl min-h-[180px] lg:col-span-3">
@@ -641,19 +650,91 @@ export default function HomePage() {
         </section>
 
         {/* TOP RIGHT: WELCOME */}
-        <section className="relative min-w-0 h-full overflow-hidden rounded-3xl border border-white/80 bg-white/75 p-6 text-[#582c83] shadow-xl backdrop-blur-2xl transition-all duration-300 ease-out hover:-translate-y-1 hover:border-white hover:bg-white/[0.86] hover:shadow-2xl min-h-[260px] lg:col-span-5">
+        <section className="relative min-w-0 h-full overflow-hidden rounded-3xl border border-white/80 bg-white/75 p-6 text-[#582c83] shadow-xl backdrop-blur-2xl transition-all duration-300 ease-out hover:-translate-y-1 hover:border-white hover:bg-white/[0.86] hover:shadow-2xl min-h-[300px] lg:col-span-3">
           <div className="welcome-orb" aria-hidden="true" />
 
           <div className="relative z-10">
-            <p className="mt-8 text-sm font-medium text-[#582c83]/65">
-              Welcome to
-            </p>
             <h2 className="mt-2 max-w-md text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
-              {userData.name == "" ? "USC Onboarding!" : "USC Onboarding, " + userData.name + "!"}
+              Daily Policy
             </h2>
             <p className="mt-4 max-w-sm text-sm leading-7 text-[#582c83]/70">
-              USC Onboarding. Placeholder description of the onboarding.
+              Placeholder. Changes with a daily policy.
             </p>
+          </div>
+        </section>
+
+        {/* HEALTH & DENTAL BENEFITS */}
+        <a
+          href="https://mapi.drawbridge.ca/auth/Account/Login?ReturnUrl=%2Fauth%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3Duscstaff_drawbridge_ca%26redirect_uri%3Dhttps%253A%252F%252Fuscstaff.drawbridge.ca%252Fcallback.html%26response_type%3Dcode%26scope%3Dopenid%2520profile%2520members%2520offline_access%26state%3D7d7427a600da45888c7e8ea2958180bc%26code_challenge%3DeocNLsLREoxR6ulCDJaR0iw9cwpRMLczMbLToXr4H4M%26code_challenge_method%3DS256%26response_mode%3Dquery%26isEnrollment%3Dfalse"
+          target="_blank"
+          className="relative flex min-w-0 min-h-[220px] flex-col justify-between overflow-hidden rounded-3xl border border-white/80 bg-white/75 p-5 text-[#582c83] shadow-xl backdrop-blur-2xl transition-all duration-300 ease-out hover:-translate-y-1 hover:border-white hover:bg-white/[0.86] hover:shadow-2xl lg:col-span-2"
+        >
+          <div>
+            <span className="text-3xl" aria-hidden="true">🩺</span>
+
+            <h2 className="mt-5 text-xl font-bold leading-tight">
+              Health & Dental Benefits
+            </h2>
+
+            <p className="mt-2 text-sm leading-6 text-[#582c83]/65">
+              Employee health and dental coverage.
+            </p>
+          </div>
+
+          <div className="mt-5 flex items-center justify-between text-sm font-semibold">
+            <span>Explore benefits</span>
+            <span aria-hidden="true">↗</span>
+          </div>
+        </a>
+
+        {/* ASK USC */}
+        <section className="relative min-w-0 min-h-[220px] overflow-hidden rounded-3xl border border-white/80 bg-white/75 p-6 text-[#582c83] shadow-xl backdrop-blur-2xl transition-all duration-300 ease-out hover:-translate-y-1 hover:border-white hover:bg-white/[0.86] hover:shadow-2xl sm:col-span-2 lg:col-span-4">
+          <div className="flex h-full flex-col justify-between gap-6">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-widest text-[#582c83]/50">
+                USC Assistant
+              </p>
+
+              <h2 className="mt-3 text-2xl font-bold sm:text-3xl">
+                Ask USC
+              </h2>
+
+              <p className="mt-3 max-w-md text-sm leading-6 text-[#582c83]/65">
+                Have a question about onboarding, employee resources, or working at USC?
+              </p>
+            </div>
+
+            <form
+              className="flex flex-col gap-3 sm:flex-row"
+              onSubmit={(event) => {
+                event.preventDefault();
+
+                const formData = new FormData(event.currentTarget);
+                const question = String(formData.get('question') ?? '').trim();
+
+                if (!question) return;
+
+                //console.log('Ask USC question:', question);
+              }}
+            >
+              <input
+                type="text"
+                name="question"
+                aria-label="Ask USC a question"
+                onChange={(e) => setQuestion(e.target.value)}
+                placeholder="What would you like to know?"
+                className="glass-input min-w-0 flex-1 rounded-xl bg-white px-4 py-3 text-sm text-black outline-none transition"
+              />
+
+              <button
+                type="submit"
+                className="primary-button flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold"
+                onClick={() => setAskOpen(true)}
+              >
+                Ask USC
+                <span aria-hidden="true">→</span>
+              </button>
+            </form>
           </div>
         </section>
 
@@ -661,7 +742,7 @@ export default function HomePage() {
         <button
           type="button"
           onClick={handleSupportPortal}
-          className="relative min-w-0 overflow-hidden rounded-3xl border border-white/80 bg-white/75 p-6 text-left text-[#582c83] shadow-xl backdrop-blur-2xl transition-all duration-300 ease-out hover:-translate-y-1 hover:border-white hover:bg-white/[0.86] hover:shadow-2xl min-h-[220px] sm:col-span-2 lg:col-span-7"
+          className="relative min-w-0 overflow-hidden rounded-3xl border border-white/80 bg-white/75 p-5 text-left text-[#582c83] shadow-xl backdrop-blur-2xl transition-all duration-300 ease-out hover:-translate-y-1 hover:border-white hover:bg-white/[0.86] hover:shadow-2xl min-h-[220px] sm:col-span-1 lg:col-span-2"
         >
           <div className="flex h-full flex-col justify-between gap-8">
 
@@ -707,7 +788,7 @@ export default function HomePage() {
         </section>
 
         {/* BOTTOM RIGHT: RIPPLING */}
-        <section className="relative min-w-0 h-full overflow-hidden rounded-3xl border border-white/80 bg-white/75 p-6 text-[#582c83] shadow-xl backdrop-blur-2xl transition-all duration-300 ease-out hover:-translate-y-1 hover:border-white hover:bg-white/[0.86] hover:shadow-2xl min-h-[220px] lg:col-span-3">
+        <section className="relative min-w-0 h-full overflow-hidden rounded-3xl border border-white/80 bg-white/75 p-6 text-[#582c83] shadow-xl backdrop-blur-2xl transition-all duration-300 ease-out hover:-translate-y-1 hover:border-white hover:bg-white/[0.86] hover:shadow-2xl min-h-[220px] lg:col-span-2">
           <div className="my-6">
             <p className="text-xs font-medium uppercase tracking-widest text-[#582c83]/50">
               Employee resources
@@ -728,6 +809,30 @@ export default function HomePage() {
             <span className="text-lg" aria-hidden="true">↗</span>
           </a>
         </section>
+
+        {/* STAFF RESOURCES */}
+        <a
+          href="https://trello.com/b/Lymq35Fu/staff-resources?search_id=899acfe6-9e04-4d12-bb69-52810869a66b"
+          target="_blank"
+          className="relative flex min-w-0 min-h-[220px] flex-col justify-between overflow-hidden rounded-3xl border border-white/80 bg-white/75 p-5 text-[#582c83] shadow-xl backdrop-blur-2xl transition-all duration-300 ease-out hover:-translate-y-1 hover:border-white hover:bg-white/[0.86] hover:shadow-2xl lg:col-span-2"
+        >
+          <div>
+            <span className="text-3xl" aria-hidden="true">📚</span>
+
+            <h2 className="mt-5 text-xl font-bold leading-tight">
+              Staff Resources
+            </h2>
+
+            <p className="mt-2 text-sm leading-6 text-[#582c83]/65">
+              Staff resources Trello board
+            </p>
+          </div>
+
+          <div className="mt-5 flex items-center justify-between text-sm font-semibold">
+            <span>View resources</span>
+            <span aria-hidden="true">↗</span>
+          </div>
+        </a>
 
       </div>
 
