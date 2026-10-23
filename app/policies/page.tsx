@@ -33,6 +33,7 @@ import whistleblowerSlidesData from '@/data/whistleblowerSlides.json'
 import workplaceSlidesData from '@/data/workplaceSlides.json'
 import profSlidesData from '@/data/profSlides.json'
 import BookSlideViewer from '@/components/book-slide-viewer';
+import ModuleTableOfContents from '@/components/module-title-slide';
 
 export default function PoliciesPage() {
     const { userData, setUserData } = useApp();
@@ -130,8 +131,25 @@ export default function PoliciesPage() {
     const slides = getSlides();
 
     return (
-        <BookSlideViewer slides={slides} />
+    <div
+        style={{
+        width: "100vw",
+        height: "100vh",
+        margin: 0,
+        padding: 0,
+        overflow: "hidden",
+        }}
+    >
+        <ModuleTableOfContents
+        title="POLICIES AND PROCEDURES"
+        currentSlideDeck="cs"
+        />
+    </div>
     );
+
+    // return (
+    //     <BookSlideViewer slides={slides} />
+    // );
 
     // return (
     //     <Slideshow

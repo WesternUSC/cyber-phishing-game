@@ -16,11 +16,13 @@ type BookSlide = {
 type BookSlideViewerProps = {
   slides: BookSlide[];
   initialSlide?: number;
+  policyTitle: string;
 };
 
 export default function BookSlideViewer({
   slides,
   initialSlide = 0,
+  policyTitle
 }: BookSlideViewerProps) {
   const [currentPage, setCurrentPage] = useState(
     Math.max(0, Math.min(initialSlide, Math.max(0, slides.length - 1)))
@@ -271,6 +273,10 @@ export default function BookSlideViewer({
   return (
     <div className="book-viewer">
 
+      <h1 className="book-viewer__title">
+        {policyTitle}
+      </h1>
+
       <div className="book-viewer__book">
         <div className="book-viewer__page book-viewer__page--left">
           <div className="book-viewer__page-content">
@@ -434,6 +440,20 @@ export default function BookSlideViewer({
           font-family: inherit;
         }
 
+        .book-viewer__title {
+          flex: 0 0 auto;
+          width: 100%;
+          margin: 0;
+          padding: 8px 12px;
+          text-align: center;
+          font-size: 1.6rem;
+          font-weight: 700;
+          line-height: 1.3;
+          color: #4F2683;
+          box-sizing: border-box;
+          overflow-wrap: anywhere;
+        }
+
         .book-viewer__toolbar {
           flex: 0 0 auto;
           display: flex;
@@ -463,7 +483,7 @@ export default function BookSlideViewer({
         .book-viewer__book {
           position: relative;
           flex: 0 0 auto;
-          height: calc(100% - 48px);
+          height: calc(100% - 115px);
           min-width: 0;
           min-height: 0;
           display: grid;

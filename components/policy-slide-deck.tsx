@@ -1,7 +1,6 @@
 'use client'
 
 import React from "react";
-import ModuleTableOfContents from "./module-title-slide";
 import MultipleChoiceQuestion from "./multiple-choice-question";
 
 type QuestionOption = {
@@ -237,27 +236,6 @@ function getSectionCards(
         });
       }
     }
-
-    // if (!isRecord(value)) continue;
-
-    // if (typeof value.intro === "string") {
-    //   cards.push({
-    //     number,
-    //     heading: formatHeading(key),
-    //     body: normalizeText(value.intro),
-    //   });
-    // }
-
-    // if (Array.isArray(value.items)) {
-    //   value.items.forEach((item, index) => {
-    //     if (typeof item !== "string") return;
-
-    //     cards.push({
-    //       heading: `${formatHeading(key)} — ${index + 1}`,
-    //       body: normalizeText(item),
-    //     });
-    //   });
-    // }
   }
 
   return cards;
@@ -860,18 +838,18 @@ export function createPolicySlides(
 ): Slide[] {
   const slides: Slide[] = [];
 
-  slides.push({
-    title: data.titleSlide.title,
-    content: (
-      <>
-        <PolicyStyles />
-        <ModuleTableOfContents
-          title={normalizeText(data.titleSlide.title)}
-          currentSlideDeck={currentSlideDeck}
-        />
-      </>
-    ),
-  });
+  // slides.push({
+  //   title: data.titleSlide.title,
+  //   content: (
+  //     <>
+  //       <PolicyStyles />
+  //       <ModuleTableOfContents
+  //         title={normalizeText(data.titleSlide.title)}
+  //         currentSlideDeck={currentSlideDeck}
+  //       />
+  //     </>
+  //   ),
+  // });
 
   const policy = data.policiesSlide;
 

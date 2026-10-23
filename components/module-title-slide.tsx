@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { useApp } from "@/components/app-context";
+import { useRouter } from 'next/navigation';
 
 type Slide =
   | "eso"
@@ -261,6 +262,7 @@ export default function ModuleTableOfContents({
   currentSlideDeck,
 }: ModuleTableOfContentsProps) {
   const { userData } = useApp();
+  const router = useRouter();
 
   const [scores, setScores] = useState<Record<string, number>>({});
   const [selectedModule, setSelectedModule] = useState<
@@ -360,7 +362,8 @@ export default function ModuleTableOfContents({
 
   function onSlideSelect(modulePage: string) {
     localStorage.setItem("currentSlideDeck", modulePage);
-    location.reload();
+    //location.reload();
+    router.push("/policy?policy=" + modulePage);
   }
 
   function handleModuleClick(module: (typeof modules)[number]) {
