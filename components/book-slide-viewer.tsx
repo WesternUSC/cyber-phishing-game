@@ -47,12 +47,27 @@ export default function BookSlideViewer({
     "next" | "previous" | null
   >(null);
 
+  const [flipFromIndex, setFlipFromIndex] = useState<number | null>(null);
+  const [flipToIndex, setFlipToIndex] = useState<number | null>(null);
+  
   const animateToPage = (
     nextIndex: number,
     direction: "next" | "previous"
   ) => {
     if (flipDirection !== null) return;
 
+    const fromIndex =
+      direction === "next"
+        ? currentPage + 1
+        : currentPage;
+
+    const toIndex =
+      direction === "next"
+        ? currentPage + 2
+        : currentPage - 1;
+
+    setFlipFromIndex(fromIndex);
+    setFlipToIndex(toIndex);
     setFlipDirection(direction);
 
     window.setTimeout(() => {
@@ -68,6 +83,8 @@ export default function BookSlideViewer({
       });
 
       setFlipDirection(null);
+      setFlipFromIndex(null);
+      setFlipToIndex(null);
     }, 700);
   };
 
@@ -270,6 +287,16 @@ export default function BookSlideViewer({
 
   if (slides.length === 0) return null;
 
+  const flipFromSlide =
+    flipDirection === "next"
+      ? slides[currentPage - 2 + 1]
+      : slides[currentPage + 1];
+
+  const flipToSlide =
+    flipDirection === "next"
+      ? slides[currentPage - 1]
+      : slides[currentPage];
+
   return (
     <div className="book-viewer">
 
@@ -280,20 +307,20 @@ export default function BookSlideViewer({
       <div className="book-viewer__book">
         <div className="book-viewer__page book-viewer__page--left">
           <div className="book-viewer__page-content">
-            {leftSlide.content}
+            {flipDirection === "previous"
+              ? slides[currentPage - 2]?.content
+              : leftSlide?.content}
           </div>
         </div>
 
         <div className="book-viewer__seam" />
 
         <div className="book-viewer__page book-viewer__page--right">
-          {rightSlide ? (
-            <div className="book-viewer__page-content">
-              {rightSlide.content}
-            </div>
-          ) : (
-            <div className="book-viewer__empty-page" />
-          )}
+          <div className="book-viewer__page-content">
+            {flipDirection === "next"
+              ? slides[currentPage + 3]?.content
+              : rightSlide?.content}
+          </div>
         </div>
 
         {flipDirection !== null && (
@@ -306,17 +333,17 @@ export default function BookSlideViewer({
           >
             <div className="book-viewer__flip-face book-viewer__flip-face--front">
               <div className="book-viewer__page-content">
-                {flipDirection === "next"
-                  ? rightSlide?.content
-                  : leftSlide?.content}
+                {flipFromIndex !== null
+                  ? slides[flipFromIndex]?.content
+                  : null}
               </div>
             </div>
 
             <div className="book-viewer__flip-face book-viewer__flip-face--back">
               <div className="book-viewer__page-content">
-                {flipDirection === "next"
-                  ? slides[currentPage + 2]?.content
-                  : slides[currentPage - 1]?.content}
+                {flipToIndex !== null
+                  ? slides[flipToIndex]?.content
+                  : null}
               </div>
             </div>
           </div>
@@ -492,6 +519,7 @@ export default function BookSlideViewer({
           border-radius: 6px;
           background: #fff;
           box-shadow: 0 8px 28px rgba(40, 25, 55, 0.15);
+          perspective: 1800px;
         }
 
         .book-viewer__page {
