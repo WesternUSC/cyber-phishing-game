@@ -670,7 +670,7 @@ export default function HomePage() {
           className="relative flex min-w-0 min-h-[220px] flex-col justify-between overflow-hidden rounded-3xl border border-white/80 bg-white/75 p-5 text-[#582c83] shadow-xl backdrop-blur-2xl transition-all duration-300 ease-out hover:-translate-y-1 hover:border-white hover:bg-white/[0.86] hover:shadow-2xl lg:col-span-2"
         >
           <div>
-            <span className="text-3xl" aria-hidden="true">🩺</span>
+            {/* <span className="text-3xl" aria-hidden="true">🩺</span> */}
 
             <h2 className="mt-5 text-xl font-bold leading-tight">
               Health & Dental Benefits
@@ -817,7 +817,7 @@ export default function HomePage() {
           className="relative flex min-w-0 min-h-[220px] flex-col justify-between overflow-hidden rounded-3xl border border-white/80 bg-white/75 p-5 text-[#582c83] shadow-xl backdrop-blur-2xl transition-all duration-300 ease-out hover:-translate-y-1 hover:border-white hover:bg-white/[0.86] hover:shadow-2xl lg:col-span-2"
         >
           <div>
-            <span className="text-3xl" aria-hidden="true">📚</span>
+            {/* <span className="text-3xl" aria-hidden="true">📚</span> */}
 
             <h2 className="mt-5 text-xl font-bold leading-tight">
               Staff Resources

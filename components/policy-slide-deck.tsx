@@ -62,6 +62,7 @@ type Slide = {
 const CARDS_PER_SLIDE = 4;
 const POLICY_ROWS_PER_SLIDE = 6;
 const TAKEAWAYS_PER_SLIDE = 4;
+const NESTED_ITEMS_PER_SLIDE = 3;
 
 const NUMBER_WORDS: Record<string, string> = {
   zero: "0",
@@ -407,30 +408,31 @@ function PolicyStyles() {
         min-height: 0;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        gap: 18px;
+        justify-content: flex-start;
+        gap: 12px;
+        overflow: auto;
       }
 
       .numbered-section__parent {
         display: flex;
         align-items: flex-start;
-        gap: 14px;
-        padding-bottom: 16px;
+        gap: 12px;
+        padding-bottom: 12px;
         border-bottom: 1px solid #e5e7eb;
       }
 
       .numbered-section__badge {
-        flex: 0 0 44px;
-        min-height: 44px;
+        flex: 0 0 42px;
+        min-height: 42px;
         padding: 4px;
         box-sizing: border-box;
         border-radius: 9px;
         background: #582c83;
-        color: #ffffff;
+        color: #fff;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 12px;
+        font-size: 11px;
         font-weight: 700;
         text-align: center;
         overflow-wrap: anywhere;
@@ -444,39 +446,41 @@ function PolicyStyles() {
       .numbered-section__main h2 {
         margin: 0 0 5px;
         color: #582c83;
-        font-size: clamp(17px, 1.6vw, 22px);
+        font-size: clamp(16px, 1.5vw, 21px);
         line-height: 1.25;
+        overflow-wrap: anywhere;
       }
 
       .numbered-section__main p {
         margin: 0;
         color: #374151;
-        font-size: clamp(12px, 1vw, 15px);
-        line-height: 1.5;
+        font-size: clamp(12px, 0.95vw, 14px);
+        line-height: 1.45;
         white-space: pre-line;
         overflow-wrap: anywhere;
       }
 
       .numbered-section__children {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        column-gap: clamp(14px, 2.5vw, 36px);
-        row-gap: 8px;
-        margin-left: 58px;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 8px;
+        margin-left: 0;
         align-content: start;
       }
 
       .numbered-section__item {
         display: flex;
         align-items: flex-start;
-        gap: 9px;
+        gap: 10px;
         min-width: 0;
-        padding: 5px 0;
+        padding: 9px 12px;
+        background: #faf9fc;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
       }
 
       .numbered-section__number {
-        flex: 0 0 auto;
-        min-width: 42px;
+        flex: 0 0 52px;
         color: #582c83;
         font-size: 12px;
         font-weight: 700;
@@ -485,13 +489,32 @@ function PolicyStyles() {
       }
 
       .numbered-section__item p {
+        flex: 1;
         min-width: 0;
         margin: 0;
         color: #374151;
         font-size: clamp(12px, 0.95vw, 14px);
-        line-height: 1.45;
+        line-height: 1.5;
         white-space: pre-line;
         overflow-wrap: anywhere;
+      }
+
+      @media (max-height: 650px) {
+        .numbered-section {
+          gap: 8px;
+        }
+
+        .numbered-section__parent {
+          padding-bottom: 8px;
+        }
+
+        .numbered-section__children {
+          gap: 5px;
+        }
+
+        .numbered-section__item {
+          padding: 7px 9px;
+        }
       }
 
       @media (max-width: 700px) {
@@ -559,17 +582,17 @@ function PolicyStyles() {
         flex: 1 1 auto;
         min-height: 0;
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         align-content: center;
         align-items: start;
-        gap: clamp(12px, 1.8vw, 24px);
+        gap: clamp(14px, 2vw, 28px);
         padding: 12px 0;
       }
 
       .policy-decimal-card {
         min-width: 0;
         box-sizing: border-box;
-        padding: clamp(14px, 1.8vw, 24px);
+        padding: clamp(16px, 2vw, 28px);
         background: #f1f3f5;
         border: 1px solid #e5e7eb;
         border-radius: 12px;
@@ -579,29 +602,23 @@ function PolicyStyles() {
       .policy-decimal-card h2 {
         margin: 0;
         color: #582c83;
-        font-size: clamp(17px, 1.5vw, 23px);
+        font-size: clamp(18px, 1.6vw, 24px);
         line-height: 1.25;
       }
 
       .policy-decimal-card p {
         margin: 10px 0 0;
         color: #374151;
-        font-size: clamp(12px, 1vw, 15px);
-        line-height: 1.5;
+        font-size: clamp(13px, 1vw, 15px);
+        line-height: 1.55;
         white-space: pre-line;
         overflow-wrap: anywhere;
       }
 
-      @media (max-width: 1050px) {
-        .policy-slide__decimal-cards {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-          align-content: start;
-        }
-      }
-
-      @media (max-width: 600px) {
+      @media (max-width: 700px) {
         .policy-slide__decimal-cards {
           grid-template-columns: minmax(0, 1fr);
+          align-content: start;
         }
       }
 
@@ -963,37 +980,37 @@ export function createPolicySlides(
       const parentCards = decimalCards;
 
       if (parentCards.length > 0) {
-        const groups = parentCards.map((parent) => ({
-          parent,
-          children: nestedCards.filter(
-            (card) => card.number!.startsWith(`${parent.number}.`)
-          ),
-        }));
-
         const pages: ContentCard[][] = [];
-        let currentPage: ContentCard[] = [];
 
-        for (const group of groups) {
-          const groupCards = [group.parent, ...group.children];
+        for (const parent of parentCards) {
+          const children = nestedCards.filter(
+            (card) => card.number!.startsWith(`${parent.number}.`)
+          );
 
-          if (
-            currentPage.length > 0 &&
-            currentPage.length + groupCards.length > CARDS_PER_SLIDE
-          ) {
-            pages.push(currentPage);
-            currentPage = [];
+          const childGroups = paginate(
+            children,
+            NESTED_ITEMS_PER_SLIDE
+          );
+
+          if (childGroups.length === 0) {
+            pages.push([parent]);
+            continue;
           }
 
-          currentPage.push(...groupCards);
-        }
-
-        if (currentPage.length > 0) {
-          pages.push(currentPage);
+          childGroups.forEach((group, index) => {
+            pages.push(
+              index === 0
+                ? [parent, ...group]
+                : [parent, ...group]
+            );
+          });
         }
 
         pages.push(...paginate(otherCards, CARDS_PER_SLIDE));
 
-        const usablePages = pages.filter((page) => page.length > 0);
+        const usablePages = pages.filter(
+          (page) => page.length > 0
+        );
 
         usablePages.forEach((page, index) => {
           const pageTitle =

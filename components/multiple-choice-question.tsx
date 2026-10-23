@@ -304,16 +304,16 @@ const MultipleChoiceQuestion: React.FC<MultipleChoiceQuestionProps> = ({
           margin: "0 auto",
         }}
       >
-        <h2
+        <p
           style={{
             color: "#102e5a",
-            fontSize: "1.6rem",
+            fontSize: "1rem",
             lineHeight: 1.5,
             marginBottom: "2rem",
           }}
         >
           {question}
-        </h2>
+        </p>
 
         <div
           style={{

@@ -32,6 +32,7 @@ import visitorSlidesData from '@/data/visitorSlides.json'
 import whistleblowerSlidesData from '@/data/whistleblowerSlides.json'
 import workplaceSlidesData from '@/data/workplaceSlides.json'
 import profSlidesData from '@/data/profSlides.json'
+import BookSlideViewer from '@/components/book-slide-viewer';
 
 export default function PoliciesPage() {
     const { userData, setUserData } = useApp();
@@ -126,10 +127,16 @@ export default function PoliciesPage() {
         }
     };
 
+    const slides = getSlides();
+
     return (
-        <Slideshow
-            slides={getSlides()}
-            playerName={userData.name}
-        />
+        <BookSlideViewer slides={slides} />
     );
+
+    // return (
+    //     <Slideshow
+    //         slides={getSlides()}
+    //         playerName={userData.name}
+    //     />
+    // );
 }
