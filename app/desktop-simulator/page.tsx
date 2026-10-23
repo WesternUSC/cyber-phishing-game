@@ -1800,7 +1800,7 @@ export default function DesktopSimulator() {
                 moduleStarted.calendar ? (
                     <div className="flex flex-1 min-h-0 bg-white">
                     <iframe
-                        src="https://scribehow.com/embed-preview/Google_Calendar_HowTo_Guide__yG_Ajbg0QMOMTYAFObpkxw?as=slides&size=flexible"
+                        src="https://scribehow.com/o/HmsJcJ_OR627sULvza-cOw/viewer/Google_Calendar_HowTo_Guide__yG_Ajbg0QMOMTYAFObpkxw"
                         title="Google Calendar Training Guide"
                         className="h-full w-full border-0"
                     />
