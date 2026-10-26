@@ -79,7 +79,7 @@ export default function Home() {
             font-medium text-white hover:bg-blue-700
             disabled:cursor-not-allowed disabled:opacity-50"
         >
-          {loading ? "Finding your answer..." : "Ask Gemini"}
+          {loading ? "Finding your answer..." : "Ask"}
         </button>
       </form>
 

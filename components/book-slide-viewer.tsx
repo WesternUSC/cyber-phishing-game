@@ -2,6 +2,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { useRouter } from 'next/navigation';
 
 type BookSlide = {
   title: string;
@@ -24,6 +25,8 @@ export default function BookSlideViewer({
   initialSlide = 0,
   policyTitle
 }: BookSlideViewerProps) {
+  const router = useRouter();
+
   const [currentPage, setCurrentPage] = useState(
     Math.max(0, Math.min(initialSlide, Math.max(0, slides.length - 1)))
   );
@@ -168,7 +171,7 @@ export default function BookSlideViewer({
   };
 
   const finishedPolicy = () => {
-    location.reload();
+    router.push("/policies")
   }
 
   const resetQuiz = () => {
@@ -419,6 +422,13 @@ export default function BookSlideViewer({
                   Continue
                 </button>
 
+                <button
+                  onClick={() => router.push("/home")}
+                  style={{ ...styles.retryButton, marginTop: 12 }}
+                >
+                  Main Menu
+                </button>
+
               </div>
             </div>
           </div>
@@ -460,7 +470,7 @@ export default function BookSlideViewer({
           display: flex;
           flex-direction: column;
           gap: 12px;
-          background: #f1edf5;
+          background: #582c83;
           box-sizing: border-box;
           padding: 12px;
           overflow: hidden;
@@ -476,7 +486,7 @@ export default function BookSlideViewer({
           font-size: 1.6rem;
           font-weight: 700;
           line-height: 1.3;
-          color: #4F2683;
+          color: #fff;
           box-sizing: border-box;
           overflow-wrap: anywhere;
         }

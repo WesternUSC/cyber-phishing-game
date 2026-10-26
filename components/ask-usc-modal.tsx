@@ -92,34 +92,34 @@ export default function AskUSCModal({
         aria-modal="true"
         aria-labelledby="ask-usc-title"
         className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto
-          rounded-2xl bg-white p-6 shadow-2xl sm:p-8"
+          rounded-2xl bg-[#582c83] p-6 shadow-2xl sm:p-8"
       >
         <button
           type="button"
           onClick={onClose}
           aria-label="Close Ask USC"
           className="absolute right-4 top-4 flex h-9 w-9 items-center
-            justify-center rounded-full text-2xl text-gray-500
-            hover:bg-gray-100 hover:text-gray-900"
+            justify-center rounded-full text-2xl text-purple-200
+            hover:bg-gray-100 hover:text-white"
         >
           &times;
         </button>
 
         <h1
           id="ask-usc-title"
-          className="pr-10 text-3xl font-bold text-gray-900"
+          className="pr-10 text-3xl font-bold text-white"
         >
           Ask USC
         </h1>
 
-        <p className="mt-2 text-gray-600">
+        <p className="mt-2 text-purple-100">
           Ask questions about the USC.
         </p>
 
         <form onSubmit={handleSubmit} className="mt-8 space-y-4">
           <label
             htmlFor="ask-usc-question"
-            className="block font-medium text-gray-900"
+            className="block font-medium text-white"
           >
             Your question
           </label>
@@ -132,23 +132,23 @@ export default function AskUSCModal({
             rows={4}
             required
             maxLength={2000}
-            className="w-full rounded-lg border border-gray-300 p-3
-              text-gray-900 outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full rounded-lg border border-gray-300 bg-white p-3
+              text-black outline-none focus:ring-2 focus:ring-purple-300"
           />
 
           <button
             type="submit"
             disabled={loading || !question.trim()}
-            className="rounded-lg bg-[#4F2683] px-5 py-3 font-medium
-              text-white hover:bg-[#3D1D66]
+            className="rounded-lg bg-[#3D1C5C] px-5 py-3 font-medium
+              text-white transition-colors hover:bg-[#2D1445]
               disabled:cursor-not-allowed disabled:opacity-50"
           >
-            {loading ? "Finding your answer..." : "Ask Gemini"}
+            {loading ? "Finding your answer..." : "Ask"}
           </button>
         </form>
 
         {loading && (
-          <p role="status" className="mt-6 text-gray-500">
+          <p role="status" className="mt-6 text-purple-200">
             Reading the document and preparing an answer...
           </p>
         )}
@@ -164,10 +164,10 @@ export default function AskUSCModal({
 
         {answer && (
           <section className="mt-8 rounded-xl border border-gray-200 p-5">
-            <h2 className="text-xl font-semibold text-gray-900">
+            <h2 className="text-xl font-semibold text-white">
               Answer
             </h2>
-            <p className="mt-3 whitespace-pre-wrap leading-7 text-gray-800">
+            <p className="mt-3 whitespace-pre-wrap leading-7 text-white">
               {answer}
             </p>
           </section>

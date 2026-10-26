@@ -788,7 +788,12 @@ export default function HomePage() {
         </section>
 
         {/* BOTTOM RIGHT: RIPPLING */}
-        <section className="relative min-w-0 h-full overflow-hidden rounded-3xl border border-white/80 bg-white/75 p-6 text-[#582c83] shadow-xl backdrop-blur-2xl transition-all duration-300 ease-out hover:-translate-y-1 hover:border-white hover:bg-white/[0.86] hover:shadow-2xl min-h-[220px] lg:col-span-2">
+        <a 
+          href="https://app.rippling.com/login"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative min-w-0 h-full overflow-hidden rounded-3xl border border-white/80 bg-white/75 p-6 text-[#582c83] shadow-xl backdrop-blur-2xl transition-all duration-300 ease-out hover:-translate-y-1 hover:border-white hover:bg-white/[0.86] hover:shadow-2xl min-h-[220px] lg:col-span-2"
+        >
           <div className="my-6">
             <p className="text-xs font-medium uppercase tracking-widest text-[#582c83]/50">
               Employee resources
@@ -799,16 +804,13 @@ export default function HomePage() {
             </h2>
           </div>
 
-          <a
-            href="https://app.rippling.com/login"
-            target="_blank"
-            rel="noopener noreferrer"
+          <div
             className="primary-button flex w-full items-center justify-between rounded-xl px-5 py-4 text-sm font-bold tracking-wider"
           >
             <span>OPEN RIPPLING</span>
             <span className="text-lg" aria-hidden="true">↗</span>
-          </a>
-        </section>
+          </div>
+        </a>
 
         {/* STAFF RESOURCES */}
         <a
