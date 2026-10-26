@@ -23,6 +23,17 @@ type User = {
   scribe7: string;
 };
 
+type RoadClosure = {
+  title: string;
+  description: string;
+};
+
+type RoadClosuresResponse = {
+  closures: RoadClosure[];
+  source: string;
+  updatedAt: string;
+};
+
 type WeatherData = {
   temperature: number;
   code: number;
@@ -80,6 +91,53 @@ export default function HomePage() {
 
   const [askOpen, setAskOpen] = useState(false);
   const [question, setQuestion] = useState("");
+
+  const [isDailyPolicy, setIsDailyPolicy] = useState(false);
+
+  const [roadClosures, setRoadClosures] = useState<RoadClosure[]>([]);
+  const [roadClosuresLoading, setRoadClosuresLoading] = useState(true);
+  const [roadClosuresError, setRoadClosuresError] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    async function loadRoadClosures() {
+      try {
+        const response = await fetch("/api/road-closures");
+
+        if (!response.ok) {
+          throw new Error("Failed to load road closures.");
+        }
+
+        const data: RoadClosuresResponse = await response.json();
+
+        if (!cancelled) {
+          setRoadClosures(data.closures);
+          setRoadClosuresError(false);
+        }
+      } catch (error) {
+        console.error("Could not load road closures:", error);
+
+        if (!cancelled) {
+          setRoadClosuresError(true);
+        }
+      } finally {
+        if (!cancelled) {
+          setRoadClosuresLoading(false);
+        }
+      }
+    }
+
+    loadRoadClosures();
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  useEffect(() => {
+    setIsDailyPolicy(Math.random() < 0.5);
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -649,17 +707,86 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* TOP RIGHT: WELCOME */}
+        {/* TOP RIGHT: DAILY POLICY / ROAD CLOSURES */}
         <section className="relative min-w-0 h-full overflow-hidden rounded-3xl border border-white/80 bg-white/75 p-6 text-[#582c83] shadow-xl backdrop-blur-2xl transition-all duration-300 ease-out hover:-translate-y-1 hover:border-white hover:bg-white/[0.86] hover:shadow-2xl min-h-[300px] lg:col-span-3">
           <div className="welcome-orb" aria-hidden="true" />
 
           <div className="relative z-10">
-            <h2 className="mt-2 max-w-md text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
-              Daily Policy
-            </h2>
-            <p className="mt-4 max-w-sm text-sm leading-7 text-[#582c83]/70">
-              Placeholder. Changes with a daily policy.
-            </p>
+            {isDailyPolicy ? (
+              <>
+                <h2 className="mt-2 max-w-md text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
+                  Daily Policy
+                </h2>
+
+                <p className="mt-4 max-w-sm text-sm leading-7 text-[#582c83]/70">
+                  Placeholder. Changes with a daily policy.
+                </p>
+              </>
+            ) : (
+              <>
+                <h2 className="mt-2 text-2xl font-bold leading-tight sm:text-3xl">
+                  Road Closures
+                </h2>
+
+                <p className="mt-2 text-xs text-[#582c83]/55">
+                  Western University campus updates
+                </p>
+
+                <div className="mt-4 space-y-4">
+                  {roadClosuresLoading ? (
+                    <p className="text-sm text-[#582c83]/70">
+                      Loading road closures...
+                    </p>
+                  ) : roadClosuresError ? (
+                    <p className="text-sm text-[#582c83]/70">
+                      Road closures are temporarily unavailable.
+                      {" "}
+                      <a
+                        href="https://www.uwo.ca/fm/notices/campus-road-closures.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-semibold underline"
+                      >
+                        View official updates
+                      </a>
+                    </p>
+                  ) : roadClosures.length === 0 ? (
+                    <p className="text-sm text-[#582c83]/70">
+                      No campus road closures are currently listed.
+                    </p>
+                  ) : (
+                    <div className="max-h-[100px] space-y-4 overflow-y-auto pr-2">
+                      {roadClosures.map((closure, index) => (
+                        <div
+                          key={`${closure.title}-${index}`}
+                          className="border-l-2 border-[#582c83]/30 pl-3"
+                        >
+                          <h3 className="text-sm font-bold leading-snug">
+                            {closure.title}
+                          </h3>
+
+                          {closure.description && (
+                            <p className="mt-1 text-xs leading-5 text-[#582c83]/70">
+                              {closure.description}
+                            </p>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                <a
+                  href="https://www.uwo.ca/fm/notices/campus-road-closures.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-flex items-center gap-2 text-sm font-semibold hover:underline"
+                >
+                  View all road closures
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </>
+            )}
           </div>
         </section>
 
