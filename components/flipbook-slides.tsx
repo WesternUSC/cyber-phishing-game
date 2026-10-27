@@ -24,11 +24,36 @@ const Page = forwardRef<HTMLDivElement, PageProps>(
     >
       <div className="page-content">
         {cover ? (
-          <div className="cover-content">
-            <span className="cover-eyebrow">Policies & Procedures</span>
+          <div
+            className="cover-content"
+            style={{
+                transform: "translateY(-20px)",
+            }}
+            >
+            <img
+                src="/freshservice-icons/usc.png"
+                alt="USC Logo"
+                width={200}
+                height={200}
+                style={{
+                display: "block",
+                margin: "0 auto",
+                paddingBottom: "20px",
+                objectFit: "contain",
+                }}
+            />
+
+            <span className="cover-eyebrow">
+                Policies & Procedures
+            </span>
+
             <h2>{title}</h2>
+
             <p>USC</p>
-            <span className="cover-hint">OPEN TO EXPLORE THE POLICY</span>
+
+            <span className="cover-hint">
+                OPEN TO EXPLORE THE POLICY
+            </span>
           </div>
         ) : (
           <>
