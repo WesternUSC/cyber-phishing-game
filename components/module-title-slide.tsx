@@ -309,7 +309,6 @@ export default function ModuleTableOfContents({
       const availableHeight =
         container.clientHeight - paddingTop - paddingBottom;
 
-      // Reserve space for the book's top and bottom padding.
       const rowHeight = 56;
       const gap = 10;
 
@@ -362,7 +361,6 @@ export default function ModuleTableOfContents({
 
   function onSlideSelect(modulePage: string) {
     localStorage.setItem("currentSlideDeck", modulePage);
-    //location.reload();
     router.push("/policy?policy=" + modulePage);
   }
 
@@ -382,16 +380,22 @@ export default function ModuleTableOfContents({
     if (!selectedModule) return;
 
     const storageKey = scoreStorageKeys[selectedModule.name];
-
+    
     if (storageKey) {
       localStorage.removeItem(storageKey);
+    }
+
+    const storageKeyAnswers = scoreStorageKeys[selectedModule.name].replace("score", "answers");
+    
+    if (storageKeyAnswers) {
+      localStorage.removeItem(storageKeyAnswers);
     }
 
     setSelectedModule(null);
 
     localStorage.setItem("currentSlideDeck", selectedModule.page);
 
-    location.reload();
+    onSlideSelect(storageKey.replace("-score", ""));
   }
 
   function renderModuleCard(

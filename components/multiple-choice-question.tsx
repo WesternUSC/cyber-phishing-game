@@ -258,15 +258,14 @@ const MultipleChoiceQuestion: React.FC<MultipleChoiceQuestionProps> = ({
       }}
     >
       <div>
-        <h1
+        <h6
           style={{
             margin: 0,
             color: "#582c83",
-            fontSize: "2.75rem",
           }}
         >
           KNOWLEDGE CHECK
-        </h1>
+        </h6>
 
         <div
           style={{
@@ -279,7 +278,7 @@ const MultipleChoiceQuestion: React.FC<MultipleChoiceQuestionProps> = ({
         />
       </div>
 
-      <div
+      {/* <div
         style={{
           alignSelf: "flex-end",
           marginTop: "1rem",
@@ -291,7 +290,7 @@ const MultipleChoiceQuestion: React.FC<MultipleChoiceQuestionProps> = ({
         }}
       >
         Score: {score}
-      </div>
+      </div> */}
 
       <div
         style={{
@@ -355,14 +354,14 @@ const MultipleChoiceQuestion: React.FC<MultipleChoiceQuestionProps> = ({
                   display: "flex",
                   alignItems: "flex-start",
                   gap: "1rem",
-                  padding: "1.25rem",
+                  padding: "0.25rem",
                   textAlign: "left",
                   backgroundColor,
                   border: `2px solid ${borderColor}`,
                   borderRadius: "12px",
                   color: textColor,
                   cursor: isAnswered ? "default" : "pointer",
-                  fontSize: "1rem",
+                  fontSize: "0.9rem",
                   lineHeight: 1.5,
                   transition: "all 200ms ease",
                   opacity:

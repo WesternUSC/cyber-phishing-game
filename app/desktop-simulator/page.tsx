@@ -13,7 +13,6 @@ import ModuleCompletion from '@/components/module-completion';
 import { Trophy } from 'lucide-react';
 import { saveResult } from '@/lib/saveResult';
 import SlackApp from '@/components/slack-app';
-import HelpChat from '@/components/help-chat';
 import { useRouter } from "next/navigation";
 import { useApp } from "@/components/app-context";
 
@@ -748,11 +747,6 @@ export default function DesktopSimulator() {
             backgroundSize: "100% 100%"
             }}
         >
-            <HelpChat
-            iconSrc="usc-logo-help-icon.png"
-            recipientEmail={userEmail}
-            isDesktop={true}
-            />
             <ModuleBookmarkRail />
             {/* Desktop area — sits above the taskbar */}
             <div className="flex h-[calc(100vh-3rem)] items-center justify-center p-5">

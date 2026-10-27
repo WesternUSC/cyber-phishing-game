@@ -2,6 +2,7 @@
 
 import React from "react";
 import MultipleChoiceQuestion from "./multiple-choice-question";
+import ModuleTableOfContents from "./module-title-slide";
 
 type QuestionOption = {
   label: string;
@@ -60,7 +61,7 @@ type Slide = {
 
 const CARDS_PER_SLIDE = 4;
 const POLICY_ROWS_PER_SLIDE = 6;
-const TAKEAWAYS_PER_SLIDE = 4;
+const TAKEAWAYS_PER_SLIDE = 2;
 const NESTED_ITEMS_PER_SLIDE = 3;
 
 const NUMBER_WORDS: Record<string, string> = {
@@ -175,6 +176,163 @@ function paginate<T>(items: T[], size: number): T[][] {
   return pages;
 }
 
+const SLIDE_WIDTH = 630;
+const SLIDE_HEIGHT = 650;
+
+const SLIDE_CONTENT_HEIGHT = 500;
+const MAX_REGULAR_CARDS = 4;
+const MAX_DECIMAL_CARDS = 2;
+const MAX_NESTED_CHILDREN = 2;
+const ESTIMATED_CHARACTERS_PER_LINE = 36;
+const ESTIMATED_LINE_HEIGHT = 21;
+const ESTIMATED_CARD_PADDING = 32;
+const ESTIMATED_CARD_HEADING_HEIGHT = 28;
+const ESTIMATED_CARD_GAP = 12;
+
+function estimateTextHeight(
+  text: string,
+  charsPerLine = ESTIMATED_CHARACTERS_PER_LINE,
+  lineHeight = ESTIMATED_LINE_HEIGHT
+): number {
+  if (!text) return 0;
+
+  return (
+    Math.max(1, Math.ceil(text.length / charsPerLine)) *
+    lineHeight
+  );
+}
+
+function estimateCardHeight(card: ContentCard): number {
+  const headingHeight = estimateTextHeight(
+    card.heading,
+    28,
+    22
+  );
+
+  const bodyHeight = estimateTextHeight(
+    card.body,
+    ESTIMATED_CHARACTERS_PER_LINE,
+    21
+  );
+
+  return (
+    headingHeight +
+    bodyHeight +
+    ESTIMATED_CARD_PADDING
+  );
+}
+
+function paginateCardsToFit(
+  cards: ContentCard[],
+  maxCards = MAX_REGULAR_CARDS,
+  maxHeight = SLIDE_CONTENT_HEIGHT,
+  columns = 2
+): ContentCard[][] {
+  const pages: ContentCard[][] = [];
+  let currentPage: ContentCard[] = [];
+
+  function estimatePageHeight(items: ContentCard[]): number {
+    let height = 0;
+
+    for (let i = 0; i < items.length; i += columns) {
+      const row = items.slice(i, i + columns);
+
+      height += Math.max(
+        ...row.map(estimateCardHeight)
+      );
+
+      if (i + columns < items.length) {
+        height += ESTIMATED_CARD_GAP;
+      }
+    }
+
+    return height;
+  }
+
+  for (const card of cards) {
+    const candidate = [...currentPage, card];
+
+    if (
+      currentPage.length > 0 &&
+      (
+        candidate.length > maxCards ||
+        estimatePageHeight(candidate) > maxHeight
+      )
+    ) {
+      pages.push(currentPage);
+      currentPage = [card];
+    } else {
+      currentPage = candidate;
+    }
+  }
+
+  if (currentPage.length > 0) {
+    pages.push(currentPage);
+  }
+
+  return pages;
+}
+
+function paginateDecimalCards(
+  cards: ContentCard[]
+): ContentCard[][] {
+  return paginateCardsToFit(
+    cards,
+    MAX_DECIMAL_CARDS,
+    470,
+    2
+  );
+}
+
+function estimatePolicyRowHeight(
+  row: { label: string; value: string }
+): number {
+  const labelHeight = estimateTextHeight(
+    row.label,
+    17,
+    20
+  );
+
+  const valueHeight = estimateTextHeight(
+    row.value,
+    43,
+    20
+  );
+
+  return Math.max(labelHeight, valueHeight) + 20;
+}
+
+function paginatePolicyRows(
+  rows: { label: string; value: string }[],
+  maxHeight = 420
+): { label: string; value: string }[][] {
+  const pages: { label: string; value: string }[][] = [];
+  let currentPage: { label: string; value: string }[] = [];
+  let currentHeight = 0;
+
+  for (const row of rows) {
+    const rowHeight = estimatePolicyRowHeight(row);
+
+    if (
+      currentPage.length > 0 &&
+      currentHeight + rowHeight > maxHeight
+    ) {
+      pages.push(currentPage);
+      currentPage = [];
+      currentHeight = 0;
+    }
+
+    currentPage.push(row);
+    currentHeight += rowHeight;
+  }
+
+  if (currentPage.length > 0) {
+    pages.push(currentPage);
+  }
+
+  return pages;
+}
+
 function getSectionCards(
   section: Record<string, unknown>
 ): ContentCard[] {
@@ -255,7 +413,6 @@ function PolicyStyles() {
         display: flex;
         flex-direction: column;
         overflow: hidden;
-        background: #ffffff;
         color: #334155;
         font-family: inherit;
       }
@@ -313,7 +470,6 @@ function PolicyStyles() {
         overflow-wrap: anywhere;
       }
 
-      /* Policy summary table. */
       .policy-summary {
         flex: 1 1 auto;
         min-height: 0;
@@ -615,6 +771,174 @@ function PolicyStyles() {
           line-height: 1.4;
         }
       }
+
+      @media (max-width: 630px) {
+        .policy-slide {
+          --slide-padding: 18px;
+          overflow: hidden;
+        }
+
+        .policy-slide__header {
+          margin-bottom: 12px;
+          padding-bottom: 8px;
+          border-bottom-width: 2px;
+        }
+
+        .policy-slide__header h1 {
+          font-size: 23px;
+          line-height: 1.15;
+        }
+
+        .policy-slide__cards {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          align-content: start;
+          gap: 8px;
+        }
+
+        .policy-card {
+          padding: 10px;
+          border-radius: 7px;
+        }
+
+        .policy-card h2 {
+          font-size: 14px;
+          line-height: 1.25;
+          margin-bottom: 5px;
+        }
+
+        .policy-card p {
+          font-size: 12px;
+          line-height: 1.4;
+        }
+
+        .policy-slide__decimal-cards {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          align-content: start;
+          gap: 10px;
+          padding: 4px 0;
+        }
+
+        .policy-decimal-card {
+          padding: 14px;
+          border-radius: 9px;
+        }
+
+        .policy-decimal-card h2 {
+          font-size: 20px;
+        }
+
+        .policy-decimal-card p {
+          font-size: 13px;
+          line-height: 1.4;
+          margin-top: 7px;
+        }
+
+        .numbered-section {
+          gap: 8px;
+          overflow: hidden;
+        }
+
+        .numbered-section__parent {
+          gap: 9px;
+          padding-bottom: 8px;
+        }
+
+        .numbered-section__badge {
+          flex-basis: 36px;
+          min-height: 36px;
+          font-size: 10px;
+        }
+
+        .numbered-section__main h2 {
+          font-size: 16px;
+          margin-bottom: 4px;
+        }
+
+        .numbered-section__main p {
+          font-size: 12px;
+          line-height: 1.35;
+        }
+
+        .numbered-section__children {
+          gap: 6px;
+        }
+
+        .numbered-section__item {
+          gap: 7px;
+          padding: 8px;
+        }
+
+        .numbered-section__number {
+          flex-basis: 42px;
+          font-size: 11px;
+        }
+
+        .numbered-section__item p {
+          font-size: 12px;
+          line-height: 1.35;
+        }
+
+        .policy-summary {
+          justify-content: flex-start;
+          gap: 10px;
+        }
+
+        .policy-table__row {
+          grid-template-columns: minmax(95px, 32%) minmax(0, 68%);
+        }
+
+        .policy-table__label,
+        .policy-table__value {
+          padding: 7px 9px;
+          font-size: 12px;
+          line-height: 1.35;
+        }
+
+        .policy-summary__details {
+          padding: 10px 12px;
+          gap: 5px;
+        }
+
+        .policy-summary__details p {
+          font-size: 12px;
+          line-height: 1.4;
+        }
+      }
+
+      @media (max-height: 650px) {
+        .policy-slide {
+          --slide-padding: 16px;
+        }
+
+        .policy-slide__header {
+          margin-bottom: 9px;
+          padding-bottom: 6px;
+        }
+
+        .policy-slide__cards {
+          gap: 7px;
+        }
+
+        .policy-card {
+          padding: 9px;
+        }
+
+        .policy-slide__decimal-cards {
+          gap: 8px;
+        }
+
+        .policy-decimal-card {
+          padding: 11px;
+        }
+
+        .numbered-section {
+          gap: 6px;
+        }
+
+        .numbered-section__item {
+          padding: 6px 8px;
+        }
+      }
     `}</style>
   );
 }
@@ -622,7 +946,7 @@ function PolicyStyles() {
 function SlideHeader({ title }: { title: string }) {
   return (
     <header className="policy-slide__header">
-      <h1>{normalizeText(title).toUpperCase()}</h1>
+      <h6>{normalizeText(title).toUpperCase()}</h6>
     </header>
   );
 }
@@ -855,7 +1179,7 @@ export function createPolicySlides(
 
   if (policy) {
     const rows = policy.table ?? [];
-    const rowPages = paginate(rows, POLICY_ROWS_PER_SLIDE);
+    const rowPages = paginatePolicyRows(rows);
     const pages = rowPages.length || 1;
 
     for (let index = 0; index < pages; index++) {
@@ -910,13 +1234,15 @@ export function createPolicySlides(
     );
 
     if (decimalCards.length > 0 && nestedCards.length === 0) {
-      const pages = paginate(decimalCards, 3);
+      const pages = paginateDecimalCards(decimalCards);
 
       pages.forEach((page, index) => {
-        const pageTitle =
-          pages.length > 1
-            ? `${title} (${index + 1}/${pages.length})`
-            : title;
+        // const pageTitle =
+        //   pages.length > 1
+        //     ? `${title} (${index + 1}/${pages.length})`
+        //     : title;
+
+        const pageTitle = title;
 
         slides.push({
           title: pageTitle,
@@ -932,13 +1258,15 @@ export function createPolicySlides(
         });
       });
 
-      const otherPages = paginate(otherCards, CARDS_PER_SLIDE);
+      const otherPages = paginateCardsToFit(
+        otherCards,
+        MAX_REGULAR_CARDS,
+        SLIDE_CONTENT_HEIGHT,
+        2
+      );
 
       otherPages.forEach((page, index) => {
-        const pageTitle =
-          otherPages.length > 1
-            ? `${title} — Additional Content (${index + 1}/${otherPages.length})`
-            : `${title} — Additional Content`;
+        const pageTitle = title;
 
         slides.push({
           title: pageTitle,
@@ -965,9 +1293,11 @@ export function createPolicySlides(
             (card) => card.number!.startsWith(`${parent.number}.`)
           );
 
-          const childGroups = paginate(
+          const childGroups = paginateCardsToFit(
             children,
-            NESTED_ITEMS_PER_SLIDE
+            MAX_NESTED_CHILDREN,
+            330,
+            1
           );
 
           if (childGroups.length === 0) {
@@ -984,17 +1314,21 @@ export function createPolicySlides(
           });
         }
 
-        pages.push(...paginate(otherCards, CARDS_PER_SLIDE));
+        pages.push(
+          ...paginateCardsToFit(
+            otherCards,
+            MAX_REGULAR_CARDS,
+            SLIDE_CONTENT_HEIGHT,
+            2
+          )
+        );
 
         const usablePages = pages.filter(
           (page) => page.length > 0
         );
 
         usablePages.forEach((page, index) => {
-          const pageTitle =
-            usablePages.length > 1
-              ? `${title} (${index + 1}/${usablePages.length})`
-              : title;
+          const pageTitle = title;
 
           slides.push({
             title: pageTitle,
@@ -1014,13 +1348,15 @@ export function createPolicySlides(
       }
     }
 
-    const pages = paginate(cards, CARDS_PER_SLIDE);
+    const pages = paginateCardsToFit(
+      cards,
+      MAX_REGULAR_CARDS,
+      SLIDE_CONTENT_HEIGHT,
+      2
+    );
 
     pages.forEach((page, index) => {
-      const pageTitle =
-        pages.length > 1
-          ? `${title} (${index + 1}/${pages.length})`
-          : title;
+      const pageTitle = title;
 
       slides.push({
         title: pageTitle,
@@ -1048,13 +1384,19 @@ export function createPolicySlides(
       })
     );
 
-    const pages = paginate(takeawayCards, TAKEAWAYS_PER_SLIDE);
+    const pages = paginateCardsToFit(
+      takeawayCards,
+      TAKEAWAYS_PER_SLIDE,
+      SLIDE_CONTENT_HEIGHT,
+      2
+    );
 
     pages.forEach((page, index) => {
-      const title =
-        pages.length > 1
-          ? `${takeaways.title} (${index + 1}/${pages.length})`
-          : takeaways.title;
+      // const title =
+      //   pages.length > 1
+      //     ? `${takeaways.title} (${index + 1}/${pages.length})`
+      //     : takeaways.title;
+      const title = takeaways.title;
 
       slides.push({
         title,

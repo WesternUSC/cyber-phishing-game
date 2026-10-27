@@ -27,6 +27,7 @@ import whistleblowerSlidesData from '@/data/whistleblowerSlides.json'
 import workplaceSlidesData from '@/data/workplaceSlides.json'
 import profSlidesData from '@/data/profSlides.json'
 import BookSlideViewer from '@/components/book-slide-viewer';
+import FlipBookSlideViewer from "@/components/flipbook-slides";
 
 export default function PolicyPageClient() {
     const { userData, setUserData } = useApp();
@@ -145,7 +146,11 @@ export default function PolicyPageClient() {
         eso: "Short Term Flexibility Procedure",
     };
 
+    // return (
+    //     <BookSlideViewer slides={getSlides()} policyTitle={policyTitles[searchParams.get("policy") ?? "eso"]} />
+    // );
+
     return (
-        <BookSlideViewer slides={getSlides()} policyTitle={policyTitles[searchParams.get("policy") ?? "eso"]} />
-    );
+        <FlipBookSlideViewer slides={getSlides()} policyTitle={policyTitles[searchParams.get("policy") ?? "eso"]} />
+    ); 
 }

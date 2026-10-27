@@ -2,46 +2,23 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useZoom } from "./zoom-context";
 
-const fontSizes = [
-  { label: "A−", value: 1 },
-  { label: "A", value: 1.15 },
-  { label: "A+", value: 1.3 },
-  { label: "A++", value: 1.5 },
+const zoomLevels = [
+  { label: "100%", value: 1 },
+  { label: "125%", value: 1.25 },
+  { label: "150%", value: 1.5 },
+  { label: "200%", value: 2 },
+  { label: "250%", value: 2.5 },
+  { label: "300%", value: 3 },
 ];
 
 export default function AccessibilityWidget() {
-  const [scale, setScale] = useState(1);
+  const { zoom, setZoom, resetZoom } = useZoom();
+
   const [isOpen, setIsOpen] = useState(false);
 
   const dialogRef = useRef<HTMLDialogElement>(null);
-  const triggerRef = useRef<HTMLButtonElement>(null);
-
-  useEffect(() => {
-    const saved = localStorage.getItem(
-      "accessibility-font-scale"
-    );
-
-    if (saved) {
-      const value = Number(saved);
-
-      if ([1, 1.15, 1.3, 1.5].includes(value)) {
-        setScale(value);
-      }
-    }
-  }, []);
-
-  useEffect(() => {
-    document.documentElement.style.setProperty(
-      "--accessibility-font-scale",
-      String(scale)
-    );
-
-    localStorage.setItem(
-      "accessibility-font-scale",
-      String(scale)
-    );
-  }, [scale]);
 
   useEffect(() => {
     const dialog = dialogRef.current;
@@ -59,17 +36,16 @@ export default function AccessibilityWidget() {
     setIsOpen(false);
   }
 
-  function resetSettings() {
-    setScale(1);
+  function handleReset() {
+    resetZoom();
   }
 
   return (
     <>
       <button
-        ref={triggerRef}
         type="button"
         className="accessibility-trigger"
-        aria-label="Open accessibility settings"
+        aria-label="Open zoom settings"
         aria-haspopup="dialog"
         aria-expanded={isOpen}
         aria-controls="accessibility-dialog"
@@ -103,15 +79,17 @@ export default function AccessibilityWidget() {
           <header className="accessibility-header">
             <div>
               <h2 id="accessibility-title">
-                Accessibility settings
+                Zoom settings
               </h2>
-              <p>Customize your browsing experience.</p>
+              <p>
+                Magnify the website without changing its layout.
+              </p>
             </div>
 
             <button
               type="button"
               className="accessibility-close"
-              aria-label="Close accessibility settings"
+              aria-label="Close zoom settings"
               onClick={closeDialog}
             >
               &times;
@@ -119,22 +97,23 @@ export default function AccessibilityWidget() {
           </header>
 
           <section className="accessibility-section">
-            <h3>Text size</h3>
-            <p>Adjust the text size across the website.</p>
+            <h3>Page magnification</h3>
+            <p>
+              Select a zoom level, then drag the page to explore it.
+            </p>
 
             <div className="font-size-options">
-              {fontSizes.map((size) => (
+              {zoomLevels.map((level) => (
                 <button
-                  key={size.value}
+                  key={level.value}
                   type="button"
-                  aria-pressed={scale === size.value}
+                  aria-pressed={zoom === level.value}
                   className={
-                    scale === size.value ? "active" : ""
+                    zoom === level.value ? "active" : ""
                   }
-                  onClick={() => setScale(size.value)}
+                  onClick={() => setZoom(level.value)}
                 >
-                  <span>{size.label}</span>
-                  <small>{Math.round(size.value * 100)}%</small>
+                  <span>{level.label}</span>
                 </button>
               ))}
             </div>
@@ -144,9 +123,9 @@ export default function AccessibilityWidget() {
             <button
               type="button"
               className="accessibility-reset"
-              onClick={resetSettings}
+              onClick={handleReset}
             >
-              Reset text size
+              Reset zoom
             </button>
 
             <button

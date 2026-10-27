@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useEffect } from "react";
-import HelpChat from "./help-chat";
 import { Certificate } from "./slides";
 import { useRouter } from "next/navigation";
 import { useApp } from "@/components/app-context";
@@ -348,10 +347,6 @@ export default function Selection({
 
   return (
     <div style={styles.page}>
-      <HelpChat
-        iconSrc="usc-logo-help-icon.png"
-        recipientEmail={userEmail}
-      />
 
       {open && (
         <div

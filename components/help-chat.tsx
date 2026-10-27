@@ -1,3 +1,5 @@
+'use client';
+
 import { FormEvent, useState } from "react";
 
 type HelpChatProps = {
@@ -137,7 +139,7 @@ export default function HelpChat({
         .help-chat__trigger span {
           font-size: 14px;
           font-weight: 700;
-          color: #222;
+          color: #fff;
         }
 
         .help-chat__trigger--desktop {
