@@ -200,7 +200,6 @@
 
 .cover-content {
   height: 100%;
-  border: 1px solid rgba(239, 222, 180, .45);
   padding: 24px 16px;
   display: flex;
   flex-direction: column;
