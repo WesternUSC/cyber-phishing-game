@@ -16,6 +16,98 @@ type PageProps = {
   cover?: boolean;
 };
 
+type ModuleLink = {
+  name: string;
+  questionCount: number;
+  page: string;
+};
+
+const modules: Omit<ModuleLink, "score">[] = [
+  { name: "Acceptable Use Policy", questionCount: 5, page: "policies" },
+  {
+    name: "Accessibility for Customer Service Policy",
+    questionCount: 5,
+    page: "cs",
+  },
+  { name: "Accessibility Policy", questionCount: 5, page: "accessibility" },
+  {
+    name: "Conflict of Interest Policy for USC Paid Employees",
+    questionCount: 4,
+    page: "conflict",
+  },
+  {
+    name: "Discrimination Harassment and Violence Prevention Policy",
+    questionCount: 7,
+    page: "disc",
+  },
+  {
+    name: "Discrimination Harassment and Violence Reporting Procedure",
+    questionCount: 8,
+    page: "disc2",
+  },
+  {
+    name: "Early and Safe Return to Work Policy",
+    questionCount: 7,
+    page: "early",
+  },
+  {
+    name: "Emergency Preparedness Policy",
+    questionCount: 5,
+    page: "emergency",
+  },
+  { name: "Hazard Reporting Policy", questionCount: 4, page: "hazard" },
+  {
+    name: "Health and Safety Responsibilities of Managers & Supervisors Policy",
+    questionCount: 5,
+    page: "hsrm",
+  },
+  {
+    name: "Health and Safety Responsibilities of Workers (Including Supplied Labour) Policy",
+    questionCount: 3,
+    page: "hsrw",
+  },
+  {
+    name: "Health and Safety Work Refusal Policy",
+    questionCount: 5,
+    page: "hswrp",
+  },
+  {
+    name: "Housekeeping and Organizing Policy",
+    questionCount: 5,
+    page: "housekeeping",
+  },
+  {
+    name: "Injury/Illness Reporting Policy",
+    questionCount: 4,
+    page: "injury",
+  },
+  { name: "Media Spokesperson Policy", questionCount: 4, page: "media" },
+  {
+    name: "Right to Disconnect Policy for USC Paid Employees",
+    questionCount: 6,
+    page: "disconnect",
+  },
+  { name: "Social Media Policy", questionCount: 5, page: "social" },
+  { name: "Visitor Policy", questionCount: 4, page: "visitor" },
+  { name: "Whistleblower Policy", questionCount: 4, page: "whistleblower" },
+  { name: "Workplace Conduct Policy", questionCount: 5, page: "workplace" },
+  {
+    name: "Professional Development Procedure",
+    questionCount: 4,
+    page: "prof",
+  },
+  {
+    name: "Short Term Flexibility Procedure",
+    questionCount: 5,
+    page: "eso",
+  },
+  {
+    name: "Financial Approvals and Purchasing Procedure",
+    questionCount: 5,
+    page: "eso",
+  },
+];
+
 const Page = forwardRef<HTMLDivElement, PageProps>(
   ({ number, title, children, cover = false }, ref) => (
     <div
@@ -108,6 +200,9 @@ export default function FlipBookSlideViewer({
   const [quizResetKey, setQuizResetKey] = useState(0);
 
   const [isFlipping, setIsFlipping] = useState(false);
+
+  const [showTableOfContents, setShowTableOfContents] = useState(false);
+  const [isMuted, setIsMuted] = useState(false);
 
   const router = useRouter();
 
@@ -450,6 +545,70 @@ export default function FlipBookSlideViewer({
         </button>
       </div>
 
+      <div
+        className={`toc-backdrop ${showTableOfContents ? "is-open" : ""}`}
+        onClick={() => setShowTableOfContents(false)}
+        aria-hidden="true"
+      />
+
+      <aside
+        className={`toc-drawer ${showTableOfContents ? "is-open" : ""}`}
+        aria-label="Table of contents"
+        aria-hidden={!showTableOfContents}
+        inert={!showTableOfContents}
+      >
+        <div className="toc-header">
+          <div>
+            <span className="toc-eyebrow">USC Policies</span>
+            <h2>Table of Contents</h2>
+            <p>{modules.length} learning modules</p>
+          </div>
+
+          <button
+            type="button"
+            className="toc-close-button"
+            onClick={() => setShowTableOfContents(false)}
+            aria-label="Close table of contents"
+          >
+            ×
+          </button>
+        </div>
+
+        <div className="toc-list">
+          {modules.map((module, index) => (
+            <button
+              type="button"
+              key={`${module.page}-${index}`}
+              className="toc-module"
+              onClick={() => {
+                setShowTableOfContents(false);
+                router.push("/policy?policy=" + module.page);
+              }}
+            >
+              <span className="toc-module-number">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+
+              <span className="toc-module-info">
+                <span className="toc-module-name">{module.name}</span>
+                <span className="toc-module-meta">
+                  {module.questionCount} questions
+                </span>
+              </span>
+
+              <span className="toc-module-arrow" aria-hidden="true">
+                →
+              </span>
+            </button>
+          ))}
+        </div>
+
+        <div className="toc-footer">
+          <span className="toc-footer-dot" />
+          <span>Policies &amp; Procedures</span>
+        </div>
+      </aside>
+
       {showQuizModal && (
         <div style={styles.modalOverlay}>
         <div style={styles.modal}>
@@ -532,27 +691,33 @@ export default function FlipBookSlideViewer({
             </div>
         )}
 
-      {/* <div className="book-controls">
+      <div className="book-controls">
         <button
-          onClick={previousPage}
-          disabled={currentPage === 0}
-          aria-label="Previous page"
+          type="button"
+          className="book-control-button"
+          onClick={() => setShowTableOfContents(true)}
+          aria-label="Open table of contents"
+          aria-expanded={showTableOfContents}
         >
-          ← <span>Previous</span>
+          <span className="control-icon" aria-hidden="true">
+            ☰
+          </span>
+          {/* <span>Table of Contents</span> */}
         </button>
 
-        <span className="page-counter">
-          {currentPage + 1} / {totalPages}
-        </span>
-
         <button
-          onClick={nextPage}
-          disabled={currentPage >= totalPages - 1}
-          aria-label="Next page"
+          type="button"
+          className={`book-control-button ${isMuted ? "is-muted" : ""}`}
+          onClick={() => setIsMuted((previous) => !previous)}
+          aria-pressed={isMuted}
+          aria-label={isMuted ? "Unmute sound" : "Mute sound"}
         >
-          <span>Next</span> →
+          <span className="control-icon" aria-hidden="true">
+            {isMuted ? "🔇" : "🔊"}
+          </span>
+          {/* <span>{isMuted ? "Sound Off" : "Mute Sound"}</span> */}
         </button>
-      </div> */}
+      </div>
 
       <p className="flipbook-tip">
         Click a page corner, drag a page, or use the arrows.
