@@ -82,7 +82,7 @@ export default function AccessibilityWidget() {
                 Zoom settings
               </h2>
               <p>
-                Magnify the website without changing its layout.
+                Magnify the website.
               </p>
             </div>
 
